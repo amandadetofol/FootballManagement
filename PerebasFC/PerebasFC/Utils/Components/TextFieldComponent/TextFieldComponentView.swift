@@ -26,7 +26,7 @@ final class TextFieldComponent: UIView {
         get { return textField.text ?? String()}
     }
     
-    var placeholder: String {
+    var placeholder: String = "" {
         didSet {
             textField.placeholder = placeholder
         }
