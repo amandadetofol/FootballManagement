@@ -46,7 +46,8 @@ final class TextFieldComponent: UIView {
     private lazy var textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .bezel
+        textField.borderStyle = .roundedRect
+        textField.delegate = self 
         
         return textField
     }()
@@ -89,12 +90,20 @@ final class TextFieldComponent: UIView {
             contentStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             textField.heightAnchor.constraint(equalToConstant: 48),
             
             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
+            errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
+    }
+    
+}
+
+extension TextFieldComponent: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.showError = false
     }
     
 }

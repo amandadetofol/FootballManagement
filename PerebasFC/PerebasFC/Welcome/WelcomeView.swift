@@ -20,6 +20,7 @@ final class WelcomeView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.tintColor = .black
         imageView.contentMode = .scaleAspectFill
+        imageView.isAccessibilityElement = false 
         
         return imageView
     }()

@@ -32,7 +32,8 @@ final class WelcomeViewController: UIViewController {
 extension WelcomeViewController: WelcomeViewDelegate {
     
     func goToLogin() {
-        print("Go to login")
+        let loginCoordinator = LoginCoordinator(navigationController: self.navigationController ?? UINavigationController())
+        loginCoordinator.start()
     }
 
 }

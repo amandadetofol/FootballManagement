@@ -14,6 +14,16 @@
 		A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E6B2A12DF32002B56EE /* WelcomeView.swift */; };
 		A6033E752A12E416002B56EE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E742A12E416002B56EE /* LoginView.swift */; };
 		A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E792A12E5A9002B56EE /* TextFieldComponentView.swift */; };
+		A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F7B2A14327E009D08EE /* UIView.swift */; };
+		A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F7D2A14345F009D08EE /* LoginViewController.swift */; };
+		A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F7F2A143559009D08EE /* LoginInteractor.swift */; };
+		A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F812A1435EB009D08EE /* LoginCoordinator.swift */; };
+		A61A8F862A143668009D08EE /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F852A143668009D08EE /* LoginWorker.swift */; };
+		A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F872A143906009D08EE /* LoginPresenter.swift */; };
+		A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F892A143A74009D08EE /* LoginFactory.swift */; };
+		A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F8C2A144175009D08EE /* ErrorComponentViewController.swift */; };
+		A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F8F2A14418B009D08EE /* ErrorComponentView.swift */; };
+		A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F912A144251009D08EE /* ErrorComponentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,16 @@
 		A6033E6B2A12DF32002B56EE /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A6033E742A12E416002B56EE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A6033E792A12E5A9002B56EE /* TextFieldComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponentView.swift; sourceTree = "<group>"; };
+		A61A8F7B2A14327E009D08EE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		A61A8F7D2A14345F009D08EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A61A8F7F2A143559009D08EE /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		A61A8F812A1435EB009D08EE /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		A61A8F852A143668009D08EE /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
+		A61A8F872A143906009D08EE /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		A61A8F892A143A74009D08EE /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
+		A61A8F8C2A144175009D08EE /* ErrorComponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorComponentViewController.swift; sourceTree = "<group>"; };
+		A61A8F8F2A14418B009D08EE /* ErrorComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorComponentView.swift; sourceTree = "<group>"; };
+		A61A8F912A144251009D08EE /* ErrorComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorComponentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				A6033E742A12E416002B56EE /* LoginView.swift */,
+				A61A8F7D2A14345F009D08EE /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +123,7 @@
 		A6033E6F2A12E3AC002B56EE /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				A61A8F812A1435EB009D08EE /* LoginCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -109,6 +131,7 @@
 		A6033E702A12E3B5002B56EE /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				A61A8F852A143668009D08EE /* LoginWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -116,6 +139,7 @@
 		A6033E712A12E3BA002B56EE /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				A61A8F872A143906009D08EE /* LoginPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -123,6 +147,7 @@
 		A6033E722A12E3C0002B56EE /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				A61A8F892A143A74009D08EE /* LoginFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -130,6 +155,7 @@
 		A6033E732A12E3D3002B56EE /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				A61A8F7F2A143559009D08EE /* LoginInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -137,6 +163,7 @@
 		A6033E762A12E579002B56EE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A61A8F7A2A14326E009D08EE /* Extensions */,
 				A6033E772A12E57E002B56EE /* Components */,
 			);
 			path = Utils;
@@ -145,6 +172,7 @@
 		A6033E772A12E57E002B56EE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A61A8F8E2A144178009D08EE /* ErrorComponent */,
 				A6033E782A12E590002B56EE /* TextFieldComponent */,
 			);
 			path = Components;
@@ -156,6 +184,24 @@
 				A6033E792A12E5A9002B56EE /* TextFieldComponentView.swift */,
 			);
 			path = TextFieldComponent;
+			sourceTree = "<group>";
+		};
+		A61A8F7A2A14326E009D08EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8F7B2A14327E009D08EE /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A61A8F8E2A144178009D08EE /* ErrorComponent */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8F8F2A14418B009D08EE /* ErrorComponentView.swift */,
+				A61A8F912A144251009D08EE /* ErrorComponentViewModel.swift */,
+				A61A8F8C2A144175009D08EE /* ErrorComponentViewController.swift */,
+			);
+			path = ErrorComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,10 +274,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */,
 				A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */,
+				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
 				A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
+				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
+				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
+				A61A8F862A143668009D08EE /* LoginWorker.swift in Sources */,
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
+				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
+				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
+				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
+				A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
