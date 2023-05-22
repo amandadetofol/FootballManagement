@@ -31,6 +31,11 @@
 		A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FA42A1C23C3009D08EE /* ForgotPasswordWorker.swift */; };
 		A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FA62A1C27E2009D08EE /* ForgotPasswordPresenter.swift */; };
 		A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FA82A1C2918009D08EE /* ForgotPasswordFactory.swift */; };
+		A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FB12A1C2DE8009D08EE /* HomeView.swift */; };
+		A61A8FB52A1C2E2B009D08EE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FB42A1C2E2B009D08EE /* UserModel.swift */; };
+		A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */; };
+		A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */; };
+		A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +65,11 @@
 		A61A8FA42A1C23C3009D08EE /* ForgotPasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordWorker.swift; sourceTree = "<group>"; };
 		A61A8FA62A1C27E2009D08EE /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
 		A61A8FA82A1C2918009D08EE /* ForgotPasswordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFactory.swift; sourceTree = "<group>"; };
+		A61A8FB12A1C2DE8009D08EE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A61A8FB42A1C2E2B009D08EE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalLinkRedirect.swift; sourceTree = "<group>"; };
+		A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,8 @@
 				A6033E5F2A12DC5E002B56EE /* LaunchScreen.storyboard */,
 				A6033E622A12DC5E002B56EE /* Info.plist */,
 				A61A8F932A1C1D32009D08EE /* ForgotPassword */,
+				A61A8FAA2A1C2DA8009D08EE /* Home */,
+				A61A8FB62A1C2F2D009D08EE /* InternalLink */,
 				A6033E6D2A12E390002B56EE /* Login */,
 				A6033E762A12E579002B56EE /* Utils */,
 				A6033E682A12DF19002B56EE /* Welcome */,
@@ -281,6 +293,105 @@
 			path = Worker;
 			sourceTree = "<group>";
 		};
+		A61A8FAA2A1C2DA8009D08EE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FB02A1C2DD8009D08EE /* Coordinator */,
+				A61A8FAF2A1C2DD1009D08EE /* Factory */,
+				A61A8FAE2A1C2DC9009D08EE /* Interactor */,
+				A61A8FBC2A1C3016009D08EE /* InternalComponents */,
+				A61A8FB32A1C2E20009D08EE /* Model */,
+				A61A8FAD2A1C2DC4009D08EE /* Presenter */,
+				A61A8FAC2A1C2DC0009D08EE /* View */,
+				A61A8FAB2A1C2DBB009D08EE /* Worker */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A61A8FAB2A1C2DBB009D08EE /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A61A8FAC2A1C2DC0009D08EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FB12A1C2DE8009D08EE /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A61A8FAD2A1C2DC4009D08EE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A61A8FAE2A1C2DC9009D08EE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A61A8FAF2A1C2DD1009D08EE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A61A8FB02A1C2DD8009D08EE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A61A8FB32A1C2E20009D08EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FB42A1C2E2B009D08EE /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A61A8FB62A1C2F2D009D08EE /* InternalLink */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FB72A1C2F3D009D08EE /* Model */,
+			);
+			path = InternalLink;
+			sourceTree = "<group>";
+		};
+		A61A8FB72A1C2F3D009D08EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A61A8FBB2A1C3008009D08EE /* HomeHeader */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */,
+				A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */,
+			);
+			path = HomeHeader;
+			sourceTree = "<group>";
+		};
+		A61A8FBC2A1C3016009D08EE /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FBB2A1C3008009D08EE /* HomeHeader */,
+			);
+			path = InternalComponents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,14 +464,17 @@
 			files = (
 				A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */,
 				A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */,
+				A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */,
 				A61A8F9C2A1C1E21009D08EE /* ForgotPasswordView.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
 				A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
+				A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */,
 				A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */,
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A61A8F862A143668009D08EE /* LoginWorker.swift in Sources */,
+				A61A8FB52A1C2E2B009D08EE /* UserModel.swift in Sources */,
 				A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */,
 				A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */,
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
@@ -370,8 +484,10 @@
 				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
+				A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */,
 				A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
+				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

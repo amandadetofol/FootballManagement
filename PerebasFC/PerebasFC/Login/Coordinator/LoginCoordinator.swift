@@ -9,7 +9,7 @@ import UIKit
 
 protocol LoginCoordinatorProtocol {
     func goToLoginErrorView()
-    func goToLoggedArea()
+    func goToLoggedArea(user: User)
     func goToNewMemeberMessageView()
     func goToForgotPassword(username: String)
 }
@@ -28,7 +28,7 @@ final class LoginCoordinator: LoginCoordinatorProtocol {
             animated: true)
     }
     
-    func goToLoggedArea() {
+    func goToLoggedArea(user: User) {
         //TODO: Implementar a home
     }
     

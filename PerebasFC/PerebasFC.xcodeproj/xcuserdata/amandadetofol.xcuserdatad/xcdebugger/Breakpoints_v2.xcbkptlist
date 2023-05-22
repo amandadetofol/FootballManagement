@@ -18,6 +18,38 @@
             endingLineNumber = "30"
             landmarkName = "goToLogin(_:_:_:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "68A7B5B0-424E-4D64-BACE-2F6B4BAC5FCB - 3b41331619f865c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.LoginInteractor.goToLogin(Swift.String, Swift.String) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Login/Interactor/LoginInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "68A7B5B0-424E-4D64-BACE-2F6B4BAC5FCB - b2ab6cdb63f5104"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.LoginInteractor.goToLogin(Swift.String, Swift.String, Swift.Bool) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Login/Interactor/LoginInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -71,6 +103,36 @@
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PerebasFC.ErrorComponentViewController.init(with: PerebasFC.ErrorComponentViewModel, handleFirstActionButtonTap: Swift.Optional&lt;() -&gt; ()&gt;, handleSecondActionButtonTap: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; PerebasFC.ErrorComponentViewController"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Utils/Components/ErrorComponent/ErrorComponentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "F5BB476C-063E-4AAF-8784-3A05D305CDB6 - aebefb5be183a49b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.ErrorComponentViewController.__allocating_init(with: PerebasFC.ErrorComponentViewModel, handleFirstActionButtonTapAction: Swift.Optional&lt;() -&gt; ()&gt;, handleSecondActionButtonTapAction: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; PerebasFC.ErrorComponentViewController"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Utils/Components/ErrorComponent/ErrorComponentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "F5BB476C-063E-4AAF-8784-3A05D305CDB6 - 50efeec5ad3c1126"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.ErrorComponentViewController.init(with: PerebasFC.ErrorComponentViewModel, handleFirstActionButtonTapAction: Swift.Optional&lt;() -&gt; ()&gt;, handleSecondActionButtonTapAction: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; PerebasFC.ErrorComponentViewController"
                   moduleName = "PerebasFC"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Utils/Components/ErrorComponent/ErrorComponentViewController.swift"
