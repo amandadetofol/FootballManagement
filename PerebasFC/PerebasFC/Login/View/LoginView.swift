@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginViewDelegate: AnyObject {
-    func goToLogin(username: String, password: String)
+    func goToLogin(username: String, password: String, isAdm: Bool)
     func goToNewMemeberMessageView()
     func goToForgotPassword(username: String)
 }
@@ -28,15 +28,6 @@ final class LoginView: UIView {
             passwordTextField.showError = showPasswordError
         }
     }
-    
-    private lazy var iconImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named:"logo"))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.isAccessibilityElement = false
-        
-        return imageView
-    }()
     
     private lazy var usernameTextField: TextFieldComponent = {
         let textfield = TextFieldComponent()
@@ -60,6 +51,15 @@ final class LoginView: UIView {
         admswitch.translatesAutoresizingMaskIntoConstraints = false
         
         return admswitch
+    }()
+    
+    private lazy var administratorSwitchLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        label.text = "Sou Administrador"
+        
+        return label
     }()
     
     private lazy var loginButton: UIButton = {
@@ -112,9 +112,10 @@ final class LoginView: UIView {
     
     private func setupView(){
         addSubviews(
-            [iconImageView,
-             usernameTextField,
+            [usernameTextField,
              passwordTextField,
+             administratorSwitch,
+             administratorSwitchLabel,
              loginButton,
              notSignedButton,
              forgotPasswordButton])
@@ -122,12 +123,7 @@ final class LoginView: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 108),
-            iconImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            iconImageView.heightAnchor.constraint(equalToConstant: 124),
-            iconImageView.widthAnchor.constraint(equalToConstant: 124),
-            
-            usernameTextField.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 86),
+            usernameTextField.topAnchor.constraint(equalTo: topAnchor, constant: 168),
             usernameTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
             usernameTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
            
@@ -135,7 +131,13 @@ final class LoginView: UIView {
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
+            administratorSwitch.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
+            administratorSwitch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            
+            administratorSwitchLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
+            administratorSwitchLabel.leadingAnchor.constraint(equalTo: administratorSwitch.trailingAnchor, constant: 8),
+            
+            loginButton.topAnchor.constraint(equalTo: administratorSwitch.bottomAnchor, constant: 32),
             loginButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             loginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             loginButton.heightAnchor.constraint(equalToConstant: 48),
@@ -159,7 +161,8 @@ extension LoginView {
     @objc func login(){
         delegate?.goToLogin(
             username: usernameTextField.text,
-            password: passwordTextField.text)
+            password: passwordTextField.text,
+            isAdm: administratorSwitch.isOn)
     }
     
     @objc func goToNewMemeberMessageView(){

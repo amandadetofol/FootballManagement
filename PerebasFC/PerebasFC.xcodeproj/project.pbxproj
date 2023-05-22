@@ -24,6 +24,13 @@
 		A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F8C2A144175009D08EE /* ErrorComponentViewController.swift */; };
 		A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F8F2A14418B009D08EE /* ErrorComponentView.swift */; };
 		A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F912A144251009D08EE /* ErrorComponentViewModel.swift */; };
+		A61A8F9C2A1C1E21009D08EE /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F9B2A1C1E21009D08EE /* ForgotPasswordView.swift */; };
+		A61A8F9F2A1C20FA009D08EE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F9E2A1C20FA009D08EE /* ForgotPasswordViewController.swift */; };
+		A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FA02A1C21FA009D08EE /* ForgotPasswordInteractor.swift */; };
+		A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FA22A1C2299009D08EE /* ForgotPasswordCoordinator.swift */; };
+		A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FA42A1C23C3009D08EE /* ForgotPasswordWorker.swift */; };
+		A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FA62A1C27E2009D08EE /* ForgotPasswordPresenter.swift */; };
+		A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FA82A1C2918009D08EE /* ForgotPasswordFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +53,13 @@
 		A61A8F8C2A144175009D08EE /* ErrorComponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorComponentViewController.swift; sourceTree = "<group>"; };
 		A61A8F8F2A14418B009D08EE /* ErrorComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorComponentView.swift; sourceTree = "<group>"; };
 		A61A8F912A144251009D08EE /* ErrorComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorComponentViewModel.swift; sourceTree = "<group>"; };
+		A61A8F9B2A1C1E21009D08EE /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		A61A8F9E2A1C20FA009D08EE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		A61A8FA02A1C21FA009D08EE /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
+		A61A8FA22A1C2299009D08EE /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
+		A61A8FA42A1C23C3009D08EE /* ForgotPasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordWorker.swift; sourceTree = "<group>"; };
+		A61A8FA62A1C27E2009D08EE /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
+		A61A8FA82A1C2918009D08EE /* ForgotPasswordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +92,13 @@
 		A6033E532A12DC5D002B56EE /* PerebasFC */ = {
 			isa = PBXGroup;
 			children = (
-				A6033E762A12E579002B56EE /* Utils */,
 				A6033E542A12DC5D002B56EE /* AppDelegate.swift */,
 				A6033E5D2A12DC5E002B56EE /* Assets.xcassets */,
 				A6033E5F2A12DC5E002B56EE /* LaunchScreen.storyboard */,
 				A6033E622A12DC5E002B56EE /* Info.plist */,
+				A61A8F932A1C1D32009D08EE /* ForgotPassword */,
 				A6033E6D2A12E390002B56EE /* Login */,
+				A6033E762A12E579002B56EE /* Utils */,
 				A6033E682A12DF19002B56EE /* Welcome */,
 			);
 			path = PerebasFC;
@@ -204,6 +219,68 @@
 			path = ErrorComponent;
 			sourceTree = "<group>";
 		};
+		A61A8F932A1C1D32009D08EE /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8F992A1C1E00009D08EE /* Worker */,
+				A61A8F982A1C1DFB009D08EE /* View */,
+				A61A8F972A1C1DF7009D08EE /* Presenter */,
+				A61A8F962A1C1DF0009D08EE /* Interactor */,
+				A61A8F952A1C1DEB009D08EE /* Factory  */,
+				A61A8F942A1C1DE4009D08EE /* Coordinator */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		A61A8F942A1C1DE4009D08EE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FA22A1C2299009D08EE /* ForgotPasswordCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A61A8F952A1C1DEB009D08EE /* Factory  */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FA82A1C2918009D08EE /* ForgotPasswordFactory.swift */,
+			);
+			path = "Factory ";
+			sourceTree = "<group>";
+		};
+		A61A8F962A1C1DF0009D08EE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FA02A1C21FA009D08EE /* ForgotPasswordInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A61A8F972A1C1DF7009D08EE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FA62A1C27E2009D08EE /* ForgotPasswordPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A61A8F982A1C1DFB009D08EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8F9B2A1C1E21009D08EE /* ForgotPasswordView.swift */,
+				A61A8F9E2A1C20FA009D08EE /* ForgotPasswordViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A61A8F992A1C1E00009D08EE /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8FA42A1C23C3009D08EE /* ForgotPasswordWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,18 +353,25 @@
 			files = (
 				A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */,
 				A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */,
+				A61A8F9C2A1C1E21009D08EE /* ForgotPasswordView.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
 				A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
+				A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */,
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A61A8F862A143668009D08EE /* LoginWorker.swift in Sources */,
+				A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */,
+				A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */,
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
+				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A61A8F9F2A1C20FA009D08EE /* ForgotPasswordViewController.swift in Sources */,
 				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
 				A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */,
+				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +518,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +546,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

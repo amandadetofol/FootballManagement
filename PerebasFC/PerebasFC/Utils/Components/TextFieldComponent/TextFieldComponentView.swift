@@ -8,6 +8,12 @@
 import UIKit
 
 final class TextFieldComponent: UIView {
+
+    var errorMessage: String = "" {
+        didSet {
+            errorLabel.text = errorMessage
+        }
+    }
     
     var showError = false {
         didSet {
@@ -24,6 +30,7 @@ final class TextFieldComponent: UIView {
     
     var text: String {
         get { return textField.text ?? String()}
+        set { textField.text = text }
     }
     
     var placeholder: String = "" {

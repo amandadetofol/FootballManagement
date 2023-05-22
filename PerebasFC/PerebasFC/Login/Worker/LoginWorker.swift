@@ -11,6 +11,7 @@ protocol LoginWorkerProtocol {
     func login(
         username: String,
         password: String,
+        isAdm: Bool,
         _ completion: @escaping ((Bool) -> Void))
 }
 
@@ -19,6 +20,7 @@ final class LoginWorker: LoginWorkerProtocol {
     func login(
         username: String,
         password: String,
+        isAdm: Bool,
         _ completion: @escaping ((Bool) -> Void)) {
             //TODO: Implementar meu mock 
     }

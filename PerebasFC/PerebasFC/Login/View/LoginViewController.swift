@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginInteractorProtocol {
-    func goToLogin(_ username: String, _ password: String)
+    func goToLogin(_ username: String, _ password: String, _ isAdm: Bool)
     func goToNewMemeberMessageView()
     func goToForgotPassword(_ username: String)
 }
@@ -55,8 +55,8 @@ extension LoginViewController: LoginViewProtocol {
 
 extension LoginViewController: LoginViewDelegate {
     
-    func goToLogin(username: String, password: String) {
-        interactor.goToLogin(username, password)
+    func goToLogin(username: String, password: String, isAdm: Bool) {
+        interactor.goToLogin(username, password, isAdm)
     }
     
     func goToNewMemeberMessageView() {

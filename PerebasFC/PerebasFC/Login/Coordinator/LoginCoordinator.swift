@@ -15,7 +15,7 @@ protocol LoginCoordinatorProtocol {
 }
 
 final class LoginCoordinator: LoginCoordinatorProtocol {
-    
+
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController){
@@ -42,10 +42,12 @@ final class LoginCoordinator: LoginCoordinatorProtocol {
                 firstActionName: "📞      Ligar para o administrador",
                 firstActionNameAccessibiliyDescription: "Ligar para administrador",
                 secondActionName: "✉️       Enviar mensagem no Whatsapp",
-                secondActionNameAccessibilityDesctiption: "Enviar mensagem no Whatsapp")) {
-                    //DISCADOR
-            } handleSecondActionButtonTapAction: {
-                //ABRE TELA DO WHATS PRA COMPARTILHAR E ENVIAR MENSAGEM
+                secondActionNameAccessibilityDesctiption: "Enviar mensagem no Whatsapp")) { [weak self] in
+                    guard let self = self else { return }
+                    self.callNumber()
+            } handleSecondActionButtonTapAction: { [weak self] in
+                guard let self = self else { return }
+                self.showNativeShare()
             }
 
         
@@ -53,11 +55,44 @@ final class LoginCoordinator: LoginCoordinatorProtocol {
     }
     
     func goToForgotPassword(username: String) {
-        //TODO: Implementar fluxo de mudança de senha 
+        let viewConroller = ForgotPasswordFactory.getForgotPasswordViewController(
+            navigationController: navigationController,
+            email: username)
+        self.navigationController.pushViewController(viewConroller, animated: true)
     }
-
-    func goToLoginErrorView(){
-       
+    
+    func goToLoginErrorView() {
+        let alert = UIAlertController(
+            title: "Ops!",
+            message: "Algo deu errado :( \n Revise seus dados e tente novamente!",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default,
+                handler: nil))
+        navigationController.present(
+            alert,
+            animated: true)
+    }
+    
+    private func showNativeShare() {
+        let urlWhats = "whatsapp://send?phone=+5547996263863&abid=12354&text=Hello"
+            if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
+                if let whatsappURL = URL(string: urlString) {
+                    if UIApplication.shared.canOpenURL(whatsappURL) {
+                        UIApplication.shared.open(whatsappURL)
+                    }
+                }
+            }
+    }
+    
+    private func callNumber(){
+        let phoneNumber = "+5547996263863"
+        let numberUrl = URL(string: "tel://\(phoneNumber)")!
+        if UIApplication.shared.canOpenURL(numberUrl) {
+            UIApplication.shared.open(numberUrl)
+        }
     }
     
 }

@@ -26,7 +26,7 @@ final class LoginInteractor: LoginInteractorProtocol {
             self.worker = worker
         }
     
-    func goToLogin(_ username: String, _ password: String) {
+    func goToLogin(_ username: String, _ password: String, _ isAdm: Bool) {
         if username.isEmpty {
             presenter.updateViewForMandatoryUsernameError()
         }
@@ -36,7 +36,7 @@ final class LoginInteractor: LoginInteractorProtocol {
         }
         
         if !password.isEmpty && !username.isEmpty {
-            worker.login(username: username, password: password) { [weak self] succeeded in
+            worker.login(username: username, password: password, isAdm: isAdm) { [weak self] succeeded in
                 if succeeded {
                     self?.coordinator.goToLoggedArea()
                 } else {
