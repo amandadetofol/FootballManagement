@@ -11,9 +11,10 @@ final class HomeHeaderView: UIView {
     
     private lazy var initialsView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemRed.withAlphaComponent(0.5)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemRed.withAlphaComponent(0.8)
         view.clipsToBounds = true
-        view.addSubview(initialsLabel)
+        view.layer.cornerRadius = 24
         
         return view
     }()
@@ -33,8 +34,8 @@ final class HomeHeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 24.0)
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 20.0)
         
         return label
     }()
@@ -43,8 +44,8 @@ final class HomeHeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 24.0)
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 16.0)
         
         return label
     }()
@@ -68,27 +69,34 @@ final class HomeHeaderView: UIView {
     
     private func setupView(){
         backgroundColor = .systemBackground
-        self.addSubviews([initialsView, welcomeLabel, fullName])
+        self.addSubviews([
+            welcomeLabel,
+            initialsView,
+            welcomeLabel,
+            fullName])
+        initialsView.addSubview(initialsLabel)
     }
-    
+
     private func setupConstraints(){
         NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 86),
+            
             initialsLabel.centerXAnchor.constraint(equalTo: initialsView.centerXAnchor),
             initialsLabel.centerYAnchor.constraint(equalTo: initialsView.centerYAnchor),
             
-            initialsView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            initialsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
-            initialsView.heightAnchor.constraint(equalToConstant: 32),
-            initialsView.widthAnchor.constraint(equalToConstant: 32),
+            initialsView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            initialsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            initialsView.heightAnchor.constraint(equalToConstant: 48),
+            initialsView.widthAnchor.constraint(equalToConstant: 48),
+ 
+            welcomeLabel.topAnchor.constraint(equalTo: topAnchor),
+            welcomeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            welcomeLabel.trailingAnchor.constraint(equalTo: initialsView.leadingAnchor, constant: -16),
             
-            welcomeLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            welcomeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-            welcomeLabel.trailingAnchor.constraint(equalTo: initialsView.leadingAnchor, constant: -32),
-            
-            fullName.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 16),
-            fullName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-            fullName.trailingAnchor.constraint(equalTo: initialsView.leadingAnchor, constant: -32),
-            fullName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
+            fullName.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor),
+            fullName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            fullName.trailingAnchor.constraint(equalTo: initialsView.leadingAnchor, constant: -16),
+            fullName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
         ])
     }
 }

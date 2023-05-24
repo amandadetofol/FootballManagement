@@ -12,7 +12,6 @@ protocol UserAlertWarningViewDelegate: AnyObject {
     func handleActionButtonTap(key: InternalLinkRedirectKeys)
 }
 
-//TODO: TESTAR ESSA CLASSE PRA VER COMO Q FICAM AS CONSTRAINTS 
 final class UserAlertWarningView: UIView {
     
     weak var delegate: UserAlertWarningViewDelegate?
@@ -33,6 +32,7 @@ final class UserAlertWarningView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.tintColor = .black 
         button.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
         
         return button
@@ -53,7 +53,7 @@ final class UserAlertWarningView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        label.font = UIFont.systemFont(ofSize: 20.0)
         
         return label
     }()
@@ -109,6 +109,8 @@ final class UserAlertWarningView: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 220),
+            
             actionButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 32),
             actionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -139,6 +141,10 @@ final class UserAlertWarningView: UIView {
 extension UserAlertWarningView {
     
     @objc func didTapCloseButton(){
+        UIView.animate(withDuration: 0.75) {
+            self.isHidden = true
+        }
+        
         delegate?.handleCloseButtonTap()
     }
     

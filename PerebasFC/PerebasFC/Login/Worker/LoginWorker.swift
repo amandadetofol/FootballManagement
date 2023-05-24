@@ -12,7 +12,7 @@ protocol LoginWorkerProtocol {
         username: String,
         password: String,
         isAdm: Bool,
-        _ completion: @escaping ((Bool) -> Void))
+        _ completion: @escaping ((User?) -> Void))
 }
 
 final class LoginWorker: LoginWorkerProtocol {
@@ -21,8 +21,13 @@ final class LoginWorker: LoginWorkerProtocol {
         username: String,
         password: String,
         isAdm: Bool,
-        _ completion: @escaping ((Bool) -> Void)) {
-            //TODO: Implementar meu mock 
+        _ completion: @escaping ((User?) -> Void)) {
+            completion(
+                User(
+                    firstName: "Usuário",
+                    lastName: "de Teste",
+                    warnings: nil,
+                    isAdm: false))
     }
     
 }

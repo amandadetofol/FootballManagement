@@ -36,9 +36,9 @@ final class LoginInteractor: LoginInteractorProtocol {
         }
         
         if !password.isEmpty && !username.isEmpty {
-            worker.login(username: username, password: password, isAdm: isAdm) { [weak self] succeeded in
-                if succeeded {
-                    self?.coordinator.goToLoggedArea()
+            worker.login(username: username, password: password, isAdm: isAdm) { [weak self] user in
+                if let user = user {
+                    self?.coordinator.goToLoggedArea(user: user)
                 } else {
                     self?.presentViewForLoginError()
                 }
