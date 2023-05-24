@@ -10,13 +10,13 @@ import Foundation
 struct User {
     let firstName: String
     let lastName: String
-    let warnings: [UserWarnings]?
+    let warnings: [UserWarning]?
     let isAdm: Bool
 }
 
-struct UserWarnings {
+struct UserWarning {
     let title: String
     let description: String
+    let firstActionTitle: String 
     let firstActionKey: InternalLinkRedirectKeys
-    let secondActionKey: InternalLinkRedirectKeys
 }

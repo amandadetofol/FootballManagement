@@ -15,6 +15,17 @@ final class HomeView: UIView {
         return headerView
     }()
     
+    private lazy var menuStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.backgroundColor = .systemRed.withAlphaComponent(0.5)
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        
+        return stackView
+    }()
+    
+    
     init(){
         super.init(frame: .zero)
         self.backgroundColor = .systemBackground
