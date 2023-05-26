@@ -36,6 +36,11 @@
 		A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */; };
 		A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */; };
 		A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */; };
+		A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */; };
+		A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */; };
+		A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */; };
+		A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9ED2A202B3D00121515 /* HomePresenter.swift */; };
+		A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9F12A20327600121515 /* HomeFactory.swift */; };
 		A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB2E2A1D889E00ADE47F /* HomeViewModel.swift */; };
 		A6E5BB322A1D893A00ADE47F /* UserAlertWarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB312A1D893A00ADE47F /* UserAlertWarningViewModel.swift */; };
 		A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB352A1D89AF00ADE47F /* UserAlertWarningView.swift */; };
@@ -77,6 +82,11 @@
 		A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalLinkRedirect.swift; sourceTree = "<group>"; };
 		A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewModel.swift; sourceTree = "<group>"; };
+		A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTeamCardView.swift; sourceTree = "<group>"; };
+		A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		A6E0E9ED2A202B3D00121515 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		A6E0E9F12A20327600121515 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		A6E5BB2E2A1D889E00ADE47F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A6E5BB312A1D893A00ADE47F /* UserAlertWarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlertWarningViewModel.swift; sourceTree = "<group>"; };
 		A6E5BB352A1D89AF00ADE47F /* UserAlertWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlertWarningView.swift; sourceTree = "<group>"; };
@@ -318,16 +328,8 @@
 				A61A8FB32A1C2E20009D08EE /* Model */,
 				A61A8FAD2A1C2DC4009D08EE /* Presenter */,
 				A61A8FAC2A1C2DC0009D08EE /* View */,
-				A61A8FAB2A1C2DBB009D08EE /* Worker */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		A61A8FAB2A1C2DBB009D08EE /* Worker */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Worker;
 			sourceTree = "<group>";
 		};
 		A61A8FAC2A1C2DC0009D08EE /* View */ = {
@@ -342,6 +344,7 @@
 		A61A8FAD2A1C2DC4009D08EE /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				A6E0E9ED2A202B3D00121515 /* HomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 		A61A8FAE2A1C2DC9009D08EE /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -356,6 +360,7 @@
 		A61A8FAF2A1C2DD1009D08EE /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				A6E0E9F12A20327600121515 /* HomeFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 		A61A8FB02A1C2DD8009D08EE /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -404,11 +410,20 @@
 		A61A8FBC2A1C3016009D08EE /* InternalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A6E0E9E32A2020BB00121515 /* CurrentTeamCard */,
 				A6E5BB392A1EB73800ADE47F /* MenuItem */,
 				A6E5BB302A1D892A00ADE47F /* UserWarningAlert */,
 				A61A8FBB2A1C3008009D08EE /* HomeHeader */,
 			);
 			path = InternalComponents;
+			sourceTree = "<group>";
+		};
+		A6E0E9E32A2020BB00121515 /* CurrentTeamCard */ = {
+			isa = PBXGroup;
+			children = (
+				A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */,
+			);
+			path = CurrentTeamCard;
 			sourceTree = "<group>";
 		};
 		A6E5BB302A1D892A00ADE47F /* UserWarningAlert */ = {
@@ -518,17 +533,22 @@
 				A61A8F862A143668009D08EE /* LoginWorker.swift in Sources */,
 				A61A8FB52A1C2E2B009D08EE /* UserModel.swift in Sources */,
 				A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */,
+				A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */,
 				A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */,
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
+				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */,
 				A61A8F9F2A1C20FA009D08EE /* ForgotPasswordViewController.swift in Sources */,
 				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
 				A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */,
+				A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */,
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
 				A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */,
+				A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */,
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,

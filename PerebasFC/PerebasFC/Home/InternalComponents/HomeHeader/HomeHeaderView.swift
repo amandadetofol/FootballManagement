@@ -7,27 +7,33 @@
 
 import UIKit
 
+protocol HomeHeaderViewDelegate: AnyObject {
+    func handleLogout()
+}
+
 final class HomeHeaderView: UIView {
     
-    private lazy var initialsView: UIView = {
-        let view = UIView()
+    weak var delegate: HomeHeaderViewDelegate?
+    
+    private lazy var initialsView: UIControl = {
+        let view = UIControl()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemRed.withAlphaComponent(0.8)
         view.clipsToBounds = true
         view.layer.cornerRadius = 24
+        view.addTarget(self, action: #selector(logout), for: .touchUpInside)
         
         return view
     }()
     
-    private lazy var initialsLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
-        label.textColor = .systemBackground
+    private lazy var iconImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(systemName: "ipad.and.arrow.forward"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.accessibilityLabel = "Sair do aplicativo."
         
-        return label
+        return imageView
     }()
     
     private lazy var welcomeLabel: UILabel = {
@@ -62,7 +68,6 @@ final class HomeHeaderView: UIView {
     }
     
     func updateView(with model: HomeHeaderViewModel) {
-        initialsLabel.text = model.initials
         welcomeLabel.text = model.welcomeText
         fullName.text = model.fullName
     }
@@ -74,15 +79,17 @@ final class HomeHeaderView: UIView {
             initialsView,
             welcomeLabel,
             fullName])
-        initialsView.addSubview(initialsLabel)
+        initialsView.addSubview(iconImageView)
     }
 
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: 86),
             
-            initialsLabel.centerXAnchor.constraint(equalTo: initialsView.centerXAnchor),
-            initialsLabel.centerYAnchor.constraint(equalTo: initialsView.centerYAnchor),
+            iconImageView.centerYAnchor.constraint(equalTo: initialsView.centerYAnchor),
+            iconImageView.centerXAnchor.constraint(equalTo: initialsView.centerXAnchor),
+            iconImageView.heightAnchor.constraint(equalToConstant: 24),
+            iconImageView.widthAnchor.constraint(equalToConstant: 24),
             
             initialsView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             initialsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -99,4 +106,12 @@ final class HomeHeaderView: UIView {
             fullName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
         ])
     }
+}
+
+extension HomeHeaderView {
+    
+    @objc func logout(){
+        delegate?.handleLogout()
+    }
+    
 }

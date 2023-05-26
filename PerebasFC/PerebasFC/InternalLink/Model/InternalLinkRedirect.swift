@@ -9,4 +9,11 @@ import Foundation
 
 enum InternalLinkRedirectKeys {
     case confirmPresence(willShow: Bool)
+    case myData
+    case financial
+    case calendar
+    case chat
+    case ranking
+    case games
+    case team
 }

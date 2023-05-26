@@ -5,18 +5,23 @@
 //  Created by Amanda Detofol on 22/05/23.
 //
 
-import Foundation
+import UIKit
 
 struct User {
     let firstName: String
     let lastName: String
-    let warnings: [UserWarning]?
+    let shirtNumber: String
+    let position: String
+    let team: String 
+    let warning: UserWarning?
     let isAdm: Bool
+    let menuItems: [MenuItemViewModel]
 }
 
 struct UserWarning {
     let title: String
     let description: String
+    let icon: UIImage
     let firstActionTitle: String 
     let firstActionKey: InternalLinkRedirectKeys
 }

@@ -29,8 +29,11 @@ final class LoginCoordinator: LoginCoordinatorProtocol {
     }
     
     func goToLoggedArea(user: User) {
-        self.navigationController.pushViewController(HomeViewController(), animated: true)
-        //TODO: Implementar a home
+        navigationController.pushViewController(
+            HomeFactory.getHomeViewController(
+                navigationController: self.navigationController,
+                user: user),
+            animated: true)
     }
     
     func goToNewMemeberMessageView() {

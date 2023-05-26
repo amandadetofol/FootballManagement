@@ -9,6 +9,5 @@ import Foundation
 
 struct HomeHeaderViewModel {
     let welcomeText: String
-    let initials: String
-    let fullName: String 
+    let fullName: String
 }

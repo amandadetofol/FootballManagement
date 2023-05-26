@@ -8,16 +8,15 @@
 import UIKit
 
 struct HomeViewModel {
+    let isAdm: Bool
     let header: HomeHeaderViewModel
-    let menuCards: [MenuCard]
-    let warning: [UserAlertWarningViewModel]
+    let teamInfo: HomeTeamInfo?
+    let menuCards: [MenuItemViewModel]
+    let warning: UserAlertWarningViewModel?
 }
 
-struct MenuCard {
-    let title: String
-    let subtitle: String
-    let subAreaActionKey: InternalLinkRedirectKeys
-    let icon: UIImage
+struct HomeTeamInfo {
+    let shirtNumber: String
+    let teamName: String
+    let position: String 
 }
-
-
