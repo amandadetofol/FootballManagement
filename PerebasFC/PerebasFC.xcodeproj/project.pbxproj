@@ -36,6 +36,10 @@
 		A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */; };
 		A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */; };
 		A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */; };
+		A680E10A2A24109F008FA008 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E1092A24109F008FA008 /* Team.swift */; };
+		A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */; };
+		A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10D2A2410EF008FA008 /* WeekTeamView.swift */; };
+		A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10F2A241392008FA008 /* WeekTeamViewController.swift */; };
 		A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */; };
 		A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */; };
 		A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */; };
@@ -82,6 +86,10 @@
 		A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalLinkRedirect.swift; sourceTree = "<group>"; };
 		A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewModel.swift; sourceTree = "<group>"; };
+		A680E1092A24109F008FA008 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewModel.swift; sourceTree = "<group>"; };
+		A680E10D2A2410EF008FA008 /* WeekTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamView.swift; sourceTree = "<group>"; };
+		A680E10F2A241392008FA008 /* WeekTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewController.swift; sourceTree = "<group>"; };
 		A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTeamCardView.swift; sourceTree = "<group>"; };
 		A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -126,16 +134,11 @@
 		A6033E532A12DC5D002B56EE /* PerebasFC */ = {
 			isa = PBXGroup;
 			children = (
+				A680E1012A24104C008FA008 /* Features */,
 				A6033E542A12DC5D002B56EE /* AppDelegate.swift */,
 				A6033E5D2A12DC5E002B56EE /* Assets.xcassets */,
 				A6033E5F2A12DC5E002B56EE /* LaunchScreen.storyboard */,
 				A6033E622A12DC5E002B56EE /* Info.plist */,
-				A61A8F932A1C1D32009D08EE /* ForgotPassword */,
-				A61A8FAA2A1C2DA8009D08EE /* Home */,
-				A61A8FB62A1C2F2D009D08EE /* InternalLink */,
-				A6033E6D2A12E390002B56EE /* Login */,
-				A6033E762A12E579002B56EE /* Utils */,
-				A6033E682A12DF19002B56EE /* Welcome */,
 			);
 			path = PerebasFC;
 			sourceTree = "<group>";
@@ -418,6 +421,87 @@
 			path = InternalComponents;
 			sourceTree = "<group>";
 		};
+		A680E1002A24103D008FA008 /* WeekTeam */ = {
+			isa = PBXGroup;
+			children = (
+				A680E1072A24107B008FA008 /* Coordinator */,
+				A680E1062A241076008FA008 /* Factory */,
+				A680E1052A241072008FA008 /* Interactor */,
+				A680E1082A241086008FA008 /* Model */,
+				A680E1042A24106E008FA008 /* Presenter */,
+				A680E1032A24106A008FA008 /* View */,
+				A680E1022A24105F008FA008 /* Worker */,
+			);
+			path = WeekTeam;
+			sourceTree = "<group>";
+		};
+		A680E1012A24104C008FA008 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A61A8F932A1C1D32009D08EE /* ForgotPassword */,
+				A61A8FAA2A1C2DA8009D08EE /* Home */,
+				A61A8FB62A1C2F2D009D08EE /* InternalLink */,
+				A6033E6D2A12E390002B56EE /* Login */,
+				A6033E762A12E579002B56EE /* Utils */,
+				A6033E682A12DF19002B56EE /* Welcome */,
+				A680E1002A24103D008FA008 /* WeekTeam */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A680E1022A24105F008FA008 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A680E1032A24106A008FA008 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A680E10D2A2410EF008FA008 /* WeekTeamView.swift */,
+				A680E10F2A241392008FA008 /* WeekTeamViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A680E1042A24106E008FA008 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A680E1052A241072008FA008 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A680E1062A241076008FA008 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A680E1072A24107B008FA008 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A680E1082A241086008FA008 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A680E1092A24109F008FA008 /* Team.swift */,
+				A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A6E0E9E32A2020BB00121515 /* CurrentTeamCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,11 +623,14 @@
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
 				A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */,
 				A61A8F9F2A1C20FA009D08EE /* ForgotPasswordViewController.swift in Sources */,
 				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
+				A680E10A2A24109F008FA008 /* Team.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
+				A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */,
 				A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */,
 				A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */,
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
@@ -553,6 +640,7 @@
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
+				A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
