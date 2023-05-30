@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol WeekTeamInteractorProtocol {
+    func updateTeam(basedOn index: Int)
+}
+
 final class WeekTeamViewController: UIViewController {
+    
+    private let interactor: WeekTeamInteractorProtocol
     
     private lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Time Branco", "Time Preto"])
@@ -24,10 +30,28 @@ final class WeekTeamViewController: UIViewController {
         return segmentedControl
     }()
     
+    private lazy var weekTeamView: WeekTeamView = {
+        let view = WeekTeamView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
+    init(interactor: WeekTeamInteractorProtocol){
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSegmentedControl()
         setupNavigationController()
+        interactor.updateTeam(basedOn: 0)
     }
     
     private func setupNavigationController(){
@@ -38,20 +62,38 @@ final class WeekTeamViewController: UIViewController {
     
     private func setupSegmentedControl(){
         view.addSubview(segmentedControl)
+        view.addSubview(weekTeamView)
         
         NSLayoutConstraint.activate([
             segmentedControl.heightAnchor.constraint(equalToConstant: 48),
             segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 4),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -4)
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -4),
+            
+            weekTeamView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
+            weekTeamView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 4),
+            weekTeamView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -4),
+            weekTeamView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
 }
 
 extension WeekTeamViewController {
     
-    @objc func segmentedValueChanged(_ sender:UISegmentedControl!) {
-       print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
+    @objc func segmentedValueChanged(_ sender: UISegmentedControl!) {
+        interactor.updateTeam(basedOn: sender.selectedSegmentIndex)
     }
     
+}
+
+extension WeekTeamViewController: WeekTeamViewProtocol {
+    
+    func clearView() {
+        weekTeamView.removeAllCards()
+    }
+    
+    func updateView(team: [WeekTeamListViewModel]) {
+        weekTeamView.setupView(with: team)
+    }
+
 }

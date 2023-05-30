@@ -22,6 +22,7 @@ final class LoginWorker: LoginWorkerProtocol {
         password: String,
         isAdm: Bool,
         _ completion: @escaping ((User?) -> Void)) {
+           
             
                 let user = User(
                     firstName: "José",
@@ -35,6 +36,7 @@ final class LoginWorker: LoginWorkerProtocol {
                         icon: UIImage(systemName: "fork.knife.circle.fill") ?? UIImage(),
                         firstActionTitle: "Confirmar".uppercased(),
                         firstActionKey: .confirmPresence(willShow: true)),
+                        rankingPosition: 8,
                     isAdm: false,
                     menuItems: getMenuItemList(isAdm: false))
             
@@ -51,32 +53,32 @@ final class LoginWorker: LoginWorkerProtocol {
         let financial = MenuItemViewModel(
             title: "Financeiro",
             icon: UIImage(systemName: "dollarsign.arrow.circlepath") ?? UIImage(),
-            redirectKey: .myData)
+            redirectKey: .financial)
         
         let calendar = MenuItemViewModel(
             title: "Agenda",
             icon: UIImage(systemName: "calendar") ?? UIImage(),
-            redirectKey: .myData)
+            redirectKey: .calendar)
         
         let chat = MenuItemViewModel(
             title: "Chat",
             icon: UIImage(systemName: "message.circle") ?? UIImage(),
-            redirectKey: .myData)
+            redirectKey: .chat)
         
         let ranking = MenuItemViewModel(
             title: "Ranking",
             icon: UIImage(systemName: "trophy.circle") ?? UIImage(),
-            redirectKey: .myData)
+            redirectKey: .ranking)
         
         let gamesHistory = MenuItemViewModel(
             title: "Jogos",
             icon: UIImage(systemName: "figure.australian.football") ?? UIImage(),
-            redirectKey: .myData)
+            redirectKey: .games)
         
         let team = MenuItemViewModel(
             title: "Time da semana",
             icon: UIImage(systemName: "tshirt") ?? UIImage(),
-            redirectKey: .myData)
+            redirectKey: .team)
         
         if !isAdm {
             return [myData, financial, calendar, chat, ranking, gamesHistory, team]

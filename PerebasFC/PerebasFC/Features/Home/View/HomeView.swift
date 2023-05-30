@@ -114,8 +114,6 @@ final class HomeView: UIView {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 UIView.animate(withDuration: 10) { [weak self] in
                     self?.userAlertView.isHidden = false
-                    
-                    //VER COMO FICA O TRANSFORM
                 }
             }
             
