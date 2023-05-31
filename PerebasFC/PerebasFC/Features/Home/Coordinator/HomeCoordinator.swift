@@ -50,12 +50,19 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
                 case .ranking:
                     return
                 case .games:
+                    self.navigationController.pushViewController(
+                        GameHistoryViewFactory.getGameHistoryViewController(
+                            navigationController: navigationController),
+                        animated: true)
                     return
+                
                 case .team:
                     guard let teams = teams else { return }
                     self.navigationController.pushViewController(
                         WeekTeamFactory.getWeekTeamViewController(teams: teams),
                         animated: true)
+                    return
+                
             }
     }
     

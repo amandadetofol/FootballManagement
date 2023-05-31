@@ -45,6 +45,15 @@
 		A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741652A2561ED009A7998 /* WeekTeamInteractor.swift */; };
 		A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741672A2562C3009A7998 /* WeekTeamPresenter.swift */; };
 		A6A7416A2A2566DA009A7998 /* WeekTeamFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741692A2566DA009A7998 /* WeekTeamFactory.swift */; };
+		A6A741752A26B39B009A7998 /* GamesHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741742A26B39B009A7998 /* GamesHistoryView.swift */; };
+		A6A741792A26B3BB009A7998 /* GamesHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741782A26B3BB009A7998 /* GamesHistoryViewController.swift */; };
+		A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7417C2A26B470009A7998 /* GameCardView.swift */; };
+		A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7417E2A26B794009A7998 /* GameCardViewModel.swift */; };
+		A6A741812A26C121009A7998 /* GamesHistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741802A26C121009A7998 /* GamesHistoryInteractor.swift */; };
+		A6A741832A26C183009A7998 /* GamesHistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741822A26C183009A7998 /* GamesHistoryWorker.swift */; };
+		A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */; };
+		A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */; };
+		A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */; };
 		A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */; };
 		A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */; };
 		A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */; };
@@ -100,6 +109,15 @@
 		A6A741652A2561ED009A7998 /* WeekTeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamInteractor.swift; sourceTree = "<group>"; };
 		A6A741672A2562C3009A7998 /* WeekTeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamPresenter.swift; sourceTree = "<group>"; };
 		A6A741692A2566DA009A7998 /* WeekTeamFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamFactory.swift; sourceTree = "<group>"; };
+		A6A741742A26B39B009A7998 /* GamesHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryView.swift; sourceTree = "<group>"; };
+		A6A741782A26B3BB009A7998 /* GamesHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryViewController.swift; sourceTree = "<group>"; };
+		A6A7417C2A26B470009A7998 /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
+		A6A7417E2A26B794009A7998 /* GameCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardViewModel.swift; sourceTree = "<group>"; };
+		A6A741802A26C121009A7998 /* GamesHistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryInteractor.swift; sourceTree = "<group>"; };
+		A6A741822A26C183009A7998 /* GamesHistoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryWorker.swift; sourceTree = "<group>"; };
+		A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryPresenter.swift; sourceTree = "<group>"; };
+		A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryCoordinator.swift; sourceTree = "<group>"; };
+		A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewFactory.swift; sourceTree = "<group>"; };
 		A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTeamCardView.swift; sourceTree = "<group>"; };
 		A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -448,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				A61A8F932A1C1D32009D08EE /* ForgotPassword */,
+				A6A7416B2A26B352009A7998 /* GamesHistory */,
 				A61A8FAA2A1C2DA8009D08EE /* Home */,
 				A61A8FB62A1C2F2D009D08EE /* InternalLink */,
 				A6033E6D2A12E390002B56EE /* Login */,
@@ -507,6 +526,86 @@
 				A6A741632A255360009A7998 /* WeekTeamListViewModel.swift */,
 			);
 			path = InternalComponent;
+			sourceTree = "<group>";
+		};
+		A6A7416B2A26B352009A7998 /* GamesHistory */ = {
+			isa = PBXGroup;
+			children = (
+				A6A741882A26C2EA009A7998 /* Coordinator */,
+				A6A741722A26B38A009A7998 /* Factory */,
+				A6A741712A26B382009A7998 /* Interactor */,
+				A6A741702A26B37A009A7998 /* InternalComponents */,
+				A6A7416F2A26B375009A7998 /* Presenter */,
+				A6A7416E2A26B372009A7998 /* View */,
+				A6A7416D2A26B36D009A7998 /* Worker */,
+			);
+			path = GamesHistory;
+			sourceTree = "<group>";
+		};
+		A6A7416D2A26B36D009A7998 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6A741822A26C183009A7998 /* GamesHistoryWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A6A7416E2A26B372009A7998 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6A741742A26B39B009A7998 /* GamesHistoryView.swift */,
+				A6A741782A26B3BB009A7998 /* GamesHistoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6A7416F2A26B375009A7998 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6A741702A26B37A009A7998 /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A6A7417A2A26B3CF009A7998 /* GameCard */,
+			);
+			path = InternalComponents;
+			sourceTree = "<group>";
+		};
+		A6A741712A26B382009A7998 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A6A741802A26C121009A7998 /* GamesHistoryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6A741722A26B38A009A7998 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A6A7417A2A26B3CF009A7998 /* GameCard */ = {
+			isa = PBXGroup;
+			children = (
+				A6A7417C2A26B470009A7998 /* GameCardView.swift */,
+				A6A7417E2A26B794009A7998 /* GameCardViewModel.swift */,
+			);
+			path = GameCard;
+			sourceTree = "<group>";
+		};
+		A6A741882A26C2EA009A7998 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		A6E0E9E32A2020BB00121515 /* CurrentTeamCard */ = {
@@ -612,12 +711,14 @@
 				A61A8F9C2A1C1E21009D08EE /* ForgotPasswordView.swift in Sources */,
 				A6E5BB3E2A1EB75500ADE47F /* MenuItemViewModel.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
+				A6A741752A26B39B009A7998 /* GamesHistoryView.swift in Sources */,
 				A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
 				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
 				A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */,
+				A6A741792A26B3BB009A7998 /* GamesHistoryViewController.swift in Sources */,
 				A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */,
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */,
@@ -631,19 +732,26 @@
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
+				A6A741832A26C183009A7998 /* GamesHistoryWorker.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */,
 				A6A7416A2A2566DA009A7998 /* WeekTeamFactory.swift in Sources */,
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
 				A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */,
 				A61A8F9F2A1C20FA009D08EE /* ForgotPasswordViewController.swift in Sources */,
 				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
+				A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */,
 				A680E10A2A24109F008FA008 /* Team.swift in Sources */,
+				A6A741812A26C121009A7998 /* GamesHistoryInteractor.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
+				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
+				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
 				A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */,
 				A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */,
 				A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */,
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
+				A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */,
 				A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */,
 				A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */,
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,

@@ -73,6 +73,7 @@ final class WeekTeamView: UIView {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(itemsStackView)
+        backgroundColor = .white
     }
     
     private func setupConstraints(){
