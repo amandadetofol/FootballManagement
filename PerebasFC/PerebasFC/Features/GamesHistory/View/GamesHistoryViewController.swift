@@ -16,8 +16,7 @@ final class GamesHistoryViewController: UIViewController {
     
     private let gamesHistoryView: GamesHistoryView = {
         let view = GamesHistoryView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
+   
         return view
     }()
     
@@ -26,30 +25,19 @@ final class GamesHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor.viewDidLoad()
-        view.addSubview(gamesHistoryView)
-        setupConstraints()
+        self.view = gamesHistoryView
+        self.title = "Histórico de Jogos"
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     init(interactor: GamesHistoryInteractorProtocol){
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
-        self.title = "Histórico de Jogos"
-        self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.isHidden = false
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupConstraints(){
-        NSLayoutConstraint.activate([
-            gamesHistoryView.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            gamesHistoryView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            gamesHistoryView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            gamesHistoryView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
     }
     
 }

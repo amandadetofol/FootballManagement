@@ -52,6 +52,7 @@ final class WeekTeamViewController: UIViewController {
         setupSegmentedControl()
         setupNavigationController()
         interactor.updateTeam(basedOn: 0)
+        view.backgroundColor = .white
     }
     
     private func setupNavigationController(){

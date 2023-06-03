@@ -33,9 +33,9 @@ final class GamesHistoryView: UIView {
         stackView.isAccessibilityElement = false
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 16
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 0, bottom: -16, right: 0)
+        stackView.spacing = 64
         stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: 64, left: 0, bottom: -16, right: 0)
         stackView.isUserInteractionEnabled = true
         
         return stackView
@@ -45,6 +45,7 @@ final class GamesHistoryView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
+        backgroundColor = .white
     }
     
     @available(*, unavailable)
@@ -74,13 +75,14 @@ final class GamesHistoryView: UIView {
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
         
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32),
             
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.widthAnchor.constraint(equalTo: self.widthAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -32),
         ])
     }

@@ -48,7 +48,12 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
                 case .chat:
                     return
                 case .ranking:
+                self.navigationController.pushViewController(
+                    RankingFactory.getRankingViewController(
+                        navigationController: navigationController),
+                    animated: true)
                     return
+                
                 case .games:
                     self.navigationController.pushViewController(
                         GameHistoryViewFactory.getGameHistoryViewController(

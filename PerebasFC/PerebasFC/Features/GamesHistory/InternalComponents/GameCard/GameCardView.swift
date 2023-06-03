@@ -14,7 +14,6 @@ final class GameCardView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
         view.clipsToBounds = true
-        view.layer.cornerRadius = 8
         view.isAccessibilityElement = false
         
         return view
@@ -25,7 +24,6 @@ final class GameCardView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.clipsToBounds = true
-        view.layer.cornerRadius = 8
         view.isAccessibilityElement = false
         
         return view
@@ -36,7 +34,7 @@ final class GameCardView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 18.0)
+        label.font = UIFont.boldSystemFont(ofSize: 38.0)
         label.isAccessibilityElement = false
         
         return label
@@ -59,7 +57,7 @@ final class GameCardView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 18.0)
+        label.font = UIFont.boldSystemFont(ofSize: 38.0)
         label.isAccessibilityElement = false
         
         return label
@@ -70,8 +68,7 @@ final class GameCardView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.text = "X"
-        label.font = UIFont.systemFont(ofSize: 16.0)
+        label.font = UIFont.boldSystemFont(ofSize: 24.0)
         label.isAccessibilityElement = false
         
         return label
@@ -120,6 +117,7 @@ final class GameCardView: UIView {
             label.leadingAnchor.constraint(equalTo: goalsStackView.leadingAnchor).isActive = true
             label.trailingAnchor.constraint(equalTo: goalsStackView.trailingAnchor).isActive = true
         }
+        backgroundColor = .systemYellow.withAlphaComponent(0.10)
     }
     
     private func setupView(){
@@ -136,19 +134,22 @@ final class GameCardView: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 108),
+            heightAnchor.constraint(equalToConstant: 200),
             
-            blackTeamViewColorIndicator.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            gameDateLabel.topAnchor.constraint(equalTo: topAnchor, constant: -28),
+            gameDateLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            
+            blackTeamViewColorIndicator.topAnchor.constraint(equalTo: topAnchor),
             blackTeamViewColorIndicator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-            blackTeamViewColorIndicator.heightAnchor.constraint(equalToConstant: 16),
+            blackTeamViewColorIndicator.heightAnchor.constraint(equalTo: self.heightAnchor),
             blackTeamViewColorIndicator.widthAnchor.constraint(equalToConstant: 16),
             
             blackTeamScoreLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             blackTeamScoreLabel.leadingAnchor.constraint(equalTo: blackTeamViewColorIndicator.trailingAnchor, constant: 16),
         
-            whiteTeamViewColorIndicator.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            whiteTeamViewColorIndicator.topAnchor.constraint(equalTo: topAnchor),
             whiteTeamViewColorIndicator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
-            whiteTeamViewColorIndicator.heightAnchor.constraint(equalToConstant: 16),
+            whiteTeamViewColorIndicator.heightAnchor.constraint(equalTo: self.heightAnchor),
             whiteTeamViewColorIndicator.widthAnchor.constraint(equalToConstant: 16),
             
             whiteTeamScoreLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
@@ -158,13 +159,10 @@ final class GameCardView: UIView {
             versusLabel.leadingAnchor.constraint(equalTo: blackTeamScoreLabel.leadingAnchor),
             versusLabel.trailingAnchor.constraint(equalTo: whiteTeamScoreLabel.leadingAnchor),
             
-            goalsStackView.topAnchor.constraint(equalTo: whiteTeamScoreLabel.bottomAnchor, constant: 16),
+            goalsStackView.topAnchor.constraint(equalTo: whiteTeamScoreLabel.bottomAnchor),
             goalsStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             goalsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             goalsStackView.widthAnchor.constraint(equalTo: widthAnchor),
-            
-            gameDateLabel.topAnchor.constraint(equalTo: goalsStackView.bottomAnchor),
-            gameDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
     

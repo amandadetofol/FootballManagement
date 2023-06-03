@@ -260,16 +260,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5BD7D26B-857D-4626-AEB5-D0ABC51F9DC7"
+            uuid = "273ED075-F05E-4C59-B692-DFA800CE96ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/Home/View/HomeViewController.swift"
+            filePath = "PerebasFC/Features/GamesHistory/Interactor/GamesHistoryInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "handleInternalLinkRedirect(key:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "273ED075-F05E-4C59-B692-DFA800CE96ED - da4cea46103f0253"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.GamesHistoryInteractor.viewDidLoad() -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/GamesHistory/Interactor/GamesHistoryInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "273ED075-F05E-4C59-B692-DFA800CE96ED - f07075a944b9140d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;PerebasFC.Game&gt;&gt;) -&gt; () in PerebasFC.GamesHistoryInteractor.viewDidLoad() -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/GamesHistory/Interactor/GamesHistoryInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB6BD607-33BE-4C0A-AE98-30FF3CAFBC4F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/GamesHistory/Interactor/GamesHistoryInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64F2876A-D6BF-49D4-B15D-32714E99FCDF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/GamesHistory/Interactor/GamesHistoryInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59F5ACBF-E81A-469F-B116-667CFA896DBD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/GamesHistory/View/GamesHistoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "updateView(using:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

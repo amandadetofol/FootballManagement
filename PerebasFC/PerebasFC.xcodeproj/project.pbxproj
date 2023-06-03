@@ -40,6 +40,15 @@
 		A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */; };
 		A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10D2A2410EF008FA008 /* WeekTeamView.swift */; };
 		A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10F2A241392008FA008 /* WeekTeamViewController.swift */; };
+		A6993E0F2A2BA10500C2BDE3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E0E2A2BA10500C2BDE3 /* UIColor.swift */; };
+		A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E102A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift */; };
+		A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E132A2BA5B400C2BDE3 /* RankingViewModel.swift */; };
+		A6993E162A2BA60700C2BDE3 /* CommonnPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E152A2BA60700C2BDE3 /* CommonnPlacesViewModel.swift */; };
+		A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E172A2BB53B00C2BDE3 /* RankingInteractor.swift */; };
+		A6993E1A2A2BB5A700C2BDE3 /* RankingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E192A2BB5A700C2BDE3 /* RankingWorker.swift */; };
+		A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E1B2A2BBB5C00C2BDE3 /* RankingPresenter.swift */; };
+		A6993E1F2A2BBCC300C2BDE3 /* RankingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E1E2A2BBCC300C2BDE3 /* RankingCoordinator.swift */; };
+		A6993E212A2BBEF900C2BDE3 /* RankingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E202A2BBEF900C2BDE3 /* RankingFactory.swift */; };
 		A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741602A2550FF009A7998 /* WeekTeamListItemView.swift */; };
 		A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741632A255360009A7998 /* WeekTeamListViewModel.swift */; };
 		A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741652A2561ED009A7998 /* WeekTeamInteractor.swift */; };
@@ -54,6 +63,13 @@
 		A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */; };
 		A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */; };
 		A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */; };
+		A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD56F2A29394B00A37696 /* RankingViewController.swift */; };
+		A6CFD5732A29395900A37696 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD5722A29395900A37696 /* RankingView.swift */; };
+		A6CFD5762A29397C00A37696 /* FirstPlacesGiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD5752A29397C00A37696 /* FirstPlacesGiftsView.swift */; };
+		A6CFD57B2A2939FD00A37696 /* FirstPlacesDifferentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD57A2A2939FD00A37696 /* FirstPlacesDifferentView.swift */; };
+		A6CFD57D2A293A0600A37696 /* CommonnPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD57C2A293A0600A37696 /* CommonnPlacesView.swift */; };
+		A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD57E2A293A8500A37696 /* BarAndThrophyView.swift */; };
+		A6CFD5832A293EAF00A37696 /* BarAndTrophyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD5822A293EAF00A37696 /* BarAndTrophyViewModel.swift */; };
 		A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */; };
 		A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */; };
 		A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */; };
@@ -104,6 +120,15 @@
 		A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewModel.swift; sourceTree = "<group>"; };
 		A680E10D2A2410EF008FA008 /* WeekTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamView.swift; sourceTree = "<group>"; };
 		A680E10F2A241392008FA008 /* WeekTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewController.swift; sourceTree = "<group>"; };
+		A6993E0E2A2BA10500C2BDE3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A6993E102A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlaceGiftsViewModel.swift; sourceTree = "<group>"; };
+		A6993E132A2BA5B400C2BDE3 /* RankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewModel.swift; sourceTree = "<group>"; };
+		A6993E152A2BA60700C2BDE3 /* CommonnPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonnPlacesViewModel.swift; sourceTree = "<group>"; };
+		A6993E172A2BB53B00C2BDE3 /* RankingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingInteractor.swift; sourceTree = "<group>"; };
+		A6993E192A2BB5A700C2BDE3 /* RankingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingWorker.swift; sourceTree = "<group>"; };
+		A6993E1B2A2BBB5C00C2BDE3 /* RankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPresenter.swift; sourceTree = "<group>"; };
+		A6993E1E2A2BBCC300C2BDE3 /* RankingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCoordinator.swift; sourceTree = "<group>"; };
+		A6993E202A2BBEF900C2BDE3 /* RankingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFactory.swift; sourceTree = "<group>"; };
 		A6A741602A2550FF009A7998 /* WeekTeamListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamListItemView.swift; sourceTree = "<group>"; };
 		A6A741632A255360009A7998 /* WeekTeamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamListViewModel.swift; sourceTree = "<group>"; };
 		A6A741652A2561ED009A7998 /* WeekTeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamInteractor.swift; sourceTree = "<group>"; };
@@ -118,6 +143,13 @@
 		A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryPresenter.swift; sourceTree = "<group>"; };
 		A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryCoordinator.swift; sourceTree = "<group>"; };
 		A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewFactory.swift; sourceTree = "<group>"; };
+		A6CFD56F2A29394B00A37696 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		A6CFD5722A29395900A37696 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		A6CFD5752A29397C00A37696 /* FirstPlacesGiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlacesGiftsView.swift; sourceTree = "<group>"; };
+		A6CFD57A2A2939FD00A37696 /* FirstPlacesDifferentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlacesDifferentView.swift; sourceTree = "<group>"; };
+		A6CFD57C2A293A0600A37696 /* CommonnPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonnPlacesView.swift; sourceTree = "<group>"; };
+		A6CFD57E2A293A8500A37696 /* BarAndThrophyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarAndThrophyView.swift; sourceTree = "<group>"; };
+		A6CFD5822A293EAF00A37696 /* BarAndTrophyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarAndTrophyViewModel.swift; sourceTree = "<group>"; };
 		A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTeamCardView.swift; sourceTree = "<group>"; };
 		A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -273,6 +305,7 @@
 			children = (
 				A61A8F7B2A14327E009D08EE /* UIView.swift */,
 				A6E5BB372A1D8CCA00ADE47F /* UIStackView.swift */,
+				A6993E0E2A2BA10500C2BDE3 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -470,6 +503,7 @@
 				A61A8FAA2A1C2DA8009D08EE /* Home */,
 				A61A8FB62A1C2F2D009D08EE /* InternalLink */,
 				A6033E6D2A12E390002B56EE /* Login */,
+				A6CFD5672A2938B700A37696 /* Ranking */,
 				A6033E762A12E579002B56EE /* Utils */,
 				A6033E682A12DF19002B56EE /* Welcome */,
 				A680E1002A24103D008FA008 /* WeekTeam */,
@@ -517,6 +551,22 @@
 				A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A6993E122A2BA5A600C2BDE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E132A2BA5B400C2BDE3 /* RankingViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6993E1D2A2BBCB800C2BDE3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E1E2A2BBCC300C2BDE3 /* RankingCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		A6A7415F2A2550EB009A7998 /* InternalComponent */ = {
@@ -606,6 +656,108 @@
 				A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6CFD5672A2938B700A37696 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E1D2A2BBCB800C2BDE3 /* Coordinator */,
+				A6CFD56D2A2938E500A37696 /* Factory */,
+				A6993E122A2BA5A600C2BDE3 /* Model */,
+				A6CFD56B2A2938D900A37696 /* Interactor */,
+				A6CFD5742A29396000A37696 /* InternalComponents */,
+				A6CFD56A2A2938D500A37696 /* Presenter */,
+				A6CFD5692A2938D100A37696 /* View */,
+				A6CFD5682A2938CC00A37696 /* Worker */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		A6CFD5682A2938CC00A37696 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E192A2BB5A700C2BDE3 /* RankingWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A6CFD5692A2938D100A37696 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFD5722A29395900A37696 /* RankingView.swift */,
+				A6CFD56F2A29394B00A37696 /* RankingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6CFD56A2A2938D500A37696 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E1B2A2BBB5C00C2BDE3 /* RankingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6CFD56B2A2938D900A37696 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E172A2BB53B00C2BDE3 /* RankingInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6CFD56D2A2938E500A37696 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E202A2BBEF900C2BDE3 /* RankingFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A6CFD5742A29396000A37696 /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFD5802A293E8100A37696 /* BarAndTrophy */,
+				A6CFD5792A2939DD00A37696 /* CommonnPlaces */,
+				A6CFD5782A2939CE00A37696 /* FirstPlacesDifferent */,
+				A6CFD5772A2939C200A37696 /* FirstPlaceGift */,
+			);
+			path = InternalComponents;
+			sourceTree = "<group>";
+		};
+		A6CFD5772A2939C200A37696 /* FirstPlaceGift */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFD5752A29397C00A37696 /* FirstPlacesGiftsView.swift */,
+				A6993E102A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift */,
+			);
+			path = FirstPlaceGift;
+			sourceTree = "<group>";
+		};
+		A6CFD5782A2939CE00A37696 /* FirstPlacesDifferent */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFD57A2A2939FD00A37696 /* FirstPlacesDifferentView.swift */,
+			);
+			path = FirstPlacesDifferent;
+			sourceTree = "<group>";
+		};
+		A6CFD5792A2939DD00A37696 /* CommonnPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFD57C2A293A0600A37696 /* CommonnPlacesView.swift */,
+				A6993E152A2BA60700C2BDE3 /* CommonnPlacesViewModel.swift */,
+			);
+			path = CommonnPlaces;
+			sourceTree = "<group>";
+		};
+		A6CFD5802A293E8100A37696 /* BarAndTrophy */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFD57E2A293A8500A37696 /* BarAndThrophyView.swift */,
+				A6CFD5822A293EAF00A37696 /* BarAndTrophyViewModel.swift */,
+			);
+			path = BarAndTrophy;
 			sourceTree = "<group>";
 		};
 		A6E0E9E32A2020BB00121515 /* CurrentTeamCard */ = {
@@ -713,20 +865,25 @@
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
 				A6A741752A26B39B009A7998 /* GamesHistoryView.swift in Sources */,
 				A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */,
+				A6993E1F2A2BBCC300C2BDE3 /* RankingCoordinator.swift in Sources */,
+				A6993E0F2A2BA10500C2BDE3 /* UIColor.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
 				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
 				A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */,
 				A6A741792A26B3BB009A7998 /* GamesHistoryViewController.swift in Sources */,
+				A6CFD57D2A293A0600A37696 /* CommonnPlacesView.swift in Sources */,
 				A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */,
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */,
+				A6CFD57B2A2939FD00A37696 /* FirstPlacesDifferentView.swift in Sources */,
 				A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */,
 				A6E5BB322A1D893A00ADE47F /* UserAlertWarningViewModel.swift in Sources */,
 				A61A8F862A143668009D08EE /* LoginWorker.swift in Sources */,
 				A61A8FB52A1C2E2B009D08EE /* UserModel.swift in Sources */,
 				A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */,
+				A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */,
 				A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */,
 				A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */,
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
@@ -745,17 +902,28 @@
 				A6A741812A26C121009A7998 /* GamesHistoryInteractor.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
+				A6993E212A2BBEF900C2BDE3 /* RankingFactory.swift in Sources */,
+				A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */,
 				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
 				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
+				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
+				A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */,
 				A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */,
 				A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */,
+				A6CFD5832A293EAF00A37696 /* BarAndTrophyViewModel.swift in Sources */,
 				A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */,
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
 				A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */,
+				A6993E1A2A2BB5A700C2BDE3 /* RankingWorker.swift in Sources */,
+				A6CFD5762A29397C00A37696 /* FirstPlacesGiftsView.swift in Sources */,
 				A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */,
 				A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */,
+				A6993E162A2BA60700C2BDE3 /* CommonnPlacesViewModel.swift in Sources */,
+				A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */,
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
+				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
+				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
 				A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */,
