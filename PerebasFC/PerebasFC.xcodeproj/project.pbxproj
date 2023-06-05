@@ -49,6 +49,15 @@
 		A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E1B2A2BBB5C00C2BDE3 /* RankingPresenter.swift */; };
 		A6993E1F2A2BBCC300C2BDE3 /* RankingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E1E2A2BBCC300C2BDE3 /* RankingCoordinator.swift */; };
 		A6993E212A2BBEF900C2BDE3 /* RankingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E202A2BBEF900C2BDE3 /* RankingFactory.swift */; };
+		A6993E2C2A2BFB0100C2BDE3 /* PersonalInformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E2B2A2BFB0100C2BDE3 /* PersonalInformationsView.swift */; };
+		A6993E2F2A2BFB1900C2BDE3 /* PersonalInformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E2E2A2BFB1900C2BDE3 /* PersonalInformationsViewController.swift */; };
+		A6993E312A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E302A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift */; };
+		A6993E332A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E322A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift */; };
+		A6993E352A2BFB4300C2BDE3 /* PersonalInformationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E342A2BFB4300C2BDE3 /* PersonalInformationsInteractor.swift */; };
+		A6993E372A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E362A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift */; };
+		A6993E392A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E382A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift */; };
+		A6993E3B2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E3A2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift */; };
+		A6993E3E2A2E99D500C2BDE3 /* PickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E3D2A2E99D500C2BDE3 /* PickerComponent.swift */; };
 		A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741602A2550FF009A7998 /* WeekTeamListItemView.swift */; };
 		A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741632A255360009A7998 /* WeekTeamListViewModel.swift */; };
 		A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741652A2561ED009A7998 /* WeekTeamInteractor.swift */; };
@@ -129,6 +138,15 @@
 		A6993E1B2A2BBB5C00C2BDE3 /* RankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPresenter.swift; sourceTree = "<group>"; };
 		A6993E1E2A2BBCC300C2BDE3 /* RankingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCoordinator.swift; sourceTree = "<group>"; };
 		A6993E202A2BBEF900C2BDE3 /* RankingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFactory.swift; sourceTree = "<group>"; };
+		A6993E2B2A2BFB0100C2BDE3 /* PersonalInformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsView.swift; sourceTree = "<group>"; };
+		A6993E2E2A2BFB1900C2BDE3 /* PersonalInformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsViewController.swift; sourceTree = "<group>"; };
+		A6993E302A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsWorker.swift; sourceTree = "<group>"; };
+		A6993E322A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsPresenter.swift; sourceTree = "<group>"; };
+		A6993E342A2BFB4300C2BDE3 /* PersonalInformationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsInteractor.swift; sourceTree = "<group>"; };
+		A6993E362A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsViewModel.swift; sourceTree = "<group>"; };
+		A6993E382A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsFactory.swift; sourceTree = "<group>"; };
+		A6993E3A2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsCoordinator.swift; sourceTree = "<group>"; };
+		A6993E3D2A2E99D500C2BDE3 /* PickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerComponent.swift; sourceTree = "<group>"; };
 		A6A741602A2550FF009A7998 /* WeekTeamListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamListItemView.swift; sourceTree = "<group>"; };
 		A6A741632A255360009A7998 /* WeekTeamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamListViewModel.swift; sourceTree = "<group>"; };
 		A6A741652A2561ED009A7998 /* WeekTeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamInteractor.swift; sourceTree = "<group>"; };
@@ -286,6 +304,7 @@
 		A6033E772A12E57E002B56EE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A6993E3C2A2E99C800C2BDE3 /* PickerComponent */,
 				A61A8F8E2A144178009D08EE /* ErrorComponent */,
 				A6033E782A12E590002B56EE /* TextFieldComponent */,
 			);
@@ -503,6 +522,7 @@
 				A61A8FAA2A1C2DA8009D08EE /* Home */,
 				A61A8FB62A1C2F2D009D08EE /* InternalLink */,
 				A6033E6D2A12E390002B56EE /* Login */,
+				A6993E222A2BF9E900C2BDE3 /* PersonalInformation */,
 				A6CFD5672A2938B700A37696 /* Ranking */,
 				A6033E762A12E579002B56EE /* Utils */,
 				A6033E682A12DF19002B56EE /* Welcome */,
@@ -567,6 +587,85 @@
 				A6993E1E2A2BBCC300C2BDE3 /* RankingCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6993E222A2BF9E900C2BDE3 /* PersonalInformation */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E2A2A2BFA2E00C2BDE3 /* Coordinator */,
+				A6993E292A2BFA2700C2BDE3 /* Factory */,
+				A6993E282A2BFA2300C2BDE3 /* Model */,
+				A6993E272A2BFA1D00C2BDE3 /* Interactor */,
+				A6993E252A2BFA1100C2BDE3 /* Presenter */,
+				A6993E242A2BFA0D00C2BDE3 /* View */,
+				A6993E232A2BFA0600C2BDE3 /* Worker */,
+			);
+			path = PersonalInformation;
+			sourceTree = "<group>";
+		};
+		A6993E232A2BFA0600C2BDE3 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E302A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A6993E242A2BFA0D00C2BDE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E2B2A2BFB0100C2BDE3 /* PersonalInformationsView.swift */,
+				A6993E2E2A2BFB1900C2BDE3 /* PersonalInformationsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6993E252A2BFA1100C2BDE3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E322A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6993E272A2BFA1D00C2BDE3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E342A2BFB4300C2BDE3 /* PersonalInformationsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6993E282A2BFA2300C2BDE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E362A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6993E292A2BFA2700C2BDE3 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E382A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A6993E2A2A2BFA2E00C2BDE3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E3A2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6993E3C2A2E99C800C2BDE3 /* PickerComponent */ = {
+			isa = PBXGroup;
+			children = (
+				A6993E3D2A2E99D500C2BDE3 /* PickerComponent.swift */,
+			);
+			path = PickerComponent;
 			sourceTree = "<group>";
 		};
 		A6A7415F2A2550EB009A7998 /* InternalComponent */ = {
@@ -864,6 +963,7 @@
 				A6E5BB3E2A1EB75500ADE47F /* MenuItemViewModel.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
 				A6A741752A26B39B009A7998 /* GamesHistoryView.swift in Sources */,
+				A6993E3B2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift in Sources */,
 				A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */,
 				A6993E1F2A2BBCC300C2BDE3 /* RankingCoordinator.swift in Sources */,
 				A6993E0F2A2BA10500C2BDE3 /* UIColor.swift in Sources */,
@@ -871,10 +971,12 @@
 				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
+				A6993E372A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift in Sources */,
 				A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */,
 				A6A741792A26B3BB009A7998 /* GamesHistoryViewController.swift in Sources */,
 				A6CFD57D2A293A0600A37696 /* CommonnPlacesView.swift in Sources */,
 				A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */,
+				A6993E2F2A2BFB1900C2BDE3 /* PersonalInformationsViewController.swift in Sources */,
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */,
 				A6CFD57B2A2939FD00A37696 /* FirstPlacesDifferentView.swift in Sources */,
@@ -882,6 +984,7 @@
 				A6E5BB322A1D893A00ADE47F /* UserAlertWarningViewModel.swift in Sources */,
 				A61A8F862A143668009D08EE /* LoginWorker.swift in Sources */,
 				A61A8FB52A1C2E2B009D08EE /* UserModel.swift in Sources */,
+				A6993E3E2A2E99D500C2BDE3 /* PickerComponent.swift in Sources */,
 				A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */,
 				A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */,
 				A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */,
@@ -889,11 +992,14 @@
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
+				A6993E392A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift in Sources */,
 				A6A741832A26C183009A7998 /* GamesHistoryWorker.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A6993E2C2A2BFB0100C2BDE3 /* PersonalInformationsView.swift in Sources */,
 				A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */,
 				A6A7416A2A2566DA009A7998 /* WeekTeamFactory.swift in Sources */,
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
+				A6993E312A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift in Sources */,
 				A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */,
 				A61A8F9F2A1C20FA009D08EE /* ForgotPasswordViewController.swift in Sources */,
 				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
@@ -908,6 +1014,7 @@
 				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
 				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
 				A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */,
+				A6993E352A2BFB4300C2BDE3 /* PersonalInformationsInteractor.swift in Sources */,
 				A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */,
 				A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */,
 				A6CFD5832A293EAF00A37696 /* BarAndTrophyViewModel.swift in Sources */,
@@ -924,6 +1031,7 @@
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
 				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
+				A6993E332A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift in Sources */,
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
 				A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */,
