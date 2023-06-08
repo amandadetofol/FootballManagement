@@ -51,6 +51,7 @@ final class PersonalInformationsView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Nome"
         textField.isUserInteractionEnabled = false
+        textField.title = "Nome"
         
         return textField
     }()
@@ -60,6 +61,7 @@ final class PersonalInformationsView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Sobrenome"
         textField.isUserInteractionEnabled = false
+        textField.title = "Sobrenome"
         
         return textField
     }()
@@ -71,23 +73,27 @@ final class PersonalInformationsView: UIView {
         
         return datePicker
     }()
+
     
-    private lazy var shirtNumberPicker: PickerComponent = {
-        let picker = PickerComponent()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.pickerOptions = ["1","2","3","4","5","6","7","8","9","10"]
-        picker.isUserInteractionEnabled = false
+    private lazy var shirtNumberTextField: TextFieldComponent = {
+        let textField = TextFieldComponent()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Número da camisa"
+        textField.isUserInteractionEnabled = false
+        textField.title = "Número da camisa"
         
-        return picker
+        return textField
     }()
     
-    private lazy var userTypePicker: PickerComponent = {
-        let picker = PickerComponent()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.pickerOptions = ["Jogador", "Goleiro", "Participante"]
-        picker.isUserInteractionEnabled = false
+    
+    private lazy var userTypeTextField: TextFieldComponent = {
+        let textField = TextFieldComponent()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Tipo de participante"
+        textField.isUserInteractionEnabled = false
+        textField.title = "Tipo de participante"
         
-        return picker
+        return textField
     }()
     
     private lazy var medicalInsuranceTextField: TextFieldComponent = {
@@ -95,6 +101,7 @@ final class PersonalInformationsView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Convênio"
         textField.isUserInteractionEnabled = false
+        textField.title = "Convênio"
         
         return textField
     }()
@@ -104,6 +111,7 @@ final class PersonalInformationsView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Telefone em caso de emergência"
         textField.isUserInteractionEnabled = false
+        textField.title = "Telefone em caso de emergência"
         
         return textField
     }()
@@ -149,12 +157,20 @@ final class PersonalInformationsView: UIView {
         }
     }
     
+    func disableEdition(){
+        DispatchQueue.main.async {
+            self.stackView.arrangedSubviews.forEach { view in
+                view.isUserInteractionEnabled = false 
+            }
+        }
+    }
+    
     func updateView(with model: PersonalInformationsViewModel){
         userNameTextField.text = model.name
         lastNameTextField.text = model.lastName
         birthDatePicker.date = model.birthDate
-        shirtNumberPicker.selectRow(0, inComponent: 0, animated: true)
-        userTypePicker.selectRow(0, inComponent: 0, animated: true)
+        userTypeTextField.text = model.type.rawValue
+        shirtNumberTextField.text = model.shirtNumber
         medicalInsuranceTextField.text = model.medicalInsurance
         emergencyPhoneNumberTextField.text = model.emergencyPhoneNumber
     }
@@ -168,8 +184,8 @@ final class PersonalInformationsView: UIView {
             userNameTextField,
             lastNameTextField,
             birthDatePicker,
-            shirtNumberPicker,
-            userTypePicker,
+            shirtNumberTextField,
+            userTypeTextField,
             medicalInsuranceTextField,
             emergencyPhoneNumberTextField])
         backgroundColor = .white
@@ -177,7 +193,7 @@ final class PersonalInformationsView: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -190,18 +206,17 @@ final class PersonalInformationsView: UIView {
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -96),
             stackView.widthAnchor.constraint(equalTo: widthAnchor),
             
-            buttonBackgroundView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            buttonBackgroundView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            buttonBackgroundView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            buttonBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            buttonBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            buttonBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
             buttonBackgroundView.heightAnchor.constraint(equalToConstant: 96),
             
-            changePasswordButton.centerXAnchor.constraint(equalTo: buttonBackgroundView.centerXAnchor),
-            changePasswordButton.centerYAnchor.constraint(equalTo: buttonBackgroundView.centerYAnchor),
             changePasswordButton.leadingAnchor.constraint(equalTo: buttonBackgroundView.leadingAnchor, constant: 16),
             changePasswordButton.trailingAnchor.constraint(equalTo: buttonBackgroundView.trailingAnchor, constant: -16),
+            changePasswordButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
             changePasswordButton.heightAnchor.constraint(equalToConstant: 48),
             
             userNameTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
@@ -213,11 +228,11 @@ final class PersonalInformationsView: UIView {
             birthDatePicker.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             birthDatePicker.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
-            shirtNumberPicker.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
-            shirtNumberPicker.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            shirtNumberTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
+            shirtNumberTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
-            userTypePicker.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
-            userTypePicker.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            userTypeTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
+            userTypeTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
             medicalInsuranceTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             medicalInsuranceTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),

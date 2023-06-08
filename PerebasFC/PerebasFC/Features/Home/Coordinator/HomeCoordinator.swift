@@ -40,7 +40,12 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
                 case .confirmPresence(let willShow):
                     return
                 case .myData:
+                self.navigationController.pushViewController(
+                    PersonalInformationsFactory.getPersonalInformationsViewController(
+                        navigationController: navigationController),
+                    animated: true)
                     return
+                
                 case .financial:
                     return
                 case .calendar:

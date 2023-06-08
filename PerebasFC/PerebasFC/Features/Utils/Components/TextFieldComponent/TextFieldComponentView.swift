@@ -30,7 +30,7 @@ final class TextFieldComponent: UIView {
     
     var text: String {
         get { return textField.text ?? String()}
-        set { textField.text = text }
+        set { textField.text = newValue }
     }
     
     var placeholder: String = "" {
@@ -38,6 +38,25 @@ final class TextFieldComponent: UIView {
             textField.placeholder = placeholder
         }
     }
+    
+    var title: String = "" {
+        didSet {
+            titleLabel.text = title 
+            titleLabel.isHidden = false 
+        }
+    }
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.isHidden = true
+        
+        return label
+    }()
     
     private lazy var contentStackView: UIStackView = {
         let stackView = UIStackView()
@@ -85,6 +104,7 @@ final class TextFieldComponent: UIView {
     
     private func setupView(){
         addSubview(contentStackView)
+        contentStackView.addArrangedSubview(titleLabel)
         contentStackView.addArrangedSubview(textField)
         contentStackView.addArrangedSubview(errorLabel)
     }
@@ -102,6 +122,9 @@ final class TextFieldComponent: UIView {
             
             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
     }
     
