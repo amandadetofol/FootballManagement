@@ -18,7 +18,18 @@ struct ChatItemViewModel {
 
 struct Chat {
     let messageId: String
-    let sender: User
+    let sender: UserChat
     let text: String
     let timestamp: Date
+    let myId: String 
+    var wasRead: Bool = false
+   
+    var isMyMessage: Bool {
+        get { return sender.id != myId }
+    }
+}
+
+struct UserChat {
+    let id: String
+    let fullName: String 
 }

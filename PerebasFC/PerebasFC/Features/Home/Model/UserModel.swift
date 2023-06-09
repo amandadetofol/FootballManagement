@@ -8,6 +8,7 @@
 import UIKit
 
 struct User {
+    let id: String 
     let firstName: String
     let lastName: String
     let shirtNumber: String

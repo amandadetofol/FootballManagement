@@ -22,12 +22,10 @@ final class ChatMainWorker: ChatMainWorkerProtocol {
             numberOfNotifications: 1,
             chat: [Chat(
                 messageId: "01",
-                sender: User(
-                    firstName: "John",
-                    lastName: "Doe",
-                    shirtNumber: "10", position: "Forward", team: "Red Team", warning: nil, rankingPosition: 1, isAdm: true, menuItems: []),
+                sender: UserChat(id: "03", fullName: "José Bezerra"),
                 text: "Tudo bem?",
-                timestamp: Date())])
+                timestamp: Date(),
+                myId: "00")])
         
         let mock2 = ChatItemViewModel(
             initials: "MK",
@@ -37,9 +35,10 @@ final class ChatMainWorker: ChatMainWorkerProtocol {
             numberOfNotifications: 1,
             chat: [Chat(
                 messageId: "01",
-                sender: User(firstName: "John", lastName: "Doe", shirtNumber: "10", position: "Forward", team: "Red Team", warning: nil, rankingPosition: 1, isAdm: true, menuItems: []),
+                sender: UserChat(id: "03", fullName: "José Bezerra"),
                 text: "Tudo bem?",
-                timestamp: Date())])
+                timestamp: Date(),
+                myId: "02")])
         
         let mock3 = ChatItemViewModel(
             initials: "MK",
@@ -49,9 +48,10 @@ final class ChatMainWorker: ChatMainWorkerProtocol {
             numberOfNotifications: 1,
             chat: [Chat(
                 messageId: "01",
-                sender: User(firstName: "John", lastName: "Doe", shirtNumber: "10", position: "Forward", team: "Red Team", warning: nil, rankingPosition: 1, isAdm: true, menuItems: []),
+                sender: UserChat(id: "03", fullName: "José Bezerra"),
                 text: "Tudo bem?",
-                timestamp: Date())])
+                timestamp: Date(),
+                myId: "03")])
         
         completion([mock1, mock2, mock3])
     }

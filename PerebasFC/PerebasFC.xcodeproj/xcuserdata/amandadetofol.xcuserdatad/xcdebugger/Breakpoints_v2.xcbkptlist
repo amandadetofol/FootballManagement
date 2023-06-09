@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "68A7B5B0-424E-4D64-BACE-2F6B4BAC5FCB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Login/Interactor/LoginInteractor.swift"
@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F5BB476C-063E-4AAF-8784-3A05D305CDB6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Utils/Components/ErrorComponent/ErrorComponentViewController.swift"
@@ -149,7 +149,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F2E59895-A8A6-4819-B147-6ED848F9219E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Login/Coordinator/LoginCoordinator.swift"
@@ -165,7 +165,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CE415179-3921-490E-8E6B-FB0B1738A6BD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Home/Interactor/HomeInteractor.swift"
@@ -181,7 +181,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AEDA66CC-C28C-4624-8762-FFC6FA5BDAE3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Home/Interactor/HomeInteractor.swift"
@@ -197,7 +197,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B7756766-7F64-4399-83F8-91AC9436EC94"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Home/Interactor/HomeInteractor.swift"
@@ -213,7 +213,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EC7807F9-4B4E-4DDA-8054-840807730F4E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Home/View/HomeView.swift"
@@ -261,7 +261,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "273ED075-F05E-4C59-B692-DFA800CE96ED"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Features/GamesHistory/Interactor/GamesHistoryInteractor.swift"

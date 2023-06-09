@@ -23,8 +23,8 @@ final class LoginWorker: LoginWorkerProtocol {
         isAdm: Bool,
         _ completion: @escaping ((User?) -> Void)) {
            
-            
                 let user = User(
+                    id: "01",
                     firstName: "José",
                     lastName: "Maria",
                     shirtNumber: "08",

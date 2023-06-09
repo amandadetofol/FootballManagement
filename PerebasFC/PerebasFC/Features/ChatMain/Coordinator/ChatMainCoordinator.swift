@@ -21,7 +21,7 @@ final class ChatMainCoordinator: ChatMainCoordinatorProtocol {
     }
     
     func goToChatDetails(model: [Chat]) {
-        //TODO: Implementar
+        navigationController.pushViewController(ChatMessagesViewController(), animated: true)
     }
     
     func showErrorAlertView() {
