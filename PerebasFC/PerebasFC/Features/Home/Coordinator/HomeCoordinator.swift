@@ -50,8 +50,14 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
                     return
                 case .calendar:
                     return
+                
                 case .chat:
+                navigationController.pushViewController(
+                    ChatMainFactory.getChatMainViewController(
+                        navigationController: navigationController),
+                    animated: true)
                     return
+                
                 case .ranking:
                 self.navigationController.pushViewController(
                     RankingFactory.getRankingViewController(

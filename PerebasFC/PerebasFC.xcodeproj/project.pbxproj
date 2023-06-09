@@ -77,6 +77,15 @@
 		A6CCFC402A32236700364614 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC3F2A32236700364614 /* ChangePasswordInteractor.swift */; };
 		A6CCFC422A32236F00364614 /* ChangePasswordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC412A32236F00364614 /* ChangePasswordFactory.swift */; };
 		A6CCFC442A32237700364614 /* ChangePasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC432A32237700364614 /* ChangePasswordCoordinator.swift */; };
+		A6CCFC542A333DAA00364614 /* ChatMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC532A333DAA00364614 /* ChatMainView.swift */; };
+		A6CCFC562A333DB400364614 /* ChatMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC552A333DB400364614 /* ChatMainViewController.swift */; };
+		A6CCFC5A2A333E6300364614 /* ChatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC592A333E6300364614 /* ChatItemView.swift */; };
+		A6CCFC5C2A333EB700364614 /* ChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC5B2A333EB700364614 /* ChatItemViewModel.swift */; };
+		A6CCFC5E2A3369B000364614 /* ChatMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC5D2A3369B000364614 /* ChatMainInteractor.swift */; };
+		A6CCFC602A3369F800364614 /* ChatMainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC5F2A3369F800364614 /* ChatMainWorker.swift */; };
+		A6CCFC622A336CB100364614 /* ChatMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC612A336CB100364614 /* ChatMainCoordinator.swift */; };
+		A6CCFC642A336E6400364614 /* ChatMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC632A336E6400364614 /* ChatMainPresenter.swift */; };
+		A6CCFC662A336F5F00364614 /* ChatMainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC652A336F5F00364614 /* ChatMainFactory.swift */; };
 		A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD56F2A29394B00A37696 /* RankingViewController.swift */; };
 		A6CFD5732A29395900A37696 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD5722A29395900A37696 /* RankingView.swift */; };
 		A6CFD5762A29397C00A37696 /* FirstPlacesGiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD5752A29397C00A37696 /* FirstPlacesGiftsView.swift */; };
@@ -171,6 +180,15 @@
 		A6CCFC3F2A32236700364614 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		A6CCFC412A32236F00364614 /* ChangePasswordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordFactory.swift; sourceTree = "<group>"; };
 		A6CCFC432A32237700364614 /* ChangePasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordCoordinator.swift; sourceTree = "<group>"; };
+		A6CCFC532A333DAA00364614 /* ChatMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMainView.swift; sourceTree = "<group>"; };
+		A6CCFC552A333DB400364614 /* ChatMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMainViewController.swift; sourceTree = "<group>"; };
+		A6CCFC592A333E6300364614 /* ChatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemView.swift; sourceTree = "<group>"; };
+		A6CCFC5B2A333EB700364614 /* ChatItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemViewModel.swift; sourceTree = "<group>"; };
+		A6CCFC5D2A3369B000364614 /* ChatMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMainInteractor.swift; sourceTree = "<group>"; };
+		A6CCFC5F2A3369F800364614 /* ChatMainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMainWorker.swift; sourceTree = "<group>"; };
+		A6CCFC612A336CB100364614 /* ChatMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMainCoordinator.swift; sourceTree = "<group>"; };
+		A6CCFC632A336E6400364614 /* ChatMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMainPresenter.swift; sourceTree = "<group>"; };
+		A6CCFC652A336F5F00364614 /* ChatMainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMainFactory.swift; sourceTree = "<group>"; };
 		A6CFD56F2A29394B00A37696 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		A6CFD5722A29395900A37696 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
 		A6CFD5752A29397C00A37696 /* FirstPlacesGiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlacesGiftsView.swift; sourceTree = "<group>"; };
@@ -526,6 +544,8 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A6CCFC4C2A333D6C00364614 /* ChatDetails */,
+				A6CCFC452A333D3500364614 /* ChatMain */,
 				A6CCFC302A32230800364614 /* ChangePassword */,
 				A61A8F932A1C1D32009D08EE /* ForgotPassword */,
 				A6A7416B2A26B352009A7998 /* GamesHistory */,
@@ -812,6 +832,141 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		A6CCFC452A333D3500364614 /* ChatMain */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC4B2A333D5A00364614 /* Coordinator */,
+				A6CCFC4A2A333D5400364614 /* Factory */,
+				A6CCFC492A333D4D00364614 /* Presenter */,
+				A6CCFC482A333D4800364614 /* Interactor */,
+				A6CCFC572A333DB600364614 /* InternalComponent */,
+				A6CCFC472A333D4400364614 /* View */,
+				A6CCFC462A333D4100364614 /* Worker */,
+			);
+			path = ChatMain;
+			sourceTree = "<group>";
+		};
+		A6CCFC462A333D4100364614 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC5F2A3369F800364614 /* ChatMainWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A6CCFC472A333D4400364614 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC532A333DAA00364614 /* ChatMainView.swift */,
+				A6CCFC552A333DB400364614 /* ChatMainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6CCFC482A333D4800364614 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC5D2A3369B000364614 /* ChatMainInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6CCFC492A333D4D00364614 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC632A336E6400364614 /* ChatMainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6CCFC4A2A333D5400364614 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC652A336F5F00364614 /* ChatMainFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A6CCFC4B2A333D5A00364614 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC612A336CB100364614 /* ChatMainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6CCFC4C2A333D6C00364614 /* ChatDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC522A333D8B00364614 /* Coordinator */,
+				A6CCFC512A333D8500364614 /* Factory */,
+				A6CCFC502A333D7E00364614 /* Presenter */,
+				A6CCFC4F2A333D7800364614 /* Interactor */,
+				A6CCFC4E2A333D7500364614 /* View */,
+				A6CCFC4D2A333D7300364614 /* Worker */,
+			);
+			path = ChatDetails;
+			sourceTree = "<group>";
+		};
+		A6CCFC4D2A333D7300364614 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A6CCFC4E2A333D7500364614 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6CCFC4F2A333D7800364614 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6CCFC502A333D7E00364614 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6CCFC512A333D8500364614 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A6CCFC522A333D8B00364614 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6CCFC572A333DB600364614 /* InternalComponent */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC582A333DBE00364614 /* ChatItemView */,
+			);
+			path = InternalComponent;
+			sourceTree = "<group>";
+		};
+		A6CCFC582A333DBE00364614 /* ChatItemView */ = {
+			isa = PBXGroup;
+			children = (
+				A6CCFC592A333E6300364614 /* ChatItemView.swift */,
+				A6CCFC5B2A333EB700364614 /* ChatItemViewModel.swift */,
+			);
+			path = ChatItemView;
+			sourceTree = "<group>";
+		};
 		A6CFD5672A2938B700A37696 /* Ranking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1047,14 +1202,18 @@
 				A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */,
 				A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */,
 				A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */,
+				A6CCFC542A333DAA00364614 /* ChatMainView.swift in Sources */,
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
 				A6993E392A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift in Sources */,
+				A6CCFC562A333DB400364614 /* ChatMainViewController.swift in Sources */,
 				A6A741832A26C183009A7998 /* GamesHistoryWorker.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A6CCFC662A336F5F00364614 /* ChatMainFactory.swift in Sources */,
 				A6993E2C2A2BFB0100C2BDE3 /* PersonalInformationsView.swift in Sources */,
 				A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */,
+				A6CCFC622A336CB100364614 /* ChatMainCoordinator.swift in Sources */,
 				A6A7416A2A2566DA009A7998 /* WeekTeamFactory.swift in Sources */,
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
 				A6993E312A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift in Sources */,
@@ -1067,9 +1226,12 @@
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
 				A6993E212A2BBEF900C2BDE3 /* RankingFactory.swift in Sources */,
+				A6CCFC5C2A333EB700364614 /* ChatItemViewModel.swift in Sources */,
 				A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */,
+				A6CCFC5A2A333E6300364614 /* ChatItemView.swift in Sources */,
 				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
 				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
+				A6CCFC642A336E6400364614 /* ChatMainPresenter.swift in Sources */,
 				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
 				A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */,
 				A6CCFC422A32236F00364614 /* ChangePasswordFactory.swift in Sources */,
@@ -1081,10 +1243,12 @@
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
 				A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */,
 				A6993E1A2A2BB5A700C2BDE3 /* RankingWorker.swift in Sources */,
+				A6CCFC602A3369F800364614 /* ChatMainWorker.swift in Sources */,
 				A6CFD5762A29397C00A37696 /* FirstPlacesGiftsView.swift in Sources */,
 				A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */,
 				A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */,
 				A6993E162A2BA60700C2BDE3 /* CommonnPlacesViewModel.swift in Sources */,
+				A6CCFC5E2A3369B000364614 /* ChatMainInteractor.swift in Sources */,
 				A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */,
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
