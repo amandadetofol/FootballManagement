@@ -37,49 +37,50 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
         willShow: Bool? = false,
         teams: WeekTeamViewModel? = nil) {
             switch key {
-                case .confirmPresence(let willShow):
-                    return
-                case .myData:
+            case .myData:
                 self.navigationController.pushViewController(
                     PersonalInformationsFactory.getPersonalInformationsViewController(
                         navigationController: navigationController),
                     animated: true)
-                    return
+                return
                 
-                case .financial:
-                    return
-                case .calendar:
-                    return
+            case .financial:
+                return
+            case .calendar, .confirmPresence:
+                navigationController.pushViewController(
+                    CalendarFactory.getCalendarViewController(
+                        navigationController: navigationController),
+                    animated: true)
+                return
                 
-                case .chat:
+            case .chat:
                 navigationController.pushViewController(
                     ChatMainFactory.getChatMainViewController(
                         navigationController: navigationController),
                     animated: true)
-                    return
+                return
                 
-                case .ranking:
+            case .ranking:
                 self.navigationController.pushViewController(
                     RankingFactory.getRankingViewController(
                         navigationController: navigationController),
                     animated: true)
-                    return
+                return
                 
-                case .games:
-                    self.navigationController.pushViewController(
-                        GameHistoryViewFactory.getGameHistoryViewController(
-                            navigationController: navigationController),
-                        animated: true)
-                    return
+            case .games:
+                self.navigationController.pushViewController(
+                    GameHistoryViewFactory.getGameHistoryViewController(
+                        navigationController: navigationController),
+                    animated: true)
+                return
                 
-                case .team:
-                    guard let teams = teams else { return }
-                    self.navigationController.pushViewController(
-                        WeekTeamFactory.getWeekTeamViewController(teams: teams),
-                        animated: true)
-                    return
-                
+            case .team:
+                guard let teams = teams else { return }
+                self.navigationController.pushViewController(
+                    WeekTeamFactory.getWeekTeamViewController(teams: teams),
+                    animated: true)
+                return
             }
-    }
+        }
     
 }

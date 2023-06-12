@@ -36,6 +36,17 @@
 		A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */; };
 		A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */; };
 		A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */; };
+		A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */; };
+		A62C1CBF2A36111C002AA401 /* CalendarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */; };
+		A62C1CC12A3613EC002AA401 /* CalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */; };
+		A62C1CC32A37DC14002AA401 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CC22A37DC14002AA401 /* CalendarPresenter.swift */; };
+		A62C1CC52A37DD03002AA401 /* CalendarItemPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CC42A37DD03002AA401 /* CalendarItemPopUpView.swift */; };
+		A62C1CC72A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CC62A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift */; };
+		A62C1CCB2A37E229002AA401 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CCA2A37E229002AA401 /* CalendarModel.swift */; };
+		A62C1CCD2A37E304002AA401 /* CalendarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CCC2A37E304002AA401 /* CalendarCoordinator.swift */; };
+		A62C1CCF2A37E479002AA401 /* CalendarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CCE2A37E479002AA401 /* CalendarFactory.swift */; };
+		A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64912412A33BAA700356B7B /* CalendarViewController.swift */; };
+		A64912452A33BCE300356B7B /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A64912442A33BCE300356B7B /* HorizonCalendar */; };
 		A680E10A2A24109F008FA008 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E1092A24109F008FA008 /* Team.swift */; };
 		A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */; };
 		A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10D2A2410EF008FA008 /* WeekTeamView.swift */; };
@@ -142,6 +153,16 @@
 		A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalLinkRedirect.swift; sourceTree = "<group>"; };
 		A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewModel.swift; sourceTree = "<group>"; };
+		A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemViewRepresentable.swift; sourceTree = "<group>"; };
+		A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWorker.swift; sourceTree = "<group>"; };
+		A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInteractor.swift; sourceTree = "<group>"; };
+		A62C1CC22A37DC14002AA401 /* CalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
+		A62C1CC42A37DD03002AA401 /* CalendarItemPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemPopUpView.swift; sourceTree = "<group>"; };
+		A62C1CC62A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemPopUpViewModel.swift; sourceTree = "<group>"; };
+		A62C1CCA2A37E229002AA401 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		A62C1CCC2A37E304002AA401 /* CalendarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCoordinator.swift; sourceTree = "<group>"; };
+		A62C1CCE2A37E479002AA401 /* CalendarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFactory.swift; sourceTree = "<group>"; };
+		A64912412A33BAA700356B7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A680E1092A24109F008FA008 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewModel.swift; sourceTree = "<group>"; };
 		A680E10D2A2410EF008FA008 /* WeekTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamView.swift; sourceTree = "<group>"; };
@@ -221,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A64912452A33BCE300356B7B /* HorizonCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +556,87 @@
 			path = InternalComponents;
 			sourceTree = "<group>";
 		};
+		A62C1CBD2A3607DF002AA401 /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */,
+				A62C1CC42A37DD03002AA401 /* CalendarItemPopUpView.swift */,
+				A62C1CC62A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift */,
+			);
+			path = InternalComponents;
+			sourceTree = "<group>";
+		};
+		A62C1CC82A37E1C1002AA401 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1CCC2A37E304002AA401 /* CalendarCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A62C1CC92A37E21D002AA401 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1CCA2A37E229002AA401 /* CalendarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A64912372A33BA0500356B7B /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1CC82A37E1C1002AA401 /* Coordinator */,
+				A649123C2A33BA2C00356B7B /* Factory */,
+				A62C1CC92A37E21D002AA401 /* Model */,
+				A649123B2A33BA1C00356B7B /* Presenter */,
+				A649123A2A33BA1700356B7B /* Interactor */,
+				A62C1CBD2A3607DF002AA401 /* InternalComponents */,
+				A64912392A33BA1000356B7B /* View */,
+				A64912382A33BA0C00356B7B /* Worker */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A64912382A33BA0C00356B7B /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A64912392A33BA1000356B7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A64912412A33BAA700356B7B /* CalendarViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A649123A2A33BA1700356B7B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A649123B2A33BA1C00356B7B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1CC22A37DC14002AA401 /* CalendarPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A649123C2A33BA2C00356B7B /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1CCE2A37E479002AA401 /* CalendarFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		A680E1002A24103D008FA008 /* WeekTeam */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +653,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A64912372A33BA0500356B7B /* Calendar */,
 				A6CCFC4C2A333D6C00364614 /* ChatDetails */,
 				A6CCFC452A333D3500364614 /* ChatMain */,
 				A6CCFC302A32230800364614 /* ChangePassword */,
@@ -904,7 +1008,6 @@
 		A6CCFC4C2A333D6C00364614 /* ChatDetails */ = {
 			isa = PBXGroup;
 			children = (
-				A6CCFC522A333D8B00364614 /* Coordinator */,
 				A6CCFC512A333D8500364614 /* Factory */,
 				A6CCFC502A333D7E00364614 /* Presenter */,
 				A6CCFC4F2A333D7800364614 /* Interactor */,
@@ -942,13 +1045,6 @@
 			children = (
 			);
 			path = Factory;
-			sourceTree = "<group>";
-		};
-		A6CCFC522A333D8B00364614 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		A6CCFC572A333DB600364614 /* InternalComponent */ = {
@@ -1128,6 +1224,9 @@
 			dependencies = (
 			);
 			name = PerebasFC;
+			packageProductDependencies = (
+				A64912442A33BCE300356B7B /* HorizonCalendar */,
+			);
 			productName = PerebasFC;
 			productReference = A6033E512A12DC5D002B56EE /* PerebasFC.app */;
 			productType = "com.apple.product-type.application";
@@ -1156,6 +1255,9 @@
 				Base,
 			);
 			mainGroup = A6033E482A12DC5D002B56EE;
+			packageReferences = (
+				A64912432A33BCE300356B7B /* XCRemoteSwiftPackageReference "HorizonCalendar" */,
+			);
 			productRefGroup = A6033E522A12DC5D002B56EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1207,9 +1309,12 @@
 				A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */,
 				A6A741792A26B3BB009A7998 /* GamesHistoryViewController.swift in Sources */,
 				A6CFD57D2A293A0600A37696 /* CommonnPlacesView.swift in Sources */,
+				A62C1CBF2A36111C002AA401 /* CalendarWorker.swift in Sources */,
 				A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */,
 				A6993E2F2A2BFB1900C2BDE3 /* PersonalInformationsViewController.swift in Sources */,
+				A62C1CC32A37DC14002AA401 /* CalendarPresenter.swift in Sources */,
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
+				A62C1CC72A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift in Sources */,
 				A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */,
 				A6CFD57B2A2939FD00A37696 /* FirstPlacesDifferentView.swift in Sources */,
 				A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */,
@@ -1224,13 +1329,16 @@
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
+				A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */,
 				A6993E392A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift in Sources */,
 				A6CCFC562A333DB400364614 /* ChatMainViewController.swift in Sources */,
 				A6A741832A26C183009A7998 /* GamesHistoryWorker.swift in Sources */,
+				A62C1CC12A3613EC002AA401 /* CalendarInteractor.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
 				A6CCFC662A336F5F00364614 /* ChatMainFactory.swift in Sources */,
 				A6993E2C2A2BFB0100C2BDE3 /* PersonalInformationsView.swift in Sources */,
 				A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */,
+				A62C1CC52A37DD03002AA401 /* CalendarItemPopUpView.swift in Sources */,
 				A6CCFC622A336CB100364614 /* ChatMainCoordinator.swift in Sources */,
 				A6A7416A2A2566DA009A7998 /* WeekTeamFactory.swift in Sources */,
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
@@ -1241,6 +1349,7 @@
 				A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */,
 				A680E10A2A24109F008FA008 /* Team.swift in Sources */,
 				A6CCFC6B2A33854E00364614 /* ChatMessageView.swift in Sources */,
+				A62C1CCB2A37E229002AA401 /* CalendarModel.swift in Sources */,
 				A6A741812A26C121009A7998 /* GamesHistoryInteractor.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
@@ -1249,6 +1358,7 @@
 				A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */,
 				A6CCFC5A2A333E6300364614 /* ChatItemView.swift in Sources */,
 				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
+				A62C1CCD2A37E304002AA401 /* CalendarCoordinator.swift in Sources */,
 				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
 				A6CCFC642A336E6400364614 /* ChatMainPresenter.swift in Sources */,
 				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
@@ -1272,7 +1382,9 @@
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
+				A62C1CCF2A37E479002AA401 /* CalendarFactory.swift in Sources */,
 				A6CCFC3A2A32234D00364614 /* ChangePasswordViewController.swift in Sources */,
+				A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */,
 				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
 				A6993E332A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift in Sources */,
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
@@ -1490,6 +1602,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A64912432A33BCE300356B7B /* XCRemoteSwiftPackageReference "HorizonCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/HorizonCalendar";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A64912442A33BCE300356B7B /* HorizonCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A64912432A33BCE300356B7B /* XCRemoteSwiftPackageReference "HorizonCalendar" */;
+			productName = HorizonCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6033E492A12DC5D002B56EE /* Project object */;
 }
