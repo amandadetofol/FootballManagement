@@ -45,6 +45,10 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
                 return
                 
             case .financial:
+                navigationController.pushViewController(
+                    FinancialFactory.getFinancialViewController(
+                        navigationController: navigationController),
+                    animated: true)
                 return
             case .calendar, .confirmPresence:
                 navigationController.pushViewController(

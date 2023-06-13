@@ -7,7 +7,6 @@
 
 import UIKit
 
-//TODO: VER PQ A VIEW N TA SENDO APRESENTADA
 protocol GamesHistoryInteractorProtocol {
     func viewDidLoad()
 }

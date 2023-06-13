@@ -18,7 +18,6 @@ final class ForgotPasswordWorker: ForgotPasswordWorkerProtocol {
     func sendLinkTo(
         email: String,
         _ operationSucceded: @escaping ((Bool) -> Void)) {
-            //TODO: Implementar mocks
             operationSucceded(true)
     }
     
