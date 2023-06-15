@@ -61,6 +61,7 @@ final class FinancialPendenciesViewController: UIViewController {
         
         setupSegmentedControl()
         interactor.viewDidLoad()
+        interactor.updateView(basedOn: 1)
     }
     
     private func setupSegmentedControl(){

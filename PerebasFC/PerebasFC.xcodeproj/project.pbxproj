@@ -56,6 +56,17 @@
 		A62C1CEA2A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CE92A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift */; };
 		A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64912412A33BAA700356B7B /* CalendarViewController.swift */; };
 		A64912452A33BCE300356B7B /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A64912442A33BCE300356B7B /* HorizonCalendar */; };
+		A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */; };
+		A673608D2A393235003BF4C2 /* FinancialDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */; };
+		A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */; };
+		A67360912A393276003BF4C2 /* FinancialDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360902A393276003BF4C2 /* FinancialDetailsInteractor.swift */; };
+		A67360932A393282003BF4C2 /* FinancialDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360922A393282003BF4C2 /* FinancialDetailsFactory.swift */; };
+		A67360982A3933A4003BF4C2 /* SeeProofWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360972A3933A4003BF4C2 /* SeeProofWebView.swift */; };
+		A67360A42A3933F7003BF4C2 /* SeeProofWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A32A3933F7003BF4C2 /* SeeProofWebViewController.swift */; };
+		A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A52A393714003BF4C2 /* PendencieDisclaimerView.swift */; };
+		A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A72A393733003BF4C2 /* PendenciesDisclaimerView.swift */; };
+		A67360AA2A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A92A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift */; };
+		A67360AD2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360AC2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift */; };
 		A680E10A2A24109F008FA008 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E1092A24109F008FA008 /* Team.swift */; };
 		A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */; };
 		A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10D2A2410EF008FA008 /* WeekTeamView.swift */; };
@@ -181,6 +192,17 @@
 		A62C1CE72A37E8C9002AA401 /* FinancialPendencieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialPendencieCardView.swift; sourceTree = "<group>"; };
 		A62C1CE92A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialPendencieCardViewModel.swift; sourceTree = "<group>"; };
 		A64912412A33BAA700356B7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsView.swift; sourceTree = "<group>"; };
+		A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsViewController.swift; sourceTree = "<group>"; };
+		A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsPresenter.swift; sourceTree = "<group>"; };
+		A67360902A393276003BF4C2 /* FinancialDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsInteractor.swift; sourceTree = "<group>"; };
+		A67360922A393282003BF4C2 /* FinancialDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsFactory.swift; sourceTree = "<group>"; };
+		A67360972A3933A4003BF4C2 /* SeeProofWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeProofWebView.swift; sourceTree = "<group>"; };
+		A67360A32A3933F7003BF4C2 /* SeeProofWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeProofWebViewController.swift; sourceTree = "<group>"; };
+		A67360A52A393714003BF4C2 /* PendencieDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendencieDisclaimerView.swift; sourceTree = "<group>"; };
+		A67360A72A393733003BF4C2 /* PendenciesDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendenciesDisclaimerView.swift; sourceTree = "<group>"; };
+		A67360A92A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendenciesDisclaimerViewModel.swift; sourceTree = "<group>"; };
+		A67360AC2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsViewModel.swift; sourceTree = "<group>"; };
 		A680E1092A24109F008FA008 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewModel.swift; sourceTree = "<group>"; };
 		A680E10D2A2410EF008FA008 /* WeekTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamView.swift; sourceTree = "<group>"; };
@@ -270,6 +292,7 @@
 		A6033E482A12DC5D002B56EE = {
 			isa = PBXGroup;
 			children = (
+				A67360A52A393714003BF4C2 /* PendencieDisclaimerView.swift */,
 				A6033E532A12DC5D002B56EE /* PerebasFC */,
 				A6033E522A12DC5D002B56EE /* Products */,
 			);
@@ -603,6 +626,7 @@
 		A62C1CD02A37E7A4002AA401 /* Financial */ = {
 			isa = PBXGroup;
 			children = (
+				A67360962A393391003BF4C2 /* SeeProofWebView */,
 				A62C1CEC2A37F6C0002AA401 /* Details */,
 				A62C1CEB2A37F6B4002AA401 /* Main */,
 			);
@@ -692,6 +716,12 @@
 		A62C1CEC2A37F6C0002AA401 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				A67360892A393207003BF4C2 /* Factory */,
+				A67360942A393368003BF4C2 /* InternalComponents */,
+				A67360AB2A393C13003BF4C2 /* Model */,
+				A67360882A393203003BF4C2 /* Interactor */,
+				A67360872A393200003BF4C2 /* Presenter */,
+				A67360862A3931FD003BF4C2 /* View */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -749,6 +779,81 @@
 				A62C1CCE2A37E479002AA401 /* CalendarFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		A67360862A3931FD003BF4C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */,
+				A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A67360872A393200003BF4C2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A67360882A393203003BF4C2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A67360902A393276003BF4C2 /* FinancialDetailsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A67360892A393207003BF4C2 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A67360922A393282003BF4C2 /* FinancialDetailsFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A67360942A393368003BF4C2 /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A67360952A393373003BF4C2 /* PendencieDisclaimerView */,
+			);
+			path = InternalComponents;
+			sourceTree = "<group>";
+		};
+		A67360952A393373003BF4C2 /* PendencieDisclaimerView */ = {
+			isa = PBXGroup;
+			children = (
+				A67360A72A393733003BF4C2 /* PendenciesDisclaimerView.swift */,
+				A67360A92A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift */,
+			);
+			path = PendencieDisclaimerView;
+			sourceTree = "<group>";
+		};
+		A67360962A393391003BF4C2 /* SeeProofWebView */ = {
+			isa = PBXGroup;
+			children = (
+				A67360992A3933B9003BF4C2 /* View */,
+			);
+			path = SeeProofWebView;
+			sourceTree = "<group>";
+		};
+		A67360992A3933B9003BF4C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A67360972A3933A4003BF4C2 /* SeeProofWebView.swift */,
+				A67360A32A3933F7003BF4C2 /* SeeProofWebViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A67360AB2A393C13003BF4C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A67360AC2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A680E1002A24103D008FA008 /* WeekTeam */ = {
@@ -1419,8 +1524,10 @@
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
 				A6CCFC442A32237700364614 /* ChangePasswordCoordinator.swift in Sources */,
 				A62C1CE02A37E864002AA401 /* FinancialInteractor.swift in Sources */,
+				A67360982A3933A4003BF4C2 /* SeeProofWebView.swift in Sources */,
 				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
+				A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
 				A6993E372A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift in Sources */,
 				A6CCFC402A32236700364614 /* ChangePasswordInteractor.swift in Sources */,
@@ -1433,6 +1540,7 @@
 				A62C1CC32A37DC14002AA401 /* CalendarPresenter.swift in Sources */,
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A62C1CC72A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift in Sources */,
+				A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */,
 				A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */,
 				A6CFD57B2A2939FD00A37696 /* FirstPlacesDifferentView.swift in Sources */,
 				A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */,
@@ -1441,6 +1549,7 @@
 				A61A8FB52A1C2E2B009D08EE /* UserModel.swift in Sources */,
 				A62C1CE22A37E86B002AA401 /* FinancialFactory.swift in Sources */,
 				A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */,
+				A67360AA2A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift in Sources */,
 				A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */,
 				A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */,
 				A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */,
@@ -1485,6 +1594,7 @@
 				A6CCFC642A336E6400364614 /* ChatMainPresenter.swift in Sources */,
 				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
 				A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */,
+				A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */,
 				A62C1CEA2A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift in Sources */,
 				A6CCFC422A32236F00364614 /* ChangePasswordFactory.swift in Sources */,
 				A6993E352A2BFB4300C2BDE3 /* PersonalInformationsInteractor.swift in Sources */,
@@ -1495,10 +1605,13 @@
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
 				A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */,
 				A6993E1A2A2BB5A700C2BDE3 /* RankingWorker.swift in Sources */,
+				A673608D2A393235003BF4C2 /* FinancialDetailsViewController.swift in Sources */,
 				A6CCFC602A3369F800364614 /* ChatMainWorker.swift in Sources */,
 				A6CFD5762A29397C00A37696 /* FirstPlacesGiftsView.swift in Sources */,
+				A67360912A393276003BF4C2 /* FinancialDetailsInteractor.swift in Sources */,
 				A61A8F922A144251009D08EE /* ErrorComponentViewModel.swift in Sources */,
 				A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */,
+				A67360AD2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift in Sources */,
 				A6993E162A2BA60700C2BDE3 /* CommonnPlacesViewModel.swift in Sources */,
 				A6CCFC5E2A3369B000364614 /* ChatMainInteractor.swift in Sources */,
 				A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */,
@@ -1510,8 +1623,11 @@
 				A62C1CDE2A37E85C002AA401 /* FinancialPresenter.swift in Sources */,
 				A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */,
 				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
+				A67360932A393282003BF4C2 /* FinancialDetailsFactory.swift in Sources */,
+				A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */,
 				A6993E332A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift in Sources */,
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
+				A67360A42A3933F7003BF4C2 /* SeeProofWebViewController.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
 				A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
