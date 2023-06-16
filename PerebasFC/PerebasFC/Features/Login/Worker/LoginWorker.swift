@@ -38,8 +38,8 @@ final class LoginWorker: LoginWorkerProtocol {
                         firstActionKey: .confirmPresence(willShow: true)),
                         rankingPosition: 8,
                     isAdm: false,
-                    menuItems: getMenuItemList(isAdm: false))
-            
+                    menuItems: getMenuItemList(isAdm: isAdm))
+                Session.shared.isAdm = isAdm
                 completion(user)
         }
     
@@ -80,10 +80,20 @@ final class LoginWorker: LoginWorkerProtocol {
             icon: UIImage(systemName: "tshirt") ?? UIImage(),
             redirectKey: .team)
         
+        let sort = MenuItemViewModel(
+            title: "Sorteios",
+            icon: UIImage(systemName: "die.face.5.fill") ?? UIImage(),
+            redirectKey: .sort)
+        
+        let participants = MenuItemViewModel(
+            title: "Participantes",
+            icon: UIImage(systemName: "person.3.sequence.fill") ?? UIImage(),
+            redirectKey: .participants)
+        
         if !isAdm {
             return [myData, financial, calendar, chat, ranking, gamesHistory, team]
         } else {
-            return [myData]
+            return [myData, financial, calendar, chat, ranking, gamesHistory, team, sort, participants]
         }
     }
     

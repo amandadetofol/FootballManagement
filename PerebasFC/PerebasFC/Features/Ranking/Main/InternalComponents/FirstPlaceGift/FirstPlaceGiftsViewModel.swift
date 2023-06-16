@@ -10,5 +10,6 @@ import Foundation
 struct FirstPlaceGiftsViewModel {
     let first: String
     let second: String
-    let third: String 
+    let third: String
+    let isAdm: Bool 
 }

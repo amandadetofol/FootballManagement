@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol FirstPlacesGiftsViewDelegate: AnyObject {
+    func handleEditAwardsButtonTap()
+}
+
 final class FirstPlacesGiftsView: UIView {
+    
+    weak var delegate: FirstPlacesGiftsViewDelegate?
     
     private lazy var awardLabel: UILabel = {
         let label = UILabel()
@@ -18,6 +24,18 @@ final class FirstPlacesGiftsView: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 20.0)
         
         return label
+    }()
+    
+    private lazy var editAwardsButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.clipsToBounds = true
+        button.isHidden = true
+        button.setImage(UIImage(systemName: "pencil"), for: .normal)
+        button.tintColor = .systemBlue
+        button.addTarget(self, action: #selector(handlEditAwardsButtontTap), for: .touchUpInside)
+        
+        return button
     }()
     
     private lazy var firstAwardLabel: UILabel = {
@@ -79,11 +97,13 @@ final class FirstPlacesGiftsView: UIView {
         firstAwardLabel.text = model.first
         secondAwardLabel.text = model.second
         thirdAwardLabel.text = model.third
+        editAwardsButton.isHidden = !model.isAdm
     }
     
     private func setupView(){
         addSubview(stackView)
         stackView.addArrangedSubviews([
+            editAwardsButton,
             awardLabel,
             firstAwardLabel,
             secondAwardLabel,
@@ -98,7 +118,19 @@ final class FirstPlacesGiftsView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.widthAnchor.constraint(equalTo: widthAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            editAwardsButton.heightAnchor.constraint(equalToConstant: 16),
+            editAwardsButton.widthAnchor.constraint(equalToConstant: 16),
+            editAwardsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
+    }
+    
+}
+
+extension FirstPlacesGiftsView {
+    
+    @objc func handlEditAwardsButtontTap(){
+        delegate?.handleEditAwardsButtonTap()
     }
     
 }

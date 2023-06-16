@@ -9,12 +9,14 @@ import UIKit
 
 protocol RankingInteractorProtocol {
     func viewDidLoad()
+    func handleEditAwardsButtonTap(with model: EditAwardsViewModel)
 }
 
 final class RankingViewController: UIViewController {
     
     private lazy var rankingView: RankingView = {
         let view = RankingView()
+        view.delegate = self
         
         return view
     }()
@@ -45,6 +47,14 @@ extension RankingViewController: RankingViewProtocol {
     
     func updateView(with model: RankingViewModel) {
         rankingView.updateView(with: model)
+    }
+    
+}
+
+extension RankingViewController: RankingViewDelegate {
+   
+    func handleEditAwardsButtonTap(model: EditAwardsViewModel) {
+        interactor.handleEditAwardsButtonTap(with: model)
     }
     
 }

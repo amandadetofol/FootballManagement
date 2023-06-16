@@ -37,7 +37,8 @@ final class RankingWorker: RankingWorkerProtocol {
             awards: FirstPlaceGiftsViewModel(
                 first: "1 - Premio 01",
                 second: "2 - Premio 02",
-                third: "3 - Premio 03"
+                third: "3 - Premio 03",
+                isAdm: Session.shared.isAdm ?? false 
             ),
             otherParticipants: [
                 CommonnPlacesViewModel(

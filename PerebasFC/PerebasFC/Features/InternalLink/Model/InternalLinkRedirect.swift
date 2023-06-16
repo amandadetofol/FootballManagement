@@ -16,4 +16,6 @@ enum InternalLinkRedirectKeys {
     case ranking
     case games
     case team
+    case sort
+    case participants
 }

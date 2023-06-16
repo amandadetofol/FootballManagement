@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol RankingViewDelegate: AnyObject {
+    func handleEditAwardsButtonTap(model: EditAwardsViewModel)
+}
+
 final class RankingView: UIView {
+    
+    weak var delegate: RankingViewDelegate?
+    var model: RankingViewModel?
     
     private lazy var firstPlacesView: FirstPlacesDifferentView = {
         let firstPlacesView = FirstPlacesDifferentView()
@@ -18,6 +25,7 @@ final class RankingView: UIView {
     
     private lazy var awardsView: FirstPlacesGiftsView = {
         let view = FirstPlacesGiftsView()
+        view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -80,6 +88,7 @@ final class RankingView: UIView {
             card.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
             card.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         }
+        self.model = model
     }
     
     private func setupView(){
@@ -112,6 +121,18 @@ final class RankingView: UIView {
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
         ])
+    }
+    
+}
+
+extension RankingView: FirstPlacesGiftsViewDelegate {
+    
+    func handleEditAwardsButtonTap() {
+        delegate?.handleEditAwardsButtonTap(
+            model: EditAwardsViewModel(
+                currentFirstAward: model?.awards.first ?? "",
+                currentSecondAward: model?.awards.second ?? "",
+                currentThirdAward: model?.awards.third ?? ""))
     }
     
 }
