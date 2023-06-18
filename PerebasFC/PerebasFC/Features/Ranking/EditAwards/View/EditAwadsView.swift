@@ -78,7 +78,6 @@ final class EditAwadsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
-        button.isHidden = true
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
@@ -92,11 +91,10 @@ final class EditAwadsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
-        button.isHidden = true
         button.backgroundColor = .clear
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 10
-        button.setTitle("voltar", for: .normal)
+        button.setTitle("voltar".uppercased(), for: .normal)
         button.addTarget(self, action: #selector(handleBackButtonTap), for: .touchUpInside)
         
         return button
@@ -129,7 +127,7 @@ final class EditAwadsView: UIView {
             thirdAwardTextField,
             setNewAwardsButton,
             backButton])
-        contentStackView.setCustomSpacing(108, after: thirdAwardTextField)
+        backgroundColor = .white
     }
     
     private func setupConstraints(){

@@ -73,6 +73,10 @@ final class RankingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateAwards(model: FirstPlaceGiftsViewModel){
+        self.awardsView.updateView(with: model)
+    }
+    
     func updateView(with model: RankingViewModel){
         self.firstPlacesView.updateView(
             firstPlaceModel: model.firstPlaceModel,

@@ -118,10 +118,6 @@ final class FirstPlacesGiftsView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.widthAnchor.constraint(equalTo: widthAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            editAwardsButton.heightAnchor.constraint(equalToConstant: 16),
-            editAwardsButton.widthAnchor.constraint(equalToConstant: 16),
-            editAwardsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
     }
     

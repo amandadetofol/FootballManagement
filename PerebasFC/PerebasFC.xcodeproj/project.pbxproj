@@ -126,6 +126,8 @@
 		A6CCFC6B2A33854E00364614 /* ChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC6A2A33854E00364614 /* ChatMessageView.swift */; };
 		A6CCFC6D2A3389F200364614 /* ChatMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC6C2A3389F200364614 /* ChatMessageListView.swift */; };
 		A6CCFC6F2A338E6500364614 /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC6E2A338E6500364614 /* ChatMessagesViewController.swift */; };
+		A6CEE4BB2A3F75CF002CF9F5 /* EditAwardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CEE4BA2A3F75CF002CF9F5 /* EditAwardsPresenter.swift */; };
+		A6CEE4BE2A3F7B4D002CF9F5 /* EditAwardsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CEE4BD2A3F7B4D002CF9F5 /* EditAwardsFactory.swift */; };
 		A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD56F2A29394B00A37696 /* RankingViewController.swift */; };
 		A6CFD5732A29395900A37696 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD5722A29395900A37696 /* RankingView.swift */; };
 		A6CFD5762A29397C00A37696 /* FirstPlacesGiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD5752A29397C00A37696 /* FirstPlacesGiftsView.swift */; };
@@ -268,6 +270,8 @@
 		A6CCFC6A2A33854E00364614 /* ChatMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageView.swift; sourceTree = "<group>"; };
 		A6CCFC6C2A3389F200364614 /* ChatMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageListView.swift; sourceTree = "<group>"; };
 		A6CCFC6E2A338E6500364614 /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
+		A6CEE4BA2A3F75CF002CF9F5 /* EditAwardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsPresenter.swift; sourceTree = "<group>"; };
+		A6CEE4BD2A3F7B4D002CF9F5 /* EditAwardsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsFactory.swift; sourceTree = "<group>"; };
 		A6CFD56F2A29394B00A37696 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		A6CFD5722A29395900A37696 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
 		A6CFD5752A29397C00A37696 /* FirstPlacesGiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlacesGiftsView.swift; sourceTree = "<group>"; };
@@ -636,8 +640,10 @@
 			isa = PBXGroup;
 			children = (
 				A61CFFF02A3BDC0D0026BAF1 /* Coordinator */,
+				A6CEE4BC2A3F7B3E002CF9F5 /* Factory */,
 				A61CFFEF2A3BDC070026BAF1 /* Interactor */,
 				A61CFFF92A3BDFFD0026BAF1 /* Model */,
+				A6CEE4B92A3F75BA002CF9F5 /* Presenter */,
 				A61CFFEE2A3BDC030026BAF1 /* View */,
 			);
 			path = EditAwards;
@@ -1380,6 +1386,22 @@
 			path = ChatMessage;
 			sourceTree = "<group>";
 		};
+		A6CEE4B92A3F75BA002CF9F5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6CEE4BA2A3F75CF002CF9F5 /* EditAwardsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6CEE4BC2A3F7B3E002CF9F5 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A6CEE4BD2A3F7B4D002CF9F5 /* EditAwardsFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		A6CFD5672A2938B700A37696 /* Ranking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1662,6 +1684,7 @@
 				A6A741812A26C121009A7998 /* GamesHistoryInteractor.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
 				A61CFFFB2A3BE0120026BAF1 /* EditAwardsViewModel.swift in Sources */,
+				A6CEE4BB2A3F75CF002CF9F5 /* EditAwardsPresenter.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
 				A6993E212A2BBEF900C2BDE3 /* RankingFactory.swift in Sources */,
 				A6CCFC5C2A333EB700364614 /* ChatItemViewModel.swift in Sources */,
@@ -1710,6 +1733,7 @@
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
 				A61CFFF62A3BDC3C0026BAF1 /* EditAwardsInteractor.swift in Sources */,
 				A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */,
+				A6CEE4BE2A3F7B4D002CF9F5 /* EditAwardsFactory.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
 				A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */,
 				A6CCFC6F2A338E6500364614 /* ChatMessagesViewController.swift in Sources */,

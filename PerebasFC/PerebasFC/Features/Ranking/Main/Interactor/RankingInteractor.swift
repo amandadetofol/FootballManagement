@@ -36,7 +36,7 @@ final class RankingInteractor: RankingInteractorProtocol {
     }
     
     func handleEditAwardsButtonTap(with model: EditAwardsViewModel) {
-        //TODO: IMPLEMENTAR 
+        coordinator.goToShowEditAwardsView(model: model)
     }
     
 }

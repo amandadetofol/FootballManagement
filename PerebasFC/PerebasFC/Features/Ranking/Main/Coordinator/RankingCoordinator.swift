@@ -9,6 +9,7 @@ import UIKit
 
 protocol RankingCoordinatorProtocol {
     func showAlertErrorPopUp()
+    func goToShowEditAwardsView(model: EditAwardsViewModel)
 }
 
 final class RankingCoordinator: RankingCoordinatorProtocol {
@@ -33,6 +34,14 @@ final class RankingCoordinator: RankingCoordinatorProtocol {
                 }))
         navigationController.present(
             alert,
+            animated: true)
+    }
+    
+    func goToShowEditAwardsView(model: EditAwardsViewModel){
+        navigationController.pushViewController(
+            EditAwardsFactory.getEditAwardsViewController(
+                navigationController: navigationController,
+                model: model),
             animated: true)
     }
     
