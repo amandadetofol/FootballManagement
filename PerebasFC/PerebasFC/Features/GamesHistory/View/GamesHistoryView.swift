@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol GamesHistoryViewDelegate: AnyObject {
+    func handleEditGameButtonTap(game: Game)
+}
+
 final class GamesHistoryView: UIView {
+    
+    weak var delegate: GamesHistoryViewDelegate?
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -56,6 +62,7 @@ final class GamesHistoryView: UIView {
     func updateView(with model: [Game]){
         model.forEach { gameCardModel in
             let card = GameCardView()
+            card.delegate = self
             card.updateView(with: gameCardModel)
             stackView.addArrangedSubview(card)
         }
@@ -85,6 +92,17 @@ final class GamesHistoryView: UIView {
             stackView.widthAnchor.constraint(equalTo: self.widthAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -32),
         ])
+    }
+    
+    //adicionar
+    //editar -> quando adicionar a quantidade de gols e quem fez contabilizar os pontos
+    
+}
+
+extension GamesHistoryView: GameCardViewDelegate {
+   
+    func handleEditGameButtonTap(game: Game) {
+        delegate?.handleEditGameButtonTap(game: game)
     }
     
 }

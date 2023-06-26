@@ -60,6 +60,14 @@
 		A62C1CE42A37E873002AA401 /* FinancialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CE32A37E873002AA401 /* FinancialCoordinator.swift */; };
 		A62C1CE82A37E8C9002AA401 /* FinancialPendencieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CE72A37E8C9002AA401 /* FinancialPendencieCardView.swift */; };
 		A62C1CEA2A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CE92A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift */; };
+		A637DDEA2A4A4B160017857D /* EditGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDE92A4A4B160017857D /* EditGameCoordinator.swift */; };
+		A637DDEC2A4A4B1E0017857D /* EditGameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDEB2A4A4B1E0017857D /* EditGameFactory.swift */; };
+		A637DDEE2A4A4B290017857D /* EditGameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDED2A4A4B290017857D /* EditGameInteractor.swift */; };
+		A637DDF02A4A4B300017857D /* EditGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDEF2A4A4B300017857D /* EditGamePresenter.swift */; };
+		A637DDF22A4A4B360017857D /* EditGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDF12A4A4B360017857D /* EditGameView.swift */; };
+		A637DDF42A4A4B3F0017857D /* EditGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDF32A4A4B3F0017857D /* EditGameViewController.swift */; };
+		A637DDFB2A4A55140017857D /* PickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFA2A4A55140017857D /* PickerComponent.swift */; };
+		A637DDFD2A4A55660017857D /* EditGameGoalInformationsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */; };
 		A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64912412A33BAA700356B7B /* CalendarViewController.swift */; };
 		A64912452A33BCE300356B7B /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A64912442A33BCE300356B7B /* HorizonCalendar */; };
 		A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */; };
@@ -205,6 +213,14 @@
 		A62C1CE32A37E873002AA401 /* FinancialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialCoordinator.swift; sourceTree = "<group>"; };
 		A62C1CE72A37E8C9002AA401 /* FinancialPendencieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialPendencieCardView.swift; sourceTree = "<group>"; };
 		A62C1CE92A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialPendencieCardViewModel.swift; sourceTree = "<group>"; };
+		A637DDE92A4A4B160017857D /* EditGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameCoordinator.swift; sourceTree = "<group>"; };
+		A637DDEB2A4A4B1E0017857D /* EditGameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameFactory.swift; sourceTree = "<group>"; };
+		A637DDED2A4A4B290017857D /* EditGameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameInteractor.swift; sourceTree = "<group>"; };
+		A637DDEF2A4A4B300017857D /* EditGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGamePresenter.swift; sourceTree = "<group>"; };
+		A637DDF12A4A4B360017857D /* EditGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameView.swift; sourceTree = "<group>"; };
+		A637DDF32A4A4B3F0017857D /* EditGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameViewController.swift; sourceTree = "<group>"; };
+		A637DDFA2A4A55140017857D /* PickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerComponent.swift; sourceTree = "<group>"; };
+		A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameGoalInformationsCardView.swift; sourceTree = "<group>"; };
 		A64912412A33BAA700356B7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsView.swift; sourceTree = "<group>"; };
 		A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +433,7 @@
 		A6033E772A12E57E002B56EE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A637DDF92A4A54FF0017857D /* PickerComponent */,
 				A61A8F8E2A144178009D08EE /* ErrorComponent */,
 				A6033E782A12E590002B56EE /* TextFieldComponent */,
 			);
@@ -811,6 +828,76 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		A637DDE32A4A4AD90017857D /* EditGame */ = {
+			isa = PBXGroup;
+			children = (
+				A637DDE82A4A4B030017857D /* Coordinator */,
+				A637DDE72A4A4AFF0017857D /* Factory */,
+				A637DDF82A4A4F030017857D /* InternalComponents */,
+				A637DDE62A4A4AF90017857D /* Interactor */,
+				A637DDE52A4A4AF30017857D /* Presenter */,
+				A637DDE42A4A4AEE0017857D /* View */,
+			);
+			path = EditGame;
+			sourceTree = "<group>";
+		};
+		A637DDE42A4A4AEE0017857D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A637DDF12A4A4B360017857D /* EditGameView.swift */,
+				A637DDF32A4A4B3F0017857D /* EditGameViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A637DDE52A4A4AF30017857D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A637DDEF2A4A4B300017857D /* EditGamePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A637DDE62A4A4AF90017857D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A637DDED2A4A4B290017857D /* EditGameInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A637DDE72A4A4AFF0017857D /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A637DDEB2A4A4B1E0017857D /* EditGameFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A637DDE82A4A4B030017857D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A637DDE92A4A4B160017857D /* EditGameCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A637DDF82A4A4F030017857D /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */,
+			);
+			path = InternalComponents;
+			sourceTree = "<group>";
+		};
+		A637DDF92A4A54FF0017857D /* PickerComponent */ = {
+			isa = PBXGroup;
+			children = (
+				A637DDFA2A4A55140017857D /* PickerComponent.swift */,
+			);
+			path = PickerComponent;
+			sourceTree = "<group>";
+		};
 		A64912372A33BA0500356B7B /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,6 +1049,7 @@
 				A6CCFC4C2A333D6C00364614 /* ChatDetails */,
 				A6CCFC452A333D3500364614 /* ChatMain */,
 				A6CCFC302A32230800364614 /* ChangePassword */,
+				A637DDE32A4A4AD90017857D /* EditGame */,
 				A62C1CD02A37E7A4002AA401 /* Financial */,
 				A61A8F932A1C1D32009D08EE /* ForgotPassword */,
 				A6A7416B2A26B352009A7998 /* GamesHistory */,
@@ -1612,6 +1700,7 @@
 				A6CCFC3C2A32235800364614 /* ChangePasswordWorker.swift in Sources */,
 				A6A741752A26B39B009A7998 /* GamesHistoryView.swift in Sources */,
 				A6CCFC6D2A3389F200364614 /* ChatMessageListView.swift in Sources */,
+				A637DDF22A4A4B360017857D /* EditGameView.swift in Sources */,
 				A6993E3B2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift in Sources */,
 				A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */,
 				A6993E1F2A2BBCC300C2BDE3 /* RankingCoordinator.swift in Sources */,
@@ -1627,6 +1716,7 @@
 				A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
 				A6993E372A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift in Sources */,
+				A637DDF02A4A4B300017857D /* EditGamePresenter.swift in Sources */,
 				A6CCFC402A32236700364614 /* ChangePasswordInteractor.swift in Sources */,
 				A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */,
 				A6A741792A26B3BB009A7998 /* GamesHistoryViewController.swift in Sources */,
@@ -1663,6 +1753,7 @@
 				A6A741832A26C183009A7998 /* GamesHistoryWorker.swift in Sources */,
 				A62C1CC12A3613EC002AA401 /* CalendarInteractor.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A637DDF42A4A4B3F0017857D /* EditGameViewController.swift in Sources */,
 				A6CCFC662A336F5F00364614 /* ChatMainFactory.swift in Sources */,
 				A6993E2C2A2BFB0100C2BDE3 /* PersonalInformationsView.swift in Sources */,
 				A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */,
@@ -1670,6 +1761,7 @@
 				A6CCFC622A336CB100364614 /* ChatMainCoordinator.swift in Sources */,
 				A62C1CD82A37E841002AA401 /* FinancialPendenciesView.swift in Sources */,
 				A6A7416A2A2566DA009A7998 /* WeekTeamFactory.swift in Sources */,
+				A637DDEE2A4A4B290017857D /* EditGameInteractor.swift in Sources */,
 				A62C1CE42A37E873002AA401 /* FinancialCoordinator.swift in Sources */,
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
 				A6993E312A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift in Sources */,
@@ -1693,6 +1785,7 @@
 				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
 				A62C1CCD2A37E304002AA401 /* CalendarCoordinator.swift in Sources */,
 				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
+				A637DDFB2A4A55140017857D /* PickerComponent.swift in Sources */,
 				A6CCFC642A336E6400364614 /* ChatMainPresenter.swift in Sources */,
 				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
 				A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */,
@@ -1720,9 +1813,11 @@
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
+				A637DDEC2A4A4B1E0017857D /* EditGameFactory.swift in Sources */,
 				A62C1CCF2A37E479002AA401 /* CalendarFactory.swift in Sources */,
 				A6CCFC3A2A32234D00364614 /* ChangePasswordViewController.swift in Sources */,
 				A62C1CDE2A37E85C002AA401 /* FinancialPresenter.swift in Sources */,
+				A637DDFD2A4A55660017857D /* EditGameGoalInformationsCardView.swift in Sources */,
 				A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */,
 				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
 				A67360932A393282003BF4C2 /* FinancialDetailsFactory.swift in Sources */,
@@ -1734,6 +1829,7 @@
 				A61CFFF62A3BDC3C0026BAF1 /* EditAwardsInteractor.swift in Sources */,
 				A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */,
 				A6CEE4BE2A3F7B4D002CF9F5 /* EditAwardsFactory.swift in Sources */,
+				A637DDEA2A4A4B160017857D /* EditGameCoordinator.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
 				A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */,
 				A6CCFC6F2A338E6500364614 /* ChatMessagesViewController.swift in Sources */,

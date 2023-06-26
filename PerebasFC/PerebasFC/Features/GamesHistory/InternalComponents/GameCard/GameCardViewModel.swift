@@ -8,9 +8,9 @@
 import Foundation
 
 struct Game {
-    let score: Score
+    let score: Score?
     let gameDate: String
-    let goals: [Goals]
+    let goals: [Goals]?
 }
 
 struct Score {

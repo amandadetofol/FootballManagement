@@ -12,7 +12,7 @@ protocol GamesHistoryPresenterProtocol {
 }
 
 final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
-    
+
     private let presenter: GamesHistoryPresenterProtocol
     private let worker: GamesHistoryWorkerProtocol
     private let coordinator: GamesHistoryCoordinatorProtocol
@@ -33,6 +33,10 @@ final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
             }
             self?.presenter.updateView(using: game)
         }
+    }
+    
+    func handleEditGameButtonTap(game: Game) {
+        coordinator.goToEditGameView(game: game)
     }
 
 }

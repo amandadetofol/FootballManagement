@@ -9,12 +9,14 @@ import UIKit
 
 protocol GamesHistoryInteractorProtocol {
     func viewDidLoad()
+    func handleEditGameButtonTap(game: Game)
 }
 
 final class GamesHistoryViewController: UIViewController {
     
-    private let gamesHistoryView: GamesHistoryView = {
+    private lazy var gamesHistoryView: GamesHistoryView = {
         let view = GamesHistoryView()
+        view.delegate = self
    
         return view
     }()
@@ -47,4 +49,12 @@ extension GamesHistoryViewController: GamesHistoryViewProtocol {
         gamesHistoryView.updateView(with: model)
     }
 
+}
+
+extension GamesHistoryViewController: GamesHistoryViewDelegate {
+    
+    func handleEditGameButtonTap(game: Game) {
+        interactor.handleEditGameButtonTap(game: game)
+    }
+    
 }

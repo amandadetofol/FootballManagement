@@ -9,6 +9,7 @@ import UIKit
 
 protocol GamesHistoryCoordinatorProtocol {
     func showAlertErrorView()
+    func goToEditGameView(game: Game)
 }
 
 final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
@@ -35,6 +36,10 @@ final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
             alert,
             animated: true)
 
+    }
+    
+    func goToEditGameView(game: Game) {
+        
     }
     
 }
