@@ -68,6 +68,7 @@
 		A637DDF42A4A4B3F0017857D /* EditGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDF32A4A4B3F0017857D /* EditGameViewController.swift */; };
 		A637DDFB2A4A55140017857D /* PickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFA2A4A55140017857D /* PickerComponent.swift */; };
 		A637DDFD2A4A55660017857D /* EditGameGoalInformationsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */; };
+		A637DDFF2A4BAB6A0017857D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFE2A4BAB6A0017857D /* Date.swift */; };
 		A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64912412A33BAA700356B7B /* CalendarViewController.swift */; };
 		A64912452A33BCE300356B7B /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A64912442A33BCE300356B7B /* HorizonCalendar */; };
 		A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */; };
@@ -221,6 +222,7 @@
 		A637DDF32A4A4B3F0017857D /* EditGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameViewController.swift; sourceTree = "<group>"; };
 		A637DDFA2A4A55140017857D /* PickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerComponent.swift; sourceTree = "<group>"; };
 		A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameGoalInformationsCardView.swift; sourceTree = "<group>"; };
+		A637DDFE2A4BAB6A0017857D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A64912412A33BAA700356B7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsView.swift; sourceTree = "<group>"; };
 		A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsViewController.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				A61A8F7B2A14327E009D08EE /* UIView.swift */,
 				A6E5BB372A1D8CCA00ADE47F /* UIStackView.swift */,
 				A6993E0E2A2BA10500C2BDE3 /* UIColor.swift */,
+				A637DDFE2A4BAB6A0017857D /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1691,6 +1694,7 @@
 				A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */,
 				A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */,
 				A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */,
+				A637DDFF2A4BAB6A0017857D /* Date.swift in Sources */,
 				A6CCFC382A32234300364614 /* ChangePasswordView.swift in Sources */,
 				A6E5BB402A1EB88900ADE47F /* HomeViewController.swift in Sources */,
 				A62C1CE82A37E8C9002AA401 /* FinancialPendencieCardView.swift in Sources */,

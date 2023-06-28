@@ -65,6 +65,9 @@ final class EditGameGoalInformationsCardView: UIView {
         }
     }
     
+    var model: Goals?
+    
+    
     init(
         player: User?,
         time: Date?,
@@ -101,6 +104,14 @@ final class EditGameGoalInformationsCardView: UIView {
             if let time = time {
                 timePicker.date = time
             }
+            
+            guard let player = player,
+                  let time = time else { return }
+            
+            self.model = Goals(
+                player: player,
+                time: time,
+                index: Int(index) ?? 0)
     }
     
     private func setupView(){

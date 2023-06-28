@@ -11,14 +11,23 @@ struct Game {
     let score: Score?
     let gameDate: String
     let goals: [Goals]?
+    let date: Date
 }
 
 struct Score {
+    
+    var totalPoints: Int {
+        get {
+            return whiteTeamPoints + blackTeamPoints
+        }
+    }
+    
     let whiteTeamPoints: Int
     let blackTeamPoints: Int
 }
 
 struct Goals {
-    let playerName: String
-    let time: String
+    let player: User
+    let time: Date
+    let index: Int 
 }

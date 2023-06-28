@@ -128,7 +128,9 @@ final class GameCardView: UIView {
             label.translatesAutoresizingMaskIntoConstraints = false
             label.numberOfLines = 0
             label.textAlignment = .center
-            label.text = goal.playerName + goal.time
+            label.text = goal.player.firstName + goal.time.formatted(
+                date: .omitted,
+                time: .shortened)
             label.font = UIFont.boldSystemFont(ofSize: 16.0)
             label.isAccessibilityElement = false
             goalsStackView.addArrangedSubview(label)
@@ -209,7 +211,7 @@ final class GameCardView: UIView {
         
         var goals = ""
         model.goals?.forEach { goal in
-            goals += "Gol de: \(goal.playerName) aos \(goal.time)"
+            goals += "Gol de: \(goal.player.firstName) aos \(goal.time)"
         }
         
         accessibilityLabel = "Jogo do dia: \(model.gameDate). \(result) \(goals)"

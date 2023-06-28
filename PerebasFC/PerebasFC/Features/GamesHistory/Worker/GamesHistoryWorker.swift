@@ -5,7 +5,7 @@
 //  Created by Amanda Detofol on 30/05/23.
 //
 
-import Foundation
+import UIKit
 
 protocol GamesHistoryWorkerProtocol {
     func getGamesHistory(_ completion: @escaping (([Game]?) -> Void))
@@ -14,49 +14,52 @@ protocol GamesHistoryWorkerProtocol {
 final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
     
     func getGamesHistory(_ completion: @escaping (([Game]?) -> Void)) {
+        let userWarning = UserWarning(
+            title: "Warning Title",
+            description: "Warning Description",
+            icon: UIImage(),
+            firstActionTitle: "Take Action",
+            firstActionKey: .chat
+        )
+
+        let user = User(
+            id: "123",
+            firstName: "John",
+            lastName: "Doe",
+            shirtNumber: "10",
+            position: "Forward",
+            team: "FC Barcelona",
+            warning: userWarning,
+            rankingPosition: 5,
+            isAdm: true,
+            menuItems: [MenuItemViewModel(title: String(), icon: UIImage(), redirectKey: .calendar)]
+        )
+
         let goals1: [Goals] = [
-            Goals(playerName: "John", time: "15:23"),
-            Goals(playerName: "Michael", time: "28:46"),
-            Goals(playerName: "Sarah", time: "33:02")
+            Goals( player: user, time: Date(), index: 1),
+            Goals( player: user, time: Date(), index: 2),
+            Goals( player: user, time: Date(), index: 3)
         ]
         let score1 = Score(whiteTeamPoints: 2, blackTeamPoints: 1)
-        let game1 = Game(score: score1, gameDate: "2023-05-29", goals: goals1)
+        let game1 = Game(score: score1, gameDate: "2023-05-29", goals: goals1, date: Date())
 
         let goals2: [Goals] = [
-            Goals(playerName: "David", time: "9:15"),
-            Goals(playerName: "Olivia", time: "21:37")
+            Goals( player: user, time: Date(), index: 1),
+            Goals( player: user, time: Date(), index: 2),
+            Goals( player: user, time: Date(), index: 3)
         ]
-        let score2 = Score(whiteTeamPoints: 0, blackTeamPoints: 2)
-        let game2 = Game(score: score2, gameDate: "2023-06-05", goals: goals2)
+        let score2 = Score(whiteTeamPoints: 0, blackTeamPoints: 3)
+        let game2 = Game(score: score2, gameDate: "2023-06-05", goals: goals2, date: Date())
 
         let goals3: [Goals] = [
-            Goals(playerName: "Robert", time: "3:50"),
-            Goals(playerName: "Emily", time: "12:12"),
-            Goals(playerName: "Daniel", time: "18:29"),
-            Goals(playerName: "Sophia", time: "25:03"),
-            Goals(playerName: "David", time: "31:55")
+            Goals( player: user, time: Date(), index: 1),
+            Goals( player: user, time: Date(), index: 2),
+            Goals( player: user, time: Date(), index: 3)
         ]
-        let score3 = Score(whiteTeamPoints: 5, blackTeamPoints: 0)
-        let game3 = Game(score: score3, gameDate: "2023-06-12", goals: goals3)
+        let score3 = Score(whiteTeamPoints: 3, blackTeamPoints: 0)
+        let game3 = Game(score: score3, gameDate: "2023-06-12", goals: goals3, date: Date())
 
-        let goals4: [Goals] = [
-            Goals(playerName: "Sarah", time: "5:47"),
-            Goals(playerName: "John", time: "10:19"),
-            Goals(playerName: "Olivia", time: "16:55")
-        ]
-        let score4 = Score(whiteTeamPoints: 3, blackTeamPoints: 0)
-        let game4 = Game(score: score4, gameDate: "2023-06-19", goals: goals4)
-        
-        let goals5: [Goals] = [
-            Goals(playerName: "Michael", time: "7:31"),
-            Goals(playerName: "Sophia", time: "14:58"),
-            Goals(playerName: "Daniel", time: "23:10"),
-            Goals(playerName: "Robert", time: "29:45")
-        ]
-        let score5 = Score(whiteTeamPoints: 4, blackTeamPoints: 0)
-        let game5 = Game(score: score5, gameDate: "2023-06-26", goals: goals5)
-
-        completion([game1, game2, game3, game4, game5])
+        completion([game1, game2, game3])
     }
     
 }
