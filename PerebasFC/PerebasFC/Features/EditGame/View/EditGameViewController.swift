@@ -9,7 +9,6 @@ import UIKit
 
 protocol EditGameInteractorProtocol {
     func viewDidLoad()
-    func handleGoToBackButtonTap()
     func handleSaveNewGameInformationsButtonTap(game: Game)
 }
 
@@ -27,6 +26,7 @@ final class EditGameViewController: UIViewController {
     init(interactor: EditGameInteractorProtocol){
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
+        title = "Editar Jogo"
     }
     
     @available(*, unavailable)
@@ -37,18 +37,23 @@ final class EditGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = editGameView
+        interactor.viewDidLoad()
     }
     
 }
 
 extension EditGameViewController: EditGameViewDelegate {
-    
-    func handleGoToBackButtonTap() {
-        interactor.handleGoToBackButtonTap()
-    }
-    
+
     func handleSaveNewGameInformationsButtonTap(game: Game) {
         interactor.handleSaveNewGameInformationsButtonTap(game: game)
+    }
+    
+}
+
+extension EditGameViewController: EditGameViewProtocol {
+    
+    func updateView(with game: Game) {
+        editGameView.updateView(with: game)
     }
     
 }

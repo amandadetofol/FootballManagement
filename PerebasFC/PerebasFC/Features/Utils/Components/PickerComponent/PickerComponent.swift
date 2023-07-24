@@ -106,6 +106,8 @@ final class PickerComponent: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
+            heightAnchor.constraint(equalToConstant: 96),
+            
             contentStackView.topAnchor.constraint(equalTo: topAnchor),
             contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentStackView.trailingAnchor.constraint(equalTo: trailingAnchor),

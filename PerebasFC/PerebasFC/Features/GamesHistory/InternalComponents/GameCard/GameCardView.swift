@@ -101,6 +101,7 @@ final class GameCardView: UIView {
         button.tintColor = .systemBlue
         button.setImage(UIImage(systemName: "pencil"), for: .normal)
         button.isHidden = true
+        button.backgroundColor = .white
         button.addTarget(self, action: #selector(handleEditGameButtonTap), for: .touchUpInside)
         
         return button
@@ -167,7 +168,7 @@ final class GameCardView: UIView {
             gameDateLabel.topAnchor.constraint(equalTo: topAnchor, constant: -28),
             gameDateLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             
-            editGameIcon.topAnchor.constraint(equalTo: topAnchor, constant: -28),
+            editGameIcon.topAnchor.constraint(equalTo: topAnchor, constant: 32),
             editGameIcon.heightAnchor.constraint(equalToConstant: 16),
             editGameIcon.widthAnchor.constraint(equalToConstant: 16),
             editGameIcon.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),

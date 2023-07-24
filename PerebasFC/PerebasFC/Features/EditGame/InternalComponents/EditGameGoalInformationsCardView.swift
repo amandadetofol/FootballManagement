@@ -93,14 +93,6 @@ final class EditGameGoalInformationsCardView: UIView {
             
             goalIndexLabel.text = index
             
-            if let player = player {
-                playersPickerView.selectRow(
-                    didSelectRow: Session.shared.players.firstIndex(where: {  user in
-                        user.firstName == player.firstName
-                    }) ?? 0,
-                    inComponent: 1)
-            }
-            
             if let time = time {
                 timePicker.date = time
             }
@@ -121,12 +113,12 @@ final class EditGameGoalInformationsCardView: UIView {
             playersPickerView,
             timePicker])
         setupBorders()
-        backgroundColor = .systemYellow.withAlphaComponent(0.20)
+        backgroundColor = .systemYellow.withAlphaComponent(0.10)
     }
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 148),
+            heightAnchor.constraint(equalToConstant: 218),
             
             goalIndexLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
             goalIndexLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -147,8 +139,10 @@ final class EditGameGoalInformationsCardView: UIView {
     }
     
     private func setupBorders(){
-        layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
         layer.borderWidth = 1
+        layer.cornerRadius = 10
+        clipsToBounds = true 
     }
     
 }

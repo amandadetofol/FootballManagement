@@ -39,7 +39,11 @@ final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
     }
     
     func goToEditGameView(game: Game) {
-        
+        let controller = EditGameFactory.getEditGameViewController(
+            navigationController: self.navigationController,
+            model: game)
+        controller.modalPresentationStyle = .pageSheet
+        navigationController.pushViewController(controller, animated: true)
     }
     
 }

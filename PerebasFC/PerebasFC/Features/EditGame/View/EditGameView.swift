@@ -8,7 +8,6 @@
 import UIKit
 
 protocol EditGameViewDelegate: AnyObject {
-    func handleGoToBackButtonTap()
     func handleSaveNewGameInformationsButtonTap(game: Game)
 }
 
@@ -41,7 +40,7 @@ final class EditGameView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 16
-        stackView.layoutMargins = UIEdgeInsets(top: 32, left: 32, bottom: -32, right: -32)
+        stackView.layoutMargins = UIEdgeInsets(top: 32, left: 32, bottom: 32, right: 32)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.isUserInteractionEnabled = true
         
@@ -102,7 +101,7 @@ final class EditGameView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 16
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 0, bottom: -16, right: 0)
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.isUserInteractionEnabled = true
         
@@ -113,24 +112,10 @@ final class EditGameView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
-        button.isHidden = true
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleSaveNewGameInformationsButtonTap), for: .touchUpInside)
-        
-        return button
-    }()
-
-    private lazy var gotoBackButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
-        button.isHidden = true
-        button.backgroundColor = .clear
-        button.setTitleColor(.black, for: .normal)
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(handleGoToBackButtonTap), for: .touchUpInside)
         
         return button
     }()
@@ -150,10 +135,9 @@ final class EditGameView: UIView {
         datePickerView.date = game.date 
         whiteLabelScoreTextField.text = String(game.score?.whiteTeamPoints ?? 0)
         blackLabelScoreTextField.text = String(game.score?.blackTeamPoints ?? 0)
-        goalsNumberLabel.text = String(game.score?.totalPoints ?? 0)
+        goalsNumberLabel.text = "Quantidade de gols da partida: \(String(game.score?.totalPoints ?? 0))"
         saveButton.setTitle("salvar".uppercased(), for: .normal)
-        gotoBackButton.setTitle("voltar".uppercased(), for: .normal)
-        
+       
         game.goals?.forEach({ goal in
             let goalCard = EditGameGoalInformationsCardView(
                 player: goal.player,
@@ -174,8 +158,7 @@ final class EditGameView: UIView {
             blackLabelScoreTextField,
             goalsNumberLabel,
             goalsStackView,
-            saveButton,
-            gotoBackButton])
+            saveButton])
         contentStackView.setCustomSpacing(4, after: datePickerLabel)
     }
     
@@ -203,11 +186,11 @@ final class EditGameView: UIView {
             datePickerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             datePickerView.heightAnchor.constraint(equalToConstant: 48),
             
-            whiteLabelScoreTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            whiteLabelScoreTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            whiteLabelScoreTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            whiteLabelScoreTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            blackLabelScoreTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            blackLabelScoreTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            blackLabelScoreTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            blackLabelScoreTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             goalsNumberLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             goalsNumberLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -218,20 +201,12 @@ final class EditGameView: UIView {
             saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             saveButton.heightAnchor.constraint(equalToConstant: 48),
-            
-            gotoBackButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            gotoBackButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            gotoBackButton.heightAnchor.constraint(equalToConstant: 48),
         ])
     }
     
 }
 
 extension EditGameView {
-    
-    @objc func handleGoToBackButtonTap(){
-        delegate?.handleGoToBackButtonTap()
-    }
     
     @objc func handleSaveNewGameInformationsButtonTap(){
         var goals: [Goals]? = nil

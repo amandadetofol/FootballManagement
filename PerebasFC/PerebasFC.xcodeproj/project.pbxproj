@@ -61,7 +61,6 @@
 		A62C1CE82A37E8C9002AA401 /* FinancialPendencieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CE72A37E8C9002AA401 /* FinancialPendencieCardView.swift */; };
 		A62C1CEA2A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CE92A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift */; };
 		A637DDEA2A4A4B160017857D /* EditGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDE92A4A4B160017857D /* EditGameCoordinator.swift */; };
-		A637DDEC2A4A4B1E0017857D /* EditGameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDEB2A4A4B1E0017857D /* EditGameFactory.swift */; };
 		A637DDEE2A4A4B290017857D /* EditGameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDED2A4A4B290017857D /* EditGameInteractor.swift */; };
 		A637DDF02A4A4B300017857D /* EditGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDEF2A4A4B300017857D /* EditGamePresenter.swift */; };
 		A637DDF22A4A4B360017857D /* EditGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDF12A4A4B360017857D /* EditGameView.swift */; };
@@ -86,6 +85,7 @@
 		A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */; };
 		A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10D2A2410EF008FA008 /* WeekTeamView.swift */; };
 		A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10F2A241392008FA008 /* WeekTeamViewController.swift */; };
+		A695D6422A6F3721004B3CCE /* EditGameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A695D6412A6F3721004B3CCE /* EditGameFactory.swift */; };
 		A6993E0F2A2BA10500C2BDE3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E0E2A2BA10500C2BDE3 /* UIColor.swift */; };
 		A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E102A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift */; };
 		A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E132A2BA5B400C2BDE3 /* RankingViewModel.swift */; };
@@ -215,7 +215,6 @@
 		A62C1CE72A37E8C9002AA401 /* FinancialPendencieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialPendencieCardView.swift; sourceTree = "<group>"; };
 		A62C1CE92A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialPendencieCardViewModel.swift; sourceTree = "<group>"; };
 		A637DDE92A4A4B160017857D /* EditGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameCoordinator.swift; sourceTree = "<group>"; };
-		A637DDEB2A4A4B1E0017857D /* EditGameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameFactory.swift; sourceTree = "<group>"; };
 		A637DDED2A4A4B290017857D /* EditGameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameInteractor.swift; sourceTree = "<group>"; };
 		A637DDEF2A4A4B300017857D /* EditGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGamePresenter.swift; sourceTree = "<group>"; };
 		A637DDF12A4A4B360017857D /* EditGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameView.swift; sourceTree = "<group>"; };
@@ -239,6 +238,7 @@
 		A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewModel.swift; sourceTree = "<group>"; };
 		A680E10D2A2410EF008FA008 /* WeekTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamView.swift; sourceTree = "<group>"; };
 		A680E10F2A241392008FA008 /* WeekTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewController.swift; sourceTree = "<group>"; };
+		A695D6412A6F3721004B3CCE /* EditGameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameFactory.swift; sourceTree = "<group>"; };
 		A6993E0E2A2BA10500C2BDE3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A6993E102A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlaceGiftsViewModel.swift; sourceTree = "<group>"; };
 		A6993E132A2BA5B400C2BDE3 /* RankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewModel.swift; sourceTree = "<group>"; };
@@ -872,7 +872,7 @@
 		A637DDE72A4A4AFF0017857D /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				A637DDEB2A4A4B1E0017857D /* EditGameFactory.swift */,
+				A695D6412A6F3721004B3CCE /* EditGameFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -1786,6 +1786,7 @@
 				A6CCFC5C2A333EB700364614 /* ChatItemViewModel.swift in Sources */,
 				A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */,
 				A6CCFC5A2A333E6300364614 /* ChatItemView.swift in Sources */,
+				A695D6422A6F3721004B3CCE /* EditGameFactory.swift in Sources */,
 				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
 				A62C1CCD2A37E304002AA401 /* CalendarCoordinator.swift in Sources */,
 				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
@@ -1817,7 +1818,6 @@
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
-				A637DDEC2A4A4B1E0017857D /* EditGameFactory.swift in Sources */,
 				A62C1CCF2A37E479002AA401 /* CalendarFactory.swift in Sources */,
 				A6CCFC3A2A32234D00364614 /* ChangePasswordViewController.swift in Sources */,
 				A62C1CDE2A37E85C002AA401 /* FinancialPresenter.swift in Sources */,
@@ -1904,7 +1904,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1958,7 +1958,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

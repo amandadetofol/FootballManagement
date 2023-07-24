@@ -94,9 +94,6 @@ final class GamesHistoryView: UIView {
         ])
     }
     
-    //adicionar
-    //editar -> quando adicionar a quantidade de gols e quem fez contabilizar os pontos
-    
 }
 
 extension GamesHistoryView: GameCardViewDelegate {
