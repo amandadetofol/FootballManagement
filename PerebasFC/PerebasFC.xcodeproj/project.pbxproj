@@ -14,6 +14,13 @@
 		A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E6B2A12DF32002B56EE /* WelcomeView.swift */; };
 		A6033E752A12E416002B56EE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E742A12E416002B56EE /* LoginView.swift */; };
 		A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E792A12E5A9002B56EE /* TextFieldComponentView.swift */; };
+		A60B1A3A2A71E031007F71ED /* NewEventInCalendarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B1A392A71E031007F71ED /* NewEventInCalendarCoordinator.swift */; };
+		A60B1A3C2A71E03E007F71ED /* NewEventInCalendarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B1A3B2A71E03E007F71ED /* NewEventInCalendarFactory.swift */; };
+		A60B1A3E2A71E048007F71ED /* NewEventInCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B1A3D2A71E048007F71ED /* NewEventInCalendarViewModel.swift */; };
+		A60B1A422A71E05F007F71ED /* NewEventInCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B1A412A71E05F007F71ED /* NewEventInCalendarInteractor.swift */; };
+		A60B1A442A71E06E007F71ED /* NewEventInCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B1A432A71E06E007F71ED /* NewEventInCalendarView.swift */; };
+		A60B1A462A71E077007F71ED /* NewEventInCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B1A452A71E077007F71ED /* NewEventInCalendarViewController.swift */; };
+		A60B1A492A71E718007F71ED /* NewEventInCalendarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B1A482A71E718007F71ED /* NewEventInCalendarWorker.swift */; };
 		A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F7B2A14327E009D08EE /* UIView.swift */; };
 		A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F7D2A14345F009D08EE /* LoginViewController.swift */; };
 		A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8F7F2A143559009D08EE /* LoginInteractor.swift */; };
@@ -168,6 +175,13 @@
 		A6033E6B2A12DF32002B56EE /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A6033E742A12E416002B56EE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A6033E792A12E5A9002B56EE /* TextFieldComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponentView.swift; sourceTree = "<group>"; };
+		A60B1A392A71E031007F71ED /* NewEventInCalendarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventInCalendarCoordinator.swift; sourceTree = "<group>"; };
+		A60B1A3B2A71E03E007F71ED /* NewEventInCalendarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventInCalendarFactory.swift; sourceTree = "<group>"; };
+		A60B1A3D2A71E048007F71ED /* NewEventInCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventInCalendarViewModel.swift; sourceTree = "<group>"; };
+		A60B1A412A71E05F007F71ED /* NewEventInCalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventInCalendarInteractor.swift; sourceTree = "<group>"; };
+		A60B1A432A71E06E007F71ED /* NewEventInCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventInCalendarView.swift; sourceTree = "<group>"; };
+		A60B1A452A71E077007F71ED /* NewEventInCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventInCalendarViewController.swift; sourceTree = "<group>"; };
+		A60B1A482A71E718007F71ED /* NewEventInCalendarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventInCalendarWorker.swift; sourceTree = "<group>"; };
 		A61A8F7B2A14327E009D08EE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A61A8F7D2A14345F009D08EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A61A8F7F2A143559009D08EE /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -448,6 +462,68 @@
 				A6033E792A12E5A9002B56EE /* TextFieldComponentView.swift */,
 			);
 			path = TextFieldComponent;
+			sourceTree = "<group>";
+		};
+		A60B1A302A71DFEA007F71ED /* NewEventInCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				A60B1A382A71E01F007F71ED /* Coordinator */,
+				A60B1A372A71E01A007F71ED /* Factory */,
+				A60B1A362A71E017007F71ED /* Model */,
+				A60B1A342A71E00E007F71ED /* Interactor */,
+				A60B1A322A71E004007F71ED /* View */,
+				A60B1A472A71E707007F71ED /* Worker */,
+			);
+			path = NewEventInCalendar;
+			sourceTree = "<group>";
+		};
+		A60B1A322A71E004007F71ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A60B1A432A71E06E007F71ED /* NewEventInCalendarView.swift */,
+				A60B1A452A71E077007F71ED /* NewEventInCalendarViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A60B1A342A71E00E007F71ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A60B1A412A71E05F007F71ED /* NewEventInCalendarInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A60B1A362A71E017007F71ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A60B1A3D2A71E048007F71ED /* NewEventInCalendarViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A60B1A372A71E01A007F71ED /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A60B1A3B2A71E03E007F71ED /* NewEventInCalendarFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A60B1A382A71E01F007F71ED /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A60B1A392A71E031007F71ED /* NewEventInCalendarCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A60B1A472A71E707007F71ED /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A60B1A482A71E718007F71ED /* NewEventInCalendarWorker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		A61A8F7A2A14326E009D08EE /* Extensions */ = {
@@ -1049,6 +1125,7 @@
 			children = (
 				A61CFFE92A3BD2F50026BAF1 /* Shared */,
 				A64912372A33BA0500356B7B /* Calendar */,
+				A60B1A302A71DFEA007F71ED /* NewEventInCalendar */,
 				A6CCFC4C2A333D6C00364614 /* ChatDetails */,
 				A6CCFC452A333D3500364614 /* ChatMain */,
 				A6CCFC302A32230800364614 /* ChangePassword */,
@@ -1691,6 +1768,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60B1A3E2A71E048007F71ED /* NewEventInCalendarViewModel.swift in Sources */,
 				A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */,
 				A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */,
 				A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */,
@@ -1710,10 +1788,12 @@
 				A6993E1F2A2BBCC300C2BDE3 /* RankingCoordinator.swift in Sources */,
 				A6993E0F2A2BA10500C2BDE3 /* UIColor.swift in Sources */,
 				A62C1CDC2A37E855002AA401 /* FinancialWorker.swift in Sources */,
+				A60B1A492A71E718007F71ED /* NewEventInCalendarWorker.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
 				A6CCFC442A32237700364614 /* ChangePasswordCoordinator.swift in Sources */,
 				A62C1CE02A37E864002AA401 /* FinancialInteractor.swift in Sources */,
 				A61CFFEB2A3BD3000026BAF1 /* Session.swift in Sources */,
+				A60B1A422A71E05F007F71ED /* NewEventInCalendarInteractor.swift in Sources */,
 				A67360982A3933A4003BF4C2 /* SeeProofWebView.swift in Sources */,
 				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
@@ -1726,6 +1806,7 @@
 				A6A741792A26B3BB009A7998 /* GamesHistoryViewController.swift in Sources */,
 				A6CFD57D2A293A0600A37696 /* CommonnPlacesView.swift in Sources */,
 				A62C1CBF2A36111C002AA401 /* CalendarWorker.swift in Sources */,
+				A60B1A3A2A71E031007F71ED /* NewEventInCalendarCoordinator.swift in Sources */,
 				A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */,
 				A6993E2F2A2BFB1900C2BDE3 /* PersonalInformationsViewController.swift in Sources */,
 				A62C1CC32A37DC14002AA401 /* CalendarPresenter.swift in Sources */,
@@ -1794,6 +1875,7 @@
 				A6CCFC642A336E6400364614 /* ChatMainPresenter.swift in Sources */,
 				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
 				A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */,
+				A60B1A462A71E077007F71ED /* NewEventInCalendarViewController.swift in Sources */,
 				A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */,
 				A62C1CEA2A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift in Sources */,
 				A6CCFC422A32236F00364614 /* ChangePasswordFactory.swift in Sources */,
@@ -1806,6 +1888,7 @@
 				A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */,
 				A6993E1A2A2BB5A700C2BDE3 /* RankingWorker.swift in Sources */,
 				A673608D2A393235003BF4C2 /* FinancialDetailsViewController.swift in Sources */,
+				A60B1A442A71E06E007F71ED /* NewEventInCalendarView.swift in Sources */,
 				A6CCFC602A3369F800364614 /* ChatMainWorker.swift in Sources */,
 				A6CFD5762A29397C00A37696 /* FirstPlacesGiftsView.swift in Sources */,
 				A67360912A393276003BF4C2 /* FinancialDetailsInteractor.swift in Sources */,
@@ -1837,6 +1920,7 @@
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
 				A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */,
 				A6CCFC6F2A338E6500364614 /* ChatMessagesViewController.swift in Sources */,
+				A60B1A3C2A71E03E007F71ED /* NewEventInCalendarFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

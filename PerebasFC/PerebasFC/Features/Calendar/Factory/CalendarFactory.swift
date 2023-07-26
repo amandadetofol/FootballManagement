@@ -17,9 +17,7 @@ final class CalendarFactory {
             worker: worker,
             presenter: presenter,
             coordinator: coordinator)
-        let viewController = CalendarViewController(
-            isAdm: false,
-            interactor: interactor)
+        let viewController = CalendarViewController(interactor: interactor)
         presenter.view = viewController
         
         return viewController

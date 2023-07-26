@@ -56,11 +56,10 @@ final class CalendarViewController: UIViewController {
         return calendarView
     }()
     
-    private let isAdm: Bool
+    private let isAdm = Session.shared.isAdm ?? false 
     private let interactor: CalendarViewInteractorProtocol
 
-    init(isAdm: Bool, interactor: CalendarViewInteractorProtocol){
-        self.isAdm = isAdm
+    init(interactor: CalendarViewInteractorProtocol){
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }

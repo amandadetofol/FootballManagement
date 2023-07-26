@@ -35,7 +35,6 @@ final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
         navigationController.present(
             alert,
             animated: true)
-
     }
     
     func goToEditGameView(game: Game) {
