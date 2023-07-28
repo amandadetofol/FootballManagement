@@ -15,11 +15,11 @@ final class HomeInteractor: HomeInteractorProtocol {
     
     private let homeViewModel: User
     private let presenter: HomePresenterProtocol
-    private let coordinator: HomeCoordinatorProtocol
+    private let coordinator: HomeCoordinatorProtocolWithLoaderProtocol
     
     init(homeViewModel: User,
          presenter: HomePresenterProtocol,
-         coordinator: HomeCoordinatorProtocol) {
+         coordinator: HomeCoordinatorProtocolWithLoaderProtocol) {
         self.homeViewModel = homeViewModel
         self.presenter = presenter
         self.coordinator = coordinator

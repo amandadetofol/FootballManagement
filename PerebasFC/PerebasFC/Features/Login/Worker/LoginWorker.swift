@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol LoginWorkerProtocol {
     func login(
@@ -22,25 +23,42 @@ final class LoginWorker: LoginWorkerProtocol {
         password: String,
         isAdm: Bool,
         _ completion: @escaping ((User?) -> Void)) {
-           
-                let user = User(
-                    id: "01",
-                    firstName: "José",
-                    lastName: "Maria",
-                    shirtNumber: "08",
-                    position: "Zagueiro",
-                    team: "Preto",
-                    warning: UserWarning(
-                        title: "Se lembra desse evento?",
-                        description: "Ei, voce vai comparecer no churrasco de amanhã? Não esqueça de confirmar sua presença",
-                        icon: UIImage(systemName: "fork.knife.circle.fill") ?? UIImage(),
-                        firstActionTitle: "Confirmar".uppercased(),
-                        firstActionKey: .confirmPresence(willShow: true)),
-                        rankingPosition: 8,
-                    isAdm: false,
-                    menuItems: getMenuItemList(isAdm: isAdm))
-                Session.shared.isAdm = isAdm
-                completion(user)
+            
+            Auth.auth().signIn(
+                withEmail: username,
+                password: password) { [weak self] data, error  in
+                    guard let self = self,
+                          error == nil else {
+                        completion(nil)
+                        return
+                    }
+                    
+                    if (data?.user != nil) {
+                        //TODO: Chamar o firebase para retornar os dados do usuário
+                        // e remover o mock 
+                        let user = User(
+                            id: "01",
+                            firstName: "José",
+                            lastName: "Maria",
+                            shirtNumber: "08",
+                            position: "Zagueiro",
+                            team: "Preto",
+                            warning: UserWarning(
+                                title: "Se lembra desse evento?",
+                                description: "Ei, voce vai comparecer no churrasco de amanhã? Não esqueça de confirmar sua presença",
+                                icon: UIImage(systemName: "fork.knife.circle.fill") ?? UIImage(),
+                                firstActionTitle: "Confirmar".uppercased(),
+                                firstActionKey: .confirmPresence(willShow: true)),
+                                rankingPosition: 8,
+                            isAdm: false,
+                            menuItems: self.getMenuItemList(isAdm: isAdm))
+                        Session.shared.isAdm = isAdm
+                        completion(user)
+                    } else {
+                        completion(nil)
+                    }
+                    
+                }
         }
     
     func getMenuItemList(isAdm: Bool) -> [MenuItemViewModel] {

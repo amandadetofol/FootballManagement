@@ -14,11 +14,11 @@ protocol LoginPresenterProtocol {
 
 final class LoginInteractor: LoginInteractorProtocol {
     
-    let coordinator: LoginCoordinatorProtocol
+    let coordinator: LoginCoordinatorWithLoaderProtocol
     let presenter: LoginPresenterProtocol
     let worker: LoginWorkerProtocol
     
-    init(coordinator: LoginCoordinatorProtocol,
+    init(coordinator: LoginCoordinatorWithLoaderProtocol,
          presenter: LoginPresenterProtocol,
          worker: LoginWorkerProtocol){
             self.coordinator = coordinator
@@ -36,10 +36,13 @@ final class LoginInteractor: LoginInteractorProtocol {
         }
         
         if !password.isEmpty && !username.isEmpty {
+            coordinator.showLoader()
             worker.login(username: username, password: password, isAdm: isAdm) { [weak self] user in
                 if let user = user {
+                    self?.coordinator.removeLoader()
                     self?.coordinator.goToLoggedArea(user: user)
                 } else {
+                    self?.coordinator.removeLoader()
                     self?.presentViewForLoginError()
                 }
             }

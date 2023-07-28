@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias HomeCoordinatorProtocolWithLoaderProtocol = LoaderCoodinatorProtocol & HomeCoordinatorProtocol
+
 protocol HomeCoordinatorProtocol {
     func handleLogout()
     func handleAlertCloseButtonTap()
@@ -16,16 +18,37 @@ protocol HomeCoordinatorProtocol {
         teams: WeekTeamViewModel?)
 }
 
-final class HomeCoordinator: HomeCoordinatorProtocol {
+final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
     
     private let navigationController: UINavigationController
+    private let loaderCoordinator: LoaderCoodinatorProtocol
     
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
+        self.loaderCoordinator = LoaderCoodinator(navigationController: navigationController)
+    }
+    
+    func showLoader() {
+        loaderCoordinator.showLoader()
+    }
+    
+    func removeLoader() {
+        loaderCoordinator.removeLoader()
     }
     
     func handleLogout() {
-        self.navigationController.popViewController(animated: true)
+        showLoader()
+        SignOutWorker.signOut { [weak self] succeded in
+            guard let self = self else { return }
+            switch succeded {
+                case true:
+                    self.removeLoader()
+                    self.navigationController.popViewController(animated: true)
+                case false:
+                    self.removeLoader()
+                    self.showErrorPopUp()
+            }
+        }
     }
     
     func handleAlertCloseButtonTap() {
@@ -91,5 +114,26 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
                 
             }
         }
+    
+    //MARK: Private methods
+    private func showErrorPopUp() {
+        let alert = UIAlertController(
+            title: "Ops!",
+            message: "Algo deu errado :( \n Tente novamente!",
+            preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(
+            UIAlertAction(
+                title: "ok".uppercased(),
+                style: UIAlertAction.Style.default,
+                handler: { [weak self] _ in
+                    self?.navigationController.popViewController(animated: true)
+                }))
+
+        navigationController.present(
+            alert,
+            animated: true)
+    }
+    
     
 }

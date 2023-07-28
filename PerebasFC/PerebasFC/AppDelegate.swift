@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
         window?.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
         
+        configureFirebase()
+        
         return true
+    }
+    
+    private func configureFirebase(){
+        let providerFactory = AppCheckDebugProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+        
+        FirebaseApp.configure()
     }
 
 }

@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias LoginCoordinatorWithLoaderProtocol = LoaderCoodinatorProtocol & LoginCoordinatorProtocol
+
 protocol LoginCoordinatorProtocol {
     func goToLoginErrorView()
     func goToLoggedArea(user: User)
@@ -14,14 +16,24 @@ protocol LoginCoordinatorProtocol {
     func goToForgotPassword(username: String)
 }
 
-final class LoginCoordinator: LoginCoordinatorProtocol {
+final class LoginCoordinator: LoginCoordinatorWithLoaderProtocol {
 
+    private let loaderCoordinator: LoaderCoodinator
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
+        self.loaderCoordinator = LoaderCoodinator(navigationController: navigationController)
     }
     
+    func showLoader() {
+        loaderCoordinator.showLoader()
+    }
+    
+    func removeLoader() {
+        loaderCoordinator.removeLoader()
+    }
+
     func start(){
         navigationController.pushViewController(
             LoginFactory.getLoginViewController(navigationController: navigationController),
