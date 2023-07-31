@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 protocol LoginWorkerProtocol {
     func login(
@@ -14,9 +15,44 @@ protocol LoginWorkerProtocol {
         password: String,
         isAdm: Bool,
         _ completion: @escaping ((User?) -> Void))
+    func loginWithGoogle(
+        controller: UIViewController,
+        isAdm: Bool,
+        _ completion: @escaping ((User?) -> Void))
 }
 
 final class LoginWorker: LoginWorkerProtocol {
+    
+    func loginWithGoogle(
+        controller: UIViewController,
+        isAdm: Bool = false,
+        _ completion: @escaping ((User?) -> Void)) {
+            guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+            let config = GIDConfiguration(clientID: clientID)
+            GIDSignIn.sharedInstance.configuration = config
+            
+            GIDSignIn.sharedInstance.signIn(withPresenting: controller) { [unowned self] result, error in
+                guard error == nil,
+                      let user = result?.user,
+                      let idToken = user.idToken?.tokenString else {
+                    completion(nil)
+                    return
+                }
+                
+                let credential = GoogleAuthProvider.credential(
+                    withIDToken: idToken,
+                    accessToken: user.accessToken.tokenString)
+                
+                Auth.auth().signIn(with: credential) { result, error in
+                    if (result?.user != nil) {
+                        Session.shared.isAdm = isAdm
+                        completion(self.getMockUser(isAdm: isAdm))
+                    } else {
+                        completion(nil)
+                    }
+                }
+            }
+        }
     
     func login(
         username: String,
@@ -34,26 +70,8 @@ final class LoginWorker: LoginWorkerProtocol {
                     }
                     
                     if (data?.user != nil) {
-                        //TODO: Chamar o firebase para retornar os dados do usuário
-                        // e remover o mock 
-                        let user = User(
-                            id: "01",
-                            firstName: "José",
-                            lastName: "Maria",
-                            shirtNumber: "08",
-                            position: "Zagueiro",
-                            team: "Preto",
-                            warning: UserWarning(
-                                title: "Se lembra desse evento?",
-                                description: "Ei, voce vai comparecer no churrasco de amanhã? Não esqueça de confirmar sua presença",
-                                icon: UIImage(systemName: "fork.knife.circle.fill") ?? UIImage(),
-                                firstActionTitle: "Confirmar".uppercased(),
-                                firstActionKey: .confirmPresence(willShow: true)),
-                                rankingPosition: 8,
-                            isAdm: false,
-                            menuItems: self.getMenuItemList(isAdm: isAdm))
                         Session.shared.isAdm = isAdm
-                        completion(user)
+                        completion(getMockUser(isAdm: isAdm))
                     } else {
                         completion(nil)
                     }
@@ -61,8 +79,12 @@ final class LoginWorker: LoginWorkerProtocol {
                 }
         }
     
-    func getMenuItemList(isAdm: Bool) -> [MenuItemViewModel] {
+}
 
+extension LoginWorker {
+    
+    func getMenuItemList(isAdm: Bool) -> [MenuItemViewModel] {
+        
         let myData = MenuItemViewModel(
             title: "Meus Dados",
             icon: UIImage(systemName: "folder.badge.person.crop") ?? UIImage(),
@@ -115,4 +137,24 @@ final class LoginWorker: LoginWorkerProtocol {
         }
     }
     
+    //TODO: Remove mock when finish integration
+    private func getMockUser(isAdm: Bool) -> User {
+        return User(
+            id: "01",
+            firstName: "José",
+            lastName: "Maria",
+            shirtNumber: "08",
+            position: "Zagueiro",
+            team: "Preto",
+            warning: UserWarning(
+                title: "Se lembra desse evento?",
+                description: "Ei, voce vai comparecer no churrasco de amanhã? Não esqueça de confirmar sua presença",
+                icon: UIImage(systemName: "fork.knife.circle.fill") ?? UIImage(),
+                firstActionTitle: "Confirmar".uppercased(),
+                firstActionKey: .confirmPresence(willShow: true)),
+            rankingPosition: 8,
+            isAdm: false,
+            menuItems: self.getMenuItemList(isAdm: isAdm))
+        Session.shared.isAdm = isAdm
+    }
 }

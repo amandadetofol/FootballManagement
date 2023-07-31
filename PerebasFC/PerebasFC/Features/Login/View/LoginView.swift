@@ -10,6 +10,7 @@ import UIKit
 protocol LoginViewDelegate: AnyObject {
     func goToLogin(username: String, password: String, isAdm: Bool)
     func goToNewMemeberMessageView()
+    func loginWithGoogle()
     func goToForgotPassword(username: String)
 }
 
@@ -32,7 +33,7 @@ final class LoginView: UIView {
     private lazy var usernameTextField: TextFieldComponent = {
         let textfield = TextFieldComponent()
         textfield.translatesAutoresizingMaskIntoConstraints = false
-        textfield.placeholder = "Nome de usuário"
+        textfield.placeholder = "E-mail"
         
         return textfield
     }()
@@ -71,6 +72,23 @@ final class LoginView: UIView {
         button.backgroundColor = .black
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(login), for: .touchUpInside)
+     
+        return button
+    }()
+    
+    private lazy var loginWithGoogleButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.clipsToBounds = true
+        button.setTitle("Entrar com o Google  ", for: .normal)
+        button.setImage(UIImage(named: "google"), for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 230)
+        button.addTarget(self, action: #selector(loginWithGoogle), for: .touchUpInside)
      
         return button
     }()
@@ -118,6 +136,7 @@ final class LoginView: UIView {
              administratorSwitch,
              administratorSwitchLabel,
              loginButton,
+             loginWithGoogleButton,
              notSignedButton,
              forgotPasswordButton])
     }
@@ -143,7 +162,12 @@ final class LoginView: UIView {
             loginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             loginButton.heightAnchor.constraint(equalToConstant: 48),
             
-            notSignedButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 16),
+            loginWithGoogleButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 32),
+            loginWithGoogleButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            loginWithGoogleButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            loginWithGoogleButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            notSignedButton.topAnchor.constraint(equalTo: loginWithGoogleButton.bottomAnchor, constant: 16),
             notSignedButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             notSignedButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             notSignedButton.heightAnchor.constraint(equalToConstant: 48),
@@ -172,6 +196,10 @@ extension LoginView {
     
     @objc func goToForgotPassword(){
         delegate?.goToForgotPassword(username: usernameTextField.text)
+    }
+    
+    @objc func loginWithGoogle(){
+        delegate?.loginWithGoogle()
     }
     
 }

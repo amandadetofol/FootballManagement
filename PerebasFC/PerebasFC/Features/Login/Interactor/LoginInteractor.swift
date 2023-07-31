@@ -5,7 +5,7 @@
 //  Created by Amanda Detofol on 16/05/23.
 //
 
-import Foundation
+import UIKit
 
 protocol LoginPresenterProtocol {
     func updateViewForMandatoryUsernameError()
@@ -47,6 +47,20 @@ final class LoginInteractor: LoginInteractorProtocol {
                 }
             }
         }
+    }
+    
+    func loginWithGoogle(controller: UIViewController){
+        worker.loginWithGoogle(
+            controller: controller,
+            isAdm: false) { [weak self] user in
+                if let user = user {
+                    self?.coordinator.removeLoader()
+                    self?.coordinator.goToLoggedArea(user: user)
+                } else {
+                    self?.coordinator.removeLoader()
+                    self?.presentViewForLoginError()
+                }
+            }
     }
     
     func presentViewForLoginError(){

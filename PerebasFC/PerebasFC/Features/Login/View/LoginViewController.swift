@@ -10,6 +10,7 @@ import UIKit
 protocol LoginInteractorProtocol {
     func goToLogin(_ username: String, _ password: String, _ isAdm: Bool)
     func goToNewMemeberMessageView()
+    func loginWithGoogle(controller: UIViewController)
     func goToForgotPassword(_ username: String)
 }
 
@@ -65,6 +66,10 @@ extension LoginViewController: LoginViewDelegate {
     
     func goToForgotPassword(username: String) {
         interactor.goToForgotPassword(username)
+    }
+    
+    func loginWithGoogle(){
+        interactor.loginWithGoogle(controller: self)
     }
     
 }
