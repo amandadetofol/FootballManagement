@@ -9,9 +9,9 @@ import Foundation
 
 protocol CalendarViewProtocol: AnyObject {
     func updateEvents(events: [Int])
-    func showConfirmPresencePopUp()
-    func showCreateNewEventPopUp()
-    func showEventForSelectedDayPopUpNotFound()
+    func showConfirmPresencePopUp(date: Date)
+    func showCreateNewEventPopUp(date: Date)
+    func showEventForSelectedDayPopUpNotFound(date: Date)
 }
 
 final class CalendarPresenter: CalendarPresenterProtocol {
@@ -22,16 +22,16 @@ final class CalendarPresenter: CalendarPresenterProtocol {
         view?.updateEvents(events: events)
     }
     
-    func showConfirmPresencePopUp() {
-        view?.showConfirmPresencePopUp()
+    func showConfirmPresencePopUp(date: Date) {
+        view?.showConfirmPresencePopUp(date: date)
     }
     
-    func showCreateNewEventPopUp() {
-        view?.showCreateNewEventPopUp()
+    func showCreateNewEventPopUp(date: Date) {
+        view?.showCreateNewEventPopUp(date: date)
     }
     
-    func showEventForSelectedDayPopUpNotFound() {
-        view?.showEventForSelectedDayPopUpNotFound()
+    func showEventForSelectedDayPopUpNotFound(date: Date) {
+        view?.showEventForSelectedDayPopUpNotFound(date: date)
     }
     
 }

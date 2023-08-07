@@ -9,7 +9,7 @@ import UIKit
 
 protocol CalendarCoordinatorProtocol {
     func goToBack()
-    func goToCreateNewEvent()
+    func goToCreateNewEvent(date: Date)
     func showConfirmationPopUp()
 }
 
@@ -25,8 +25,12 @@ final class CalendarCoordinator: CalendarCoordinatorProtocol {
         navigationController.popViewController(animated: true)
     }
     
-    func goToCreateNewEvent() {
-        //TODO: Implementar quando tiver o fluxo de adm
+    func goToCreateNewEvent(date: Date) {
+        navigationController.pushViewController(
+            NewEventInCalendarFactory.getNewEventInCalendarViewController(
+                navigationController: navigationController,
+                date: date),
+            animated: true)
     }
     
     func showConfirmationPopUp() {

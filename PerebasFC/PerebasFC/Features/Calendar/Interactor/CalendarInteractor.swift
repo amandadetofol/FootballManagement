@@ -10,13 +10,13 @@ import Foundation
 
 protocol CalendarPresenterProtocol {
     func updateEvents(events: [Int])
-    func showConfirmPresencePopUp()
-    func showCreateNewEventPopUp()
-    func showEventForSelectedDayPopUpNotFound()
+    func showConfirmPresencePopUp(date: Date)
+    func showCreateNewEventPopUp(date: Date)
+    func showEventForSelectedDayPopUpNotFound(date: Date)
 }
 
 final class CalendarInteractor: CalendarViewInteractorProtocol {
- 
+    
     private let worker: CalendarWorkerProtol
     private let presenter: CalendarPresenterProtocol
     private let coordinator: CalendarCoordinatorProtocol
@@ -35,29 +35,31 @@ final class CalendarInteractor: CalendarViewInteractorProtocol {
         }
     }
     
-    func showConfirmPresencePopUp() {
-        presenter.showConfirmPresencePopUp()
+    func showConfirmPresencePopUp(date: Date) {
+        presenter.showConfirmPresencePopUp(date: date)
     }
     
-    func showCreateNewEventPopUp() {
-        presenter.showCreateNewEventPopUp()
+    func showCreateNewEventPopUp(date: Date) {
+        presenter.showCreateNewEventPopUp(date: date)
     }
     
-    func showEventForSelectedDayPopUpNotFound() {
-        presenter.showEventForSelectedDayPopUpNotFound()
+    func showEventForSelectedDayPopUpNotFound(date: Date) {
+        presenter.showEventForSelectedDayPopUpNotFound(date: date)
     }
     
-    func handlePopUpButtonTap(key: String) {
-        switch key {
+    func handlePopUpButtonTap(
+        key: String,
+        date: Date) {
+            switch key {
             case CalendarPopUpKeysEnum.close.rawValue:
                 coordinator.goToBack()
             case CalendarPopUpKeysEnum.createNewEvent.rawValue:
-                coordinator.goToCreateNewEvent()
+                coordinator.goToCreateNewEvent(date: date)
             case CalendarPopUpKeysEnum.confirmPresence.rawValue:
                 coordinator.showConfirmationPopUp()
             default:
                 return
+            }
         }
-    }
     
 }

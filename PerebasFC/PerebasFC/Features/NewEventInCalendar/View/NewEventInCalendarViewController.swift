@@ -8,6 +8,7 @@
 import UIKit
 
 protocol NewEventInCalendarViewInteractorProtocol: AnyObject {
+    func viewDidLoad()
     func handleConfirmButtonTap(_ model: NewEventInCalendarViewModel)
 }
 
@@ -35,6 +36,7 @@ final class NewEventInCalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = newEventInCalendarView
+        interactor.viewDidLoad()
     }
     
 }
@@ -45,4 +47,18 @@ extension NewEventInCalendarViewController: NewEventInCalendarViewDelegate {
         interactor.handleConfirmButtonTap(model)
     }
 
+}
+
+extension NewEventInCalendarViewController: NewEventInCalendarViewProtocol {
+   
+    func updateView(with date: Date) {
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yy"
+        
+        title = "Novo Evento em \(dateFormatter.string(from: date))"
+        newEventInCalendarView.selectedDate = date
+    }
+    
 }

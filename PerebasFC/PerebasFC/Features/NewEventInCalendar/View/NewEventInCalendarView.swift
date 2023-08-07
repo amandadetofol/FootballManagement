@@ -77,6 +77,8 @@ final class NewEventInCalendarView: UIView {
     private lazy var isAllowedToTakeCompaniesSwitch: UISwitch = {
         let isAllowedSwitch = UISwitch()
         isAllowedSwitch.translatesAutoresizingMaskIntoConstraints = false
+        isAllowedSwitch.addTarget(nil, action: #selector(didTapSwitch), for: .valueChanged)
+
         
         return isAllowedSwitch
     }()
@@ -87,6 +89,7 @@ final class NewEventInCalendarView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 14.0)
+        label.text = "É permitido levar acompanhantes"
         
         return label
     }()
@@ -95,7 +98,6 @@ final class NewEventInCalendarView: UIView {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.title = "Quantidade de acompanhantes"
-        textField.isHidden = true
         
         return textField
     }()
@@ -104,9 +106,8 @@ final class NewEventInCalendarView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
-        button.isHidden = true
-        button.backgroundColor = .clear
-        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .black
+        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
         button.setTitle("concluir".uppercased(), for: .normal)
         button.addTarget(self, action: #selector(handleConfirmButtonTap), for: .touchUpInside)
@@ -166,14 +167,16 @@ final class NewEventInCalendarView: UIView {
             hourTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
             hourTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            isAllowedToTakeCompaniesLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            isAllowedToTakeCompaniesSwitch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            
+            isAllowedToTakeCompaniesLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             isAllowedToTakeCompaniesLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             companiesTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
             companiesTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            confirmButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            confirmButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            confirmButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            confirmButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             confirmButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
@@ -185,6 +188,10 @@ extension NewEventInCalendarView {
     @objc func handleConfirmButtonTap(){
         guard let date = selectedDate else { return }
         //TODO: handle delegate
+    }
+    
+    @objc func didTapSwitch(mySwitch: UISwitch) {
+        companiesTextField.isHidden = !mySwitch.isOn
     }
     
 }

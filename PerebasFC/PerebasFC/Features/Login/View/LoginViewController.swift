@@ -28,6 +28,7 @@ final class LoginViewController: UIViewController {
     init(interactor: LoginInteractorProtocol){
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
+        title = "Login"
     }
     
     @available(*, unavailable)

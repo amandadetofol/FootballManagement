@@ -9,13 +9,17 @@ import UIKit
 
 struct NewEventInCalendarFactory {
     
-    static func getNewEventInCalendarViewController(navigationController: UINavigationController) -> NewEventInCalendarViewController {
+    static func getNewEventInCalendarViewController(navigationController: UINavigationController, date: Date) -> NewEventInCalendarViewController {
         let coordinator = NewEventInCalendarCoordinator(navigationController: navigationController)
         let worker = NewEventInCalendarWorker()
+        let presenter = NewEventInCalendarPresenter()
         let interactor = NewEventInCalendarInteractor(
             coordinator: coordinator,
-            worker: worker)
+            worker: worker,
+            presenter: presenter,
+            selectedDate: date)
         let controller = NewEventInCalendarViewController(interactor: interactor)
+        presenter.view = controller
         
         return controller
     }

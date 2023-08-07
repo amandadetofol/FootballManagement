@@ -26,6 +26,7 @@ final class FinancialDetailsViewController: UIViewController {
     init(interactor: FinancialDetailsInteractorProtocol) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
+        title = "Detalhes"
     }
     
     @available(*, unavailable)

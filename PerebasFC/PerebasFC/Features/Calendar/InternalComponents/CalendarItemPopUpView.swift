@@ -8,13 +8,19 @@
 import UIKit
 
 protocol CalendarItemPopUpViewDelegate: AnyObject {
-    func handleFirstActionButtonTap(key: String)
-    func handleSecondActionButtonTap(key: String)
+    func handleFirstActionButtonTap(
+        key: String,
+        date: Date)
+    func handleSecondActionButtonTap(
+        key: String,
+        date: Date)
 }
 
 final class CalendarItemPopUpView: UIView {
     
     weak var delegate: CalendarItemPopUpViewDelegate?
+    
+    var selectedDate: Date? = nil
     
     private var firstActionKey: String = ""
     private var secondActionKey: String = ""
@@ -74,21 +80,25 @@ final class CalendarItemPopUpView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateView(with model: CalendarItemPopUpViewModel){
-        titleLabel.text = model.title
-        descriptionLabel.text = model.description
-        firstActionButton.setTitle(model.firstActionTitle, for: .normal)
-        firstActionKey = model.firstActionKey
-        
-        if let secondAction = model.secondActionTitle {
-            secondActionButton.setTitle(secondAction, for: .normal)
-            secondActionButton.isHidden = false
+    func updateView(
+        with model: CalendarItemPopUpViewModel,
+        date: Date){
+            titleLabel.text = model.title
+            descriptionLabel.text = model.description
+            firstActionButton.setTitle(model.firstActionTitle, for: .normal)
+            firstActionKey = model.firstActionKey
+            
+            if let secondAction = model.secondActionTitle {
+                secondActionButton.setTitle(secondAction, for: .normal)
+                secondActionButton.isHidden = false
+            }
+            
+            if let secondActionKey = model.secondActionKey {
+                self.secondActionKey = secondActionKey
+            }
+            
+            self.selectedDate = date
         }
-        
-        if let secondActionKey = model.secondActionKey {
-            self.secondActionKey = secondActionKey
-        }
-    }
     
     private func setupView(){
         addSubviews([
@@ -131,11 +141,15 @@ final class CalendarItemPopUpView: UIView {
 extension CalendarItemPopUpView {
     
     @objc func handleFirstActionButtonTap(){
-        delegate?.handleFirstActionButtonTap(key: self.firstActionKey)
+        delegate?.handleFirstActionButtonTap(
+            key: self.firstActionKey,
+            date: selectedDate ?? Date())
     }
     
     @objc func handleSecondActionButtonTap(){
-        delegate?.handleSecondActionButtonTap(key: self.secondActionKey)
+        delegate?.handleSecondActionButtonTap(
+            key: self.secondActionKey,
+            date: selectedDate ?? Date())
     }
     
 }

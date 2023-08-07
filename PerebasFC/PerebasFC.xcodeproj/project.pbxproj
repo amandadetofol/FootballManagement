@@ -163,6 +163,7 @@
 		A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB3A2A1EB74200ADE47F /* MenuItemView.swift */; };
 		A6E5BB3E2A1EB75500ADE47F /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB3D2A1EB75500ADE47F /* MenuItemViewModel.swift */; };
 		A6E5BB402A1EB88900ADE47F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB3F2A1EB88900ADE47F /* HomeViewController.swift */; };
+		A6E63EC72A7EF85C0005A41B /* NewEventInCalendarPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E63EC62A7EF85C0005A41B /* NewEventInCalendarPresenterProtocol.swift */; };
 		A6E6BADE2A7330EA0063A62A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6E6BADD2A7330EA0063A62A /* GoogleService-Info.plist */; };
 		A6E6BAE12A7331740063A62A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A6E6BAE02A7331740063A62A /* FirebaseAnalytics */; };
 		A6E6BAE32A7331740063A62A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A6E6BAE22A7331740063A62A /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -356,6 +357,7 @@
 		A6E5BB3A2A1EB74200ADE47F /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		A6E5BB3D2A1EB75500ADE47F /* MenuItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewModel.swift; sourceTree = "<group>"; };
 		A6E5BB3F2A1EB88900ADE47F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A6E63EC62A7EF85C0005A41B /* NewEventInCalendarPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventInCalendarPresenterProtocol.swift; sourceTree = "<group>"; };
 		A6E6BADD2A7330EA0063A62A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A6E6BB172A733B0C0063A62A /* SignOutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutWorker.swift; sourceTree = "<group>"; };
 		A6E6BB1E2A733D680063A62A /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 		A60B1A302A71DFEA007F71ED /* NewEventInCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				A6E63EC52A7EF84E0005A41B /* Presenter */,
 				A60B1A382A71E01F007F71ED /* Coordinator */,
 				A60B1A372A71E01A007F71ED /* Factory */,
 				A60B1A362A71E017007F71ED /* Model */,
@@ -1761,6 +1764,14 @@
 			path = MenuItem;
 			sourceTree = "<group>";
 		};
+		A6E63EC52A7EF84E0005A41B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6E63EC62A7EF85C0005A41B /* NewEventInCalendarPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		A6E6BB162A733AFF0063A62A /* SignOut */ = {
 			isa = PBXGroup;
 			children = (
@@ -2061,6 +2072,7 @@
 				A61CFFF62A3BDC3C0026BAF1 /* EditAwardsInteractor.swift in Sources */,
 				A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */,
 				A6CEE4BE2A3F7B4D002CF9F5 /* EditAwardsFactory.swift in Sources */,
+				A6E63EC72A7EF85C0005A41B /* NewEventInCalendarPresenterProtocol.swift in Sources */,
 				A637DDEA2A4A4B160017857D /* EditGameCoordinator.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
 				A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */,

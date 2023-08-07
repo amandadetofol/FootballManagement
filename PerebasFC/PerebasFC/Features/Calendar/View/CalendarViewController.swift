@@ -10,15 +10,16 @@ import HorizonCalendar
 
 protocol CalendarViewInteractorProtocol {
     func viewDidLoad()
-    func showConfirmPresencePopUp()
-    func showCreateNewEventPopUp()
-    func showEventForSelectedDayPopUpNotFound()
-    func handlePopUpButtonTap(key: String)
+    func showConfirmPresencePopUp(date: Date)
+    func showCreateNewEventPopUp(date: Date)
+    func showEventForSelectedDayPopUpNotFound(date: Date)
+    func handlePopUpButtonTap(key: String, date: Date)
 }
 
 final class CalendarViewController: UIViewController {
     
     var eventDays: [Int] = []
+    var selectedDate = Date()
     
     private lazy var calendarItemPopUpView: CalendarItemPopUpView = {
         let view = CalendarItemPopUpView()
@@ -78,7 +79,7 @@ final class CalendarViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Calendário de eventos"
         interactor.viewDidLoad()
-        showEventForSelectedDayPopUpNotFound()
+        showEventForSelectedDayPopUpNotFound(date: selectedDate)
     }
     
     private func setupConstraints(){
@@ -127,13 +128,19 @@ final class CalendarViewController: UIViewController {
         calendarView.daySelectionHandler = { [weak self] day in
             guard let self else { return }
             self.createCustomDayProviderForSelectedItem(iconmingDay: day.day)
-            
+    
+            let month = (day.components.month ?? 0 > 9) ? "\(day.components.month ?? 0)" : "0\(day.components.month ?? 0)"
+            let string = "\(day.components.day ?? 0)/\(month)/\(day.components.year ?? 0)"
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yy"
+            let correctDate = dateFormatter.date(from: string)
+     
             if eventDays.contains(day.day) {
-                self.interactor.showConfirmPresencePopUp()
+                self.interactor.showConfirmPresencePopUp(date: correctDate ?? Date())
             } else if isAdm {
-                self.interactor.showCreateNewEventPopUp()
+                self.interactor.showCreateNewEventPopUp(date: correctDate ?? Date())
             } else {
-                self.interactor.showEventForSelectedDayPopUpNotFound()
+                self.interactor.showEventForSelectedDayPopUpNotFound(date: day.components.date ?? Date())
             }
         }
     }
@@ -146,7 +153,7 @@ extension CalendarViewController: CalendarViewProtocol {
         createCustomDayProviderForSelectedItem(iconmingDay: 0)
     }
     
-    func showConfirmPresencePopUp() {
+    func showConfirmPresencePopUp(date: Date) {
         calendarItemPopUpView.updateView(
             with: CalendarItemPopUpViewModel(
                 title: "Evento do grupo!",
@@ -154,10 +161,11 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionTitle: "confirmar presença".uppercased(),
                 secondActionTitle: nil,
                 firstActionKey: CalendarPopUpKeysEnum.confirmPresence.rawValue,
-                secondActionKey: nil))
+                secondActionKey: nil),
+            date: date)
     }
     
-    func showCreateNewEventPopUp() {
+    func showCreateNewEventPopUp(date:  Date) {
         calendarItemPopUpView.updateView(
             with: CalendarItemPopUpViewModel(
                 title: "Nenhum evento!",
@@ -165,10 +173,11 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionTitle: "criar novo evento".uppercased(),
                 secondActionTitle: "ok".uppercased(),
                 firstActionKey: CalendarPopUpKeysEnum.createNewEvent.rawValue,
-                secondActionKey: CalendarPopUpKeysEnum.close.rawValue))
+                secondActionKey: CalendarPopUpKeysEnum.close.rawValue),
+            date: date)
     }
     
-    func showEventForSelectedDayPopUpNotFound() {
+    func showEventForSelectedDayPopUpNotFound(date: Date) {
         calendarItemPopUpView.updateView(
             with: CalendarItemPopUpViewModel(
                 title: "Nenhum evento!",
@@ -176,19 +185,28 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionTitle: "ok".uppercased(),
                 secondActionTitle: nil,
                 firstActionKey: CalendarPopUpKeysEnum.close.rawValue,
-                secondActionKey: nil))
+                secondActionKey: nil),
+            date: date)
     }
     
 }
 
 extension CalendarViewController: CalendarItemPopUpViewDelegate {
     
-    func handleFirstActionButtonTap(key: String) {
-        interactor.handlePopUpButtonTap(key: key)
-    }
+    func handleFirstActionButtonTap(
+        key: String,
+        date: Date) {
+            interactor.handlePopUpButtonTap(
+                key: key,
+                date: date)
+        }
     
-    func handleSecondActionButtonTap(key: String) {
-        interactor.handlePopUpButtonTap(key: key)
-    }
+    func handleSecondActionButtonTap(
+        key: String,
+        date: Date) {
+            interactor.handlePopUpButtonTap(
+                key: key,
+                date: date)
+        }
 
 }

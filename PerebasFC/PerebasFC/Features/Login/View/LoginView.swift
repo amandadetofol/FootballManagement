@@ -87,7 +87,7 @@ final class LoginView: UIView {
         button.layer.cornerRadius = 10
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 230)
+        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 250)
         button.addTarget(self, action: #selector(loginWithGoogle), for: .touchUpInside)
      
         return button
