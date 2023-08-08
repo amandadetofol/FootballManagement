@@ -9,6 +9,7 @@ import UIKit
 
 protocol SortMainViewInteractorProtocol {
     func handleNewSort()
+    func viewDidLoad()
     func goToSortedGameDetailsView(weekTeam: WeekTeamViewModel)
 }
 
@@ -35,6 +36,7 @@ final class SortMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor.viewDidLoad()
         view = sortMainView
         self.navigationController?.navigationBar.isHidden = false
         title = "Sorteio"
@@ -59,6 +61,14 @@ extension SortMainViewController {
     
     @objc func handleNewSort(){
         interactor.handleNewSort()
+    }
+    
+}
+
+extension SortMainViewController: SortMainViewProtocol {
+    
+    func updateView(with model: SortGameMainViewModel) {
+        sortMainView.updateView(with: model)
     }
     
 }

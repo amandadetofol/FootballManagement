@@ -151,6 +151,8 @@
 		A6CFD57D2A293A0600A37696 /* CommonnPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD57C2A293A0600A37696 /* CommonnPlacesView.swift */; };
 		A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD57E2A293A8500A37696 /* BarAndThrophyView.swift */; };
 		A6CFD5832A293EAF00A37696 /* BarAndTrophyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFD5822A293EAF00A37696 /* BarAndTrophyViewModel.swift */; };
+		A6D2486D2A830406004951FD /* SortMainFactpry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2486C2A830406004951FD /* SortMainFactpry.swift */; };
+		A6D248702A8306A6004951FD /* SortMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2486F2A8306A6004951FD /* SortMainPresenter.swift */; };
 		A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */; };
 		A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */; };
 		A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */; };
@@ -353,6 +355,8 @@
 		A6CFD57C2A293A0600A37696 /* CommonnPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonnPlacesView.swift; sourceTree = "<group>"; };
 		A6CFD57E2A293A8500A37696 /* BarAndThrophyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarAndThrophyView.swift; sourceTree = "<group>"; };
 		A6CFD5822A293EAF00A37696 /* BarAndTrophyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarAndTrophyViewModel.swift; sourceTree = "<group>"; };
+		A6D2486C2A830406004951FD /* SortMainFactpry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainFactpry.swift; sourceTree = "<group>"; };
+		A6D2486F2A8306A6004951FD /* SortMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainPresenter.swift; sourceTree = "<group>"; };
 		A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTeamCardView.swift; sourceTree = "<group>"; };
 		A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -1755,6 +1759,14 @@
 			path = BarAndTrophy;
 			sourceTree = "<group>";
 		};
+		A6D2486E2A830699004951FD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2486F2A8306A6004951FD /* SortMainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		A6E0E9E32A2020BB00121515 /* CurrentTeamCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1875,6 +1887,7 @@
 		A6FCDA4C2A81B61800B095E5 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				A6D2486C2A830406004951FD /* SortMainFactpry.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -1890,6 +1903,7 @@
 		A6FCDA4E2A81B63200B095E5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A6D2486E2A830699004951FD /* Presenter */,
 				A6FCDA4D2A81B61E00B095E5 /* Coordinator */,
 				A6FCDA4C2A81B61800B095E5 /* Factory */,
 				A6FCDA592A81B7D300B095E5 /* Model */,
@@ -2112,6 +2126,7 @@
 				A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */,
 				A61CFFF42A3BDC330026BAF1 /* EditAwardsViewController.swift in Sources */,
 				A680E10A2A24109F008FA008 /* Team.swift in Sources */,
+				A6D248702A8306A6004951FD /* SortMainPresenter.swift in Sources */,
 				A6CCFC6B2A33854E00364614 /* ChatMessageView.swift in Sources */,
 				A62C1CCB2A37E229002AA401 /* CalendarModel.swift in Sources */,
 				A6A741812A26C121009A7998 /* GamesHistoryInteractor.swift in Sources */,
@@ -2133,6 +2148,7 @@
 				A6CCFC642A336E6400364614 /* ChatMainPresenter.swift in Sources */,
 				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
 				A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */,
+				A6D2486D2A830406004951FD /* SortMainFactpry.swift in Sources */,
 				A60B1A462A71E077007F71ED /* NewEventInCalendarViewController.swift in Sources */,
 				A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */,
 				A62C1CEA2A37E8D7002AA401 /* FinancialPendencieCardViewModel.swift in Sources */,

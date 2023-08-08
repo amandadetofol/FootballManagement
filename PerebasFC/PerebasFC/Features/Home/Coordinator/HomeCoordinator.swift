@@ -110,8 +110,10 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                 return
                 
             case .sort:
-                return
-                
+                self.navigationController.pushViewController(
+                    SortMainFactory.getSortMainViewController(
+                        navigationController: navigationController),
+                    animated: true)
             }
         }
     

@@ -63,6 +63,7 @@ final class SortCardView: UIControl {
         titleLabel.text = model.title
         descriptionLabel.text = model.description
         self.model = model.model
+        backgroundColor = .brown.withAlphaComponent(0.10)
     }
     
     private func setupView(){
@@ -75,19 +76,19 @@ final class SortCardView: UIControl {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 56),
+            heightAnchor.constraint(equalToConstant: 72),
             
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: arrowIconImageView.leadingAnchor, constant: -16),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            titleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: arrowIconImageView.leadingAnchor, constant: -16),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
             arrowIconImageView.heightAnchor.constraint(equalToConstant: 16),
             arrowIconImageView.widthAnchor.constraint(equalToConstant: 16),
-            arrowIconImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
+            arrowIconImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
             arrowIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }

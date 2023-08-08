@@ -51,6 +51,7 @@ final class SortMainView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
+        backgroundColor = .white
     }
     
     @available(*, unavailable)
