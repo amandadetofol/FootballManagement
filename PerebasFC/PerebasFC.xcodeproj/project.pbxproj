@@ -197,6 +197,14 @@
 		A6E6BB222A733E940063A62A /* LoaderCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6BB212A733E940063A62A /* LoaderCoodinator.swift */; };
 		A6E8CE212A7878CA006DAFDC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A6E8CE202A7878CA006DAFDC /* GoogleSignIn */; };
 		A6E8CE232A7878CA006DAFDC /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A6E8CE222A7878CA006DAFDC /* GoogleSignInSwift */; };
+		A6FCDA582A81B69B00B095E5 /* SortMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA572A81B69B00B095E5 /* SortMainView.swift */; };
+		A6FCDA5B2A81B7D900B095E5 /* SortGameMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA5A2A81B7D900B095E5 /* SortGameMainViewModel.swift */; };
+		A6FCDA5D2A81BA8F00B095E5 /* SortCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA5C2A81BA8F00B095E5 /* SortCardView.swift */; };
+		A6FCDA5F2A81BBE300B095E5 /* SortCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA5E2A81BBE300B095E5 /* SortCardViewModel.swift */; };
+		A6FCDA612A81C11D00B095E5 /* SortMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA602A81C11D00B095E5 /* SortMainViewController.swift */; };
+		A6FCDA632A81C30F00B095E5 /* SortMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA622A81C30F00B095E5 /* SortMainInteractor.swift */; };
+		A6FCDA652A81C39500B095E5 /* SortMainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA642A81C39500B095E5 /* SortMainWorker.swift */; };
+		A6FCDA692A81C3DE00B095E5 /* SortMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA682A81C3DE00B095E5 /* SortMainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -362,6 +370,14 @@
 		A6E6BB172A733B0C0063A62A /* SignOutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutWorker.swift; sourceTree = "<group>"; };
 		A6E6BB1E2A733D680063A62A /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		A6E6BB212A733E940063A62A /* LoaderCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderCoodinator.swift; sourceTree = "<group>"; };
+		A6FCDA572A81B69B00B095E5 /* SortMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainView.swift; sourceTree = "<group>"; };
+		A6FCDA5A2A81B7D900B095E5 /* SortGameMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortGameMainViewModel.swift; sourceTree = "<group>"; };
+		A6FCDA5C2A81BA8F00B095E5 /* SortCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCardView.swift; sourceTree = "<group>"; };
+		A6FCDA5E2A81BBE300B095E5 /* SortCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCardViewModel.swift; sourceTree = "<group>"; };
+		A6FCDA602A81C11D00B095E5 /* SortMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainViewController.swift; sourceTree = "<group>"; };
+		A6FCDA622A81C30F00B095E5 /* SortMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainInteractor.swift; sourceTree = "<group>"; };
+		A6FCDA642A81C39500B095E5 /* SortMainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainWorker.swift; sourceTree = "<group>"; };
+		A6FCDA682A81C3DE00B095E5 /* SortMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1193,6 +1209,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A6FCDA462A81B5DD00B095E5 /* Sort */,
 				A6E6BB1A2A733D210063A62A /* Loader */,
 				A6E6BB162A733AFF0063A62A /* SignOut */,
 				A61CFFE92A3BD2F50026BAF1 /* Shared */,
@@ -1813,6 +1830,85 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		A6FCDA462A81B5DD00B095E5 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				A6FCDA4E2A81B63200B095E5 /* Main */,
+			);
+			path = Sort;
+			sourceTree = "<group>";
+		};
+		A6FCDA472A81B5F700B095E5 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6FCDA642A81C39500B095E5 /* SortMainWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A6FCDA482A81B5FD00B095E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6FCDA572A81B69B00B095E5 /* SortMainView.swift */,
+				A6FCDA602A81C11D00B095E5 /* SortMainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6FCDA492A81B60200B095E5 /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A6FCDA5C2A81BA8F00B095E5 /* SortCardView.swift */,
+				A6FCDA5E2A81BBE300B095E5 /* SortCardViewModel.swift */,
+			);
+			path = InternalComponents;
+			sourceTree = "<group>";
+		};
+		A6FCDA4A2A81B60900B095E5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A6FCDA622A81C30F00B095E5 /* SortMainInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6FCDA4C2A81B61800B095E5 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A6FCDA4D2A81B61E00B095E5 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6FCDA682A81C3DE00B095E5 /* SortMainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6FCDA4E2A81B63200B095E5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A6FCDA4D2A81B61E00B095E5 /* Coordinator */,
+				A6FCDA4C2A81B61800B095E5 /* Factory */,
+				A6FCDA592A81B7D300B095E5 /* Model */,
+				A6FCDA4A2A81B60900B095E5 /* Interactor */,
+				A6FCDA492A81B60200B095E5 /* InternalComponents */,
+				A6FCDA482A81B5FD00B095E5 /* View */,
+				A6FCDA472A81B5F700B095E5 /* Worker */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A6FCDA592A81B7D300B095E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6FCDA5A2A81B7D900B095E5 /* SortGameMainViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1941,6 +2037,7 @@
 				A6033E7A2A12E5A9002B56EE /* TextFieldComponentView.swift in Sources */,
 				A6993E1F2A2BBCC300C2BDE3 /* RankingCoordinator.swift in Sources */,
 				A6993E0F2A2BA10500C2BDE3 /* UIColor.swift in Sources */,
+				A6FCDA652A81C39500B095E5 /* SortMainWorker.swift in Sources */,
 				A62C1CDC2A37E855002AA401 /* FinancialWorker.swift in Sources */,
 				A60B1A492A71E718007F71ED /* NewEventInCalendarWorker.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
@@ -1969,6 +2066,7 @@
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A62C1CC72A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift in Sources */,
 				A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */,
+				A6FCDA5F2A81BBE300B095E5 /* SortCardViewModel.swift in Sources */,
 				A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */,
 				A6CFD57B2A2939FD00A37696 /* FirstPlacesDifferentView.swift in Sources */,
 				A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */,
@@ -1990,10 +2088,12 @@
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
 				A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */,
 				A6993E392A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift in Sources */,
+				A6FCDA582A81B69B00B095E5 /* SortMainView.swift in Sources */,
 				A6CCFC562A333DB400364614 /* ChatMainViewController.swift in Sources */,
 				A6A741832A26C183009A7998 /* GamesHistoryWorker.swift in Sources */,
 				A62C1CC12A3613EC002AA401 /* CalendarInteractor.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
+				A6FCDA5B2A81B7D900B095E5 /* SortGameMainViewModel.swift in Sources */,
 				A637DDF42A4A4B3F0017857D /* EditGameViewController.swift in Sources */,
 				A6CCFC662A336F5F00364614 /* ChatMainFactory.swift in Sources */,
 				A6993E2C2A2BFB0100C2BDE3 /* PersonalInformationsView.swift in Sources */,
@@ -2021,10 +2121,12 @@
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
 				A6993E212A2BBEF900C2BDE3 /* RankingFactory.swift in Sources */,
 				A6CCFC5C2A333EB700364614 /* ChatItemViewModel.swift in Sources */,
+				A6FCDA612A81C11D00B095E5 /* SortMainViewController.swift in Sources */,
 				A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */,
 				A6CCFC5A2A333E6300364614 /* ChatItemView.swift in Sources */,
 				A695D6422A6F3721004B3CCE /* EditGameFactory.swift in Sources */,
 				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
+				A6FCDA5D2A81BA8F00B095E5 /* SortCardView.swift in Sources */,
 				A62C1CCD2A37E304002AA401 /* CalendarCoordinator.swift in Sources */,
 				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
 				A637DDFB2A4A55140017857D /* PickerComponent.swift in Sources */,
@@ -2055,6 +2157,7 @@
 				A6CCFC5E2A3369B000364614 /* ChatMainInteractor.swift in Sources */,
 				A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */,
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
+				A6FCDA692A81C3DE00B095E5 /* SortMainCoordinator.swift in Sources */,
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
 				A62C1CCF2A37E479002AA401 /* CalendarFactory.swift in Sources */,
@@ -2074,6 +2177,7 @@
 				A6CEE4BE2A3F7B4D002CF9F5 /* EditAwardsFactory.swift in Sources */,
 				A6E63EC72A7EF85C0005A41B /* NewEventInCalendarPresenterProtocol.swift in Sources */,
 				A637DDEA2A4A4B160017857D /* EditGameCoordinator.swift in Sources */,
+				A6FCDA632A81C30F00B095E5 /* SortMainInteractor.swift in Sources */,
 				A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */,
 				A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */,
 				A6CCFC6F2A338E6500364614 /* ChatMessagesViewController.swift in Sources */,
