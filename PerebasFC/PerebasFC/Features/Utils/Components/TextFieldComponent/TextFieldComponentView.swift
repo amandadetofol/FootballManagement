@@ -8,6 +8,8 @@
 import UIKit
 
 final class TextFieldComponent: UIView {
+    
+    var showIcon = false
 
     var errorMessage: String = "" {
         didSet {
@@ -102,6 +104,18 @@ final class TextFieldComponent: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func showEyeButton(){
+        showIcon = true
+        let button = UIButton()
+        button.setImage(
+            UIImage(
+                systemName: showIcon ? "eye.fill" : "eye.slash.fill"),
+            for: .normal)
+        button.addTarget(nil, action: #selector(handleEyeToggle), for: .touchUpInside)
+        textField.rightView = button
+        textField.rightViewMode = .always
+    }
+    
     private func setupView(){
         addSubview(contentStackView)
         contentStackView.addArrangedSubview(titleLabel)
@@ -134,6 +148,23 @@ extension TextFieldComponent: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.showError = false
+    }
+    
+}
+
+extension TextFieldComponent {
+    
+    @objc func handleEyeToggle(){
+        showIcon.toggle()
+        let button = UIButton()
+        button.setImage(
+            UIImage(
+                systemName: showIcon ? "eye.fill" : "eye.slash.fill"),
+            for: .normal)
+        button.addTarget(nil, action: #selector(handleEyeToggle), for: .touchUpInside)
+        textField.rightView = button
+        textField.rightViewMode = .always
+        textField.isSecureTextEntry = !showIcon
     }
     
 }

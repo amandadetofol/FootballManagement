@@ -43,6 +43,7 @@ final class LoginView: UIView {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.isSafeTextField = true
         textfield.placeholder = "Senha"
+        textfield.showEyeButton()
         
         return textfield
     }()
