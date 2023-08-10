@@ -154,6 +154,7 @@ extension LoginWorker {
                 firstActionKey: .confirmPresence(willShow: true)),
             rankingPosition: 8,
             isAdm: false,
+            type: .goalKepper,
             menuItems: self.getMenuItemList(isAdm: isAdm))
         Session.shared.isAdm = isAdm
     }

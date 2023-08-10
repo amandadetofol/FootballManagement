@@ -32,6 +32,7 @@ final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
             warning: userWarning,
             rankingPosition: 5,
             isAdm: true,
+            type: .player,
             menuItems: [MenuItemViewModel(title: String(), icon: UIImage(), redirectKey: .calendar)]
         )
 

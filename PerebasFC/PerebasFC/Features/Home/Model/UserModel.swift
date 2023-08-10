@@ -17,6 +17,7 @@ struct User {
     let warning: UserWarning?
     let rankingPosition: Int? 
     let isAdm: Bool
+    let type: ParticipantType
     let menuItems: [MenuItemViewModel]
 }
 

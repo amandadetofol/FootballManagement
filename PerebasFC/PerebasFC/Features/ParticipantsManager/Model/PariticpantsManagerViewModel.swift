@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum ParticipantType {
+    case goalKepper
+    case player
+    case member
+}
