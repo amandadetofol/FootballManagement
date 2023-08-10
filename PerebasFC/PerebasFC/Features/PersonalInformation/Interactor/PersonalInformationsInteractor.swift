@@ -14,7 +14,7 @@ protocol PersonalInformationsPresenterProtocol {
 }
 
 final class PersonalInformationsInteractor: PersonalInformationsInteractorProtocol {
-    
+
     private let coordinator: PersonalInformationsCoordinatorProtocol
     private let presenter: PersonalInformationsPresenterProtocol
     private let worker: PersonalInformationsWorkerProtocol
@@ -48,6 +48,12 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
     
     func handleGoToBlockEdition() {
         presenter.handleGoToBlockEdition()
+    }
+    
+    func handleDeleteUserButtonTap(user: PersonalInformationsViewModel) {
+        coordinator.showDeleteUserConfirmationModal(userName: user.name) { [weak self] in
+            self?.coordinator.goToBack()
+        }
     }
     
 }

@@ -9,6 +9,10 @@ import UIKit
 
 protocol PersonalInformationsCoordinatorProtocol {
     func showErrorMessageAlert()
+    func showDeleteUserConfirmationModal(
+        userName: String,
+        confirmationAction: @escaping(()->Void))
+    func goToBack()
     func handleGoToChangePasswordFlow()
 }
 
@@ -33,6 +37,37 @@ final class PersonalInformationsCoordinator: PersonalInformationsCoordinatorProt
         navigationController.present(
             alert,
             animated: true)
+    }
+    
+    func showDeleteUserConfirmationModal(
+        userName: String,
+        confirmationAction: @escaping(()->Void)) {
+            let alert = UIAlertController(
+                title: "Atenção",
+                message: "Tem certeza que deseja excluir \(userName)?",
+                preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(
+                UIAlertAction(
+                    title: "Continuar",
+                    style: .default,
+                    handler: {  _ in
+                        confirmationAction()
+                    }))
+            alert.addAction(
+                UIAlertAction(
+                    title: "Cancelar",
+                    style: .destructive,
+                    handler: { [weak self] _ in
+                        self?.navigationController.popViewController(animated: true)
+                    }))
+            navigationController.present(
+                alert,
+                animated: true)
+            
+        }
+    
+    func goToBack() {
+        self.navigationController.popViewController(animated: true)
     }
     
     func handleGoToChangePasswordFlow() {

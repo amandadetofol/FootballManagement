@@ -40,6 +40,7 @@ final class SortMainViewController: UIViewController {
         view = sortMainView
         self.navigationController?.navigationBar.isHidden = false
         title = "Sorteio"
+        self.navigationController?.navigationBar.prefersLargeTitles = true 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "novo".uppercased(),
             style: .plain,

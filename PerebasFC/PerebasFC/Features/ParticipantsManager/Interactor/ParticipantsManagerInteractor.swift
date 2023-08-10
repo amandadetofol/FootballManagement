@@ -32,7 +32,7 @@ final class ParticipantsManagerInteractor: ParticipantsManagerInteractorProtocol
     }
     
     func updateView(basedOn segmentedControlIndex: Int) {
-        
+        presenter.updateView(basedOn: segmentedControlIndex)
     }
 
 }

@@ -139,6 +139,7 @@ extension LoginWorker {
     
     //TODO: Remove mock when finish integration
     private func getMockUser(isAdm: Bool) -> User {
+        Session.shared.isAdm = isAdm
         return User(
             id: "01",
             firstName: "José",
@@ -156,6 +157,5 @@ extension LoginWorker {
             isAdm: false,
             type: .goalKepper,
             menuItems: self.getMenuItemList(isAdm: isAdm))
-        Session.shared.isAdm = isAdm
     }
 }

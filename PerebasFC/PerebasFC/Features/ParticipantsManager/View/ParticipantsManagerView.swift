@@ -60,11 +60,20 @@ final class ParticipantsManagerView: UIView {
     }
     
     func updateView(with model: [ParticipantCellModel]){
+        contentStackView.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
         model.forEach { participantCellModel in
             let card = PariticipantCellView()
             card.updateView(with: participantCellModel)
             card.delegate = self
+            card.translatesAutoresizingMaskIntoConstraints = false
             contentStackView.addArrangedSubview(card)
+            
+            card.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor).isActive = true
+            card.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor).isActive = true
+            
         }
     }
     
@@ -91,7 +100,7 @@ final class ParticipantsManagerView: UIView {
             contentStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentStackView.widthAnchor.constraint(equalTo: widthAnchor),
+            contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
     }
     

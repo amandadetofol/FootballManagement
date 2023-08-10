@@ -829,6 +829,21 @@
                   endingLineNumber = "142"
                   offsetFromSymbolStart = "168">
                </Location>
+               <Location
+                  uuid = "A08284CB-2E0F-44BD-97FA-4F0A07CF2D34 - f583c3ad1dd17634"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PerebasFC.Goals) -&gt; () in PerebasFC.EditGameView.updateView(with: PerebasFC.Game) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/EditGame/View/EditGameView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "180">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -942,6 +957,54 @@
             endingLineNumber = "60"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E4176F7-AC46-4D61-ACEB-1B55521D356E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/ParticipantsManager/View/ParticipantsManagerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "updateView(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E4176F7-AC46-4D61-ACEB-1B55521D356E - 5a8869db590ab62d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.ParticipantsManagerView.updateView(with: Swift.Array&lt;PerebasFC.ParticipantCellModel&gt;) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/ParticipantsManager/View/ParticipantsManagerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "3E4176F7-AC46-4D61-ACEB-1B55521D356E - 2ede065d24bad037"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PerebasFC.ParticipantCellModel) -&gt; () in PerebasFC.ParticipantsManagerView.updateView(with: Swift.Array&lt;PerebasFC.ParticipantCellModel&gt;) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/ParticipantsManager/View/ParticipantsManagerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

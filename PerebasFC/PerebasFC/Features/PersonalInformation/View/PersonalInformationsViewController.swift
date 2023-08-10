@@ -12,6 +12,7 @@ protocol PersonalInformationsInteractorProtocol {
     func handleGoToChangePasswordFlow()
     func handleGoToEditDataFlow()
     func handleGoToBlockEdition()
+    func handleDeleteUserButtonTap(user: PersonalInformationsViewModel)
 }
 
 final class PersonalInformationsViewController: UIViewController {
@@ -52,6 +53,10 @@ final class PersonalInformationsViewController: UIViewController {
 }
  
 extension PersonalInformationsViewController: PersonalInformationsViewDelegate {
+    
+    func handleDeleteUserButtonTap(user: PersonalInformationsViewModel) {
+        interactor.handleDeleteUserButtonTap(user: user)
+    }
     
     func handleGoToPasswordFlowButtonTap() {
         interactor.handleGoToChangePasswordFlow()

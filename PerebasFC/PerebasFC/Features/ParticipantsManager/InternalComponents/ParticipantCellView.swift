@@ -93,20 +93,18 @@ final class PariticipantCellView: UIControl {
             playerIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             playerIconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             playerIconImageView.heightAnchor.constraint(equalToConstant: 36),
-            playerIconImageView.heightAnchor.constraint(equalToConstant: 36),
+            playerIconImageView.widthAnchor.constraint(equalToConstant: 40),
             
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: playerIconImageView.trailingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: arrowIconImageView.leadingAnchor),
             
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             descriptionLabel.leadingAnchor.constraint(equalTo: playerIconImageView.trailingAnchor, constant: 16),
-            descriptionLabel.trailingAnchor.constraint(equalTo: arrowIconImageView.leadingAnchor),
         
             arrowIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             arrowIconImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            arrowIconImageView.heightAnchor.constraint(equalToConstant: 36),
-            arrowIconImageView.heightAnchor.constraint(equalToConstant: 36),
+            arrowIconImageView.heightAnchor.constraint(equalToConstant: 16),
+            arrowIconImageView.heightAnchor.constraint(equalToConstant: 16),
         ])
     }
     

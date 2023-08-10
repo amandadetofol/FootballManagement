@@ -32,6 +32,7 @@ final class ParticipantsManagerViewController: UIViewController {
     
     private lazy var participantsManagerView: ParticipantsManagerView = {
         let participantsManagetView = ParticipantsManagerView()
+        participantsManagetView.translatesAutoresizingMaskIntoConstraints = false 
         participantsManagetView.delegate = self
         
         return participantsManagetView
@@ -109,7 +110,7 @@ extension ParticipantsManagerViewController: ParticipantsManagerViewProtocol {
                 list.append(cardModel)
             }
         }
-        updateView(with: list)
+        participantsManagerView.updateView(with: list)
     }
     
 }

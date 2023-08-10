@@ -27,11 +27,11 @@ final class ParticipantsManagerPresenter: ParticipantsManagerPresenterProtocol {
     
     func updateView(basedOn segmentedControlIndex: Int){
         switch segmentedControlIndex {
-            case 1:
+            case 0:
                 view?.updateView(basedOn: .player)
-            case 2:
+            case 1:
                 view?.updateView(basedOn: .goalKepper)
-            case 3:
+            case 2:
                 view?.updateView(basedOn: .member)
             default: break
         }

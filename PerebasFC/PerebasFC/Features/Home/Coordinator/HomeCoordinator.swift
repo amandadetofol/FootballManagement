@@ -107,7 +107,10 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                     WeekTeamFactory.getWeekTeamViewController(teams: teams),
                     animated: true)
             case .participants:
-                return
+                self.navigationController.pushViewController(
+                    PariticpantsManagerFactory.getParticipantsViewController(
+                        navigationController: navigationController),
+                    animated: true)
                 
             case .sort:
                 self.navigationController.pushViewController(

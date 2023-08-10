@@ -9,15 +9,20 @@ import UIKit
 
 protocol PersonalInformationsViewDelegate: AnyObject {
     func handleGoToPasswordFlowButtonTap()
+    func handleDeleteUserButtonTap(user: PersonalInformationsViewModel)
 }
 
 final class PersonalInformationsView: UIView {
     
+    var model: PersonalInformationsViewModel?
     weak var delegate: PersonalInformationsViewDelegate?
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentSize = CGSize(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height + 196)
         
         return scrollView
     }()
@@ -116,15 +121,6 @@ final class PersonalInformationsView: UIView {
         return textField
     }()
     
-    private lazy var buttonBackgroundView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        view.isAccessibilityElement = false
-        
-        return view
-    }()
-    
     private lazy var changePasswordButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -135,6 +131,21 @@ final class PersonalInformationsView: UIView {
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleGoToPasswordFlowButtonTap), for: .touchUpInside)
      
+        return button
+    }()
+    
+    private lazy var deleteUserButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.clipsToBounds = true
+        button.setImage(UIImage(systemName: "trash"), for: .normal)
+        button.tintColor = .gold
+        button.setTitle("   excluir".uppercased(), for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(handleDeleteUserButtonTap), for: .touchUpInside)
+        button.isHidden = !(Session.shared.isAdm ?? false)
         return button
     }()
     
@@ -173,13 +184,13 @@ final class PersonalInformationsView: UIView {
         shirtNumberTextField.text = model.shirtNumber
         medicalInsuranceTextField.text = model.medicalInsurance
         emergencyPhoneNumberTextField.text = model.emergencyPhoneNumber
+        self.model = model
     }
     
     private func setupView(){
         addSubview(scrollView)
-        scrollView.addSubviews([contentView, buttonBackgroundView])
+        scrollView.addSubviews([contentView])
         contentView.addSubview(stackView)
-        buttonBackgroundView.addSubview(changePasswordButton)
         stackView.addArrangedSubviews([
             userNameTextField,
             lastNameTextField,
@@ -187,7 +198,10 @@ final class PersonalInformationsView: UIView {
             shirtNumberTextField,
             userTypeTextField,
             medicalInsuranceTextField,
-            emergencyPhoneNumberTextField])
+            emergencyPhoneNumberTextField,
+            changePasswordButton,
+            deleteUserButton])
+        stackView.setCustomSpacing(32, after: emergencyPhoneNumberTextField)
         backgroundColor = .white
     }
     
@@ -208,16 +222,14 @@ final class PersonalInformationsView: UIView {
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -96),
             stackView.widthAnchor.constraint(equalTo: widthAnchor),
-            
-            buttonBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            buttonBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            buttonBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
-            buttonBackgroundView.heightAnchor.constraint(equalToConstant: 96),
-            
-            changePasswordButton.leadingAnchor.constraint(equalTo: buttonBackgroundView.leadingAnchor, constant: 16),
-            changePasswordButton.trailingAnchor.constraint(equalTo: buttonBackgroundView.trailingAnchor, constant: -16),
-            changePasswordButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
+      
+            changePasswordButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            changePasswordButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             changePasswordButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            deleteUserButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            deleteUserButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            deleteUserButton.heightAnchor.constraint(equalToConstant: 48),
             
             userNameTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             userNameTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
@@ -247,6 +259,11 @@ extension PersonalInformationsView {
     
     @objc func handleGoToPasswordFlowButtonTap(){
         delegate?.handleGoToPasswordFlowButtonTap()
+    }
+    
+    @objc func handleDeleteUserButtonTap(){
+        guard let model = model else { return }
+        delegate?.handleDeleteUserButtonTap(user: model)
     }
     
 }
