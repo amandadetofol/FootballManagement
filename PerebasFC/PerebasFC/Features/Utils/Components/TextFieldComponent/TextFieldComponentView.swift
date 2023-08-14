@@ -56,6 +56,7 @@ final class TextFieldComponent: UIView {
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18)
         label.isHidden = true
+        label.accessibilityIgnoresInvertColors = false
         
         return label
     }()
@@ -67,6 +68,7 @@ final class TextFieldComponent: UIView {
         stackView.distribution = .fillProportionally
         stackView.axis = .vertical
         stackView.spacing = 2
+        stackView.accessibilityIgnoresInvertColors = false
         
         return stackView
     }()
@@ -75,7 +77,8 @@ final class TextFieldComponent: UIView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
-        textField.delegate = self 
+        textField.delegate = self
+        textField.accessibilityIgnoresInvertColors = false
         
         return textField
     }()
@@ -89,6 +92,7 @@ final class TextFieldComponent: UIView {
         label.font = UIFont.systemFont(ofSize: 14)
         label.isHidden = true
         label.text = "Campo obrigatório."
+        label.accessibilityIgnoresInvertColors = false 
         
         return label
     }()

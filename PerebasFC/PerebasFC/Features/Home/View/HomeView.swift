@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeViewDelegate: AnyObject {
     func handleLogout()
+    func handleAccessibilityButtonTap()
     func handleAlertCloseButtonTap()
     func handleInternalLinkRedirect(key: InternalLinkRedirectKeys)
 }
@@ -187,6 +188,10 @@ extension HomeView: MenuItemViewDelegate {
 }
 
 extension HomeView: HomeHeaderViewDelegate {
+    
+    func handleAccessibilityButtonTap() {
+        delegate?.handleAccessibilityButtonTap()
+    }
     
     func handleLogout() {
         delegate?.handleLogout()

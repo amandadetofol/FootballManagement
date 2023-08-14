@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeHeaderViewDelegate: AnyObject {
     func handleLogout()
+    func handleAccessibilityButtonTap()
 }
 
 final class HomeHeaderView: UIView {
@@ -35,6 +36,20 @@ final class HomeHeaderView: UIView {
         imageView.tintColor = .black
         
         return imageView
+    }()
+    
+    private let accessibilityButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "figure.arms.open"), for: .normal)
+        button.accessibilityLabel = "Abrir configuracoes de acessibilidade"
+        button.tintColor = .systemBlue
+        button.configuration = .filled()
+        button.layer.cornerRadius = 24
+        button.clipsToBounds = true
+        button.addTarget(nil, action: #selector(handleAccessibilityButtonTap), for: .touchUpInside)
+        
+        return button
     }()
     
     private lazy var welcomeLabel: UILabel = {
@@ -78,6 +93,7 @@ final class HomeHeaderView: UIView {
         self.addSubviews([
             welcomeLabel,
             initialsView,
+            accessibilityButton,
             welcomeLabel,
             fullName])
         initialsView.addSubview(iconImageView)
@@ -91,6 +107,11 @@ final class HomeHeaderView: UIView {
             iconImageView.centerXAnchor.constraint(equalTo: initialsView.centerXAnchor),
             iconImageView.heightAnchor.constraint(equalToConstant: 24),
             iconImageView.widthAnchor.constraint(equalToConstant: 24),
+            
+            accessibilityButton.centerYAnchor.constraint(equalTo: initialsView.centerYAnchor),
+            accessibilityButton.heightAnchor.constraint(equalToConstant: 48),
+            accessibilityButton.trailingAnchor.constraint(equalTo: iconImageView.leadingAnchor, constant: -16),
+            accessibilityButton.widthAnchor.constraint(equalToConstant: 48),
             
             initialsView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             initialsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -113,6 +134,10 @@ extension HomeHeaderView {
     
     @objc func logout(){
         delegate?.handleLogout()
+    }
+    
+    @objc func handleAccessibilityButtonTap(){
+        delegate?.handleAccessibilityButtonTap()
     }
     
 }

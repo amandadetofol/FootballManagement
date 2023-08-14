@@ -79,7 +79,6 @@ final class NewEventInCalendarView: UIView {
         isAllowedSwitch.translatesAutoresizingMaskIntoConstraints = false
         isAllowedSwitch.addTarget(nil, action: #selector(didTapSwitch), for: .valueChanged)
 
-        
         return isAllowedSwitch
     }()
     

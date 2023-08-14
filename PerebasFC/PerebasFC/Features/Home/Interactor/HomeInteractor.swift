@@ -50,4 +50,14 @@ final class HomeInteractor: HomeInteractorProtocol {
             teams: teams)
     }
     
+    func handleAccessibilityButtonTap(){
+        coordinator.handleAccessibilityButtonTap(
+            model:
+                [AccessibilityManagerViewModel(title: "Leitor de tela"),
+                 AccessibilityManagerViewModel(title: "Inversão de cores"),
+                 AccessibilityManagerViewModel(title: "Inversão de cores (daltonismo)"),
+                ]
+        )
+    }
+    
 }

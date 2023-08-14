@@ -10,6 +10,7 @@ import UIKit
 protocol HomeInteractorProtocol {
     func viewDidLoad()
     func handleLogout()
+    func handleAccessibilityButtonTap()
     func handleAlertCloseButtonTap()
     func handleInternalLinkRedirect(key: InternalLinkRedirectKeys)
 }
@@ -57,6 +58,10 @@ extension HomeViewController: HomeViewProtocol {
 }
 
 extension HomeViewController: HomeViewDelegate {
+    
+    func handleAccessibilityButtonTap(){
+        interactor.handleAccessibilityButtonTap()
+    }
    
     func handleLogout() {
         interactor.handleLogout()

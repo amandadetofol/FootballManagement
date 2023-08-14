@@ -1004,7 +1004,69 @@
                   endingLineNumber = "64"
                   offsetFromSymbolStart = "76">
                </Location>
+               <Location
+                  uuid = "3E4176F7-AC46-4D61-ACEB-1B55521D356E - 5a8869db590ab7d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.ParticipantsManagerView.updateView(with: Swift.Array&lt;PerebasFC.ParticipantCellModel&gt;) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/ParticipantsManager/View/ParticipantsManagerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "3E4176F7-AC46-4D61-ACEB-1B55521D356E - 653d306b4d72678a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (PerebasFC.ParticipantCellModel) -&gt; () in PerebasFC.ParticipantsManagerView.updateView(with: Swift.Array&lt;PerebasFC.ParticipantCellModel&gt;) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/ParticipantsManager/View/ParticipantsManagerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "76">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11F70880-ED43-40CA-8CC1-6AF92BEAC6DF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/Login/View/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "loginWithGoogleButton"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1645EFF2-1B7B-4B99-A378-75A97B7CBAF3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/AccesibilityManager/View/AccessibilityManagerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "updateView(accessibilityOptions:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

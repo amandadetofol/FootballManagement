@@ -12,6 +12,7 @@ typealias HomeCoordinatorProtocolWithLoaderProtocol = LoaderCoodinatorProtocol &
 protocol HomeCoordinatorProtocol {
     func handleLogout()
     func handleAlertCloseButtonTap()
+    func handleAccessibilityButtonTap(model: [AccessibilityManagerViewModel])
     func handleInternalLinkRedirect(
         key: InternalLinkRedirectKeys,
         willShow: Bool?,
@@ -49,6 +50,12 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                     self.showErrorPopUp()
             }
         }
+    }
+    
+    func handleAccessibilityButtonTap(model: [AccessibilityManagerViewModel]){
+        navigationController.present(
+            AccessibilityManagerFactory.getAccessibilityManagaerFactory(model: model),
+            animated: true)
     }
     
     func handleAlertCloseButtonTap() {

@@ -75,6 +75,13 @@
 		A637DDFB2A4A55140017857D /* PickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFA2A4A55140017857D /* PickerComponent.swift */; };
 		A637DDFD2A4A55660017857D /* EditGameGoalInformationsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */; };
 		A637DDFF2A4BAB6A0017857D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFE2A4BAB6A0017857D /* Date.swift */; };
+		A64161992A898E3200BF45C4 /* AccessibilityManagerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64161982A898E3200BF45C4 /* AccessibilityManagerCoordinator.swift */; };
+		A641619C2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641619B2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift */; };
+		A641619E2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641619D2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift */; };
+		A64161A12A898E7000BF45C4 /* AccessibilityManagerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64161A02A898E7000BF45C4 /* AccessibilityManagerPresenter.swift */; };
+		A64161A32A898E8100BF45C4 /* AccessibilityManagerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64161A22A898E8100BF45C4 /* AccessibilityManagerInteractor.swift */; };
+		A64161AA2A898EBC00BF45C4 /* AccessibilityManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64161A92A898EBC00BF45C4 /* AccessibilityManagerView.swift */; };
+		A64161AC2A898ED300BF45C4 /* AccessibilityManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64161AB2A898ED300BF45C4 /* AccessibilityManagerViewController.swift */; };
 		A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64912412A33BAA700356B7B /* CalendarViewController.swift */; };
 		A64912452A33BCE300356B7B /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A64912442A33BCE300356B7B /* HorizonCalendar */; };
 		A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */; };
@@ -290,6 +297,13 @@
 		A637DDFA2A4A55140017857D /* PickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerComponent.swift; sourceTree = "<group>"; };
 		A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameGoalInformationsCardView.swift; sourceTree = "<group>"; };
 		A637DDFE2A4BAB6A0017857D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A64161982A898E3200BF45C4 /* AccessibilityManagerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerCoordinator.swift; sourceTree = "<group>"; };
+		A641619B2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerFactory.swift; sourceTree = "<group>"; };
+		A641619D2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerViewModel.swift; sourceTree = "<group>"; };
+		A64161A02A898E7000BF45C4 /* AccessibilityManagerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerPresenter.swift; sourceTree = "<group>"; };
+		A64161A22A898E8100BF45C4 /* AccessibilityManagerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerInteractor.swift; sourceTree = "<group>"; };
+		A64161A92A898EBC00BF45C4 /* AccessibilityManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerView.swift; sourceTree = "<group>"; };
+		A64161AB2A898ED300BF45C4 /* AccessibilityManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerViewController.swift; sourceTree = "<group>"; };
 		A64912412A33BAA700356B7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsView.swift; sourceTree = "<group>"; };
 		A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsViewController.swift; sourceTree = "<group>"; };
@@ -917,9 +931,8 @@
 		A62C1CD02A37E7A4002AA401 /* Financial */ = {
 			isa = PBXGroup;
 			children = (
-				A67360962A393391003BF4C2 /* SeeProofWebView */,
-				A62C1CEC2A37F6C0002AA401 /* Details */,
-				A62C1CEB2A37F6B4002AA401 /* Main */,
+				A641618F2A898D9500BF45C4 /* Administrator */,
+				A641618E2A898D8400BF45C4 /* Common */,
 			);
 			path = Financial;
 			sourceTree = "<group>";
@@ -1087,6 +1100,85 @@
 			path = PickerComponent;
 			sourceTree = "<group>";
 		};
+		A641618E2A898D8400BF45C4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A67360962A393391003BF4C2 /* SeeProofWebView */,
+				A62C1CEC2A37F6C0002AA401 /* Details */,
+				A62C1CEB2A37F6B4002AA401 /* Main */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A641618F2A898D9500BF45C4 /* Administrator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Administrator;
+			sourceTree = "<group>";
+		};
+		A64161902A898DB800BF45C4 /* AccesibilityManager */ = {
+			isa = PBXGroup;
+			children = (
+				A64161972A898E1300BF45C4 /* Coordinator */,
+				A64161962A898E0D00BF45C4 /* Factory */,
+				A64161952A898E0700BF45C4 /* Model */,
+				A64161942A898E0200BF45C4 /* Presenter */,
+				A64161932A898DF800BF45C4 /* Interactor */,
+				A64161912A898DE300BF45C4 /* View */,
+			);
+			path = AccesibilityManager;
+			sourceTree = "<group>";
+		};
+		A64161912A898DE300BF45C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A64161A92A898EBC00BF45C4 /* AccessibilityManagerView.swift */,
+				A64161AB2A898ED300BF45C4 /* AccessibilityManagerViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A64161932A898DF800BF45C4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A64161A22A898E8100BF45C4 /* AccessibilityManagerInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A64161942A898E0200BF45C4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A64161A02A898E7000BF45C4 /* AccessibilityManagerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A64161952A898E0700BF45C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A641619D2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A64161962A898E0D00BF45C4 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A641619B2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A64161972A898E1300BF45C4 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A64161982A898E3200BF45C4 /* AccessibilityManagerCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		A64912372A33BA0500356B7B /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1233,6 +1325,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A64161902A898DB800BF45C4 /* AccesibilityManager */,
 				A6D248712A830BCE004951FD /* ParticipantsManager */,
 				A6FCDA462A81B5DD00B095E5 /* Sort */,
 				A6E6BB1A2A733D210063A62A /* Loader */,
@@ -2136,6 +2229,7 @@
 				A60B1A3E2A71E048007F71ED /* NewEventInCalendarViewModel.swift in Sources */,
 				A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */,
 				A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */,
+				A64161992A898E3200BF45C4 /* AccessibilityManagerCoordinator.swift in Sources */,
 				A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */,
 				A637DDFF2A4BAB6A0017857D /* Date.swift in Sources */,
 				A6CCFC382A32234300364614 /* ChangePasswordView.swift in Sources */,
@@ -2171,6 +2265,7 @@
 				A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
 				A6993E372A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift in Sources */,
+				A64161AC2A898ED300BF45C4 /* AccessibilityManagerViewController.swift in Sources */,
 				A637DDF02A4A4B300017857D /* EditGamePresenter.swift in Sources */,
 				A6CCFC402A32236700364614 /* ChangePasswordInteractor.swift in Sources */,
 				A6D248852A830CB8004951FD /* ParticipantsManagerView.swift in Sources */,
@@ -2187,6 +2282,7 @@
 				A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */,
 				A6FCDA5F2A81BBE300B095E5 /* SortCardViewModel.swift in Sources */,
 				A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */,
+				A64161A32A898E8100BF45C4 /* AccessibilityManagerInteractor.swift in Sources */,
 				A6CFD57B2A2939FD00A37696 /* FirstPlacesDifferentView.swift in Sources */,
 				A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */,
 				A6E5BB322A1D893A00ADE47F /* UserAlertWarningViewModel.swift in Sources */,
@@ -2203,10 +2299,13 @@
 				A61CFFF82A3BDC440026BAF1 /* EditAwardsCoordinator.swift in Sources */,
 				A6CCFC542A333DAA00364614 /* ChatMainView.swift in Sources */,
 				A6033E752A12E416002B56EE /* LoginView.swift in Sources */,
+				A64161A12A898E7000BF45C4 /* AccessibilityManagerPresenter.swift in Sources */,
 				A6D248892A830CD9004951FD /* ParticipantsManagerWorker.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
 				A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */,
+				A64161AA2A898EBC00BF45C4 /* AccessibilityManagerView.swift in Sources */,
+				A641619C2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift in Sources */,
 				A6993E392A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift in Sources */,
 				A6FCDA582A81B69B00B095E5 /* SortMainView.swift in Sources */,
 				A6CCFC562A333DB400364614 /* ChatMainViewController.swift in Sources */,
@@ -2264,6 +2363,7 @@
 				A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */,
 				A6CFD5832A293EAF00A37696 /* BarAndTrophyViewModel.swift in Sources */,
 				A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */,
+				A641619E2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift in Sources */,
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
 				A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */,
 				A6993E1A2A2BB5A700C2BDE3 /* RankingWorker.swift in Sources */,
