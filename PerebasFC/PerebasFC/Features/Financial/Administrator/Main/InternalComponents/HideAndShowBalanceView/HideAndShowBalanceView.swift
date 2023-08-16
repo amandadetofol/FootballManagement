@@ -15,7 +15,7 @@ final class HideAndShowBalanceView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         
         return label
     }()
@@ -24,7 +24,7 @@ final class HideAndShowBalanceView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 20)
         
         return label
     }()
@@ -33,19 +33,19 @@ final class HideAndShowBalanceView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+
         return label
     }()
     
     private lazy var seeBalanceButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(.gold, for: .normal)
         button.addTarget(self, action: #selector(handleSeeBalanceButtonTap), for: .touchUpInside)
         
         return button
     }()
-    
     
     init(){
         super.init(frame: .zero)
@@ -62,7 +62,8 @@ final class HideAndShowBalanceView: UIView {
         userNameLabel.text = "Olá, \(username)!"
         balanceLabel.text = "Saldo: "
         balanceValueLabel.text = balance
-        seeBalanceButton.setTitle("Ver saldo", for: .normal)
+        seeBalanceButton.setTitle("Ocultar saldo", for: .normal)
+        self.balance = balance
     }
     
     private func setupView(){
@@ -75,22 +76,23 @@ final class HideAndShowBalanceView: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
+            heightAnchor.constraint(equalToConstant: 80),
+            
             userNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            userNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            userNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            userNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            userNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             
             balanceLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 16),
-            balanceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            balanceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             
             balanceValueLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 16),
-            balanceValueLabel.leadingAnchor.constraint(equalTo: balanceLabel.leadingAnchor),
+            balanceValueLabel.leadingAnchor.constraint(equalTo: balanceLabel.trailingAnchor),
             
             seeBalanceButton.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 16),
-            seeBalanceButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            seeBalanceButton.leadingAnchor.constraint(equalTo: balanceValueLabel.trailingAnchor)
+            seeBalanceButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
         ])
     }
-    
+
 }
 
 extension HideAndShowBalanceView {

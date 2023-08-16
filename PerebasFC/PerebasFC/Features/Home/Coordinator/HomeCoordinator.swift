@@ -75,6 +75,17 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                 return
                 
             case .financial:
+                if Session.shared.isAdm ?? false {
+                    navigationController.pushViewController(
+                        FinancialAdministratorMainFactory.getFinancialAdministratorMainViewController(
+                            navigationController: navigationController,
+                            model: FinancialAdministratorMainViewModel(
+                                username: "José Maria",
+                                balance: "R$ 400,00")),
+                        animated: true)
+                    return
+                }
+                
                 navigationController.pushViewController(
                     FinancialFactory.getFinancialViewController(
                         navigationController: navigationController),

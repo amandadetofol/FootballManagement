@@ -29,7 +29,7 @@ final class TitleAndDescriptionCardView: UIControl {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 16)
         
         return label
     }()
@@ -38,6 +38,7 @@ final class TitleAndDescriptionCardView: UIControl {
         let image = UIImageView(image: UIImage(systemName: "arrow.right"))
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
+        image.tintColor = .gold
         
         return image
     }()
@@ -69,7 +70,7 @@ final class TitleAndDescriptionCardView: UIControl {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 56),
+            heightAnchor.constraint(equalToConstant: 86),
             
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -88,6 +89,7 @@ final class TitleAndDescriptionCardView: UIControl {
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1
         clipsToBounds = true
+        layer.cornerRadius = 15
     }
     
 }

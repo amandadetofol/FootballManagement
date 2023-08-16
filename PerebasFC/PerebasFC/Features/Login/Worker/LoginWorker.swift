@@ -95,6 +95,11 @@ extension LoginWorker {
             icon: UIImage(systemName: "dollarsign.arrow.circlepath") ?? UIImage(),
             redirectKey: .financial)
         
+        let admfinancial = MenuItemViewModel(
+            title: "Financeiro",
+            icon: UIImage(systemName: "dollarsign.arrow.circlepath") ?? UIImage(),
+            redirectKey: .financial)
+        
         let calendar = MenuItemViewModel(
             title: "Agenda",
             icon: UIImage(systemName: "calendar") ?? UIImage(),
@@ -133,7 +138,7 @@ extension LoginWorker {
         if !isAdm {
             return [myData, financial, calendar, chat, ranking, gamesHistory, team]
         } else {
-            return [myData, financial, calendar, chat, ranking, gamesHistory, team, sort, participants]
+            return [myData, admfinancial, calendar, chat, ranking, gamesHistory, team, sort, participants]
         }
     }
     
