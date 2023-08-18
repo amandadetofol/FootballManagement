@@ -23,12 +23,23 @@ final class FinancialAdministratorMainCoordinator: FinancialAdministratorMainCoo
         switch model {
         case .history:
             return
+            
         case .pendencies:
             return
+            
         case .newCredit:
-            return
+            self.navigationController.pushViewController(
+                NewItemFactory.getNewItemFactory(
+                    navigationController: navigationController,
+                    type: .credit),
+                animated: true)
+            
         case .newDebit:
-            return
+            self.navigationController.pushViewController(
+                NewItemFactory.getNewItemFactory(
+                    navigationController: navigationController,
+                    type: .debit),
+                animated: true)
         }
     }
     

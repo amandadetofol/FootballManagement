@@ -58,6 +58,7 @@ final class TitleAndDescriptionCardView: UIControl {
     func updateView(model: FinancialAdministratorActions){
         self.titleLabel.text = model.rawValue
         self.descriptionLabel.text = model.description
+        self.model = model 
     }
     
     private func setupView(){
