@@ -25,7 +25,10 @@ final class FinancialAdministratorMainCoordinator: FinancialAdministratorMainCoo
             return
             
         case .pendencies:
-            return
+            self.navigationController.pushViewController(
+                AdministratorPendenciesFactory.getAdministratorPendenciesViewController(
+                    navigationController: navigationController),
+                animated: true)
             
         case .newCredit:
             self.navigationController.pushViewController(
