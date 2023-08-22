@@ -98,8 +98,8 @@ final class AdministratorPendenciesDetailsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
-        button.backgroundColor = .clear
-        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .black
+        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
         button.setTitle("Enviar notificação".uppercased(), for: .normal)
         button.addTarget(self, action: #selector(handleSendNotificationButtonTap), for: .touchUpInside)

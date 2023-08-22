@@ -22,7 +22,9 @@ final class FinancialAdministratorMainCoordinator: FinancialAdministratorMainCoo
     func handleTitleAndDescriptionCardViewTap(model: FinancialAdministratorActions) {
         switch model {
         case .history:
-            return
+            self.navigationController.pushViewController(
+                FinancialAdministratorHistoryFactory.getFinancialAdministratorHistoryViewController(),
+                animated: true)
             
         case .pendencies:
             self.navigationController.pushViewController(

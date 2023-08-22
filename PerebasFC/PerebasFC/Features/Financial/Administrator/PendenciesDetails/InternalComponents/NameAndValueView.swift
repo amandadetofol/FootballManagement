@@ -52,7 +52,7 @@ final class NameAndValueView: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 56),
+            heightAnchor.constraint(equalToConstant: 32),
             
             nameBoldLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             nameBoldLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
