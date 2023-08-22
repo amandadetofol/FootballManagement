@@ -33,6 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return GIDSignIn.sharedInstance.handle(url)
         }
     
+    func application(
+        _ application: UIApplication,
+        didReceive notification: UILocalNotification) {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
+    
     //MARK: Private methods
     private func configureFirebase(){
         let providerFactory = AppCheckDebugProviderFactory()

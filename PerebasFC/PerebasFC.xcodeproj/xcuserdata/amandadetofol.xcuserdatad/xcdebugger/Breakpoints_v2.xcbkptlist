@@ -1146,7 +1146,7 @@
             startingLineNumber = "103"
             endingLineNumber = "103"
             landmarkName = "updateView(basedOn:)"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "C0DD8BFE-6C12-400F-91D4-FBBDE1E649C0 - e3c2a95052ad3033"
@@ -1178,6 +1178,21 @@
                   endingLineNumber = "102"
                   offsetFromSymbolStart = "172">
                </Location>
+               <Location
+                  uuid = "C0DD8BFE-6C12-400F-91D4-FBBDE1E649C0 - e3c2a95052ad300c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PerebasFC.FinancialAdministratorPendenciesListCardModel) -&gt; () in PerebasFC.AdministratorPendenciesViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/Pendencies/View/AdministratorPendenciesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "172">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1194,7 +1209,7 @@
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "updateView(basedOn:)"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "F463EBB2-C4D3-428D-AED4-1FC97734D264 - d2648cef958dac6a"
@@ -1224,6 +1239,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
                   endingLineNumber = "115"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "F463EBB2-C4D3-428D-AED4-1FC97734D264 - d2648cef958dac49"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.AdministratorPendenciesViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/Pendencies/View/AdministratorPendenciesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
                   offsetFromSymbolStart = "668">
                </Location>
             </Locations>

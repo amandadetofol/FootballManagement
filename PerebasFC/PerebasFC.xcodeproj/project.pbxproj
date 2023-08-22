@@ -17,6 +17,13 @@
 		A6031A042A91738300E19E3A /* FinancialAdministratorPendenciesListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A032A91738200E19E3A /* FinancialAdministratorPendenciesListCard.swift */; };
 		A6031A062A91740E00E19E3A /* FinancialAdministratorPendenciesListCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A052A91740E00E19E3A /* FinancialAdministratorPendenciesListCardModel.swift */; };
 		A6031A092A917F7600E19E3A /* AdministratorPendenciesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A082A917F7600E19E3A /* AdministratorPendenciesPresenter.swift */; };
+		A6031A142A91891100E19E3A /* AministratorPendenciesDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A132A91891100E19E3A /* AministratorPendenciesDetailsView.swift */; };
+		A6031A162A91892000E19E3A /* AdministratorPendenciesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A152A91892000E19E3A /* AdministratorPendenciesDetailsViewController.swift */; };
+		A6031A182A91893300E19E3A /* AdministratorPendenciesDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A172A91893300E19E3A /* AdministratorPendenciesDetailsInteractor.swift */; };
+		A6031A1A2A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A192A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift */; };
+		A6031A1C2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A1B2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift */; };
+		A6031A1E2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A1D2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift */; };
+		A6031A212A925F2E00E19E3A /* NameAndValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A202A925F2E00E19E3A /* NameAndValueView.swift */; };
 		A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E542A12DC5D002B56EE /* AppDelegate.swift */; };
 		A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E582A12DC5D002B56EE /* WelcomeViewController.swift */; };
 		A6033E5E2A12DC5E002B56EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6033E5D2A12DC5E002B56EE /* Assets.xcassets */; };
@@ -201,6 +208,7 @@
 		A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */; };
 		A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9ED2A202B3D00121515 /* HomePresenter.swift */; };
 		A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9F12A20327600121515 /* HomeFactory.swift */; };
+		A6E317A92A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E317A82A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift */; };
 		A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB2E2A1D889E00ADE47F /* HomeViewModel.swift */; };
 		A6E5BB322A1D893A00ADE47F /* UserAlertWarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB312A1D893A00ADE47F /* UserAlertWarningViewModel.swift */; };
 		A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB352A1D89AF00ADE47F /* UserAlertWarningView.swift */; };
@@ -263,6 +271,13 @@
 		A6031A032A91738200E19E3A /* FinancialAdministratorPendenciesListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorPendenciesListCard.swift; sourceTree = "<group>"; };
 		A6031A052A91740E00E19E3A /* FinancialAdministratorPendenciesListCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorPendenciesListCardModel.swift; sourceTree = "<group>"; };
 		A6031A082A917F7600E19E3A /* AdministratorPendenciesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesPresenter.swift; sourceTree = "<group>"; };
+		A6031A132A91891100E19E3A /* AministratorPendenciesDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AministratorPendenciesDetailsView.swift; sourceTree = "<group>"; };
+		A6031A152A91892000E19E3A /* AdministratorPendenciesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsViewController.swift; sourceTree = "<group>"; };
+		A6031A172A91893300E19E3A /* AdministratorPendenciesDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsInteractor.swift; sourceTree = "<group>"; };
+		A6031A192A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsPresenter.swift; sourceTree = "<group>"; };
+		A6031A1B2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsFactory.swift; sourceTree = "<group>"; };
+		A6031A1D2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsCoordinator.swift; sourceTree = "<group>"; };
+		A6031A202A925F2E00E19E3A /* NameAndValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndValueView.swift; sourceTree = "<group>"; };
 		A6033E512A12DC5D002B56EE /* PerebasFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerebasFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6033E542A12DC5D002B56EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6033E582A12DC5D002B56EE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +463,7 @@
 		A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		A6E0E9ED2A202B3D00121515 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		A6E0E9F12A20327600121515 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		A6E317A82A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsNotificationWorker.swift; sourceTree = "<group>"; };
 		A6E5BB2E2A1D889E00ADE47F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A6E5BB312A1D893A00ADE47F /* UserAlertWarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlertWarningViewModel.swift; sourceTree = "<group>"; };
 		A6E5BB352A1D89AF00ADE47F /* UserAlertWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlertWarningView.swift; sourceTree = "<group>"; };
@@ -598,6 +614,69 @@
 				A6031A082A917F7600E19E3A /* AdministratorPendenciesPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6031A0A2A91889F00E19E3A /* PendenciesDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A6031A1F2A918B5F00E19E3A /* InternalComponents */,
+				A6031A102A9188CC00E19E3A /* Coordinator */,
+				A6031A0F2A9188BF00E19E3A /* Factory */,
+				A6031A112A9188D200E19E3A /* Presenter */,
+				A6031A0D2A9188B800E19E3A /* Interactor */,
+				A6031A0C2A9188B300E19E3A /* View */,
+				A6E317A72A942ABB0096DA4B /* Worker */,
+			);
+			path = PendenciesDetails;
+			sourceTree = "<group>";
+		};
+		A6031A0C2A9188B300E19E3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6031A132A91891100E19E3A /* AministratorPendenciesDetailsView.swift */,
+				A6031A152A91892000E19E3A /* AdministratorPendenciesDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6031A0D2A9188B800E19E3A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A6031A172A91893300E19E3A /* AdministratorPendenciesDetailsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6031A0F2A9188BF00E19E3A /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A6031A1B2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A6031A102A9188CC00E19E3A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6031A1D2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6031A112A9188D200E19E3A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6031A192A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6031A1F2A918B5F00E19E3A /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A6031A202A925F2E00E19E3A /* NameAndValueView.swift */,
+			);
+			path = InternalComponents;
 			sourceTree = "<group>";
 		};
 		A6033E482A12DC5D002B56EE = {
@@ -1254,6 +1333,7 @@
 		A641618F2A898D9500BF45C4 /* Administrator */ = {
 			isa = PBXGroup;
 			children = (
+				A6031A0A2A91889F00E19E3A /* PendenciesDetails */,
 				A60319EC2A91729D00E19E3A /* Pendencies */,
 				A692850A2A8EDF01000E618D /* NewItem */,
 				A69E891C2A8AE937008C09DC /* Main */,
@@ -2264,6 +2344,14 @@
 			path = CurrentTeamCard;
 			sourceTree = "<group>";
 		};
+		A6E317A72A942ABB0096DA4B /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6E317A82A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		A6E5BB302A1D892A00ADE47F /* UserWarningAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -2547,6 +2635,7 @@
 				A62C1CDC2A37E855002AA401 /* FinancialWorker.swift in Sources */,
 				A60B1A492A71E718007F71ED /* NewEventInCalendarWorker.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
+				A6031A1E2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift in Sources */,
 				A6CCFC442A32237700364614 /* ChangePasswordCoordinator.swift in Sources */,
 				A62C1CE02A37E864002AA401 /* FinancialInteractor.swift in Sources */,
 				A61CFFEB2A3BD3000026BAF1 /* Session.swift in Sources */,
@@ -2559,6 +2648,8 @@
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
 				A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
+				A6031A1A2A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift in Sources */,
+				A6E317A92A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift in Sources */,
 				A6993E372A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift in Sources */,
 				A64161AC2A898ED300BF45C4 /* AccessibilityManagerViewController.swift in Sources */,
 				A637DDF02A4A4B300017857D /* EditGamePresenter.swift in Sources */,
@@ -2577,6 +2668,7 @@
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A62C1CC72A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift in Sources */,
 				A69E89342A8AF128008C09DC /* FinancialAdministratorMainPresenter.swift in Sources */,
+				A6031A142A91891100E19E3A /* AministratorPendenciesDetailsView.swift in Sources */,
 				A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */,
 				A6FCDA5F2A81BBE300B095E5 /* SortCardViewModel.swift in Sources */,
 				A60319FC2A91731B00E19E3A /* AdministratorPendenciesWorker.swift in Sources */,
@@ -2624,10 +2716,12 @@
 				A6CCFC662A336F5F00364614 /* ChatMainFactory.swift in Sources */,
 				A6993E2C2A2BFB0100C2BDE3 /* PersonalInformationsView.swift in Sources */,
 				A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */,
+				A6031A182A91893300E19E3A /* AdministratorPendenciesDetailsInteractor.swift in Sources */,
 				A62C1CC52A37DD03002AA401 /* CalendarItemPopUpView.swift in Sources */,
 				A6CCFC622A336CB100364614 /* ChatMainCoordinator.swift in Sources */,
 				A62C1CD82A37E841002AA401 /* FinancialPendenciesView.swift in Sources */,
 				A6A7416A2A2566DA009A7998 /* WeekTeamFactory.swift in Sources */,
+				A6031A162A91892000E19E3A /* AdministratorPendenciesDetailsViewController.swift in Sources */,
 				A637DDEE2A4A4B290017857D /* EditGameInteractor.swift in Sources */,
 				A62C1CE42A37E873002AA401 /* FinancialCoordinator.swift in Sources */,
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
@@ -2708,6 +2802,7 @@
 				A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */,
 				A69285132A8EDF4B000E618D /* NewItemView.swift in Sources */,
 				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
+				A6031A212A925F2E00E19E3A /* NameAndValueView.swift in Sources */,
 				A69E892C2A8AF0DF008C09DC /* FinancialAdministratorMainInteractor.swift in Sources */,
 				A67360932A393282003BF4C2 /* FinancialDetailsFactory.swift in Sources */,
 				A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */,
@@ -2716,6 +2811,7 @@
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
 				A67360A42A3933F7003BF4C2 /* SeeProofWebViewController.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
+				A6031A1C2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift in Sources */,
 				A61CFFF62A3BDC3C0026BAF1 /* EditAwardsInteractor.swift in Sources */,
 				A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */,
 				A6CEE4BE2A3F7B4D002CF9F5 /* EditAwardsFactory.swift in Sources */,

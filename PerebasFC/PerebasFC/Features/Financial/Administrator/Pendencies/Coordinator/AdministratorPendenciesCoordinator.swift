@@ -20,7 +20,9 @@ final class AdministratorPendenciesCoordinator: AdministratorPendenciesCoordinat
     }
     
     func goToFinancialAdministratorPendenciesDetails(model: FinancialAdministratorPendenciesListCardModel) {
-        //TODO: Implementar quando a tela de detalhes for criada
+        self.navigationController?.pushViewController(
+            AdministratorPendenciesDetailsFactory.getAdministratorPendenciesDetailsViewController(model: model),
+            animated: true)
     }
     
 }

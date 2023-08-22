@@ -57,7 +57,8 @@ final class AccessibilityManagerView: UIView {
             button.translatesAutoresizingMaskIntoConstraints = false
             button.clipsToBounds = true
             button.backgroundColor = .gold.withAlphaComponent(0.50)
-            button.setTitleColor(.white, for: .normal)
+            button.setTitleColor(.black, for: .normal)
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
             button.layer.cornerRadius = 10
             button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
             button.setTitle(option.title.uppercased(), for: .normal)
