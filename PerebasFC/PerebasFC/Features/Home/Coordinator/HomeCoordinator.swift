@@ -67,6 +67,12 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
         willShow: Bool? = false,
         teams: WeekTeamViewModel? = nil) {
             switch key {
+            case .map:
+                self.navigationController.pushViewController(
+                    MapFactory.getMapViewController(
+                        navigationController: navigationController), animated: true)
+                return 
+                
             case .myData:
                 self.navigationController.pushViewController(
                     PersonalInformationsFactory.getPersonalInformationsViewController(

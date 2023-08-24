@@ -101,6 +101,13 @@
 		A64161AC2A898ED300BF45C4 /* AccessibilityManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64161AB2A898ED300BF45C4 /* AccessibilityManagerViewController.swift */; };
 		A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64912412A33BAA700356B7B /* CalendarViewController.swift */; };
 		A64912452A33BCE300356B7B /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A64912442A33BCE300356B7B /* HorizonCalendar */; };
+		A65662F92A96CA8000EEC58D /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65662F82A96CA8000EEC58D /* MapCoordinator.swift */; };
+		A65662FB2A96CA8600EEC58D /* MapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65662FA2A96CA8600EEC58D /* MapFactory.swift */; };
+		A65662FD2A96CA8A00EEC58D /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65662FC2A96CA8A00EEC58D /* MapModel.swift */; };
+		A65662FF2A96CA9000EEC58D /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65662FE2A96CA9000EEC58D /* MapPresenter.swift */; };
+		A65663012A96CA9800EEC58D /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65663002A96CA9800EEC58D /* MapInteractor.swift */; };
+		A65663072A96CAB400EEC58D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65663062A96CAB400EEC58D /* MapViewController.swift */; };
+		A65663092A96CAB900EEC58D /* MapWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65663082A96CAB900EEC58D /* MapWorker.swift */; };
 		A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */; };
 		A673608D2A393235003BF4C2 /* FinancialDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */; };
 		A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */; };
@@ -364,6 +371,13 @@
 		A64161A92A898EBC00BF45C4 /* AccessibilityManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerView.swift; sourceTree = "<group>"; };
 		A64161AB2A898ED300BF45C4 /* AccessibilityManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerViewController.swift; sourceTree = "<group>"; };
 		A64912412A33BAA700356B7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		A65662F82A96CA8000EEC58D /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		A65662FA2A96CA8600EEC58D /* MapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFactory.swift; sourceTree = "<group>"; };
+		A65662FC2A96CA8A00EEC58D /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		A65662FE2A96CA9000EEC58D /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		A65663002A96CA9800EEC58D /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		A65663062A96CAB400EEC58D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A65663082A96CAB900EEC58D /* MapWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorker.swift; sourceTree = "<group>"; };
 		A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsView.swift; sourceTree = "<group>"; };
 		A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsViewController.swift; sourceTree = "<group>"; };
 		A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsPresenter.swift; sourceTree = "<group>"; };
@@ -1475,6 +1489,76 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		A65662EE2A96CA3E00EEC58D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A65662F62A96CA6200EEC58D /* Coordinator */,
+				A65662F52A96CA5E00EEC58D /* Factory */,
+				A65662F42A96CA5A00EEC58D /* Model */,
+				A65662F32A96CA5600EEC58D /* Presenter */,
+				A65662F22A96CA5100EEC58D /* Interactor */,
+				A65662F02A96CA4800EEC58D /* View */,
+				A65662EF2A96CA4400EEC58D /* Worker */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		A65662EF2A96CA4400EEC58D /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A65663082A96CAB900EEC58D /* MapWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A65662F02A96CA4800EEC58D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A65663062A96CAB400EEC58D /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A65662F22A96CA5100EEC58D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A65663002A96CA9800EEC58D /* MapInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A65662F32A96CA5600EEC58D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A65662FE2A96CA9000EEC58D /* MapPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A65662F42A96CA5A00EEC58D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A65662FC2A96CA8A00EEC58D /* MapModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A65662F52A96CA5E00EEC58D /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A65662FA2A96CA8600EEC58D /* MapFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A65662F62A96CA6200EEC58D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A65662F82A96CA8000EEC58D /* MapCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		A67360862A3931FD003BF4C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1566,7 +1650,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				A64161902A898DB800BF45C4 /* AccesibilityManager */,
+				A65662EE2A96CA3E00EEC58D /* Map */,
 				A6D248712A830BCE004951FD /* ParticipantsManager */,
 				A6FCDA462A81B5DD00B095E5 /* Sort */,
 				A6E6BB1A2A733D210063A62A /* Loader */,
@@ -2346,6 +2430,7 @@
 		A6D248712A830BCE004951FD /* ParticipantsManager */ = {
 			isa = PBXGroup;
 			children = (
+				A64161902A898DB800BF45C4 /* AccesibilityManager */,
 				A6D248782A830C4F004951FD /* Coordinator */,
 				A6D248772A830C40004951FD /* Factory */,
 				A6D248762A830C3A004951FD /* Model */,
@@ -2714,6 +2799,7 @@
 				A6CCFC3C2A32235800364614 /* ChangePasswordWorker.swift in Sources */,
 				A6A741752A26B39B009A7998 /* GamesHistoryView.swift in Sources */,
 				A6CCFC6D2A3389F200364614 /* ChatMessageListView.swift in Sources */,
+				A65662FF2A96CA9000EEC58D /* MapPresenter.swift in Sources */,
 				A637DDF22A4A4B360017857D /* EditGameView.swift in Sources */,
 				A6031A092A917F7600E19E3A /* AdministratorPendenciesPresenter.swift in Sources */,
 				A6993E3B2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift in Sources */,
@@ -2733,6 +2819,7 @@
 				A67360982A3933A4003BF4C2 /* SeeProofWebView.swift in Sources */,
 				A6D2488B2A830D28004951FD /* ParticipantCellView.swift in Sources */,
 				A6E6BB182A733B0C0063A62A /* SignOutWorker.swift in Sources */,
+				A65663092A96CAB900EEC58D /* MapWorker.swift in Sources */,
 				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6E6BB1F2A733D680063A62A /* LoaderViewController.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
@@ -2820,18 +2907,21 @@
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
 				A6993E312A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift in Sources */,
 				A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */,
+				A65662F92A96CA8000EEC58D /* MapCoordinator.swift in Sources */,
 				A61A8F9F2A1C20FA009D08EE /* ForgotPasswordViewController.swift in Sources */,
 				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
 				A69E89282A8AEB3E008C09DC /* HideAndShowBalanceView.swift in Sources */,
 				A60319F82A91730300E19E3A /* AdministratorPendenciesViewModel.swift in Sources */,
 				A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */,
 				A61CFFF42A3BDC330026BAF1 /* EditAwardsViewController.swift in Sources */,
+				A65663072A96CAB400EEC58D /* MapViewController.swift in Sources */,
 				A680E10A2A24109F008FA008 /* Team.swift in Sources */,
 				A6D248702A8306A6004951FD /* SortMainPresenter.swift in Sources */,
 				A6CCFC6B2A33854E00364614 /* ChatMessageView.swift in Sources */,
 				A62C1CCB2A37E229002AA401 /* CalendarModel.swift in Sources */,
 				A6A741812A26C121009A7998 /* GamesHistoryInteractor.swift in Sources */,
 				A61A8F8D2A144175009D08EE /* ErrorComponentViewController.swift in Sources */,
+				A65663012A96CA9800EEC58D /* MapInteractor.swift in Sources */,
 				A61CFFFB2A3BE0120026BAF1 /* EditAwardsViewModel.swift in Sources */,
 				A6CEE4BB2A3F75CF002CF9F5 /* EditAwardsPresenter.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
@@ -2919,7 +3009,9 @@
 				A69E89362A8AF13A008C09DC /* FinancialAdministratorMainFactory.swift in Sources */,
 				A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */,
 				A6CCFC6F2A338E6500364614 /* ChatMessagesViewController.swift in Sources */,
+				A65662FD2A96CA8A00EEC58D /* MapModel.swift in Sources */,
 				A6D2487F2A830C90004951FD /* PariticpantsManagerViewModel.swift in Sources */,
+				A65662FB2A96CA8600EEC58D /* MapFactory.swift in Sources */,
 				A6D248832A830CAE004951FD /* ParticipantsManagerInteractor.swift in Sources */,
 				A60B1A3C2A71E03E007F71ED /* NewEventInCalendarFactory.swift in Sources */,
 			);

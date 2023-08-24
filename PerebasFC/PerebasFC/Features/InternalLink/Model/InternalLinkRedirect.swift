@@ -18,4 +18,5 @@ enum InternalLinkRedirectKeys {
     case team
     case sort
     case participants
+    case map
 }

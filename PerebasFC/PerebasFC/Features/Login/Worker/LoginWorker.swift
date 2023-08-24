@@ -110,6 +110,11 @@ extension LoginWorker {
             icon: UIImage(systemName: "message.circle") ?? UIImage(),
             redirectKey: .chat)
         
+        let map = MenuItemViewModel(
+            title: "Local do Jogo",
+            icon: UIImage(systemName: "map.fill") ?? UIImage(),
+            redirectKey: .map)
+        
         let ranking = MenuItemViewModel(
             title: "Ranking",
             icon: UIImage(systemName: "trophy.circle") ?? UIImage(),
@@ -136,9 +141,9 @@ extension LoginWorker {
             redirectKey: .participants)
         
         if !isAdm {
-            return [myData, financial, calendar, chat, ranking, gamesHistory, team]
+            return [myData, financial, calendar, map, chat, ranking, gamesHistory, team]
         } else {
-            return [myData, admfinancial, calendar, chat, ranking, gamesHistory, team, sort, participants]
+            return [myData, admfinancial, calendar, map, chat, ranking, gamesHistory, team, sort, participants]
         }
     }
     
