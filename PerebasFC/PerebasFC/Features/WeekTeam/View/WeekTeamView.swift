@@ -51,9 +51,15 @@ final class WeekTeamView: UIView {
     }
     
     func setupView(with model: [WeekTeamListViewModel]){
-        model.forEach { viewModel in
+        model.enumerated().forEach { (index, viewModel) in
             let card = WeekTeamListItemView()
-            card.setupCard(with: viewModel)
+            var cardModel = viewModel
+            cardModel.currentIndex = index + 1
+            cardModel.total = model.count
+            
+            card.setupCard(with: cardModel)
+            card.updateAccessibility(model: cardModel)
+            
             itemsStackView.addArrangedSubview(card)
             
             card.translatesAutoresizingMaskIntoConstraints = false

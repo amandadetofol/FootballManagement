@@ -31,7 +31,7 @@ final class WeekTeamPresenter: WeekTeamPresenterProtocol {
     }
     
     private func parseApiTeamToViewModel(team: Team) -> [WeekTeamListViewModel] {
-        return team.players.compactMap { user in
+        return team.players.map { user in
             WeekTeamListViewModel(
                 shirtNumber: Int(user.shirtNumber) ?? 0,
                 fullName: user.firstName + user.lastName,

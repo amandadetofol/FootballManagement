@@ -14,6 +14,7 @@ final class CommonnPlacesView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .left
+        label.isAccessibilityElement = false
         label.font = UIFont.boldSystemFont(ofSize: 20.0)
         
         return label
@@ -24,6 +25,7 @@ final class CommonnPlacesView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .left
+        label.isAccessibilityElement = false
         label.font = UIFont.systemFont(ofSize: 20.0)
         
         return label
@@ -55,6 +57,13 @@ final class CommonnPlacesView: UIView {
         positionLabel.text = String(model.postion)
         nameLabel.text = model.name
         arrowImageView.isHidden = !model.wentUp
+        updateAccessibility(with: model)
+    }
+    
+    private func updateAccessibility(with model: CommonnPlacesViewModel) {
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .staticText
+        self.accessibilityLabel = "O jogador: \(model.name) esta na posição \(model.postion). \(model.wentUp ? "Subiu na colocação" : "")"
     }
     
     private func setupView(){

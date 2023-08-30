@@ -13,4 +13,6 @@ struct FinancialAdministratorHistoryViewModel {
     let name: String
     let operationValue: String
     let operatioType: NewItemType
+    var currentIndex: Int?
+    var total: Int?
 }

@@ -71,6 +71,12 @@ final class FinancialAdministratorPendenciesListCard: UIControl {
         self.model = model
     }
     
+    func updateAccessibility(model: FinancialAdministratorPendenciesListCardModel){
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
+        self.accessibilityLabel = "\(model.title). \(model.name) Valor: \(model.value). Item \(model.currentIndex ?? 0) de \(model.total ?? 0). Ver detalhes."
+    }
+    
     private func setupView(){
         addSubviews([
             titleLabel,

@@ -57,9 +57,14 @@ final class FinancialAdministratorHistoryView: UIView {
             subview.removeFromSuperview()
         }
         
-        model.forEach { itemModel in
+        model.enumerated().forEach { (index, itemModel) in
+            var cardModel = itemModel
+            cardModel.currentIndex = index + 1
+            cardModel.total = model.count
+            
             let card = FinancialAdministratorHistoryListView()
-            card.setupView(with: itemModel)
+            card.setupView(with: cardModel)
+            card.updateAccessibility(with: cardModel)
             contentStackView.addArrangedSubview(card)
         }
     }

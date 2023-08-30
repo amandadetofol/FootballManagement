@@ -12,6 +12,6 @@ struct WeekTeamListViewModel {
     let fullName: String
     let position: String
     let rankingPosition: Int
-    let currentIndex: Int
-    let total: Int 
+    var currentIndex: Int? = nil
+    var total: Int? = nil
 }

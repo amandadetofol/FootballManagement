@@ -64,16 +64,18 @@ final class ParticipantsManagerView: UIView {
             view.removeFromSuperview()
         }
         
-        model.forEach { participantCellModel in
+        model.enumerated().forEach { (index, participantCellModel) in
             let card = PariticipantCellView()
-            card.updateView(with: participantCellModel)
+            var modelCard = participantCellModel
+            modelCard.currentIndex = index + 1
+            modelCard.total = model.count
+            card.updateView(with: modelCard)
+            card.updateAccessibility(with: modelCard)
             card.delegate = self
             card.translatesAutoresizingMaskIntoConstraints = false
             contentStackView.addArrangedSubview(card)
-            
             card.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor).isActive = true
             card.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor).isActive = true
-            
         }
     }
     

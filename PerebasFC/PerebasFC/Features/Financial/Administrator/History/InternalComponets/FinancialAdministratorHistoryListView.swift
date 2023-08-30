@@ -102,6 +102,12 @@ final class FinancialAdministratorHistoryListView: UIView {
         operationTypeNameAndValueView.updateView(name: "Tipo de Operação:", value: model.operatioType.description)
     }
     
+    func updateAccessibility(with model: FinancialAdministratorHistoryViewModel){
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .staticText
+        self.accessibilityLabel = "Data: \(model.date). Saldo nesta data: \(model.dayBalance). Nome da transação realizada: \(model.operationValue). Valor:\(model.operationValue). \(model.operatioType.description). Item \(model.currentIndex ?? 0) de \(model.total ?? 0)"
+    }
+    
     private func setupView(){
         addSubview(contentStackView)
         contentStackView.addArrangedSubviews([dateLabel, balanceLabel, borderedContentStackView])

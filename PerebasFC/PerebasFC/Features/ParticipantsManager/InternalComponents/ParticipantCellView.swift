@@ -77,6 +77,12 @@ final class PariticipantCellView: UIControl {
         addTarget(nil, action: #selector(handleParticipantCardViewTap), for: .touchUpInside)
     }
     
+    func updateAccessibility(with model: ParticipantCellModel){
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
+        self.accessibilityLabel = model.name + model.position + "\(model.currentIndex ?? 0) de \(model.total ?? 0)" + "Ver detalhes"
+    }
+    
     private func setupView(){
         addSubviews([
             arrowIconImageView,

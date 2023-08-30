@@ -61,6 +61,15 @@ final class TitleAndDescriptionCardView: UIControl {
         self.model = model 
     }
     
+    func updateAccessibility(
+        model: FinancialAdministratorActions,
+        currentIndex: Int?,
+        total: Int?){
+            self.isAccessibilityElement = true
+            self.accessibilityTraits = .button
+            self.accessibilityLabel = "\(model.rawValue). \(model.description). Ver detalhes. Item \(currentIndex ?? 0) de \(total ?? 0) "
+        }
+    
     private func setupView(){
         addSubviews([
             titleLabel,

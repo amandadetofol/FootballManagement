@@ -41,13 +41,27 @@ final class FirstPlacesDifferentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateView(firstPlaceModel: BarAndTrophyViewModel,
-                    secondPlaceModel: BarAndTrophyViewModel,
-                    thirdPlaceModel: BarAndTrophyViewModel){
-        firstPlaceBarView.setupView(with: firstPlaceModel)
-        secondPlaceBarView.setupView(with: secondPlaceModel)
-        thirdPlaceBarView.setupView(with: thirdPlaceModel)
-    }
+    func updateView(
+        firstPlaceModel: BarAndTrophyViewModel,
+        secondPlaceModel: BarAndTrophyViewModel,
+        thirdPlaceModel: BarAndTrophyViewModel){
+            firstPlaceBarView.setupView(with: firstPlaceModel)
+            secondPlaceBarView.setupView(with: secondPlaceModel)
+            thirdPlaceBarView.setupView(with: thirdPlaceModel)
+            updateAccessibility(
+                firstPlaceModel: firstPlaceModel,
+                secondPlaceModel: secondPlaceModel,
+                thirdPlaceModel: thirdPlaceModel)
+        }
+    
+    private func updateAccessibility(
+        firstPlaceModel: BarAndTrophyViewModel,
+        secondPlaceModel: BarAndTrophyViewModel,
+        thirdPlaceModel: BarAndTrophyViewModel){
+            firstPlaceBarView.updateAccessibility(with: firstPlaceModel)
+            secondPlaceBarView.updateAccessibility(with: secondPlaceModel)
+            thirdPlaceBarView.updateAccessibility(with: thirdPlaceModel)
+        }
     
     private func setupView(){
         addSubviews([

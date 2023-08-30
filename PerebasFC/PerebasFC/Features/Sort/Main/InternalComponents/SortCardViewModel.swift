@@ -11,4 +11,6 @@ struct SortCardViewModel {
     let title: String
     let description: String
     let model: WeekTeamViewModel
+    let total: Int
+    let currentIndex: Int
 }

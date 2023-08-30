@@ -71,7 +71,6 @@ final class FirstPlacesGiftsView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.isAccessibilityElement = false
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 4

@@ -64,6 +64,13 @@ final class SortCardView: UIControl {
         descriptionLabel.text = model.description
         self.model = model.model
         backgroundColor = .brown.withAlphaComponent(0.10)
+        updateAcessibility(model: model)
+    }
+    
+    private func updateAcessibility(model: SortCardViewModel){
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
+        self.accessibilityLabel = model.title + model.description + "\(model.currentIndex) de \(model.total). Ver detalhes do Sorteio."
     }
     
     private func setupView(){

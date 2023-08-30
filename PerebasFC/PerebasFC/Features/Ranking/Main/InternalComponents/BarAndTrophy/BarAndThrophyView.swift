@@ -28,6 +28,7 @@ final class BarAndThrophyView: UIView {
         let image = UIImageView(image: UIImage(systemName: "trophy"))
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
+        image.isAccessibilityElement = false
         
         return image
     }()
@@ -77,6 +78,12 @@ final class BarAndThrophyView: UIView {
         barView.backgroundColor = model.barColor
         barLabel.text = "\(Int(model.postiionLabel))°"
         position = model.postiionLabel
+    }
+    
+    func updateAccessibility(with model: BarAndTrophyViewModel) {
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .staticText
+        self.accessibilityLabel =  "O jogador: " + model.initials + "Esta na posição: " + String(model.postiionLabel)
     }
     
     private func setupView(){

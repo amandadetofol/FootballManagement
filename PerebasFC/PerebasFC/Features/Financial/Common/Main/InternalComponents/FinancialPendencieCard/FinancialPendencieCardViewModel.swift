@@ -15,4 +15,6 @@ struct FinancialPendencieCardViewModel {
     let hasProof: Bool
     let proofUrl: String?
     var actionLabel: String = "Ver Comprovante"
+    var currentIndex: Int?
+    var total: Int?
 }

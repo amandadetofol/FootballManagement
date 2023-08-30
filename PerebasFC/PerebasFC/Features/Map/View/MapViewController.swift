@@ -15,6 +15,9 @@ final class MapViewController: UIViewController,
         let webView = WKWebView()
         webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
+        webView.isAccessibilityElement = true
+        webView.accessibilityTraits = .staticText
+        webView.accessibilityLabel = "O jogo ocorrerá em Badenball, R. Villa Lobos, 78 - Badenfurt, Blumenau - SC."
         
         return webView
     }()

@@ -11,7 +11,7 @@ protocol GameCardViewDelegate: AnyObject {
     func handleEditGameButtonTap(game: Game)
 }
 
-final class GameCardView: UIView {
+final class GameCardView: UIControl {
     
     weak var delegate: GameCardViewDelegate?
     private var model: Game?
@@ -22,6 +22,7 @@ final class GameCardView: UIView {
         view.backgroundColor = .black
         view.clipsToBounds = true
         view.isAccessibilityElement = false
+        view.isUserInteractionEnabled = false
         
         return view
     }()
@@ -32,6 +33,7 @@ final class GameCardView: UIView {
         view.backgroundColor = .white
         view.clipsToBounds = true
         view.isAccessibilityElement = false
+        view.isUserInteractionEnabled = false
         
         return view
     }()
@@ -43,6 +45,7 @@ final class GameCardView: UIView {
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 38.0)
         label.isAccessibilityElement = false
+        label.isUserInteractionEnabled = false
         
         return label
     }()
@@ -55,6 +58,7 @@ final class GameCardView: UIView {
         label.text = "X"
         label.font = UIFont.boldSystemFont(ofSize: 20.0)
         label.isAccessibilityElement = false
+        label.isUserInteractionEnabled = false
         
         return label
     }()
@@ -66,6 +70,7 @@ final class GameCardView: UIView {
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 38.0)
         label.isAccessibilityElement = false
+        label.isUserInteractionEnabled = false
         
         return label
     }()
@@ -77,6 +82,7 @@ final class GameCardView: UIView {
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 24.0)
         label.isAccessibilityElement = false
+        label.isUserInteractionEnabled = false
         
         return label
     }()
@@ -91,6 +97,7 @@ final class GameCardView: UIView {
         stackView.layoutMargins = UIEdgeInsets(top: 16, left: 0, bottom: -16, right: 0)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.isUserInteractionEnabled = true
+        stackView.isUserInteractionEnabled = false
         
         return stackView
     }()
@@ -102,7 +109,7 @@ final class GameCardView: UIView {
         button.setImage(UIImage(systemName: "pencil"), for: .normal)
         button.isHidden = true
         button.backgroundColor = .white
-        button.addTarget(self, action: #selector(handleEditGameButtonTap), for: .touchUpInside)
+        button.isUserInteractionEnabled = false
         
         return button
     }()
@@ -120,6 +127,7 @@ final class GameCardView: UIView {
     }
     
     func updateView(with model: Game){
+        addTarget(self, action: #selector(handleEditGameButtonTap), for: .touchUpInside)
         whiteTeamScoreLabel.text = String(model.score?.whiteTeamPoints ?? 0)
         blackTeamScoreLabel.text = String(model.score?.blackTeamPoints ?? 0)
         gameDateLabel.text = model.gameDate
@@ -141,6 +149,7 @@ final class GameCardView: UIView {
         }
         backgroundColor = .systemYellow.withAlphaComponent(0.10)
         self.model = model
+        setupAccessibility(basedOn: model)
     }
     
     private func setupGameCardViewForAdm(){
@@ -202,6 +211,7 @@ final class GameCardView: UIView {
     
     private func setupAccessibility(basedOn model: Game){
         self.isAccessibilityElement = true
+        self.accessibilityTraits = (Session.shared.isAdm ?? false) ? .button : .staticText
         
         var result = ""
         if model.score?.blackTeamPoints ?? 0 > model.score?.whiteTeamPoints ?? 0 {
@@ -215,7 +225,7 @@ final class GameCardView: UIView {
             goals += "Gol de: \(goal.player.firstName) aos \(goal.time)"
         }
         
-        accessibilityLabel = "Jogo do dia: \(model.gameDate). \(result) \(goals)"
+        accessibilityLabel = "Jogo do dia: \(model.gameDate). \(result) \(goals) \((Session.shared.isAdm ?? false) ? "Clique para editar" : " ")"
     }
     
 }
@@ -223,7 +233,8 @@ final class GameCardView: UIView {
 extension GameCardView {
     
     @objc func handleEditGameButtonTap(){
-        guard let model = model else { return }
+        guard let model = model,
+              Session.shared.isAdm ?? false else { return }
         delegate?.handleEditGameButtonTap(game: model)
     }
     

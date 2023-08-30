@@ -68,9 +68,14 @@ final class AdministratorPendenciesView: UIView {
             view.removeFromSuperview()
         }
         
-        model.items.forEach { cardViewModel in
+        model.items.enumerated().forEach { (index, cardViewModel) in
+            var cardModel = cardViewModel
+            cardModel.total = model.items.count
+            cardModel.currentIndex = index + 1
+            
             let card = FinancialAdministratorPendenciesListCard()
-            card.updateView(model: cardViewModel)
+            card.updateView(model: cardModel)
+            card.updateAccessibility(model: cardModel)
             card.delegate = self
             contentStackView.addArrangedSubview(card)
         }

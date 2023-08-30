@@ -29,13 +29,17 @@ final class SortMainWorker: SortMainWorkerProtocol {
                         description: "Válido até 18/10",
                         model: WeekTeamViewModel(
                             whiteTeam: Team(players: Session.shared.players) ,
-                            blackTeam: Team(players: Session.shared.players))),
+                            blackTeam: Team(players: Session.shared.players)),
+                        total: 2,
+                        currentIndex: 1),
                         SortCardViewModel(
                             title: "Sorteio 01",
                             description: "Expirado",
                             model: WeekTeamViewModel(
                                 whiteTeam: Team(players: Session.shared.players),
-                                blackTeam: Team(players: Session.shared.players)))
+                                blackTeam: Team(players: Session.shared.players)),
+                            total: 2,
+                            currentIndex: 2)
                     ]))
     }
     

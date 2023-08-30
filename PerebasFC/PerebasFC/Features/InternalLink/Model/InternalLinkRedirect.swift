@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum InternalLinkRedirectKeys {
+enum InternalLinkRedirectKeys: Equatable {
     case confirmPresence(willShow: Bool)
     case myData
     case financial
@@ -19,4 +19,5 @@ enum InternalLinkRedirectKeys {
     case sort
     case participants
     case map
+    case out
 }

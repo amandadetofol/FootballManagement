@@ -141,6 +141,8 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                     SortMainFactory.getSortMainViewController(
                         navigationController: navigationController),
                     animated: true)
+            case .out:
+                self.handleLogout()
             }
         }
     

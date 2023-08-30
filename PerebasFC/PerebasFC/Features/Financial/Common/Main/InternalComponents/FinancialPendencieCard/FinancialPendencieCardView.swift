@@ -76,6 +76,12 @@ final class FinancialPendencieCardView: UIControl {
         self.model = model
     }
     
+    func updateAccessibility(model: FinancialPendencieCardViewModel) {
+        isAccessibilityElement = true
+        accessibilityTraits = .button
+        accessibilityLabel = "\(model.title) \((model.isLate ? "Esta atrasado. Realize o pagamento e anexe o comprovante." : "Conta em dia!")). Item \(model.currentIndex ?? 0) de \(model.total ?? 0) \(model.actionLabel)"
+    }
+    
     private func setupBorders(){
         layer.cornerRadius = 10
         layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor

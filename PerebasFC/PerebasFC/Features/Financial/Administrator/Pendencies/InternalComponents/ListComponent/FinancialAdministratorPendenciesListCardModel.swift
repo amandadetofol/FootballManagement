@@ -13,4 +13,6 @@ struct FinancialAdministratorPendenciesListCardModel {
     let name: String
     let daysLate: Int
     let proofUrl: String?
+    var currentIndex: Int?
+    var total: Int?
 }

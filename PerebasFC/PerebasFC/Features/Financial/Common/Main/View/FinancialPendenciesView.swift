@@ -63,9 +63,14 @@ final class FinancialPendenciesView: UIView {
             view.removeFromSuperview()
         }
         
-        model.forEach { cardModel in
+        model.enumerated().forEach { (index, cardModel) in
+            var modelCard = cardModel
+            modelCard.currentIndex = index + 1
+            modelCard.total = model.count
+            
             let card = FinancialPendencieCardView()
-            card.updateView(with: cardModel)
+            card.updateView(with: modelCard)
+            card.updateAccessibility(model: modelCard)
             card.delegate = self
             card.translatesAutoresizingMaskIntoConstraints = false
             contentStackView.addArrangedSubview(card)

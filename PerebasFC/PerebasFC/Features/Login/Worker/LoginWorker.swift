@@ -140,10 +140,15 @@ extension LoginWorker {
             icon: UIImage(systemName: "person.3.sequence.fill") ?? UIImage(),
             redirectKey: .participants)
         
-        if !isAdm {
-            return [myData, financial, calendar, map, chat, ranking, gamesHistory, team]
-        } else {
-            return [myData, admfinancial, calendar, map, chat, ranking, gamesHistory, team, sort, participants]
+        let out = MenuItemViewModel(
+            title: "Sair",
+            icon: UIImage(systemName: "arrow.right.square") ?? UIImage(),
+            redirectKey: .out)
+         
+       if !isAdm {
+            return [myData, financial, calendar, map, chat, ranking, gamesHistory, team, out]
+       } else {
+           return [myData, admfinancial, calendar, map, chat, ranking, gamesHistory, team, sort, participants]
         }
     }
     

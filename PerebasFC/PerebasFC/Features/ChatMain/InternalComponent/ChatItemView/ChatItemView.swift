@@ -83,6 +83,7 @@ final class ChatItemView: UIControl {
         setupConstraints()
         setupBorders()
         backgroundColor = .white
+        updateAccessibility(model: model)
     }
     
     @available(*, unavailable)
@@ -98,6 +99,12 @@ final class ChatItemView: UIControl {
             arrowIconImageView,
             newMessagesLabel])
         addTarget(self, action: #selector(handleChatItemViewTap), for: .touchUpInside)
+    }
+    
+    private func updateAccessibility(model: ChatItemViewModel){
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
+        self.accessibilityLabel = "\(model.numberOfNotifications) mensagem de: \(model.fullName). Conteúdo: \(model.lastMessagePartialDescription). Ir para conversa."
     }
     
     private func setupConstraints(){

@@ -88,6 +88,12 @@ final class WeekTeamListItemView: UIView {
         }
     }
     
+    func updateAccessibility(model: WeekTeamListViewModel) {
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
+        self.accessibilityLabel = model.fullName + model.position + "camisa: \(model.shirtNumber)" + "posição \(model.rankingPosition) no ranking \(model.currentIndex ?? 0) de \(model.total ?? 0)"
+    }
+    
     private func setupView(){
         addSubviews([
             shirtNumber,

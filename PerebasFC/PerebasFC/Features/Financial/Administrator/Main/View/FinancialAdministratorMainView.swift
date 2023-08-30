@@ -65,14 +65,19 @@ final class FinancialAdministratorMainView: UIView {
         hideAndShowBalanceView.updateView(
             username: model.username,
             balance: model.balance)
-        model.items.forEach { item in
+        
+        for i in (1...model.items.count) {
             let card = TitleAndDescriptionCardView()
-            card.updateView(model: item)
+            card.updateView(model: model.items[i-1])
+            card.updateAccessibility(
+                model: model.items[i-1],
+                currentIndex: i,
+                total: model.items.count)
             card.delegate = self
             card.translatesAutoresizingMaskIntoConstraints = false
             stackView.addArrangedSubview(card)
             card.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-            card.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true 
+            card.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         }
     }
     
