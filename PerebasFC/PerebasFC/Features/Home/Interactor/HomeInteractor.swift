@@ -5,7 +5,7 @@
 //  Created by Amanda Detofol on 25/05/23.
 //
 
-import Foundation
+import UIKit
 
 protocol HomePresenterProtocol {
     func updateViewForState(isAdm: Bool, model: User)
@@ -53,9 +53,15 @@ final class HomeInteractor: HomeInteractorProtocol {
     func handleAccessibilityButtonTap(){
         coordinator.handleAccessibilityButtonTap(
             model:
-                [AccessibilityManagerViewModel(title: "Leitor de tela"),
-                 AccessibilityManagerViewModel(title: "Inversão de cores"),
-                 AccessibilityManagerViewModel(title: "Inversão de cores (daltonismo)"),
+                [AccessibilityManagerViewModel(
+                    title: "Leitor de tela",
+                    isActive: UIAccessibility.isVoiceOverRunning),
+                 AccessibilityManagerViewModel(
+                    title: "Inversão de cores",
+                    isActive: UIAccessibility.isInvertColorsEnabled),
+                 AccessibilityManagerViewModel(
+                    title: "Inversão de cores (daltonismo)",
+                    isActive: UIAccessibility.isInvertColorsEnabled),
                 ]
         )
     }

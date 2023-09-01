@@ -85,6 +85,7 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
          style: .plain,
          target: self,
          action: #selector(handleGoToBlockEdition))
+        personalInformationsView.updateAccessibiltiy(isEnabledForEdition: true)
     }
     
     @objc func handleGoToBlockEdition(){
@@ -94,6 +95,7 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
             style: .plain,
             target: self,
             action: #selector(handleGoToEditDataFlowSelected))
+        personalInformationsView.updateAccessibiltiy(isEnabledForEdition: false)
     }
     
 }

@@ -112,7 +112,7 @@ final class HomeView: UIView {
         if let alertModel = viewModel.warning {
             userAlertView.updateView(withModel: alertModel)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 UIView.animate(withDuration: 10) { [weak self] in
                     self?.userAlertView.isHidden = false
                 }

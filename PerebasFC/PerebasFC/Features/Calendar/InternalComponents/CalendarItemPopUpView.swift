@@ -16,7 +16,7 @@ protocol CalendarItemPopUpViewDelegate: AnyObject {
         date: Date)
 }
 
-final class CalendarItemPopUpView: UIView {
+final class CalendarItemPopUpView: UIControl {
     
     weak var delegate: CalendarItemPopUpViewDelegate?
     
@@ -83,6 +83,7 @@ final class CalendarItemPopUpView: UIView {
     func updateView(
         with model: CalendarItemPopUpViewModel,
         date: Date){
+            updateAccessibility(model: model)
             titleLabel.text = model.title
             descriptionLabel.text = model.description
             firstActionButton.setTitle(model.firstActionTitle, for: .normal)
@@ -99,6 +100,16 @@ final class CalendarItemPopUpView: UIView {
             
             self.selectedDate = date
         }
+    
+    private func updateAccessibility(model: CalendarItemPopUpViewModel){
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
+        self.accessibilityLabel = model.description + model.firstActionTitle
+        
+        if UIAccessibility.isVoiceOverRunning {
+            addTarget(self, action: #selector(handleSecondActionButtonTap), for: .touchUpInside)
+        }
+    }
     
     private func setupView(){
         addSubviews([

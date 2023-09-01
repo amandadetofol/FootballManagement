@@ -187,6 +187,11 @@ final class PersonalInformationsView: UIView {
         self.model = model
     }
     
+    func updateAccessibiltiy(isEnabledForEdition: Bool) {
+        self.isAccessibilityElement = true 
+        self.accessibilityLabel = isEnabledForEdition ? "Tela de dados pessoais: habilitado para edição" : "Tela de dados pessoais: somente leitura"
+    }
+    
     private func setupView(){
         addSubview(scrollView)
         scrollView.addSubviews([contentView])

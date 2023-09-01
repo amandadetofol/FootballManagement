@@ -80,6 +80,7 @@ final class CalendarViewController: UIViewController {
         self.title = "Calendário de eventos"
         interactor.viewDidLoad()
         showEventForSelectedDayPopUpNotFound(date: selectedDate)
+        self.accessibilityElements = [calendarView, calendarItemPopUpView]
     }
     
     private func setupConstraints(){

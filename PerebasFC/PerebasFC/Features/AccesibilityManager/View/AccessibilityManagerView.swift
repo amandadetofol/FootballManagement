@@ -52,22 +52,19 @@ final class AccessibilityManagerView: UIView {
     }
     
     func updateView(accessibilityOptions: [AccessibilityManagerViewModel]){
-        accessibilityOptions.forEach { option in
-            let button = UIButton()
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.clipsToBounds = true
-            button.backgroundColor = .gold.withAlphaComponent(0.50)
-            button.setTitleColor(.black, for: .normal)
-            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-            button.layer.cornerRadius = 10
-            button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-            button.setTitle(option.title.uppercased(), for: .normal)
+        accessibilityOptions.enumerated().forEach { [weak self] (index, option) in
+            guard let self else { return }
             
-            contentStackView.addArrangedSubview(button)
+            var model = option
+            model.total = accessibilityOptions.count
+            model.currentIndex = index + 1
             
-            button.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor, constant: -16).isActive = true
-            button.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor, constant: 16).isActive = true
-            button.heightAnchor.constraint(equalToConstant: 48).isActive = true 
+            let card = AccessibilityManagerCardView()
+            card.updateView(model: model)
+            card.setupAccessibility(model: model)
+            card.delegate = self 
+            
+            contentStackView.addArrangedSubview(card)
         }
     }
     
@@ -91,9 +88,9 @@ final class AccessibilityManagerView: UIView {
     }
 }
 
-extension AccessibilityManagerView {
+extension AccessibilityManagerView: AccessibilityManagerCardViewDelegate {
     
-    @objc func didTapButton(){
+    func didTapButton(){
         delegate?.didTapButton()
     }
     

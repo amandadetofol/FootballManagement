@@ -34,6 +34,8 @@ final class HomeHeaderView: UIView {
         imageView.clipsToBounds = true
         imageView.accessibilityLabel = "Sair do aplicativo."
         imageView.tintColor = .black
+        imageView.isAccessibilityElement = true
+        imageView.accessibilityTraits = .button
         
         return imageView
     }()

@@ -14,6 +14,9 @@ final class TextFieldComponent: UIView {
     var errorMessage: String = "" {
         didSet {
             errorLabel.text = errorMessage
+            updateAcessibility(
+                title: self.title,
+                error: errorMessage)
         }
     }
     
@@ -44,7 +47,10 @@ final class TextFieldComponent: UIView {
     var title: String = "" {
         didSet {
             titleLabel.text = title 
-            titleLabel.isHidden = false 
+            titleLabel.isHidden = false
+            updateAcessibility(
+                title: title,
+                error: nil)
         }
     }
     
@@ -57,6 +63,7 @@ final class TextFieldComponent: UIView {
         label.font = UIFont.systemFont(ofSize: 18)
         label.isHidden = true
         label.accessibilityIgnoresInvertColors = false
+        label.isAccessibilityElement = false
         
         return label
     }()
@@ -69,6 +76,7 @@ final class TextFieldComponent: UIView {
         stackView.axis = .vertical
         stackView.spacing = 2
         stackView.accessibilityIgnoresInvertColors = false
+        stackView.isAccessibilityElement = false
         
         return stackView
     }()
@@ -92,7 +100,8 @@ final class TextFieldComponent: UIView {
         label.font = UIFont.systemFont(ofSize: 14)
         label.isHidden = true
         label.text = "Campo obrigatório."
-        label.accessibilityIgnoresInvertColors = false 
+        label.accessibilityIgnoresInvertColors = false
+        label.isAccessibilityElement = false
         
         return label
     }()
@@ -118,6 +127,12 @@ final class TextFieldComponent: UIView {
         button.addTarget(nil, action: #selector(handleEyeToggle), for: .touchUpInside)
         textField.rightView = button
         textField.rightViewMode = .always
+    }
+    
+    func updateAcessibility(
+        title: String?,
+        error: String?){
+            textField.accessibilityLabel =  "\(title ?? "") título. conteúdo do campo de texto \(text)  \(error ?? "")"
     }
     
     private func setupView(){

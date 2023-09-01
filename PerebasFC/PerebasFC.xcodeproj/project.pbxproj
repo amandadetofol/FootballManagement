@@ -123,6 +123,7 @@
 		A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */; };
 		A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10D2A2410EF008FA008 /* WeekTeamView.swift */; };
 		A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10F2A241392008FA008 /* WeekTeamViewController.swift */; };
+		A68C28CA2AA2AD29000BAFDE /* AccessibilityManagerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C28C92AA2AD29000BAFDE /* AccessibilityManagerCardView.swift */; };
 		A68E76112A94386100599C25 /* FinancialAdministratorHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E76102A94386100599C25 /* FinancialAdministratorHistoryView.swift */; };
 		A68E76132A94387500599C25 /* FinancialAdministratorHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E76122A94387500599C25 /* FinancialAdministratorHistoryViewController.swift */; };
 		A68E76152A94388900599C25 /* FinancialAdministratorHistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E76142A94388900599C25 /* FinancialAdministratorHistoryWorker.swift */; };
@@ -393,6 +394,7 @@
 		A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewModel.swift; sourceTree = "<group>"; };
 		A680E10D2A2410EF008FA008 /* WeekTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamView.swift; sourceTree = "<group>"; };
 		A680E10F2A241392008FA008 /* WeekTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamViewController.swift; sourceTree = "<group>"; };
+		A68C28C92AA2AD29000BAFDE /* AccessibilityManagerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerCardView.swift; sourceTree = "<group>"; };
 		A68E76102A94386100599C25 /* FinancialAdministratorHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorHistoryView.swift; sourceTree = "<group>"; };
 		A68E76122A94387500599C25 /* FinancialAdministratorHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorHistoryViewController.swift; sourceTree = "<group>"; };
 		A68E76142A94388900599C25 /* FinancialAdministratorHistoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorHistoryWorker.swift; sourceTree = "<group>"; };
@@ -1380,6 +1382,7 @@
 				A64161952A898E0700BF45C4 /* Model */,
 				A64161942A898E0200BF45C4 /* Presenter */,
 				A64161932A898DF800BF45C4 /* Interactor */,
+				A68C28C82AA2AD0F000BAFDE /* InternalComponents */,
 				A64161912A898DE300BF45C4 /* View */,
 			);
 			path = AccesibilityManager;
@@ -1650,6 +1653,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A64161902A898DB800BF45C4 /* AccesibilityManager */,
 				A65662EE2A96CA3E00EEC58D /* Map */,
 				A6D248712A830BCE004951FD /* ParticipantsManager */,
 				A6FCDA462A81B5DD00B095E5 /* Sort */,
@@ -1717,6 +1721,14 @@
 				A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A68C28C82AA2AD0F000BAFDE /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A68C28C92AA2AD29000BAFDE /* AccessibilityManagerCardView.swift */,
+			);
+			path = InternalComponents;
 			sourceTree = "<group>";
 		};
 		A68E76032A94346F00599C25 /* History */ = {
@@ -2430,7 +2442,6 @@
 		A6D248712A830BCE004951FD /* ParticipantsManager */ = {
 			isa = PBXGroup;
 			children = (
-				A64161902A898DB800BF45C4 /* AccesibilityManager */,
 				A6D248782A830C4F004951FD /* Coordinator */,
 				A6D248772A830C40004951FD /* Factory */,
 				A6D248762A830C3A004951FD /* Model */,
@@ -2790,6 +2801,7 @@
 				A6CCFC382A32234300364614 /* ChangePasswordView.swift in Sources */,
 				A6D2487D2A830C86004951FD /* PariticpantsManagerFactory.swift in Sources */,
 				A6E6BB222A733E940063A62A /* LoaderCoodinator.swift in Sources */,
+				A68C28CA2AA2AD29000BAFDE /* AccessibilityManagerCardView.swift in Sources */,
 				A6E5BB402A1EB88900ADE47F /* HomeViewController.swift in Sources */,
 				A62C1CE82A37E8C9002AA401 /* FinancialPendencieCardView.swift in Sources */,
 				A61A8F9C2A1C1E21009D08EE /* ForgotPasswordView.swift in Sources */,

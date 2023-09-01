@@ -26,7 +26,7 @@ final class AccessibilityManagerInteractor: AccessibilityManagerInteractorProtoc
     }
     
     func didTapButton(){
-            coordinator.handleButtonTap()
+        coordinator.handleButtonTap()
     }
 
 }

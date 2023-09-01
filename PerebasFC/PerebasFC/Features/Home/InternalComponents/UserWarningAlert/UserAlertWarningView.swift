@@ -12,7 +12,7 @@ protocol UserAlertWarningViewDelegate: AnyObject {
     func handleActionButtonTap(key: InternalLinkRedirectKeys)
 }
 
-final class UserAlertWarningView: UIView {
+final class UserAlertWarningView: UIControl {
     
     weak var delegate: UserAlertWarningViewDelegate?
     
@@ -24,6 +24,7 @@ final class UserAlertWarningView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        label.isAccessibilityElement = false
         
         return label
     }()
@@ -34,6 +35,7 @@ final class UserAlertWarningView: UIView {
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
         button.tintColor = .black 
         button.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
+        button.isAccessibilityElement = false
         
         return button
     }()
@@ -55,6 +57,7 @@ final class UserAlertWarningView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 20.0)
+        label.isAccessibilityElement = false
         
         return label
     }()
@@ -67,6 +70,7 @@ final class UserAlertWarningView: UIView {
         button.backgroundColor = .black
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleActionButtonTap), for: .touchUpInside)
+        button.isAccessibilityElement = false
         
         return button
     }()
@@ -88,6 +92,17 @@ final class UserAlertWarningView: UIView {
         descriptionLabel.text = withModel.warning.description
         key = withModel.warning.firstActionKey
         actionButton.setTitle(withModel.warning.firstActionTitle, for: .normal)
+        setupAccessibility(model: withModel)
+        
+        if UIAccessibility.isVoiceOverRunning {
+            addTarget(nil, action: #selector(handleActionButtonTap), for: .touchUpInside)
+        }
+    }
+    
+    private func setupAccessibility(model: UserAlertWarningViewModel){
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
+        self.accessibilityLabel = model.warning.description
     }
     
     private func setupView(){
