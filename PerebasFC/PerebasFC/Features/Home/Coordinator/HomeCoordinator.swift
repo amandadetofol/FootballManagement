@@ -105,10 +105,7 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                 return
                 
             case .chat:
-                navigationController.pushViewController(
-                    ChatMainFactory.getChatMainViewController(
-                        navigationController: navigationController),
-                    animated: true)
+                openUrl(url: "whatsapp://")
                 return
                 
             case .ranking:
@@ -166,5 +163,12 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
             animated: true)
     }
     
-    
+    private func openUrl(url: String){
+        guard let url = URL(string: url) else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+
+
 }
