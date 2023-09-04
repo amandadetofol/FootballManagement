@@ -112,7 +112,6 @@ final class PersonalInformationsView: UIView {
         return datePicker
     }()
 
-    
     private lazy var shirtNumberTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -123,6 +122,25 @@ final class PersonalInformationsView: UIView {
         return textField
     }()
     
+    private lazy var playerCategoryTextField: TextFieldComponent = {
+        let textField = TextFieldComponent()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "A"
+        textField.isUserInteractionEnabled = false
+        textField.title = "Categoria do Jogador"
+        
+        return textField
+    }()
+    
+    private let playerCategoryPicker: PickerComponent = {
+        let picker = PickerComponent()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.values = ["A", "B", "C"]
+        picker.title = "Categoria do Jogador"
+        picker.isHidden = true 
+        
+        return picker
+    }()
     
     private lazy var userTypeTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
@@ -225,6 +243,15 @@ final class PersonalInformationsView: UIView {
         self.accessibilityLabel = isEnabledForEdition ? "Tela de dados pessoais: habilitado para edição" : "Tela de dados pessoais: somente leitura"
     }
     
+    func setupPlayerCategoryField(isEnabledForEdition: Bool){
+        playerCategoryTextField.isHidden = isEnabledForEdition
+        playerCategoryPicker.isHidden = !isEnabledForEdition
+        
+        if !isEnabledForEdition {
+            playerCategoryTextField.text = playerCategoryPicker.selectedValue ?? "Indefinido"
+        }
+    }
+    
     private func setupView(){
         addSubview(scrollView)
         scrollView.addSubviews([contentView])
@@ -236,6 +263,8 @@ final class PersonalInformationsView: UIView {
             birthDatePicker,
             shirtNumberTextField,
             userTypeTextField,
+            playerCategoryTextField,
+            playerCategoryPicker,
             medicalInsuranceTextField,
             emergencyPhoneNumberTextField,
             changePasswordButton,
@@ -290,6 +319,12 @@ final class PersonalInformationsView: UIView {
             
             emergencyPhoneNumberTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             emergencyPhoneNumberTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            
+            playerCategoryTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
+            playerCategoryTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            
+            playerCategoryPicker.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
+            playerCategoryPicker.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
             profileImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
             profileImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),

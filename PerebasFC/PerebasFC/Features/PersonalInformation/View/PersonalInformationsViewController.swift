@@ -87,6 +87,7 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
          target: self,
          action: #selector(handleGoToBlockEdition))
         personalInformationsView.updateAccessibiltiy(isEnabledForEdition: true)
+        personalInformationsView.setupPlayerCategoryField(isEnabledForEdition: true)
     }
     
     @objc func handleGoToBlockEdition(){
@@ -97,6 +98,7 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
             target: self,
             action: #selector(handleGoToEditDataFlowSelected))
         personalInformationsView.updateAccessibiltiy(isEnabledForEdition: false)
+        personalInformationsView.setupPlayerCategoryField(isEnabledForEdition: false)
     }
     
 }
