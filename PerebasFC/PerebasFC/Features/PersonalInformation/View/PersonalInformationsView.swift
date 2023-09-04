@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YPImagePicker
 
 protocol PersonalInformationsViewDelegate: AnyObject {
     func handleGoToPasswordFlowButtonTap()
@@ -15,6 +16,7 @@ protocol PersonalInformationsViewDelegate: AnyObject {
 final class PersonalInformationsView: UIView {
     
     var model: PersonalInformationsViewModel?
+    var controller: UIViewController?
     weak var delegate: PersonalInformationsViewDelegate?
     
     private lazy var scrollView: UIScrollView = {
@@ -49,6 +51,37 @@ final class PersonalInformationsView: UIView {
         stackView.isAccessibilityElement = false
         
         return stackView
+    }()
+    
+    private lazy var profileImageView: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 140, weight: .bold, scale: .large)
+        let image = UIImage(systemName: "person.circle.fill", withConfiguration: largeConfig)
+
+        button.setImage(image, for: .normal)
+        button.accessibilityLabel =  "Selecione uma foto de perfil"
+        button.addTarget(nil, action: #selector(showImagePicker), for: .touchUpInside)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 15
+        button.tintColor = .gold
+        button.imageView?.contentMode = .scaleAspectFill
+        
+        return button
+    }()
+    
+    private lazy var imagePicker: YPImagePicker = {
+        let picker = YPImagePicker()
+        picker.didFinishPicking { [unowned picker, weak self] items, _ in
+            if let photo = items.singlePhoto {
+                self?.profileImageView.setImage(photo.image, for: .normal)
+                self?.profileImageView.imageView?.contentMode = .scaleAspectFill
+            }
+            picker.dismiss(animated: true, completion: nil)
+        }
+        
+        return picker
     }()
     
     private lazy var userNameTextField: TextFieldComponent = {
@@ -197,6 +230,7 @@ final class PersonalInformationsView: UIView {
         scrollView.addSubviews([contentView])
         contentView.addSubview(stackView)
         stackView.addArrangedSubviews([
+            profileImageView,
             userNameTextField,
             lastNameTextField,
             birthDatePicker,
@@ -256,6 +290,9 @@ final class PersonalInformationsView: UIView {
             
             emergencyPhoneNumberTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             emergencyPhoneNumberTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            
+            profileImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
+            profileImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
         ])
     }
 }
@@ -269,6 +306,10 @@ extension PersonalInformationsView {
     @objc func handleDeleteUserButtonTap(){
         guard let model = model else { return }
         delegate?.handleDeleteUserButtonTap(user: model)
+    }
+    
+    @objc func showImagePicker(){
+        controller?.present(imagePicker, animated: true)
     }
     
 }

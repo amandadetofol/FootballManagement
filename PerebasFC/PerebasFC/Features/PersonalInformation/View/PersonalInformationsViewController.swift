@@ -20,6 +20,7 @@ final class PersonalInformationsViewController: UIViewController {
     private lazy var personalInformationsView: PersonalInformationsView = {
         let view = PersonalInformationsView()
         view.delegate = self
+        view.controller = self 
         
         return view
     }()

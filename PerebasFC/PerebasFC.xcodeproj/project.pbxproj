@@ -123,6 +123,7 @@
 		A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10B2A2410AA008FA008 /* WeekTeamViewModel.swift */; };
 		A680E10E2A2410EF008FA008 /* WeekTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10D2A2410EF008FA008 /* WeekTeamView.swift */; };
 		A680E1102A241392008FA008 /* WeekTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680E10F2A241392008FA008 /* WeekTeamViewController.swift */; };
+		A68790E02AA67F8A00D74E09 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = A68790DF2AA67F8A00D74E09 /* YPImagePicker */; };
 		A68C28CA2AA2AD29000BAFDE /* AccessibilityManagerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C28C92AA2AD29000BAFDE /* AccessibilityManagerCardView.swift */; };
 		A68E76112A94386100599C25 /* FinancialAdministratorHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E76102A94386100599C25 /* FinancialAdministratorHistoryView.swift */; };
 		A68E76132A94387500599C25 /* FinancialAdministratorHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E76122A94387500599C25 /* FinancialAdministratorHistoryViewController.swift */; };
@@ -499,6 +500,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68790E02AA67F8A00D74E09 /* YPImagePicker in Frameworks */,
 				A6E6BAFF2A7331740063A62A /* FirebaseFunctions in Frameworks */,
 				A6E6BAF52A7331740063A62A /* FirebaseDatabaseSwift in Frameworks */,
 				A6E6BB052A7331740063A62A /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
@@ -2567,6 +2569,7 @@
 				A6E6BB142A7331740063A62A /* FirebaseStorageCombine-Community */,
 				A6E8CE202A7878CA006DAFDC /* GoogleSignIn */,
 				A6E8CE222A7878CA006DAFDC /* GoogleSignInSwift */,
+				A68790DF2AA67F8A00D74E09 /* YPImagePicker */,
 			);
 			productName = PerebasFC;
 			productReference = A6033E512A12DC5D002B56EE /* PerebasFC.app */;
@@ -2600,6 +2603,7 @@
 				A64912432A33BCE300356B7B /* XCRemoteSwiftPackageReference "HorizonCalendar" */,
 				A6E6BADF2A7331740063A62A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				A6E8CE1F2A7878CA006DAFDC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				A68790DE2AA67F8A00D74E09 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = A6033E522A12DC5D002B56EE /* Products */;
 			projectDirPath = "";
@@ -3071,6 +3075,14 @@
 				kind = branch;
 			};
 		};
+		A68790DE2AA67F8A00D74E09 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		A6E6BADF2A7331740063A62A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -3094,6 +3106,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A64912432A33BCE300356B7B /* XCRemoteSwiftPackageReference "HorizonCalendar" */;
 			productName = HorizonCalendar;
+		};
+		A68790DF2AA67F8A00D74E09 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A68790DE2AA67F8A00D74E09 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
 		};
 		A6E6BAE02A7331740063A62A /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
