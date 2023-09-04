@@ -5,7 +5,7 @@
 //  Created by Amanda Detofol on 03/06/23.
 //
 
-import Foundation
+import UIKit
 
 struct PersonalInformationsViewModel {
     let name: String
@@ -16,6 +16,8 @@ struct PersonalInformationsViewModel {
     let type: MemberType
     let medicalInsurance: String
     let emergencyPhoneNumber: String
+    let category: String
+    let image: UIImage?
 }
 
 enum MemberType: String {

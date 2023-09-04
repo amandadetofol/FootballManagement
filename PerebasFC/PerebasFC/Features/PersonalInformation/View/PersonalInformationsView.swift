@@ -235,6 +235,12 @@ final class PersonalInformationsView: UIView {
         shirtNumberTextField.text = model.shirtNumber
         medicalInsuranceTextField.text = model.medicalInsurance
         emergencyPhoneNumberTextField.text = model.emergencyPhoneNumber
+        playerCategoryTextField.text = model.category
+        
+        if let image = model.image {
+            profileImageView.setImage(image, for: .normal)
+        }
+        
         self.model = model
     }
     

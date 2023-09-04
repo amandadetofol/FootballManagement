@@ -23,7 +23,9 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
             shirtNumber: "10",
             type: .player,
             medicalInsurance: "ABC123",
-            emergencyPhoneNumber: "123456789"
+            emergencyPhoneNumber: "123456789",
+            category: "A",
+            image: nil
         ))
     }
     

@@ -16,6 +16,15 @@ final class HomeHeaderView: UIView {
     
     weak var delegate: HomeHeaderViewDelegate?
     
+    private lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "logo"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleToFill
+        imageView.isUserInteractionEnabled = false
+        
+        return imageView
+    }()
+    
     private lazy var initialsView: UIControl = {
         let view = UIControl()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -93,6 +102,7 @@ final class HomeHeaderView: UIView {
     private func setupView(){
         backgroundColor = .systemBackground
         self.addSubviews([
+            logoImageView,
             welcomeLabel,
             initialsView,
             accessibilityButton,
@@ -104,6 +114,10 @@ final class HomeHeaderView: UIView {
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: 86),
+            
+            logoImageView.heightAnchor.constraint(equalToConstant: 118),
+            logoImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width/4 + 13.5),
+            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -8),
             
             iconImageView.centerYAnchor.constraint(equalTo: initialsView.centerYAnchor),
             iconImageView.centerXAnchor.constraint(equalTo: initialsView.centerXAnchor),
@@ -121,11 +135,11 @@ final class HomeHeaderView: UIView {
             initialsView.widthAnchor.constraint(equalToConstant: 48),
  
             welcomeLabel.topAnchor.constraint(equalTo: topAnchor),
-            welcomeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            welcomeLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 16),
             welcomeLabel.trailingAnchor.constraint(equalTo: initialsView.leadingAnchor, constant: -16),
             
             fullName.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor),
-            fullName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            fullName.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 16),
             fullName.trailingAnchor.constraint(equalTo: initialsView.leadingAnchor, constant: -16),
             fullName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
         ])
