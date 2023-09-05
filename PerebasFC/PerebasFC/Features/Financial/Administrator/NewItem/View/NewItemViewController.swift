@@ -9,6 +9,7 @@ import UIKit
 
 protocol NewItemViewInteractorProtocol {
     func handleConfirmButtonTap(newItem: NewItemModel)
+    func handleAddToSpecificPlayerButton()
 }
 
 final class NewItemViewController: UIViewController {
@@ -19,6 +20,12 @@ final class NewItemViewController: UIViewController {
         
         return newItemView
     }()
+    
+    var name: String? {
+        didSet {
+            newItemView.selectedPlayer = name
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,4 +65,7 @@ extension NewItemViewController: NewItemViewDelegate {
         interactor.handleConfirmButtonTap(newItem: newItem)
     }
     
+    func handleAddToSpecificPlayerButton(){
+        interactor.handleAddToSpecificPlayerButton()
+    }
 }

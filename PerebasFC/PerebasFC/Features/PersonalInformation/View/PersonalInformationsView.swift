@@ -152,6 +152,17 @@ final class PersonalInformationsView: UIView {
         return textField
     }()
     
+    
+    private let userTypePicker: PickerComponent = {
+        let picker = PickerComponent()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.values = ["Jogador", "Goleiro", "Participante"]
+        picker.title = "Tipo de participante"
+        picker.isHidden = true
+        
+        return picker
+    }()
+    
     private lazy var medicalInsuranceTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -253,8 +264,12 @@ final class PersonalInformationsView: UIView {
         playerCategoryTextField.isHidden = isEnabledForEdition
         playerCategoryPicker.isHidden = !isEnabledForEdition
         
+        userTypeTextField.isHidden = isEnabledForEdition
+        userTypePicker.isHidden = !isEnabledForEdition
+        
         if !isEnabledForEdition {
             playerCategoryTextField.text = playerCategoryPicker.selectedValue ?? "Indefinido"
+            userTypeTextField.text = userTypePicker.selectedValue ?? "Indefinido"
         }
     }
     
@@ -269,6 +284,7 @@ final class PersonalInformationsView: UIView {
             birthDatePicker,
             shirtNumberTextField,
             userTypeTextField,
+            userTypePicker,
             playerCategoryTextField,
             playerCategoryPicker,
             medicalInsuranceTextField,

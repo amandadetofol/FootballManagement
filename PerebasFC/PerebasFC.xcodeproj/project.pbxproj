@@ -181,6 +181,15 @@
 		A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */; };
 		A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */; };
 		A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */; };
+		A6AF78BE2AA6A11500174B83 /* ParticipantsSelectorListViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78BD2AA6A11500174B83 /* ParticipantsSelectorListViewWorker.swift */; };
+		A6AF78C02AA6A12000174B83 /* ParticipantsSelectorListViiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78BF2AA6A12000174B83 /* ParticipantsSelectorListViiew.swift */; };
+		A6AF78C22AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78C12AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift */; };
+		A6AF78C42AA6A13D00174B83 /* ParticipantsSelectorListViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78C32AA6A13D00174B83 /* ParticipantsSelectorListViewInteractor.swift */; };
+		A6AF78C62AA6A15800174B83 /* ParticipantsSelectorListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78C52AA6A15700174B83 /* ParticipantsSelectorListViewPresenter.swift */; };
+		A6AF78CA2AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78C92AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift */; };
+		A6AF78CC2AA6A19300174B83 /* ParticipantsSelectorListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78CB2AA6A19300174B83 /* ParticipantsSelectorListViewCoordinator.swift */; };
+		A6AF78CF2AA6A1C400174B83 /* ParticipantsSelectorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78CE2AA6A1C400174B83 /* ParticipantsSelectorCardView.swift */; };
+		A6AF78D12AA6A1D200174B83 /* ParticipantsSelectorCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78D02AA6A1D200174B83 /* ParticipantsSelectorCardViewModel.swift */; };
 		A6CCFC382A32234300364614 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC372A32234300364614 /* ChangePasswordView.swift */; };
 		A6CCFC3A2A32234D00364614 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC392A32234D00364614 /* ChangePasswordViewController.swift */; };
 		A6CCFC3C2A32235800364614 /* ChangePasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCFC3B2A32235800364614 /* ChangePasswordWorker.swift */; };
@@ -440,6 +449,15 @@
 		A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryPresenter.swift; sourceTree = "<group>"; };
 		A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryCoordinator.swift; sourceTree = "<group>"; };
 		A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewFactory.swift; sourceTree = "<group>"; };
+		A6AF78BD2AA6A11500174B83 /* ParticipantsSelectorListViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViewWorker.swift; sourceTree = "<group>"; };
+		A6AF78BF2AA6A12000174B83 /* ParticipantsSelectorListViiew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViiew.swift; sourceTree = "<group>"; };
+		A6AF78C12AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViewController.swift; sourceTree = "<group>"; };
+		A6AF78C32AA6A13D00174B83 /* ParticipantsSelectorListViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViewInteractor.swift; sourceTree = "<group>"; };
+		A6AF78C52AA6A15700174B83 /* ParticipantsSelectorListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViewPresenter.swift; sourceTree = "<group>"; };
+		A6AF78C92AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViewFactory.swift; sourceTree = "<group>"; };
+		A6AF78CB2AA6A19300174B83 /* ParticipantsSelectorListViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViewCoordinator.swift; sourceTree = "<group>"; };
+		A6AF78CE2AA6A1C400174B83 /* ParticipantsSelectorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorCardView.swift; sourceTree = "<group>"; };
+		A6AF78D02AA6A1D200174B83 /* ParticipantsSelectorCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorCardViewModel.swift; sourceTree = "<group>"; };
 		A6CCFC372A32234300364614 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		A6CCFC392A32234D00364614 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		A6CCFC3B2A32235800364614 /* ChangePasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWorker.swift; sourceTree = "<group>"; };
@@ -1631,6 +1649,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A6AF78B52AA6A0BE00174B83 /* ParticipantsSelectorListView */,
 				A64161902A898DB800BF45C4 /* AccesibilityManager */,
 				A65662EE2A96CA3E00EEC58D /* Map */,
 				A6D248712A830BCE004951FD /* ParticipantsManager */,
@@ -2102,6 +2121,78 @@
 				A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6AF78B52AA6A0BE00174B83 /* ParticipantsSelectorListView */ = {
+			isa = PBXGroup;
+			children = (
+				A6AF78BB2AA6A0F800174B83 /* Factory */,
+				A6AF78BC2AA6A0FC00174B83 /* Coordinator */,
+				A6AF78B92AA6A0EE00174B83 /* Presenter */,
+				A6AF78CD2AA6A19C00174B83 /* InternalComponents */,
+				A6AF78B82AA6A0E800174B83 /* Interactor */,
+				A6AF78B72AA6A0E500174B83 /* View */,
+				A6AF78B62AA6A0E100174B83 /* Worker */,
+			);
+			path = ParticipantsSelectorListView;
+			sourceTree = "<group>";
+		};
+		A6AF78B62AA6A0E100174B83 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6AF78BD2AA6A11500174B83 /* ParticipantsSelectorListViewWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A6AF78B72AA6A0E500174B83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6AF78BF2AA6A12000174B83 /* ParticipantsSelectorListViiew.swift */,
+				A6AF78C12AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6AF78B82AA6A0E800174B83 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A6AF78C32AA6A13D00174B83 /* ParticipantsSelectorListViewInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6AF78B92AA6A0EE00174B83 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6AF78C52AA6A15700174B83 /* ParticipantsSelectorListViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6AF78BB2AA6A0F800174B83 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A6AF78C92AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A6AF78BC2AA6A0FC00174B83 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6AF78CB2AA6A19300174B83 /* ParticipantsSelectorListViewCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6AF78CD2AA6A19C00174B83 /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A6AF78CE2AA6A1C400174B83 /* ParticipantsSelectorCardView.swift */,
+				A6AF78D02AA6A1D200174B83 /* ParticipantsSelectorCardViewModel.swift */,
+			);
+			path = InternalComponents;
 			sourceTree = "<group>";
 		};
 		A6CCFC302A32230800364614 /* ChangePassword */ = {
@@ -2671,6 +2762,7 @@
 				A6D2488B2A830D28004951FD /* ParticipantCellView.swift in Sources */,
 				A6E6BB182A733B0C0063A62A /* SignOutWorker.swift in Sources */,
 				A65663092A96CAB900EEC58D /* MapWorker.swift in Sources */,
+				A6AF78CA2AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift in Sources */,
 				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6E6BB1F2A733D680063A62A /* LoaderViewController.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
@@ -2729,6 +2821,7 @@
 				A60319F62A9172F600E19E3A /* AdministratorPendenciesFactory.swift in Sources */,
 				A69285152A8EDF54000E618D /* NewItemViewController.swift in Sources */,
 				A69285192A8EDF69000E618D /* NewItemInteractor.swift in Sources */,
+				A6AF78CC2AA6A19300174B83 /* ParticipantsSelectorListViewCoordinator.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
 				A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */,
@@ -2747,11 +2840,13 @@
 				A6031A182A91893300E19E3A /* AdministratorPendenciesDetailsInteractor.swift in Sources */,
 				A62C1CC52A37DD03002AA401 /* CalendarItemPopUpView.swift in Sources */,
 				A62C1CD82A37E841002AA401 /* FinancialPendenciesView.swift in Sources */,
+				A6AF78BE2AA6A11500174B83 /* ParticipantsSelectorListViewWorker.swift in Sources */,
 				A6A7416A2A2566DA009A7998 /* WeekTeamFactory.swift in Sources */,
 				A6031A162A91892000E19E3A /* AdministratorPendenciesDetailsViewController.swift in Sources */,
 				A637DDEE2A4A4B290017857D /* EditGameInteractor.swift in Sources */,
 				A62C1CE42A37E873002AA401 /* FinancialCoordinator.swift in Sources */,
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
+				A6AF78C02AA6A12000174B83 /* ParticipantsSelectorListViiew.swift in Sources */,
 				A6993E312A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift in Sources */,
 				A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */,
 				A65662F92A96CA8000EEC58D /* MapCoordinator.swift in Sources */,
@@ -2779,8 +2874,10 @@
 				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
 				A6FCDA5D2A81BA8F00B095E5 /* SortCardView.swift in Sources */,
 				A62C1CCD2A37E304002AA401 /* CalendarCoordinator.swift in Sources */,
+				A6AF78C62AA6A15800174B83 /* ParticipantsSelectorListViewPresenter.swift in Sources */,
 				A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */,
 				A637DDFB2A4A55140017857D /* PickerComponent.swift in Sources */,
+				A6AF78CF2AA6A1C400174B83 /* ParticipantsSelectorCardView.swift in Sources */,
 				A6993E1C2A2BBB5C00C2BDE3 /* RankingPresenter.swift in Sources */,
 				A6993E112A2BA46700C2BDE3 /* FirstPlaceGiftsViewModel.swift in Sources */,
 				A6D2486D2A830406004951FD /* SortMainFactpry.swift in Sources */,
@@ -2795,6 +2892,7 @@
 				A6CFD5832A293EAF00A37696 /* BarAndTrophyViewModel.swift in Sources */,
 				A60319F42A9172E400E19E3A /* AdministratorPendenciesCoordinator.swift in Sources */,
 				A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */,
+				A6AF78C22AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift in Sources */,
 				A641619E2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift in Sources */,
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
 				A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */,
@@ -2823,6 +2921,7 @@
 				A62C1CCF2A37E479002AA401 /* CalendarFactory.swift in Sources */,
 				A6CCFC3A2A32234D00364614 /* ChangePasswordViewController.swift in Sources */,
 				A62C1CDE2A37E85C002AA401 /* FinancialPresenter.swift in Sources */,
+				A6AF78C42AA6A13D00174B83 /* ParticipantsSelectorListViewInteractor.swift in Sources */,
 				A637DDFD2A4A55660017857D /* EditGameGoalInformationsCardView.swift in Sources */,
 				A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */,
 				A69285132A8EDF4B000E618D /* NewItemView.swift in Sources */,
@@ -2834,6 +2933,7 @@
 				A67360932A393282003BF4C2 /* FinancialDetailsFactory.swift in Sources */,
 				A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */,
 				A6993E332A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift in Sources */,
+				A6AF78D12AA6A1D200174B83 /* ParticipantsSelectorCardViewModel.swift in Sources */,
 				A69E893C2A8AF174008C09DC /* TitleAndDescriptionCardView.swift in Sources */,
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
 				A67360A42A3933F7003BF4C2 /* SeeProofWebViewController.swift in Sources */,

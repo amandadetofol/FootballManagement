@@ -31,5 +31,9 @@ final class NewItemInteractor: NewItemViewInteractorProtocol {
                 
             }
     }
+    
+    func handleAddToSpecificPlayerButton() {
+        coordinator.handleAddToSpecificPlayerButton()
+    }
 
 }

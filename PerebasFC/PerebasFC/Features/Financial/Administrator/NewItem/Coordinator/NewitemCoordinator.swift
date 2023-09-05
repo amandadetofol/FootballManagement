@@ -10,6 +10,7 @@ import UIKit
 protocol NewItemCoordinatorProtocol {
     func showSuccessFeedback()
     func showErrorFeedback()
+    func handleAddToSpecificPlayerButton()
 }
 
 final class NewItemCoordinator: NewItemCoordinatorProtocol {
@@ -53,6 +54,13 @@ final class NewItemCoordinator: NewItemCoordinatorProtocol {
                 }))
         navigationController.present(
             alert,
+            animated: true)
+    }
+    
+    func handleAddToSpecificPlayerButton(){
+        navigationController.pushViewController(
+            ParticipantsSelectorListViewFactory.getParticipantsSelectorListViewController(
+                navigationController: self.navigationController),
             animated: true)
     }
     

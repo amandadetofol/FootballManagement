@@ -9,9 +9,16 @@ import UIKit
 
 protocol NewItemViewDelegate: AnyObject {
     func handleConfirmButtonTap(newItem: NewItemModel)
+    func handleAddToSpecificPlayerButton()
 }
 
 final class NewItemView: UIView {
+    
+    var selectedPlayer: String? {
+        didSet {
+            addToSpecificPlayerButton.setTitle(selectedPlayer, for: .normal)
+        }
+    }
     
     weak var delegate: NewItemViewDelegate?
     private var type: NewItemType?
@@ -135,6 +142,18 @@ final class NewItemView: UIView {
         return myswitch
     }()
     
+    private lazy var addToSpecificPlayerButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("selecionar participante".uppercased(), for: .normal)
+        button.backgroundColor = .brown
+        button.setTitleColor(.white, for: .normal)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10
+        button.addTarget(nil, action: #selector(handleAddToSpecificPlayerButton), for: .touchUpInside)
+        
+        return button
+    }()
     
     init(){
         super.init(frame: .zero)
@@ -150,6 +169,7 @@ final class NewItemView: UIView {
     func setupDescription(basedOn type: NewItemType){
         operationDescriptionLabel.text = type.rawValue
         switchContentView.isHidden = (type == .credit)
+        addToSpecificPlayerButton.isHidden = type == .credit
     }
     
     private func setupView(){
@@ -166,6 +186,7 @@ final class NewItemView: UIView {
             valueNameTextField,
             datePickerTitleLabel,
             datePicker,
+            addToSpecificPlayerButton,
             switchContentView,
             confirmButton
         ])
@@ -211,6 +232,11 @@ final class NewItemView: UIView {
             confirmButton.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor, constant: 16),
             confirmButton.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor, constant: -16),
             confirmButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            addToSpecificPlayerButton.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor, constant: 16),
+            addToSpecificPlayerButton.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor, constant: -16),
+            addToSpecificPlayerButton.heightAnchor.constraint(equalToConstant: 48),
+            
         ])
     }
     
@@ -226,6 +252,10 @@ extension NewItemView {
                 date: datePicker.date,
                 type: type ?? .credit,
                 splitBeetweenTeamMember: splitBeetweenTeamMemebersSwitch.isOn))
+    }
+    
+    @objc func handleAddToSpecificPlayerButton(){
+        delegate?.handleAddToSpecificPlayerButton()
     }
     
 }
