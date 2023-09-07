@@ -491,8 +491,8 @@
             filePath = "PerebasFC/Features/EditGame/View/EditGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -539,8 +539,8 @@
             filePath = "PerebasFC/Features/EditGame/View/EditGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -603,8 +603,8 @@
             filePath = "PerebasFC/Features/EditGame/Presenter/EditGamePresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -619,8 +619,8 @@
             filePath = "PerebasFC/Features/EditGame/View/EditGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
             <Locations>

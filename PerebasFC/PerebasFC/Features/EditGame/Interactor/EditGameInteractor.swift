@@ -26,6 +26,7 @@ final class EditGameInteractor: EditGameInteractorProtocol {
     
     func viewDidLoad() {
         presenter.updateView(with: self.model)
+        presenter.addListOfPresenceButton()
     }
 
     func handleSaveNewGameInformationsButtonTap(game: Game) {
@@ -33,6 +34,10 @@ final class EditGameInteractor: EditGameInteractorProtocol {
             coordinator.handleSaveNewGame(game: game)
         }
         coordinator.handleSaveNewGameInformationsButtonTap(game: game)
+    }
+    
+    func handleAddListOfPresenceButtonTap(){
+        coordinator.handleAddListOfPresenceButtonTap()
     }
     
 }

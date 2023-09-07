@@ -8,11 +8,13 @@
 import Foundation
 
 protocol EditGamePresenterProtocol: AnyObject {
+    func addListOfPresenceButton()
     func updateView(with game: Game)
 }
 
 protocol EditGameViewProtocol: AnyObject {
     func updateView(with game: Game)
+    func addListOfPresenceButton()
 }
 
 final class EditGamePresenter: EditGamePresenterProtocol {
@@ -21,6 +23,10 @@ final class EditGamePresenter: EditGamePresenterProtocol {
     
     func updateView(with game: Game) {
         view?.updateView(with: game)
+    }
+    
+    func addListOfPresenceButton(){
+        view?.addListOfPresenceButton()
     }
     
 }

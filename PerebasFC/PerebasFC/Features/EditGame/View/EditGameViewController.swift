@@ -9,6 +9,7 @@ import UIKit
 
 protocol EditGameInteractorProtocol {
     func viewDidLoad()
+    func handleAddListOfPresenceButtonTap()
     func handleSaveNewGameInformationsButtonTap(game: Game)
 }
 
@@ -54,6 +55,22 @@ extension EditGameViewController: EditGameViewProtocol {
     
     func updateView(with game: Game) {
         editGameView.updateView(with: game)
+    }
+    
+    func addListOfPresenceButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Presenças",
+            style: .plain,
+            target: self,
+            action: #selector(handleAddListOfPresenceButtonTap))
+    }
+    
+}
+
+extension EditGameViewController {
+    
+    @objc func handleAddListOfPresenceButtonTap(){
+        interactor.handleAddListOfPresenceButtonTap()
     }
     
 }

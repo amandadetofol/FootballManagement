@@ -9,6 +9,7 @@ import UIKit
 
 protocol EditGameCoordinatorProtocol: AnyObject  {
     func handleSaveNewGame(game: Game)
+    func handleAddListOfPresenceButtonTap()
     func handleSaveNewGameInformationsButtonTap(game: Game)
 }
 
@@ -34,6 +35,10 @@ final class EditGameCoordinator: EditGameCoordinatorProtocol {
             vc.saveNewGame(game: game)
             self.navigationController.popToViewController(vc, animated: true)
         }
+    }
+    
+    func handleAddListOfPresenceButtonTap(){
+        //call here 
     }
     
 }
