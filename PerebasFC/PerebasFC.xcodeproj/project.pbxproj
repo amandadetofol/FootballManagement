@@ -116,6 +116,7 @@
 		A6730F032AAA54C8000D6B72 /* PresenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730F022AAA54C8000D6B72 /* PresenceView.swift */; };
 		A6730F052AAA54D1000D6B72 /* PresenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730F042AAA54D1000D6B72 /* PresenceViewController.swift */; };
 		A6730F072AAA5733000D6B72 /* PresenceCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730F062AAA5733000D6B72 /* PresenceCardViewModel.swift */; };
+		A6730F0A2AAA7FAB000D6B72 /* PresenceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730F092AAA7FAB000D6B72 /* PresenceWorker.swift */; };
 		A673608B2A39322A003BF4C2 /* FinancialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */; };
 		A673608D2A393235003BF4C2 /* FinancialDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */; };
 		A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */; };
@@ -393,6 +394,7 @@
 		A6730F022AAA54C8000D6B72 /* PresenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceView.swift; sourceTree = "<group>"; };
 		A6730F042AAA54D1000D6B72 /* PresenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceViewController.swift; sourceTree = "<group>"; };
 		A6730F062AAA5733000D6B72 /* PresenceCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceCardViewModel.swift; sourceTree = "<group>"; };
+		A6730F092AAA7FAB000D6B72 /* PresenceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceWorker.swift; sourceTree = "<group>"; };
 		A673608A2A39322A003BF4C2 /* FinancialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsView.swift; sourceTree = "<group>"; };
 		A673608C2A393235003BF4C2 /* FinancialDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsViewController.swift; sourceTree = "<group>"; };
 		A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsPresenter.swift; sourceTree = "<group>"; };
@@ -1583,6 +1585,7 @@
 				A6730EF42AAA5468000D6B72 /* Interactor */,
 				A6730EF32AAA545B000D6B72 /* Presenter */,
 				A6730EF22AAA5457000D6B72 /* View */,
+				A6730F082AAA7F87000D6B72 /* Worker */,
 			);
 			path = Presence;
 			sourceTree = "<group>";
@@ -1635,6 +1638,14 @@
 				A6730EF82AAA5490000D6B72 /* PresenceCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6730F082AAA7F87000D6B72 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6730F092AAA7FAB000D6B72 /* PresenceWorker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		A67360862A3931FD003BF4C2 /* View */ = {
@@ -2817,6 +2828,7 @@
 				A62C1CE82A37E8C9002AA401 /* FinancialPendencieCardView.swift in Sources */,
 				A61A8F9C2A1C1E21009D08EE /* ForgotPasswordView.swift in Sources */,
 				A68E76112A94386100599C25 /* FinancialAdministratorHistoryView.swift in Sources */,
+				A6730F0A2AAA7FAB000D6B72 /* PresenceWorker.swift in Sources */,
 				A6E5BB3E2A1EB75500ADE47F /* MenuItemViewModel.swift in Sources */,
 				A6730EFD2AAA54AA000D6B72 /* PresenceCardView.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,

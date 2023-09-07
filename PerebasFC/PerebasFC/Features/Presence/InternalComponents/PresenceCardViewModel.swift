@@ -10,6 +10,6 @@ import Foundation
 struct PresenceCardViewModel {
     let name: String
     let wasPresent: Bool
-    var currentIndex: Bool?
-    var total: Bool? 
+    var currentIndex: Int?
+    var total: Int?
 }

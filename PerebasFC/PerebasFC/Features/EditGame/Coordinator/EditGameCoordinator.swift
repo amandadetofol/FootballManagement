@@ -38,7 +38,10 @@ final class EditGameCoordinator: EditGameCoordinatorProtocol {
     }
     
     func handleAddListOfPresenceButtonTap(){
-        //call here 
+        navigationController.pushViewController(
+            PresenceFactory.getPresenceViewController(
+                navigationController: navigationController),
+            animated: true)
     }
     
 }
