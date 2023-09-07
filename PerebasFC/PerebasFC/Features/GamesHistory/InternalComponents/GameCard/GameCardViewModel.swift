@@ -29,5 +29,6 @@ struct Score {
 struct Goals {
     let player: User
     let time: Date
-    let index: Int 
+    let index: Int
+    let isWhiteTeam: Bool 
 }

@@ -14,6 +14,8 @@ protocol EditGameViewDelegate: AnyObject {
 final class EditGameView: UIView {
     
     weak var delegate: EditGameViewDelegate?
+    private var whiteInitialValue = 0
+    private var blackInitialValue = 0
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -70,6 +72,7 @@ final class EditGameView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.title = "Placar (Time Branco)"
         textField.placeholder = "0"
+        textField.delegate = self
         
         return textField
     }()
@@ -79,6 +82,7 @@ final class EditGameView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.title = "Placar (Time Preto)"
         textField.placeholder = "0"
+        textField.delegate = self
         
         return textField
     }()
@@ -94,7 +98,43 @@ final class EditGameView: UIView {
         return label
     }()
     
-    private lazy var goalsStackView: UIStackView = {
+    private lazy var whiteGoalsStackViewTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Gols do time Branco"
+        label.numberOfLines = 1
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = .gray
+        
+        return label
+    }()
+    
+    private lazy var whiteGoalsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.isAccessibilityElement = false
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 16
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.isUserInteractionEnabled = true
+        
+        return stackView
+    }()
+    
+    private lazy var blackGoalsStackViewTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Gols do time Preto"
+        label.numberOfLines = 1
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = .gray
+        
+        return label
+    }()
+    
+    private lazy var blackGoalsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isAccessibilityElement = false
@@ -124,6 +164,7 @@ final class EditGameView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
+        backgroundColor = .white
     }
     
     @available(*, unavailable)
@@ -143,8 +184,15 @@ final class EditGameView: UIView {
                 player: goal.player,
                 time: goal.time,
                 index: String(goal.index))
-            goalsStackView.addArrangedSubview(goalCard)
+            
+            if goal.isWhiteTeam {
+                whiteGoalsStackView.addArrangedSubview(goalCard)
+            } else {
+                blackGoalsStackView.addArrangedSubview(goalCard)
+            }
         })
+        whiteInitialValue = whiteLabelScoreTextField.contentAsNumber
+        blackInitialValue = blackLabelScoreTextField.contentAsNumber
     }
     
     private func setupView(){
@@ -157,9 +205,15 @@ final class EditGameView: UIView {
             whiteLabelScoreTextField,
             blackLabelScoreTextField,
             goalsNumberLabel,
-            goalsStackView,
+            whiteGoalsStackViewTitleLabel,
+            whiteGoalsStackView,
+            blackGoalsStackViewTitleLabel,
+            blackGoalsStackView,
             saveButton])
         contentStackView.setCustomSpacing(4, after: datePickerLabel)
+        contentStackView.setCustomSpacing(2, after: whiteGoalsStackViewTitleLabel)
+        contentStackView.setCustomSpacing(2, after: blackGoalsStackViewTitleLabel)
+        contentStackView.setCustomSpacing(32, after: goalsNumberLabel)
     }
     
     private func setupConstraints(){
@@ -195,13 +249,30 @@ final class EditGameView: UIView {
             goalsNumberLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             goalsNumberLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            goalsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            goalsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            whiteGoalsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            whiteGoalsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            blackGoalsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            blackGoalsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            whiteGoalsStackViewTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            whiteGoalsStackViewTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            blackGoalsStackViewTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            blackGoalsStackViewTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
             saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             saveButton.heightAnchor.constraint(equalToConstant: 48),
         ])
+    }
+    
+    private func addNewGoal(stackView: UIStackView){
+        let goalCard = EditGameGoalInformationsCardView(
+            player: nil,
+            time: nil,
+            index: "")
+        stackView.addArrangedSubview(goalCard)
     }
     
 }
@@ -210,7 +281,13 @@ extension EditGameView {
     
     @objc func handleSaveNewGameInformationsButtonTap(){
         var goals: [Goals]? = nil
-        goalsStackView.arrangedSubviews.forEach { subview in
+        blackGoalsStackView.arrangedSubviews.forEach { subview in
+            guard let goal = subview as? EditGameGoalInformationsCardView,
+                  let model = goal.model  else { return }
+            goals?.append(model)
+        }
+        
+        whiteGoalsStackView.arrangedSubviews.forEach { subview in
             guard let goal = subview as? EditGameGoalInformationsCardView,
                   let model = goal.model  else { return }
             goals?.append(model)
@@ -225,4 +302,39 @@ extension EditGameView {
             date: datePickerView.date))
     }
     
+}
+
+extension EditGameView: TextFieldComponentDelegate {
+    
+    func textFieldDidEndEditing(_ textField: TextFieldComponent) {
+        if textField == whiteLabelScoreTextField {
+            if whiteInitialValue != textField.contentAsNumber {
+                
+                whiteGoalsStackView.arrangedSubviews.forEach { view in
+                    view.removeFromSuperview()
+                }
+                
+                if textField.contentAsNumber >= 1 {
+                    for _ in 1...textField.contentAsNumber {
+                        addNewGoal(stackView: whiteGoalsStackView)
+                    }
+                }
+            }
+        } else {
+            if blackInitialValue != textField.contentAsNumber {
+                
+                blackGoalsStackView.arrangedSubviews.forEach { view in
+                    view.removeFromSuperview()
+                }
+                
+                if textField.contentAsNumber >= 1 {
+                    for _ in 1...textField.contentAsNumber {
+                        addNewGoal(stackView: blackGoalsStackView)
+                    }
+                }
+            }
+        }
+        
+        goalsNumberLabel.text = "Quantidade de gols da partida: \(String(whiteLabelScoreTextField.contentAsNumber + blackLabelScoreTextField.contentAsNumber))"
+    }
 }

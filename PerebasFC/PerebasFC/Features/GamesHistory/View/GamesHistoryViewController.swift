@@ -9,6 +9,8 @@ import UIKit
 
 protocol GamesHistoryInteractorProtocol {
     func viewDidLoad()
+    func handleNewGameButtonTap()
+    func saveNewGame(game: Game)
     func handleEditGameButtonTap(game: Game)
 }
 
@@ -29,6 +31,14 @@ final class GamesHistoryViewController: UIViewController {
         self.view = gamesHistoryView
         self.title = "Histórico de Jogos"
         self.navigationController?.navigationBar.isHidden = false
+        
+        if Session.shared.isAdm ?? false {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                title: "Novo Jogo",
+                style: .plain,
+                target: self,
+                action: #selector(handleNewGameButtonTap))
+        }
     }
     
     init(interactor: GamesHistoryInteractorProtocol){
@@ -39,6 +49,10 @@ final class GamesHistoryViewController: UIViewController {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func saveNewGame(game: Game){
+        interactor.saveNewGame(game: game)
     }
     
 }
@@ -55,6 +69,14 @@ extension GamesHistoryViewController: GamesHistoryViewDelegate {
     
     func handleEditGameButtonTap(game: Game) {
         interactor.handleEditGameButtonTap(game: game)
+    }
+    
+}
+
+extension GamesHistoryViewController {
+    
+    @objc func handleNewGameButtonTap(){
+        interactor.handleNewGameButtonTap()
     }
     
 }

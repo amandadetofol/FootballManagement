@@ -9,6 +9,7 @@ import UIKit
 
 protocol GamesHistoryCoordinatorProtocol {
     func showAlertErrorView()
+    func goToAddNewGame()
     func goToEditGameView(game: Game)
 }
 
@@ -40,7 +41,19 @@ final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
     func goToEditGameView(game: Game) {
         let controller = EditGameFactory.getEditGameViewController(
             navigationController: self.navigationController,
-            model: game)
+            model: game,
+            isNewGame: false)
+        controller.modalPresentationStyle = .pageSheet
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func goToAddNewGame() {
+        let game = Game(score: nil, gameDate: "", goals: nil, date: Date())
+        let controller = EditGameFactory.getEditGameViewController(
+            navigationController: self.navigationController,
+            model: game,
+            isNewGame: true)
+        controller.title = "Novo Jogo"
         controller.modalPresentationStyle = .pageSheet
         navigationController.pushViewController(controller, animated: true)
     }

@@ -12,13 +12,16 @@ final class EditGameInteractor: EditGameInteractorProtocol {
     private let coordinator: EditGameCoordinatorProtocol
     private let presenter: EditGamePresenterProtocol
     private let model: Game
+    private let isNewGame: Bool
     
     init(presenter: EditGamePresenterProtocol,
          coordinator: EditGameCoordinatorProtocol,
-         model: Game){
+         model: Game,
+         isNewGame: Bool){
         self.presenter = presenter
         self.coordinator = coordinator
         self.model = model
+        self.isNewGame = isNewGame
     }
     
     func viewDidLoad() {
@@ -26,6 +29,9 @@ final class EditGameInteractor: EditGameInteractorProtocol {
     }
 
     func handleSaveNewGameInformationsButtonTap(game: Game) {
+        if isNewGame {
+            coordinator.handleSaveNewGame(game: game)
+        }
         coordinator.handleSaveNewGameInformationsButtonTap(game: game)
     }
     

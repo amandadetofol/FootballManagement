@@ -7,10 +7,18 @@
 
 import UIKit
 
+protocol TextFieldComponentDelegate: AnyObject {
+    func textFieldDidEndEditing(_ textField: TextFieldComponent)
+}
+
+extension TextFieldComponentDelegate {
+    func textFieldDidEndEditing(_ textField: TextFieldComponent) {}
+}
+
 final class TextFieldComponent: UIView {
     
     var showIcon = false
-
+    
     var errorMessage: String = "" {
         didSet {
             errorLabel.text = errorMessage
@@ -44,6 +52,12 @@ final class TextFieldComponent: UIView {
         }
     }
     
+    var contentAsNumber: Int {
+        get {
+            return Int(textField.text ?? "") ?? 0
+        }
+    }
+    
     var title: String = "" {
         didSet {
             titleLabel.text = title 
@@ -53,6 +67,8 @@ final class TextFieldComponent: UIView {
                 error: nil)
         }
     }
+    
+    weak var delegate: TextFieldComponentDelegate?
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -167,6 +183,10 @@ extension TextFieldComponent: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.showError = false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField)  {
+        delegate?.textFieldDidEndEditing(self)
     }
     
 }

@@ -103,7 +103,8 @@ final class EditGameGoalInformationsCardView: UIView {
             self.model = Goals(
                 player: player,
                 time: time,
-                index: Int(index) ?? 0)
+                index: Int(index) ?? 0,
+                isWhiteTeam: false)
     }
     
     private func setupView(){

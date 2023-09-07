@@ -38,5 +38,14 @@ final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
     func handleEditGameButtonTap(game: Game) {
         coordinator.goToEditGameView(game: game)
     }
+    
+    func handleNewGameButtonTap(){
+        coordinator.goToAddNewGame()
+    }
+    
+    func saveNewGame(game: Game){
+        worker.addNewGame(game: game)
+        presenter.updateView(using: [game])
+    }
 
 }

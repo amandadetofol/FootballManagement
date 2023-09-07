@@ -12,7 +12,7 @@ protocol GamesHistoryViewProtocol: AnyObject {
 }
 
 final class GamesHistoryPresenter: GamesHistoryPresenterProtocol {
-    
+
     weak var view: GamesHistoryViewProtocol?
     
     func updateView(using model: [Game]) {

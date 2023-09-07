@@ -11,13 +11,15 @@ struct EditGameFactory {
     
     static func getEditGameViewController(
         navigationController: UINavigationController,
-        model: Game) -> EditGameViewController {
+        model: Game,
+        isNewGame: Bool) -> EditGameViewController {
             let presenter = EditGamePresenter()
             let coordinator = EditGameCoordinator(navigationController: navigationController)
             let interactor = EditGameInteractor(
                 presenter: presenter,
                 coordinator: coordinator,
-                model: model)
+                model: model,
+                isNewGame: isNewGame)
             let viewController = EditGameViewController(interactor: interactor)
             presenter.view = viewController
             

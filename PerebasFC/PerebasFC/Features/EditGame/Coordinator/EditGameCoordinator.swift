@@ -8,6 +8,7 @@
 import UIKit
 
 protocol EditGameCoordinatorProtocol: AnyObject  {
+    func handleSaveNewGame(game: Game)
     func handleSaveNewGameInformationsButtonTap(game: Game)
 }
 
@@ -23,6 +24,14 @@ final class EditGameCoordinator: EditGameCoordinatorProtocol {
         if let viewController = navigationController.viewControllers.last(where: { $0.isKind(of: GamesHistoryViewController.self) }) {
             guard let vc = viewController as? GamesHistoryViewController else { return }
             //tratamento para atualizar o item da lista meu chapa
+            self.navigationController.popToViewController(vc, animated: true)
+        }
+    }
+    
+    func handleSaveNewGame(game: Game){
+        if let viewController = navigationController.viewControllers.last(where: { $0.isKind(of: GamesHistoryViewController.self) }) {
+            guard let vc = viewController as? GamesHistoryViewController else { return }
+            vc.saveNewGame(game: game)
             self.navigationController.popToViewController(vc, animated: true)
         }
     }
