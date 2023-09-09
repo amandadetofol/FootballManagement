@@ -11,4 +11,5 @@ enum CalendarPopUpKeysEnum: String {
     case close = "close"
     case createNewEvent = "new-event"
     case confirmPresence = "confirm-presence"
+    case presenceList = "presence-list"
 }

@@ -11,6 +11,7 @@ protocol CalendarCoordinatorProtocol {
     func goToBack()
     func goToCreateNewEvent(date: Date)
     func showConfirmationPopUp()
+    func goToSeePresenceList()
 }
 
 final class CalendarCoordinator: CalendarCoordinatorProtocol {
@@ -57,6 +58,13 @@ final class CalendarCoordinator: CalendarCoordinatorProtocol {
         navigationController.present(
             alert,
             animated: true)
+    }
+    
+    func goToSeePresenceList() {
+        self.navigationController.pushViewController(
+            EventPresenceFactory.getEventPresenceViewController(
+                navigationController: navigationController),
+            animated: false)
     }
     
 }

@@ -92,6 +92,8 @@ final class CalendarItemPopUpView: UIControl {
             if let secondAction = model.secondActionTitle {
                 secondActionButton.setTitle(secondAction, for: .normal)
                 secondActionButton.isHidden = false
+            } else {
+                secondActionButton.isHidden = true 
             }
             
             if let secondActionKey = model.secondActionKey {

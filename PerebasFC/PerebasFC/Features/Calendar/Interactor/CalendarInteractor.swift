@@ -57,6 +57,8 @@ final class CalendarInteractor: CalendarViewInteractorProtocol {
                 coordinator.goToCreateNewEvent(date: date)
             case CalendarPopUpKeysEnum.confirmPresence.rawValue:
                 coordinator.showConfirmationPopUp()
+            case CalendarPopUpKeysEnum.presenceList.rawValue:
+                coordinator.goToSeePresenceList()
             default:
                 return
             }

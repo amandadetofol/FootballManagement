@@ -108,6 +108,15 @@
 		A65663012A96CA9800EEC58D /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65663002A96CA9800EEC58D /* MapInteractor.swift */; };
 		A65663072A96CAB400EEC58D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65663062A96CAB400EEC58D /* MapViewController.swift */; };
 		A65663092A96CAB900EEC58D /* MapWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65663082A96CAB900EEC58D /* MapWorker.swift */; };
+		A658B3972AABFBDC00C89D63 /* EventPresenceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3962AABFBDC00C89D63 /* EventPresenceCardView.swift */; };
+		A658B3992AABFBE700C89D63 /* EventPresenceCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3982AABFBE700C89D63 /* EventPresenceCardViewModel.swift */; };
+		A658B3A32AABFE3400C89D63 /* EventPresenceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3A22AABFE3400C89D63 /* EventPresenceWorker.swift */; };
+		A658B3A52AABFE3E00C89D63 /* EventPresenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3A42AABFE3E00C89D63 /* EventPresenceView.swift */; };
+		A658B3A72AABFE4D00C89D63 /* EventPresenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3A62AABFE4D00C89D63 /* EventPresenceViewController.swift */; };
+		A658B3A92AABFE5D00C89D63 /* EventPresenceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3A82AABFE5D00C89D63 /* EventPresenceInteractor.swift */; };
+		A658B3AB2AABFE7300C89D63 /* EventPresencePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3AA2AABFE7300C89D63 /* EventPresencePresenter.swift */; };
+		A658B3AE2AABFE9900C89D63 /* EventPresenceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3AD2AABFE9900C89D63 /* EventPresenceFactory.swift */; };
+		A658B3B02AABFEA500C89D63 /* EventPresenceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3AF2AABFEA500C89D63 /* EventPresenceCoordinator.swift */; };
 		A6730EF92AAA5490000D6B72 /* PresenceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730EF82AAA5490000D6B72 /* PresenceCoordinator.swift */; };
 		A6730EFB2AAA54A1000D6B72 /* PresenceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730EFA2AAA54A1000D6B72 /* PresenceFactory.swift */; };
 		A6730EFD2AAA54AA000D6B72 /* PresenceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730EFC2AAA54AA000D6B72 /* PresenceCardView.swift */; };
@@ -386,6 +395,15 @@
 		A65663002A96CA9800EEC58D /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		A65663062A96CAB400EEC58D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A65663082A96CAB900EEC58D /* MapWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorker.swift; sourceTree = "<group>"; };
+		A658B3962AABFBDC00C89D63 /* EventPresenceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceCardView.swift; sourceTree = "<group>"; };
+		A658B3982AABFBE700C89D63 /* EventPresenceCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceCardViewModel.swift; sourceTree = "<group>"; };
+		A658B3A22AABFE3400C89D63 /* EventPresenceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceWorker.swift; sourceTree = "<group>"; };
+		A658B3A42AABFE3E00C89D63 /* EventPresenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceView.swift; sourceTree = "<group>"; };
+		A658B3A62AABFE4D00C89D63 /* EventPresenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceViewController.swift; sourceTree = "<group>"; };
+		A658B3A82AABFE5D00C89D63 /* EventPresenceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceInteractor.swift; sourceTree = "<group>"; };
+		A658B3AA2AABFE7300C89D63 /* EventPresencePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresencePresenter.swift; sourceTree = "<group>"; };
+		A658B3AD2AABFE9900C89D63 /* EventPresenceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceFactory.swift; sourceTree = "<group>"; };
+		A658B3AF2AABFEA500C89D63 /* EventPresenceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceCoordinator.swift; sourceTree = "<group>"; };
 		A6730EF82AAA5490000D6B72 /* PresenceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceCoordinator.swift; sourceTree = "<group>"; };
 		A6730EFA2AAA54A1000D6B72 /* PresenceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceFactory.swift; sourceTree = "<group>"; };
 		A6730EFC2AAA54AA000D6B72 /* PresenceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceCardView.swift; sourceTree = "<group>"; };
@@ -1576,6 +1594,95 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		A658B3942AABFBBD00C89D63 /* PresenceCardView */ = {
+			isa = PBXGroup;
+			children = (
+				A6730EFC2AAA54AA000D6B72 /* PresenceCardView.swift */,
+				A6730F062AAA5733000D6B72 /* PresenceCardViewModel.swift */,
+			);
+			path = PresenceCardView;
+			sourceTree = "<group>";
+		};
+		A658B3952AABFBC600C89D63 /* EventPresenceCardView */ = {
+			isa = PBXGroup;
+			children = (
+				A658B3962AABFBDC00C89D63 /* EventPresenceCardView.swift */,
+				A658B3982AABFBE700C89D63 /* EventPresenceCardViewModel.swift */,
+			);
+			path = EventPresenceCardView;
+			sourceTree = "<group>";
+		};
+		A658B39A2AABFDCF00C89D63 /* EventPresence */ = {
+			isa = PBXGroup;
+			children = (
+				A658B39B2AABFDDB00C89D63 /* InternalComponents */,
+			);
+			path = EventPresence;
+			sourceTree = "<group>";
+		};
+		A658B39B2AABFDDB00C89D63 /* InternalComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A658B3A12AABFE1C00C89D63 /* Coordinator */,
+				A658B3AC2AABFE7900C89D63 /* Presenter */,
+				A658B3A02AABFE1800C89D63 /* Factory */,
+				A658B39F2AABFE1100C89D63 /* Interactor */,
+				A658B3952AABFBC600C89D63 /* EventPresenceCardView */,
+				A658B39C2AABFDEE00C89D63 /* View */,
+				A658B39E2AABFE0700C89D63 /* Worker  */,
+			);
+			path = InternalComponents;
+			sourceTree = "<group>";
+		};
+		A658B39C2AABFDEE00C89D63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A658B3A42AABFE3E00C89D63 /* EventPresenceView.swift */,
+				A658B3A62AABFE4D00C89D63 /* EventPresenceViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A658B39E2AABFE0700C89D63 /* Worker  */ = {
+			isa = PBXGroup;
+			children = (
+				A658B3A22AABFE3400C89D63 /* EventPresenceWorker.swift */,
+			);
+			path = "Worker ";
+			sourceTree = "<group>";
+		};
+		A658B39F2AABFE1100C89D63 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A658B3A82AABFE5D00C89D63 /* EventPresenceInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A658B3A02AABFE1800C89D63 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A658B3AD2AABFE9900C89D63 /* EventPresenceFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A658B3A12AABFE1C00C89D63 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A658B3AF2AABFEA500C89D63 /* EventPresenceCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A658B3AC2AABFE7900C89D63 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A658B3AA2AABFE7300C89D63 /* EventPresencePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		A6730EF12AAA5448000D6B72 /* Presence */ = {
 			isa = PBXGroup;
 			children = (
@@ -1618,8 +1725,7 @@
 		A6730EF52AAA546E000D6B72 /* InternalComponents */ = {
 			isa = PBXGroup;
 			children = (
-				A6730EFC2AAA54AA000D6B72 /* PresenceCardView.swift */,
-				A6730F062AAA5733000D6B72 /* PresenceCardViewModel.swift */,
+				A658B3942AABFBBD00C89D63 /* PresenceCardView */,
 			);
 			path = InternalComponents;
 			sourceTree = "<group>";
@@ -1739,6 +1845,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A658B39A2AABFDCF00C89D63 /* EventPresence */,
 				A6730EF12AAA5448000D6B72 /* Presence */,
 				A6AF78B52AA6A0BE00174B83 /* ParticipantsSelectorListView */,
 				A64161902A898DB800BF45C4 /* AccesibilityManager */,
@@ -2821,11 +2928,14 @@
 				A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */,
 				A637DDFF2A4BAB6A0017857D /* Date.swift in Sources */,
 				A6CCFC382A32234300364614 /* ChangePasswordView.swift in Sources */,
+				A658B3A72AABFE4D00C89D63 /* EventPresenceViewController.swift in Sources */,
 				A6D2487D2A830C86004951FD /* PariticpantsManagerFactory.swift in Sources */,
 				A6E6BB222A733E940063A62A /* LoaderCoodinator.swift in Sources */,
 				A68C28CA2AA2AD29000BAFDE /* AccessibilityManagerCardView.swift in Sources */,
 				A6E5BB402A1EB88900ADE47F /* HomeViewController.swift in Sources */,
+				A658B3AE2AABFE9900C89D63 /* EventPresenceFactory.swift in Sources */,
 				A62C1CE82A37E8C9002AA401 /* FinancialPendencieCardView.swift in Sources */,
+				A658B3972AABFBDC00C89D63 /* EventPresenceCardView.swift in Sources */,
 				A61A8F9C2A1C1E21009D08EE /* ForgotPasswordView.swift in Sources */,
 				A68E76112A94386100599C25 /* FinancialAdministratorHistoryView.swift in Sources */,
 				A6730F0A2AAA7FAB000D6B72 /* PresenceWorker.swift in Sources */,
@@ -2833,6 +2943,7 @@
 				A6730EFD2AAA54AA000D6B72 /* PresenceCardView.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
 				A6CCFC3C2A32235800364614 /* ChangePasswordWorker.swift in Sources */,
+				A658B3992AABFBE700C89D63 /* EventPresenceCardViewModel.swift in Sources */,
 				A6A741752A26B39B009A7998 /* GamesHistoryView.swift in Sources */,
 				A65662FF2A96CA9000EEC58D /* MapPresenter.swift in Sources */,
 				A637DDF22A4A4B360017857D /* EditGameView.swift in Sources */,
@@ -2844,6 +2955,7 @@
 				A6FCDA652A81C39500B095E5 /* SortMainWorker.swift in Sources */,
 				A62C1CDC2A37E855002AA401 /* FinancialWorker.swift in Sources */,
 				A60B1A492A71E718007F71ED /* NewEventInCalendarWorker.swift in Sources */,
+				A658B3A52AABFE3E00C89D63 /* EventPresenceView.swift in Sources */,
 				A6033E6C2A12DF32002B56EE /* WelcomeView.swift in Sources */,
 				A6031A1E2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift in Sources */,
 				A6CCFC442A32237700364614 /* ChangePasswordCoordinator.swift in Sources */,
@@ -2902,6 +3014,7 @@
 				A62C1CE22A37E86B002AA401 /* FinancialFactory.swift in Sources */,
 				A6031A062A91740E00E19E3A /* FinancialAdministratorPendenciesListCardModel.swift in Sources */,
 				A69285252A8EEB9C000E618D /* NewitemCoordinator.swift in Sources */,
+				A658B3A92AABFE5D00C89D63 /* EventPresenceInteractor.swift in Sources */,
 				A61A8FA92A1C2918009D08EE /* ForgotPasswordFactory.swift in Sources */,
 				A67360AA2A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift in Sources */,
 				A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */,
@@ -2964,6 +3077,7 @@
 				A65663012A96CA9800EEC58D /* MapInteractor.swift in Sources */,
 				A61CFFFB2A3BE0120026BAF1 /* EditAwardsViewModel.swift in Sources */,
 				A6CEE4BB2A3F75CF002CF9F5 /* EditAwardsPresenter.swift in Sources */,
+				A658B3B02AABFEA500C89D63 /* EventPresenceCoordinator.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
 				A69285222A8EEB68000E618D /* NewItemWorker.swift in Sources */,
 				A6993E212A2BBEF900C2BDE3 /* RankingFactory.swift in Sources */,
@@ -2994,6 +3108,7 @@
 				A6AF78C22AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift in Sources */,
 				A641619E2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift in Sources */,
 				A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */,
+				A658B3AB2AABFE7300C89D63 /* EventPresencePresenter.swift in Sources */,
 				A6A7417F2A26B794009A7998 /* GameCardViewModel.swift in Sources */,
 				A69E89252A8AE9C8008C09DC /* FinancialAdministratorMainViewModel.swift in Sources */,
 				A6993E1A2A2BB5A700C2BDE3 /* RankingWorker.swift in Sources */,
@@ -3014,6 +3129,7 @@
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
 				A6FCDA692A81C3DE00B095E5 /* SortMainCoordinator.swift in Sources */,
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
+				A658B3A32AABFE3400C89D63 /* EventPresenceWorker.swift in Sources */,
 				A6D2487B2A830C7A004951FD /* ParticipantsManagerCoordinator.swift in Sources */,
 				A61A8FA32A1C2299009D08EE /* ForgotPasswordCoordinator.swift in Sources */,
 				A68E76192A9438CC00599C25 /* FinancialAdministratorHistoryViewModel.swift in Sources */,

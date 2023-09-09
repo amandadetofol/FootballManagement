@@ -160,9 +160,9 @@ extension CalendarViewController: CalendarViewProtocol {
                 title: "Evento do grupo!",
                 description: "Encontramos um evento do grupo neste dia. Não esqueça de confirmar sua presença!",
                 firstActionTitle: "confirmar presença".uppercased(),
-                secondActionTitle: nil,
+                secondActionTitle: (Session.shared.isAdm ?? false) ? "lista de presença".uppercased() : nil,
                 firstActionKey: CalendarPopUpKeysEnum.confirmPresence.rawValue,
-                secondActionKey: nil),
+                secondActionKey: (Session.shared.isAdm ?? false) ? CalendarPopUpKeysEnum.presenceList.rawValue : nil),
             date: date)
     }
     
