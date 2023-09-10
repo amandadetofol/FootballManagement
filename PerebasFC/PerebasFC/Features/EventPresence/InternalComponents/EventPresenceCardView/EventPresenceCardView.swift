@@ -84,7 +84,7 @@ final class EventPresenceCardView: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 48),
+            heightAnchor.constraint(equalToConstant: 72),
             
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
