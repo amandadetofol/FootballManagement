@@ -26,7 +26,7 @@ final class LoginInteractor: LoginInteractorProtocol {
             self.worker = worker
         }
     
-    func goToLogin(_ username: String, _ password: String, _ isAdm: Bool) {
+    func goToLogin(_ username: String, _ password: String) {
         if username.isEmpty {
             presenter.updateViewForMandatoryUsernameError()
         }
@@ -37,7 +37,7 @@ final class LoginInteractor: LoginInteractorProtocol {
         
         if !password.isEmpty && !username.isEmpty {
             coordinator.showLoader()
-            worker.login(username: username, password: password, isAdm: isAdm) { [weak self] user in
+            worker.login(username: username, password: password) { [weak self] user in
                 if let user = user {
                     self?.coordinator.removeLoader()
                     self?.coordinator.goToLoggedArea(user: user)
@@ -51,8 +51,7 @@ final class LoginInteractor: LoginInteractorProtocol {
     
     func loginWithGoogle(controller: UIViewController){
         worker.loginWithGoogle(
-            controller: controller,
-            isAdm: false) { [weak self] user in
+            controller: controller) { [weak self] user in
                 if let user = user {
                     self?.coordinator.removeLoader()
                     self?.coordinator.goToLoggedArea(user: user)

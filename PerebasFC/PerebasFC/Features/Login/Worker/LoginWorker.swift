@@ -8,24 +8,24 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FirebaseFirestore
 
 protocol LoginWorkerProtocol {
     func login(
         username: String,
         password: String,
-        isAdm: Bool,
         _ completion: @escaping ((User?) -> Void))
     func loginWithGoogle(
         controller: UIViewController,
-        isAdm: Bool,
         _ completion: @escaping ((User?) -> Void))
 }
 
 final class LoginWorker: LoginWorkerProtocol {
     
+    private let firestoreProvider = Firestore.firestore()
+    
     func loginWithGoogle(
         controller: UIViewController,
-        isAdm: Bool = false,
         _ completion: @escaping ((User?) -> Void)) {
             guard let clientID = FirebaseApp.app()?.options.clientID else { return }
             let config = GIDConfiguration(clientID: clientID)
@@ -45,8 +45,8 @@ final class LoginWorker: LoginWorkerProtocol {
                 
                 Auth.auth().signIn(with: credential) { result, error in
                     if (result?.user != nil) {
-                        Session.shared.isAdm = isAdm
-                        completion(self.getMockUser(isAdm: isAdm))
+                        Session.shared.isAdm = false
+                        completion(self.getMockUser(isAdm: false))
                     } else {
                         completion(nil)
                     }
@@ -57,7 +57,6 @@ final class LoginWorker: LoginWorkerProtocol {
     func login(
         username: String,
         password: String,
-        isAdm: Bool,
         _ completion: @escaping ((User?) -> Void)) {
             
             Auth.auth().signIn(
@@ -69,15 +68,42 @@ final class LoginWorker: LoginWorkerProtocol {
                         return
                     }
                     
-                    if (data?.user != nil) {
-                        Session.shared.isAdm = isAdm
-                        completion(getMockUser(isAdm: isAdm))
-                    } else {
-                        completion(nil)
+                    checkIfUserIsAdm(email: username) { isAdm in
+                        if (data?.user != nil) {
+                            Session.shared.isAdm = isAdm
+                            completion(self.getMockUser(isAdm: isAdm))
+                        } else {
+                            completion(nil)
+                        }
                     }
-                    
                 }
         }
+    
+    //MARK: Private methods
+    private func checkIfUserIsAdm(email: String, completion: @escaping((Bool)->Void)){
+        let userReferece = firestoreProvider.collection("perebasfc")
+        userReferece.getDocuments { data, error in
+            guard let data = data,
+                  error == nil else {
+                completion(false)
+                return
+            }
+            
+            data.documents.forEach { recoveredDocument in
+                guard let recoveredEmail = recoveredDocument["email"] as? String,
+                      let recoveredIsAdm = recoveredDocument["isAdm"] as? Bool else {
+                    completion(false)
+                    return
+                }
+                
+                if email.lowercased() == recoveredEmail.lowercased() {
+                    completion(recoveredIsAdm)
+                    return
+                }
+                
+            }
+        }
+    }
     
 }
 
@@ -154,7 +180,6 @@ extension LoginWorker {
     
     //TODO: Remove mock when finish integration
     private func getMockUser(isAdm: Bool) -> User {
-        Session.shared.isAdm = isAdm
         return User(
             id: "01",
             firstName: "José",
@@ -169,7 +194,7 @@ extension LoginWorker {
                 firstActionTitle: "Confirmar".uppercased(),
                 firstActionKey: .confirmPresence(willShow: true)),
             rankingPosition: 8,
-            isAdm: false,
+            isAdm: isAdm,
             type: .goalKepper,
             menuItems: self.getMenuItemList(isAdm: isAdm))
     }

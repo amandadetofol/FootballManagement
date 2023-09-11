@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginViewDelegate: AnyObject {
-    func goToLogin(username: String, password: String, isAdm: Bool)
+    func goToLogin(username: String, password: String)
     func goToNewMemeberMessageView()
     func loginWithGoogle()
     func goToForgotPassword(username: String)
@@ -46,22 +46,6 @@ final class LoginView: UIView {
         textfield.showEyeButton()
         
         return textfield
-    }()
-    
-    private lazy var administratorSwitch: UISwitch = {
-        let admswitch = UISwitch()
-        admswitch.translatesAutoresizingMaskIntoConstraints = false
-        
-        return admswitch
-    }()
-    
-    private lazy var administratorSwitchLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 1
-        label.text = "Sou Administrador"
-        
-        return label
     }()
     
     private lazy var loginButton: UIButton = {
@@ -134,8 +118,6 @@ final class LoginView: UIView {
         addSubviews(
             [usernameTextField,
              passwordTextField,
-             administratorSwitch,
-             administratorSwitchLabel,
              loginButton,
              loginWithGoogleButton,
              notSignedButton,
@@ -152,13 +134,7 @@ final class LoginView: UIView {
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            administratorSwitch.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
-            administratorSwitch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            
-            administratorSwitchLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
-            administratorSwitchLabel.leadingAnchor.constraint(equalTo: administratorSwitch.trailingAnchor, constant: 8),
-            
-            loginButton.topAnchor.constraint(equalTo: administratorSwitch.bottomAnchor, constant: 32),
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 32),
             loginButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             loginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             loginButton.heightAnchor.constraint(equalToConstant: 48),
@@ -187,8 +163,7 @@ extension LoginView {
     @objc func login(){
         delegate?.goToLogin(
             username: usernameTextField.text,
-            password: passwordTextField.text,
-            isAdm: administratorSwitch.isOn)
+            password: passwordTextField.text)
     }
     
     @objc func goToNewMemeberMessageView(){

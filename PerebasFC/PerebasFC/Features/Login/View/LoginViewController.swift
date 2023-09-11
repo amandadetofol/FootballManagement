@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginInteractorProtocol {
-    func goToLogin(_ username: String, _ password: String, _ isAdm: Bool)
+    func goToLogin(_ username: String, _ password: String)
     func goToNewMemeberMessageView()
     func loginWithGoogle(controller: UIViewController)
     func goToForgotPassword(_ username: String)
@@ -41,6 +41,11 @@ final class LoginViewController: UIViewController {
         view = loginView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
 }
 
 extension LoginViewController: LoginViewProtocol {
@@ -57,8 +62,8 @@ extension LoginViewController: LoginViewProtocol {
 
 extension LoginViewController: LoginViewDelegate {
     
-    func goToLogin(username: String, password: String, isAdm: Bool) {
-        interactor.goToLogin(username, password, isAdm)
+    func goToLogin(username: String, password: String) {
+        interactor.goToLogin(username, password)
     }
     
     func goToNewMemeberMessageView() {
