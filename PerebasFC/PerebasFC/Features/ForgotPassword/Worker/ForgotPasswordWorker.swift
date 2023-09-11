@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 protocol ForgotPasswordWorkerProtocol {
     func sendLinkTo(
@@ -15,10 +16,18 @@ protocol ForgotPasswordWorkerProtocol {
 
 final class ForgotPasswordWorker: ForgotPasswordWorkerProtocol {
     
+    private let authProvider = Auth.auth()
+    
     func sendLinkTo(
         email: String,
         _ operationSucceded: @escaping ((Bool) -> Void)) {
-            operationSucceded(true)
+            authProvider.sendPasswordReset(withEmail: email) { error in
+                guard (error == nil) else {
+                    operationSucceded(false)
+                    return
+                }
+                operationSucceded(true)
+            }
     }
     
 }

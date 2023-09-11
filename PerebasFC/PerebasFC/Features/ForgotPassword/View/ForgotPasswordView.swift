@@ -77,7 +77,7 @@ final class ForgotPasswordView: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 108),
+            messageLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
             messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             

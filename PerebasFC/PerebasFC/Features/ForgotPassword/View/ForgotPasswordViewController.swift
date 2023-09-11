@@ -31,7 +31,9 @@ final class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = forgotPasswordView
-        self.navigationController?.isNavigationBarHidden = false 
+        
+        self.navigationController?.navigationBar.isHidden = false
+        self.title = "Esqueceu sua senha?"
         interactor.viewDidLoad()
     }
     
