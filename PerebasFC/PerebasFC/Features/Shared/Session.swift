@@ -14,6 +14,9 @@ final class Session {
     private init() {}
     
     var isAdm: Bool?
+    var user: User?
+    var loggedUserEmail: String?
+    
     var players: [User] {
         get {
             return getMockUsers()
