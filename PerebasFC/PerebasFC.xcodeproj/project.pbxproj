@@ -60,6 +60,14 @@
 		A61A8FBA2A1C2F54009D08EE /* InternalLinkRedirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */; };
 		A61A8FBE2A1C3031009D08EE /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */; };
 		A61A8FC02A1C334C009D08EE /* HomeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */; };
+		A61C0CC12AAFD0DF0012BACC /* SignUpWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C0CC02AAFD0DF0012BACC /* SignUpWorker.swift */; };
+		A61C0CC32AAFD0F30012BACC /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C0CC22AAFD0F30012BACC /* SignUpView.swift */; };
+		A61C0CC52AAFD1030012BACC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C0CC42AAFD1030012BACC /* SignUpViewController.swift */; };
+		A61C0CC72AAFD1190012BACC /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C0CC62AAFD1190012BACC /* SignUpInteractor.swift */; };
+		A61C0CC92AAFD1250012BACC /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C0CC82AAFD1250012BACC /* SignUpFactory.swift */; };
+		A61C0CCB2AAFD12D0012BACC /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C0CCA2AAFD12D0012BACC /* SignUpPresenter.swift */; };
+		A61C0CCD2AAFD13C0012BACC /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C0CCC2AAFD13C0012BACC /* SignUpCoordinator.swift */; };
+		A61C0CD02AAFD1610012BACC /* NewUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C0CCF2AAFD1610012BACC /* NewUserModel.swift */; };
 		A61CFFEB2A3BD3000026BAF1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFFEA2A3BD3000026BAF1 /* Session.swift */; };
 		A61CFFF22A3BDC260026BAF1 /* EditAwadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFFF12A3BDC260026BAF1 /* EditAwadsView.swift */; };
 		A61CFFF42A3BDC330026BAF1 /* EditAwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFFF32A3BDC330026BAF1 /* EditAwardsViewController.swift */; };
@@ -348,6 +356,14 @@
 		A61A8FB92A1C2F53009D08EE /* InternalLinkRedirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalLinkRedirect.swift; sourceTree = "<group>"; };
 		A61A8FBD2A1C3031009D08EE /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		A61A8FBF2A1C334C009D08EE /* HomeHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewModel.swift; sourceTree = "<group>"; };
+		A61C0CC02AAFD0DF0012BACC /* SignUpWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWorker.swift; sourceTree = "<group>"; };
+		A61C0CC22AAFD0F30012BACC /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A61C0CC42AAFD1030012BACC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A61C0CC62AAFD1190012BACC /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		A61C0CC82AAFD1250012BACC /* SignUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFactory.swift; sourceTree = "<group>"; };
+		A61C0CCA2AAFD12D0012BACC /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		A61C0CCC2AAFD13C0012BACC /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		A61C0CCF2AAFD1610012BACC /* NewUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserModel.swift; sourceTree = "<group>"; };
 		A61CFFEA2A3BD3000026BAF1 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A61CFFF12A3BDC260026BAF1 /* EditAwadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwadsView.swift; sourceTree = "<group>"; };
 		A61CFFF32A3BDC330026BAF1 /* EditAwardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsViewController.swift; sourceTree = "<group>"; };
@@ -1117,6 +1133,77 @@
 			path = InternalComponents;
 			sourceTree = "<group>";
 		};
+		A61C0CB92AAFD07D0012BACC /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A61C0CCE2AAFD1540012BACC /* Model */,
+				A61C0CBF2AAFD0BA0012BACC /* Coordinator */,
+				A61C0CBE2AAFD0B40012BACC /* Presenter */,
+				A61C0CBD2AAFD0AB0012BACC /* Factory */,
+				A61C0CBC2AAFD0A50012BACC /* Interactor */,
+				A61C0CBB2AAFD09C0012BACC /* View */,
+				A61C0CBA2AAFD0980012BACC /* Worker */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A61C0CBA2AAFD0980012BACC /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A61C0CC02AAFD0DF0012BACC /* SignUpWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A61C0CBB2AAFD09C0012BACC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A61C0CC22AAFD0F30012BACC /* SignUpView.swift */,
+				A61C0CC42AAFD1030012BACC /* SignUpViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A61C0CBC2AAFD0A50012BACC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A61C0CC62AAFD1190012BACC /* SignUpInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A61C0CBD2AAFD0AB0012BACC /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A61C0CC82AAFD1250012BACC /* SignUpFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A61C0CBE2AAFD0B40012BACC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A61C0CCA2AAFD12D0012BACC /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A61C0CBF2AAFD0BA0012BACC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A61C0CCC2AAFD13C0012BACC /* SignUpCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A61C0CCE2AAFD1540012BACC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A61C0CCF2AAFD1610012BACC /* NewUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A61CFFE92A3BD2F50026BAF1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -1845,6 +1932,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A61C0CB92AAFD07D0012BACC /* SignUp */,
 				A658B39A2AABFDCF00C89D63 /* EventPresence */,
 				A6730EF12AAA5448000D6B72 /* Presence */,
 				A6AF78B52AA6A0BE00174B83 /* ParticipantsSelectorListView */,
@@ -2939,7 +3027,9 @@
 				A61A8F9C2A1C1E21009D08EE /* ForgotPasswordView.swift in Sources */,
 				A68E76112A94386100599C25 /* FinancialAdministratorHistoryView.swift in Sources */,
 				A6730F0A2AAA7FAB000D6B72 /* PresenceWorker.swift in Sources */,
+				A61C0CCB2AAFD12D0012BACC /* SignUpPresenter.swift in Sources */,
 				A6E5BB3E2A1EB75500ADE47F /* MenuItemViewModel.swift in Sources */,
+				A61C0CC12AAFD0DF0012BACC /* SignUpWorker.swift in Sources */,
 				A6730EFD2AAA54AA000D6B72 /* PresenceCardView.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
 				A6CCFC3C2A32235800364614 /* ChangePasswordWorker.swift in Sources */,
@@ -2961,6 +3051,7 @@
 				A6CCFC442A32237700364614 /* ChangePasswordCoordinator.swift in Sources */,
 				A62C1CE02A37E864002AA401 /* FinancialInteractor.swift in Sources */,
 				A61CFFEB2A3BD3000026BAF1 /* Session.swift in Sources */,
+				A61C0CC72AAFD1190012BACC /* SignUpInteractor.swift in Sources */,
 				A68E76212A94398300599C25 /* FinancialAdministratorHistoryListView.swift in Sources */,
 				A60B1A422A71E05F007F71ED /* NewEventInCalendarInteractor.swift in Sources */,
 				A67360982A3933A4003BF4C2 /* SeeProofWebView.swift in Sources */,
@@ -2969,6 +3060,7 @@
 				A6E6BB182A733B0C0063A62A /* SignOutWorker.swift in Sources */,
 				A65663092A96CAB900EEC58D /* MapWorker.swift in Sources */,
 				A6AF78CA2AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift in Sources */,
+				A61C0CC32AAFD0F30012BACC /* SignUpView.swift in Sources */,
 				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6E6BB1F2A733D680063A62A /* LoaderViewController.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
@@ -2993,10 +3085,13 @@
 				A68E761B2A9438DC00599C25 /* FinancialAdministratorHistoryFactory.swift in Sources */,
 				A60B1A3A2A71E031007F71ED /* NewEventInCalendarCoordinator.swift in Sources */,
 				A61A8FA52A1C23C3009D08EE /* ForgotPasswordWorker.swift in Sources */,
+				A61C0CCD2AAFD13C0012BACC /* SignUpCoordinator.swift in Sources */,
 				A6993E2F2A2BFB1900C2BDE3 /* PersonalInformationsViewController.swift in Sources */,
 				A6031A042A91738300E19E3A /* FinancialAdministratorPendenciesListCard.swift in Sources */,
+				A61C0CD02AAFD1610012BACC /* NewUserModel.swift in Sources */,
 				A68E76172A9438A200599C25 /* FinancialAdministratorHistoryInteractor.swift in Sources */,
 				A62C1CC32A37DC14002AA401 /* CalendarPresenter.swift in Sources */,
+				A61C0CC52AAFD1030012BACC /* SignUpViewController.swift in Sources */,
 				A61A8F802A143559009D08EE /* LoginInteractor.swift in Sources */,
 				A62C1CC72A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift in Sources */,
 				A69E89342A8AF128008C09DC /* FinancialAdministratorMainPresenter.swift in Sources */,
@@ -3059,6 +3154,7 @@
 				A62C1CE42A37E873002AA401 /* FinancialCoordinator.swift in Sources */,
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
 				A6AF78C02AA6A12000174B83 /* ParticipantsSelectorListViiew.swift in Sources */,
+				A61C0CC92AAFD1250012BACC /* SignUpFactory.swift in Sources */,
 				A6993E312A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift in Sources */,
 				A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */,
 				A65662F92A96CA8000EEC58D /* MapCoordinator.swift in Sources */,

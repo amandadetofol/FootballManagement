@@ -49,25 +49,8 @@ final class LoginCoordinator: LoginCoordinatorWithLoaderProtocol {
     }
     
     func goToNewMemeberMessageView() {
-        let errorView = ErrorComponentViewController(
-            with: ErrorComponentViewModel(
-                title: "Olá!",
-                titleAccessibility: "Olá",
-                description: "Gostaríamos de informar que, para se cadastrar como usuário da nossa patota, é necessário entrar em contato com o presidente. Ele é o responsável por realizar o cadastro dos membros.",
-                descriptionAccessibility: "Gostaríamos de informar que, para se cadastrar como usuário da nossa patota, é necessário entrar em contato com o presidente. Ele é o responsável por realizar o cadastro dos membros.",
-                firstActionName: "📞      Ligar para o administrador",
-                firstActionNameAccessibiliyDescription: "Ligar para administrador",
-                secondActionName: "✉️       Enviar mensagem no Whatsapp",
-                secondActionNameAccessibilityDesctiption: "Enviar mensagem no Whatsapp")) { [weak self] in
-                    guard let self = self else { return }
-                    self.callNumber()
-            } handleSecondActionButtonTapAction: { [weak self] in
-                guard let self = self else { return }
-                self.showNativeShare()
-            }
-
-        
-        navigationController.pushViewController(errorView, animated: true )
+        let viewController = SignUpFactory.getSignUpViewController(navigationController: navigationController)
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func goToForgotPassword(username: String) {

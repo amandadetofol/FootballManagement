@@ -10,14 +10,18 @@ import UIKit
 protocol ForgotPasswordCoordinatorProtocol {
     func goToShowSendResetLinkAlert(email: String)
     func goToShowSendResetErrorAlert()
+    func showLoading()
+    func removeLoading()
 }
 
 final class ForgotPasswordCoordinator: ForgotPasswordCoordinatorProtocol {
  
-    let navigationController: UINavigationController
+    private let loader: LoaderCoodinator
+    private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
+        self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
     func goToShowSendResetLinkAlert(email: String) {
@@ -48,6 +52,14 @@ final class ForgotPasswordCoordinator: ForgotPasswordCoordinatorProtocol {
         navigationController.present(
             alert,
             animated: true)
+    }
+    
+    func showLoading() {
+        loader.showLoader()
+    }
+    
+    func removeLoading(){
+        loader.removeLoader()
     }
    
 }
