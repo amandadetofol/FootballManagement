@@ -51,17 +51,21 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
         presenter.handleGoToEditDataFlow()
     }
     
-    func handleEdit(model: PersonalInformationsViewModel){
-           worker.updatePersonalInformations(personalInformations: model) { [weak self] succeded in
-            guard let self else { return }
-            
-            if succeded {
-                self.coordinator.showUpdateSuccessPopUp()
-            } else {
-                self.coordinator.showUpdateErrorPopUp()
-            }
+    func handleEdit(
+        model: PersonalInformationsViewModel,
+        changeImage: Bool){
+            worker.updatePersonalInformations(
+                personalInformations: model,
+                changeImage: changeImage) { [weak self] succeded in
+                    guard let self else { return }
+                    
+                    if succeded {
+                        self.coordinator.showUpdateSuccessPopUp()
+                    } else {
+                        self.coordinator.showUpdateErrorPopUp()
+                    }
+                }
         }
-    }
     
     func handleGoToBlockEdition() {
         presenter.handleGoToBlockEdition()

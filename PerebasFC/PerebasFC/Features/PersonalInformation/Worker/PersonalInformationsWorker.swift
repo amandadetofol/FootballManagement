@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseStorage
 import FirebaseFirestore
 
 protocol PersonalInformationsWorkerProtocol {
@@ -13,20 +14,22 @@ protocol PersonalInformationsWorkerProtocol {
         _ completion: @escaping ((PersonalInformationsViewModel?) -> Void))
     func updatePersonalInformations(
         personalInformations: PersonalInformationsViewModel,
+        changeImage: Bool,
         completion: @escaping((Bool)->Void))
 }
 
 final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
     
     private let firestoreProvider = Firestore.firestore()
-   
+    
     func getPersonalInformations(_ completion: @escaping ((PersonalInformationsViewModel?) -> Void)) {
-        firestoreProvider.document("perebasfc/\(Session.shared.loggedUserEmail ?? "")").getDocument { document, error in
-            guard error == nil else {
+        firestoreProvider.document("perebasfc/\(Session.shared.loggedUserEmail ?? "")").getDocument { [weak self] document, error in
+            guard error == nil,
+                let self = self else {
                 completion(nil)
                 return
             }
-            
+        
             completion(
                 PersonalInformationsViewModel(
                     name: document?["name"] as? String ?? "",
@@ -38,14 +41,16 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                     medicalInsurance: document?["medicalInsurance"] as? String ?? "SUS",
                     emergencyPhoneNumber: document?["emergencyPhoneNumber"] as? String  ?? "",
                     category: document?["category"] as? String ?? "",
-                    image: document?["userImage"] as? Data ?? Data())) 
+                    image: nil,
+                    imageUrl: document?["image"] as? String ?? ""))
         }
     }
     
     func updatePersonalInformations(
         personalInformations: PersonalInformationsViewModel,
+        changeImage: Bool,
         completion: @escaping((Bool)->Void)) {
-            firestoreProvider.document("perebasfc/\(Session.shared.loggedUserEmail ?? "")").setData([
+            firestoreProvider.document("perebasfc/\(Session.shared.loggedUserEmail ?? "")").updateData([
                 "name": personalInformations.name,
                 "lastname": personalInformations.lastName,
                 "date": personalInformations.birthDate,
@@ -55,9 +60,34 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                 "medicalInsurance": personalInformations.medicalInsurance,
                 "emergencyPhoneNumber": personalInformations.emergencyPhoneNumber,
                 "category": personalInformations.category,
-                "image": personalInformations.image
             ])
+            
+            if changeImage {
+                uploadImage(image: personalInformations.image ?? UIImage())
+            }
+            
             completion(true)
         }
     
+    //MARK: Private methods
+    private func uploadImage(image: UIImage){
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        let imageRef = storageReference.child("images/\(Session.shared.loggedUserEmail ?? "").jpg")
+        
+        if let imageData = image.jpegData(compressionQuality: 0.5) {
+            imageRef.putData(imageData, metadata: nil) { [weak self] (metadata, error) in
+                guard error == nil else { return }
+                
+                imageRef.downloadURL { (url, error) in
+                    if let downloadURL = url {
+                        self?.firestoreProvider.document(
+                            "perebasfc/\(Session.shared.loggedUserEmail ?? "")").updateData(["image": downloadURL.absoluteString])
+                    }
+                }
+                
+            }
+        }
+    }
+   
 }

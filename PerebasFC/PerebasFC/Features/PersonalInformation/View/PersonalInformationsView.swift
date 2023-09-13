@@ -18,6 +18,8 @@ protocol PersonalInformationsViewDelegate: AnyObject {
 
 final class PersonalInformationsView: UIView {
     
+    var changeImage = false
+    var imageSelectedPicker: UIImage?
     var modifiedModel: PersonalInformationsViewModel {
         get {
             return PersonalInformationsViewModel(
@@ -30,7 +32,7 @@ final class PersonalInformationsView: UIView {
                 medicalInsurance: medicalInsuranceTextField.text,
                 emergencyPhoneNumber: emergencyPhoneNumberTextField.text,
                 category: playerCategoryTextField.text,
-                image: profileImageView.currentImage?.pngData() ?? Data())
+                image: imageSelectedPicker ?? UIImage())
         }
     }
     
@@ -78,7 +80,7 @@ final class PersonalInformationsView: UIView {
         
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 140, weight: .bold, scale: .large)
         let image = UIImage(systemName: "person.circle.fill", withConfiguration: largeConfig)
-
+        
         button.setImage(image, for: .normal)
         button.accessibilityLabel =  "Selecione uma foto de perfil"
         button.addTarget(nil, action: #selector(showImagePicker), for: .touchUpInside)
@@ -97,6 +99,7 @@ final class PersonalInformationsView: UIView {
             if let photo = items.singlePhoto {
                 self?.profileImageView.setImage(photo.image, for: .normal)
                 self?.profileImageView.imageView?.contentMode = .scaleAspectFill
+                self?.imageSelectedPicker = photo.image
             }
             picker.dismiss(animated: true, completion: nil)
         }
@@ -131,7 +134,7 @@ final class PersonalInformationsView: UIView {
         
         return datePicker
     }()
-
+    
     private lazy var shirtNumberTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -167,7 +170,7 @@ final class PersonalInformationsView: UIView {
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.values = ["A", "B", "C"]
         picker.title = "Categoria do Jogador"
-        picker.isHidden = true 
+        picker.isHidden = true
         
         return picker
     }()
@@ -222,7 +225,7 @@ final class PersonalInformationsView: UIView {
         button.backgroundColor = .black
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleGoToPasswordFlowButtonTap), for: .touchUpInside)
-     
+        
         return button
     }()
     
@@ -263,7 +266,7 @@ final class PersonalInformationsView: UIView {
     func disableEdition(){
         DispatchQueue.main.async {
             self.stackView.arrangedSubviews.forEach { view in
-                view.isUserInteractionEnabled = false 
+                view.isUserInteractionEnabled = false
             }
         }
     }
@@ -280,14 +283,25 @@ final class PersonalInformationsView: UIView {
         playerCategoryTextField.text = model.category
         
         if let image = model.image {
-            profileImageView.setImage(UIImage(data: image), for: .normal)
+            profileImageView.setImage(image, for: .normal)
+        }
+        
+        if let img = model.imageUrl {
+            downloadImage(from: img) { [weak self] image in
+                guard let self else { return }
+                if let image {
+                    DispatchQueue.main.async {
+                        self.profileImageView.setImage(image, for: .normal)
+                    }
+                }
+            }
         }
         
         self.model = model
     }
     
     func updateAccessibiltiy(isEnabledForEdition: Bool) {
-        self.isAccessibilityElement = true 
+        self.isAccessibilityElement = true
         self.accessibilityLabel = isEnabledForEdition ? "Tela de dados pessoais: habilitado para edição" : "Tela de dados pessoais: somente leitura"
     }
     
@@ -345,7 +359,7 @@ final class PersonalInformationsView: UIView {
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -96),
             stackView.widthAnchor.constraint(equalTo: widthAnchor),
-      
+            
             changePasswordButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             changePasswordButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             changePasswordButton.heightAnchor.constraint(equalToConstant: 48),
@@ -356,7 +370,7 @@ final class PersonalInformationsView: UIView {
             
             userNameTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             userNameTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
-    
+            
             lastNameTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             lastNameTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
@@ -388,6 +402,27 @@ final class PersonalInformationsView: UIView {
             profileImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
         ])
     }
+    
+    private func downloadImage(
+        from string: String,
+        completion: @escaping (UIImage?) -> Void) {
+            
+            guard let url = URL(string: string) else { return }
+            URLSession.shared.dataTask(with: url) { data, _, error in
+                if let error = error {
+                    completion(nil)
+                    return
+                }
+                
+                if let data = data, let image = UIImage(data: data) {
+                    completion(image)
+                } else {
+                    completion(nil)
+                }
+            }.resume()
+        }
+
+    
 }
 
 extension PersonalInformationsView {
@@ -403,6 +438,7 @@ extension PersonalInformationsView {
     
     @objc func showImagePicker(){
         controller?.present(imagePicker, animated: true)
+        changeImage = true 
     }
     
 }

@@ -13,7 +13,9 @@ protocol PersonalInformationsInteractorProtocol {
     func handleGoToEditDataFlow()
     func handleGoToBlockEdition()
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel)
-    func handleEdit(model: PersonalInformationsViewModel)
+    func handleEdit(
+        model: PersonalInformationsViewModel,
+        changeImage: Bool)
 }
 
 final class PersonalInformationsViewController: UIViewController {
@@ -103,7 +105,9 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
         personalInformationsView.updateAccessibiltiy(isEnabledForEdition: false)
         personalInformationsView.setupPlayerCategoryField(isEnabledForEdition: false)
         
-        interactor.handleEdit(model: personalInformationsView.modifiedModel)
+        interactor.handleEdit(
+            model: personalInformationsView.modifiedModel,
+            changeImage: personalInformationsView.changeImage)
     }
     
 }

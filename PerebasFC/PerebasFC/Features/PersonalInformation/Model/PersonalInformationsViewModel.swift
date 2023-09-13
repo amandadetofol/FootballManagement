@@ -17,7 +17,8 @@ struct PersonalInformationsViewModel {
     let medicalInsurance: String
     let emergencyPhoneNumber: String
     let category: String
-    let image: Data?
+    let image: UIImage?
+    var imageUrl: String? = nil 
 }
 
 enum MemberType: String {

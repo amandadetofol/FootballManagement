@@ -67,43 +67,41 @@ final class LoginWorker: LoginWorkerProtocol {
                         completion(nil)
                         return
                     }
-                    
-                    checkIfUserIsAdm(email: username) { isAdm in
-                        if (data?.user != nil) {
-                            Session.shared.isAdm = isAdm
-                            Session.shared.loggedUserEmail = username
-                            completion(self.getMockUser(isAdm: isAdm))
-                        } else {
-                            completion(nil)
-                        }
-                    }
+                
+                    let isAdm =  checkIfUserIsAdm(email: username)
+
+                    Session.shared.isAdm = isAdm
+                    Session.shared.loggedUserEmail = username
+                    completion(self.getMockUser(isAdm: isAdm))
                 }
         }
     
-    //MARK: Private methods
-    private func checkIfUserIsAdm(email: String, completion: @escaping((Bool)->Void)){
+    private func checkIfUserIsAdm(email: String) -> Bool {
+        
         let userReferece = firestoreProvider.collection("perebasfc")
+        var isAdm = false
         userReferece.getDocuments { data, error in
             guard let data = data,
                   error == nil else {
-                completion(false)
+                isAdm = false
                 return
             }
             
             data.documents.forEach { recoveredDocument in
                 guard let recoveredEmail = recoveredDocument["email"] as? String,
                       let recoveredIsAdm = recoveredDocument["isAdm"] as? Bool else {
-                    completion(false)
+                    isAdm = false
                     return
                 }
                 
                 if email.lowercased() == recoveredEmail.lowercased() {
-                    completion(recoveredIsAdm)
+                    isAdm = recoveredIsAdm
                     return
                 }
                 
             }
         }
+        return isAdm
     }
     
 }

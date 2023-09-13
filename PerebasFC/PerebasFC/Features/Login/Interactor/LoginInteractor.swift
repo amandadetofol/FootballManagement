@@ -38,11 +38,10 @@ final class LoginInteractor: LoginInteractorProtocol {
         if !password.isEmpty && !username.isEmpty {
             coordinator.showLoader()
             worker.login(username: username, password: password) { [weak self] user in
+                self?.coordinator.removeLoader()
                 if let user = user {
-                    self?.coordinator.removeLoader()
                     self?.coordinator.goToLoggedArea(user: user)
                 } else {
-                    self?.coordinator.removeLoader()
                     self?.presentViewForLoginError()
                 }
             }
