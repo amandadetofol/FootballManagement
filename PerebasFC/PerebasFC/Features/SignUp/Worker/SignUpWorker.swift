@@ -39,7 +39,7 @@ final class SignUpWorker: SignUpWorkerProtocol {
             } else {
                 self.addUser(user: user) { succeded in
                     completion(succeded)
-                }
+                } 
             }
         }
     

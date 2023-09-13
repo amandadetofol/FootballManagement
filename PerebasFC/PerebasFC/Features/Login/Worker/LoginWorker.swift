@@ -71,6 +71,7 @@ final class LoginWorker: LoginWorkerProtocol {
                     checkIfUserIsAdm(email: username) { isAdm in
                         if (data?.user != nil) {
                             Session.shared.isAdm = isAdm
+                            Session.shared.loggedUserEmail = username
                             completion(self.getMockUser(isAdm: isAdm))
                         } else {
                             completion(nil)

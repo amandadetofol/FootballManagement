@@ -29,12 +29,17 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
         }
     
     func viewDidLoad() {
+        coordinator.showLoading()
         worker.getPersonalInformations { [weak self] data in
+            guard let self else { return }
+            
             guard let data = data else {
-                self?.coordinator.showErrorMessageAlert()
+                self.coordinator.removeLoading()
+                self.coordinator.showErrorMessageAlert()
                 return
             }
-            self?.presenter.updateView(with: data)
+            self.coordinator.removeLoading()
+            self.presenter.updateView(with: data)
         }
     }
     
@@ -44,6 +49,18 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
     
     func handleGoToEditDataFlow() {
         presenter.handleGoToEditDataFlow()
+    }
+    
+    func handleEdit(model: PersonalInformationsViewModel){
+           worker.updatePersonalInformations(personalInformations: model) { [weak self] succeded in
+            guard let self else { return }
+            
+            if succeded {
+                self.coordinator.showUpdateSuccessPopUp()
+            } else {
+                self.coordinator.showUpdateErrorPopUp()
+            }
+        }
     }
     
     func handleGoToBlockEdition() {

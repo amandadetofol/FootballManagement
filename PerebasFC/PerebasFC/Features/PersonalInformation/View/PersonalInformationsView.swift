@@ -8,12 +8,31 @@
 import UIKit
 import YPImagePicker
 
+//TODO: INSERIR IMAGEM E BAIXAR DO FIREBASE
+// https://www.youtube.com/watch?v=YgjYVbg1oiA
+
 protocol PersonalInformationsViewDelegate: AnyObject {
     func handleGoToPasswordFlowButtonTap()
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel)
 }
 
 final class PersonalInformationsView: UIView {
+    
+    var modifiedModel: PersonalInformationsViewModel {
+        get {
+            return PersonalInformationsViewModel(
+                name: userNameTextField.text,
+                lastName: lastNameTextField.text,
+                birthDate: birthDatePicker.date,
+                position: positionNumberTextField.text,
+                shirtNumber: shirtNumberTextField.text,
+                type: MemberType(rawValue: userTypeTextField.text) ?? .player,
+                medicalInsurance: medicalInsuranceTextField.text,
+                emergencyPhoneNumber: emergencyPhoneNumberTextField.text,
+                category: playerCategoryTextField.text,
+                image: profileImageView.currentImage?.pngData() ?? Data())
+        }
+    }
     
     var model: PersonalInformationsViewModel?
     var controller: UIViewController?
@@ -67,6 +86,7 @@ final class PersonalInformationsView: UIView {
         button.layer.cornerRadius = 15
         button.tintColor = .gold
         button.imageView?.contentMode = .scaleAspectFill
+        button.isUserInteractionEnabled = false
         
         return button
     }()
@@ -118,6 +138,16 @@ final class PersonalInformationsView: UIView {
         textField.placeholder = "Número da camisa"
         textField.isUserInteractionEnabled = false
         textField.title = "Número da camisa"
+        
+        return textField
+    }()
+    
+    private lazy var positionNumberTextField: TextFieldComponent = {
+        let textField = TextFieldComponent()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Posição"
+        textField.isUserInteractionEnabled = false
+        textField.title = "Posição do jogador em campo"
         
         return textField
     }()
@@ -246,10 +276,11 @@ final class PersonalInformationsView: UIView {
         shirtNumberTextField.text = model.shirtNumber
         medicalInsuranceTextField.text = model.medicalInsurance
         emergencyPhoneNumberTextField.text = model.emergencyPhoneNumber
+        positionNumberTextField.text = model.position
         playerCategoryTextField.text = model.category
         
         if let image = model.image {
-            profileImageView.setImage(image, for: .normal)
+            profileImageView.setImage(UIImage(data: image), for: .normal)
         }
         
         self.model = model
@@ -263,6 +294,7 @@ final class PersonalInformationsView: UIView {
     func setupPlayerCategoryField(isEnabledForEdition: Bool){
         playerCategoryTextField.isHidden = isEnabledForEdition
         playerCategoryPicker.isHidden = !isEnabledForEdition
+        profileImageView.isUserInteractionEnabled = isEnabledForEdition
         
         userTypeTextField.isHidden = isEnabledForEdition
         userTypePicker.isHidden = !isEnabledForEdition
@@ -283,6 +315,7 @@ final class PersonalInformationsView: UIView {
             lastNameTextField,
             birthDatePicker,
             shirtNumberTextField,
+            positionNumberTextField,
             userTypeTextField,
             userTypePicker,
             playerCategoryTextField,
@@ -335,6 +368,9 @@ final class PersonalInformationsView: UIView {
             
             userTypeTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             userTypeTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            
+            positionNumberTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
+            positionNumberTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
             medicalInsuranceTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             medicalInsuranceTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),

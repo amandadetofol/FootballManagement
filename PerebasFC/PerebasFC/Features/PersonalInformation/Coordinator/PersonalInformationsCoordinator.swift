@@ -14,14 +14,20 @@ protocol PersonalInformationsCoordinatorProtocol {
         confirmationAction: @escaping(()->Void))
     func goToBack()
     func handleGoToChangePasswordFlow()
+    func showLoading()
+    func removeLoading()
+    func showUpdateSuccessPopUp()
+    func showUpdateErrorPopUp()
 }
 
 final class PersonalInformationsCoordinator: PersonalInformationsCoordinatorProtocol {
     
+    private let loader: LoaderCoodinator
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
     func showErrorMessageAlert() {
@@ -74,6 +80,44 @@ final class PersonalInformationsCoordinator: PersonalInformationsCoordinatorProt
         navigationController.pushViewController(
             ChangePasswordFactory.getChangePasswordViewController(
                 navigationController: navigationController),
+            animated: true)
+    }
+    
+    func showLoading(){
+        loader.showLoader()
+    }
+    
+    func removeLoading() {
+        loader.removeLoader()
+    }
+    
+    func showUpdateSuccessPopUp(){
+        let alert = UIAlertController(
+            title: "Dados atualizados!",
+            message: "Seus dados foram atualizados com sucesso.",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default,
+                handler: nil))
+        navigationController.present(
+            alert,
+            animated: true)
+    }
+
+    func showUpdateErrorPopUp(){
+        let alert = UIAlertController(
+            title: "Ops!",
+            message: "Algo deu errado :( \n Clique na opção Editar e em seguida em OK para realizar o processo novamente.",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default,
+                handler: nil))
+        navigationController.present(
+            alert,
             animated: true)
     }
     

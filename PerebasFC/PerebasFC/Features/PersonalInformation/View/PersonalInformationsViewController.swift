@@ -13,9 +13,12 @@ protocol PersonalInformationsInteractorProtocol {
     func handleGoToEditDataFlow()
     func handleGoToBlockEdition()
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel)
+    func handleEdit(model: PersonalInformationsViewModel)
 }
 
 final class PersonalInformationsViewController: UIViewController {
+    
+    var model: PersonalInformationsViewModel?
     
     private lazy var personalInformationsView: PersonalInformationsView = {
         let view = PersonalInformationsView()
@@ -99,6 +102,8 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
             action: #selector(handleGoToEditDataFlowSelected))
         personalInformationsView.updateAccessibiltiy(isEnabledForEdition: false)
         personalInformationsView.setupPlayerCategoryField(isEnabledForEdition: false)
+        
+        interactor.handleEdit(model: personalInformationsView.modifiedModel)
     }
     
 }
