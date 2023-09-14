@@ -45,6 +45,17 @@ final class FinancialPendencieCardView: UIControl {
         return label
     }()
     
+    private lazy var reasonLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.textColor = .darkGray
+        
+        return label
+    }()
+    
     private lazy var arrowImageView: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "arrow.right"))
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -70,6 +81,7 @@ final class FinancialPendencieCardView: UIControl {
         dollarSignImageView.tintColor = model.isLate ? .systemRed : .systemGreen
         titleLabel.text = model.title
         descriptionLabel.text = model.actionLabel
+        reasonLabel.text = model.reason
         if model.isLate {
             descriptionLabel.text = "Anexar comprovante"
         }
@@ -79,7 +91,7 @@ final class FinancialPendencieCardView: UIControl {
     func updateAccessibility(model: FinancialPendencieCardViewModel) {
         isAccessibilityElement = true
         accessibilityTraits = .button
-        accessibilityLabel = "\(model.title) \((model.isLate ? "Esta atrasado. Realize o pagamento e anexe o comprovante." : "Conta em dia!")). Item \(model.currentIndex ?? 0) de \(model.total ?? 0) \(model.actionLabel)"
+        accessibilityLabel = "\(model.title) \((model.isLate ? "\(model.reason). Realize o pagamento e anexe o comprovante." : "Conta em dia!")). Item \(model.currentIndex ?? 0) de \(model.total ?? 0) \(model.actionLabel)"
     }
     
     private func setupBorders(){
@@ -93,13 +105,14 @@ final class FinancialPendencieCardView: UIControl {
             dollarSignImageView,
             titleLabel,
             descriptionLabel,
+            reasonLabel,
             arrowImageView])
         addTarget(self, action: #selector(handleFinancialPendencieCardTap), for: .touchUpInside)
     }
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 76),
+            heightAnchor.constraint(equalToConstant: 92),
             
             dollarSignImageView.heightAnchor.constraint(equalToConstant: 24),
             dollarSignImageView.widthAnchor.constraint(equalToConstant: 24),
@@ -113,6 +126,10 @@ final class FinancialPendencieCardView: UIControl {
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: dollarSignImageView.trailingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -16),
+            
+            reasonLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
+            reasonLabel.leadingAnchor.constraint(equalTo: dollarSignImageView.trailingAnchor, constant: 16),
+            reasonLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -16),
             
             arrowImageView.heightAnchor.constraint(equalToConstant: 16),
             arrowImageView.widthAnchor.constraint(equalToConstant: 16),

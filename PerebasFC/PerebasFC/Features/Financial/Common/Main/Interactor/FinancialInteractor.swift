@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol FinancialPendenciesPresenterProtocol {
     func updateView(basedOn selectIndex: Int)
-    func updateView(with model: [FinancialPendencieCardViewModel])
+    func updateView(with model: [QueryDocumentSnapshot]?)
 }
 
 final class FinancialInteractor: FinancialPendenciesInteractorProtocol {
@@ -27,8 +28,11 @@ final class FinancialInteractor: FinancialPendenciesInteractorProtocol {
     }
     
     func viewDidLoad() {
+        coordinator.showLoading()
         worker.getFinancialData { [weak self] data in
-            self?.presenter.updateView(with: data)
+            guard let self else { return }
+            self.coordinator.removeLoading()
+            self.presenter.updateView(with: data)
         }
     }
     

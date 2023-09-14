@@ -15,7 +15,9 @@ final class PendenciesDisclaimerView: UIView {
         stackView.isAccessibilityElement = false
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 4
+        stackView.spacing = 16
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        stackView.isLayoutMarginsRelativeArrangement = true
         stackView.isUserInteractionEnabled = true
         
         return stackView
@@ -85,9 +87,9 @@ final class PendenciesDisclaimerView: UIView {
     
     func updateView(with model: PendenciesDisclaimerViewModel){
         itemNameLabel.text = model.itemName
-        initialValueLabel.text = model.initialValue
-        daysLateValue.text = model.daysLate
-        totalValue.text = model.totalValue
+        initialValueLabel.text = "Valor inicial: \(model.initialValue)"
+        daysLateValue.text = "Dias em atraso \(model.daysLate)"
+        totalValue.text = "Valor total: \(model.totalValue)"
         if let otherReason = model.otherReason {
             otherReasonLabel.text = otherReason
         }

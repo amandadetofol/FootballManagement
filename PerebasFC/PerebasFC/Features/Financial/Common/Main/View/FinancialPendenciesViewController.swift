@@ -61,7 +61,7 @@ final class FinancialPendenciesViewController: UIViewController {
         
         setupSegmentedControl()
         interactor.viewDidLoad()
-        interactor.updateView(basedOn: 1)
+
     }
     
     private func setupSegmentedControl(){
@@ -124,6 +124,7 @@ extension FinancialPendenciesViewController: FinancialViewProtocol {
     
     func updateView(with model: [FinancialPendencieCardViewModel]) {
         self.model = model
+        updateViewForPayed()
     }
 
 }

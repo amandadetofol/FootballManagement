@@ -14,13 +14,19 @@ protocol FinancialDetailsPresenterProtocol {
 
 final class FinancialDetailsInteractor: FinancialDetailsInteractorProtocol {
  
+    private let coordinator: FinancialDetailsCoordinatorProtocol
+    private let worker: FinancialCommonDetailsWorkerProtocol
     private let financialDetailsViewModel: FinancialDetailsViewModel
     private let presenter: FinancialDetailsPresenterProtocol
     
     init(financialDetailsViewModel: FinancialDetailsViewModel,
-         presenter: FinancialDetailsPresenterProtocol) {
+         presenter: FinancialDetailsPresenterProtocol,
+         worker: FinancialCommonDetailsWorkerProtocol,
+         coordinator: FinancialDetailsCoordinatorProtocol) {
         self.financialDetailsViewModel = financialDetailsViewModel
         self.presenter = presenter
+        self.worker = worker
+        self.coordinator = coordinator
     }
  
     func viewDidLoad() {
@@ -29,6 +35,23 @@ final class FinancialDetailsInteractor: FinancialDetailsInteractorProtocol {
     
     func handleAddProofButtonTap() {
         presenter.handleAddProofButtonTap()
+    }
+    
+    func addNewProof(itemId: Int, data: Data) {
+        coordinator.showLoading()
+        worker.addProof(
+            itemId: itemId,
+            proofData: data) { [weak self] succeded in
+                
+                guard let self else { return }
+                self.coordinator.removeLoading()
+                
+                if succeded {
+                    self.coordinator.showUploadSuccessAlert()
+                } else {
+                    self.coordinator.showUploadErrorAlert()
+                }
+            }
     }
     
 }

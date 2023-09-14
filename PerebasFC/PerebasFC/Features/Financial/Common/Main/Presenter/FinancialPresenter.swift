@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol FinancialViewProtocol: AnyObject {
     func updateViewForPayed()
@@ -28,8 +29,25 @@ final class FinancialPresenter: FinancialPendenciesPresenterProtocol {
         }
     }
     
-    func updateView(with model: [FinancialPendencieCardViewModel]) {
-        view?.updateView(with: model)
+    func updateView(with model: [QueryDocumentSnapshot]?) {
+        let viewModel = parseFirebaseSnapshotToFinancialPendenciesCardViewModel(model: model)
+        view?.updateView(with: viewModel)
+    }
+    
+    //MARK: Private methods
+    private func parseFirebaseSnapshotToFinancialPendenciesCardViewModel(model: [QueryDocumentSnapshot]?) -> [FinancialPendencieCardViewModel] {
+        guard let model = model else { return [] }
+        return model.enumerated().map({ (index, model) in
+            FinancialPendencieCardViewModel(
+                title: model["title"] as? String ?? "",
+                isLate: model["isLate"] as? Bool ?? Bool(),
+                initialValue: model["initialValue"] as? Float ?? 0.0,
+                numberOfDaysLate: model["numberOfDaysLate"] as? Int ?? 0,
+                hasProof: model["hasProof"] as? Bool ?? false,
+                proofUrl: model["proofUrl"] as? String,
+                id: index+1,
+                reason: model["reason"] as? String ?? "")
+        })
     }
     
 }

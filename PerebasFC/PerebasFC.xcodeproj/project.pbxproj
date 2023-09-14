@@ -139,8 +139,6 @@
 		A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */; };
 		A67360912A393276003BF4C2 /* FinancialDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360902A393276003BF4C2 /* FinancialDetailsInteractor.swift */; };
 		A67360932A393282003BF4C2 /* FinancialDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360922A393282003BF4C2 /* FinancialDetailsFactory.swift */; };
-		A67360982A3933A4003BF4C2 /* SeeProofWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360972A3933A4003BF4C2 /* SeeProofWebView.swift */; };
-		A67360A42A3933F7003BF4C2 /* SeeProofWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A32A3933F7003BF4C2 /* SeeProofWebViewController.swift */; };
 		A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A52A393714003BF4C2 /* PendencieDisclaimerView.swift */; };
 		A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A72A393733003BF4C2 /* PendenciesDisclaimerView.swift */; };
 		A67360AA2A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A92A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift */; };
@@ -193,6 +191,8 @@
 		A69E89362A8AF13A008C09DC /* FinancialAdministratorMainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E89352A8AF13A008C09DC /* FinancialAdministratorMainFactory.swift */; };
 		A69E89392A8AF14B008C09DC /* FinancialAdministratorMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E89382A8AF14B008C09DC /* FinancialAdministratorMainCoordinator.swift */; };
 		A69E893C2A8AF174008C09DC /* TitleAndDescriptionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E893B2A8AF174008C09DC /* TitleAndDescriptionCardView.swift */; };
+		A69F01B12AB369ED00EE538F /* FinancialCommonDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F01B02AB369ED00EE538F /* FinancialCommonDetailsWorker.swift */; };
+		A69F01B42AB370FC00EE538F /* FinancialAdministratorDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F01B32AB370FC00EE538F /* FinancialAdministratorDetailsCoordinator.swift */; };
 		A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741602A2550FF009A7998 /* WeekTeamListItemView.swift */; };
 		A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741632A255360009A7998 /* WeekTeamListViewModel.swift */; };
 		A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741652A2561ED009A7998 /* WeekTeamInteractor.swift */; };
@@ -434,8 +434,6 @@
 		A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsPresenter.swift; sourceTree = "<group>"; };
 		A67360902A393276003BF4C2 /* FinancialDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsInteractor.swift; sourceTree = "<group>"; };
 		A67360922A393282003BF4C2 /* FinancialDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsFactory.swift; sourceTree = "<group>"; };
-		A67360972A3933A4003BF4C2 /* SeeProofWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeProofWebView.swift; sourceTree = "<group>"; };
-		A67360A32A3933F7003BF4C2 /* SeeProofWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeProofWebViewController.swift; sourceTree = "<group>"; };
 		A67360A52A393714003BF4C2 /* PendencieDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendencieDisclaimerView.swift; sourceTree = "<group>"; };
 		A67360A72A393733003BF4C2 /* PendenciesDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendenciesDisclaimerView.swift; sourceTree = "<group>"; };
 		A67360A92A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendenciesDisclaimerViewModel.swift; sourceTree = "<group>"; };
@@ -487,6 +485,8 @@
 		A69E89352A8AF13A008C09DC /* FinancialAdministratorMainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorMainFactory.swift; sourceTree = "<group>"; };
 		A69E89382A8AF14B008C09DC /* FinancialAdministratorMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorMainCoordinator.swift; sourceTree = "<group>"; };
 		A69E893B2A8AF174008C09DC /* TitleAndDescriptionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndDescriptionCardView.swift; sourceTree = "<group>"; };
+		A69F01B02AB369ED00EE538F /* FinancialCommonDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialCommonDetailsWorker.swift; sourceTree = "<group>"; };
+		A69F01B32AB370FC00EE538F /* FinancialAdministratorDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorDetailsCoordinator.swift; sourceTree = "<group>"; };
 		A6A741602A2550FF009A7998 /* WeekTeamListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamListItemView.swift; sourceTree = "<group>"; };
 		A6A741632A255360009A7998 /* WeekTeamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamListViewModel.swift; sourceTree = "<group>"; };
 		A6A741652A2561ED009A7998 /* WeekTeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamInteractor.swift; sourceTree = "<group>"; };
@@ -1391,12 +1391,14 @@
 		A62C1CEC2A37F6C0002AA401 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				A69F01B22AB370E900EE538F /* Coordinator */,
 				A67360892A393207003BF4C2 /* Factory */,
 				A67360942A393368003BF4C2 /* InternalComponents */,
 				A67360AB2A393C13003BF4C2 /* Model */,
 				A67360882A393203003BF4C2 /* Interactor */,
 				A67360872A393200003BF4C2 /* Presenter */,
 				A67360862A3931FD003BF4C2 /* View */,
+				A69F01AF2AB369DF00EE538F /* Worker */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -1474,7 +1476,6 @@
 		A641618E2A898D8400BF45C4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A67360962A393391003BF4C2 /* SeeProofWebView */,
 				A62C1CEC2A37F6C0002AA401 /* Details */,
 				A62C1CEB2A37F6B4002AA401 /* Main */,
 			);
@@ -1891,23 +1892,6 @@
 			path = PendencieDisclaimerView;
 			sourceTree = "<group>";
 		};
-		A67360962A393391003BF4C2 /* SeeProofWebView */ = {
-			isa = PBXGroup;
-			children = (
-				A67360992A3933B9003BF4C2 /* View */,
-			);
-			path = SeeProofWebView;
-			sourceTree = "<group>";
-		};
-		A67360992A3933B9003BF4C2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A67360972A3933A4003BF4C2 /* SeeProofWebView.swift */,
-				A67360A32A3933F7003BF4C2 /* SeeProofWebViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		A67360AB2A393C13003BF4C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2318,6 +2302,22 @@
 				A69E893B2A8AF174008C09DC /* TitleAndDescriptionCardView.swift */,
 			);
 			path = TitleAndDescriptionCard;
+			sourceTree = "<group>";
+		};
+		A69F01AF2AB369DF00EE538F /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A69F01B02AB369ED00EE538F /* FinancialCommonDetailsWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A69F01B22AB370E900EE538F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A69F01B32AB370FC00EE538F /* FinancialAdministratorDetailsCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		A6A7415F2A2550EB009A7998 /* InternalComponent */ = {
@@ -3009,6 +3009,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69F01B42AB370FC00EE538F /* FinancialAdministratorDetailsCoordinator.swift in Sources */,
 				A60B1A3E2A71E048007F71ED /* NewEventInCalendarViewModel.swift in Sources */,
 				A61A8F7E2A14345F009D08EE /* LoginViewController.swift in Sources */,
 				A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */,
@@ -3054,7 +3055,6 @@
 				A61C0CC72AAFD1190012BACC /* SignUpInteractor.swift in Sources */,
 				A68E76212A94398300599C25 /* FinancialAdministratorHistoryListView.swift in Sources */,
 				A60B1A422A71E05F007F71ED /* NewEventInCalendarInteractor.swift in Sources */,
-				A67360982A3933A4003BF4C2 /* SeeProofWebView.swift in Sources */,
 				A6D2488B2A830D28004951FD /* ParticipantCellView.swift in Sources */,
 				A6730F072AAA5733000D6B72 /* PresenceCardViewModel.swift in Sources */,
 				A6E6BB182A733B0C0063A62A /* SignOutWorker.swift in Sources */,
@@ -3097,6 +3097,7 @@
 				A69E89342A8AF128008C09DC /* FinancialAdministratorMainPresenter.swift in Sources */,
 				A6031A142A91891100E19E3A /* AministratorPendenciesDetailsView.swift in Sources */,
 				A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */,
+				A69F01B12AB369ED00EE538F /* FinancialCommonDetailsWorker.swift in Sources */,
 				A6FCDA5F2A81BBE300B095E5 /* SortCardViewModel.swift in Sources */,
 				A60319FC2A91731B00E19E3A /* AdministratorPendenciesWorker.swift in Sources */,
 				A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */,
@@ -3248,7 +3249,6 @@
 				A6AF78D12AA6A1D200174B83 /* ParticipantsSelectorCardViewModel.swift in Sources */,
 				A69E893C2A8AF174008C09DC /* TitleAndDescriptionCardView.swift in Sources */,
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
-				A67360A42A3933F7003BF4C2 /* SeeProofWebViewController.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
 				A6031A1C2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift in Sources */,
 				A61CFFF62A3BDC3C0026BAF1 /* EditAwardsInteractor.swift in Sources */,

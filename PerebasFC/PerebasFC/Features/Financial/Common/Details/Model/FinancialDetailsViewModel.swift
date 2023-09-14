@@ -10,5 +10,6 @@ import Foundation
 struct FinancialDetailsViewModel {
     let informativeText: String
     let disclaimer: PendenciesDisclaimerViewModel
-    let actionTitle: String 
+    let actionTitle: String
+    let index: Int 
 }

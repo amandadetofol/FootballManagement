@@ -10,6 +10,7 @@ import UIKit
 protocol FinancialDetailsInteractorProtocol {
     func viewDidLoad()
     func handleAddProofButtonTap()
+    func addNewProof(itemId: Int, data: Data)
 }
 
 final class FinancialDetailsViewController: UIViewController {
@@ -43,7 +44,7 @@ final class FinancialDetailsViewController: UIViewController {
 }
 
 extension FinancialDetailsViewController: FinancialDetailsViewDelegate {
-   
+    
     func handleAddProofButtonTap() {
         interactor.handleAddProofButtonTap()
     }
@@ -57,29 +58,27 @@ extension FinancialDetailsViewController: FinancialDetailsViewProtocol {
     }
     
     func showAddNewProofItem() {
-         let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
-         documentPicker.delegate = self
-         documentPicker.allowsMultipleSelection = false
-         present(documentPicker, animated: true, completion: nil)
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.content"], in: .import)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        present(documentPicker, animated: true, completion: nil)
     }
     
 }
 
 extension FinancialDetailsViewController: UIDocumentPickerDelegate {
     
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        if let fileURL = urls.first {
-            // Aqui você pode utilizar o arquivo selecionado, por exemplo:
-            // - Armazenar em algum local
-            // - Enviar para um servidor
-            // - Processar o conteúdo do arquivo
-            
-            print("Arquivo selecionado: \(fileURL.absoluteString)")
+    func documentPicker(
+        _ controller: UIDocumentPickerViewController,
+        didPickDocumentsAt urls: [URL]) {
+            guard let selectedFileURL = urls.first else { return }
+            do {
+                let fileData = try Data(contentsOf: selectedFileURL)
+                interactor.addNewProof(
+                    itemId: financialDetailsView.index ?? 0,
+                    data: fileData)
+            } catch {
+                return
+            }
         }
-    }
-    
-    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-        // O usuário cancelou a seleção do documento
-    }
-    
 }

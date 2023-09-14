@@ -9,15 +9,21 @@ import UIKit
 
 final class FinancialDetailsFactory {
     
-    static func getFinancialDetailsViewController(model: FinancialDetailsViewModel) -> FinancialDetailsViewController {
-        let presenter = FinancialDetailsPresenter()
-        let interactor = FinancialDetailsInteractor(
-            financialDetailsViewModel: model,
-            presenter: presenter)
-        let viewController = FinancialDetailsViewController(interactor: interactor)
-        presenter.view = viewController
-        
-        return viewController
-    }
+    static func getFinancialDetailsViewController(
+        model: FinancialDetailsViewModel,
+        navigationController: UINavigationController) -> FinancialDetailsViewController {
+            let presenter = FinancialDetailsPresenter()
+            let coordinator = FinancialDetailsCoordinator(navigationController: navigationController)
+            let worker = FinancialCommonDetailsWorker()
+            let interactor = FinancialDetailsInteractor(
+                financialDetailsViewModel: model,
+                presenter: presenter,
+                worker: worker,
+                coordinator: coordinator)
+            let viewController = FinancialDetailsViewController(interactor: interactor)
+            presenter.view = viewController
+            
+            return viewController
+        }
     
 }

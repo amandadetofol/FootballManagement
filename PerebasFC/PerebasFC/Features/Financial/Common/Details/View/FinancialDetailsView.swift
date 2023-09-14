@@ -14,6 +14,7 @@ protocol FinancialDetailsViewDelegate: AnyObject {
 final class FinancialDetailsView: UIView {
     
     weak var delegate: FinancialDetailsViewDelegate?
+    var index: Int? 
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -93,6 +94,7 @@ final class FinancialDetailsView: UIView {
         informativeTextLabel.text = model.informativeText
         disclaimerView.updateView(with: model.disclaimer)
         addProofButton.setTitle(model.actionTitle, for: .normal)
+        self.index = model.index
     }
     
     private func setupView(){

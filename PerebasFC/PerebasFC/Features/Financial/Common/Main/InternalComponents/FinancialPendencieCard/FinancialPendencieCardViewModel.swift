@@ -14,6 +14,8 @@ struct FinancialPendencieCardViewModel {
     let numberOfDaysLate: Int?
     let hasProof: Bool
     let proofUrl: String?
+    let id: Int
+    let reason: String 
     var actionLabel: String = "Ver Comprovante"
     var currentIndex: Int?
     var total: Int?

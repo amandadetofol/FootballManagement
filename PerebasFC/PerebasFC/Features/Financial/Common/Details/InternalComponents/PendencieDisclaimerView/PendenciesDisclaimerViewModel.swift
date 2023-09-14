@@ -9,8 +9,13 @@ import Foundation
 
 struct PendenciesDisclaimerViewModel {
     let itemName: String
-    let initialValue: String
-    let daysLate: String
+    let initialValue: Float
+    let daysLate: Int
     let otherReason: String?
-    let totalValue: String
+    
+    var totalValue: Float {
+        get {
+            return initialValue + Float(daysLate)
+        }
+    }
 }
