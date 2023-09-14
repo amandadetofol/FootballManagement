@@ -68,40 +68,23 @@ final class LoginWorker: LoginWorkerProtocol {
                         return
                     }
                 
-                    let isAdm =  checkIfUserIsAdm(email: username)
+                    self.checkIfUserIsAdm(email: username) { isAdm in
+                        Session.shared.isAdm = isAdm
+                        Session.shared.loggedUserEmail = username
+                        completion(self.getMockUser(isAdm: isAdm))
+                    }
 
-                    Session.shared.isAdm = isAdm
-                    Session.shared.loggedUserEmail = username
-                    completion(self.getMockUser(isAdm: isAdm))
                 }
         }
     
-    private func checkIfUserIsAdm(email: String) -> Bool {
-        
-        let userReferece = firestoreProvider.collection("perebasfc")
-        var isAdm = false
-        userReferece.getDocuments { data, error in
-            guard let data = data,
-                  error == nil else {
-                isAdm = false
+    private func checkIfUserIsAdm(email: String, completion: @escaping((Bool)-> Void)) {
+        firestoreProvider.collection("perebasfc").document(email).getDocument { document, error in
+            guard error == nil else {
+                completion(false)
                 return
             }
-            
-            data.documents.forEach { recoveredDocument in
-                guard let recoveredEmail = recoveredDocument["email"] as? String,
-                      let recoveredIsAdm = recoveredDocument["isAdm"] as? Bool else {
-                    isAdm = false
-                    return
-                }
-                
-                if email.lowercased() == recoveredEmail.lowercased() {
-                    isAdm = recoveredIsAdm
-                    return
-                }
-                
-            }
+            completion(document?["isAdm"] as? Bool ?? false)
         }
-        return isAdm
     }
     
 }

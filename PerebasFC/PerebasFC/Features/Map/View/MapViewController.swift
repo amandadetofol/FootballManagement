@@ -22,7 +22,7 @@ final class MapViewController: UIViewController,
         return webView
     }()
     
-    private let interactor: MapInteractorProtocol
+    private var interactor: MapInteractorProtocol
     
     init(interactor: MapInteractorProtocol) {
         self.interactor = interactor
@@ -62,6 +62,8 @@ final class MapViewController: UIViewController,
 extension MapViewController: MapViewProtocol {
    
     func updateView(with url: String) {
+        interactor.url = url 
+        
         let url = URL(string: url)!
         webView.load(URLRequest(url: url))
     }
@@ -76,9 +78,11 @@ extension MapViewController {
     
     @objc func handleGoToBack(){
         guard let url = interactor.url else { return }
-        interactor.goToBack(hasChangeUrl:
-                                (Session.shared.isAdm ?? false) &&
-                            !(webView.url?.absoluteString.lowercased().contains("badenball") ?? false))
+        interactor.goToBack(
+            hasChangeUrl:
+                (Session.shared.isAdm ?? false) &&
+            !(webView.url?.absoluteString.lowercased().contains("badenball") ?? false),
+            newUrl: webView.url?.absoluteString ?? "")
     }
     
 }

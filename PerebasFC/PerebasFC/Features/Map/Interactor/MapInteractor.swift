@@ -12,7 +12,9 @@ protocol MapInteractorProtocol {
     var url: String? { get set }
     
     func loadView()
-    func goToBack(hasChangeUrl: Bool)
+    func goToBack(
+        hasChangeUrl: Bool,
+        newUrl: String)
     func handleShareButtonTap()
 }
 
@@ -32,9 +34,12 @@ final class MapInteractor: MapInteractorProtocol {
     }
     
     func loadView() {
-        presenter.updateView(
-            with: worker.getLocalUrl())
-        self.url = worker.getLocalUrl()
+        coordinator.showLoading()
+        worker.getLocal { [weak self] documentSnapShot in
+            guard let self else { return }
+            self.coordinator.removeLoading()
+            self.presenter.updateView(with: documentSnapShot)
+        }
     }
     
     func handleShareButtonTap() {
@@ -42,12 +47,25 @@ final class MapInteractor: MapInteractorProtocol {
         coordinator.shareLocalUrl(url: url)
     }
     
-    func goToBack(hasChangeUrl: Bool) {
-        if hasChangeUrl {
-            coordinator.showConfirmLocaleChangeAlert()
-        } else {
-            self.coordinator.goToBack()
+    func goToBack(
+        hasChangeUrl: Bool,
+        newUrl: String) {
+            if hasChangeUrl {
+                coordinator.showConfirmLocaleChangeAlert { [weak self] in
+                    guard let self else { return }
+                    self.coordinator.showLoading()
+                    self.worker.updateGameLocal(
+                        gameLocalNewUrl: newUrl) { succeded in
+                            self.coordinator.removeLoading()
+                            if !succeded {
+                                self.coordinator.showErrorPopUp()
+                            }
+                        }
+                    
+                }
+            } else {
+                self.coordinator.goToBack()
+            }
         }
-    }
  
 }

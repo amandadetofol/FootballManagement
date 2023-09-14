@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol MapPresenterProtocol {
-    func updateView(with url: String)
+    func updateView(with url: DocumentSnapshot?)
 }
 
 protocol MapViewProtocol: AnyObject {
@@ -19,7 +20,12 @@ final class MapPresenter: MapPresenterProtocol {
     
     weak var view: MapViewProtocol?
     
-    func updateView(with url: String){
-        view?.updateView(with: url)
+    func updateView(with url: DocumentSnapshot?){
+        view?.updateView(with: parseDocumentSnapShotToString(documentSnapShot: url))
+    }
+    
+    //MARK: Private method
+    private func parseDocumentSnapShotToString(documentSnapShot: DocumentSnapshot?) -> String {
+        return documentSnapShot?["local"] as? String ?? ""
     }
 }

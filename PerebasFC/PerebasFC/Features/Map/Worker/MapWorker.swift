@@ -6,15 +6,30 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol MapWorkerProtocol {
-    func getLocalUrl() -> String
+    func getLocal(completion: @escaping ((DocumentSnapshot?)-> Void))
+    func updateGameLocal(gameLocalNewUrl: String, completion: @escaping((Bool)->Void))
 }
 
 final class MapWorker: MapWorkerProtocol {
     
-    func getLocalUrl() -> String {
-        return "https://www.google.com.br/maps/place/Badenball+Society/@-26.8789587,-49.1424786,17z/data=!3m1!4b1!4m6!3m5!1s0x94df1dc7d00b3973:0x8087b9461a6d3c37!8m2!3d-26.8789587!4d-49.1399037!16s%2Fg%2F11f121l5ms?entry=ttu"
+    private let firestoreProvider = Firestore.firestore()
+    
+    func getLocal(completion: @escaping ((DocumentSnapshot?)-> Void)) {
+        firestoreProvider.collection("gamelocal").document("local").getDocument { documentSnapShot, error in
+            guard error == nil,
+                  let documentSnapShot = documentSnapShot else { return }
+            completion(documentSnapShot)
+        }
+    }
+    
+    func updateGameLocal(
+        gameLocalNewUrl: String,
+        completion: @escaping((Bool)->Void)){
+            firestoreProvider.collection("gamelocal").document("local").updateData(["local": gameLocalNewUrl])
+            completion(true)
     }
     
 }
