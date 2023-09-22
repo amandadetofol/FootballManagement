@@ -11,5 +11,5 @@ struct FirstPlaceGiftsViewModel {
     let first: String
     let second: String
     let third: String
-    let isAdm: Bool 
+    let isAdm = Session.shared.isAdm ?? false 
 }

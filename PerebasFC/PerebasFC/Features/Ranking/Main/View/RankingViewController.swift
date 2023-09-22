@@ -49,6 +49,14 @@ final class RankingViewController: UIViewController {
 
 extension RankingViewController: RankingViewProtocol {
     
+    func updateViewForPricesErrorState() {
+        rankingView.updateAwardsForErrorState()
+    }
+    
+    func updateView(with firebaseDocumentSnapshot: FirstPlaceGiftsViewModel) {
+        rankingView.updateAwards(model: firebaseDocumentSnapshot)
+    }
+    
     func updateView(with model: RankingViewModel) {
         rankingView.updateView(with: model)
     }

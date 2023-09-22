@@ -30,8 +30,7 @@ final class EditAwardsCoordinator: EditAwardsCoordinatorProtocol {
             vc.updateAwards(model: FirstPlaceGiftsViewModel(
                 first: model.first,
                 second: model.second,
-                third: model.third,
-                isAdm: Session.shared.isAdm ?? false))
+                third: model.third))
             navigationController.popToViewController(vc, animated: true)
         }
     }

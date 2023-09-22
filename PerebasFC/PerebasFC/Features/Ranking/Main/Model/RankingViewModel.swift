@@ -11,6 +11,5 @@ struct RankingViewModel {
     let firstPlaceModel: BarAndTrophyViewModel
     let secondPlaceModel: BarAndTrophyViewModel
     let thirdPlaceModel: BarAndTrophyViewModel
-    let awards: FirstPlaceGiftsViewModel
     let otherParticipants: [CommonnPlacesViewModel]
 }

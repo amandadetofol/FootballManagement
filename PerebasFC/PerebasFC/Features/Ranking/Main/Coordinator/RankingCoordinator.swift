@@ -8,16 +8,20 @@
 import UIKit
 
 protocol RankingCoordinatorProtocol {
+    func showLoading()
+    func dissmissLoading()
     func showAlertErrorPopUp()
     func goToShowEditAwardsView(model: EditAwardsViewModel)
 }
 
 final class RankingCoordinator: RankingCoordinatorProtocol {
-    
+
+    private let loader: LoaderCoodinator
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
     func showAlertErrorPopUp(){
@@ -43,6 +47,14 @@ final class RankingCoordinator: RankingCoordinatorProtocol {
                 navigationController: navigationController,
                 model: model),
             animated: true)
+    }
+    
+    func showLoading(){
+        loader.showLoader()
+    }
+    
+    func dissmissLoading(){
+        loader.removeLoader()
     }
     
 }

@@ -175,8 +175,7 @@ extension EditAwadsView {
         delegate?.handleSetNewAwardsButtonTap(using: FirstPlaceGiftsViewModel(
             first: firstAwardTextField.text,
             second: secondAwardTextField.text,
-            third: thirdAwardTextField.text,
-            isAdm: Session.shared.isAdm ?? false))
+            third: thirdAwardTextField.text))
     }
     
     @objc func handleBackButtonTap(){

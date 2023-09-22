@@ -6,12 +6,26 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol RankingWorkerProtocol {
+    func getPrices(_ completion: @escaping((DocumentSnapshot?)->Void))
     func getRanking(_ completion: @escaping ((RankingViewModel?) -> Void))
 }
 
 final class RankingWorker: RankingWorkerProtocol {
+    
+    private let firebaseFirestoreRankingProvider = Firestore.firestore().collection("ranking").document("price")
+    
+    func getPrices(_ completion: @escaping((DocumentSnapshot?)->Void)) {
+        firebaseFirestoreRankingProvider.getDocument { parseDocumentSnapshot, error in
+            guard error == nil else {
+                completion(nil)
+                return
+            }
+            completion(parseDocumentSnapshot)
+        }
+    }
     
     func getRanking(_ completion: @escaping ((RankingViewModel?) -> Void)) {
        
@@ -33,12 +47,6 @@ final class RankingWorker: RankingWorkerProtocol {
                 postiionLabel: 3,
                 barColor: .gold,
                 trophyColor: .browned
-            ),
-            awards: FirstPlaceGiftsViewModel(
-                first: "1 - Premio 01",
-                second: "2 - Premio 02",
-                third: "3 - Premio 03",
-                isAdm: Session.shared.isAdm ?? false 
             ),
             otherParticipants: [
                 CommonnPlacesViewModel(

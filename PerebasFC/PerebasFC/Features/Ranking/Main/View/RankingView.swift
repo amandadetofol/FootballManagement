@@ -15,6 +15,7 @@ final class RankingView: UIView {
     
     weak var delegate: RankingViewDelegate?
     var model: RankingViewModel?
+    var award: FirstPlaceGiftsViewModel?
     
     private lazy var firstPlacesView: FirstPlacesDifferentView = {
         let firstPlacesView = FirstPlacesDifferentView()
@@ -75,6 +76,11 @@ final class RankingView: UIView {
     
     func updateAwards(model: FirstPlaceGiftsViewModel){
         self.awardsView.updateView(with: model)
+        self.award = model
+    }
+    
+    func updateAwardsForErrorState(){
+        self.awardsView.isHidden = true
     }
     
     func updateView(with model: RankingViewModel){
@@ -82,7 +88,6 @@ final class RankingView: UIView {
             firstPlaceModel: model.firstPlaceModel,
             secondPlaceModel: model.secondPlaceModel,
             thirdPlaceModel: model.thirdPlaceModel)
-        self.awardsView.updateView(with: model.awards)
         
         model.otherParticipants.forEach { participantViewModel in
             let card = CommonnPlacesView()
@@ -134,9 +139,9 @@ extension RankingView: FirstPlacesGiftsViewDelegate {
     func handleEditAwardsButtonTap() {
         delegate?.handleEditAwardsButtonTap(
             model: EditAwardsViewModel(
-                currentFirstAward: model?.awards.first ?? "",
-                currentSecondAward: model?.awards.second ?? "",
-                currentThirdAward: model?.awards.third ?? ""))
+                currentFirstAward: award?.first ?? "",
+                currentSecondAward: award?.second ?? "",
+                currentThirdAward: award?.third ?? ""))
     }
     
 }
