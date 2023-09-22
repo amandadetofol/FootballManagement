@@ -6,21 +6,29 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 protocol ChangePasswordWorkerProtocol {
     func sendPasswordChangeToServer(
-        oldPassword: String,
         newPassword: String,
         completion: @escaping ((Bool) -> Void))
 }
 
 final class ChangePasswordWorker: ChangePasswordWorkerProtocol {
     
+    private let firebaseAuthProvider = Auth.auth()
+    
     func sendPasswordChangeToServer(
-        oldPassword: String,
         newPassword: String,
         completion: @escaping ((Bool) -> Void)) {
-            completion(true)
+            firebaseAuthProvider.currentUser?.updatePassword(to: newPassword, completion: { error in
+                guard error == nil else {
+                    completion(false)
+                    return
+                }
+                
+                completion(true)
+            })
         }
     
 }

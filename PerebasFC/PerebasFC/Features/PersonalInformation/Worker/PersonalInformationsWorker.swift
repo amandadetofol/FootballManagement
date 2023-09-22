@@ -25,11 +25,11 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
     func getPersonalInformations(_ completion: @escaping ((PersonalInformationsViewModel?) -> Void)) {
         firestoreProvider.document("perebasfc/\(Session.shared.loggedUserEmail ?? "")").getDocument { [weak self] document, error in
             guard error == nil,
-                let self = self else {
+                  let self = self else {
                 completion(nil)
                 return
             }
-        
+            
             completion(
                 PersonalInformationsViewModel(
                     name: document?["name"] as? String ?? "",
@@ -60,13 +60,17 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                 "medicalInsurance": personalInformations.medicalInsurance,
                 "emergencyPhoneNumber": personalInformations.emergencyPhoneNumber,
                 "category": personalInformations.category,
-            ])
+            ], completion: { error in
+                guard error == nil else {
+                    completion(false)
+                    return
+                }
+                completion(true)
+            })
             
             if changeImage {
                 uploadImage(image: personalInformations.image ?? UIImage())
             }
-            
-            completion(true)
         }
     
     //MARK: Private methods

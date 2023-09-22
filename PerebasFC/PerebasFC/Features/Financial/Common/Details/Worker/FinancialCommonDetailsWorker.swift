@@ -43,8 +43,9 @@ final class FinancialCommonDetailsWorker: FinancialCommonDetailsWorkerProtocol {
                     
                     self.addProofUrlToFirestore(
                         itemId: itemId,
-                        proofUrl: url.absoluteString)
-                    completion(true)
+                        proofUrl: url.absoluteString, completion: { succeded in
+                            completion(succeded)
+                        })
                 }
             }
         }
@@ -52,7 +53,8 @@ final class FinancialCommonDetailsWorker: FinancialCommonDetailsWorkerProtocol {
     //MARK: Private method
     private func addProofUrlToFirestore(
         itemId: Int,
-        proofUrl: String){
+        proofUrl: String,
+        completion: @escaping(Bool)->Void){
             let email = Session.shared.loggedUserEmail ?? ""
             let userReference = Firestore.firestore().collection("perebasfc/")
             let financialReference = userReference.document(email).collection("comum-financeiro").document("\(itemId)")
@@ -60,7 +62,13 @@ final class FinancialCommonDetailsWorker: FinancialCommonDetailsWorkerProtocol {
                 "proofUrl" : proofUrl,
                 "hasProof": true,
                 "reason": "Aguardando administrador",
-            ])
+            ], completion: { error in
+                guard error == nil else {
+                    completion(false)
+                    return
+                }
+                completion(true)
+            })
         }
     
 }

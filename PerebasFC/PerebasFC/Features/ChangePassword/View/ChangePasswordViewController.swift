@@ -8,9 +8,7 @@
 import UIKit
 
 protocol ChangePasswordInteractorProtocol {
-    func handleConfirmPasswordChangeButtonTap(
-        oldPassword: String,
-        newPassword: String)
+    func handleConfirmPasswordChangeButtonTap(changePasswordModel: ChangePasswordModel)
 }
 
 final class ChangePasswordViewController: UIViewController {
@@ -47,12 +45,24 @@ final class ChangePasswordViewController: UIViewController {
 
 extension ChangePasswordViewController: ChangePasswordViewDelegate {
    
-    func handleConfirmPasswordChangeButtonTap(
-        oldPassword: String,
-        newPassword: String) {
-            interactor.handleConfirmPasswordChangeButtonTap(
-                oldPassword: oldPassword,
-                newPassword: newPassword)
+    func handleConfirmPasswordChangeButtonTap(changePasswordModel: ChangePasswordModel) {
+            interactor.handleConfirmPasswordChangeButtonTap(changePasswordModel: changePasswordModel)
+    }
+    
+}
+
+extension ChangePasswordViewController: ChangePasswordViewProtocol {
+    
+    func updateNewPasswordTextFieldForErrorState() {
+        changePasswordView.shouldShowNewPasswordTextFieldError = true
+    }
+    
+    func updateConfirmNewPasswordTextFieldForErrorState() {
+        changePasswordView.shouldShowNewPasswordConfirmTextFieldError = true
+    }
+    
+    func updateViewForMismatichingPasswordsState() {
+        changePasswordView.shouldShowPasswordsMismatchingError = true
     }
     
 }

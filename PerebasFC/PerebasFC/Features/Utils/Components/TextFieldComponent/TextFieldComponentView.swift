@@ -138,7 +138,7 @@ final class TextFieldComponent: UIView {
         let button = UIButton()
         button.setImage(
             UIImage(
-                systemName: showIcon ? "eye.fill" : "eye.slash.fill"),
+                systemName: "eye.slash.fill"),
             for: .normal)
         button.addTarget(nil, action: #selector(handleEyeToggle), for: .touchUpInside)
         textField.rightView = button
@@ -194,7 +194,6 @@ extension TextFieldComponent: UITextFieldDelegate {
 extension TextFieldComponent {
     
     @objc func handleEyeToggle(){
-        showIcon.toggle()
         let button = UIButton()
         button.setImage(
             UIImage(
@@ -204,6 +203,7 @@ extension TextFieldComponent {
         textField.rightView = button
         textField.rightViewMode = .always
         textField.isSecureTextEntry = !showIcon
+        showIcon.toggle()
     }
     
 }

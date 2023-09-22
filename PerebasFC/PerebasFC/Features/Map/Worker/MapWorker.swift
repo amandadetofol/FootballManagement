@@ -28,8 +28,15 @@ final class MapWorker: MapWorkerProtocol {
     func updateGameLocal(
         gameLocalNewUrl: String,
         completion: @escaping((Bool)->Void)){
-            firestoreProvider.collection("gamelocal").document("local").updateData(["local": gameLocalNewUrl])
-            completion(true)
-    }
+            firestoreProvider.collection("gamelocal").document("local").updateData(["local": gameLocalNewUrl],
+                                                                                   completion: { error in
+                guard error == nil else {
+                    completion(false)
+                    return
+                }
+                completion(true)
+            })
+            
+        }
     
 }
