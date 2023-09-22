@@ -34,6 +34,7 @@ final class AccessibilityManagerViewController: UIViewController {
         self.view.addSubview(accessibilityManagerView)
         setupConstraints()
         interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     @available(*, unavailable)

@@ -61,6 +61,7 @@ final class ParticipantsManagerViewController: UIViewController {
         setupSegmentedControl()
         interactor.viewDidLoad()
         interactor.updateView(basedOn: 1)
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     private func setupSegmentedControl(){

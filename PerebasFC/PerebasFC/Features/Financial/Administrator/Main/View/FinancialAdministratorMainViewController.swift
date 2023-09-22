@@ -40,6 +40,7 @@ final class FinancialAdministratorMainViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.view = financialAdministratorMainView
         interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

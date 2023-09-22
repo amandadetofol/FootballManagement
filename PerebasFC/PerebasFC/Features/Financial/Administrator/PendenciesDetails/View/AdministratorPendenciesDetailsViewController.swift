@@ -41,6 +41,7 @@ final class AdministratorPendenciesDetailsViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Detalhes"
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

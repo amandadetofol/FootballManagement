@@ -28,6 +28,7 @@ final class EventPresenceViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Lista de Presença"
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     @available(*, unavailable)

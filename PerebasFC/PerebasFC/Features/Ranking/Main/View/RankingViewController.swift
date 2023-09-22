@@ -38,6 +38,7 @@ final class RankingViewController: UIViewController {
         super.viewWillAppear(animated)
         self.title = "Ranking"
         self.navigationController?.navigationBar.isHidden = false
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     @available(*, unavailable)

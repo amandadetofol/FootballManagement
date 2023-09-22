@@ -55,6 +55,8 @@ final class MapViewController: UIViewController,
             target: self,
             action: #selector(handleGoToBack))
         self.title = "Local do Jogo"
+        
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
 
 }

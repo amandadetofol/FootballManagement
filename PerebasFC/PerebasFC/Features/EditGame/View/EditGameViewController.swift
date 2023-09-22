@@ -39,6 +39,7 @@ final class EditGameViewController: UIViewController {
         super.viewDidLoad()
         self.view = editGameView
         interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

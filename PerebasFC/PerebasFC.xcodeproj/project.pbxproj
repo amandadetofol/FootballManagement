@@ -76,6 +76,7 @@
 		A61CFFF62A3BDC3C0026BAF1 /* EditAwardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFFF52A3BDC3C0026BAF1 /* EditAwardsInteractor.swift */; };
 		A61CFFF82A3BDC440026BAF1 /* EditAwardsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFFF72A3BDC440026BAF1 /* EditAwardsCoordinator.swift */; };
 		A61CFFFB2A3BE0120026BAF1 /* EditAwardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFFFA2A3BE0120026BAF1 /* EditAwardsViewModel.swift */; };
+		A620C7272ABD1E7E00CC0472 /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A620C7262ABD1E7E00CC0472 /* UiViewController.swift */; };
 		A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */; };
 		A62C1CBF2A36111C002AA401 /* CalendarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */; };
 		A62C1CC12A3613EC002AA401 /* CalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */; };
@@ -141,7 +142,6 @@
 		A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */; };
 		A67360912A393276003BF4C2 /* FinancialDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360902A393276003BF4C2 /* FinancialDetailsInteractor.swift */; };
 		A67360932A393282003BF4C2 /* FinancialDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360922A393282003BF4C2 /* FinancialDetailsFactory.swift */; };
-		A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A52A393714003BF4C2 /* PendencieDisclaimerView.swift */; };
 		A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A72A393733003BF4C2 /* PendenciesDisclaimerView.swift */; };
 		A67360AA2A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360A92A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift */; };
 		A67360AD2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67360AC2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift */; };
@@ -374,6 +374,7 @@
 		A61CFFF52A3BDC3C0026BAF1 /* EditAwardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsInteractor.swift; sourceTree = "<group>"; };
 		A61CFFF72A3BDC440026BAF1 /* EditAwardsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsCoordinator.swift; sourceTree = "<group>"; };
 		A61CFFFA2A3BE0120026BAF1 /* EditAwardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsViewModel.swift; sourceTree = "<group>"; };
+		A620C7262ABD1E7E00CC0472 /* UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewController.swift; sourceTree = "<group>"; };
 		A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemViewRepresentable.swift; sourceTree = "<group>"; };
 		A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWorker.swift; sourceTree = "<group>"; };
 		A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInteractor.swift; sourceTree = "<group>"; };
@@ -438,7 +439,6 @@
 		A673608E2A39326A003BF4C2 /* FinancialDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsPresenter.swift; sourceTree = "<group>"; };
 		A67360902A393276003BF4C2 /* FinancialDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsInteractor.swift; sourceTree = "<group>"; };
 		A67360922A393282003BF4C2 /* FinancialDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsFactory.swift; sourceTree = "<group>"; };
-		A67360A52A393714003BF4C2 /* PendencieDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendencieDisclaimerView.swift; sourceTree = "<group>"; };
 		A67360A72A393733003BF4C2 /* PendenciesDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendenciesDisclaimerView.swift; sourceTree = "<group>"; };
 		A67360A92A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendenciesDisclaimerViewModel.swift; sourceTree = "<group>"; };
 		A67360AC2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -766,7 +766,6 @@
 		A6033E482A12DC5D002B56EE = {
 			isa = PBXGroup;
 			children = (
-				A67360A52A393714003BF4C2 /* PendencieDisclaimerView.swift */,
 				A6033E532A12DC5D002B56EE /* PerebasFC */,
 				A6033E522A12DC5D002B56EE /* Products */,
 			);
@@ -977,6 +976,7 @@
 				A6E5BB372A1D8CCA00ADE47F /* UIStackView.swift */,
 				A6993E0E2A2BA10500C2BDE3 /* UIColor.swift */,
 				A637DDFE2A4BAB6A0017857D /* Date.swift */,
+				A620C7262ABD1E7E00CC0472 /* UiViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -3119,7 +3119,6 @@
 				A62C1CC72A37DEF4002AA401 /* CalendarItemPopUpViewModel.swift in Sources */,
 				A69E89342A8AF128008C09DC /* FinancialAdministratorMainPresenter.swift in Sources */,
 				A6031A142A91891100E19E3A /* AministratorPendenciesDetailsView.swift in Sources */,
-				A67360A62A393714003BF4C2 /* PendencieDisclaimerView.swift in Sources */,
 				A69F01B12AB369ED00EE538F /* FinancialCommonDetailsWorker.swift in Sources */,
 				A6FCDA5F2A81BBE300B095E5 /* SortCardViewModel.swift in Sources */,
 				A60319FC2A91731B00E19E3A /* AdministratorPendenciesWorker.swift in Sources */,
@@ -3205,6 +3204,7 @@
 				A6FCDA612A81C11D00B095E5 /* SortMainViewController.swift in Sources */,
 				A6CFD5702A29394B00A37696 /* RankingViewController.swift in Sources */,
 				A695D6422A6F3721004B3CCE /* EditGameFactory.swift in Sources */,
+				A620C7272ABD1E7E00CC0472 /* UiViewController.swift in Sources */,
 				A6A7417D2A26B470009A7998 /* GameCardView.swift in Sources */,
 				A6FCDA5D2A81BA8F00B095E5 /* SortCardView.swift in Sources */,
 				A62C1CCD2A37E304002AA401 /* CalendarCoordinator.swift in Sources */,

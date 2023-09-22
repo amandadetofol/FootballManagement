@@ -38,7 +38,8 @@ final class EditAwardsViewController: UIViewController {
         super.viewDidLoad()
         view = editAwardsView
         interactor.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true 
+        self.navigationController?.navigationBar.isHidden = true
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

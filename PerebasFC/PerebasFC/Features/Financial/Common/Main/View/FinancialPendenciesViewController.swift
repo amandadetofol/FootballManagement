@@ -61,6 +61,7 @@ final class FinancialPendenciesViewController: UIViewController {
         
         setupSegmentedControl()
         interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
 
     }
     

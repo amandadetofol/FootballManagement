@@ -61,6 +61,7 @@ final class AdministratorPendenciesViewController: UIViewController {
         interactor.viewDidLoad()
         interactor.updateView(basedOn: 1)
         self.view.backgroundColor = .white
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     private func setupSegmentedControl(){

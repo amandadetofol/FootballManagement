@@ -37,6 +37,7 @@ final class NewEventInCalendarViewController: UIViewController {
         super.viewDidLoad()
         self.view = newEventInCalendarView
         interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

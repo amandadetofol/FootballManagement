@@ -40,6 +40,7 @@ final class NewItemViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         newItemView.setupDescription(basedOn: type)
         updateTitle(basedOn: type)
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     @available(*, unavailable)

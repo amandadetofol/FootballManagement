@@ -35,6 +35,7 @@ final class ForgotPasswordViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Esqueceu sua senha?"
         interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     @available(*, unavailable)

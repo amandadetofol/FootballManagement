@@ -395,8 +395,8 @@
             filePath = "PerebasFC/Features/Ranking/Main/View/RankingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "handleEditAwardsButtonTap(model:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -619,8 +619,8 @@
             filePath = "PerebasFC/Features/EditGame/View/EditGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
             <Locations>
@@ -682,8 +682,8 @@
             filePath = "PerebasFC/Features/NewEventInCalendar/View/NewEventInCalendarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -840,8 +840,8 @@
             filePath = "PerebasFC/Features/Financial/Administrator/Pendencies/View/AdministratorPendenciesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "updateView(basedOn:)"
             landmarkType = "7">
             <Locations>
@@ -918,8 +918,8 @@
             filePath = "PerebasFC/Features/Financial/Administrator/Pendencies/View/AdministratorPendenciesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "updateView(basedOn:)"
             landmarkType = "7">
             <Locations>
@@ -1028,8 +1028,8 @@
             filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1044,8 +1044,8 @@
             filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "updateView(basedOn:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1060,8 +1060,8 @@
             filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "updateView(basedOn:)"
             landmarkType = "7">
             <Locations>
@@ -1123,8 +1123,8 @@
             filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "updateView(basedOn:)"
             landmarkType = "7">
             <Locations>
@@ -1662,8 +1662,8 @@
             filePath = "PerebasFC/Features/Ranking/Main/View/RankingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "updateViewForPricesErrorState()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1678,8 +1678,8 @@
             filePath = "PerebasFC/Features/Ranking/Main/View/RankingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
          </BreakpointContent>

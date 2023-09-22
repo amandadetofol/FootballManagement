@@ -39,6 +39,7 @@ final class ParticipantsSelectorListViewController: UIViewController {
         self.view = participantsSelectorListView
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Lista de Jogadores"
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

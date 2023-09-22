@@ -46,6 +46,7 @@ final class SortMainViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(handleNewSort))
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

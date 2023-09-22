@@ -37,6 +37,7 @@ final class SignUpViewController: UIViewController {
         self.view = signUpView
         title = "Cadastre-se"
         self.navigationController?.navigationBar.isHidden = false
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

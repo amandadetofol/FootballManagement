@@ -54,6 +54,7 @@ final class PersonalInformationsViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(handleGoToEditDataFlowSelected))
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

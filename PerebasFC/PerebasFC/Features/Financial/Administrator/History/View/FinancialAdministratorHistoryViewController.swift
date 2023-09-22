@@ -60,6 +60,7 @@ final class FinancialAdministratorHistoryViewController: UIViewController {
         interactor.viewDidLoad()
         setupSegmentedControl()
         interactor.updateView(basedOn: 1)
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     private func setupSegmentedControl(){

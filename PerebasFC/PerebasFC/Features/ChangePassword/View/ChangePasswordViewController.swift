@@ -39,6 +39,7 @@ final class ChangePasswordViewController: UIViewController {
         
         self.title = "Alterar senha"
         self.navigationController?.isNavigationBarHidden = false
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }

@@ -29,6 +29,7 @@ final class LoginViewController: UIViewController {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
         title = "Login"
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     @available(*, unavailable)

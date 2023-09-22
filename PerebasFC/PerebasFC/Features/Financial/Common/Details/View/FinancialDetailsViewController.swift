@@ -39,6 +39,7 @@ final class FinancialDetailsViewController: UIViewController {
         super.viewDidLoad()
         view = financialDetailsView
         interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
 }
