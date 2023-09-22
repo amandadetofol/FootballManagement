@@ -128,6 +128,7 @@
 		A658B3AB2AABFE7300C89D63 /* EventPresencePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3AA2AABFE7300C89D63 /* EventPresencePresenter.swift */; };
 		A658B3AE2AABFE9900C89D63 /* EventPresenceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3AD2AABFE9900C89D63 /* EventPresenceFactory.swift */; };
 		A658B3B02AABFEA500C89D63 /* EventPresenceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658B3AF2AABFEA500C89D63 /* EventPresenceCoordinator.swift */; };
+		A661B0922ABE1FB700B1A957 /* EditAwardsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A661B0912ABE1FB700B1A957 /* EditAwardsWorker.swift */; };
 		A6730EF92AAA5490000D6B72 /* PresenceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730EF82AAA5490000D6B72 /* PresenceCoordinator.swift */; };
 		A6730EFB2AAA54A1000D6B72 /* PresenceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730EFA2AAA54A1000D6B72 /* PresenceFactory.swift */; };
 		A6730EFD2AAA54AA000D6B72 /* PresenceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6730EFC2AAA54AA000D6B72 /* PresenceCardView.swift */; };
@@ -425,6 +426,7 @@
 		A658B3AA2AABFE7300C89D63 /* EventPresencePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresencePresenter.swift; sourceTree = "<group>"; };
 		A658B3AD2AABFE9900C89D63 /* EventPresenceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceFactory.swift; sourceTree = "<group>"; };
 		A658B3AF2AABFEA500C89D63 /* EventPresenceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenceCoordinator.swift; sourceTree = "<group>"; };
+		A661B0912ABE1FB700B1A957 /* EditAwardsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsWorker.swift; sourceTree = "<group>"; };
 		A6730EF82AAA5490000D6B72 /* PresenceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceCoordinator.swift; sourceTree = "<group>"; };
 		A6730EFA2AAA54A1000D6B72 /* PresenceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceFactory.swift; sourceTree = "<group>"; };
 		A6730EFC2AAA54AA000D6B72 /* PresenceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceCardView.swift; sourceTree = "<group>"; };
@@ -1250,6 +1252,7 @@
 		A61CFFED2A3BDBFB0026BAF1 /* EditAwards */ = {
 			isa = PBXGroup;
 			children = (
+				A661B0902ABE1FAA00B1A957 /* Worker */,
 				A61CFFF02A3BDC0D0026BAF1 /* Coordinator */,
 				A6CEE4BC2A3F7B3E002CF9F5 /* Factory */,
 				A61CFFEF2A3BDC070026BAF1 /* Interactor */,
@@ -1789,6 +1792,14 @@
 				A658B3AA2AABFE7300C89D63 /* EventPresencePresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A661B0902ABE1FAA00B1A957 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A661B0912ABE1FB700B1A957 /* EditAwardsWorker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		A6730EF12AAA5448000D6B72 /* Presence */ = {
@@ -3198,6 +3209,7 @@
 				A61CFFFB2A3BE0120026BAF1 /* EditAwardsViewModel.swift in Sources */,
 				A6CEE4BB2A3F75CF002CF9F5 /* EditAwardsPresenter.swift in Sources */,
 				A658B3B02AABFEA500C89D63 /* EventPresenceCoordinator.swift in Sources */,
+				A661B0922ABE1FB700B1A957 /* EditAwardsWorker.swift in Sources */,
 				A61A8F7C2A14327E009D08EE /* UIView.swift in Sources */,
 				A69285222A8EEB68000E618D /* NewItemWorker.swift in Sources */,
 				A6993E212A2BBEF900C2BDE3 /* RankingFactory.swift in Sources */,

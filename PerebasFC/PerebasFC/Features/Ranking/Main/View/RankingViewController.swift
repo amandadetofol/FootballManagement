@@ -31,14 +31,14 @@ final class RankingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = rankingView
-        interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Ranking"
         self.navigationController?.navigationBar.isHidden = false
-        handleKeyBoardRemoveWhenClickOutsideField()
+        interactor.viewDidLoad()
     }
     
     @available(*, unavailable)
