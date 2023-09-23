@@ -58,7 +58,8 @@ final class TitleAndDescriptionCardView: UIControl {
     func updateView(model: FinancialAdministratorActions){
         self.titleLabel.text = model.rawValue
         self.descriptionLabel.text = model.description
-        self.model = model 
+        self.model = model
+        addTarget(self, action: #selector(handleTitleAndArrowButtonTap), for: .touchUpInside)
     }
     
     func updateAccessibility(
@@ -75,7 +76,6 @@ final class TitleAndDescriptionCardView: UIControl {
             titleLabel,
             descriptionLabel,
             arrowImageView])
-        addTarget(nil, action: #selector(handleTitleAndArrowButtonTap), for: .touchUpInside)
     }
     
     private func setupConstraints(){

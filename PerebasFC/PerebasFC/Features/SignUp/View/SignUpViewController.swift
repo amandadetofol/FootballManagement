@@ -52,6 +52,10 @@ extension SignUpViewController: SignUpViewDelegate {
 
 extension SignUpViewController: SignUpViewProtocol {
     
+    func setupViewForInvalidEmailErrorState(){
+        signUpView.showInvalidEmailError = true 
+    }
+    
     func setupViewForEmptyEmailErrorState() {
         signUpView.showEmailError = true
     }

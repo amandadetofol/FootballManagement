@@ -14,12 +14,17 @@ struct NewItemFactory {
         type: NewItemType) -> NewItemViewController {
             let coordinator = NewItemCoordinator(navigationController: navigationController)
             let worker = NewItemWorker()
+            let presenter = NewItemPresenter()
             let interactor = NewItemInteractor(
                 worker: worker,
-                coordinator: coordinator)
-            return NewItemViewController(
+                coordinator: coordinator,
+                presenter: presenter)
+            let controller = NewItemViewController(
                 type: type,
                 interactor: interactor)
+            presenter.view = controller
+            
+            return controller
     }
     
 }

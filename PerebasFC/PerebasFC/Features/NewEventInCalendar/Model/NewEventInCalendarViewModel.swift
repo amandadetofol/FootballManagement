@@ -10,7 +10,7 @@ import UIKit
 struct NewEventInCalendarViewModel {
     let selectedDate: Date
     let eventName: String
-    let time: Date
+    let time: String
     let allowedToBringCompanions: Bool
     let numberOfCompanios: Int? 
 }

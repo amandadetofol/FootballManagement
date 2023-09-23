@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 final class NewEventInCalendarInteractor: NewEventInCalendarViewInteractorProtocol {
     
     private let selectedDate: Date
@@ -31,12 +29,26 @@ final class NewEventInCalendarInteractor: NewEventInCalendarViewInteractorProtoc
     }
     
     func handleConfirmButtonTap(_ model: NewEventInCalendarViewModel) {
-        worker.saveNewEventInCalendar(model) { [weak self] hasSucceeded in
-            switch hasSucceeded {
-                case true:
-                    self?.coordinator.showSuccessPopUp()
-                case false:
-                    self?.coordinator.showErrorPopUp()
+        var hasError = false
+        
+        if model.eventName.isEmpty {
+            presenter.updateViewForEmptyEventNameState()
+            hasError = true
+        }
+        
+        if model.time.isEmpty {
+            presenter.updateviewForEmptyHourState()
+            hasError = true
+        }
+        
+        if !hasError {
+            worker.saveNewEventInCalendar(model) { [weak self] hasSucceeded in
+                switch hasSucceeded {
+                    case true:
+                        self?.coordinator.showSuccessPopUp()
+                    case false:
+                        self?.coordinator.showErrorPopUp()
+                }
             }
         }
     }

@@ -51,6 +51,10 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewProtocol {
     
+    func updateViewForInvalidEmailState() {
+        loginView.showInvalidEmailError = true
+    }
+    
     func updateViewForMandatoryUsernameError() {
         loginView.showUsernameError = true
     }

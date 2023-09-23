@@ -30,6 +30,11 @@ final class SignUpInteractor: SignUpInteractorProtocol {
             hasError = true
         }
         
+        if !user.email.isValidEmail(){
+            presenter.setupViewForInvalidEmailErrorState()
+            hasError = true
+        }
+        
         if user.confirmPassword.isEmpty {
             presenter.setupViewForEmptyConfirmPasswordFieldState()
             hasError = true

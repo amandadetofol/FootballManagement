@@ -12,6 +12,7 @@ protocol SignUpPresenterProtocol {
     func setupViewForEmptyPasswordFieldState()
     func setupViewForEmptyConfirmPasswordFieldState()
     func setupViewForMismatchingPasswordsErrorState()
+    func setupViewForInvalidEmailErrorState()
 }
 
 protocol SignUpViewProtocol: AnyObject {
@@ -19,6 +20,7 @@ protocol SignUpViewProtocol: AnyObject {
     func setupViewForEmptyPasswordFieldState()
     func setupViewForEmptyConfirmPasswordFieldState()
     func setupViewForMismatchingPasswordsErrorState()
+    func setupViewForInvalidEmailErrorState()
 }
 
 final class SignUpPresenter: SignUpPresenterProtocol {
@@ -41,4 +43,7 @@ final class SignUpPresenter: SignUpPresenterProtocol {
         view?.setupViewForMismatchingPasswordsErrorState()
     }
     
+    func setupViewForInvalidEmailErrorState(){
+        view?.setupViewForInvalidEmailErrorState()
+    }
 }

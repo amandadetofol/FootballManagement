@@ -14,6 +14,18 @@ protocol NewItemViewDelegate: AnyObject {
 
 final class NewItemView: UIView {
     
+    var nameTextFieldShouldShowError: Bool = false {
+        didSet {
+            operationNameTextField.showError = nameTextFieldShouldShowError
+        }
+    }
+    
+    var valueTextFieldShouldShowError: Bool = false {
+        didSet {
+            valueNameTextField.showError = valueTextFieldShouldShowError
+        }
+    }
+    
     var selectedPlayer: String? {
         didSet {
             addToSpecificPlayerButton.setTitle(selectedPlayer, for: .normal)
@@ -245,6 +257,9 @@ final class NewItemView: UIView {
 extension NewItemView {
     
     @objc func handleConfirmButtonTap(){
+        operationNameTextField.showError = false
+        valueNameTextField.showError = false
+        
         delegate?.handleConfirmButtonTap(
             newItem: NewItemModel(
                 eventName: operationNameTextField.text,

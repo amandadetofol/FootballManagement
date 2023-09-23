@@ -10,6 +10,7 @@ import Foundation
 protocol LoginViewProtocol: AnyObject {
     func updateViewForMandatoryUsernameError()
     func updateViewForMandatoryPasswordError()
+    func updateViewForInvalidEmailState()
 }
 
 final class LoginPresenter: LoginPresenterProtocol {
@@ -22,6 +23,10 @@ final class LoginPresenter: LoginPresenterProtocol {
     
     func updateViewForMandatoryPasswordError() {
         view?.updateViewForMandatoryPasswordError()
+    }
+    
+    func updateViewForInvalidEmailState(){
+        view?.updateViewForInvalidEmailState()
     }
     
 }

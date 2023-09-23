@@ -45,6 +45,8 @@ final class NewEventInCalendarViewController: UIViewController {
 extension NewEventInCalendarViewController: NewEventInCalendarViewDelegate {
     
     func handleConfirmButtonTap(_ model: NewEventInCalendarViewModel) {
+        newEventInCalendarView.timeHasError = false
+        newEventInCalendarView.nameHasError = false
         interactor.handleConfirmButtonTap(model)
     }
 
@@ -60,6 +62,14 @@ extension NewEventInCalendarViewController: NewEventInCalendarViewProtocol {
         
         title = "Novo Evento em \(dateFormatter.string(from: date))"
         newEventInCalendarView.selectedDate = date
+    }
+    
+    func updateViewForEmptyEventNameState(){
+        newEventInCalendarView.nameHasError = true
+    }
+    
+    func updateviewForEmptyHourState(){
+        newEventInCalendarView.timeHasError = true 
     }
     
 }

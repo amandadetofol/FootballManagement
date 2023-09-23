@@ -13,6 +13,18 @@ protocol NewEventInCalendarViewDelegate: AnyObject {
 
 final class NewEventInCalendarView: UIView {
     
+    var nameHasError: Bool = false {
+        didSet {
+            eventNameTextField.showError = nameHasError
+        }
+    }
+    
+    var timeHasError: Bool = false {
+        didSet {
+            hourTextField.showError = nameHasError
+        }
+    }
+    
     weak var delegate: NewEventInCalendarViewDelegate?
     var selectedDate: Date?
     
@@ -186,7 +198,12 @@ extension NewEventInCalendarView {
     
     @objc func handleConfirmButtonTap(){
         guard let date = selectedDate else { return }
-        //TODO: handle delegate
+        delegate?.handleConfirmButtonTap(NewEventInCalendarViewModel(
+            selectedDate: date,
+            eventName: eventNameTextField.text,
+            time: hourTextField.text,
+            allowedToBringCompanions: isAllowedToTakeCompaniesSwitch.isOn,
+            numberOfCompanios: Int(companiesTextField.text)))
     }
     
     @objc func didTapSwitch(mySwitch: UISwitch) {

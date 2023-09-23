@@ -24,6 +24,13 @@ final class LoginView: UIView {
         }
     }
     
+    var showInvalidEmailError: Bool = false {
+        didSet {
+            usernameTextField.showError = showUsernameError
+            usernameTextField.errorMessage = "E-mail inválido."
+        }
+    }
+    
     var showPasswordError: Bool = false {
         didSet {
             passwordTextField.showError = showPasswordError
@@ -161,6 +168,9 @@ final class LoginView: UIView {
 extension LoginView {
     
     @objc func login(){
+        usernameTextField.showError = false
+        passwordTextField.showError = false 
+        
         delegate?.goToLogin(
             username: usernameTextField.text,
             password: passwordTextField.text)

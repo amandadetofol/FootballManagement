@@ -70,3 +70,15 @@ extension NewItemViewController: NewItemViewDelegate {
         interactor.handleAddToSpecificPlayerButton()
     }
 }
+
+extension NewItemViewController: NewItemViewProtocol {
+    
+    func updateViewForDescriptionFieldErrorState() {
+        newItemView.nameTextFieldShouldShowError = true
+    }
+    
+    func updateViewForValueFieldErrorState() {
+        newItemView.valueTextFieldShouldShowError = true 
+    }
+    
+}

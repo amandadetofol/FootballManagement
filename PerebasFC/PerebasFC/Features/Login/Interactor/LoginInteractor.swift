@@ -8,6 +8,7 @@
 import UIKit
 
 protocol LoginPresenterProtocol {
+    func updateViewForInvalidEmailState()
     func updateViewForMandatoryUsernameError()
     func updateViewForMandatoryPasswordError()
 }
@@ -27,15 +28,24 @@ final class LoginInteractor: LoginInteractorProtocol {
         }
     
     func goToLogin(_ username: String, _ password: String) {
+        var hasError = false
+        
         if username.isEmpty {
             presenter.updateViewForMandatoryUsernameError()
+            hasError = true
+        }
+        
+        if !username.isValidEmail() {
+            presenter.updateViewForInvalidEmailState()
+            hasError = true
         }
         
         if password.isEmpty {
             presenter.updateViewForMandatoryPasswordError()
+            hasError = true
         }
         
-        if !password.isEmpty && !username.isEmpty {
+        if !hasError {
             coordinator.showLoader()
             worker.login(username: username, password: password) { [weak self] user in
                 self?.coordinator.removeLoader()

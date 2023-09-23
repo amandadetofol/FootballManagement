@@ -19,6 +19,13 @@ final class SignUpView: UIView {
         }
     }
     
+    var showInvalidEmailError: Bool = false {
+        didSet {
+            emailTextField.showError = true
+            emailTextField.errorMessage = "E-mail inválido."
+        }
+    }
+    
     var showPasswordTextFieldError: Bool = false {
         didSet {
             passwordTextField.showError = showPasswordTextFieldError

@@ -9,10 +9,14 @@ import Foundation
 
 protocol NewEventInCalendarPresenterProtocol {
     func updateView(with date: Date)
+    func updateViewForEmptyEventNameState()
+    func updateviewForEmptyHourState()
 }
 
 protocol NewEventInCalendarViewProtocol: AnyObject {
     func updateView(with date: Date)
+    func updateViewForEmptyEventNameState()
+    func updateviewForEmptyHourState()
 }
 
 final class NewEventInCalendarPresenter: NewEventInCalendarPresenterProtocol {
@@ -21,6 +25,14 @@ final class NewEventInCalendarPresenter: NewEventInCalendarPresenterProtocol {
     
     func updateView(with date: Date){
         view?.updateView(with: date)
+    }
+    
+    func updateViewForEmptyEventNameState(){
+        view?.updateViewForEmptyEventNameState()
+    }
+    
+    func updateviewForEmptyHourState(){
+        view?.updateviewForEmptyHourState()
     }
     
 }
