@@ -84,6 +84,10 @@ final class RankingView: UIView {
     }
     
     func updateView(with model: RankingViewModel){
+        stackView.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
+
         self.firstPlacesView.updateView(
             firstPlaceModel: model.firstPlaceModel,
             secondPlaceModel: model.secondPlaceModel,

@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 protocol RankingPresenterProtocol {
-    func updateView(with model: RankingViewModel)
+    func updateView(with model: QuerySnapshot)
     func updatePricesWith(with model: DocumentSnapshot?)
 }
 
@@ -32,15 +32,17 @@ final class RankingInteractor: RankingInteractorProtocol {
         worker.getPrices { [weak self] documentSnapShot in
             guard let self else { return }
             self.presenter.updatePricesWith(with: documentSnapShot)
-            self.coordinator.dissmissLoading()
         }
         
         worker.getRanking { [weak self] data in
+            guard let self else { return }
             guard let data = data else {
-                self?.coordinator.showAlertErrorPopUp()
+                self.coordinator.dissmissLoading()
+                self.coordinator.showAlertErrorPopUp()
                 return
             }
-            self?.presenter.updateView(with: data)
+            self.coordinator.dissmissLoading()
+            self.presenter.updateView(with: data)
         }
     }
     
