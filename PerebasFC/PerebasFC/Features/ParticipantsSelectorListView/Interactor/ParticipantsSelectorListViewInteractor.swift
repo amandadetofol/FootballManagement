@@ -23,7 +23,11 @@ final class ParticipantsSelectorListViewInteractor: ParticipantsSelectorListView
     
     func viewDidLoad() {
         worker.getParticipants { [weak self] users in
-            guard let self else { return }
+            guard let self,
+                  let users else {
+                      self?.coordinator.showErrorAlert()
+                      return
+                  }
             self.presenter.updateView(with: users)
         }
     }

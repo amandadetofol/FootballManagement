@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ParticipantsSelectorListViewCoordinatorProtocol {
+    func showErrorAlert()
     func dissmissToDebitViewWithSelectedUser(name: String)
 }
 
@@ -28,4 +29,17 @@ final class ParticipantsSelectorListViewCoordinator: ParticipantsSelectorListVie
 
     }
     
+    func showErrorAlert() {
+        let alert = UIAlertController(
+            title: "Ops! Algo deu errado :(",
+            message: "Tente novamente!",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "Ok",
+                style: UIAlertAction.Style.default))
+        navigationController.present(
+            alert,
+            animated: true)
+    }
 }

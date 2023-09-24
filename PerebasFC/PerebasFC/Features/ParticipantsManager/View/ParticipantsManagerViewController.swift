@@ -9,6 +9,7 @@ import UIKit
 
 protocol ParticipantsManagerInteractorProtocol {
     func viewDidLoad()
+    func setupViewForErrorState()
     func handleParticipantCardViewTap(user: User)
     func updateView(basedOn segmentedControlIndex: Int)
 }
@@ -60,7 +61,6 @@ final class ParticipantsManagerViewController: UIViewController {
         
         setupSegmentedControl()
         interactor.viewDidLoad()
-        interactor.updateView(basedOn: 1)
         handleKeyBoardRemoveWhenClickOutsideField()
     }
     
@@ -99,6 +99,10 @@ extension ParticipantsManagerViewController {
 }
 
 extension ParticipantsManagerViewController: ParticipantsManagerViewProtocol {
+    
+    func updateViewForErrorState() {
+        interactor.setupViewForErrorState()
+    }
     
     func updateView(with model: [ParticipantCellModel]) {
         self.model = model

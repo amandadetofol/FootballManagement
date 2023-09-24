@@ -163,7 +163,6 @@ extension LoginWorker {
     //TODO: Remove mock when finish integration
     private func getMockUser(isAdm: Bool) -> User {
         return User(
-            id: "01",
             firstName: "José",
             lastName: "Maria",
             shirtNumber: "08",

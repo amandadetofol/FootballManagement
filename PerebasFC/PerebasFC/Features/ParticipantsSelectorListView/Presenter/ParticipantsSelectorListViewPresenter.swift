@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol ParticipantsSelectorListViewPresenterProtocol {
-    func updateView(with model: [User])
+    func updateView(with model: QuerySnapshot)
 }
 
 protocol ParticipantsSelectorListViewProtocol: AnyObject {
@@ -19,15 +20,16 @@ final class ParticipantsSelectorListViewPresenter: ParticipantsSelectorListViewP
     
     weak var view: ParticipantsSelectorListViewProtocol?
    
-    func updateView(with model: [User]) {
+    func updateView(with model: QuerySnapshot) {
         view?.updateView(model: parseApiModelToViewModel(model: model))
     }
     
     //MARK: Private methods
-    private func parseApiModelToViewModel(model: [User]) -> [ParticipantsSelectorCardViewModel]{
-        return model.map { user in
-            ParticipantsSelectorCardViewModel(title: "\(user.firstName) \(user.lastName)")
-        }
+    private func parseApiModelToViewModel(model: QuerySnapshot) -> [ParticipantsSelectorCardViewModel] {
+        return model.documents.map({ document in
+            ParticipantsSelectorCardViewModel(
+                title: " \(document["name"] as? String ?? "") \(document["lastname"] as? String ?? "")")
+        })
     }
 
 }

@@ -6,14 +6,16 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol ParticipantsManagerViewProtocol: AnyObject {
     func updateView(with model: [ParticipantCellModel])
     func updateView(basedOn participantType: ParticipantType)
+    func updateViewForErrorState()
 }
 
 protocol ParticipantsManagerPresenterProtocol {
-    func updateView(with model: [User])
+    func updateView(with model: QuerySnapshot?)
     func updateView(basedOn segmentedControlIndex: Int)
 }
 
@@ -21,8 +23,13 @@ final class ParticipantsManagerPresenter: ParticipantsManagerPresenterProtocol {
     
     weak var view: ParticipantsManagerViewProtocol?
     
-    func updateView(with model: [User]) {
-        view?.updateView(with: getParticipantCellModel(with: model))
+    func updateView(with model: QuerySnapshot?) {
+        guard let viewModel = parseQuerySnapshotIntoUsersArray(model: model) else {
+            view?.updateViewForErrorState()
+            return
+        }
+        view?.updateView(with: viewModel)
+        updateView(basedOn: 1)
     }
     
     func updateView(basedOn segmentedControlIndex: Int){
@@ -42,6 +49,33 @@ final class ParticipantsManagerPresenter: ParticipantsManagerPresenterProtocol {
         return model.map { user in
             ParticipantCellModel(user: user)
         }
+    }
+    
+    private func parseQuerySnapshotIntoUsersArray(model: QuerySnapshot?) -> [ParticipantCellModel]? {
+        guard let model else {
+            return nil
+        }
+        
+        var users: [ParticipantCellModel] = []
+        model.documents.forEach { document in
+            users.append(
+                ParticipantCellModel(
+                    user: User(
+                        firstName: document["name"] as? String ?? "",
+                        lastName: document["lastname"] as? String ?? "",
+                        shirtNumber: document["shirtNumber"] as? String ?? "",
+                        position: document["position"] as? String ?? "",
+                        team: "", //TODO: implementar depois que pegar o sorteio
+                        warning: nil,
+                        rankingPosition: document["rankingPlace"] as? Int ?? 0,
+                        isAdm: Session.shared.isAdm ?? false,
+                        type: ParticipantType(rawValue: document["type"] as? String ?? "") ?? .member,
+                        menuItems: nil)
+                )
+            )
+        }
+        
+        return users
     }
     
 }

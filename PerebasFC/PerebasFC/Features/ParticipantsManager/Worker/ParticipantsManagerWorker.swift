@@ -6,15 +6,24 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol ParticipantsManagerWorkerProtocol {
-    func getParticipants(completion: @escaping(([User]) -> Void))
+    func getParticipants(completion: @escaping((QuerySnapshot?) -> Void))
 }
 
 final class ParticipantsManagerWorker: ParticipantsManagerWorkerProtocol {
     
-    func getParticipants(completion: @escaping (([User]) -> Void)) {
-        completion(Session.shared.players)
+    private let usersFirebaseReference = Firestore.firestore().collection("perebasfc")
+    
+    func getParticipants(completion: @escaping ((QuerySnapshot?) -> Void)) {
+        usersFirebaseReference.getDocuments { querySnapshot, error in
+            guard error == nil else {
+                completion(nil)
+                return
+            }
+            completion(querySnapshot)
+        }
     }
     
 }

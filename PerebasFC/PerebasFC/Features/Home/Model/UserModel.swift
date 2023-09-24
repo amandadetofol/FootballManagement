@@ -8,7 +8,6 @@
 import UIKit
 
 struct User {
-    let id: String 
     let firstName: String
     let lastName: String
     let shirtNumber: String
@@ -18,7 +17,7 @@ struct User {
     let rankingPosition: Int? 
     let isAdm: Bool
     let type: ParticipantType
-    let menuItems: [MenuItemViewModel]
+    let menuItems: [MenuItemViewModel]?
 }
 
 struct UserWarning {

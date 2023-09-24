@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum ParticipantType {
-    case goalKepper
-    case player
-    case member
+enum ParticipantType: String {
+    case goalKepper = "Goleiro"
+    case player = "Jogador"
+    case member = "Membro"
 }

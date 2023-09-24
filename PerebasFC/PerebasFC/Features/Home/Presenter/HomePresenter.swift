@@ -31,6 +31,20 @@ final class HomePresenter: HomePresenterProtocol {
                 warning: warning)
         }
         
+        guard let menuCards = user.menuItems else {
+            return HomeViewModel(
+                isAdm: user.isAdm,
+                header: HomeHeaderViewModel(
+                    welcomeText: "Olá!",
+                    fullName: "\(user.firstName) \(user.lastName)"),
+                teamInfo: HomeTeamInfo(
+                    shirtNumber: user.shirtNumber,
+                    teamName: user.team,
+                    position: user.position),
+                menuCards: nil,
+                warning: warningModel)
+        }
+        
         return HomeViewModel(
             isAdm: user.isAdm,
             header: HomeHeaderViewModel(
@@ -40,7 +54,7 @@ final class HomePresenter: HomePresenterProtocol {
                 shirtNumber: user.shirtNumber,
                 teamName: user.team,
                 position: user.position),
-            menuCards: user.menuItems,
+            menuCards: menuCards,
             warning: warningModel)
         
     }

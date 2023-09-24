@@ -22,8 +22,11 @@ final class ParticipantsManagerInteractor: ParticipantsManagerInteractorProtocol
     }
     
     func viewDidLoad() {
+        coordinator.showLoading()
         worker.getParticipants { [weak self] users in
-            self?.presenter.updateView(with: users)
+            guard let self else { return }
+            self.coordinator.removeLoading()
+            self.presenter.updateView(with: users)
         }
     }
     
@@ -34,5 +37,9 @@ final class ParticipantsManagerInteractor: ParticipantsManagerInteractorProtocol
     func updateView(basedOn segmentedControlIndex: Int) {
         presenter.updateView(basedOn: segmentedControlIndex)
     }
-
+    
+    func setupViewForErrorState(){
+        
+    }
+    
 }

@@ -122,7 +122,7 @@ final class NewItemView: UIView {
         button.backgroundColor = .black
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleConfirmButtonTap), for: .touchUpInside)
-        button.setTitle("confirmer".uppercased(), for: .normal)
+        button.setTitle("confirmar".uppercased(), for: .normal)
         
         return button
     }()
@@ -181,7 +181,6 @@ final class NewItemView: UIView {
     func setupDescription(basedOn type: NewItemType){
         operationDescriptionLabel.text = type.rawValue
         switchContentView.isHidden = (type == .credit)
-        addToSpecificPlayerButton.isHidden = type == .credit
     }
     
     private func setupView(){

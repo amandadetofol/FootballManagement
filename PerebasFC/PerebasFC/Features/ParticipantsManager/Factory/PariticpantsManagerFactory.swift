@@ -12,7 +12,7 @@ struct PariticpantsManagerFactory {
     static func getParticipantsViewController(navigationController: UINavigationController) -> ParticipantsManagerViewController {
         let presenter = ParticipantsManagerPresenter()
         let worker = ParticipantsManagerWorker()
-        let coordinator = ParticipantsManagerCoordinator(naviagationController: navigationController)
+        let coordinator = ParticipantsManagerCoordinator(navigationController: navigationController)
         let interactor = ParticipantsManagerInteractor(
             worker: worker,
             presenter: presenter,

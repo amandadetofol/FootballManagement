@@ -102,7 +102,7 @@ final class HomeView: UIView {
             teamCardView.updateView(with: teamModel)
         }
         
-        viewModel.menuCards.forEach { menuItem in
+        viewModel.menuCards?.forEach { menuItem in
             let menuCard = MenuItemView()
             menuCard.updateView(with: menuItem)
             menuCard.delegate = self

@@ -35,7 +35,6 @@ final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
         )
         
         let user = User(
-            id: "123",
             firstName: "John",
             lastName: "Doe",
             shirtNumber: "10",
