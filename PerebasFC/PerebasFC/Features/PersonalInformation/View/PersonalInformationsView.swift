@@ -36,6 +36,12 @@ final class PersonalInformationsView: UIView {
         }
     }
     
+    var hideDeleteButton: Bool = false {
+        didSet {
+            deleteUserButton.isHidden = hideDeleteButton
+        }
+    }
+    
     var model: PersonalInformationsViewModel?
     var controller: UIViewController?
     weak var delegate: PersonalInformationsViewDelegate?
@@ -240,7 +246,7 @@ final class PersonalInformationsView: UIView {
         button.backgroundColor = .white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleDeleteUserButtonTap), for: .touchUpInside)
-        button.isHidden = !(Session.shared.isAdm ?? false)
+       
         return button
     }()
     

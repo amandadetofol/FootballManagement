@@ -8,22 +8,30 @@
 import Foundation
 import FirebaseStorage
 import FirebaseFirestore
+import FirebaseAuth
 
 protocol PersonalInformationsWorkerProtocol {
     func getPersonalInformations(
-        _ completion: @escaping ((PersonalInformationsViewModel?) -> Void))
+        _ completion: @escaping ((PersonalInformationsViewModel?) -> Void),
+        email: String?)
     func updatePersonalInformations(
         personalInformations: PersonalInformationsViewModel,
         changeImage: Bool,
+        completion: @escaping((Bool)->Void),
+        email: String?)
+    func deleteUser(
+        email: String,
         completion: @escaping((Bool)->Void))
 }
 
 final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
     
+    private let firebaseAuthProvider = Auth.auth()
     private let firestoreProvider = Firestore.firestore()
     
-    func getPersonalInformations(_ completion: @escaping ((PersonalInformationsViewModel?) -> Void)) {
-        firestoreProvider.document("perebasfc/\(Session.shared.loggedUserEmail ?? "")").getDocument { [weak self] document, error in
+    func getPersonalInformations(_ completion: @escaping ((PersonalInformationsViewModel?) -> Void),
+                                 email: String?) {
+        firestoreProvider.document("perebasfc/\(email ?? Session.shared.loggedUserEmail ?? "")").getDocument { [weak self] document, error in
             guard error == nil,
                   let self = self else {
                 completion(nil)
@@ -33,6 +41,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
             completion(
                 PersonalInformationsViewModel(
                     name: document?["name"] as? String ?? "",
+                    email: document?["email"] as? String,
                     lastName: document?["lastname"] as? String ?? "",
                     birthDate: document?["date"] as? Date ?? Date(),
                     position: document?["position"] as? String ?? "",
@@ -49,8 +58,9 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
     func updatePersonalInformations(
         personalInformations: PersonalInformationsViewModel,
         changeImage: Bool,
-        completion: @escaping((Bool)->Void)) {
-            firestoreProvider.document("perebasfc/\(Session.shared.loggedUserEmail ?? "")").updateData([
+        completion: @escaping((Bool)->Void),
+        email: String?) {
+            firestoreProvider.document("perebasfc/\(email ?? Session.shared.loggedUserEmail ?? "")").updateData([
                 "name": personalInformations.name,
                 "lastname": personalInformations.lastName,
                 "date": personalInformations.birthDate,
@@ -70,6 +80,25 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
             
             if changeImage {
                 uploadImage(image: personalInformations.image ?? UIImage())
+            }
+        }
+    
+    func deleteUser(
+        email: String,
+        completion: @escaping((Bool)->Void)){
+            Auth.auth().currentUser?.delete { [weak self] error in
+                guard error == nil else {
+                    completion(false)
+                    return
+                }
+                
+                self?.firestoreProvider.collection("perebasfc").document(email).delete { error in
+                    guard error == nil else {
+                        completion(false)
+                        return
+                    }
+                    completion(true)
+                }
             }
         }
     

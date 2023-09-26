@@ -9,15 +9,13 @@ import UIKit
 
 protocol PersonalInformationsCoordinatorProtocol {
     func showErrorMessageAlert()
-    func showDeleteUserConfirmationModal(
-        userName: String,
-        confirmationAction: @escaping(()->Void))
     func goToBack()
     func handleGoToChangePasswordFlow()
     func showLoading()
     func removeLoading()
     func showUpdateSuccessPopUp()
     func showUpdateErrorPopUp()
+    func showDeleteUserSuccessPopUp(email: String)
 }
 
 final class PersonalInformationsCoordinator: PersonalInformationsCoordinatorProtocol {
@@ -45,33 +43,6 @@ final class PersonalInformationsCoordinator: PersonalInformationsCoordinatorProt
             animated: true)
     }
     
-    func showDeleteUserConfirmationModal(
-        userName: String,
-        confirmationAction: @escaping(()->Void)) {
-            let alert = UIAlertController(
-                title: "Atenção",
-                message: "Tem certeza que deseja excluir \(userName)?",
-                preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(
-                UIAlertAction(
-                    title: "Continuar",
-                    style: .default,
-                    handler: {  _ in
-                        confirmationAction()
-                    }))
-            alert.addAction(
-                UIAlertAction(
-                    title: "Cancelar",
-                    style: .destructive,
-                    handler: { [weak self] _ in
-                        self?.navigationController.popViewController(animated: true)
-                    }))
-            navigationController.present(
-                alert,
-                animated: true)
-            
-        }
-    
     func goToBack() {
         self.navigationController.popViewController(animated: true)
     }
@@ -94,7 +65,7 @@ final class PersonalInformationsCoordinator: PersonalInformationsCoordinatorProt
     func showUpdateSuccessPopUp(){
         let alert = UIAlertController(
             title: "Dados atualizados!",
-            message: "Seus dados foram atualizados com sucesso.",
+            message: "Os dados foram atualizados com sucesso.",
             preferredStyle: UIAlertController.Style.alert)
         alert.addAction(
             UIAlertAction(
@@ -120,5 +91,23 @@ final class PersonalInformationsCoordinator: PersonalInformationsCoordinatorProt
             alert,
             animated: true)
     }
+    
+    func showDeleteUserSuccessPopUp(email: String){
+        let alert = UIAlertController(
+            title: "Usuário excluído!",
+            message: "O usuário \(email) foi excluído com sucesso.",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default,
+                handler: { [weak self] _ in
+                    self?.navigationController.popToRootViewController(animated: true)
+                }))
+        navigationController.present(
+            alert,
+            animated: true)
+    }
+
     
 }

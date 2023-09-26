@@ -30,8 +30,8 @@ final class ParticipantsManagerInteractor: ParticipantsManagerInteractorProtocol
         }
     }
     
-    func handleParticipantCardViewTap(user: User) {
-        coordinator.openPersonalInformationsView(user: user)
+    func handleParticipantCardViewTap(email: String) {
+        coordinator.openPersonalInformationsView(email: email)
     }
     
     func updateView(basedOn segmentedControlIndex: Int) {
@@ -39,7 +39,7 @@ final class ParticipantsManagerInteractor: ParticipantsManagerInteractorProtocol
     }
     
     func setupViewForErrorState(){
-        
+        coordinator.showErrorAlert()
     }
     
 }

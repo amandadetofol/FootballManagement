@@ -66,14 +66,6 @@ final class HomeView: UIView {
         return view
     }()
     
-    private lazy var teamCardView: CurrentTeamCardView = {
-        let currentTeamCardView = CurrentTeamCardView()
-        currentTeamCardView.translatesAutoresizingMaskIntoConstraints = false
-        currentTeamCardView.isHidden = false
-        
-        return currentTeamCardView
-    }()
-    
     private lazy var userAlertView: UserAlertWarningView = {
         let userAlertView = UserAlertWarningView()
         userAlertView.translatesAutoresizingMaskIntoConstraints = false
@@ -97,10 +89,6 @@ final class HomeView: UIView {
     
     func updateView(viewModel: HomeViewModel){
         headerView.updateView(with: viewModel.header)
-       
-        if let teamModel = viewModel.teamInfo {
-            teamCardView.updateView(with: teamModel)
-        }
         
         viewModel.menuCards?.forEach { menuItem in
             let menuCard = MenuItemView()
@@ -129,7 +117,6 @@ final class HomeView: UIView {
              userAlertView])
         scrollView.addSubview(contentView)
         contentView.addSubview(menuStackView)
-        menuStackView.addArrangedSubview(teamCardView)
     }
     
     private func setupConstraints(){

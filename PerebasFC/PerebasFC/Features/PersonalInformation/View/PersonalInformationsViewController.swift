@@ -81,6 +81,10 @@ extension PersonalInformationsViewController {
 
 extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
     
+    func hideDeleteButton() {
+        personalInformationsView.hideDeleteButton = true 
+    }
+    
     func updateView(with model: PersonalInformationsViewModel) {
         personalInformationsView.updateView(with: model)
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ParticipantsManagerCoordinatorProtocol{
-    func openPersonalInformationsView(user: User)
+    func openPersonalInformationsView(email: String)
     func showLoading()
     func removeLoading()
     func showErrorAlert()
@@ -24,10 +24,11 @@ final class ParticipantsManagerCoordinator: ParticipantsManagerCoordinatorProtoc
         self.loader = LoaderCoodinator(navigationController: navigationController)
     }
    
-    func openPersonalInformationsView(user: User) {
+    func openPersonalInformationsView(email: String) {
         navigationController.pushViewController(
             PersonalInformationsFactory.getPersonalInformationsViewController(
-                navigationController: navigationController),
+                navigationController: navigationController,
+                email: email),
             animated: true)
     }
     

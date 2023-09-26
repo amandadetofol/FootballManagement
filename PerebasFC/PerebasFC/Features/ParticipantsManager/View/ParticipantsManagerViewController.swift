@@ -10,7 +10,7 @@ import UIKit
 protocol ParticipantsManagerInteractorProtocol {
     func viewDidLoad()
     func setupViewForErrorState()
-    func handleParticipantCardViewTap(user: User)
+    func handleParticipantCardViewTap(email: String)
     func updateView(basedOn segmentedControlIndex: Int)
 }
 
@@ -84,8 +84,8 @@ final class ParticipantsManagerViewController: UIViewController {
 
 extension ParticipantsManagerViewController: ParticipantsManagerViewDelegate {
    
-    func handleParticipantCardViewTap(user: User) {
-        interactor.handleParticipantCardViewTap(user: user)
+    func handleParticipantCardViewTap(email: String) {
+        interactor.handleParticipantCardViewTap(email: email)
     }
     
 }

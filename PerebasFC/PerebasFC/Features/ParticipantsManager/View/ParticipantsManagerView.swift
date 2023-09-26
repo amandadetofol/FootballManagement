@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ParticipantsManagerViewDelegate: AnyObject {
-    func handleParticipantCardViewTap(user: User)
+    func handleParticipantCardViewTap(email: String)
 }
 
 final class ParticipantsManagerView: UIView {
@@ -111,7 +111,7 @@ final class ParticipantsManagerView: UIView {
 extension ParticipantsManagerView: ParticipantCellViewDelegate {
     
     func handleParticipantCardViewTap(user: User) {
-        delegate?.handleParticipantCardViewTap(user: user)
+        delegate?.handleParticipantCardViewTap(email: user.email ?? "")
     }
 
 }

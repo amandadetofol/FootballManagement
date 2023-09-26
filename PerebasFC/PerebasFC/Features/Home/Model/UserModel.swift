@@ -18,6 +18,7 @@ struct User {
     let isAdm: Bool
     let type: ParticipantType
     let menuItems: [MenuItemViewModel]?
+    var email: String? = nil 
 }
 
 struct UserWarning {

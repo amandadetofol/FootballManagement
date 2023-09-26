@@ -70,7 +70,8 @@ final class ParticipantsManagerPresenter: ParticipantsManagerPresenterProtocol {
                         rankingPosition: document["rankingPlace"] as? Int ?? 0,
                         isAdm: Session.shared.isAdm ?? false,
                         type: ParticipantType(rawValue: document["type"] as? String ?? "") ?? .member,
-                        menuItems: nil)
+                        menuItems: nil,
+                        email: document["email"] as? String ?? "")
                 )
             )
         }

@@ -247,7 +247,6 @@
 		A6D248892A830CD9004951FD /* ParticipantsManagerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D248882A830CD9004951FD /* ParticipantsManagerWorker.swift */; };
 		A6D2488B2A830D28004951FD /* ParticipantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2488A2A830D28004951FD /* ParticipantCellView.swift */; };
 		A6D2488D2A830D34004951FD /* ParticipantCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2488C2A830D34004951FD /* ParticipantCellModel.swift */; };
-		A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */; };
 		A6E0E9EA2A202A0500121515 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */; };
 		A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */; };
 		A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9ED2A202B3D00121515 /* HomePresenter.swift */; };
@@ -546,7 +545,6 @@
 		A6D248882A830CD9004951FD /* ParticipantsManagerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsManagerWorker.swift; sourceTree = "<group>"; };
 		A6D2488A2A830D28004951FD /* ParticipantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCellView.swift; sourceTree = "<group>"; };
 		A6D2488C2A830D34004951FD /* ParticipantCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCellModel.swift; sourceTree = "<group>"; };
-		A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTeamCardView.swift; sourceTree = "<group>"; };
 		A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		A6E0E9ED2A202B3D00121515 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -1152,7 +1150,6 @@
 		A61A8FBC2A1C3016009D08EE /* InternalComponents */ = {
 			isa = PBXGroup;
 			children = (
-				A6E0E9E32A2020BB00121515 /* CurrentTeamCard */,
 				A6E5BB392A1EB73800ADE47F /* MenuItem */,
 				A6E5BB302A1D892A00ADE47F /* UserWarningAlert */,
 				A61A8FBB2A1C3008009D08EE /* HomeHeader */,
@@ -2774,14 +2771,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		A6E0E9E32A2020BB00121515 /* CurrentTeamCard */ = {
-			isa = PBXGroup;
-			children = (
-				A6E0E9E42A2020CF00121515 /* CurrentTeamCardView.swift */,
-			);
-			path = CurrentTeamCard;
-			sourceTree = "<group>";
-		};
 		A6E317A72A942ABB0096DA4B /* Worker */ = {
 			isa = PBXGroup;
 			children = (
@@ -3162,7 +3151,6 @@
 				A67360AA2A39389A003BF4C2 /* PendenciesDisclaimerViewModel.swift in Sources */,
 				A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */,
 				A69E89322A8AF11B008C09DC /* FinancialAdministratorMainViewController.swift in Sources */,
-				A6E0E9E52A2020CF00121515 /* CurrentTeamCardView.swift in Sources */,
 				A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */,
 				A61CFFF22A3BDC260026BAF1 /* EditAwadsView.swift in Sources */,
 				A62C1CDA2A37E84E002AA401 /* FinancialPendenciesViewController.swift in Sources */,

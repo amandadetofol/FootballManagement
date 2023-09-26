@@ -9,6 +9,7 @@ import UIKit
 
 struct PersonalInformationsViewModel {
     let name: String
+    var email: String? = nil
     let lastName: String
     let birthDate: Date
     let position: String
@@ -18,7 +19,7 @@ struct PersonalInformationsViewModel {
     let emergencyPhoneNumber: String
     let category: String
     let image: UIImage?
-    var imageUrl: String? = nil 
+    var imageUrl: String? = nil
 }
 
 enum MemberType: String {

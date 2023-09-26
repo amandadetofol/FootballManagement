@@ -10,6 +10,7 @@ import Foundation
 protocol PersonalInformationsPresenterProtocol {
     func handleGoToEditDataFlow()
     func handleGoToBlockEdition()
+    func hideDeleteButton()
     func updateView(with model: PersonalInformationsViewModel)
 }
 
@@ -18,6 +19,7 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
     private let coordinator: PersonalInformationsCoordinatorProtocol
     private let presenter: PersonalInformationsPresenterProtocol
     private let worker: PersonalInformationsWorkerProtocol
+    var email: String?
     
     init(
         coordinator: PersonalInformationsCoordinatorProtocol,
@@ -30,7 +32,7 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
     
     func viewDidLoad() {
         coordinator.showLoading()
-        worker.getPersonalInformations { [weak self] data in
+        worker.getPersonalInformations({ [weak self] data in
             guard let self else { return }
             
             guard let data = data else {
@@ -40,6 +42,11 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
             }
             self.coordinator.removeLoading()
             self.presenter.updateView(with: data)
+        },
+        email: self.email)
+        
+        if let _ = self.email {
+            presenter.hideDeleteButton()
         }
     }
     
@@ -56,7 +63,8 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
         changeImage: Bool){
             worker.updatePersonalInformations(
                 personalInformations: model,
-                changeImage: changeImage) { [weak self] succeded in
+                changeImage: changeImage,
+                completion: { [weak self] succeded in
                     guard let self else { return }
                     
                     if succeded {
@@ -64,7 +72,8 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
                     } else {
                         self.coordinator.showUpdateErrorPopUp()
                     }
-                }
+                },
+            email: email)
         }
     
     func handleGoToBlockEdition() {
@@ -72,8 +81,16 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
     }
     
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel) {
-        coordinator.showDeleteUserConfirmationModal(userName: user.name) { [weak self] in
-            self?.coordinator.goToBack()
+        guard let email = user.email else { return }
+        coordinator.showLoading()
+        worker.deleteUser(email: email) { [weak self] succeded in
+            guard let self = self else { return }
+            coordinator.removeLoading()
+            if succeded{
+                self.coordinator.showDeleteUserSuccessPopUp(email: email)
+            } else {
+                self.coordinator.showErrorMessageAlert()
+            }
         }
     }
     

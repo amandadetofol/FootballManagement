@@ -37,10 +37,6 @@ final class HomePresenter: HomePresenterProtocol {
                 header: HomeHeaderViewModel(
                     welcomeText: "Olá!",
                     fullName: "\(user.firstName) \(user.lastName)"),
-                teamInfo: HomeTeamInfo(
-                    shirtNumber: user.shirtNumber,
-                    teamName: user.team,
-                    position: user.position),
                 menuCards: nil,
                 warning: warningModel)
         }
@@ -50,10 +46,6 @@ final class HomePresenter: HomePresenterProtocol {
             header: HomeHeaderViewModel(
                 welcomeText: "Olá!",
                 fullName: "\(user.firstName) \(user.lastName)"),
-            teamInfo: HomeTeamInfo(
-                shirtNumber: user.shirtNumber,
-                teamName: user.team,
-                position: user.position),
             menuCards: menuCards,
             warning: warningModel)
         

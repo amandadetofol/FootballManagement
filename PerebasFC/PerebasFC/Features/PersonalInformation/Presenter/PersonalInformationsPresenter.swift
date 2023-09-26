@@ -10,6 +10,7 @@ import Foundation
 protocol PersonalInformationsViewProtocol: AnyObject {
     func handleGoToEditDataFlow()
     func handleGoToBlockEdition()
+    func hideDeleteButton()
     func updateView(with model: PersonalInformationsViewModel)
 }
 
@@ -27,6 +28,10 @@ final class PersonalInformationsPresenter: PersonalInformationsPresenterProtocol
     
     func updateView(with model: PersonalInformationsViewModel) {
         view?.updateView(with: model)
+    }
+    
+    func hideDeleteButton(){
+        view?.hideDeleteButton()
     }
     
 }
