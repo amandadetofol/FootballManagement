@@ -18,7 +18,8 @@ struct User {
     let isAdm: Bool
     let type: ParticipantType
     let menuItems: [MenuItemViewModel]?
-    var email: String? = nil 
+    var email: String? = nil
+    var category: String? =  nil
 }
 
 struct UserWarning {

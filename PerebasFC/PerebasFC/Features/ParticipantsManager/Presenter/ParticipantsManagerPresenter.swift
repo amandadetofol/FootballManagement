@@ -65,7 +65,7 @@ final class ParticipantsManagerPresenter: ParticipantsManagerPresenterProtocol {
                         lastName: document["lastname"] as? String ?? "",
                         shirtNumber: document["shirtNumber"] as? String ?? "",
                         position: document["position"] as? String ?? "",
-                        team: "", //TODO: implementar depois que pegar o sorteio
+                        team: document["team"] as? String ?? "", 
                         warning: nil,
                         rankingPosition: document["rankingPlace"] as? Int ?? 0,
                         isAdm: Session.shared.isAdm ?? false,

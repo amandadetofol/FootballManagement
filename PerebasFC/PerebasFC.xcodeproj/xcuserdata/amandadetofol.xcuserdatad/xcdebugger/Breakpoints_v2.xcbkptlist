@@ -2066,7 +2066,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "701FEE7D-52C3-49ED-ABE9-F957C83323F4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Features/ParticipantsManager/Interactor/ParticipantsManagerInteractor.swift"
@@ -2114,7 +2114,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D5590440-E183-4520-A4ED-E35DC4EE3E21"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Features/ParticipantsManager/InternalComponents/ParticipantCellView.swift"
@@ -2154,6 +2154,21 @@
                   startingLineNumber = "76"
                   endingLineNumber = "76"
                   offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "D5590440-E183-4520-A4ED-E35DC4EE3E21 - 6ae32450c970fc40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.PariticipantCellView.updateView(with: PerebasFC.ParticipantCellModel) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/ParticipantsManager/InternalComponents/ParticipantCellView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "228">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2202,6 +2217,21 @@
                   startingLineNumber = "129"
                   endingLineNumber = "129"
                   offsetFromSymbolStart = "860">
+               </Location>
+               <Location
+                  uuid = "95BFF745-76EC-4D9A-BE51-D71A408864EE - 1c9d11e06f0d77d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.PariticipantCellView.handleParticipantCardViewTap() -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/ParticipantsManager/InternalComponents/ParticipantCellView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "920">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2274,7 +2304,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DBCD32FF-A81B-4552-A346-8108DD691731"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Features/PersonalInformation/Interactor/PersonalInformationsInteractor.swift"
@@ -2352,7 +2382,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1CE3868E-C57C-4864-973E-201CE18CDDAC"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PerebasFC/Features/PersonalInformation/Presenter/PersonalInformationsPresenter.swift"
@@ -2362,6 +2392,54 @@
             endingLineNumber = "34"
             landmarkName = "hideDeleteButton()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72365DCB-63D7-4424-89AA-073CDDBDC579"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/Home/View/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "updateView(viewModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "72365DCB-63D7-4424-89AA-073CDDBDC579 - b0981daa57a74f3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.HomeView.updateView(viewModel: PerebasFC.HomeViewModel) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Home/View/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "72365DCB-63D7-4424-89AA-073CDDBDC579 - 4855db56d49acdea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PerebasFC.MenuItemViewModel) -&gt; () in PerebasFC.HomeView.updateView(viewModel: PerebasFC.HomeViewModel) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Home/View/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

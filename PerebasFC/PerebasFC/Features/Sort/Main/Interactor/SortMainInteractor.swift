@@ -29,13 +29,19 @@ final class SortMainInteractor: SortMainViewInteractorProtocol {
     }
     
     func handleNewSort() {
-        worker.handleNewSort { [weak self] suceded in
+        coordinator.showLoading() 
+        worker.handleNewSort { [weak self] whiteTeam, blackTeam in
             guard let self = self else { return }
-            if suceded {
-                self.coordinator.showSuccessPopUp()
-            } else {
+            
+            self.coordinator.removeLoading()
+            
+            guard let whiteTeam,
+                  let blackTeam else {
                 self.coordinator.showErrorPopUp()
+                return
             }
+            
+            self.coordinator.showSuccessPopUp() //passar o novo time aq
         }
     }
     

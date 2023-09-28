@@ -10,15 +10,19 @@ import UIKit
 protocol SortMainCoordinatorProtocol {
     func showSuccessPopUp()
     func showErrorPopUp()
+    func showLoading()
+    func removeLoading()
     func goToWeekTeamView(model: WeekTeamViewModel)
 }
 
 final class SortMainCoordinator: SortMainCoordinatorProtocol {
     
     private let navigationController: UINavigationController
+    private let loader: LoaderCoodinator
     
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
+        self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
     func goToWeekTeamView(model: WeekTeamViewModel){
@@ -68,6 +72,14 @@ final class SortMainCoordinator: SortMainCoordinatorProtocol {
         navigationController.present(
             alert,
             animated: true)
+    }
+    
+    func showLoading(){
+        loader.showLoader()
+    }
+    
+    func removeLoading(){
+        loader.removeLoader()
     }
     
 }
