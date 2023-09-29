@@ -11,7 +11,6 @@ struct HomeViewModel {
     let isAdm: Bool
     let header: HomeHeaderViewModel
     let menuCards: [MenuItemViewModel]?
-    let warning: UserAlertWarningViewModel?
 }
 
 struct HomeTeamInfo {

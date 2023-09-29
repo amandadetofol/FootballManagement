@@ -8,16 +8,16 @@
 import UIKit
 
 protocol HomePresenterProtocol {
-    func updateViewForState(isAdm: Bool, model: User)
+    func updateViewForState(isAdm: Bool, model: [MenuItemViewModel])
 }
 
 final class HomeInteractor: HomeInteractorProtocol {
     
-    private let homeViewModel: User
+    private let homeViewModel: [MenuItemViewModel]
     private let presenter: HomePresenterProtocol
     private let coordinator: HomeCoordinatorProtocolWithLoaderProtocol
     
-    init(homeViewModel: User,
+    init(homeViewModel: [MenuItemViewModel],
          presenter: HomePresenterProtocol,
          coordinator: HomeCoordinatorProtocolWithLoaderProtocol) {
         self.homeViewModel = homeViewModel
@@ -27,7 +27,7 @@ final class HomeInteractor: HomeInteractorProtocol {
     
     func viewDidLoad() {
         presenter.updateViewForState(
-            isAdm: homeViewModel.isAdm,
+            isAdm: Session.shared.isAdm ?? false,
             model: homeViewModel)
     }
     

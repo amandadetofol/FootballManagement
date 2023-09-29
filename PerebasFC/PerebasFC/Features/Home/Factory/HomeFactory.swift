@@ -9,11 +9,11 @@ import UIKit
 
 final class HomeFactory {
     
-    static func getHomeViewController(navigationController: UINavigationController, user: User) -> HomeViewController {
+    static func getHomeViewController(navigationController: UINavigationController, menuItems: [MenuItemViewModel]) -> HomeViewController {
         let coordinator = HomeCoordinator(navigationController: navigationController)
         let presenter = HomePresenter()
         let interactor = HomeInteractor(
-            homeViewModel: user,
+            homeViewModel: menuItems,
             presenter: presenter,
             coordinator: coordinator)
         let viewController = HomeViewController(interactor: interactor)

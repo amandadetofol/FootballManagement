@@ -9,6 +9,7 @@ import Foundation
 
 final class SortMainInteractor: SortMainViewInteractorProtocol {
     
+    var weekTeam: WeekTeamViewModel?
     private let presenter: SortMainPresenter
     private let worker: SortMainWorkerProtocol
     private let coordinator: SortMainCoordinatorProtocol
@@ -22,14 +23,21 @@ final class SortMainInteractor: SortMainViewInteractorProtocol {
     }
     
     func viewDidLoad() {
+        coordinator.showLoading()
         worker.getSorts { [weak self] sorts in
-            guard let self = self else { return }
-            presenter.updateView(with: sorts)
-        }
+            guard let self,
+                  let sorts = sorts else {
+                self?.coordinator.removeLoading()
+                self?.coordinator.showErrorPopUp()
+                return
+            }
+            self.coordinator.removeLoading()
+            self.presenter.updateView(with: sorts)
+      }
     }
     
     func handleNewSort() {
-        coordinator.showLoading() 
+        coordinator.showLoading()
         worker.handleNewSort { [weak self] whiteTeam, blackTeam in
             guard let self = self else { return }
             
@@ -41,12 +49,15 @@ final class SortMainInteractor: SortMainViewInteractorProtocol {
                 return
             }
             
-            self.coordinator.showSuccessPopUp() //passar o novo time aq
+            self.coordinator.showSuccessPopUp(
+                model: WeekTeamViewModel(
+                    whiteTeam: Team(players: whiteTeam),
+                    blackTeam: Team(players: blackTeam)))
         }
     }
     
     func goToSortedGameDetailsView(weekTeam: WeekTeamViewModel) {
         coordinator.goToWeekTeamView(model: weekTeam)
     }
-
+    
 }

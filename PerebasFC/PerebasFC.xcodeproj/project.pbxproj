@@ -253,8 +253,6 @@
 		A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0E9F12A20327600121515 /* HomeFactory.swift */; };
 		A6E317A92A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E317A82A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift */; };
 		A6E5BB2F2A1D889E00ADE47F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB2E2A1D889E00ADE47F /* HomeViewModel.swift */; };
-		A6E5BB322A1D893A00ADE47F /* UserAlertWarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB312A1D893A00ADE47F /* UserAlertWarningViewModel.swift */; };
-		A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB352A1D89AF00ADE47F /* UserAlertWarningView.swift */; };
 		A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB372A1D8CCA00ADE47F /* UIStackView.swift */; };
 		A6E5BB3B2A1EB74200ADE47F /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB3A2A1EB74200ADE47F /* MenuItemView.swift */; };
 		A6E5BB3E2A1EB75500ADE47F /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5BB3D2A1EB75500ADE47F /* MenuItemViewModel.swift */; };
@@ -551,8 +549,6 @@
 		A6E0E9F12A20327600121515 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		A6E317A82A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsNotificationWorker.swift; sourceTree = "<group>"; };
 		A6E5BB2E2A1D889E00ADE47F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		A6E5BB312A1D893A00ADE47F /* UserAlertWarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlertWarningViewModel.swift; sourceTree = "<group>"; };
-		A6E5BB352A1D89AF00ADE47F /* UserAlertWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlertWarningView.swift; sourceTree = "<group>"; };
 		A6E5BB372A1D8CCA00ADE47F /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		A6E5BB3A2A1EB74200ADE47F /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		A6E5BB3D2A1EB75500ADE47F /* MenuItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewModel.swift; sourceTree = "<group>"; };
@@ -1151,7 +1147,6 @@
 			isa = PBXGroup;
 			children = (
 				A6E5BB392A1EB73800ADE47F /* MenuItem */,
-				A6E5BB302A1D892A00ADE47F /* UserWarningAlert */,
 				A61A8FBB2A1C3008009D08EE /* HomeHeader */,
 			);
 			path = InternalComponents;
@@ -2779,15 +2774,6 @@
 			path = Worker;
 			sourceTree = "<group>";
 		};
-		A6E5BB302A1D892A00ADE47F /* UserWarningAlert */ = {
-			isa = PBXGroup;
-			children = (
-				A6E5BB312A1D893A00ADE47F /* UserAlertWarningViewModel.swift */,
-				A6E5BB352A1D89AF00ADE47F /* UserAlertWarningView.swift */,
-			);
-			path = UserWarningAlert;
-			sourceTree = "<group>";
-		};
 		A6E5BB392A1EB73800ADE47F /* MenuItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -3098,7 +3084,6 @@
 				A65663092A96CAB900EEC58D /* MapWorker.swift in Sources */,
 				A6AF78CA2AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift in Sources */,
 				A61C0CC32AAFD0F30012BACC /* SignUpView.swift in Sources */,
-				A6E5BB362A1D89AF00ADE47F /* UserAlertWarningView.swift in Sources */,
 				A6E6BB1F2A733D680063A62A /* LoaderViewController.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
 				A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */,
@@ -3140,7 +3125,6 @@
 				A64161A32A898E8100BF45C4 /* AccessibilityManagerInteractor.swift in Sources */,
 				A6CFD57B2A2939FD00A37696 /* FirstPlacesDifferentView.swift in Sources */,
 				A6A741612A2550FF009A7998 /* WeekTeamListItemView.swift in Sources */,
-				A6E5BB322A1D893A00ADE47F /* UserAlertWarningViewModel.swift in Sources */,
 				A61A8F862A143668009D08EE /* LoginWorker.swift in Sources */,
 				A61A8FB52A1C2E2B009D08EE /* UserModel.swift in Sources */,
 				A62C1CE22A37E86B002AA401 /* FinancialFactory.swift in Sources */,

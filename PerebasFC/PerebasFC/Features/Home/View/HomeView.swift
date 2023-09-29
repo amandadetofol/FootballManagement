@@ -65,15 +65,7 @@ final class HomeView: UIView {
         
         return view
     }()
-    
-    private lazy var userAlertView: UserAlertWarningView = {
-        let userAlertView = UserAlertWarningView()
-        userAlertView.translatesAutoresizingMaskIntoConstraints = false
-        userAlertView.delegate = self
-        userAlertView.isHidden = true
-        
-        return userAlertView
-    }()
+
     
     init(){
         super.init(frame: .zero)
@@ -96,25 +88,14 @@ final class HomeView: UIView {
             menuCard.delegate = self
             menuStackView.addArrangedSubview(menuCard)
         }
-        
-        if let alertModel = viewModel.warning {
-            userAlertView.updateView(withModel: alertModel)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                UIView.animate(withDuration: 10) { [weak self] in
-                    self?.userAlertView.isHidden = false
-                }
-            }
-            
-        }
+    
     }
     
     private func setupView(){
         self.addSubviews(
             [headerView,
              styleLeadingView,
-             scrollView,
-             userAlertView])
+             scrollView])
         scrollView.addSubview(contentView)
         contentView.addSubview(menuStackView)
     }
@@ -145,23 +126,7 @@ final class HomeView: UIView {
             menuStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             menuStackView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
             menuStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            
-            userAlertView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            userAlertView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            userAlertView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
-    }
-    
-}
-
-extension HomeView: UserAlertWarningViewDelegate {
-    
-    func handleCloseButtonTap() {
-        delegate?.handleAlertCloseButtonTap()
-    }
-    
-    func handleActionButtonTap(key: InternalLinkRedirectKeys) {
-        delegate?.handleInternalLinkRedirect(key: key)
     }
     
 }

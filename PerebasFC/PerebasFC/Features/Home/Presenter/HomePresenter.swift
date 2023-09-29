@@ -8,47 +8,27 @@
 import UIKit
 
 protocol HomeViewProtocol: AnyObject {
-    func updateViewForState(isAdm: Bool, model: HomeViewModel) 
+    func updateViewForState(isAdm: Bool, model: HomeViewModel)
 }
 
 final class HomePresenter: HomePresenterProtocol {
-
+    
     weak var view: HomeViewProtocol?
     
-    func updateViewForState(isAdm: Bool, model: User) {
+    func updateViewForState(isAdm: Bool, model: [MenuItemViewModel]) {
         let data = parseFirebaseModelToViewModel(model)
         view?.updateViewForState(
             isAdm: isAdm,
             model: data)
     }
     
-    private func parseFirebaseModelToViewModel(_ user: User) -> HomeViewModel {
-        
-        var warningModel: UserAlertWarningViewModel? = nil 
-        if let warning = user.warning {
-            warningModel = UserAlertWarningViewModel(
-                icon: user.warning?.icon ?? UIImage(),
-                warning: warning)
-        }
-        
-        guard let menuCards = user.menuItems else {
-            return HomeViewModel(
-                isAdm: user.isAdm,
-                header: HomeHeaderViewModel(
-                    welcomeText: "Olá!",
-                    fullName: "\(user.firstName) \(user.lastName)"),
-                menuCards: nil,
-                warning: warningModel)
-        }
-        
+    private func parseFirebaseModelToViewModel(_ model: [MenuItemViewModel]) -> HomeViewModel {
         return HomeViewModel(
-            isAdm: user.isAdm,
+            isAdm: Session.shared.isAdm ?? false ,
             header: HomeHeaderViewModel(
                 welcomeText: "Olá!",
-                fullName: "\(user.firstName) \(user.lastName)"),
-            menuCards: menuCards,
-            warning: warningModel)
-        
+                fullName: "\(Session.shared.loggedUserEmail ?? "")"),
+            menuCards: model)
     }
     
 }

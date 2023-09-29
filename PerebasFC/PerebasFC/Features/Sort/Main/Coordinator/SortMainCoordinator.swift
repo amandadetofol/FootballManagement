@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SortMainCoordinatorProtocol {
-    func showSuccessPopUp()
+    func showSuccessPopUp(model: WeekTeamViewModel)
     func showErrorPopUp()
     func showLoading()
     func removeLoading()
@@ -30,7 +30,7 @@ final class SortMainCoordinator: SortMainCoordinatorProtocol {
         navigationController.pushViewController(controller, animated: true)
     }
     
-    func showSuccessPopUp(){
+    func showSuccessPopUp(model: WeekTeamViewModel){
         let alert = UIAlertController(
             title: "Novos Times Sorteados",
             message: "Novos times sorteados com sucesso. Confira clicando em OK. ;)",
@@ -41,9 +41,7 @@ final class SortMainCoordinator: SortMainCoordinatorProtocol {
                 style: UIAlertAction.Style.default,
                 handler: { [weak self] _ in
                     self?.goToWeekTeamView(
-                        model: WeekTeamViewModel(
-                        whiteTeam: Team(players: Session.shared.players),
-                        blackTeam: Team(players: Session.shared.players)))
+                        model: model)
                 }))
         alert.addAction(
             UIAlertAction(

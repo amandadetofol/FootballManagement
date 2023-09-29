@@ -14,10 +14,10 @@ protocol LoginWorkerProtocol {
     func login(
         username: String,
         password: String,
-        _ completion: @escaping ((User?) -> Void))
+        _ completion: @escaping (([MenuItemViewModel]?) -> Void))
     func loginWithGoogle(
         controller: UIViewController,
-        _ completion: @escaping ((User?) -> Void))
+        _ completion: @escaping (([MenuItemViewModel]?) -> Void))
 }
 
 final class LoginWorker: LoginWorkerProtocol {
@@ -26,7 +26,7 @@ final class LoginWorker: LoginWorkerProtocol {
     
     func loginWithGoogle(
         controller: UIViewController,
-        _ completion: @escaping ((User?) -> Void)) {
+        _ completion: @escaping ([MenuItemViewModel]?) -> Void) {
             guard let clientID = FirebaseApp.app()?.options.clientID else { return }
             let config = GIDConfiguration(clientID: clientID)
             GIDSignIn.sharedInstance.configuration = config
@@ -46,7 +46,7 @@ final class LoginWorker: LoginWorkerProtocol {
                 Auth.auth().signIn(with: credential) { result, error in
                     if (result?.user != nil) {
                         Session.shared.isAdm = false
-                        completion(self.getMockUser(isAdm: false))
+                        completion(self.getMenuItemList(isAdm: false))
                     } else {
                         completion(nil)
                     }
@@ -57,7 +57,7 @@ final class LoginWorker: LoginWorkerProtocol {
     func login(
         username: String,
         password: String,
-        _ completion: @escaping ((User?) -> Void)) {
+        _ completion: @escaping (([MenuItemViewModel]?) -> Void)) {
             
             Auth.auth().signIn(
                 withEmail: username,
@@ -71,7 +71,7 @@ final class LoginWorker: LoginWorkerProtocol {
                     self.checkIfUserIsAdm(email: username) { isAdm in
                         Session.shared.isAdm = isAdm
                         Session.shared.loggedUserEmail = username
-                        completion(self.getMockUser(isAdm: isAdm))
+                        completion(self.getMenuItemList(isAdm: isAdm))
                     }
 
                 }
@@ -147,31 +147,12 @@ extension LoginWorker {
             title: "Participantes",
             icon: UIImage(systemName: "person.3.sequence.fill") ?? UIImage(),
             redirectKey: .participants)
-         
-       if !isAdm {
+        
+        if !isAdm {
             return [myData, financial, calendar, map, chat, ranking, gamesHistory, team]
-       } else {
-           return [myData, admfinancial, calendar, map, chat, ranking, gamesHistory, team, sort, participants]
+        } else {
+            return [myData, admfinancial, calendar, map, chat, ranking, gamesHistory, team, sort, participants]
         }
     }
     
-    //TODO: Remove mock when finish integration
-    private func getMockUser(isAdm: Bool) -> User {
-        return User(
-            firstName: "José",
-            lastName: "Maria",
-            shirtNumber: "08",
-            position: "Zagueiro",
-            team: "Preto",
-            warning: UserWarning(
-                title: "Se lembra desse evento?",
-                description: "Ei, voce vai comparecer no churrasco de amanhã? Não esqueça de confirmar sua presença",
-                icon: UIImage(systemName: "fork.knife.circle.fill") ?? UIImage(),
-                firstActionTitle: "Confirmar".uppercased(),
-                firstActionKey: .confirmPresence(willShow: true)),
-            rankingPosition: 8,
-            isAdm: isAdm,
-            type: .goalKepper,
-            menuItems: self.getMenuItemList(isAdm: isAdm))
-    }
 }

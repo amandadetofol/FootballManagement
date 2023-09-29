@@ -47,10 +47,10 @@ final class LoginInteractor: LoginInteractorProtocol {
         
         if !hasError {
             coordinator.showLoader()
-            worker.login(username: username, password: password) { [weak self] user in
+            worker.login(username: username, password: password) { [weak self] menuItems in
                 self?.coordinator.removeLoader()
-                if let user = user {
-                    self?.coordinator.goToLoggedArea(user: user)
+                if let menuItems = menuItems {
+                    self?.coordinator.goToLoggedArea(menuItems)
                 } else {
                     self?.presentViewForLoginError()
                 }
@@ -60,10 +60,10 @@ final class LoginInteractor: LoginInteractorProtocol {
     
     func loginWithGoogle(controller: UIViewController){
         worker.loginWithGoogle(
-            controller: controller) { [weak self] user in
-                if let user = user {
+            controller: controller) { [weak self] menuItems in
+                if let menuItems = menuItems {
                     self?.coordinator.removeLoader()
-                    self?.coordinator.goToLoggedArea(user: user)
+                    self?.coordinator.goToLoggedArea(menuItems)
                 } else {
                     self?.coordinator.removeLoader()
                     self?.presentViewForLoginError()

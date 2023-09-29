@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol SortMainPresenterProtocol {
-    func updateView(with model: SortGameMainViewModel)
+    func updateView(with model: QuerySnapshot)
 }
 
 protocol SortMainViewProtocol: AnyObject {
@@ -19,8 +20,15 @@ final class SortMainPresenter: SortMainPresenterProtocol {
     
     var view: SortMainViewProtocol?
     
-    func updateView(with model: SortGameMainViewModel){
-        view?.updateView(with: model)
+    func updateView(with model: QuerySnapshot){
+       // view?.updateView(with: getSortGameMainViewModel(model: model))
+        
+        getSortGameMainViewModel(model: model)
+    }
+    
+    //MARK: Private func
+    private func getSortGameMainViewModel(model: QuerySnapshot)  {
+      
     }
     
 }

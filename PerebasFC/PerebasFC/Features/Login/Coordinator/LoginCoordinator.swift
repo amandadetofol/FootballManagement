@@ -11,7 +11,7 @@ typealias LoginCoordinatorWithLoaderProtocol = LoaderCoodinatorProtocol & LoginC
 
 protocol LoginCoordinatorProtocol {
     func goToLoginErrorView()
-    func goToLoggedArea(user: User)
+    func goToLoggedArea(_ menuItems: [MenuItemViewModel])
     func goToNewMemeberMessageView()
     func goToForgotPassword(username: String)
 }
@@ -40,11 +40,11 @@ final class LoginCoordinator: LoginCoordinatorWithLoaderProtocol {
             animated: true)
     }
     
-    func goToLoggedArea(user: User) {
+    func goToLoggedArea(_ menuItems: [MenuItemViewModel]) {
         navigationController.pushViewController(
             HomeFactory.getHomeViewController(
                 navigationController: self.navigationController,
-                user: user),
+                menuItems: menuItems),
             animated: true)
     }
     

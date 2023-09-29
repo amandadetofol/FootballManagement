@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 protocol SortMainWorkerProtocol {
-    func getSorts(completion: @escaping((SortGameMainViewModel)->Void))
+    func getSorts(completion: @escaping((QuerySnapshot?)->Void))
     func handleNewSort(completion: @escaping(([User]?, [User]?)-> Void))
 }
 
@@ -29,10 +29,13 @@ final class SortMainWorker: SortMainWorkerProtocol {
             let userArray = self.getUsers(with: documents).shuffled()
             let whiteTeam = Array(userArray.prefix(userArray.count / 2))
             let blackTeam = Array(userArray.suffix(userArray.count / 2))
+            var whiteTeamDate: Date?
+            var blackTeamDate: Date?
         
             whiteTeam.forEach { user in
+                whiteTeamDate = Date()
                 self.fireabaseFirestoreProvider
-                    .document("sort/whiteteam/\(Date())/\(user.email ?? "")")
+                    .document("sort/\(whiteTeamDate ?? Date())/whiteteam/\(user.email ?? "")")
                     .setData(
                         ["name" : user.firstName,
                          "lastName" : user.lastName,
@@ -42,8 +45,9 @@ final class SortMainWorker: SortMainWorkerProtocol {
             }
            
             blackTeam.forEach { user in
+                blackTeamDate = Date()
                 self.fireabaseFirestoreProvider
-                    .document("sort/blackteam/\(Date())/\(user.email ?? "")")
+                    .document("sort/\(blackTeamDate ?? Date())/blackteam/\(user.email ?? "")")
                     .setData(
                         ["name" : user.firstName,
                          "lastName" : user.lastName,
@@ -52,32 +56,30 @@ final class SortMainWorker: SortMainWorkerProtocol {
                          ])
             }
             
+            self.fireabaseFirestoreProvider.document("sort/\(blackTeamDate ?? Date())").setData(["isActive": true])
+            self.fireabaseFirestoreProvider.document("sort/\(blackTeamDate ?? Date())").updateData(["sortDate": blackTeamDate?.toString() ?? ""])
+            
+            self.fireabaseFirestoreProvider.document("sort/list").getDocument { document, error in
+                guard let list = document?["list"] as? [String] else { return }
+                var myList = list
+                myList.append("\(blackTeamDate ?? Date())")
+                self.fireabaseFirestoreProvider.document("sort/list").setData(["list" : myList])
+            }
+            
             completion(whiteTeam, blackTeam)
         }
      
     }
     
-    func getSorts(completion: @escaping((SortGameMainViewModel)->Void)){
-        completion(
-            SortGameMainViewModel(
-                sorts: [
-                    SortCardViewModel(
-                        title: "Sorteio 02",
-                        description: "Válido até 18/10",
-                        model: WeekTeamViewModel(
-                            whiteTeam: Team(players: Session.shared.players) ,
-                            blackTeam: Team(players: Session.shared.players)),
-                        total: 2,
-                        currentIndex: 1),
-                        SortCardViewModel(
-                            title: "Sorteio 01",
-                            description: "Expirado",
-                            model: WeekTeamViewModel(
-                                whiteTeam: Team(players: Session.shared.players),
-                                blackTeam: Team(players: Session.shared.players)),
-                            total: 2,
-                            currentIndex: 2)
-                    ]))
+    func getSorts(completion: @escaping((QuerySnapshot?)->Void)){
+        fireabaseFirestoreProvider.collection("sort").getDocuments { querySnapShot, error in
+            guard error == nil else {
+                completion(nil)
+                return
+            }
+            completion(querySnapShot)
+        }
+        
     }
     
     //MARK: Private methods
