@@ -83,13 +83,13 @@ final class SortCardView: UIControl {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 72),
+            heightAnchor.constraint(equalToConstant: 96),
             
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             

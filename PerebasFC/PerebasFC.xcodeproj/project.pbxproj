@@ -112,6 +112,7 @@
 		A64161AC2A898ED300BF45C4 /* AccessibilityManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64161AB2A898ED300BF45C4 /* AccessibilityManagerViewController.swift */; };
 		A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64912412A33BAA700356B7B /* CalendarViewController.swift */; };
 		A64912452A33BCE300356B7B /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A64912442A33BCE300356B7B /* HorizonCalendar */; };
+		A64E76932AC7909000BCD77C /* SortFirebaseIncoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64E76922AC7909000BCD77C /* SortFirebaseIncoming.swift */; };
 		A65662F92A96CA8000EEC58D /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65662F82A96CA8000EEC58D /* MapCoordinator.swift */; };
 		A65662FB2A96CA8600EEC58D /* MapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65662FA2A96CA8600EEC58D /* MapFactory.swift */; };
 		A65662FD2A96CA8A00EEC58D /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65662FC2A96CA8A00EEC58D /* MapModel.swift */; };
@@ -409,6 +410,7 @@
 		A64161A92A898EBC00BF45C4 /* AccessibilityManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerView.swift; sourceTree = "<group>"; };
 		A64161AB2A898ED300BF45C4 /* AccessibilityManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerViewController.swift; sourceTree = "<group>"; };
 		A64912412A33BAA700356B7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		A64E76922AC7909000BCD77C /* SortFirebaseIncoming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFirebaseIncoming.swift; sourceTree = "<group>"; };
 		A65662F82A96CA8000EEC58D /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		A65662FA2A96CA8600EEC58D /* MapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFactory.swift; sourceTree = "<group>"; };
 		A65662FC2A96CA8A00EEC58D /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
@@ -2917,6 +2919,7 @@
 			isa = PBXGroup;
 			children = (
 				A6FCDA5A2A81B7D900B095E5 /* SortGameMainViewModel.swift */,
+				A64E76922AC7909000BCD77C /* SortFirebaseIncoming.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3145,6 +3148,7 @@
 				A6D248892A830CD9004951FD /* ParticipantsManagerWorker.swift in Sources */,
 				A60319F62A9172F600E19E3A /* AdministratorPendenciesFactory.swift in Sources */,
 				A69285152A8EDF54000E618D /* NewItemViewController.swift in Sources */,
+				A64E76932AC7909000BCD77C /* SortFirebaseIncoming.swift in Sources */,
 				A69285192A8EDF69000E618D /* NewItemInteractor.swift in Sources */,
 				A6AF78CC2AA6A19300174B83 /* ParticipantsSelectorListViewCoordinator.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,

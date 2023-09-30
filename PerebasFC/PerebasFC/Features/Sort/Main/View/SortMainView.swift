@@ -60,6 +60,10 @@ final class SortMainView: UIView {
     }
     
     func updateView(with model: SortGameMainViewModel){
+        contentStackView.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
         model.sorts.forEach { sortGameModel in
             let card = SortCardView(model: sortGameModel)
             card.delegate = self

@@ -36,7 +36,6 @@ final class SortMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.viewDidLoad()
         view = sortMainView
         self.navigationController?.navigationBar.isHidden = false
         title = "Sorteio"
@@ -47,6 +46,11 @@ final class SortMainViewController: UIViewController {
             target: self,
             action: #selector(handleNewSort))
         handleKeyBoardRemoveWhenClickOutsideField()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.viewDidLoad()
     }
     
 }
