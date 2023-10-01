@@ -26,7 +26,10 @@ final class SortMainCoordinator: SortMainCoordinatorProtocol {
     }
     
     func goToWeekTeamView(model: WeekTeamViewModel){
-        let controller = WeekTeamFactory.getWeekTeamViewController(teams: model)
+        let controller = WeekTeamFactory.getWeekTeamViewController(
+            teams: model,
+            shouldCallApi: false,
+            navigationController: navigationController)
         navigationController.pushViewController(controller, animated: true)
     }
     

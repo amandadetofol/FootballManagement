@@ -8,12 +8,14 @@
 import UIKit
 
 protocol WeekTeamInteractorProtocol {
+    var teams: WeekTeamViewModel? { get set }
+    var shouldCallApi: Bool { get set }
     func updateTeam(basedOn index: Int)
 }
 
 final class WeekTeamViewController: UIViewController {
     
-    private let interactor: WeekTeamInteractorProtocol
+    private var interactor: WeekTeamInteractorProtocol
     
     private lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Time Branco", "Time Preto"])
@@ -95,6 +97,12 @@ extension WeekTeamViewController: WeekTeamViewProtocol {
     
     func updateView(team: [WeekTeamListViewModel]) {
         weekTeamView.setupView(with: team)
+    }
+    
+    func updateView(team: WeekTeamViewModel){
+        interactor.teams = team
+        interactor.shouldCallApi = false 
+        interactor.updateTeam(basedOn: 1)
     }
 
 }

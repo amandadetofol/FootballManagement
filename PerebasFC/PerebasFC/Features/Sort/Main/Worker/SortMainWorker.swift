@@ -18,6 +18,29 @@ final class SortMainWorker: SortMainWorkerProtocol {
     private let fireabaseFirestoreProvider = Firestore.firestore()
     
     func handleNewSort(completion: @escaping(([User]?, [User]?)-> Void)) {
+        fireabaseFirestoreProvider.document("sort/list").getDocument { [weak self] document, error in
+            guard error == nil,
+                  let self = self,
+                  let document = document else {
+                completion(nil, nil)
+                return
+            }
+            
+            guard var listOfSorts = document["list"] as? [String] else {
+                completion(nil, nil)
+                return
+            }
+            
+            listOfSorts.removeAll { item in
+                item.isEmpty
+            }
+            
+            listOfSorts.forEach { sort  in
+                self.fireabaseFirestoreProvider.document("sort/\(sort)").setData(["isActive": false])
+            }
+        }
+        
+        
         fireabaseFirestoreProvider.collection("perebasfc").getDocuments { [weak self] documents, error in
             guard error == nil,
                   let documents = documents,

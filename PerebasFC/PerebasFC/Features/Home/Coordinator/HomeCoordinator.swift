@@ -125,7 +125,10 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
             case .team:
                 guard let teams = teams else { return }
                 self.navigationController.pushViewController(
-                    WeekTeamFactory.getWeekTeamViewController(teams: teams),
+                    WeekTeamFactory.getWeekTeamViewController(
+                        teams: nil,
+                        shouldCallApi: true,
+                        navigationController: navigationController),
                     animated: true)
             case .participants:
                 self.navigationController.pushViewController(

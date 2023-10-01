@@ -103,6 +103,8 @@
 		A637DDFB2A4A55140017857D /* PickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFA2A4A55140017857D /* PickerComponent.swift */; };
 		A637DDFD2A4A55660017857D /* EditGameGoalInformationsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */; };
 		A637DDFF2A4BAB6A0017857D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637DDFE2A4BAB6A0017857D /* Date.swift */; };
+		A6382DC32AC9D26700A6FBEB /* WeekTeamWithApiCallWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6382DC22AC9D26700A6FBEB /* WeekTeamWithApiCallWorker.swift */; };
+		A6382DC62AC9DBBF00A6FBEB /* WeekTeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6382DC52AC9DBBF00A6FBEB /* WeekTeamCoordinator.swift */; };
 		A64161992A898E3200BF45C4 /* AccessibilityManagerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64161982A898E3200BF45C4 /* AccessibilityManagerCoordinator.swift */; };
 		A641619C2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641619B2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift */; };
 		A641619E2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641619D2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift */; };
@@ -402,6 +404,8 @@
 		A637DDFA2A4A55140017857D /* PickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerComponent.swift; sourceTree = "<group>"; };
 		A637DDFC2A4A55660017857D /* EditGameGoalInformationsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameGoalInformationsCardView.swift; sourceTree = "<group>"; };
 		A637DDFE2A4BAB6A0017857D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A6382DC22AC9D26700A6FBEB /* WeekTeamWithApiCallWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamWithApiCallWorker.swift; sourceTree = "<group>"; };
+		A6382DC52AC9DBBF00A6FBEB /* WeekTeamCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTeamCoordinator.swift; sourceTree = "<group>"; };
 		A64161982A898E3200BF45C4 /* AccessibilityManagerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerCoordinator.swift; sourceTree = "<group>"; };
 		A641619B2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerFactory.swift; sourceTree = "<group>"; };
 		A641619D2A898E5A00BF45C4 /* AccessibilityManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityManagerViewModel.swift; sourceTree = "<group>"; };
@@ -1495,6 +1499,22 @@
 			path = PickerComponent;
 			sourceTree = "<group>";
 		};
+		A6382DB42AC9D18700A6FBEB /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6382DC22AC9D26700A6FBEB /* WeekTeamWithApiCallWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A6382DC42AC9DBA800A6FBEB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6382DC52AC9DBBF00A6FBEB /* WeekTeamCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		A641618E2A898D8400BF45C4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1933,6 +1953,8 @@
 		A680E1002A24103D008FA008 /* WeekTeam */ = {
 			isa = PBXGroup;
 			children = (
+				A6382DC42AC9DBA800A6FBEB /* Coordinator */,
+				A6382DB42AC9D18700A6FBEB /* Worker */,
 				A680E1062A241076008FA008 /* Factory */,
 				A680E1052A241072008FA008 /* Interactor */,
 				A6A7415F2A2550EB009A7998 /* InternalComponent */,
@@ -3165,6 +3187,7 @@
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
 				A6FCDA5B2A81B7D900B095E5 /* SortGameMainViewModel.swift in Sources */,
 				A637DDF42A4A4B3F0017857D /* EditGameViewController.swift in Sources */,
+				A6382DC62AC9DBBF00A6FBEB /* WeekTeamCoordinator.swift in Sources */,
 				A6993E2C2A2BFB0100C2BDE3 /* PersonalInformationsView.swift in Sources */,
 				A6F32C842ABF89CD00DB6D25 /* NewItemPresenter.swift in Sources */,
 				A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */,
@@ -3248,6 +3271,7 @@
 				A6E0E9EE2A202B3D00121515 /* HomePresenter.swift in Sources */,
 				A67360AD2A393C2A003BF4C2 /* FinancialDetailsViewModel.swift in Sources */,
 				A6993E162A2BA60700C2BDE3 /* CommonnPlacesViewModel.swift in Sources */,
+				A6382DC32AC9D26700A6FBEB /* WeekTeamWithApiCallWorker.swift in Sources */,
 				A6D248812A830CA1004951FD /* ParticipantsManagerPresenter.swift in Sources */,
 				A60319FA2A91730E00E19E3A /* AdministratorPendenciesInteractor.swift in Sources */,
 				A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */,
