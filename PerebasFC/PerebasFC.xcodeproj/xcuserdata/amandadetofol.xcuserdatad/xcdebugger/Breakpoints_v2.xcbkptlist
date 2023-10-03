@@ -1607,178 +1607,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9EB8D39F-EC34-4BB9-9F93-6DE56F49207E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9EB8D39F-EC34-4BB9-9F93-6DE56F49207E - b416d39ead7d02fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
-                  moduleName = "PerebasFC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "924">
-               </Location>
-               <Location
-                  uuid = "9EB8D39F-EC34-4BB9-9F93-6DE56F49207E - b416d39ead7d02fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
-                  moduleName = "PerebasFC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "972">
-               </Location>
-               <Location
-                  uuid = "9EB8D39F-EC34-4BB9-9F93-6DE56F49207E - b416d39ead7d02fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
-                  moduleName = "PerebasFC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "1544">
-               </Location>
-               <Location
-                  uuid = "9EB8D39F-EC34-4BB9-9F93-6DE56F49207E - b416d39ead7d02fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
-                  moduleName = "PerebasFC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "944">
-               </Location>
-               <Location
-                  uuid = "9EB8D39F-EC34-4BB9-9F93-6DE56F49207E - b416d39ead7d02fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
-                  moduleName = "PerebasFC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "992">
-               </Location>
-               <Location
-                  uuid = "9EB8D39F-EC34-4BB9-9F93-6DE56F49207E - b416d39ead7d02fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
-                  moduleName = "PerebasFC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "1564">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CB16F6A4-7298-4A6D-BB4A-C460B6B8BBF6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "53650380-9D92-43B4-A629-BCB66DCBA62F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ABDB25BD-4068-4494-A22F-5DC3A98653A5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3DE4534A-AAD5-41BB-B96F-C4C9CE75ACA5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "05768523-D4EA-48A7-8434-CE6B61E4537E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -2461,47 +2289,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B9594248-E0B7-40DD-816B-A7205619BD89"
+            uuid = "6A440752-AC2B-4487-9223-2FFE81A9B689"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/WeekTeam/Interactor/WeekTeamInteractor.swift"
+            filePath = "PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "updateTeam(basedOn:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B9594248-E0B7-40DD-816B-A7205619BD89 - f69470a1793cc43c"
+                  uuid = "6A440752-AC2B-4487-9223-2FFE81A9B689 - b416d39ead7d02fe"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.WeekTeamInteractor.updateTeam(basedOn: Swift.Int) -&gt; ()"
+                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
                   moduleName = "PerebasFC"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/WeekTeam/Interactor/WeekTeamInteractor.swift"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "68">
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "948">
                </Location>
                <Location
-                  uuid = "B9594248-E0B7-40DD-816B-A7205619BD89 - f69470a1793cc43c"
+                  uuid = "6A440752-AC2B-4487-9223-2FFE81A9B689 - b416d39ead7d02fe"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.WeekTeamInteractor.updateTeam(basedOn: Swift.Int) -&gt; ()"
+                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
                   moduleName = "PerebasFC"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/WeekTeam/Interactor/WeekTeamInteractor.swift"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1692">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2509,48 +2337,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "402F9B3B-53F1-4549-A19A-A8C87BCFB4A2"
+            uuid = "49D451B2-7342-460A-A33E-9D1C1A88C606"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/WeekTeam/Interactor/WeekTeamInteractor.swift"
+            filePath = "PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "updateTeam(basedOn:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "49D451B2-7342-460A-A33E-9D1C1A88C606 - b416d39ead7d02b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1096">
+               </Location>
+               <Location
+                  uuid = "49D451B2-7342-460A-A33E-9D1C1A88C606 - d56093c1e7e381fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (PerebasFC.CommonnPlacesViewModel, PerebasFC.CommonnPlacesViewModel) -&gt; Swift.Bool in PerebasFC.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PerebasFC.RankingViewModel&gt;"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C785296E-5DE8-4E7B-89BC-7BEAA9842C23"
+            uuid = "47C6BA96-9690-45CC-8F46-F60574110EE9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/WeekTeam/Interactor/WeekTeamInteractor.swift"
+            filePath = "PerebasFC/Features/Ranking/Main/Presenter/RankingPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "updateTeam(basedOn:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "439FD99A-65E4-49BB-A7A1-95AD440D462C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/WeekTeam/Interactor/WeekTeamInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "updateTeam(basedOn:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

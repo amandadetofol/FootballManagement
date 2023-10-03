@@ -79,7 +79,9 @@ final class RankingPresenter: RankingPresenterProtocol {
         guard let firstPlaceModel,
               let secondPlaceModel,
               let thirdPlaceModel,
-              let others else { return nil }
+              var others else { return nil }
+        
+        others = others.sorted { $0.postion < $1.postion }
         
         return RankingViewModel(
             firstPlaceModel: firstPlaceModel,
