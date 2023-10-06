@@ -6,34 +6,49 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol PresenceWorkerProtocol {
-    func getUsers(completion: @escaping (([PresenceCardViewModel]) -> Void ))
+    func getUsers(id: String, completion: @escaping ((QuerySnapshot?, Bool) -> Void ))
+    func savePresence(presence: [PresenceCardViewModel], completion: @escaping ((Bool) -> Void ), id: String)
 }
 
 final class PresenceWorker: PresenceWorkerProtocol {
     
-    func getUsers(completion: @escaping (([PresenceCardViewModel]) -> Void)) {
-        completion(getMock())
-    }
-
-}
-
-extension PresenceWorker {
+    private let usersFirebaseReference = Firestore.firestore().collection("perebasfc")
+    private let gamelistFirebaseReference = Firestore.firestore().collection("gamelist")
     
-    private func getMock() -> [PresenceCardViewModel] {
-        let mock1 = PresenceCardViewModel(name: "João", wasPresent: true, currentIndex: 1, total: 5)
-        let mock2 = PresenceCardViewModel(name: "Maria", wasPresent: false, currentIndex: nil, total: nil)
-        let mock3 = PresenceCardViewModel(name: "Pedro", wasPresent: true, currentIndex: 2, total: 3)
-        let mock4 = PresenceCardViewModel(name: "Ana", wasPresent: true, currentIndex: 3, total: 3)
-        let mock5 = PresenceCardViewModel(name: "Luís", wasPresent: false, currentIndex: nil, total: 7)
-        let mock6 = PresenceCardViewModel(name: "Carla", wasPresent: true, currentIndex: 1, total: 1)
-        let mock7 = PresenceCardViewModel(name: "Miguel", wasPresent: false, currentIndex: nil, total: 10)
-        let mock8 = PresenceCardViewModel(name: "Sofia", wasPresent: true, currentIndex: 5, total: 5)
-        let mock9 = PresenceCardViewModel(name: "Ricardo", wasPresent: false, currentIndex: nil, total: nil)
-        let mock10 = PresenceCardViewModel(name: "Lúcia", wasPresent: true, currentIndex: 4, total: 4)
-
-        return [mock1, mock2, mock3, mock4, mock5, mock6, mock7, mock9, mock10, mock1, mock2, mock3, mock4, mock5, mock6, mock7, mock9, mock10]
+    func getUsers(id: String, completion: @escaping ((QuerySnapshot?, Bool) -> Void )) {
+        gamelistFirebaseReference.document(id).collection("presence").getDocuments { [weak self] querySnapShot, error in
+            guard error == nil,
+                  let self else {
+                completion(nil, false)
+                return
+            }
+            
+            if querySnapShot?.documents.isEmpty ?? true {
+                self.usersFirebaseReference.getDocuments { querySnapshot, error in
+                    guard error == nil else {
+                        completion(nil, false)
+                        return
+                    }
+                    completion(querySnapshot, false)
+                }
+                
+            } else {
+                completion(querySnapShot, true)
+            }
+        }
+    }
+    
+    func savePresence(presence: [PresenceCardViewModel], completion: @escaping ((Bool) -> Void ), id: String){
+        presence.forEach { person in
+            gamelistFirebaseReference.document("\(id)/presence/\(person.name)").setData(
+                ["name" : person.name,
+                 "waspresent" : person.wasPresent,
+                ])
+        }
+        completion(true)
     }
     
 }

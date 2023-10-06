@@ -24,13 +24,6 @@ final class EditGameGoalInformationsCardView: UIView {
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.title = "Selecione o jogador que marcou o gol: "
         
-        var playerNames: [String] = []
-        Session.shared.players.forEach { player in
-            playerNames.append(player.firstName)
-        }
-        
-        picker.values = playerNames
-        
         return picker
     }()
     
@@ -66,19 +59,38 @@ final class EditGameGoalInformationsCardView: UIView {
     }
     
     var model: Goals?
-    
+    var isWhiteTeam: Bool = false
+
+    var modelView: Goals? {
+        get {
+            return Goals(
+                player: self.player,
+                time: timePicker.date ?? Date(),
+                index: 0,
+                isWhiteTeam: self.isWhiteTeam)
+        }
+    }
     
     init(
-        player: User?,
+        player: String?,
         time: Date?,
-        index: String){
+        index: String,
+        isWhiteTeam: Bool,
+        players: [String]){
             super.init(frame: .zero)
             setupView()
+            self.isWhiteTeam = isWhiteTeam
             setupConstraints()
             updateView(
                 player,
                 time,
                 index: index)
+            
+            var playerNames: [String] = []
+            players.forEach { player in
+                playerNames.append(player)
+            }
+            playersPickerView.values = playerNames
         }
     
     @available(*, unavailable)
@@ -87,7 +99,7 @@ final class EditGameGoalInformationsCardView: UIView {
     }
     
     private func updateView(
-        _ player: User? = nil,
+        _ player: String? = nil,
         _ time: Date? = nil,
         index: String) {
             

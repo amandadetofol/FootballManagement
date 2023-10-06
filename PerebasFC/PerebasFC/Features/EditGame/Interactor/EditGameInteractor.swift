@@ -11,33 +11,47 @@ final class EditGameInteractor: EditGameInteractorProtocol {
     
     private let coordinator: EditGameCoordinatorProtocol
     private let presenter: EditGamePresenterProtocol
+    private let worker: GamesHistoryWorkerProtocol
     private let model: Game
     private let isNewGame: Bool
     
     init(presenter: EditGamePresenterProtocol,
          coordinator: EditGameCoordinatorProtocol,
+         worker: GamesHistoryWorkerProtocol,
          model: Game,
          isNewGame: Bool){
         self.presenter = presenter
         self.coordinator = coordinator
         self.model = model
         self.isNewGame = isNewGame
+        self.worker = worker
     }
     
     func viewDidLoad() {
-        presenter.updateView(with: self.model)
+        coordinator.showLoading()
+        worker.getParticipants { [weak self] querySnapshot in
+            guard let querySnapshot,
+                  let self else {
+                self?.coordinator.removeLoading()
+                self?.coordinator.showErrorAlert()
+                return
+            }
+            
+            self.coordinator.removeLoading()
+            self.presenter.updateView(
+                with: self.model,
+                players: querySnapshot)
+        }
+      
         presenter.addListOfPresenceButton()
     }
 
     func handleSaveNewGameInformationsButtonTap(game: Game) {
-        if isNewGame {
-            coordinator.handleSaveNewGame(game: game)
-        }
-        coordinator.handleSaveNewGameInformationsButtonTap(game: game)
+        coordinator.handleSaveNewGame(game: game)
     }
     
     func handleAddListOfPresenceButtonTap(){
-        coordinator.handleAddListOfPresenceButtonTap()
+        coordinator.handleAddListOfPresenceButtonTap(game: model)
     }
     
 }

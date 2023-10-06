@@ -9,14 +9,15 @@ import UIKit
 
 struct PresenceFactory {
     
-    static func getPresenceViewController(navigationController: UINavigationController) -> PresenceViewController {
+    static func getPresenceViewController(navigationController: UINavigationController, gameId: String) -> PresenceViewController {
         let coordinator = PresenceCoordinator(navigationController: navigationController)
         let presenter = PresencePresenter()
         let worker = PresenceWorker()
         let interactor = PresenceInteractor(
             presenter: presenter,
             worker: worker,
-            coordinator: coordinator)
+            coordinator: coordinator,
+            gameId: gameId)
         let viewController = PresenceViewController(interactor: interactor)
         presenter.view = viewController
         

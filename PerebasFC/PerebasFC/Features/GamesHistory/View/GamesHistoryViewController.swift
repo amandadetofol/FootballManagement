@@ -27,7 +27,6 @@ final class GamesHistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.viewDidLoad()
         self.view = gamesHistoryView
         self.title = "Histórico de Jogos"
         self.navigationController?.navigationBar.isHidden = false
@@ -49,6 +48,11 @@ final class GamesHistoryViewController: UIViewController {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.viewDidLoad()
     }
     
     func saveNewGame(game: Game){

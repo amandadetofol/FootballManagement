@@ -60,6 +60,10 @@ final class GamesHistoryView: UIView {
     }
     
     func updateView(with model: [Game]){
+        stackView.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
         model.forEach { gameCardModel in
             let card = GameCardView()
             card.delegate = self

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PresenceViewDelegate: AnyObject {
-    func handleConfirmButtonTap()
+    func handleConfirmButtonTap(model: [PresenceCardViewModel])
 }
 
 final class PresenceView: UIView {
@@ -119,12 +119,19 @@ final class PresenceView: UIView {
         ])
     }
     
-}
-
-extension PresenceView {
+    func getCurrentViewModel() -> [PresenceCardViewModel]{
+        var items: [PresenceCardViewModel] = []
+        contentStackView.arrangedSubviews.forEach { subview in
+            guard let subview = subview as? PresenceCardView else { return }
+            items.append(subview.model)
+        }
+        return items
+    }
+    
     
     @objc func handleConfirmButtonTap(){
-        delegate?.handleConfirmButtonTap()
+        delegate?.handleConfirmButtonTap(model: getCurrentViewModel())
     }
     
 }
+

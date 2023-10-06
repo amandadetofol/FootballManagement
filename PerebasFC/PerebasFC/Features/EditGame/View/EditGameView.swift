@@ -16,6 +16,7 @@ final class EditGameView: UIView {
     weak var delegate: EditGameViewDelegate?
     private var whiteInitialValue = 0
     private var blackInitialValue = 0
+    private var players: [String] = []
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -172,7 +173,11 @@ final class EditGameView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateView(with game: Game) {
+    func updateView(
+        with game: Game,
+        players: [String]) {
+            
+            self.players = players
         datePickerView.date = game.date 
         whiteLabelScoreTextField.text = String(game.score?.whiteTeamPoints ?? 0)
         blackLabelScoreTextField.text = String(game.score?.blackTeamPoints ?? 0)
@@ -183,7 +188,9 @@ final class EditGameView: UIView {
             let goalCard = EditGameGoalInformationsCardView(
                 player: goal.player,
                 time: goal.time,
-                index: String(goal.index))
+                index: String(goal.index),
+                isWhiteTeam: goal.isWhiteTeam,
+                players: players)
             
             if goal.isWhiteTeam {
                 whiteGoalsStackView.addArrangedSubview(goalCard)
@@ -267,11 +274,13 @@ final class EditGameView: UIView {
         ])
     }
     
-    private func addNewGoal(stackView: UIStackView){
+    private func addNewGoal(stackView: UIStackView, whiteTeam: Bool){
         let goalCard = EditGameGoalInformationsCardView(
             player: nil,
             time: nil,
-            index: "")
+            index: "",
+            isWhiteTeam: whiteTeam,
+            players: players)
         stackView.addArrangedSubview(goalCard)
     }
     
@@ -280,17 +289,17 @@ final class EditGameView: UIView {
 extension EditGameView {
     
     @objc func handleSaveNewGameInformationsButtonTap(){
-        var goals: [Goals]? = nil
+        var goals: [Goals] = []
         blackGoalsStackView.arrangedSubviews.forEach { subview in
             guard let goal = subview as? EditGameGoalInformationsCardView,
-                  let model = goal.model  else { return }
-            goals?.append(model)
+                  let model = goal.modelView  else { return }
+            goals.append(model)
         }
         
         whiteGoalsStackView.arrangedSubviews.forEach { subview in
             guard let goal = subview as? EditGameGoalInformationsCardView,
-                  let model = goal.model  else { return }
-            goals?.append(model)
+                  let model = goal.modelView  else { return }
+            goals.append(model)
         }
         
         delegate?.handleSaveNewGameInformationsButtonTap(game: Game(
@@ -316,7 +325,7 @@ extension EditGameView: TextFieldComponentDelegate {
                 
                 if textField.contentAsNumber >= 1 {
                     for _ in 1...textField.contentAsNumber {
-                        addNewGoal(stackView: whiteGoalsStackView)
+                        addNewGoal(stackView: whiteGoalsStackView, whiteTeam: true)
                     }
                 }
             }
@@ -329,7 +338,7 @@ extension EditGameView: TextFieldComponentDelegate {
                 
                 if textField.contentAsNumber >= 1 {
                     for _ in 1...textField.contentAsNumber {
-                        addNewGoal(stackView: blackGoalsStackView)
+                        addNewGoal(stackView: blackGoalsStackView, whiteTeam: false)
                     }
                 }
             }

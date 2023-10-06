@@ -9,7 +9,7 @@ import UIKit
 
 protocol PresenceInteractorProtocol {
     func viewDidLoad()
-    func handleConfirmButtonTap()
+    func handleConfirmButtonTap(model: [PresenceCardViewModel])
 }
 
 final class PresenceViewController: UIViewController {
@@ -46,8 +46,8 @@ final class PresenceViewController: UIViewController {
 
 extension PresenceViewController: PresenceViewDelegate {
     
-    func handleConfirmButtonTap() {
-        interactor.handleConfirmButtonTap()
+    func handleConfirmButtonTap(model: [PresenceCardViewModel]) {
+        interactor.handleConfirmButtonTap(model: model)
     }
     
 }

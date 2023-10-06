@@ -14,10 +14,12 @@ struct EditGameFactory {
         model: Game,
         isNewGame: Bool) -> EditGameViewController {
             let presenter = EditGamePresenter()
+            let worker = GamesHistoryWorker()
             let coordinator = EditGameCoordinator(navigationController: navigationController)
             let interactor = EditGameInteractor(
                 presenter: presenter,
                 coordinator: coordinator,
+                worker: worker,
                 model: model,
                 isNewGame: isNewGame)
             let viewController = EditGameViewController(interactor: interactor)

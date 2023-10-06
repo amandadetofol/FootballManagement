@@ -54,8 +54,10 @@ extension EditGameViewController: EditGameViewDelegate {
 
 extension EditGameViewController: EditGameViewProtocol {
     
-    func updateView(with game: Game) {
-        editGameView.updateView(with: game)
+    func updateView(with game: Game, players: [String]) {
+        editGameView.updateView(
+            with: game,
+            players: players)
     }
     
     func addListOfPresenceButton() {

@@ -11,14 +11,19 @@ protocol GamesHistoryCoordinatorProtocol {
     func showAlertErrorView()
     func goToAddNewGame()
     func goToEditGameView(game: Game)
+    func showLoading()
+    func removeLoading()
+    func showSuccessAddGameAlert()
 }
 
 final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
     
     private let navigationController: UINavigationController
+    private let loader: LoaderCoodinator
     
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
+        self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
     func showAlertErrorView() {
@@ -56,6 +61,31 @@ final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
         controller.title = "Novo Jogo"
         controller.modalPresentationStyle = .pageSheet
         navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func showLoading(){
+        loader.showLoader()
+    }
+    
+    func removeLoading(){
+        loader.removeLoader()
+    }
+    
+    func showSuccessAddGameAlert(){
+        let alert = UIAlertController(
+            title: "Novo Jogo!",
+            message: "Novo jogo adicionado com sucesso!",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default,
+                handler: { [weak self] _ in
+                    self?.navigationController.popViewController(animated: true)
+                }))
+        navigationController.present(
+            alert,
+            animated: true)
     }
     
 }

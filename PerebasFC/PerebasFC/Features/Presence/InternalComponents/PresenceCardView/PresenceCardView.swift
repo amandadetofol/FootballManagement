@@ -9,6 +9,14 @@ import UIKit
 
 final class PresenceCardView: UIControl {
     
+    var model: PresenceCardViewModel {
+        get {
+            return PresenceCardViewModel(
+                name: participantName.text ?? "",
+                wasPresent: presenceSwitch.isOn)
+        }
+    }
+    
     private lazy var participantName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

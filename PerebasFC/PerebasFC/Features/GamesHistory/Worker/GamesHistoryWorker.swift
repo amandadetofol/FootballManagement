@@ -6,72 +6,70 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 protocol GamesHistoryWorkerProtocol {
-    func addNewGame(game: Game)
-    func getGamesHistory(_ completion: @escaping (([Game]?) -> Void))
+    func addNewGame(
+        game: Game,
+        completion: @escaping((Bool)->Void))
+    func getGamesHistory(_ completion: @escaping ((QuerySnapshot?) -> Void))
+    func getParticipants(completion: @escaping((QuerySnapshot?) -> Void))
 }
 
 final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
     
+    private let firebaseFirestoreProvider = Firestore.firestore()
+    private let usersFirebaseReference = Firestore.firestore().collection("perebasfc")
     var goals: [Game] = []
     
-    func getGamesHistory(_ completion: @escaping (([Game]?) -> Void)) {
-        mockGoals()
-        completion(goals)
+    func getParticipants(completion: @escaping ((QuerySnapshot?) -> Void)) {
+        usersFirebaseReference.getDocuments { querySnapshot, error in
+            guard error == nil else {
+                completion(nil)
+                return
+            }
+            completion(querySnapshot)
+        }
     }
     
-    func addNewGame(game: Game) {
-        goals.append(game)
+    func getGamesHistory(_ completion: @escaping ((QuerySnapshot?) -> Void)) {
+        firebaseFirestoreProvider.collection("gamelist").getDocuments { querySnapShot, error in
+            guard error == nil,
+                  let querySnapShot else {
+                completion(nil)
+                return
+            }
+            
+            completion(querySnapShot)
+        }
     }
     
-    private func mockGoals(){
-        let userWarning = UserWarning(
-            title: "Warning Title",
-            description: "Warning Description",
-            icon: UIImage(),
-            firstActionTitle: "Take Action",
-            firstActionKey: .chat
-        )
-        
-        let user = User(
-            firstName: "John",
-            lastName: "Doe",
-            shirtNumber: "10",
-            position: "Forward",
-            team: "FC Barcelona",
-            warning: userWarning,
-            rankingPosition: 5,
-            isAdm: true,
-            type: .player,
-            menuItems: [MenuItemViewModel(title: String(), icon: UIImage(), redirectKey: .calendar)]
-        )
-
-        let goals1: [Goals] = [
-            Goals( player: user, time: Date(), index: 1, isWhiteTeam: false),
-            Goals( player: user, time: Date(), index: 2, isWhiteTeam: false),
-            Goals( player: user, time: Date(), index: 3, isWhiteTeam: true)
-        ]
-        let score1 = Score(whiteTeamPoints: 1, blackTeamPoints: 2)
-        let game1 = Game(score: score1, gameDate: "2023-05-29", goals: goals1, date: Date())
-
-        let goals2: [Goals] = [
-            Goals( player: user, time: Date(), index: 1, isWhiteTeam: false),
-            Goals( player: user, time: Date(), index: 2, isWhiteTeam: true),
-            Goals( player: user, time: Date(), index: 3, isWhiteTeam: true)
-        ]
-        let score2 = Score(whiteTeamPoints: 2, blackTeamPoints: 1)
-        let game2 = Game(score: score2, gameDate: "2023-06-05", goals: goals2, date: Date())
-
-        let goals3: [Goals] = [
-            Goals( player: user, time: Date(), index: 1, isWhiteTeam: false),
-            Goals( player: user, time: Date(), index: 2, isWhiteTeam: true),
-            Goals( player: user, time: Date(), index: 3, isWhiteTeam: true)
-        ]
-        let score3 = Score(whiteTeamPoints: 2, blackTeamPoints: 1)
-        let game3 = Game(score: score3, gameDate: "2023-06-12", goals: goals3, date: Date())
-
-        goals = [game1, game2, game3]
+    func addNewGame(
+        game: Game,
+        completion: @escaping((Bool)->Void)) {
+            var whiteTeamGoals: [String] = []
+            var blackTeamGoals: [String] = []
+            
+            game.goals?.forEach({ goal in
+                if goal.isWhiteTeam {
+                    whiteTeamGoals.append(goal.player)
+                    whiteTeamGoals.append(goal.time.toString())
+                } else {
+                    blackTeamGoals.append(goal.player)
+                    blackTeamGoals.append(goal.time.toString())
+                }
+            })
+            
+            firebaseFirestoreProvider.document("gamelist/\(game.gameDate.replacingOccurrences(of: "/", with: "-"))").setData([
+                "blackTeam": game.score?.blackTeamPoints ?? 0,
+                "whiteTeam": game.score?.whiteTeamPoints ?? 0,
+                "totalGoals": game.goals?.count ?? 0,
+                "blackTeamGoals": whiteTeamGoals,
+                "whiteTeamGoals": blackTeamGoals,
+            ])
+            
+            completion(true)
     }
+
     
 }

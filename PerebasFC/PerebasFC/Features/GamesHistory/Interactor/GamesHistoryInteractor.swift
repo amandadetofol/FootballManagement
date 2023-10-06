@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol GamesHistoryPresenterProtocol {
-    func updateView(using model: [Game])
+    func updateView(using model: QuerySnapshot)
 }
 
 final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
@@ -44,8 +45,18 @@ final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
     }
     
     func saveNewGame(game: Game){
-        worker.addNewGame(game: game)
-        presenter.updateView(using: [game])
+        coordinator.showLoading()
+        worker.addNewGame(
+            game: game) { [weak self] succeded in
+                guard let self else { return }
+                self.coordinator.removeLoading()
+                
+                if succeded {
+                    self.coordinator.showSuccessAddGameAlert()
+                } else {
+                    self.coordinator.showAlertErrorView()
+                }
+            }
     }
 
 }

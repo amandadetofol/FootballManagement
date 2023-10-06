@@ -9,24 +9,20 @@ import UIKit
 
 protocol EditGameCoordinatorProtocol: AnyObject  {
     func handleSaveNewGame(game: Game)
-    func handleAddListOfPresenceButtonTap()
-    func handleSaveNewGameInformationsButtonTap(game: Game)
+    func handleAddListOfPresenceButtonTap(game: Game)
+    func showLoading()
+    func removeLoading()
+    func showErrorAlert()
 }
 
 final class EditGameCoordinator: EditGameCoordinatorProtocol {
     
     private let navigationController: UINavigationController
+    private let loader: LoaderCoodinator
     
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
-    }
-    
-    func handleSaveNewGameInformationsButtonTap(game: Game) {
-        if let viewController = navigationController.viewControllers.last(where: { $0.isKind(of: GamesHistoryViewController.self) }) {
-            guard let vc = viewController as? GamesHistoryViewController else { return }
-            //tratamento para atualizar o item da lista meu chapa
-            self.navigationController.popToViewController(vc, animated: true)
-        }
+        self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
     func handleSaveNewGame(game: Game){
@@ -37,10 +33,33 @@ final class EditGameCoordinator: EditGameCoordinatorProtocol {
         }
     }
     
-    func handleAddListOfPresenceButtonTap(){
+    func handleAddListOfPresenceButtonTap(game: Game){
         navigationController.pushViewController(
             PresenceFactory.getPresenceViewController(
-                navigationController: navigationController),
+                navigationController: navigationController,
+                gameId: game.gameDate.replacingOccurrences(of: "/", with: "-")),
+            animated: true)
+    }
+    
+    func showLoading(){
+        loader.showLoader()
+    }
+    
+    func removeLoading(){
+        loader.removeLoader()
+    }
+    
+    func showErrorAlert(){
+        let alert = UIAlertController(
+            title: "Ops! Algo deu errado :(",
+            message: "Tente novamente!",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "Ok",
+                style: UIAlertAction.Style.default))
+        navigationController.present(
+            alert,
             animated: true)
     }
     

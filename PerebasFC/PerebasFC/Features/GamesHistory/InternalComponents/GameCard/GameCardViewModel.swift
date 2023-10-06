@@ -27,7 +27,7 @@ struct Score {
 }
 
 struct Goals {
-    let player: User
+    let player: String
     let time: Date
     let index: Int
     let isWhiteTeam: Bool 
