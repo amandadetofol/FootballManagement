@@ -6,15 +6,26 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol CalendarWorkerProtol {
-    func getCalendarEvents(completion: @escaping (([Int]) -> Void))
+    func getCalendarEvents(completion: @escaping ((QuerySnapshot?) -> Void))
 }
 
 final class CalendarWorker: CalendarWorkerProtol {
     
-    func getCalendarEvents(completion: @escaping (([Int]) -> Void)) {
-        completion([04, 16])
+    private let fireabaseFirestoreProvider = Firestore.firestore().collection("events")
+    
+    func getCalendarEvents(completion: @escaping ((QuerySnapshot?) -> Void)) {
+        fireabaseFirestoreProvider.getDocuments { querysnapshot, error in
+            guard let querysnapshot,
+                  error == nil else {
+                completion(nil)
+                return
+            }
+            completion(querysnapshot)
+        }
+        
     }
 
 }

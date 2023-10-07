@@ -12,14 +12,19 @@ protocol CalendarCoordinatorProtocol {
     func goToCreateNewEvent(date: Date)
     func showConfirmationPopUp()
     func goToSeePresenceList()
+    func showErrorAlert()
+    func showLoading()
+    func removeLoading()
 }
 
 final class CalendarCoordinator: CalendarCoordinatorProtocol {
     
     private let navigationController: UINavigationController
+    private let loader: LoaderCoodinator
     
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
+        self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
     func goToBack() {
@@ -66,5 +71,28 @@ final class CalendarCoordinator: CalendarCoordinatorProtocol {
                 navigationController: navigationController),
             animated: false)
     }
+    
+    func showErrorAlert(){
+        let alert = UIAlertController(
+            title: "Ops! Algo deu errado :(",
+            message: "Tente novamente!",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "Ok",
+                style: UIAlertAction.Style.default))
+        navigationController.present(
+            alert,
+            animated: true)
+    }
+    
+    func showLoading(){
+        loader.showLoader()
+    }
+    
+    func removeLoading(){
+        loader.removeLoader()
+    }
+    
     
 }

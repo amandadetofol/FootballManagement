@@ -42,12 +42,15 @@ final class NewEventInCalendarInteractor: NewEventInCalendarViewInteractorProtoc
         }
         
         if !hasError {
+          
             worker.saveNewEventInCalendar(model) { [weak self] hasSucceeded in
+                guard let self else { return }
+                
                 switch hasSucceeded {
                     case true:
-                        self?.coordinator.showSuccessPopUp()
+                        self.coordinator.showSuccessPopUp()
                     case false:
-                        self?.coordinator.showErrorPopUp()
+                        self.coordinator.showErrorPopUp()
                 }
             }
         }

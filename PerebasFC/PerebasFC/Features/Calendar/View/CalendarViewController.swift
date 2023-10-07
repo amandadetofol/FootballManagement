@@ -18,7 +18,7 @@ protocol CalendarViewInteractorProtocol {
 
 final class CalendarViewController: UIViewController {
     
-    var eventDays: [Int] = []
+    var eventDays: [NewEventInCalendarViewModel] = []
     var selectedDate = Date()
     
     private lazy var calendarItemPopUpView: CalendarItemPopUpView = {
@@ -73,7 +73,6 @@ final class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
-        addDateSelectorActionHandler()
         
         view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = false
@@ -106,8 +105,9 @@ final class CalendarViewController: UIViewController {
                         textColor: .white,
                         backgroundColor: .gold),
                     content: .init(day: day))
-            } else if self.eventDays.contains(day.components.day ?? 0) {
-                return DayLabel.calendarItemModel(
+            } else if self.eventDays.contains(where: { model in
+                model.day == day.day
+            }) { return DayLabel.calendarItemModel(
                     invariantViewProperties: .init(
                         font: UIFont.systemFont(ofSize: 18),
                         textColor: .red,
@@ -136,7 +136,9 @@ final class CalendarViewController: UIViewController {
             dateFormatter.dateFormat = "dd/MM/yy"
             let correctDate = dateFormatter.date(from: string)
      
-            if eventDays.contains(day.day) {
+            if eventDays.contains(where: { model in
+                model.day == day.day
+            }) {
                 self.interactor.showConfirmPresencePopUp(date: correctDate ?? Date())
             } else if isAdm {
                 self.interactor.showCreateNewEventPopUp(date: correctDate ?? Date())
@@ -149,8 +151,9 @@ final class CalendarViewController: UIViewController {
 
 extension CalendarViewController: CalendarViewProtocol {
     
-    func updateEvents(events: [Int]) {
+    func updateEvents(events: [NewEventInCalendarViewModel]) {
         self.eventDays = events
+        addDateSelectorActionHandler()
         createCustomDayProviderForSelectedItem(iconmingDay: 0)
     }
     
@@ -162,7 +165,8 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionTitle: "confirmar presença".uppercased(),
                 secondActionTitle: (Session.shared.isAdm ?? false) ? "lista de presença".uppercased() : nil,
                 firstActionKey: CalendarPopUpKeysEnum.confirmPresence.rawValue,
-                secondActionKey: (Session.shared.isAdm ?? false) ? CalendarPopUpKeysEnum.presenceList.rawValue : nil),
+                secondActionKey: (Session.shared.isAdm ?? false) ? CalendarPopUpKeysEnum.presenceList.rawValue : nil,
+                numberOfCompanions: nil),
             date: date)
     }
     
@@ -174,7 +178,8 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionTitle: "criar novo evento".uppercased(),
                 secondActionTitle: "ok".uppercased(),
                 firstActionKey: CalendarPopUpKeysEnum.createNewEvent.rawValue,
-                secondActionKey: CalendarPopUpKeysEnum.close.rawValue),
+                secondActionKey: CalendarPopUpKeysEnum.close.rawValue,
+                numberOfCompanions: nil),
             date: date)
     }
     
@@ -186,7 +191,8 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionTitle: "ok".uppercased(),
                 secondActionTitle: nil,
                 firstActionKey: CalendarPopUpKeysEnum.close.rawValue,
-                secondActionKey: nil),
+                secondActionKey: nil,
+                numberOfCompanions: nil),
             date: date)
     }
     

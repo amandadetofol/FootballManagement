@@ -14,4 +14,5 @@ struct CalendarItemPopUpViewModel {
     let secondActionTitle: String?
     let firstActionKey: String
     let secondActionKey: String?
+    let numberOfCompanions: Int? 
 }

@@ -12,5 +12,12 @@ struct NewEventInCalendarViewModel {
     let eventName: String
     let time: String
     let allowedToBringCompanions: Bool
-    let numberOfCompanios: Int? 
+    let numberOfCompanios: Int?
+    
+    var day: Int {
+        get {
+            let calendar = Calendar.current
+            return calendar.component(.day, from: selectedDate)
+        }
+    }
 }

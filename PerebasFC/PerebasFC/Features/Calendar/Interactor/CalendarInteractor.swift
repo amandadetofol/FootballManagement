@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol CalendarPresenterProtocol {
-    func updateEvents(events: [Int])
+    func updateEvents(events: QuerySnapshot)
     func showConfirmPresencePopUp(date: Date)
     func showCreateNewEventPopUp(date: Date)
     func showEventForSelectedDayPopUpNotFound(date: Date)
@@ -30,8 +31,16 @@ final class CalendarInteractor: CalendarViewInteractorProtocol {
     }
     
     func viewDidLoad() {
+        coordinator.showLoading()
         worker.getCalendarEvents { [weak self] eventDays in
-            self?.presenter.updateEvents(events: eventDays)
+            guard let self,
+                  let eventDays else {
+                self?.coordinator.removeLoading()
+                self?.coordinator.showErrorAlert()
+                return
+            }
+            self.coordinator.removeLoading()
+            self.presenter.updateEvents(events: eventDays)
         }
     }
     

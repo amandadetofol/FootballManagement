@@ -149,6 +149,7 @@ final class NewEventInCalendarView: UIView {
             isAllowedToTakeCompaniesLabel,
             companiesTextField,
             confirmButton])
+        isAllowedToTakeCompaniesSwitch.isOn = true 
     }
     
     private func setupConstraints(){
