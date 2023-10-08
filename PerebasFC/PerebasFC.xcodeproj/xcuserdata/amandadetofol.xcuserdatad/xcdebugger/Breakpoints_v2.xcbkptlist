@@ -2820,8 +2820,8 @@
             filePath = "PerebasFC/Features/Calendar/View/CalendarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "createCustomDayProviderForSelectedItem(iconmingDay:)"
             landmarkType = "7">
             <Locations>
@@ -2870,53 +2870,35 @@
                   endingLineNumber = "101"
                   offsetFromSymbolStart = "208">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "989BAFBE-2B6D-4119-9E3B-37CA9BC81200"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/Calendar/View/CalendarViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "updateEvents(events:)"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "989BAFBE-2B6D-4119-9E3B-37CA9BC81200 - a06dfd09a0ac5cf4"
+                  uuid = "ACA44DF5-527A-4593-98B1-5D48AC6932C1 - 1b4e5129cd9a92a3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.CalendarViewController.updateEvents(events: Swift.Array&lt;PerebasFC.NewEventInCalendarViewModel&gt;) -&gt; ()"
+                  symbolName = "PerebasFC.CalendarViewController.createCustomDayProviderForSelectedItem(iconmingDay: Swift.Int) -&gt; ()"
                   moduleName = "PerebasFC"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Calendar/View/CalendarViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "44">
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "48">
                </Location>
                <Location
-                  uuid = "989BAFBE-2B6D-4119-9E3B-37CA9BC81200 - a06dfd09a0ac5cf4"
+                  uuid = "ACA44DF5-527A-4593-98B1-5D48AC6932C1 - 5aaaabdf9787ea6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "PerebasFC.CalendarViewController.updateEvents(events: Swift.Array&lt;PerebasFC.NewEventInCalendarViewModel&gt;) -&gt; ()"
+                  symbolName = "closure #1 (HorizonCalendar.Day) -&gt; HorizonCalendar.AnyCalendarItemModel in PerebasFC.CalendarViewController.createCustomDayProviderForSelectedItem(iconmingDay: Swift.Int) -&gt; ()"
                   moduleName = "PerebasFC"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Calendar/View/CalendarViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "116">
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "208">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2935,6 +2917,54 @@
             endingLineNumber = "45"
             landmarkName = "parseQuerySnapShotToNewEventInCalendarViewModel(events:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA8C9A83-91F9-4669-8FE8-B5AC705993DD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/Calendar/Interactor/CalendarInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "handlePopUpButtonTap(key:model:date:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EA8C9A83-91F9-4669-8FE8-B5AC705993DD - befc8a15a26e1b2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.CalendarInteractor.handlePopUpButtonTap(key: Swift.String, model: Swift.Optional&lt;PerebasFC.NewEventInCalendarViewModel&gt;, date: Swift.Optional&lt;Foundation.Date&gt;) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Calendar/Interactor/CalendarInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1296">
+               </Location>
+               <Location
+                  uuid = "EA8C9A83-91F9-4669-8FE8-B5AC705993DD - 143ebee3289c2deb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in PerebasFC.CalendarInteractor.handlePopUpButtonTap(key: Swift.String, model: Swift.Optional&lt;PerebasFC.NewEventInCalendarViewModel&gt;, date: Swift.Optional&lt;Foundation.Date&gt;) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Calendar/Interactor/CalendarInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "280">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

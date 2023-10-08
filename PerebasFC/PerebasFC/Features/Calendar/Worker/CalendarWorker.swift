@@ -10,11 +10,16 @@ import FirebaseFirestore
 
 protocol CalendarWorkerProtol {
     func getCalendarEvents(completion: @escaping ((QuerySnapshot?) -> Void))
+    func saveNewUserInPresenceList(
+        numberOfCompanions: Int,
+        itemId: String,
+        completion: @escaping ((Bool) -> Void))
 }
 
 final class CalendarWorker: CalendarWorkerProtol {
     
     private let fireabaseFirestoreProvider = Firestore.firestore().collection("events")
+    private let fireabaseSingleDocumentFirestoreProvider = Firestore.firestore()
     
     func getCalendarEvents(completion: @escaping ((QuerySnapshot?) -> Void)) {
         fireabaseFirestoreProvider.getDocuments { querysnapshot, error in
@@ -25,7 +30,17 @@ final class CalendarWorker: CalendarWorkerProtol {
             }
             completion(querysnapshot)
         }
-        
     }
+    
+    func saveNewUserInPresenceList(
+        numberOfCompanions: Int,
+        itemId: String,
+        completion: @escaping ((Bool) -> Void)){
+            fireabaseSingleDocumentFirestoreProvider
+                .document("events/\(itemId)/prensence/\(Session.shared.loggedUserEmail ?? "")").setData(
+                    ["presence": true,
+                     "numberOfCompanions": numberOfCompanions])
+            completion(true)
+        }
 
 }

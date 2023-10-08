@@ -7,13 +7,7 @@
 
 import UIKit
 
-protocol EventPresenceViewDelegate: AnyObject {
-    func handleConfirmButtonTap()
-}
-
 final class EventPresenceView: UIView {
-    
-    weak var delegate: EventPresenceViewDelegate?
     
     private lazy var contentView: UIView = {
         let view = UIView()
@@ -45,19 +39,6 @@ final class EventPresenceView: UIView {
         return stackView
     }()
     
-    private lazy var confirmButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("confirmar".uppercased(), for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .black
-        button.layer.cornerRadius = 15
-        button.clipsToBounds = true
-        button.addTarget(nil, action: #selector(handleConfirmButtonTap), for: .touchUpInside)
-        
-        return button
-    }()
-    
     init(){
         super.init(frame: .zero)
         setupView()
@@ -81,18 +62,8 @@ final class EventPresenceView: UIView {
             card.setupView(with: cardModel)
             contentStackView.addArrangedSubview(card)
         }
-        setupConfirmButton()
     }
-    
-    private func setupConfirmButton(){
-        contentStackView.addArrangedSubview(confirmButton)
-        NSLayoutConstraint.activate([
-            confirmButton.heightAnchor.constraint(equalToConstant: 48),
-            confirmButton.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor, constant: 16),
-            confirmButton.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor, constant: -16),
-        ])
-    }
-    
+ 
     private func setupView(){
         addSubview(contentView)
         contentView.addSubview(scrollView)
@@ -117,14 +88,6 @@ final class EventPresenceView: UIView {
             contentStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
-    }
-    
-}
-
-extension EventPresenceView {
-    
-    @objc func handleConfirmButtonTap(){
-        delegate?.handleConfirmButtonTap()
     }
     
 }

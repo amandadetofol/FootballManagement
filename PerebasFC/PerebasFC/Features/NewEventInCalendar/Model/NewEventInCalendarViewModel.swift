@@ -13,7 +13,7 @@ struct NewEventInCalendarViewModel {
     let time: String
     let allowedToBringCompanions: Bool
     let numberOfCompanios: Int?
-    
+    var id: String?
     var day: Int {
         get {
             let calendar = Calendar.current

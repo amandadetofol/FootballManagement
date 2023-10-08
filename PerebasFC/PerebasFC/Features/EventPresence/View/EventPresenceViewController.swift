@@ -9,15 +9,13 @@ import UIKit
 
 protocol EventPresenceInteractorProtocol {
     func viewDidLoad()
-    func handleConfirmButtonTap()
 }
 
 final class EventPresenceViewController: UIViewController {
     
     private lazy var eventPresenceView: EventPresenceView = {
         let eventPresenceView = EventPresenceView()
-        eventPresenceView.delegate = self
-        
+     
         return eventPresenceView
     }()
     
@@ -40,14 +38,6 @@ final class EventPresenceViewController: UIViewController {
         super.viewDidLoad()
         self.view = eventPresenceView
         interactor.viewDidLoad()
-    }
-    
-}
-
-extension EventPresenceViewController: EventPresenceViewDelegate {
-    
-    func handleConfirmButtonTap() {
-        interactor.handleConfirmButtonTap()
     }
     
 }

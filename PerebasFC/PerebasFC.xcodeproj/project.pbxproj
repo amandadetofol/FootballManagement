@@ -1745,6 +1745,12 @@
 		A658B39A2AABFDCF00C89D63 /* EventPresence */ = {
 			isa = PBXGroup;
 			children = (
+				A658B3A12AABFE1C00C89D63 /* Coordinator */,
+				A658B3AC2AABFE7900C89D63 /* Presenter */,
+				A658B3A02AABFE1800C89D63 /* Factory */,
+				A658B39F2AABFE1100C89D63 /* Interactor */,
+				A658B39C2AABFDEE00C89D63 /* View */,
+				A658B39E2AABFE0700C89D63 /* Worker  */,
 				A658B39B2AABFDDB00C89D63 /* InternalComponents */,
 			);
 			path = EventPresence;
@@ -1753,13 +1759,7 @@
 		A658B39B2AABFDDB00C89D63 /* InternalComponents */ = {
 			isa = PBXGroup;
 			children = (
-				A658B3A12AABFE1C00C89D63 /* Coordinator */,
-				A658B3AC2AABFE7900C89D63 /* Presenter */,
-				A658B3A02AABFE1800C89D63 /* Factory */,
-				A658B39F2AABFE1100C89D63 /* Interactor */,
 				A658B3952AABFBC600C89D63 /* EventPresenceCardView */,
-				A658B39C2AABFDEE00C89D63 /* View */,
-				A658B39E2AABFE0700C89D63 /* Worker  */,
 			);
 			path = InternalComponents;
 			sourceTree = "<group>";

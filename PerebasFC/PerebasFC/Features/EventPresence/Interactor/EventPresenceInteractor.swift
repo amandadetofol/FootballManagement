@@ -12,23 +12,32 @@ final class EventPresenceInteractor: EventPresenceInteractorProtocol {
     private let coordinator: EventPresenceCoordinatorProtocol
     private let presenter: EventPresencePresenterProtocol
     private let worker: EventPresenceWorkerProtocol
+    private let itemId: String
     
     init(coordinator: EventPresenceCoordinatorProtocol,
          presenter: EventPresencePresenterProtocol,
-         worker: EventPresenceWorkerProtocol){
+         worker: EventPresenceWorkerProtocol,
+         itemId: String){
         self.coordinator = coordinator
         self.presenter = presenter
         self.worker = worker
+        self.itemId = itemId
     }
     
     func viewDidLoad() {
-        worker.getEventPresenceModel { [weak self] model in
-            self?.presenter.updateView(with: model)
+        
+        coordinator.showLoading()
+        worker.getEventPresenceModel(itemId: itemId) { [weak self] querysnapshot in
+            guard let self,
+                  let querysnapshot else {
+                self?.coordinator.removeLoading()
+                self?.coordinator.showErrorAlert()
+                return 
+            }
+            
+            self.coordinator.removeLoading()
+            self.presenter.updateView(with: querysnapshot)
         }
     }
-    
-    func handleConfirmButtonTap() {
-        coordinator.handleConfirmButtonTap()
-    }
-    
+
 }

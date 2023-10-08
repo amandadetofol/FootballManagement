@@ -10,13 +10,13 @@ import FirebaseFirestore
 
 protocol CalendarViewProtocol: AnyObject {
     func updateEvents(events: [NewEventInCalendarViewModel])
-    func showConfirmPresencePopUp(date: Date)
+    func showConfirmPresencePopUp(model: NewEventInCalendarViewModel)
     func showCreateNewEventPopUp(date: Date)
     func showEventForSelectedDayPopUpNotFound(date: Date)
 }
 
 final class CalendarPresenter: CalendarPresenterProtocol {
- 
+
     weak var view: CalendarViewProtocol?
     
     func updateEvents(events: QuerySnapshot) {
@@ -24,8 +24,8 @@ final class CalendarPresenter: CalendarPresenterProtocol {
         view?.updateEvents(events: viewmodel)
     }
     
-    func showConfirmPresencePopUp(date: Date) {
-        view?.showConfirmPresencePopUp(date: date)
+    func showConfirmPresencePopUp(model: NewEventInCalendarViewModel) {
+        view?.showConfirmPresencePopUp(model: model)
     }
     
     func showCreateNewEventPopUp(date: Date) {
@@ -46,7 +46,8 @@ final class CalendarPresenter: CalendarPresenterProtocol {
                 eventName: document["eventName"] as? String ?? String(),
                 time: document["time"] as? String ?? String(),
                 allowedToBringCompanions: document["allowedToBringCompanions"] as? Bool ?? false,
-                numberOfCompanios: document["numberOfCompanios"] as? Int ?? 0)
+                numberOfCompanios: document["numberOfCompanios"] as? Int ?? 0,
+                id: document.documentID)
         }
     }
 }

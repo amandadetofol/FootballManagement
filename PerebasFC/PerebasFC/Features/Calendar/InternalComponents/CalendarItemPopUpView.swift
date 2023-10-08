@@ -10,17 +10,20 @@ import UIKit
 protocol CalendarItemPopUpViewDelegate: AnyObject {
     func handleFirstActionButtonTap(
         key: String,
-        date: Date)
+        model: NewEventInCalendarViewModel?,
+        date: Date?)
     func handleSecondActionButtonTap(
         key: String,
-        date: Date)
+        model: NewEventInCalendarViewModel?,
+        date: Date?)
 }
 
 final class CalendarItemPopUpView: UIControl {
     
     weak var delegate: CalendarItemPopUpViewDelegate?
     
-    var selectedDate: Date? = nil
+    var date: Date?
+    var selectedItem: NewEventInCalendarViewModel? = nil
     
     private var firstActionKey: String = ""
     private var secondActionKey: String = ""
@@ -82,7 +85,8 @@ final class CalendarItemPopUpView: UIControl {
     
     func updateView(
         with model: CalendarItemPopUpViewModel,
-        date: Date){
+        date: NewEventInCalendarViewModel?,
+        itemDate: Date? = nil){
             updateAccessibility(model: model)
             titleLabel.text = model.title
             descriptionLabel.text = model.description
@@ -100,7 +104,8 @@ final class CalendarItemPopUpView: UIControl {
                 self.secondActionKey = secondActionKey
             }
             
-            self.selectedDate = date
+            self.selectedItem = date
+            self.date = itemDate
         }
     
     private func updateAccessibility(model: CalendarItemPopUpViewModel){
@@ -154,15 +159,18 @@ final class CalendarItemPopUpView: UIControl {
 extension CalendarItemPopUpView {
     
     @objc func handleFirstActionButtonTap(){
+        
         delegate?.handleFirstActionButtonTap(
             key: self.firstActionKey,
-            date: selectedDate ?? Date())
+            model: selectedItem,
+            date: date)
     }
     
     @objc func handleSecondActionButtonTap(){
         delegate?.handleSecondActionButtonTap(
             key: self.secondActionKey,
-            date: selectedDate ?? Date())
+            model: selectedItem,
+            date: date)
     }
     
 }

@@ -10,10 +10,13 @@ import HorizonCalendar
 
 protocol CalendarViewInteractorProtocol {
     func viewDidLoad()
-    func showConfirmPresencePopUp(date: Date)
+    func showConfirmPresencePopUp(model: NewEventInCalendarViewModel)
     func showCreateNewEventPopUp(date: Date)
     func showEventForSelectedDayPopUpNotFound(date: Date)
-    func handlePopUpButtonTap(key: String, date: Date)
+    func handlePopUpButtonTap(
+        key: String,
+        model: NewEventInCalendarViewModel?,
+        date: Date?)
 }
 
 final class CalendarViewController: UIViewController {
@@ -139,7 +142,11 @@ final class CalendarViewController: UIViewController {
             if eventDays.contains(where: { model in
                 model.day == day.day
             }) {
-                self.interactor.showConfirmPresencePopUp(date: correctDate ?? Date())
+                guard let item = eventDays.first(where: { model in
+                    model.day == day.day
+                }) else { return }
+                self.interactor.showConfirmPresencePopUp(model: item)
+                
             } else if isAdm {
                 self.interactor.showCreateNewEventPopUp(date: correctDate ?? Date())
             } else {
@@ -157,7 +164,7 @@ extension CalendarViewController: CalendarViewProtocol {
         createCustomDayProviderForSelectedItem(iconmingDay: 0)
     }
     
-    func showConfirmPresencePopUp(date: Date) {
+    func showConfirmPresencePopUp(model: NewEventInCalendarViewModel) {
         calendarItemPopUpView.updateView(
             with: CalendarItemPopUpViewModel(
                 title: "Evento do grupo!",
@@ -167,7 +174,7 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionKey: CalendarPopUpKeysEnum.confirmPresence.rawValue,
                 secondActionKey: (Session.shared.isAdm ?? false) ? CalendarPopUpKeysEnum.presenceList.rawValue : nil,
                 numberOfCompanions: nil),
-            date: date)
+            date: model)
     }
     
     func showCreateNewEventPopUp(date:  Date) {
@@ -180,7 +187,8 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionKey: CalendarPopUpKeysEnum.createNewEvent.rawValue,
                 secondActionKey: CalendarPopUpKeysEnum.close.rawValue,
                 numberOfCompanions: nil),
-            date: date)
+            date: nil,
+            itemDate: date)
     }
     
     func showEventForSelectedDayPopUpNotFound(date: Date) {
@@ -193,7 +201,8 @@ extension CalendarViewController: CalendarViewProtocol {
                 firstActionKey: CalendarPopUpKeysEnum.close.rawValue,
                 secondActionKey: nil,
                 numberOfCompanions: nil),
-            date: date)
+            date: nil,
+            itemDate: date)
     }
     
 }
@@ -202,18 +211,16 @@ extension CalendarViewController: CalendarItemPopUpViewDelegate {
     
     func handleFirstActionButtonTap(
         key: String,
-        date: Date) {
-            interactor.handlePopUpButtonTap(
-                key: key,
-                date: date)
-        }
+        model: NewEventInCalendarViewModel?,
+        date: Date?) {
+            interactor.handlePopUpButtonTap(key: key, model: model, date: date)
+    }
     
     func handleSecondActionButtonTap(
         key: String,
-        date: Date) {
-            interactor.handlePopUpButtonTap(
-                key: key,
-                date: date)
-        }
+        model: NewEventInCalendarViewModel?,
+        date: Date?) {
+            interactor.handlePopUpButtonTap(key: key, model: model, date: date)
+    }
 
 }

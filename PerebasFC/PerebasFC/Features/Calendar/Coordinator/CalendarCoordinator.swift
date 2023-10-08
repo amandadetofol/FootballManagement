@@ -10,11 +10,14 @@ import UIKit
 protocol CalendarCoordinatorProtocol {
     func goToBack()
     func goToCreateNewEvent(date: Date)
-    func showConfirmationPopUp()
-    func goToSeePresenceList()
+    func showConfirmationPopUp(
+        numberOfCompanions: Int,
+        completion: @escaping((Bool, Int?)->Void))
+    func goToSeePresenceList(itemId: String)
     func showErrorAlert()
     func showLoading()
     func removeLoading()
+    func showSuccessAlert()
 }
 
 final class CalendarCoordinator: CalendarCoordinatorProtocol {
@@ -39,36 +42,62 @@ final class CalendarCoordinator: CalendarCoordinatorProtocol {
             animated: true)
     }
     
-    func showConfirmationPopUp() {
+    func showConfirmationPopUp(
+        numberOfCompanions: Int,
+        completion: @escaping((Bool, Int?)->Void)){
         let alert = UIAlertController(
             title: "Confirmar presença.",
             message: "Deseja confirmar presença?",
             preferredStyle: UIAlertController.Style.alert)
-        
+            
+            if numberOfCompanions > 0 {
+                alert.addTextField { textField in
+                    textField.placeholder = "Número de acompanhantes"
+                }
+            }
+    
         alert.addAction(
             UIAlertAction(
                 title: "Sim",
                 style: UIAlertAction.Style.default,
-                handler: { [weak self] _ in
-                    self?.navigationController.popViewController(animated: true)
+                handler: { _ in
+                    completion(true, numberOfCompanions)
                 }))
         
         alert.addAction(
             UIAlertAction(
                 title: "Não",
                 style: UIAlertAction.Style.cancel,
-                handler: { [weak self] _ in
-                    self?.navigationController.popViewController(animated: true)
+                handler: { _ in
+                    completion(false, numberOfCompanions)
                 }))
+            
         navigationController.present(
             alert,
             animated: true)
     }
     
-    func goToSeePresenceList() {
+    func showSuccessAlert(){
+        let alert = UIAlertController(
+            title: "Presença confirmada.",
+            message: "",
+            preferredStyle: UIAlertController.Style.alert)
+    
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.cancel))
+            
+        navigationController.present(
+            alert,
+            animated: true)
+    }
+    
+    func goToSeePresenceList(itemId: String) {
         self.navigationController.pushViewController(
             EventPresenceFactory.getEventPresenceViewController(
-                navigationController: navigationController),
+                navigationController: navigationController,
+                itemId: itemId),
             animated: false)
     }
     

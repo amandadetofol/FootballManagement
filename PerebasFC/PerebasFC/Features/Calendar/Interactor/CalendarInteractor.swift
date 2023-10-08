@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 protocol CalendarPresenterProtocol {
     func updateEvents(events: QuerySnapshot)
-    func showConfirmPresencePopUp(date: Date)
+    func showConfirmPresencePopUp(model: NewEventInCalendarViewModel)
     func showCreateNewEventPopUp(date: Date)
     func showEventForSelectedDayPopUpNotFound(date: Date)
 }
@@ -44,8 +44,8 @@ final class CalendarInteractor: CalendarViewInteractorProtocol {
         }
     }
     
-    func showConfirmPresencePopUp(date: Date) {
-        presenter.showConfirmPresencePopUp(date: date)
+    func showConfirmPresencePopUp(model: NewEventInCalendarViewModel) {
+        presenter.showConfirmPresencePopUp(model: model)
     }
     
     func showCreateNewEventPopUp(date: Date) {
@@ -58,16 +58,38 @@ final class CalendarInteractor: CalendarViewInteractorProtocol {
     
     func handlePopUpButtonTap(
         key: String,
-        date: Date) {
+        model: NewEventInCalendarViewModel?,
+        date: Date?) {
             switch key {
             case CalendarPopUpKeysEnum.close.rawValue:
                 coordinator.goToBack()
             case CalendarPopUpKeysEnum.createNewEvent.rawValue:
-                coordinator.goToCreateNewEvent(date: date)
+                coordinator.goToCreateNewEvent(date: date ?? Date())
             case CalendarPopUpKeysEnum.confirmPresence.rawValue:
-                coordinator.showConfirmationPopUp()
+                coordinator.showConfirmationPopUp(
+                    numberOfCompanions: model?.numberOfCompanios ?? 0,
+                    completion: { [weak self] presence, numberOfCompanions in
+                        guard let self,
+                              let model else { return }
+                        if presence == true {
+                            self.worker.saveNewUserInPresenceList(
+                                numberOfCompanions: numberOfCompanions ?? 0,
+                                itemId: model.id ?? "") { succeded in
+                                    if succeded {
+                                        self.coordinator.showSuccessAlert()
+                                    } else {
+                                        self.coordinator.showErrorAlert()
+                                    }
+                                }
+                        } else {
+                            coordinator.goToBack()
+                        }
+                      
+                    })
+                
             case CalendarPopUpKeysEnum.presenceList.rawValue:
-                coordinator.goToSeePresenceList()
+                guard let model else { return }
+                coordinator.goToSeePresenceList(itemId: model.id ?? "")
             default:
                 return
             }
