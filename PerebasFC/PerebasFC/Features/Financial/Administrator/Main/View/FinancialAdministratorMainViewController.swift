@@ -39,8 +39,12 @@ final class FinancialAdministratorMainViewController: UIViewController {
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = false
         self.view = financialAdministratorMainView
-        interactor.viewDidLoad()
         handleKeyBoardRemoveWhenClickOutsideField()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.viewDidLoad()
     }
     
 }

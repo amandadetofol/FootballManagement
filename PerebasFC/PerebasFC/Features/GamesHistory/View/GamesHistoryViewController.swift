@@ -64,7 +64,7 @@ final class GamesHistoryViewController: UIViewController {
 extension GamesHistoryViewController: GamesHistoryViewProtocol {
     
     func updateView(using model: [Game]) {
-        gamesHistoryView.updateView(with: model)
+        gamesHistoryView.updateView(with: model.reversed())
     }
 
 }

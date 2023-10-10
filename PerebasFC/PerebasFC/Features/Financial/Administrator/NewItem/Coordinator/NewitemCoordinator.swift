@@ -11,14 +11,18 @@ protocol NewItemCoordinatorProtocol {
     func showSuccessFeedback()
     func showErrorFeedback()
     func handleAddToSpecificPlayerButton()
+    func showLoading()
+    func removeLoading()
 }
 
 final class NewItemCoordinator: NewItemCoordinatorProtocol {
     
+    private let loader: LoaderCoodinator
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
     func showSuccessFeedback(){
@@ -62,6 +66,14 @@ final class NewItemCoordinator: NewItemCoordinatorProtocol {
             ParticipantsSelectorListViewFactory.getParticipantsSelectorListViewController(
                 navigationController: self.navigationController),
             animated: true)
+    }
+    
+    func showLoading(){
+        loader.showLoader()
+    }
+    
+    func removeLoading(){
+        loader.removeLoader()
     }
     
 }

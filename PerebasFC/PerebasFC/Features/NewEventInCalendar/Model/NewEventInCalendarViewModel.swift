@@ -16,8 +16,14 @@ struct NewEventInCalendarViewModel {
     var id: String?
     var day: Int {
         get {
-            let calendar = Calendar.current
-            return calendar.component(.day, from: selectedDate)
+            guard let startIndex = id?.startIndex,
+                  let endIndex = id?.index(startIndex, offsetBy: 2),
+                  let substring = id?[startIndex..<endIndex] else { return 0}
+            if let numeroInteiro = Int(String(substring)) {
+                return numeroInteiro
+            } else {
+                return 0
+            }
         }
     }
 }

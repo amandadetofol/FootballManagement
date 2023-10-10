@@ -159,16 +159,19 @@ final class CalendarViewController: UIViewController {
 extension CalendarViewController: CalendarViewProtocol {
     
     func updateEvents(events: [NewEventInCalendarViewModel]) {
-        self.eventDays = events
+        self.eventDays = events.reversed()
         addDateSelectorActionHandler()
+        events.forEach { event in
+            print(event.day)
+        }
         createCustomDayProviderForSelectedItem(iconmingDay: 0)
     }
     
     func showConfirmPresencePopUp(model: NewEventInCalendarViewModel) {
         calendarItemPopUpView.updateView(
             with: CalendarItemPopUpViewModel(
-                title: "Evento do grupo!",
-                description: "Encontramos um evento do grupo neste dia. Não esqueça de confirmar sua presença!",
+                title: "Evento: \(model.eventName)",
+                description: "Horário: \(model.time).\nNúmero de acompanhantes permitido: \(model.numberOfCompanios ?? 0)",
                 firstActionTitle: "confirmar presença".uppercased(),
                 secondActionTitle: (Session.shared.isAdm ?? false) ? "lista de presença".uppercased() : nil,
                 firstActionKey: CalendarPopUpKeysEnum.confirmPresence.rawValue,

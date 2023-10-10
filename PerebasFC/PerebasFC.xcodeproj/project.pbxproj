@@ -214,6 +214,7 @@
 		A6A741872A26C2B7009A7998 /* GamesHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */; };
 		A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */; };
 		A6A7418C2A26C4B3009A7998 /* GameHistoryViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */; };
+		A6AACC3E2AD4BC3F00EF1A10 /* FinancialAdministratorMainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AACC3D2AD4BC3F00EF1A10 /* FinancialAdministratorMainWorker.swift */; };
 		A6AF78BE2AA6A11500174B83 /* ParticipantsSelectorListViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78BD2AA6A11500174B83 /* ParticipantsSelectorListViewWorker.swift */; };
 		A6AF78C02AA6A12000174B83 /* ParticipantsSelectorListViiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78BF2AA6A12000174B83 /* ParticipantsSelectorListViiew.swift */; };
 		A6AF78C22AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF78C12AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift */; };
@@ -513,6 +514,7 @@
 		A6A741862A26C2B7009A7998 /* GamesHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryPresenter.swift; sourceTree = "<group>"; };
 		A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHistoryCoordinator.swift; sourceTree = "<group>"; };
 		A6A7418B2A26C4B3009A7998 /* GameHistoryViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewFactory.swift; sourceTree = "<group>"; };
+		A6AACC3D2AD4BC3F00EF1A10 /* FinancialAdministratorMainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorMainWorker.swift; sourceTree = "<group>"; };
 		A6AF78BD2AA6A11500174B83 /* ParticipantsSelectorListViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViewWorker.swift; sourceTree = "<group>"; };
 		A6AF78BF2AA6A12000174B83 /* ParticipantsSelectorListViiew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViiew.swift; sourceTree = "<group>"; };
 		A6AF78C12AA6A12E00174B83 /* ParticipantsSelectorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsSelectorListViewController.swift; sourceTree = "<group>"; };
@@ -2272,6 +2274,7 @@
 		A69E891C2A8AE937008C09DC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A6AACC3C2AD4BC3200EF1A10 /* Worker */,
 				A69E89372A8AF13C008C09DC /* Coordinator */,
 				A69E89232A8AE979008C09DC /* Factory */,
 				A69E89212A8AE962008C09DC /* InternalComponents */,
@@ -2460,6 +2463,14 @@
 				A6A741892A26C2F6009A7998 /* GamesHistoryCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6AACC3C2AD4BC3200EF1A10 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A6AACC3D2AD4BC3F00EF1A10 /* FinancialAdministratorMainWorker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		A6AF78B52AA6A0BE00174B83 /* ParticipantsSelectorListView */ = {
@@ -3119,6 +3130,7 @@
 				A64161AC2A898ED300BF45C4 /* AccessibilityManagerViewController.swift in Sources */,
 				A6730EFF2AAA54B3000D6B72 /* PresenceInteractor.swift in Sources */,
 				A637DDF02A4A4B300017857D /* EditGamePresenter.swift in Sources */,
+				A6AACC3E2AD4BC3F00EF1A10 /* FinancialAdministratorMainWorker.swift in Sources */,
 				A6CCFC402A32236700364614 /* ChangePasswordInteractor.swift in Sources */,
 				A6730EFB2AAA54A1000D6B72 /* PresenceFactory.swift in Sources */,
 				A68E761D2A9438F600599C25 /* FinancialAdministratorHistoryPresenter.swift in Sources */,

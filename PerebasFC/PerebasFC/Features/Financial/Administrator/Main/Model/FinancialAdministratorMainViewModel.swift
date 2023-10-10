@@ -28,8 +28,8 @@ enum FinancialAdministratorActions: String {
 }
 
 struct FinancialAdministratorMainViewModel {
-    let username: String
-    let balance: String
+    var username = Session.shared.loggedUserEmail ?? "Administrador" 
+    var balance: String
     let items: [FinancialAdministratorActions] = [
             .history,
             .pendencies,

@@ -61,7 +61,7 @@ final class CalendarCoordinator: CalendarCoordinatorProtocol {
                 title: "Sim",
                 style: UIAlertAction.Style.default,
                 handler: { _ in
-                    completion(true, numberOfCompanions)
+                    completion(true, Int(alert.textFields?.first?.text ?? "0"))
                 }))
         
         alert.addAction(
@@ -69,7 +69,7 @@ final class CalendarCoordinator: CalendarCoordinatorProtocol {
                 title: "Não",
                 style: UIAlertAction.Style.cancel,
                 handler: { _ in
-                    completion(false, numberOfCompanions)
+                    completion(false, Int(alert.textFields?.first?.text ?? "0"))
                 }))
             
         navigationController.present(

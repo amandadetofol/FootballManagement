@@ -62,6 +62,15 @@ final class FinancialAdministratorMainView: UIView {
     }
     
     func setupView(with model: FinancialAdministratorMainViewModel){
+        stackView.arrangedSubviews.forEach { subview in
+            
+            if let _ = subview as? HideAndShowBalanceView {
+               return
+            }
+            subview.removeFromSuperview()
+  
+        }
+        
         hideAndShowBalanceView.updateView(
             username: model.username,
             balance: model.balance)
