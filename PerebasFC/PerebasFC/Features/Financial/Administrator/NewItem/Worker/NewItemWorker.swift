@@ -27,17 +27,108 @@ final class NewItemWorker: NewItemWorkerProtocol {
             case .pendencies:
                 return
             case .newCredit:
-                addNewCredit(newItem: newItem) { succeded in
-                    completion(succeded)
+                if !(newItem.userEmail?.lowercased().contains("selecionar") ?? false) {
+                    addNewDebitForSpecificParticipant(newItem: newItem) { succeded in
+                        completion(succeded)
+                    }
+                } else {
+                    addNewCredit(newItem: newItem) { succeded in
+                        completion(succeded)
+                    }
                 }
+                
+                
             case .newDebit:
-                addNewDebit(newItem: newItem) { succeded in
-                    completion(succeded)
+                if !(newItem.userEmail?.lowercased().contains("selecionar") ?? false) {
+                    addNewCreditForSpecificParticipant(newItem: newItem) { succeded in
+                        completion(succeded)
+                    }
+                } else {
+                    addNewDebit(newItem: newItem) { succeded in
+                        completion(succeded)
+                    }
                 }
+                
             }
         }
     
     //MARK: Private methods
+    private func addNewCreditForSpecificParticipant(
+        newItem: NewItemModel,
+        completion: @escaping((Bool) -> Void)){
+            guard let email = newItem.userEmail?.replacingOccurrences(of: " ", with: "") else { return }
+            Firestore.firestore()
+                .document("financial/credit/person/\(email)-\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                .setData([
+                    "eventName": newItem.eventName,
+                    "eventValue": newItem.eventValue,
+                    "date": newItem.date.toString(),
+                    "type": newItem.type.rawValue,
+                    "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false ,
+            ])
+            
+            Firestore.firestore().collection("perebasfc/\(email)/comum-financeiro").getDocuments { [weak self] querySnapShot, error in
+                guard error == nil,
+                      let querySnapShot else {
+                    completion(false)
+                    return
+                }
+                
+                let count = querySnapShot.documents.count
+                Firestore.firestore().document("perebasfc/\(email)/comum-financeiro/\(count+1)").setData(
+                    ["admAprooved" : true,
+                     "expectedValue": Float(newItem.eventValue) ?? 0.0,
+                     "hasProof": false,
+                     "initialValue": Float(newItem.eventValue) ?? 0.0,
+                     "numberOfDaysLate": 0,
+                     "proofUrl": "",
+                     "reason": "Adicionado via sistema.",
+                     "title": newItem.eventName
+                    ]
+                )
+                completion(true)
+            }
+            
+    }
+    
+    private func addNewDebitForSpecificParticipant(
+        newItem: NewItemModel,
+        completion: @escaping((Bool) -> Void)){
+            guard let email = newItem.userEmail?.replacingOccurrences(of: " ", with: "") else { return }
+            Firestore.firestore()
+                .document("financial/debt/person/\(email)-\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                .setData([
+                    "eventName": newItem.eventName,
+                    "eventValue": newItem.eventValue,
+                    "date": newItem.date.toString(),
+                    "type": newItem.type.rawValue,
+                    "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false ,
+            ])
+            
+            Firestore.firestore().collection("perebasfc/\(email)/comum-financeiro").getDocuments { [weak self] querySnapShot, error in
+                guard error == nil,
+                      let querySnapShot else {
+                    completion(false)
+                    return
+                }
+                
+                let count = querySnapShot.documents.count
+                Firestore.firestore().document("perebasfc/\(email)/comum-financeiro/\(count+1)").setData(
+                    ["admAprooved" : false,
+                     "expectedValue": Float(newItem.eventValue) ?? 0.0,
+                     "hasProof": false,
+                     "initialValue": Float(newItem.eventValue) ?? 0.0,
+                     "numberOfDaysLate": 0,
+                     "proofUrl": "",
+                     "reason": "Aguardando comprovante",
+                     "title": newItem.eventName
+                    ]
+                )
+                completion(true)
+            }
+            
+    }
+    
     private func addNewDebit(
         newItem: NewItemModel,
         completion: @escaping((Bool) -> Void)){

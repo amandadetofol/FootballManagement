@@ -12,6 +12,7 @@ struct FinancialPendencieCardViewModel {
     let isLate: Bool
     let initialValue: Float
     let numberOfDaysLate: Int?
+    let admAprooved: Bool
     let hasProof: Bool
     let proofUrl: String?
     let id: Int

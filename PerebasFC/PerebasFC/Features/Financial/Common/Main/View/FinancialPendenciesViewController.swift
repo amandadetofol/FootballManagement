@@ -104,7 +104,7 @@ extension FinancialPendenciesViewController: FinancialViewProtocol {
     func updateViewForPayed() {
         var list: [FinancialPendencieCardViewModel] = []
         self.model?.forEach({ cardModel in
-            if !cardModel.isLate {
+            if cardModel.admAprooved {
                 list.append(cardModel)
             }
         })
@@ -116,7 +116,7 @@ extension FinancialPendenciesViewController: FinancialViewProtocol {
     func updateViewForPendencie() {
         var list: [FinancialPendencieCardViewModel] = []
         self.model?.forEach({ cardModel in
-            if cardModel.isLate {
+            if !cardModel.admAprooved {
                 list.append(cardModel)
             }
         })

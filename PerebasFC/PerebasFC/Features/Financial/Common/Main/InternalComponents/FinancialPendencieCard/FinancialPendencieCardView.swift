@@ -78,7 +78,7 @@ final class FinancialPendencieCardView: UIControl {
     }
     
     func updateView(with model: FinancialPendencieCardViewModel){
-        dollarSignImageView.tintColor = model.isLate ? .systemRed : .systemGreen
+        dollarSignImageView.tintColor = !model.admAprooved ? .systemRed : .systemGreen
         titleLabel.text = model.title
         descriptionLabel.text = model.actionLabel
         reasonLabel.text = model.reason
@@ -91,7 +91,7 @@ final class FinancialPendencieCardView: UIControl {
     func updateAccessibility(model: FinancialPendencieCardViewModel) {
         isAccessibilityElement = true
         accessibilityTraits = .button
-        accessibilityLabel = "\(model.title) \((model.isLate ? "\(model.reason). Realize o pagamento e anexe o comprovante." : "Conta em dia!")). Item \(model.currentIndex ?? 0) de \(model.total ?? 0) \(model.actionLabel)"
+        accessibilityLabel = "\(model.title) \((model.admAprooved ? "\(model.reason). Realize o pagamento e anexe o comprovante." : "Conta em dia!")). Item \(model.currentIndex ?? 0) de \(model.total ?? 0) \(model.actionLabel)"
     }
     
     private func setupBorders(){

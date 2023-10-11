@@ -265,6 +265,7 @@ extension NewItemView {
                 eventValue: valueNameTextField.text,
                 date: datePicker.date,
                 type: type ?? .credit,
+                userEmail: addToSpecificPlayerButton.currentTitle ?? "",  
                 splitBeetweenTeamMember: splitBeetweenTeamMemebersSwitch.isOn))
     }
     

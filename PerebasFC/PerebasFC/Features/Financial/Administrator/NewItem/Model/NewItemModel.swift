@@ -12,6 +12,7 @@ struct NewItemModel {
     let eventValue: String
     let date: Date
     let type: NewItemType
+    let userEmail: String? 
     let splitBeetweenTeamMember: Bool?
 }
 

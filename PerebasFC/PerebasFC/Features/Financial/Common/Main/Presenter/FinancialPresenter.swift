@@ -43,6 +43,7 @@ final class FinancialPresenter: FinancialPendenciesPresenterProtocol {
                 isLate: model["isLate"] as? Bool ?? Bool(),
                 initialValue: model["initialValue"] as? Float ?? 0.0,
                 numberOfDaysLate: model["numberOfDaysLate"] as? Int ?? 0,
+                admAprooved: model["admAprooved"] as? Bool ?? false,
                 hasProof: model["hasProof"] as? Bool ?? false,
                 proofUrl: model["proofUrl"] as? String,
                 id: index+1,
