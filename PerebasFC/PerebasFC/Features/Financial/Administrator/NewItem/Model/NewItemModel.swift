@@ -8,12 +8,12 @@
 import Foundation
 
 struct NewItemModel {
-    let eventName: String
-    let eventValue: String
-    let date: Date
-    let type: NewItemType
-    let userEmail: String? 
-    let splitBeetweenTeamMember: Bool?
+    var eventName: String
+    var eventValue: String
+    var date: Date
+    var type: NewItemType
+    var userEmail: String?
+    var splitBeetweenTeamMember: Bool?
 }
 
 enum NewItemType: String {

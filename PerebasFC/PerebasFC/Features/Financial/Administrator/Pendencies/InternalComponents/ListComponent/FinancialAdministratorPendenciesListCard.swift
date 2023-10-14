@@ -16,6 +16,15 @@ final class FinancialAdministratorPendenciesListCard: UIControl {
     weak var delegate: FinancialAdministratorPendenciesListCardDelegate?
     private var model: FinancialAdministratorPendenciesListCardModel?
     
+    private lazy var userNameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        return label
+    }()
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -65,9 +74,10 @@ final class FinancialAdministratorPendenciesListCard: UIControl {
     }
     
     func updateView(model: FinancialAdministratorPendenciesListCardModel){
-        self.titleLabel.text = model.title
-        self.valueLabel.text = model.value
-        self.descriptionLabel.text = model.name
+        self.titleLabel.text = model.name
+        self.valueLabel.text = "Valor: R$\(model.value)"
+        self.descriptionLabel.text = "Motivo: \(model.name)"
+        self.userNameLabel.text = "Usuário: \(model.userName)"
         self.model = model
     }
     
@@ -79,6 +89,7 @@ final class FinancialAdministratorPendenciesListCard: UIControl {
     
     private func setupView(){
         addSubviews([
+            userNameLabel,
             titleLabel,
             descriptionLabel,
             valueLabel,
@@ -88,9 +99,12 @@ final class FinancialAdministratorPendenciesListCard: UIControl {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 102),
+            heightAnchor.constraint(equalToConstant: 144),
             
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            userNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            userNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            
+            titleLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             
             valueLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),

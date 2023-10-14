@@ -23,7 +23,6 @@
 		A6031A1A2A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A192A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift */; };
 		A6031A1C2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A1B2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift */; };
 		A6031A1E2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A1D2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift */; };
-		A6031A212A925F2E00E19E3A /* NameAndValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6031A202A925F2E00E19E3A /* NameAndValueView.swift */; };
 		A6033E552A12DC5D002B56EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E542A12DC5D002B56EE /* AppDelegate.swift */; };
 		A6033E592A12DC5D002B56EE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6033E582A12DC5D002B56EE /* WelcomeViewController.swift */; };
 		A6033E5E2A12DC5E002B56EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6033E5D2A12DC5E002B56EE /* Assets.xcassets */; };
@@ -77,6 +76,7 @@
 		A61CFFF82A3BDC440026BAF1 /* EditAwardsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFFF72A3BDC440026BAF1 /* EditAwardsCoordinator.swift */; };
 		A61CFFFB2A3BE0120026BAF1 /* EditAwardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFFFA2A3BE0120026BAF1 /* EditAwardsViewModel.swift */; };
 		A620C7272ABD1E7E00CC0472 /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A620C7262ABD1E7E00CC0472 /* UiViewController.swift */; };
+		A628AC3B2ADB1FD00037F48B /* NameAndValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A628AC3A2ADB1FD00037F48B /* NameAndValueView.swift */; };
 		A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */; };
 		A62C1CBF2A36111C002AA401 /* CalendarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */; };
 		A62C1CC12A3613EC002AA401 /* CalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */; };
@@ -323,7 +323,6 @@
 		A6031A192A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsPresenter.swift; sourceTree = "<group>"; };
 		A6031A1B2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsFactory.swift; sourceTree = "<group>"; };
 		A6031A1D2A91897000E19E3A /* AdministratorPendenciesDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorPendenciesDetailsCoordinator.swift; sourceTree = "<group>"; };
-		A6031A202A925F2E00E19E3A /* NameAndValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndValueView.swift; sourceTree = "<group>"; };
 		A6033E512A12DC5D002B56EE /* PerebasFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerebasFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6033E542A12DC5D002B56EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6033E582A12DC5D002B56EE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +378,7 @@
 		A61CFFF72A3BDC440026BAF1 /* EditAwardsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsCoordinator.swift; sourceTree = "<group>"; };
 		A61CFFFA2A3BE0120026BAF1 /* EditAwardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAwardsViewModel.swift; sourceTree = "<group>"; };
 		A620C7262ABD1E7E00CC0472 /* UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewController.swift; sourceTree = "<group>"; };
+		A628AC3A2ADB1FD00037F48B /* NameAndValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameAndValueView.swift; sourceTree = "<group>"; };
 		A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemViewRepresentable.swift; sourceTree = "<group>"; };
 		A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWorker.swift; sourceTree = "<group>"; };
 		A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInteractor.swift; sourceTree = "<group>"; };
@@ -711,7 +711,7 @@
 		A6031A0A2A91889F00E19E3A /* PendenciesDetails */ = {
 			isa = PBXGroup;
 			children = (
-				A6031A1F2A918B5F00E19E3A /* InternalComponents */,
+				A628AC392ADB1FBE0037F48B /* Component */,
 				A6031A102A9188CC00E19E3A /* Coordinator */,
 				A6031A0F2A9188BF00E19E3A /* Factory */,
 				A6031A112A9188D200E19E3A /* Presenter */,
@@ -761,14 +761,6 @@
 				A6031A192A91894E00E19E3A /* AdministratorPendenciesDetailsPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A6031A1F2A918B5F00E19E3A /* InternalComponents */ = {
-			isa = PBXGroup;
-			children = (
-				A6031A202A925F2E00E19E3A /* NameAndValueView.swift */,
-			);
-			path = InternalComponents;
 			sourceTree = "<group>";
 		};
 		A6033E482A12DC5D002B56EE = {
@@ -1299,6 +1291,14 @@
 				A61CFFFA2A3BE0120026BAF1 /* EditAwardsViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A628AC392ADB1FBE0037F48B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				A628AC3A2ADB1FD00037F48B /* NameAndValueView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		A62C1CBD2A3607DF002AA401 /* InternalComponents */ = {
@@ -3195,6 +3195,7 @@
 				A6FCDA582A81B69B00B095E5 /* SortMainView.swift in Sources */,
 				A6A741832A26C183009A7998 /* GamesHistoryWorker.swift in Sources */,
 				A692851D2A8EDF78000E618D /* NewItemFactory.swift in Sources */,
+				A628AC3B2ADB1FD00037F48B /* NameAndValueView.swift in Sources */,
 				A62C1CC12A3613EC002AA401 /* CalendarInteractor.swift in Sources */,
 				A61A8F902A14418B009D08EE /* ErrorComponentView.swift in Sources */,
 				A6FCDA5B2A81B7D900B095E5 /* SortGameMainViewModel.swift in Sources */,
@@ -3305,7 +3306,6 @@
 				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
 				A68E76152A94388900599C25 /* FinancialAdministratorHistoryWorker.swift in Sources */,
 				A68E76132A94387500599C25 /* FinancialAdministratorHistoryViewController.swift in Sources */,
-				A6031A212A925F2E00E19E3A /* NameAndValueView.swift in Sources */,
 				A69E892C2A8AF0DF008C09DC /* FinancialAdministratorMainInteractor.swift in Sources */,
 				A67360932A393282003BF4C2 /* FinancialDetailsFactory.swift in Sources */,
 				A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */,

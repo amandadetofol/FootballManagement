@@ -10,12 +10,14 @@ import UIKit
 protocol AdministratorPendenciesDetailsViewDelegate: AnyObject {
     func handleConfirmButtonTap(url: String?)
     func handleSendNotificationButtonTap()
+    func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel)
 }
 
 final class AdministratorPendenciesDetailsView: UIView {
     
     weak var delegate: AdministratorPendenciesDetailsViewDelegate?
     private var url: String?
+    private var id: String = ""
     
     private lazy var contentView: UIView = {
         let view = UIView()
@@ -53,29 +55,41 @@ final class AdministratorPendenciesDetailsView: UIView {
         return stackView
     }()
 
-    private lazy var nameValues: NameAndValueView = {
-        let nameValues = NameAndValueView()
+    private lazy var nameValues: TextFieldComponent = {
+        let nameValues = TextFieldComponent()
+        nameValues.title = "Nome"
         nameValues.translatesAutoresizingMaskIntoConstraints = false
         
         return nameValues
     }()
     
-    private lazy var valueValues: NameAndValueView = {
-        let nameValues = NameAndValueView()
+    private lazy var valueValues: TextFieldComponent = {
+        let nameValues = TextFieldComponent()
+        nameValues.title = "Valor"
         nameValues.translatesAutoresizingMaskIntoConstraints = false
         
         return nameValues
     }()
     
-    private lazy var descriptionValues: NameAndValueView = {
-        let nameValues = NameAndValueView()
+    private lazy var descriptionValues: TextFieldComponent = {
+        let nameValues = TextFieldComponent()
+        nameValues.title = "Descrição"
         nameValues.translatesAutoresizingMaskIntoConstraints = false
         
         return nameValues
     }()
     
-    private lazy var daysLateValues: NameAndValueView = {
-        let nameValues = NameAndValueView()
+    private lazy var daysLateValues: TextFieldComponent = {
+        let nameValues = TextFieldComponent()
+        nameValues.title = "Número de dias em atraso"
+        nameValues.translatesAutoresizingMaskIntoConstraints = false
+        
+        return nameValues
+    }()
+    
+    private lazy var userNameValues: TextFieldComponent = {
+        let nameValues = TextFieldComponent()
+        nameValues.title = "Nome de usuário"
         nameValues.translatesAutoresizingMaskIntoConstraints = false
         
         return nameValues
@@ -107,6 +121,19 @@ final class AdministratorPendenciesDetailsView: UIView {
         return button
     }()
     
+    private lazy var saveItemButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.clipsToBounds = true
+        button.backgroundColor = .clear
+        button.setTitleColor(.black, for: .normal)
+        button.setTitle("salvar".uppercased(), for: .normal)
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(handleSaveButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
     init(){
         super.init(frame: .zero)
         setupView()
@@ -120,15 +147,18 @@ final class AdministratorPendenciesDetailsView: UIView {
     }
     
     func updateView(with model: FinancialAdministratorPendenciesListCardModel) {
-        nameValues.updateView(name: "Nome: ", value: model.name)
-        valueValues.updateView(name: "Valor: ", value: model.value)
-        descriptionValues.updateView(name: "Descrição: ", value: model.title)
-        daysLateValues.updateView(name: "Dias em atraso: ", value: String(model.daysLate))
+        nameValues.text = model.name
+        valueValues.text = model.value
+        descriptionValues.text = model.title
+        daysLateValues.text = String(model.daysLate)
+        userNameValues.text = model.userName
         
         self.url = model.proofUrl
+        self.id = model.id ?? ""   
         
-        confirmActionButton.isHidden = model.proofUrl == nil
-        sendNotificationActionButton.isHidden = !(model.proofUrl == nil)
+        
+        confirmActionButton.isHidden = model.proofUrl?.isEmpty ?? false
+        sendNotificationActionButton.isHidden = !(model.proofUrl?.isEmpty ?? false )
     }
     
     private func setupView(){
@@ -140,10 +170,12 @@ final class AdministratorPendenciesDetailsView: UIView {
             valueValues,
             descriptionValues,
             daysLateValues,
+            userNameValues,
             confirmActionButton,
-            sendNotificationActionButton
+            sendNotificationActionButton,
+            saveItemButton,
         ])
-        contentStackView.setCustomSpacing(16, after: daysLateValues)
+        contentStackView.setCustomSpacing(16, after: userNameValues)
         contentStackView.setCustomSpacing(16, after: confirmActionButton)
     }
     
@@ -172,6 +204,10 @@ final class AdministratorPendenciesDetailsView: UIView {
             sendNotificationActionButton.heightAnchor.constraint(equalToConstant: 48),
             sendNotificationActionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             sendNotificationActionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            saveItemButton.heightAnchor.constraint(equalToConstant: 48),
+            saveItemButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            saveItemButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
     }
     
@@ -186,6 +222,18 @@ extension AdministratorPendenciesDetailsView {
     
     @objc func handleSendNotificationButtonTap(){
         delegate?.handleSendNotificationButtonTap()
+    }
+    
+    @objc func handleSaveButton(){
+        delegate?.handleSaveButton(
+            model: FinancialAdministratorPendenciesListCardModel(
+                title: nameValues.text,
+                value: valueValues.text,
+                name: descriptionValues.text,
+                daysLate: Int(daysLateValues.text) ?? 0,
+                proofUrl: url,
+                userName: userNameValues.text,
+                id: id))
     }
     
 }

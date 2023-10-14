@@ -83,7 +83,8 @@ final class NewItemWorker: NewItemWorkerProtocol {
                      "numberOfDaysLate": 0,
                      "proofUrl": "",
                      "reason": "Adicionado via sistema.",
-                     "title": newItem.eventName
+                     "title": newItem.eventName,
+                     "userName" : email
                     ]
                 )
                 completion(true)
@@ -102,7 +103,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     "eventValue": newItem.eventValue,
                     "date": newItem.date.toString(),
                     "type": newItem.type.rawValue,
-                    "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false ,
+                    "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false,
             ])
             
             Firestore.firestore().collection("perebasfc/\(email)/comum-financeiro").getDocuments { [weak self] querySnapShot, error in
@@ -121,7 +122,8 @@ final class NewItemWorker: NewItemWorkerProtocol {
                      "numberOfDaysLate": 0,
                      "proofUrl": "",
                      "reason": "Aguardando comprovante",
-                     "title": newItem.eventName
+                     "title": newItem.eventName,
+                     "userName" : email
                     ]
                 )
                 completion(true)
@@ -140,22 +142,42 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     "eventValue": newItem.eventValue,
                     "date": newItem.date.toString(),
                     "type": newItem.type.rawValue,
-                    "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false ,
                 ])
             
-            Firestore.firestore().document("financial/balance").getDocument { document, error in
-                guard error == nil,
-                      let document else {
-                    completion(false)
-                    return
+            if newItem.splitBeetweenTeamMember ?? false {
+                Firestore.firestore().collection("perebasfc").getDocuments { [weak self] querySnapShot, error in
+                    guard error == nil,
+                          let querySnapShot,
+                          let self else {
+                        completion(false)
+                        return
+                    }
+                    
+                    var newItemModelForParticipant = newItem
+                    newItemModelForParticipant.eventValue = String(((Int(newItem.eventValue) ?? 0)/querySnapShot.documents.count))
+                    
+                    querySnapShot.documents.forEach { document in
+                        guard let email = document["email"] as? String else { return }
+                        newItemModelForParticipant.userEmail = email 
+                        self.addNewDebitForSpecificParticipant(newItem: newItemModelForParticipant) { _ in }
+                    }
+                    completion(true)
                 }
-                
-                let currentBalance = document["balance"] as? Int ?? 0
-                
-                Firestore.firestore().document("financial/balance").setData(
-                    ["balance" : (currentBalance - (Int(newItem.eventValue) ?? 0))]
-                )
-                completion(true)
+            } else {
+                Firestore.firestore().document("financial/balance").getDocument { document, error in
+                    guard error == nil,
+                          let document else {
+                        completion(false)
+                        return
+                    }
+                    
+                    let currentBalance = document["balance"] as? Int ?? 0
+                    
+                    Firestore.firestore().document("financial/balance").setData(
+                        ["balance" : (currentBalance - (Int(newItem.eventValue) ?? 0))]
+                    )
+                    completion(true)
+                }
             }
         }
     

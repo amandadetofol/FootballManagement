@@ -19,13 +19,9 @@ final class NameAndValueView: UIView {
         return label
     }()
     
-    
-    private lazy var valueLabel: UILabel = {
-        let label = UILabel()
+    private lazy var valueLabel: TextFieldComponent = {
+        let label = TextFieldComponent()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textAlignment = .left
-        label.numberOfLines = 0
         
         return label
     }()
@@ -58,7 +54,8 @@ final class NameAndValueView: UIView {
             nameBoldLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             
             valueLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            valueLabel.leadingAnchor.constraint(equalTo: nameBoldLabel.trailingAnchor, constant: 4),
         ])
     }
 }

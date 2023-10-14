@@ -11,6 +11,7 @@ protocol AdministratorPendenciesDetailsInteractorProtocol {
     func viewDidLoad()
     func handleSendNotificationButtonTap()
     func handleConfirmButtonTap(url: String?)
+    func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel)
 }
 
 final class AdministratorPendenciesDetailsViewController: UIViewController {
@@ -47,6 +48,9 @@ final class AdministratorPendenciesDetailsViewController: UIViewController {
 }
 
 extension AdministratorPendenciesDetailsViewController: AdministratorPendenciesDetailsViewDelegate {
+    func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel) {
+        interactor.handleSaveButton(model: model)
+    }
     
     func handleConfirmButtonTap(url: String?) {
         interactor.handleConfirmButtonTap(url: url)

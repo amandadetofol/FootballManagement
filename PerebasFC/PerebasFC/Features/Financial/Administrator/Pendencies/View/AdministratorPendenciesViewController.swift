@@ -58,10 +58,13 @@ final class AdministratorPendenciesViewController: UIViewController {
         self.title = "Pendências"
         
         setupSegmentedControl()
-        interactor.viewDidLoad()
-        interactor.updateView(basedOn: 1)
         self.view.backgroundColor = .white
         handleKeyBoardRemoveWhenClickOutsideField()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.viewDidLoad()
     }
     
     private func setupSegmentedControl(){
@@ -101,7 +104,7 @@ extension AdministratorPendenciesViewController: FinancialAdministratorViewProto
         case 0:
             var viewModel: [FinancialAdministratorPendenciesListCardModel] = []
             model.forEach { model in
-                if model.proofUrl != nil {
+                if !(model.proofUrl?.isEmpty ?? false)  {
                     viewModel.append(model)
                 }
             }
@@ -110,7 +113,7 @@ extension AdministratorPendenciesViewController: FinancialAdministratorViewProto
         case 1:
             var viewModel: [FinancialAdministratorPendenciesListCardModel] = []
             model.forEach { model in
-                if  model.proofUrl == nil {
+                if model.proofUrl?.isEmpty ?? false {
                     viewModel.append(model)
                 }
             }
@@ -124,6 +127,7 @@ extension AdministratorPendenciesViewController: FinancialAdministratorViewProto
     
     func updateView(with model: AdministratorPendenciesViewModel) {
         self.model = model.items
+        updateView(basedOn: 1)
     }
     
     

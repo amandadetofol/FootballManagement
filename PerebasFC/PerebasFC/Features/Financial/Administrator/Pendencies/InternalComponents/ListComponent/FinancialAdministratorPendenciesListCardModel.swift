@@ -15,4 +15,13 @@ struct FinancialAdministratorPendenciesListCardModel {
     let proofUrl: String?
     var currentIndex: Int?
     var total: Int?
+    let userName: String
+    var id: String?
+    
+    var daysLateValue: Float {
+        get {
+            let value = Float(self.value) ?? 0.0
+            return value * Float(self.daysLate)
+        }
+    }
 }
