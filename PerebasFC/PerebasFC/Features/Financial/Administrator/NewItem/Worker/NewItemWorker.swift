@@ -176,6 +176,11 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     Firestore.firestore().document("financial/balance").setData(
                         ["balance" : (currentBalance - (Int(newItem.eventValue) ?? 0))]
                     )
+                    
+                    Firestore.firestore()
+                        .document("financial/debt/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                        .updateData(["balance" : (currentBalance - (Int(newItem.eventValue) ?? 0))])
+                    
                     completion(true)
                 }
             }
@@ -207,6 +212,11 @@ final class NewItemWorker: NewItemWorkerProtocol {
                 Firestore.firestore().document("financial/balance").setData(
                     ["balance" : (currentBalance + (Int(newItem.eventValue) ?? 0))]
                 )
+                
+                Firestore.firestore()
+                    .document("financial/debt/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                    .updateData(["balance" : (currentBalance - (Int(newItem.eventValue) ?? 0))])
+                
                 completion(true)
             }
         }

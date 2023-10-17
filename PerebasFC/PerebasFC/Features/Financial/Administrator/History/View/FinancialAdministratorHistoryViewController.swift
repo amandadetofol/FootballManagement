@@ -59,7 +59,6 @@ final class FinancialAdministratorHistoryViewController: UIViewController {
         
         interactor.viewDidLoad()
         setupSegmentedControl()
-        interactor.updateView(basedOn: 1)
         handleKeyBoardRemoveWhenClickOutsideField()
     }
     
@@ -95,6 +94,7 @@ extension FinancialAdministratorHistoryViewController: FinancialAdministratorHis
     
     func updateView(with model: [FinancialAdministratorHistoryViewModel]) {
         self.model = model
+        updateView(basedOn: 1)
     }
     
     func updateView(basedOn segmentedControlIndex: Int) {

@@ -9,11 +9,13 @@ import UIKit
 
 struct FinancialAdministratorHistoryFactory {
     
-    static func getFinancialAdministratorHistoryViewController() -> FinancialAdministratorHistoryViewController {
+    static func getFinancialAdministratorHistoryViewController(navigationController: UINavigationController) -> FinancialAdministratorHistoryViewController {
         let presenter = FinancialAdministratorHistoryPresenter()
         let worker = FinancialAdministratorHistoryWorker()
+        let coordinator = FinancialAdministratorHistoryCoordinator(navigationController: navigationController)
         let interactor = FinancialAdministratorHistoryInteractor(
             worker: worker,
+            coordinator: coordinator,
             presenter: presenter)
         let viewController = FinancialAdministratorHistoryViewController(interactor: interactor)
         presenter.view = viewController

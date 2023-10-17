@@ -15,6 +15,13 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    
+    func formatData() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter.string(from: self)
+    }
+    
     func removeHour() -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"

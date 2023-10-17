@@ -19,9 +19,12 @@ final class NameAndValueView: UIView {
         return label
     }()
     
-    private lazy var valueLabel: TextFieldComponent = {
-        let label = TextFieldComponent()
+    private lazy var valueLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textAlignment = .left
+        label.numberOfLines = 0
         
         return label
     }()

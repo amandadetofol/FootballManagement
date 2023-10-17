@@ -8,20 +8,31 @@
 import UIKit
 
 final class FinancialAdministratorHistoryInteractor: FinancialAdministratorHistoryInteractorProtocol {
-
+    
     private let worker: FinancialAdministratorHistoryWorkerProtocol
     private let presenter: FinancialAdministratorHistoryPresenterProtocol
+    private let coordinator: FinancialAdministratorHistoryCoordinatorProtocol
     
     init(worker: FinancialAdministratorHistoryWorkerProtocol,
+         coordinator: FinancialAdministratorHistoryCoordinatorProtocol,
          presenter: FinancialAdministratorHistoryPresenterProtocol){
         self.presenter = presenter
-        self.worker = worker 
+        self.worker = worker
+        self.coordinator = coordinator
     }
     
     func viewDidLoad() {
-        worker.getFinancialHistory { [weak self ] viewModel in
-            guard let self = self else { return }
-            self.presenter.updateView(with: viewModel)
+        coordinator.showLoading()
+        worker.getFinancialHistory { [weak self ] credit, debit in
+            guard let self,
+                  let credit,
+                  let debit else {
+                self?.coordinator.removeLoading()
+                self?.coordinator.showErrorAlertView()
+                return
+            }
+            self.coordinator.removeLoading()
+            self.presenter.updateView(credit: credit, debit: debit)
         }
     }
     

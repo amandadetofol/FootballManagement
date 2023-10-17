@@ -28,7 +28,8 @@ final class FinancialAdministratorMainCoordinator: FinancialAdministratorMainCoo
         switch model {
         case .history:
             self.navigationController.pushViewController(
-                FinancialAdministratorHistoryFactory.getFinancialAdministratorHistoryViewController(),
+                FinancialAdministratorHistoryFactory.getFinancialAdministratorHistoryViewController(
+                    navigationController: navigationController),
                 animated: true)
             
         case .pendencies:

@@ -306,7 +306,7 @@ extension EditGameView {
             score: Score(
                 whiteTeamPoints: Int(whiteLabelScoreTextField.text) ?? 0,
                 blackTeamPoints: Int(blackLabelScoreTextField.text) ?? 0),
-            gameDate: datePickerView.date.toString(),
+            gameDate: datePickerView.date.formatData(),
             goals: goals,
             date: datePickerView.date))
     }

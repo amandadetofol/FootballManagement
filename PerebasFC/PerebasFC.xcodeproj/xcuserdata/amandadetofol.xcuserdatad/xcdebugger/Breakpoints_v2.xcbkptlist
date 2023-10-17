@@ -942,22 +942,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6AA1DE8D-1884-497F-83AD-7B7D3612DA53"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BBC0F04D-54FB-4E6A-AB6C-A5D2D8A69BA3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -965,8 +949,8 @@
             filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "updateView(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1677,8 +1661,8 @@
             filePath = "PerebasFC/Features/Financial/Administrator/Main/Coordinator/FinancialAdministratorMainCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "handleTitleAndDescriptionCardViewTap(model:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3569,6 +3553,181 @@
                   offsetFromSymbolStart = "1036">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "476A1A00-EC7B-43C1-935C-497A20E1E273"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "updateView(basedOn:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "476A1A00-EC7B-43C1-935C-497A20E1E273 - c056cbaf6443ed56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.FinancialAdministratorHistoryViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "600">
+               </Location>
+               <Location
+                  uuid = "476A1A00-EC7B-43C1-935C-497A20E1E273 - c056cbaf6443edb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.FinancialAdministratorHistoryViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  uuid = "476A1A00-EC7B-43C1-935C-497A20E1E273 - 6bd6e2a26fef9ee6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (PerebasFC.FinancialAdministratorHistoryViewModel) -&gt; () in PerebasFC.FinancialAdministratorHistoryViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11F1E4F0-D442-412E-A85E-079D6B90472A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "updateView(basedOn:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "11F1E4F0-D442-412E-A85E-079D6B90472A - c056cbaf6443edb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.FinancialAdministratorHistoryViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  uuid = "11F1E4F0-D442-412E-A85E-079D6B90472A - 6bd6e2a26fef9ee6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (PerebasFC.FinancialAdministratorHistoryViewModel) -&gt; () in PerebasFC.FinancialAdministratorHistoryViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82751809-0EF2-470B-86A4-D9D992A2C789"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "updateView(basedOn:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "82751809-0EF2-470B-86A4-D9D992A2C789 - 6bd6e2a26fefa17b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (PerebasFC.FinancialAdministratorHistoryViewModel) -&gt; () in PerebasFC.FinancialAdministratorHistoryViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "82751809-0EF2-470B-86A4-D9D992A2C789 - c056cbaf6443d268"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerebasFC.FinancialAdministratorHistoryViewController.updateView(basedOn: Swift.Int) -&gt; ()"
+                  moduleName = "PerebasFC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PerebasFC/Features/Financial/Administrator/History/View/FinancialAdministratorHistoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "880">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDADB68E-A73D-4F89-AA6A-3819C1F3569E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerebasFC/Features/Financial/Administrator/History/Worker/FinancialAdministratorHistoryWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "getFinancialHistory(completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

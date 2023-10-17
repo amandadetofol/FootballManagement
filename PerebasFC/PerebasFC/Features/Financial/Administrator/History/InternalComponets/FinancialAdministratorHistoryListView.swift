@@ -95,7 +95,7 @@ final class FinancialAdministratorHistoryListView: UIView {
     }
     
     func setupView(with model: FinancialAdministratorHistoryViewModel){
-        dateLabel.text = "Data: \(model.date)"
+        dateLabel.text = "Data: \(model.date.formatData())"
         balanceLabel.text = "Saldo: \(model.dayBalance)"
         nameNameAndValueView.updateView(name: "Nome:", value: model.name)
         valueNameAndValueView.updateView(name: "Valor:", value: model.operationValue)
@@ -105,7 +105,7 @@ final class FinancialAdministratorHistoryListView: UIView {
     func updateAccessibility(with model: FinancialAdministratorHistoryViewModel){
         self.isAccessibilityElement = true
         self.accessibilityTraits = .staticText
-        self.accessibilityLabel = "Data: \(model.date). Saldo nesta data: \(model.dayBalance). Nome da transação realizada: \(model.operationValue). Valor:\(model.operationValue). \(model.operatioType.description). Item \(model.currentIndex ?? 0) de \(model.total ?? 0)"
+        self.accessibilityLabel = "Data: \(model.date.formatData()). Saldo nesta data: \(model.dayBalance). Nome da transação realizada: \(model.operationValue). Valor:\(model.operationValue). \(model.operatioType.description). Item \(model.currentIndex ?? 0) de \(model.total ?? 0)"
     }
     
     private func setupView(){
