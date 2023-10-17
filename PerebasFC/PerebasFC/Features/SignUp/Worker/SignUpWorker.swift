@@ -54,11 +54,23 @@ final class SignUpWorker: SignUpWorkerProtocol {
                     completion(false)
                     return
                 }
-                self.firestoreProvider.collection("perebasfc").document(user.email).setData(
-                    ["email": user.email,
-                     "senha": user.password,
-                     "isAdm": user.isAdm])
-                completion(true)
+                
+                self.firestoreProvider.collection("perebasfc").getDocuments { documents, error in
+                    guard let documents,
+                          error == nil else {
+                        completion(false)
+                        return
+                    }
+                    
+                    self.firestoreProvider.collection("perebasfc").document(user.email).setData(
+                        ["email": user.email,
+                         "senha": user.password,
+                         "goUpInRanking": false,
+                         "rankingPlace": documents.count,
+                         "isAdm": user.isAdm])
+                    completion(true)
+                }
+               
             }
         }
     

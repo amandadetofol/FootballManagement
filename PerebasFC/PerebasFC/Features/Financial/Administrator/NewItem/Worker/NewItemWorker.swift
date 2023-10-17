@@ -28,7 +28,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                 return
             case .newCredit:
                 if !(newItem.userEmail?.lowercased().contains("selecionar") ?? false) {
-                    addNewDebitForSpecificParticipant(newItem: newItem) { succeded in
+                    addNewCreditForSpecificParticipant(newItem: newItem) { succeded in
                         completion(succeded)
                     }
                 } else {
@@ -40,7 +40,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                 
             case .newDebit:
                 if !(newItem.userEmail?.lowercased().contains("selecionar") ?? false) {
-                    addNewCreditForSpecificParticipant(newItem: newItem) { succeded in
+                    addNewDebitForSpecificParticipant(newItem: newItem) { succeded in
                         completion(succeded)
                     }
                 } else {

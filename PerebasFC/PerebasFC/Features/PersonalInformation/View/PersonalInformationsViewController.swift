@@ -101,6 +101,18 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
     }
     
     @objc func handleGoToBlockEdition(){
+        interactor.handleEdit(
+            model: personalInformationsView.modifiedModel,
+            changeImage: personalInformationsView.changeImage)
+    }
+    
+    func handleEdit(){
+        personalInformationsView.userNameTextFieldHasError = false
+        personalInformationsView.lastNameTextFieldHasError = false
+        personalInformationsView.shirtNumberTextFieldHasError = false
+        personalInformationsView.positionNumberTextFieldHasError = false
+        personalInformationsView.medicalInsuranceTextFieldHasError = false
+        personalInformationsView.emergencyPhoneNumberTextFieldHasError = false
         personalInformationsView.disableEdition()
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Editar",
@@ -109,10 +121,30 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
             action: #selector(handleGoToEditDataFlowSelected))
         personalInformationsView.updateAccessibiltiy(isEnabledForEdition: false)
         personalInformationsView.setupPlayerCategoryField(isEnabledForEdition: false)
-        
-        interactor.handleEdit(
-            model: personalInformationsView.modifiedModel,
-            changeImage: personalInformationsView.changeImage)
+    }
+    
+    func setupViewForUserNameTextFieldErrror(){
+        personalInformationsView.userNameTextFieldHasError = true
+    }
+    
+    func setupViewForLastNameTextFieldError(){
+        personalInformationsView.lastNameTextFieldHasError = true
+    }
+    
+    func setupViewForShirtNumberTextFieldError(){
+        personalInformationsView.shirtNumberTextFieldHasError = true
+    }
+    
+    func setupViewForPositionNumberTextFieldHasError(){
+        personalInformationsView.positionNumberTextFieldHasError = true
+    }
+    
+    func setupViewForMedicalInsuranceTextFieldError(){
+        personalInformationsView.medicalInsuranceTextFieldHasError = true
+    }
+    
+    func setupViewForEmergencyPhoneNumberTextFieldError(){
+        personalInformationsView.emergencyPhoneNumberTextFieldHasError = true
     }
     
 }

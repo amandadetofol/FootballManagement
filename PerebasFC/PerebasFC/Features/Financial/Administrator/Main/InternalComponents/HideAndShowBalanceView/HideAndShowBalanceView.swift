@@ -98,12 +98,11 @@ final class HideAndShowBalanceView: UIView {
 extension HideAndShowBalanceView {
 
     @objc func handleSeeBalanceButtonTap(){
-        if balanceValueLabel.text?.contains("-") ?? false  {
-            guard let balance = balance else { return }
+        if balanceValueLabel.text?.contains("*") ?? false  {
             balanceValueLabel.text = balance
             seeBalanceButton.setTitle("Ocultar saldo", for: .normal)
         } else {
-            balanceValueLabel.text = "--,--"
+            balanceValueLabel.text = "*****"
             seeBalanceButton.setTitle("Ver saldo", for: .normal)
         }
     }

@@ -46,6 +46,42 @@ final class PersonalInformationsView: UIView {
     var controller: UIViewController?
     weak var delegate: PersonalInformationsViewDelegate?
     
+    var userNameTextFieldHasError: Bool = false {
+        didSet {
+            userNameTextField.showError = userNameTextFieldHasError
+        }
+    }
+    
+    var lastNameTextFieldHasError: Bool = false {
+        didSet {
+            lastNameTextField.showError = lastNameTextFieldHasError
+        }
+    }
+    
+    var shirtNumberTextFieldHasError: Bool = false {
+        didSet {
+            shirtNumberTextField.showError = shirtNumberTextFieldHasError
+        }
+    }
+    
+    var positionNumberTextFieldHasError: Bool = false {
+        didSet {
+            positionNumberTextField.showError = positionNumberTextFieldHasError
+        }
+    }
+    
+    var medicalInsuranceTextFieldHasError: Bool = false {
+        didSet {
+            medicalInsuranceTextField.showError = medicalInsuranceTextFieldHasError
+        }
+    }
+    
+    var emergencyPhoneNumberTextFieldHasError: Bool = false {
+        didSet {
+            emergencyPhoneNumberTextField.showError = emergencyPhoneNumberTextFieldHasError
+        }
+    }
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false

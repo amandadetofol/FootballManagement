@@ -12,6 +12,13 @@ protocol PersonalInformationsPresenterProtocol {
     func handleGoToBlockEdition()
     func hideDeleteButton()
     func updateView(with model: PersonalInformationsViewModel)
+    func setupViewForUserNameTextFieldErrror()
+    func setupViewForLastNameTextFieldError()
+    func setupViewForShirtNumberTextFieldError()
+    func setupViewForPositionNumberTextFieldHasError()
+    func setupViewForMedicalInsuranceTextFieldError()
+    func setupViewForEmergencyPhoneNumberTextFieldError()
+    func handleEdit()
 }
 
 final class PersonalInformationsInteractor: PersonalInformationsInteractorProtocol {
@@ -61,19 +68,57 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
     func handleEdit(
         model: PersonalInformationsViewModel,
         changeImage: Bool){
-            worker.updatePersonalInformations(
-                personalInformations: model,
-                changeImage: changeImage,
-                completion: { [weak self] succeded in
-                    guard let self else { return }
-                    
-                    if succeded {
-                        self.coordinator.showUpdateSuccessPopUp()
-                    } else {
-                        self.coordinator.showUpdateErrorPopUp()
-                    }
-                },
-            email: email)
+            
+            var hasError = false
+            
+            if model.name.isEmpty {
+                presenter.setupViewForUserNameTextFieldErrror()
+                hasError = true
+            }
+            
+            if model.lastName.isEmpty {
+                presenter.setupViewForLastNameTextFieldError()
+                hasError = true
+            }
+            
+            if model.shirtNumber.isEmpty {
+                presenter.setupViewForShirtNumberTextFieldError()
+                hasError = true
+            }
+            
+            if model.position.isEmpty {
+                presenter.setupViewForPositionNumberTextFieldHasError()
+                hasError = true
+            }
+               
+            if model.medicalInsurance.isEmpty {
+                presenter.setupViewForMedicalInsuranceTextFieldError()
+                hasError = true
+            }
+            
+            if model.emergencyPhoneNumber.isEmpty {
+                presenter.setupViewForEmergencyPhoneNumberTextFieldError()
+                hasError = true
+            }
+             
+            if !hasError {
+                worker.updatePersonalInformations(
+                    personalInformations: model,
+                    changeImage: changeImage,
+                    completion: { [weak self] succeded in
+                        guard let self else { return }
+                        
+                        if succeded {
+                            self.coordinator.showUpdateSuccessPopUp()
+                        } else {
+                            self.coordinator.showUpdateErrorPopUp()
+                        }
+                    },
+                email: email)
+                
+                presenter.handleEdit()
+            }
+    
         }
     
     func handleGoToBlockEdition() {

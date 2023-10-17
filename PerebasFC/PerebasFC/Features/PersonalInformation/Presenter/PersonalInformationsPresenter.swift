@@ -12,6 +12,13 @@ protocol PersonalInformationsViewProtocol: AnyObject {
     func handleGoToBlockEdition()
     func hideDeleteButton()
     func updateView(with model: PersonalInformationsViewModel)
+    func handleEdit()
+    func setupViewForUserNameTextFieldErrror()
+    func setupViewForLastNameTextFieldError()
+    func setupViewForShirtNumberTextFieldError()
+    func setupViewForPositionNumberTextFieldHasError()
+    func setupViewForMedicalInsuranceTextFieldError()
+    func setupViewForEmergencyPhoneNumberTextFieldError()
 }
 
 final class PersonalInformationsPresenter: PersonalInformationsPresenterProtocol {
@@ -32,6 +39,34 @@ final class PersonalInformationsPresenter: PersonalInformationsPresenterProtocol
     
     func hideDeleteButton(){
         view?.hideDeleteButton()
+    }
+    
+    func setupViewForUserNameTextFieldErrror(){
+        view?.setupViewForUserNameTextFieldErrror()
+    }
+    
+    func setupViewForLastNameTextFieldError(){
+        view?.setupViewForLastNameTextFieldError()
+    }
+    
+    func setupViewForShirtNumberTextFieldError(){
+        view?.setupViewForShirtNumberTextFieldError()
+    }
+    
+    func setupViewForPositionNumberTextFieldHasError(){
+        view?.setupViewForPositionNumberTextFieldHasError()
+    }
+    
+    func setupViewForMedicalInsuranceTextFieldError(){
+        view?.setupViewForMedicalInsuranceTextFieldError()
+    }
+    
+    func setupViewForEmergencyPhoneNumberTextFieldError(){
+        view?.setupViewForEmergencyPhoneNumberTextFieldError()
+    }
+    
+    func handleEdit(){
+        view?.handleEdit()
     }
     
 }
