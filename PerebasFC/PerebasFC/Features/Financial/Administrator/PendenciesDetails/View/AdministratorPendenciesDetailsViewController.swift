@@ -9,7 +9,7 @@ import UIKit
 
 protocol AdministratorPendenciesDetailsInteractorProtocol {
     func viewDidLoad()
-    func handleSendNotificationButtonTap()
+    func handleSendNotificationButtonTap(model: FinancialAdministratorPendenciesListCardModel)
     func handleConfirmButtonTap(url: String?)
     func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel)
 }
@@ -56,8 +56,8 @@ extension AdministratorPendenciesDetailsViewController: AdministratorPendenciesD
         interactor.handleConfirmButtonTap(url: url)
     }
     
-    func handleSendNotificationButtonTap() {
-        interactor.handleSendNotificationButtonTap()
+    func handleSendNotificationButtonTap(model: FinancialAdministratorPendenciesListCardModel) {
+        interactor.handleSendNotificationButtonTap(model: model)
     }
     
 }

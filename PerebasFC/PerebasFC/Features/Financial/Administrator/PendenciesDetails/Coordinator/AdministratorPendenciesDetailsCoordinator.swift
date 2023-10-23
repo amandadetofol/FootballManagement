@@ -13,6 +13,9 @@ protocol AdministratorPendenciesDetailsCoordinatorProtocol {
     func removeLoading()
     func showErrorAlert()
     func showSuccessAlert()
+    func sendEmail(
+        to user: String,
+        information: FinancialAdministratorPendenciesListCardModel)
 }
 
 final class AdministratorPendenciesDetailsCoordinator: AdministratorPendenciesDetailsCoordinatorProtocol {
@@ -69,5 +72,15 @@ final class AdministratorPendenciesDetailsCoordinator: AdministratorPendenciesDe
             alert,
             animated: true)
     }
+    
+    func sendEmail(
+        to user: String,
+        information: FinancialAdministratorPendenciesListCardModel){
+            let controller = EmailSenderFactory
+                .getEmailSenderViewController(navigationController: navigationController)
+            controller.updateView(
+                email: user,
+                information: information)
+        }
     
 }

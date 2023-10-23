@@ -130,7 +130,7 @@ final class GameCardView: UIControl {
         addTarget(self, action: #selector(handleEditGameButtonTap), for: .touchUpInside)
         whiteTeamScoreLabel.text = String(model.score?.whiteTeamPoints ?? 0)
         blackTeamScoreLabel.text = String(model.score?.blackTeamPoints ?? 0)
-        gameDateLabel.text = model.gameDate.formatData()
+        gameDateLabel.text = model.date.formatData()
         
         model.goals?.forEach { goal in
             let label = UILabel()

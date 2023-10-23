@@ -33,8 +33,10 @@ final class AdministratorPendenciesDetailsInteractor:
         presenter.updateView(with: model)
     }
     
-    func handleSendNotificationButtonTap() {
-        worker.sendPaymentMissingNotification()
+    func handleSendNotificationButtonTap(model: FinancialAdministratorPendenciesListCardModel) {
+        coordinator.sendEmail(
+            to: model.userName,
+            information: model)
     }
     
     func handleConfirmButtonTap(url: String?) {

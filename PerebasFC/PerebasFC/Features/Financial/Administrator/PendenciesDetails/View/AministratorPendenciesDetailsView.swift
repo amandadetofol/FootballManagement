@@ -9,7 +9,7 @@ import UIKit
 
 protocol AdministratorPendenciesDetailsViewDelegate: AnyObject {
     func handleConfirmButtonTap(url: String?)
-    func handleSendNotificationButtonTap()
+    func handleSendNotificationButtonTap(model: FinancialAdministratorPendenciesListCardModel)
     func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel)
 }
 
@@ -115,7 +115,7 @@ final class AdministratorPendenciesDetailsView: UIView {
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
-        button.setTitle("Enviar notificação".uppercased(), for: .normal)
+        button.setTitle("Enviar e-mail".uppercased(), for: .normal)
         button.addTarget(self, action: #selector(handleSendNotificationButtonTap), for: .touchUpInside)
         
         return button
@@ -221,7 +221,14 @@ extension AdministratorPendenciesDetailsView {
     }
     
     @objc func handleSendNotificationButtonTap(){
-        delegate?.handleSendNotificationButtonTap()
+        delegate?.handleSendNotificationButtonTap(model: FinancialAdministratorPendenciesListCardModel(
+            title: nameValues.text,
+            value: valueValues.text,
+            name: descriptionValues.text,
+            daysLate: Int(daysLateValues.text) ?? 0,
+            proofUrl: url,
+            userName: userNameValues.text,
+            id: id))
     }
     
     @objc func handleSaveButton(){

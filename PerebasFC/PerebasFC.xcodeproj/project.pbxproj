@@ -294,6 +294,10 @@
 		A6E6BB182A733B0C0063A62A /* SignOutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6BB172A733B0C0063A62A /* SignOutWorker.swift */; };
 		A6E6BB1F2A733D680063A62A /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6BB1E2A733D680063A62A /* LoaderViewController.swift */; };
 		A6E6BB222A733E940063A62A /* LoaderCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6BB212A733E940063A62A /* LoaderCoodinator.swift */; };
+		A6E847EA2AE33E54003C770C /* EmailSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E847E92AE33E54003C770C /* EmailSenderViewController.swift */; };
+		A6E847EC2AE34069003C770C /* EmailSenderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E847EB2AE34069003C770C /* EmailSenderCoordinator.swift */; };
+		A6E847F12AE34156003C770C /* EmailSenderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E847F02AE34156003C770C /* EmailSenderInteractor.swift */; };
+		A6E847F42AE34382003C770C /* EmailSenderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E847F32AE34382003C770C /* EmailSenderFactory.swift */; };
 		A6E8CE212A7878CA006DAFDC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A6E8CE202A7878CA006DAFDC /* GoogleSignIn */; };
 		A6E8CE232A7878CA006DAFDC /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A6E8CE222A7878CA006DAFDC /* GoogleSignInSwift */; };
 		A6F32C842ABF89CD00DB6D25 /* NewItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F32C832ABF89CD00DB6D25 /* NewItemPresenter.swift */; };
@@ -568,6 +572,10 @@
 		A6E6BB172A733B0C0063A62A /* SignOutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutWorker.swift; sourceTree = "<group>"; };
 		A6E6BB1E2A733D680063A62A /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		A6E6BB212A733E940063A62A /* LoaderCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderCoodinator.swift; sourceTree = "<group>"; };
+		A6E847E92AE33E54003C770C /* EmailSenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSenderViewController.swift; sourceTree = "<group>"; };
+		A6E847EB2AE34069003C770C /* EmailSenderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSenderCoordinator.swift; sourceTree = "<group>"; };
+		A6E847F02AE34156003C770C /* EmailSenderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSenderInteractor.swift; sourceTree = "<group>"; };
+		A6E847F32AE34382003C770C /* EmailSenderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSenderFactory.swift; sourceTree = "<group>"; };
 		A6F32C832ABF89CD00DB6D25 /* NewItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemPresenter.swift; sourceTree = "<group>"; };
 		A6FCDA572A81B69B00B095E5 /* SortMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainView.swift; sourceTree = "<group>"; };
 		A6FCDA5A2A81B7D900B095E5 /* SortGameMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortGameMainViewModel.swift; sourceTree = "<group>"; };
@@ -1332,6 +1340,7 @@
 		A62C1CD02A37E7A4002AA401 /* Financial */ = {
 			isa = PBXGroup;
 			children = (
+				A6E847E52AE33E28003C770C /* EmailSender */,
 				A641618F2A898D9500BF45C4 /* Administrator */,
 				A641618E2A898D8400BF45C4 /* Common */,
 			);
@@ -2878,6 +2887,49 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		A6E847E52AE33E28003C770C /* EmailSender */ = {
+			isa = PBXGroup;
+			children = (
+				A6E847F22AE34377003C770C /* Factory */,
+				A6E847EF2AE34146003C770C /* Interactor */,
+				A6E847E82AE33E40003C770C /* Coordinator */,
+				A6E847E62AE33E36003C770C /* View */,
+			);
+			path = EmailSender;
+			sourceTree = "<group>";
+		};
+		A6E847E62AE33E36003C770C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6E847E92AE33E54003C770C /* EmailSenderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6E847E82AE33E40003C770C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A6E847EB2AE34069003C770C /* EmailSenderCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A6E847EF2AE34146003C770C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A6E847F02AE34156003C770C /* EmailSenderInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A6E847F22AE34377003C770C /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A6E847F32AE34382003C770C /* EmailSenderFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		A6F32C822ABF89C000DB6D25 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -3100,10 +3152,12 @@
 				A6730F0A2AAA7FAB000D6B72 /* PresenceWorker.swift in Sources */,
 				A61C0CCB2AAFD12D0012BACC /* SignUpPresenter.swift in Sources */,
 				A6E5BB3E2A1EB75500ADE47F /* MenuItemViewModel.swift in Sources */,
+				A6E847F12AE34156003C770C /* EmailSenderInteractor.swift in Sources */,
 				A61C0CC12AAFD0DF0012BACC /* SignUpWorker.swift in Sources */,
 				A6730EFD2AAA54AA000D6B72 /* PresenceCardView.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
 				A6CCFC3C2A32235800364614 /* ChangePasswordWorker.swift in Sources */,
+				A6E847EC2AE34069003C770C /* EmailSenderCoordinator.swift in Sources */,
 				A658B3992AABFBE700C89D63 /* EventPresenceCardViewModel.swift in Sources */,
 				A6A741752A26B39B009A7998 /* GamesHistoryView.swift in Sources */,
 				A65662FF2A96CA9000EEC58D /* MapPresenter.swift in Sources */,
@@ -3300,6 +3354,7 @@
 				A6D248812A830CA1004951FD /* ParticipantsManagerPresenter.swift in Sources */,
 				A60319FA2A91730E00E19E3A /* AdministratorPendenciesInteractor.swift in Sources */,
 				A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */,
+				A6E847F42AE34382003C770C /* EmailSenderFactory.swift in Sources */,
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
 				A6FCDA692A81C3DE00B095E5 /* SortMainCoordinator.swift in Sources */,
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
@@ -3323,6 +3378,7 @@
 				A673608F2A39326A003BF4C2 /* FinancialDetailsPresenter.swift in Sources */,
 				A6993E332A2BFB3300C2BDE3 /* PersonalInformationsPresenter.swift in Sources */,
 				A6AF78D12AA6A1D200174B83 /* ParticipantsSelectorCardViewModel.swift in Sources */,
+				A6E847EA2AE33E54003C770C /* EmailSenderViewController.swift in Sources */,
 				A69E893C2A8AF174008C09DC /* TitleAndDescriptionCardView.swift in Sources */,
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
