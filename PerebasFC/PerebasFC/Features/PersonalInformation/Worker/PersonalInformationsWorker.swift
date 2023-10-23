@@ -87,17 +87,40 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
         email: String,
         completion: @escaping((Bool)->Void)){
             Auth.auth().currentUser?.delete { [weak self] error in
-                guard error == nil else {
+                guard error == nil,
+                      let self else {
                     completion(false)
                     return
                 }
                 
-                self?.firestoreProvider.collection("perebasfc").document(email).delete { error in
+                self.firestoreProvider.collection("perebasfc").document(email).delete { error in
                     guard error == nil else {
                         completion(false)
                         return
                     }
-                    completion(true)
+                    
+                    self.firestoreProvider.document("sort/list").getDocument {  document, error in
+                        guard error == nil,
+                              let document = document else {
+                            completion(false)
+                            return
+                        }
+                        
+                        guard let listOfSorts = document["list"] as? [String],
+                              let activeSort = listOfSorts.last else {
+                            completion(false)
+                            return
+                        }
+                        
+                        
+                        let reference = self.firestoreProvider.document("sort/\(activeSort)/whiteteam/\(email)")
+                        reference.delete { _ in }
+                        
+                        let reference1 = self.firestoreProvider.document("sort/\(activeSort)/blackteam/\(email)")
+                        reference1.delete { _ in }
+                        
+                        completion(true)
+                    }
                 }
             }
         }
@@ -122,5 +145,5 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
             }
         }
     }
-   
+    
 }
