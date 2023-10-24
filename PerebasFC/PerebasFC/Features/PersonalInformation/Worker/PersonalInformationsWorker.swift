@@ -93,32 +93,60 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                     return
                 }
                 
-                self.firestoreProvider.collection("perebasfc").document(email).delete { error in
-                    guard error == nil else {
+                self.firestoreProvider.collection("perebasfc").document(email).getDocument { document, error in
+                    guard error == nil,
+                          let document,
+                          let currentposition = document["rankingPlace"] as? Int else {
                         completion(false)
                         return
                     }
                     
-                    self.firestoreProvider.document("sort/list").getDocument {  document, error in
-                        guard error == nil,
-                              let document = document else {
+                    self.firestoreProvider.collection("perebasfc").document(email).delete { error in
+                        guard error == nil else {
                             completion(false)
                             return
                         }
                         
-                        guard let listOfSorts = document["list"] as? [String],
-                              let activeSort = listOfSorts.last else {
-                            completion(false)
-                            return
+                        self.firestoreProvider.document("sort/list").getDocument {  document, error in
+                            guard error == nil,
+                                  let document = document else {
+                                completion(false)
+                                return
+                            }
+                            
+                            guard let listOfSorts = document["list"] as? [String],
+                                  let activeSort = listOfSorts.last else {
+                                completion(false)
+                                return
+                            }
+                            
+                            
+                            let reference = self.firestoreProvider.document("sort/\(activeSort)/whiteteam/\(email)")
+                            reference.delete { _ in }
+                            
+                            let reference1 = self.firestoreProvider.document("sort/\(activeSort)/blackteam/\(email)")
+                            reference1.delete { _ in }
+                            
+                            
                         }
                         
-                        
-                        let reference = self.firestoreProvider.document("sort/\(activeSort)/whiteteam/\(email)")
-                        reference.delete { _ in }
-                        
-                        let reference1 = self.firestoreProvider.document("sort/\(activeSort)/blackteam/\(email)")
-                        reference1.delete { _ in }
-                        
+                        self.firestoreProvider.collection("perebasfc").getDocuments { querySnapshot, error in
+                            guard error == nil,
+                                  let querySnapshot else {
+                                completion(false)
+                                return
+                            }
+                            
+                            querySnapshot.documents.forEach({ document in
+                                guard let email = document["email"] as? String,
+                                      let position = document["rankingPlace"] as? Int else { return }
+                                
+                                if position > currentposition {
+                                    self.firestoreProvider.document("perebasfc/\(email)").updateData(["rankingPlace" : position-1])
+                                }
+                                    
+                            })
+                        }
                         completion(true)
                     }
                 }
