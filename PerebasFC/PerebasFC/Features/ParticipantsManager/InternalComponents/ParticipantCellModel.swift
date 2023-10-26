@@ -13,7 +13,7 @@ struct ParticipantCellModel {
     var name: String {
         get {
             guard let user = user else { return "" }
-            return user.firstName + user.lastName
+            return user.firstName
         }
     }
     var position: String {

@@ -68,8 +68,110 @@ final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
                 "whiteTeamGoals": blackTeamGoals,
             ])
             
+            updateItems(whiteTeamGoals: whiteTeamGoals, blackTeamGoals: blackTeamGoals)
+            
             completion(true)
+        }
+    
+    //MARK: Private func
+    private func updateItems(
+        whiteTeamGoals: [String],
+        blackTeamGoals: [String]){
+            updateGoalMakerRanking(whiteTeamGoals: whiteTeamGoals, blackTeamGoals: blackTeamGoals)
+            if whiteTeamGoals.count > blackTeamGoals.count {
+                updateWhiteTeamRanking(win: true)
+                updateBlackTeamRanking(win: false)
+            } else if whiteTeamGoals.count < blackTeamGoals.count {
+                updateBlackTeamRanking(win: true)
+                updateWhiteTeamRanking(win: false)
+            } else {
+                return
+            }
     }
+    
+    private func updateGoalMakerRanking(
+        whiteTeamGoals: [String],
+        blackTeamGoals: [String]){
+            let list = whiteTeamGoals + blackTeamGoals
+            
+            if list.isEmpty {
+                return
+            }
+            
+            usersFirebaseReference.whereField("name", in: list).getDocuments { documents, error in
+                guard let documents,
+                      error == nil else { return }
+                
+                documents.documents.forEach { document in
+                    guard let rankingPosition = document["rankingPlace"] as? Double else { return }
+                    if rankingPosition <= 1 { return }
+                    Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPosition - 0.5])
+                }
+            }
+    }
+    
+    private func updateWhiteTeamRanking(win: Bool){
+        firebaseFirestoreProvider.document("sort/list").getDocument { [weak self] document, error in
+            guard error == nil,
+                  let self,
+                  let document,
+                  let listOfSorts = document["list"] as? [String],
+                  let activeSort = listOfSorts.last else { return }
+       
+            self.firebaseFirestoreProvider.collection("sort/\(activeSort)/whiteteam").getDocuments { querySnapShot, error in
+                guard let querySnapShot,
+                      error == nil else { return }
+                
+                querySnapShot.documents.forEach { document in
+                    self.usersFirebaseReference.document(document.documentID).getDocument { document, error in
+                        guard let document,
+                              error == nil else { return }
+                        
+                        guard let rankingPlace = document["rankingPlace"] as? Double else { return }
+                        
+                        if win {
+                            Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPlace - 0.25])
+                        } else {
+                            Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPlace + 0.25])
+                        }
 
+                    }
+
+                }
+            }
+        }
+    }
+    
+    private func updateBlackTeamRanking(win: Bool){
+        firebaseFirestoreProvider.document("sort/list").getDocument { [weak self] document, error in
+            guard error == nil,
+                  let self,
+                  let document,
+                  let listOfSorts = document["list"] as? [String],
+                  let activeSort = listOfSorts.last else { return }
+       
+            self.firebaseFirestoreProvider.collection("sort/\(activeSort)/blackteam").getDocuments { querySnapShot, error in
+                guard let querySnapShot,
+                      error == nil else { return }
+                
+                querySnapShot.documents.forEach { document in
+                    self.usersFirebaseReference.document(document.documentID).getDocument { document, error in
+                        guard let document,
+                              error == nil else { return }
+                        
+                        guard let rankingPlace = document["rankingPlace"] as? Double else { return }
+                        
+                        if win {
+                            Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPlace - 0.25])
+                        } else {
+                            Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPlace + 0.25])
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
     
 }
