@@ -60,7 +60,7 @@ final class GamesHistoryPresenter: GamesHistoryPresenterProtocol {
                 blackTeamPoints: document["blackTeam"] as? Int ?? 0),
                         gameDate: document.documentID,
                         goals: goals,
-                        date: converterStringParaData(document.documentID, formato: "dd/MM/yyyy HH:mm:ss") ?? Date())
+                        date: converterStringParaData(document.documentID, formato: "dd/MM/yyyy") ?? Date())
         }
     }
     

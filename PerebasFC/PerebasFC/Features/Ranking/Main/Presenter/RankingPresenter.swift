@@ -40,40 +40,35 @@ final class RankingPresenter: RankingPresenterProtocol {
         var thirdPlaceModel: BarAndTrophyViewModel? = nil
         var others: [CommonnPlacesViewModel]? = []
         
-        model.documents.forEach { document in
-            guard let rankingPlace = document["rankingPlace"] as? Int else {
-                return
+        var items = model.documents
+        items.sort { (item1, item2) in
+            if let rank1 = item1["rankingPlace"] as? Float, let rank2 = item2["rankingPlace"] as? Float {
+                return rank1 < rank2
             }
-            
-            if (rankingPlace >= 1) && (rankingPlace <= 3) {
-                switch rankingPlace {
-                case 1:
-                    firstPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
-                        documentSnapshot: document,
-                        place: rankingPlace)
-                case 2:
-                    secondPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
-                        documentSnapshot: document,
-                        place: rankingPlace)
-                case 3:
-                    thirdPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
-                        documentSnapshot: document,
-                        place: rankingPlace)
-                default:
-                    break
-                }
-            } else {
-                guard let name = document["name"] as? String,
-                      let goUpInRanking = document ["goUpInRanking"] as? Bool else {
-                    return
-                }
-                
-                others?.append(
-                    CommonnPlacesViewModel(
-                        name: name,
-                        postion: rankingPlace,
-                        wentUp: goUpInRanking))
-            }
+            return false
+        }
+        
+        
+        firstPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
+            documentSnapshot: items[0],
+            place: 1)
+
+        secondPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
+            documentSnapshot: items[1],
+            place: 2)
+   
+        thirdPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
+            documentSnapshot: items[2],
+            place: 3)
+        
+        
+
+        for document in 3..<items.count {
+            others?.append(
+                CommonnPlacesViewModel(
+                    name: items[document]["name"] as? String ?? "",
+                    postion: Int(items[document]["rankingPlace"] as? Float ?? 0.0),
+                    wentUp: items[document]["goUpInRanking"] as? Bool ?? false))
         }
         
         guard let firstPlaceModel,
