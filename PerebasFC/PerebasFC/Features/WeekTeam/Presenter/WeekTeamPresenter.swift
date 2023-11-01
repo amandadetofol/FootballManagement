@@ -38,7 +38,7 @@ final class WeekTeamPresenter: WeekTeamPresenterProtocol {
                 shirtNumber: Int(user.shirtNumber) ?? 0,
                 fullName: user.firstName + user.lastName,
                 position: user.position,
-                rankingPosition: user.rankingPosition ?? 0,
+                rankingPosition: user.rankingPosition ?? 0.0,
                 currentIndex: 1,
                 total: 1)
         }
@@ -65,7 +65,7 @@ final class WeekTeamPresenter: WeekTeamPresenterProtocol {
                     position: document["position"] as? String ?? "",
                     team: document["team"] as? String ?? "",
                     warning: nil,
-                    rankingPosition: document["rankingPlace"] as? Int ?? 0,
+                    rankingPosition: document["rankingPlace"] as? Float ?? 0,
                     isAdm: Session.shared.isAdm ?? false,
                     type: ParticipantType(rawValue: document["type"] as? String ?? "") ?? .player,
                     menuItems: nil,
@@ -83,7 +83,7 @@ final class WeekTeamPresenter: WeekTeamPresenterProtocol {
                     position: document["position"] as? String ?? "",
                     team: document["team"] as? String ?? "",
                     warning: nil,
-                    rankingPosition: document["rankingPlace"] as? Int ?? 0,
+                    rankingPosition: document["rankingPlace"] as? Float ?? 0,
                     isAdm: Session.shared.isAdm ?? false,
                     type: ParticipantType(rawValue: document["type"] as? String ?? "") ?? .player,
                     menuItems: nil,

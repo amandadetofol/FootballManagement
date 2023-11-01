@@ -56,7 +56,7 @@ final class EditGamePresenter: EditGamePresenterProtocol {
                         position: document["position"] as? String ?? "",
                         team: document["team"] as? String ?? "",
                         warning: nil,
-                        rankingPosition: document["rankingPlace"] as? Int ?? 0,
+                        rankingPosition: document["rankingPlace"] as? Float ?? 0.0,
                         isAdm: Session.shared.isAdm ?? false,
                         type: ParticipantType(rawValue: document["type"] as? String ?? "") ?? .member,
                         menuItems: nil,

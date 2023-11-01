@@ -11,6 +11,7 @@ protocol AdministratorPendenciesDetailsViewDelegate: AnyObject {
     func handleConfirmButtonTap(url: String?)
     func handleSendNotificationButtonTap(model: FinancialAdministratorPendenciesListCardModel)
     func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel)
+    func handleAprooveButton(model: FinancialAdministratorPendenciesListCardModel)
 }
 
 final class AdministratorPendenciesDetailsView: UIView {
@@ -89,7 +90,7 @@ final class AdministratorPendenciesDetailsView: UIView {
     
     private lazy var userNameValues: TextFieldComponent = {
         let nameValues = TextFieldComponent()
-        nameValues.title = "Nome de usuário"
+        nameValues.title = "E-mail"
         nameValues.translatesAutoresizingMaskIntoConstraints = false
         
         return nameValues
@@ -134,6 +135,19 @@ final class AdministratorPendenciesDetailsView: UIView {
         return button
     }()
     
+    private lazy var aprooveItemButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.clipsToBounds = true
+        button.backgroundColor = .clear
+        button.setTitleColor(.black, for: .normal)
+        button.setTitle("aprovar item".uppercased(), for: .normal)
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(handleAprooveButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
     init(){
         super.init(frame: .zero)
         setupView()
@@ -159,6 +173,7 @@ final class AdministratorPendenciesDetailsView: UIView {
         
         confirmActionButton.isHidden = model.proofUrl?.isEmpty ?? false
         sendNotificationActionButton.isHidden = !(model.proofUrl?.isEmpty ?? false )
+        aprooveItemButton.isHidden = (model.proofUrl?.isEmpty ?? false )
     }
     
     private func setupView(){
@@ -174,6 +189,7 @@ final class AdministratorPendenciesDetailsView: UIView {
             confirmActionButton,
             sendNotificationActionButton,
             saveItemButton,
+            aprooveItemButton,
         ])
         contentStackView.setCustomSpacing(16, after: userNameValues)
         contentStackView.setCustomSpacing(16, after: confirmActionButton)
@@ -208,6 +224,10 @@ final class AdministratorPendenciesDetailsView: UIView {
             saveItemButton.heightAnchor.constraint(equalToConstant: 48),
             saveItemButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             saveItemButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            aprooveItemButton.heightAnchor.constraint(equalToConstant: 48),
+            aprooveItemButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            aprooveItemButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
     }
     
@@ -233,6 +253,18 @@ extension AdministratorPendenciesDetailsView {
     
     @objc func handleSaveButton(){
         delegate?.handleSaveButton(
+            model: FinancialAdministratorPendenciesListCardModel(
+                title: nameValues.text,
+                value: valueValues.text,
+                name: descriptionValues.text,
+                daysLate: Int(daysLateValues.text) ?? 0,
+                proofUrl: url,
+                userName: userNameValues.text,
+                id: id))
+    }
+    
+    @objc func handleAprooveButton(){
+        delegate?.handleAprooveButton(
             model: FinancialAdministratorPendenciesListCardModel(
                 title: nameValues.text,
                 value: valueValues.text,

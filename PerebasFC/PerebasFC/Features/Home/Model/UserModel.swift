@@ -14,7 +14,7 @@ struct User {
     let position: String
     let team: String 
     let warning: UserWarning?
-    let rankingPosition: Int? 
+    let rankingPosition: Float? 
     let isAdm: Bool
     let type: ParticipantType
     let menuItems: [MenuItemViewModel]?

@@ -12,6 +12,7 @@ protocol AdministratorPendenciesDetailsInteractorProtocol {
     func handleSendNotificationButtonTap(model: FinancialAdministratorPendenciesListCardModel)
     func handleConfirmButtonTap(url: String?)
     func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel)
+    func handleAprooveButton(model: FinancialAdministratorPendenciesListCardModel)
 }
 
 final class AdministratorPendenciesDetailsViewController: UIViewController {
@@ -48,6 +49,11 @@ final class AdministratorPendenciesDetailsViewController: UIViewController {
 }
 
 extension AdministratorPendenciesDetailsViewController: AdministratorPendenciesDetailsViewDelegate {
+    
+    func handleAprooveButton(model: FinancialAdministratorPendenciesListCardModel) {
+        interactor.handleAprooveButton(model: model)
+    }
+    
     func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel) {
         interactor.handleSaveButton(model: model)
     }

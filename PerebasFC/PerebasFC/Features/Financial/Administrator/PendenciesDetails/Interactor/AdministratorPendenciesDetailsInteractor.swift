@@ -29,7 +29,6 @@ final class AdministratorPendenciesDetailsInteractor:
     }
     
     func viewDidLoad() {
-        requestNotificationAuthorization()
         presenter.updateView(with: model)
     }
     
@@ -57,30 +56,19 @@ final class AdministratorPendenciesDetailsInteractor:
         }
     }
     
-    //MARK: Private methods
-    private func requestNotificationAuthorization() {
-        self.userNotificationCenter.delegate = self
-        
-        let authOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
-        self.userNotificationCenter.requestAuthorization(options: authOptions) { _,_  in }
+    func handleAprooveButton(model: FinancialAdministratorPendenciesListCardModel){
+        coordinator.showLoading()
+        worker.aprooveItem(model: model) { [weak self] succeded in
+            guard let self = self else { return}
+            self.coordinator.removeLoading()
+            
+            if succeded {
+                self.coordinator.showSuccessAlert()
+            } else {
+                self.coordinator.showErrorAlert()
+            }
+        }
     }
-     
+
 }
 
-extension AdministratorPendenciesDetailsInteractor: UNUserNotificationCenterDelegate {
-    
-    func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        didReceive response: UNNotificationResponse,
-        withCompletionHandler completionHandler: @escaping () -> Void) {
-            completionHandler()
-        }
-    
-    func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        willPresent notification: UNNotification,
-        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-            completionHandler([.alert, .badge, .sound])
-        }
-    
-}

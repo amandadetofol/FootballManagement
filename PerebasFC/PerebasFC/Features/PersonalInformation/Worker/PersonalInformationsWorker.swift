@@ -96,7 +96,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                 self.firestoreProvider.collection("perebasfc").document(email).getDocument { document, error in
                     guard error == nil,
                           let document,
-                          let currentposition = document["rankingPlace"] as? Int else {
+                          let currentposition = document["rankingPlace"] as? Float else {
                         completion(false)
                         return
                     }
@@ -122,11 +122,15 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                             
                             
                             let reference = self.firestoreProvider.document("sort/\(activeSort)/whiteteam/\(email)")
-                            reference.delete { _ in }
+                            reference.delete { error in
+                                print(error)
+                            }
+                            
                             
                             let reference1 = self.firestoreProvider.document("sort/\(activeSort)/blackteam/\(email)")
-                            reference1.delete { _ in }
-                            
+                            reference1.delete { error in
+                                print(error)
+                            }
                             
                         }
                         
@@ -139,15 +143,15 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                             
                             querySnapshot.documents.forEach({ document in
                                 guard let email = document["email"] as? String,
-                                      let position = document["rankingPlace"] as? Int else { return }
+                                      let position = document["rankingPlace"] as? Float else { return }
                                 
                                 if position > currentposition {
                                     self.firestoreProvider.document("perebasfc/\(email)").updateData(["rankingPlace" : position-1])
                                 }
                                     
                             })
+                            completion(true)
                         }
-                        completion(true)
                     }
                 }
             }
