@@ -10,6 +10,7 @@ import YPImagePicker
 
 protocol NewTeamSignUpViewDelegate: AnyObject {
     func handleCreateNewFootballTeam(model: NewTeamSignUpModel)
+    func showColorContrastProblemAlert()
 }
 
 final class NewTeamSignUpView: UIView {
@@ -31,7 +32,52 @@ final class NewTeamSignUpView: UIView {
     }
     
     weak var delegate: NewTeamSignUpViewDelegate?
-   
+    
+    var footballTeamTextFieldHasError: Bool = false {
+        didSet {
+            footballTeamTextField.showError = true
+        }
+    }
+    
+    var sumPointsTeamTextFieldHasError: Bool = false {
+        didSet {
+            sumPointsTeamTextField.showError = true
+        }
+    }
+    
+    var minPointsTeamTextFieldHasError: Bool = false {
+        didSet {
+            minPointsTeamTextField.showError = true
+        }
+    }
+    
+    var sumUserPointsTeamTextFieldHasError: Bool = false {
+        didSet {
+            sumUserPointsTeamTextField.showError = true
+        }
+    }
+    
+    var sumPointsTeamTextFieldNotFloarError: Bool = false {
+        didSet {
+            sumPointsTeamTextField.errorMessage = "O valor precisa ser númerico."
+            sumPointsTeamTextField.showError = true
+        }
+    }
+    
+    var minPointsTeamTextFielNotFloatdHasError: Bool = false {
+        didSet {
+            minPointsTeamTextField.errorMessage = "O valor precisa ser númerico."
+            minPointsTeamTextField.showError = true
+        }
+    }
+    
+    var sumUserPointsTeamTextFieldNotFloatHasError: Bool = false {
+        didSet {
+            sumUserPointsTeamTextField.errorMessage = "O valor precisa ser númerico."
+            sumUserPointsTeamTextField.showError = true
+        }
+    }
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +136,6 @@ final class NewTeamSignUpView: UIView {
         button.layer.cornerRadius = 15
         button.tintColor = .systemBlue
         button.imageView?.contentMode = .scaleAspectFill
-        button.isUserInteractionEnabled = false
         
         return button
     }()
@@ -112,7 +157,6 @@ final class NewTeamSignUpView: UIView {
     private lazy var footballTeamTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.isUserInteractionEnabled = false
         
         return textField
     }()
@@ -130,23 +174,20 @@ final class NewTeamSignUpView: UIView {
     private lazy var sumPointsTeamTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.isUserInteractionEnabled = false
-        
+      
         return textField
     }()
     
     private lazy var minPointsTeamTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.isUserInteractionEnabled = false
-        
+       
         return textField
     }()
     
     private lazy var sumUserPointsTeamTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.isUserInteractionEnabled = false
        
         return textField
     }()
@@ -198,9 +239,7 @@ final class NewTeamSignUpView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView(){
-        let newTeamSignUpViewModel = NewTeamSignUpViewModel()
-        
+    func updateView(newTeamSignUpViewModel: NewTeamSignUpViewModel){
         profileLabel.text = newTeamSignUpViewModel.profileImageLabel
         footballTeamTextField.title = newTeamSignUpViewModel.nameTextFieldTitle
         explanationLabel.text = newTeamSignUpViewModel.explanationLabel
@@ -208,8 +247,11 @@ final class NewTeamSignUpView: UIView {
         minPointsTeamTextField.title = newTeamSignUpViewModel.minPointsTextFieldTitle
         sumUserPointsTeamTextField.title = newTeamSignUpViewModel.sumPointsGoalUserTextFieldTitle
         selectColorButton.setTitle(newTeamSignUpViewModel.colorPicker, for: .normal)
-        confirmButton.setTitle(newTeamSignUpViewModel.continueButton, for: .normal)
-        
+        confirmButton.setTitle(newTeamSignUpViewModel.continueButton.uppercased(), for: .normal)
+    }
+    
+    private func setupView(){
+        backgroundColor = .white
         addSubview(contentView)
         contentView.addSubview(scrollView)
         scrollView.addSubview(stackView)
@@ -250,8 +292,8 @@ final class NewTeamSignUpView: UIView {
             profileImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
             profileImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
             
-            footballTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
-            footballTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            footballTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            footballTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
             selectColorButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             selectColorButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
@@ -260,14 +302,14 @@ final class NewTeamSignUpView: UIView {
             explanationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             explanationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            sumPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
-            sumPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            sumPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            sumPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            minPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
-            minPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            minPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            minPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            sumUserPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
-            sumUserPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
+            sumUserPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            sumUserPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
             confirmButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             confirmButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
@@ -284,6 +326,12 @@ extension NewTeamSignUpView: UIColorPickerViewControllerDelegate {
         self.selectColorButton.setTitleColor(.white, for: .normal)
     }
     
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        if UIColor.contrastRatio(between: viewController.selectedColor, and: .white) <= 3 {
+            delegate?.showColorContrastProblemAlert()
+        }
+    }
+    
 }
 
 extension NewTeamSignUpView {
@@ -297,6 +345,11 @@ extension NewTeamSignUpView {
     }
     
     @objc func handleSignUpButtonTap(){
+        footballTeamTextField.showError = false
+        sumPointsTeamTextField.showError = false
+        minPointsTeamTextField.showError = false
+        sumUserPointsTeamTextField.showError = false
+        
         delegate?.handleCreateNewFootballTeam(model: model)
     }
     

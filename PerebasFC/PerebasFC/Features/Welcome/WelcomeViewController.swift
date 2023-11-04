@@ -32,8 +32,11 @@ final class WelcomeViewController: UIViewController {
 extension WelcomeViewController: WelcomeViewDelegate {
     
     func goToLogin() {
-        let loginCoordinator = LoginCoordinator(navigationController: self.navigationController ?? UINavigationController())
-        loginCoordinator.start()
+        let factory = NewTeamSingUpFactory.getNewTeamSignUpViewController(nagivationController: self.navigationController ?? UINavigationController())
+        self.navigationController?.pushViewController(factory, animated: true)
+        
+        //let loginCoordinator = LoginCoordinator(navigationController: self.navigationController ?? UINavigationController())
+        //loginCoordinator.start()
     }
 
 }
