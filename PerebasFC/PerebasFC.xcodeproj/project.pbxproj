@@ -190,6 +190,14 @@
 		A6993E372A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E362A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift */; };
 		A6993E392A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E382A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift */; };
 		A6993E3B2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6993E3A2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift */; };
+		A69B4CAA2AF6753E00D150B0 /* NewTeamSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B4CA92AF6753E00D150B0 /* NewTeamSignUpView.swift */; };
+		A69B4CAC2AF6754E00D150B0 /* NewTeamSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B4CAB2AF6754E00D150B0 /* NewTeamSignUpViewController.swift */; };
+		A69B4CAE2AF6755A00D150B0 /* NewTeamSignUpWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B4CAD2AF6755A00D150B0 /* NewTeamSignUpWorker.swift */; };
+		A69B4CB02AF6756400D150B0 /* NewTeamSignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B4CAF2AF6756400D150B0 /* NewTeamSignUpInteractor.swift */; };
+		A69B4CB22AF6757000D150B0 /* NewTeamSingUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B4CB12AF6757000D150B0 /* NewTeamSingUpFactory.swift */; };
+		A69B4CB42AF6757900D150B0 /* NewTeamSignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B4CB32AF6757900D150B0 /* NewTeamSignUpPresenter.swift */; };
+		A69B4CB62AF6758600D150B0 /* NewTeamSignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B4CB52AF6758600D150B0 /* NewTeamSignUpCoordinator.swift */; };
+		A69B4CB82AF6759200D150B0 /* NewTeamSignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B4CB72AF6759200D150B0 /* NewTeamSignUpModel.swift */; };
 		A69E89252A8AE9C8008C09DC /* FinancialAdministratorMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E89242A8AE9C8008C09DC /* FinancialAdministratorMainViewModel.swift */; };
 		A69E89282A8AEB3E008C09DC /* HideAndShowBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E89272A8AEB3E008C09DC /* HideAndShowBalanceView.swift */; };
 		A69E892C2A8AF0DF008C09DC /* FinancialAdministratorMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E892B2A8AF0DF008C09DC /* FinancialAdministratorMainInteractor.swift */; };
@@ -495,6 +503,14 @@
 		A6993E362A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsViewModel.swift; sourceTree = "<group>"; };
 		A6993E382A2BFB6400C2BDE3 /* PersonalInformationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsFactory.swift; sourceTree = "<group>"; };
 		A6993E3A2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationsCoordinator.swift; sourceTree = "<group>"; };
+		A69B4CA92AF6753E00D150B0 /* NewTeamSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamSignUpView.swift; sourceTree = "<group>"; };
+		A69B4CAB2AF6754E00D150B0 /* NewTeamSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamSignUpViewController.swift; sourceTree = "<group>"; };
+		A69B4CAD2AF6755A00D150B0 /* NewTeamSignUpWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamSignUpWorker.swift; sourceTree = "<group>"; };
+		A69B4CAF2AF6756400D150B0 /* NewTeamSignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamSignUpInteractor.swift; sourceTree = "<group>"; };
+		A69B4CB12AF6757000D150B0 /* NewTeamSingUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamSingUpFactory.swift; sourceTree = "<group>"; };
+		A69B4CB32AF6757900D150B0 /* NewTeamSignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamSignUpPresenter.swift; sourceTree = "<group>"; };
+		A69B4CB52AF6758600D150B0 /* NewTeamSignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamSignUpCoordinator.swift; sourceTree = "<group>"; };
+		A69B4CB72AF6759200D150B0 /* NewTeamSignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamSignUpModel.swift; sourceTree = "<group>"; };
 		A69E89242A8AE9C8008C09DC /* FinancialAdministratorMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorMainViewModel.swift; sourceTree = "<group>"; };
 		A69E89272A8AEB3E008C09DC /* HideAndShowBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndShowBalanceView.swift; sourceTree = "<group>"; };
 		A69E892B2A8AF0DF008C09DC /* FinancialAdministratorMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAdministratorMainInteractor.swift; sourceTree = "<group>"; };
@@ -1989,6 +2005,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A69B4CA12AF674F600D150B0 /* NewTeamSignUp */,
 				A61C0CB92AAFD07D0012BACC /* SignUp */,
 				A658B39A2AABFDCF00C89D63 /* EventPresence */,
 				A6730EF12AAA5448000D6B72 /* Presence */,
@@ -2289,6 +2306,77 @@
 				A6993E3A2A2BFB6D00C2BDE3 /* PersonalInformationsCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A69B4CA12AF674F600D150B0 /* NewTeamSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A69B4CA82AF6752E00D150B0 /* Model */,
+				A69B4CA72AF6752900D150B0 /* Coordinator */,
+				A69B4CA62AF6752500D150B0 /* Presenter */,
+				A69B4CA52AF6752000D150B0 /* Factory */,
+				A69B4CA42AF6751C00D150B0 /* Interactor */,
+				A69B4CA32AF6751900D150B0 /* View */,
+				A69B4CA22AF6751600D150B0 /* Worker */,
+			);
+			path = NewTeamSignUp;
+			sourceTree = "<group>";
+		};
+		A69B4CA22AF6751600D150B0 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A69B4CAD2AF6755A00D150B0 /* NewTeamSignUpWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A69B4CA32AF6751900D150B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A69B4CA92AF6753E00D150B0 /* NewTeamSignUpView.swift */,
+				A69B4CAB2AF6754E00D150B0 /* NewTeamSignUpViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A69B4CA42AF6751C00D150B0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A69B4CAF2AF6756400D150B0 /* NewTeamSignUpInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A69B4CA52AF6752000D150B0 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A69B4CB12AF6757000D150B0 /* NewTeamSingUpFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A69B4CA62AF6752500D150B0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A69B4CB32AF6757900D150B0 /* NewTeamSignUpPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A69B4CA72AF6752900D150B0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A69B4CB52AF6758600D150B0 /* NewTeamSignUpCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A69B4CA82AF6752E00D150B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A69B4CB72AF6759200D150B0 /* NewTeamSignUpModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A69E891C2A8AE937008C09DC /* Main */ = {
@@ -3153,6 +3241,7 @@
 				A61C0CCB2AAFD12D0012BACC /* SignUpPresenter.swift in Sources */,
 				A6E5BB3E2A1EB75500ADE47F /* MenuItemViewModel.swift in Sources */,
 				A6E847F12AE34156003C770C /* EmailSenderInteractor.swift in Sources */,
+				A69B4CAA2AF6753E00D150B0 /* NewTeamSignUpView.swift in Sources */,
 				A61C0CC12AAFD0DF0012BACC /* SignUpWorker.swift in Sources */,
 				A6730EFD2AAA54AA000D6B72 /* PresenceCardView.swift in Sources */,
 				A61A8F8A2A143A74009D08EE /* LoginFactory.swift in Sources */,
@@ -3168,6 +3257,7 @@
 				A6993E1F2A2BBCC300C2BDE3 /* RankingCoordinator.swift in Sources */,
 				A6993E0F2A2BA10500C2BDE3 /* UIColor.swift in Sources */,
 				A6151B9D2AB510D100EA145F /* ChangePasswordModel.swift in Sources */,
+				A69B4CB22AF6757000D150B0 /* NewTeamSingUpFactory.swift in Sources */,
 				A6FCDA652A81C39500B095E5 /* SortMainWorker.swift in Sources */,
 				A62C1CDC2A37E855002AA401 /* FinancialWorker.swift in Sources */,
 				A60B1A492A71E718007F71ED /* NewEventInCalendarWorker.swift in Sources */,
@@ -3183,10 +3273,12 @@
 				A6D2488B2A830D28004951FD /* ParticipantCellView.swift in Sources */,
 				A6730F072AAA5733000D6B72 /* PresenceCardViewModel.swift in Sources */,
 				A6E6BB182A733B0C0063A62A /* SignOutWorker.swift in Sources */,
+				A69B4CB62AF6758600D150B0 /* NewTeamSignUpCoordinator.swift in Sources */,
 				A65663092A96CAB900EEC58D /* MapWorker.swift in Sources */,
 				A6AF78CA2AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift in Sources */,
 				A61C0CC32AAFD0F30012BACC /* SignUpView.swift in Sources */,
 				A6E6BB1F2A733D680063A62A /* LoaderViewController.swift in Sources */,
+				A69B4CB02AF6756400D150B0 /* NewTeamSignUpInteractor.swift in Sources */,
 				A6A741642A255360009A7998 /* WeekTeamListViewModel.swift in Sources */,
 				A67360A82A393733003BF4C2 /* PendenciesDisclaimerView.swift in Sources */,
 				A61A8F882A143906009D08EE /* LoginPresenter.swift in Sources */,
@@ -3239,6 +3331,7 @@
 				A6993E142A2BA5B400C2BDE3 /* RankingViewModel.swift in Sources */,
 				A69E89322A8AF11B008C09DC /* FinancialAdministratorMainViewController.swift in Sources */,
 				A61A8FA72A1C27E2009D08EE /* ForgotPasswordPresenter.swift in Sources */,
+				A69B4CB42AF6757900D150B0 /* NewTeamSignUpPresenter.swift in Sources */,
 				A61CFFF22A3BDC260026BAF1 /* EditAwadsView.swift in Sources */,
 				A62C1CDA2A37E84E002AA401 /* FinancialPendenciesViewController.swift in Sources */,
 				A61CFFF82A3BDC440026BAF1 /* EditAwardsCoordinator.swift in Sources */,
@@ -3355,6 +3448,7 @@
 				A60319FA2A91730E00E19E3A /* AdministratorPendenciesInteractor.swift in Sources */,
 				A6CFD57F2A293A8500A37696 /* BarAndThrophyView.swift in Sources */,
 				A6E847F42AE34382003C770C /* EmailSenderFactory.swift in Sources */,
+				A69B4CAC2AF6754E00D150B0 /* NewTeamSignUpViewController.swift in Sources */,
 				A6E5BB382A1D8CCA00ADE47F /* UIStackView.swift in Sources */,
 				A6FCDA692A81C3DE00B095E5 /* SortMainCoordinator.swift in Sources */,
 				A6CFD5732A29395900A37696 /* RankingView.swift in Sources */,
@@ -3367,9 +3461,11 @@
 				A62C1CDE2A37E85C002AA401 /* FinancialPresenter.swift in Sources */,
 				A6AF78C42AA6A13D00174B83 /* ParticipantsSelectorListViewInteractor.swift in Sources */,
 				A6730F052AAA54D1000D6B72 /* PresenceViewController.swift in Sources */,
+				A69B4CB82AF6759200D150B0 /* NewTeamSignUpModel.swift in Sources */,
 				A637DDFD2A4A55660017857D /* EditGameGoalInformationsCardView.swift in Sources */,
 				A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */,
 				A69285132A8EDF4B000E618D /* NewItemView.swift in Sources */,
+				A69B4CAE2AF6755A00D150B0 /* NewTeamSignUpWorker.swift in Sources */,
 				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
 				A68E76152A94388900599C25 /* FinancialAdministratorHistoryWorker.swift in Sources */,
 				A68E76132A94387500599C25 /* FinancialAdministratorHistoryViewController.swift in Sources */,

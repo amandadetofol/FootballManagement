@@ -8,9 +8,6 @@
 import UIKit
 import YPImagePicker
 
-//TODO: INSERIR IMAGEM E BAIXAR DO FIREBASE
-// https://www.youtube.com/watch?v=YgjYVbg1oiA
-
 protocol PersonalInformationsViewDelegate: AnyObject {
     func handleGoToPasswordFlowButtonTap()
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel)
