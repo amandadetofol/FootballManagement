@@ -16,7 +16,7 @@ final class EditAwadsView: UIView {
     
     weak var delegate: EditAwadsViewDelegate?
     
-    private lazy var scrollView: UIScrollView = {
+    lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .clear

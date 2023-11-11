@@ -17,7 +17,7 @@ final class EventPresenceView: UIView {
         return view
     }()
     
-    private lazy var scrollView: UIScrollView = {
+    lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isAccessibilityElement = false

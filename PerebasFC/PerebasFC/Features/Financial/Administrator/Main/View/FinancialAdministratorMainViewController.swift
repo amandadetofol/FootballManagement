@@ -40,6 +40,30 @@ final class FinancialAdministratorMainViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.view = financialAdministratorMainView
         handleKeyBoardRemoveWhenClickOutsideField()
+    
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.financialAdministratorMainView.scrollView.frame.origin.y >= 0 {
+                self.financialAdministratorMainView.scrollView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.financialAdministratorMainView.scrollView.frame.origin.y = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {

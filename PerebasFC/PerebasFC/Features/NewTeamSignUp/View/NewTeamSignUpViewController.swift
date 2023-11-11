@@ -43,6 +43,31 @@ final class NewTeamSignUpViewController: UIViewController {
         
         self.view = newTeamSignUpView
         interactor.viewDidLoad()
+        handleKeyBoardRemoveWhenClickOutsideField()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.newTeamSignUpView.scrollView.frame.origin.y >= 0 {
+                self.newTeamSignUpView.scrollView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.newTeamSignUpView.scrollView.frame.origin.y = 0
     }
     
 }

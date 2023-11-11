@@ -20,6 +20,7 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         view = welcomeView
         setupNavigationController()
+        handleKeyBoardRemoveWhenClickOutsideField()
     }
 
     private func setupNavigationController(){

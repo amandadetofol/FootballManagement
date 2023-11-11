@@ -16,7 +16,7 @@ final class FinancialDetailsView: UIView {
     weak var delegate: FinancialDetailsViewDelegate?
     var index: Int? 
     
-    private lazy var scrollView: UIScrollView = {
+    lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .clear

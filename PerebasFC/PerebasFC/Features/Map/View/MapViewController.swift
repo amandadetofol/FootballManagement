@@ -35,9 +35,13 @@ final class MapViewController: UIViewController,
     }
     
     override func loadView() {
-        setupNavigationView()
         view = webView
         interactor.loadView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationView()
     }
     
     private func setupNavigationView(){
@@ -55,8 +59,6 @@ final class MapViewController: UIViewController,
             target: self,
             action: #selector(handleGoToBack))
         self.title = "Local do Jogo"
-        
-        handleKeyBoardRemoveWhenClickOutsideField()
     }
 
 }
