@@ -68,12 +68,12 @@ final class NewTeamSignUpInteractor: NewTeamSignUpInteractorProtocol {
         
         if hasError { return }
         
-        worker.createNewGameOnFirebase(model: model) { [weak self] succeded in
+        worker.createNewGameOnFirebase(model: model) { [weak self] id in
             guard let self else { return }
             self.coordinator.removeLoading()
             
-            if succeded {
-                coordinator.goToUserLogin()
+            if let id {
+                coordinator.showIdAlertView(id: id)
             } else {
                 coordinator.showErrorAlertView()
             }

@@ -12,6 +12,7 @@ protocol NewTeamSignUpCoordinatorProtocol {
     func goToUserLogin()
     func showLoading()
     func removeLoading()
+    func showIdAlertView(id: String)
     func showColorContrastProblemAlert()
 }
 
@@ -41,6 +42,23 @@ final class NewTeamSignUpCoordinator: NewTeamSignUpCoordinatorProtocol {
             UIAlertAction(
                 title: "Ok!",
                 style: UIAlertAction.Style.default))
+        navigationController.present(
+            alert,
+            animated: true)
+    }
+    
+    func showIdAlertView(id: String){
+        let alert = UIAlertController(
+            title: "Sucesso!",
+            message: "Nova equipe cadastrada. \n\n Para acessar, copie o código abaixo: \n\n \(id) \n\n  Fique atento: ele não será exibido novamente! Salve em algum local ;) ",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "Ir para o login",
+                style: .default,
+                handler: { _ in
+                    self.goToUserLogin()
+                }))
         navigationController.present(
             alert,
             animated: true)
