@@ -9,6 +9,7 @@ import UIKit
 
 protocol WelcomeViewDelegate: AnyObject {
     func goToLogin()
+    func goToNewTeam()
 }
 
 final class WelcomeView: UIView {
@@ -35,13 +36,25 @@ final class WelcomeView: UIView {
         return label
     }()
     
-    private lazy var startUsingButton: UIButton = {
+    private lazy var signUpWithNewTeamButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
         button.setTitleColor(.white, for: .normal)
-        button.setTitle("começar".uppercased(), for: .normal)
+        button.setTitle("Cadastrar uma nova patota", for: .normal)
         button.backgroundColor = .black
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(goToNewTeam), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var startUsingButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.clipsToBounds = true
+        button.setTitleColor(.black, for: .normal)
+        button.setTitle("Login", for: .normal)
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
         
@@ -64,6 +77,7 @@ final class WelcomeView: UIView {
         addSubview(imageView)
         addSubview(benefitLabelDescription)
         addSubview(startUsingButton)
+        addSubview(signUpWithNewTeamButton)
     }
     
     private func setupConstraints(){
@@ -79,6 +93,11 @@ final class WelcomeView: UIView {
             benefitLabelDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             benefitLabelDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             
+            signUpWithNewTeamButton.heightAnchor.constraint(equalToConstant: 48),
+            signUpWithNewTeamButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            signUpWithNewTeamButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            signUpWithNewTeamButton.bottomAnchor.constraint(equalTo: startUsingButton.topAnchor, constant: -16),
+            
             startUsingButton.heightAnchor.constraint(equalToConstant: 48),
             startUsingButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             startUsingButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -89,5 +108,9 @@ final class WelcomeView: UIView {
     //MARK: Button action
     @objc func goToLogin(){
         delegate?.goToLogin()
+    }
+    
+    @objc func goToNewTeam(){
+        delegate?.goToNewTeam()
     }
 }

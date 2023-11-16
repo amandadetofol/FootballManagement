@@ -66,7 +66,7 @@ final class NewTeamSignUpWorker: NewTeamSignUpWorkerProtocol {
     }
     
     private func generateRandomID() -> String {
-        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let characters = "0123456789"
         var randomID = ""
 
         for _ in 0..<6 {
