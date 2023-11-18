@@ -14,11 +14,11 @@ protocol AdministratorPendenciesWorkerProtocol {
 
 final class AdministratorPendenciesWorker: AdministratorPendenciesWorkerProtocol {
     
-    private let firebaseFirestoreProvider = Firestore.firestore().collection("perebasfc")
+    private let firebaseFirestoreProvider = Firestore.firestore().collection(Session.shared.teamId ?? "")
     
     func getUsersPendencies(completion: @escaping (([DocumentSnapshot]?) -> Void)) {
         firebaseFirestoreProvider.getDocuments { querySnapshot, error in
-            guard let querySnapshot, error == nil else {
+            guard let querySnapshot = querySnapshot, error == nil else {
                 completion(nil)
                 return
             }
@@ -28,25 +28,31 @@ final class AdministratorPendenciesWorker: AdministratorPendenciesWorkerProtocol
             
             for document in querySnapshot.documents {
                 guard let documentEmail = document["email"] as? String else {
-                    completion(nil)
-                    return
+                    continue
                 }
                 
                 dispatchGroup.enter()
                 
-                Firestore.firestore().collection("perebasfc/\(documentEmail)/comum-financeiro").getDocuments { querySnapshot, error in
-                    if let querySnapshot = querySnapshot, error == nil {
+                Firestore.firestore().collection("\(Session.shared.teamId ?? "")/\(documentEmail)/comum-financeiro").getDocuments { querySnapshot, error in
+                    defer {
+                        dispatchGroup.leave()
+                    }
+                    
+                    if let error = error {
+                        return
+                    }
+                    
+                    if let querySnapshot = querySnapshot {
                         documents.append(contentsOf: querySnapshot.documents)
                     }
-                    dispatchGroup.leave()
                 }
             }
-            
             
             dispatchGroup.notify(queue: .main) {
                 completion(documents)
             }
         }
     }
+
 }
 

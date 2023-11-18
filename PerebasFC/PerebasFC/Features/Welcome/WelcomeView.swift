@@ -54,7 +54,7 @@ final class WelcomeView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Entrar", for: .normal)
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
         
@@ -83,10 +83,10 @@ final class WelcomeView: UIView {
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
-            imageView.heightAnchor.constraint(equalToConstant: 48),
-            imageView.widthAnchor.constraint(equalToConstant: 48),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 48),
+            imageView.heightAnchor.constraint(equalToConstant: 128),
+            imageView.widthAnchor.constraint(equalToConstant: 128),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             benefitLabelDescription.centerXAnchor.constraint(equalTo: centerXAnchor),
             benefitLabelDescription.centerYAnchor.constraint(equalTo: centerYAnchor),

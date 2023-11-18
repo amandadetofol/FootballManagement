@@ -58,7 +58,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
         completion: @escaping((Bool) -> Void)){
             guard let email = newItem.userEmail?.replacingOccurrences(of: " ", with: "") else { return }
             Firestore.firestore()
-                .document("financial/credit/person/\(email)-\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                .document("\(Session.shared.teamId ?? "")/financial/team/credit/person/\(email)-\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
                 .setData([
                     "eventName": newItem.eventName,
                     "eventValue": newItem.eventValue,
@@ -67,7 +67,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false ,
             ])
             
-            Firestore.firestore().collection("perebasfc/\(email)/comum-financeiro").getDocuments { [weak self] querySnapShot, error in
+            Firestore.firestore().collection("\(Session.shared.teamId ?? "")/\(email)/comum-financeiro").getDocuments { [weak self] querySnapShot, error in
                 guard error == nil,
                       let querySnapShot else {
                     completion(false)
@@ -75,7 +75,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                 }
                 
                 let count = querySnapShot.documents.count
-                Firestore.firestore().document("perebasfc/\(email)/comum-financeiro/\(count+1)").setData(
+                Firestore.firestore().document("\(Session.shared.teamId ?? "")/\(email)/comum-financeiro/\(count+1)").setData(
                     ["admAprooved" : true,
                      "expectedValue": Float(newItem.eventValue) ?? 0.0,
                      "hasProof": false,
@@ -97,7 +97,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
         completion: @escaping((Bool) -> Void)){
             guard let email = newItem.userEmail?.replacingOccurrences(of: " ", with: "") else { return }
             Firestore.firestore()
-                .document("financial/debt/person/\(email)-\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                .document("\(Session.shared.teamId ?? "")/financial/team/debt/person/\(email)-\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
                 .setData([
                     "eventName": newItem.eventName,
                     "eventValue": newItem.eventValue,
@@ -106,7 +106,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false,
             ])
             
-            Firestore.firestore().collection("perebasfc/\(email)/comum-financeiro").getDocuments { [weak self] querySnapShot, error in
+            Firestore.firestore().collection("\(Session.shared.teamId ?? "")/\(email)/comum-financeiro").getDocuments { [weak self] querySnapShot, error in
                 guard error == nil,
                       let querySnapShot else {
                     completion(false)
@@ -114,7 +114,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                 }
                 
                 let count = querySnapShot.documents.count
-                Firestore.firestore().document("perebasfc/\(email)/comum-financeiro/\(count+1)").setData(
+                Firestore.firestore().document("\(Session.shared.teamId ?? "")/\(email)/comum-financeiro/\(count+1)").setData(
                     ["admAprooved" : false,
                      "expectedValue": Float(newItem.eventValue) ?? 0.0,
                      "hasProof": false,
@@ -136,7 +136,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
         completion: @escaping((Bool) -> Void)){
             
             Firestore.firestore()
-                .document("financial/debt/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                .document("\(Session.shared.teamId ?? "")/financial/team/debt/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
                 .setData([
                     "eventName": newItem.eventName,
                     "eventValue": newItem.eventValue,
@@ -145,7 +145,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                 ])
             
             if newItem.splitBeetweenTeamMember ?? false {
-                Firestore.firestore().collection("perebasfc").getDocuments { [weak self] querySnapShot, error in
+                Firestore.firestore().collection("\(Session.shared.teamId ?? "")").getDocuments { [weak self] querySnapShot, error in
                     guard error == nil,
                           let querySnapShot,
                           let self else {
@@ -164,7 +164,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     completion(true)
                 }
             } else {
-                Firestore.firestore().document("financial/balance").getDocument { document, error in
+                Firestore.firestore().document("\(Session.shared.teamId ?? "")/financial/team/balance").getDocument { document, error in
                     guard error == nil,
                           let document else {
                         completion(false)
@@ -173,12 +173,12 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     
                     let currentBalance = document["balance"] as? Int ?? 0
                     
-                    Firestore.firestore().document("financial/balance").setData(
+                    Firestore.firestore().document("\(Session.shared.teamId ?? "")/financial/team/balance").setData(
                         ["balance" : (currentBalance - (Int(newItem.eventValue) ?? 0))]
                     )
                     
                     Firestore.firestore()
-                        .document("financial/debt/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                        .document("\(Session.shared.teamId ?? "")/financial/team/debt/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
                         .updateData(["balance" : (currentBalance - (Int(newItem.eventValue) ?? 0))])
                     
                     completion(true)
@@ -189,9 +189,9 @@ final class NewItemWorker: NewItemWorkerProtocol {
     private func addNewCredit(
         newItem: NewItemModel,
         completion: @escaping((Bool) -> Void)){
-            
+             
             Firestore.firestore()
-                .document("financial/credit/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                .document("\(Session.shared.teamId ?? "")/financial/team/credit/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
                 .setData([
                     "eventName": newItem.eventName,
                     "eventValue": newItem.eventValue,
@@ -200,7 +200,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false ,
                 ])
             
-            Firestore.firestore().document("financial/balance").getDocument { document, error in
+            Firestore.firestore().document("\(Session.shared.teamId ?? "")/financial/team/balance").getDocument { document, error in
                 guard error == nil,
                       let document else {
                     completion(false)
@@ -209,12 +209,12 @@ final class NewItemWorker: NewItemWorkerProtocol {
                 
                 let currentBalance = document["balance"] as? Int ?? 0
                 
-                Firestore.firestore().document("financial/balance").setData(
+                Firestore.firestore().document("\(Session.shared.teamId ?? "")/financial/team/balance").setData(
                     ["balance" : (currentBalance + (Int(newItem.eventValue) ?? 0))]
                 )
                 
                 Firestore.firestore()
-                    .document("financial/debt/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
+                    .document("\(Session.shared.teamId ?? "")/financial/debt/team/general/\(newItem.date.toString().replacingOccurrences(of: "/", with: "-"))-\(newItem.eventValue)")
                     .updateData(["balance" : (currentBalance - (Int(newItem.eventValue) ?? 0))])
                 
                 completion(true)

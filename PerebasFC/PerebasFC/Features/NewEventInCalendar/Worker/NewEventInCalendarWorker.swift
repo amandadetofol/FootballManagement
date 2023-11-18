@@ -16,7 +16,7 @@ protocol NewEventInCalendarWorkerProtocol {
 
 final class NewEventInCalendarWorker: NewEventInCalendarWorkerProtocol {
     
-    private let firebaseEventsReference = Firestore.firestore().collection("events")
+    private let firebaseEventsReference = Firestore.firestore().collection("\(Session.shared.teamId ?? "")/teamEvents/events")
     
     func saveNewEventInCalendar(
         _ model: NewEventInCalendarViewModel,

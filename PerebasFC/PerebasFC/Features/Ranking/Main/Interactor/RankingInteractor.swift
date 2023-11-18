@@ -46,6 +46,10 @@ final class RankingInteractor: RankingInteractorProtocol {
         }
     }
     
+    func showUnsufficentPlayersMessage() {
+        coordinator.showUnsufficentPlayersMessage()
+    }
+    
     func handleEditAwardsButtonTap(with model: EditAwardsViewModel) {
         coordinator.goToShowEditAwardsView(model: model)
     }

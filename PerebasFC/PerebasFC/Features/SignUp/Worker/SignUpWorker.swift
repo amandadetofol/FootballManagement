@@ -23,27 +23,48 @@ final class SignUpWorker: SignUpWorkerProtocol {
     func createNewUser(
         user: NewUserModel,
         completion: @escaping ((Bool) -> Void)) {
-            if user.isAdm {
-                checkIfAlreadyHasAnyAdm { [weak self] alreadyHaveAdm in
-                    guard let self else { return }
-                    
-                    if alreadyHaveAdm {
-                        completion(false)
-                        return
+            idExists(id: user.teamId) { [weak self] idExists in
+                guard let self else { return }
+                
+                if !idExists {
+                    completion(false)
+                } else {
+                    if user.isAdm {
+                        self.checkIfAlreadyHasAnyAdm(teamId: user.teamId) { [weak self] alreadyHaveAdm in
+                            guard let self else { return }
+                            
+                            if alreadyHaveAdm {
+                                completion(false)
+                                return
+                            } else {
+                                self.addUser(user: user) { succeded in
+                                    completion(succeded)
+                                }
+                            }
+                        }
                     } else {
                         self.addUser(user: user) { succeded in
                             completion(succeded)
                         }
                     }
                 }
-            } else {
-                self.addUser(user: user) { succeded in
-                    completion(succeded)
-                } 
             }
         }
     
     //MARK: Private methods
+    private func idExists(id: String, completion: @escaping ((Bool) -> Void)){
+        let db = Firestore.firestore()
+        let documentReference = db.collection("team").document(id)
+        documentReference.getDocument { (document, error) in
+            if let document = document,
+               document.exists {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
+    
     private func addUser(
         user: NewUserModel,
         completion: @escaping ((Bool) -> Void)){
@@ -55,14 +76,14 @@ final class SignUpWorker: SignUpWorkerProtocol {
                     return
                 }
                 
-                self.firestoreProvider.collection("perebasfc").getDocuments { documents, error in
+                self.firestoreProvider.collection(user.teamId).getDocuments { documents, error in
                     guard let documents,
                           error == nil else {
                         completion(false)
                         return
                     }
                     
-                    self.firestoreProvider.collection("perebasfc").document(user.email).setData(
+                    self.firestoreProvider.collection(user.teamId).document(user.email).setData(
                         ["email": user.email,
                          "senha": user.password,
                          "goUpInRanking": false,
@@ -74,8 +95,8 @@ final class SignUpWorker: SignUpWorkerProtocol {
             }
         }
     
-    private func checkIfAlreadyHasAnyAdm(completion: @escaping((Bool)->Void)){
-        let userReferece = firestoreProvider.collection("perebasfc")
+    private func checkIfAlreadyHasAnyAdm(teamId: String, completion: @escaping((Bool)->Void)){
+        let userReferece = firestoreProvider.collection(teamId)
         userReferece.getDocuments { data, error in
             guard let data = data,
                   error == nil else {

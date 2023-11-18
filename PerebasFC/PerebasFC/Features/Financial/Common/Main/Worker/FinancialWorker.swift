@@ -18,7 +18,7 @@ final class FinancialWorker: FinancialWorkerProtocol {
     
     func getFinancialData(completion: @escaping (([QueryDocumentSnapshot]?) -> Void)) {
         let email = Session.shared.loggedUserEmail ?? ""
-        let userReference = Firestore.firestore().collection("perebasfc")
+        let userReference = Firestore.firestore().collection("\(Session.shared.teamId ?? "")")
         let financialReference = userReference.document(email).collection("comum-financeiro")
         financialReference.getDocuments { [weak self] documents, error in
             guard let self,

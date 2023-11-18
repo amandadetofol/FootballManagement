@@ -31,7 +31,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
     
     func getPersonalInformations(_ completion: @escaping ((PersonalInformationsViewModel?) -> Void),
                                  email: String?) {
-        firestoreProvider.document("perebasfc/\(email ?? Session.shared.loggedUserEmail ?? "")").getDocument { [weak self] document, error in
+        firestoreProvider.document("\(Session.shared.teamId ?? "")/\(email ?? Session.shared.loggedUserEmail ?? "")").getDocument { [weak self] document, error in
             guard error == nil,
                   let self = self else {
                 completion(nil)
@@ -60,7 +60,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
         changeImage: Bool,
         completion: @escaping((Bool)->Void),
         email: String?) {
-            firestoreProvider.document("perebasfc/\(email ?? Session.shared.loggedUserEmail ?? "")").updateData([
+            firestoreProvider.document("\(Session.shared.teamId ?? "")/\(email ?? Session.shared.loggedUserEmail ?? "")").updateData([
                 "name": personalInformations.name,
                 "lastname": personalInformations.lastName,
                 "date": personalInformations.birthDate,
@@ -93,7 +93,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                     return
                 }
                 
-                self.firestoreProvider.collection("perebasfc").document(email).getDocument { document, error in
+                self.firestoreProvider.collection(Session.shared.teamId ?? "").document(email).getDocument { document, error in
                     guard error == nil,
                           let document,
                           let currentposition = document["rankingPlace"] as? Float else {
@@ -101,7 +101,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                         return
                     }
                     
-                    self.firestoreProvider.collection("perebasfc").document(email).delete { error in
+                    self.firestoreProvider.collection(Session.shared.teamId ?? "").document(email).delete { error in
                         guard error == nil else {
                             completion(false)
                             return
@@ -134,7 +134,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                             
                         }
                         
-                        self.firestoreProvider.collection("perebasfc").getDocuments { querySnapshot, error in
+                        self.firestoreProvider.collection(Session.shared.teamId ?? "").getDocuments { querySnapshot, error in
                             guard error == nil,
                                   let querySnapshot else {
                                 completion(false)
@@ -146,7 +146,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                                       let position = document["rankingPlace"] as? Float else { return }
                                 
                                 if position > currentposition {
-                                    self.firestoreProvider.document("perebasfc/\(email)").updateData(["rankingPlace" : position-1])
+                                    self.firestoreProvider.document("\(Session.shared.teamId ?? "")/\(email)").updateData(["rankingPlace" : position-1])
                                 }
                                     
                             })
@@ -170,7 +170,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                 imageRef.downloadURL { (url, error) in
                     if let downloadURL = url {
                         self?.firestoreProvider.document(
-                            "perebasfc/\(Session.shared.loggedUserEmail ?? "")").updateData(["image": downloadURL.absoluteString])
+                            "\(Session.shared.teamId ?? "")/\(Session.shared.loggedUserEmail ?? "")").updateData(["image": downloadURL.absoluteString])
                     }
                 }
                 

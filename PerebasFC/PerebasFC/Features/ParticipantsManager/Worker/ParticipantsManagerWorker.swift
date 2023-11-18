@@ -14,7 +14,7 @@ protocol ParticipantsManagerWorkerProtocol {
 
 final class ParticipantsManagerWorker: ParticipantsManagerWorkerProtocol {
     
-    private let usersFirebaseReference = Firestore.firestore().collection("perebasfc")
+    private let usersFirebaseReference = Firestore.firestore().collection(Session.shared.teamId ?? "")
     
     func getParticipants(completion: @escaping ((QuerySnapshot?) -> Void)) {
         usersFirebaseReference.getDocuments { querySnapshot, error in

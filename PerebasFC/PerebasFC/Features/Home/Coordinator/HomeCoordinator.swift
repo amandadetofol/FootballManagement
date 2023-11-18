@@ -15,8 +15,7 @@ protocol HomeCoordinatorProtocol {
     func handleAccessibilityButtonTap(model: [AccessibilityManagerViewModel])
     func handleInternalLinkRedirect(
         key: InternalLinkRedirectKeys,
-        willShow: Bool?,
-        teams: WeekTeamViewModel?)
+        willShow: Bool?)
 }
 
 final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
@@ -42,12 +41,12 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
         SignOutWorker.signOut { [weak self] succeded in
             guard let self = self else { return }
             switch succeded {
-                case true:
-                    self.removeLoader()
-                    self.navigationController.popViewController(animated: true)
-                case false:
-                    self.removeLoader()
-                    self.showErrorPopUp()
+            case true:
+                self.removeLoader()
+                self.navigationController.popViewController(animated: true)
+            case false:
+                self.removeLoader()
+                self.showErrorPopUp()
             }
         }
     }
@@ -64,14 +63,13 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
     
     func handleInternalLinkRedirect(
         key: InternalLinkRedirectKeys,
-        willShow: Bool? = false,
-        teams: WeekTeamViewModel? = nil) {
+        willShow: Bool? = false) {
             switch key {
             case .map:
                 self.navigationController.pushViewController(
                     MapFactory.getMapViewController(
                         navigationController: navigationController), animated: true)
-                return 
+                return
                 
             case .myData:
                 self.navigationController.pushViewController(
@@ -123,7 +121,6 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                 return
                 
             case .team:
-                guard let teams = teams else { return }
                 self.navigationController.pushViewController(
                     WeekTeamFactory.getWeekTeamViewController(
                         teams: nil,
@@ -160,7 +157,7 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                 handler: { [weak self] _ in
                     self?.navigationController.popViewController(animated: true)
                 }))
-
+        
         navigationController.present(
             alert,
             animated: true)
@@ -172,6 +169,5 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
             UIApplication.shared.open(url)
         }
     }
-
-
+    
 }

@@ -14,9 +14,9 @@ protocol FinancialAdministratorHistoryWorkerProtocol {
 }
 
 final class FinancialAdministratorHistoryWorker: FinancialAdministratorHistoryWorkerProtocol {
-    
-    private let firebaseCreditProvider = Firestore.firestore().collection("financial/credit/general")
-    private let firebaseDebitProvider = Firestore.firestore().collection("financial/debt/general")
+     
+    private let firebaseCreditProvider = Firestore.firestore().collection("\(Session.shared.teamId ?? "")/financial/team/credit/general")
+    private let firebaseDebitProvider = Firestore.firestore().collection("\(Session.shared.teamId ?? "")/financial/team/debt/general")
     
     func getFinancialHistory(completion: @escaping(([DocumentSnapshot]?, [DocumentSnapshot]?) -> Void)) {
         var credits: [DocumentSnapshot] = []

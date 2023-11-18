@@ -12,6 +12,7 @@ protocol RankingViewProtocol: AnyObject {
     func updateView(with model: RankingViewModel)
     func updateViewForPricesErrorState()
     func updateView(with firebaseDocumentSnapshot: FirstPlaceGiftsViewModel)
+    func showUnsufficentPlayersMessage()
 }
 
 final class RankingPresenter: RankingPresenterProtocol {
@@ -48,21 +49,26 @@ final class RankingPresenter: RankingPresenterProtocol {
             return false
         }
         
-        
-        firstPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
-            documentSnapshot: items[0],
-            place: 1)
+        if items.count >= 3 {
+            firstPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
+                documentSnapshot: items[0],
+                place: 1)
 
-        secondPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
-            documentSnapshot: items[1],
-            place: 2)
-   
-        thirdPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
-            documentSnapshot: items[2],
-            place: 3)
+            secondPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
+                documentSnapshot: items[1],
+                place: 2)
+       
+            thirdPlaceModel = parseDocumentSnapshotIntoBarAndTrophyViewModel(
+                documentSnapshot: items[2],
+                place: 3)
+            
+        } else {
+            DispatchQueue.main.async {
+                self.view?.showUnsufficentPlayersMessage()
+            }
+            return nil
+        }
         
-        
-
         for document in 3..<items.count {
             others?.append(
                 CommonnPlacesViewModel(
@@ -74,7 +80,9 @@ final class RankingPresenter: RankingPresenterProtocol {
         guard let firstPlaceModel,
               let secondPlaceModel,
               let thirdPlaceModel,
-              var others else { return nil }
+              var others else {
+            return nil
+        }
         
         others = others.sorted { $0.postion < $1.postion }
         

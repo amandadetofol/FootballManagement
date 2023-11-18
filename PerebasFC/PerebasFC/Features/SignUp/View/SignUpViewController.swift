@@ -96,4 +96,8 @@ extension SignUpViewController: SignUpViewProtocol {
         signUpView.showMismatchingPasswordError = true 
     }
     
+    func setupViewForTeamIdError(){
+        signUpView.showIdError = true 
+    }
+    
 }

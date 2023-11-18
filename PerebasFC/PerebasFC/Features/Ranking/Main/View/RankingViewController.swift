@@ -9,6 +9,7 @@ import UIKit
 
 protocol RankingInteractorProtocol {
     func viewDidLoad()
+    func showUnsufficentPlayersMessage() 
     func handleEditAwardsButtonTap(with model: EditAwardsViewModel)
 }
 
@@ -49,6 +50,10 @@ final class RankingViewController: UIViewController {
 }
 
 extension RankingViewController: RankingViewProtocol {
+    
+    func showUnsufficentPlayersMessage() {
+        interactor.showUnsufficentPlayersMessage()
+    }
     
     func updateViewForPricesErrorState() {
         rankingView.updateAwardsForErrorState()

@@ -80,7 +80,7 @@ final class RankingView: UIView {
     }
     
     func updateAwardsForErrorState(){
-        self.awardsView.isHidden = true
+        
     }
     
     func updateView(with model: RankingViewModel){

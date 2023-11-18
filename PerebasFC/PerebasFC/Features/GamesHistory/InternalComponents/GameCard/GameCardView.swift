@@ -215,9 +215,9 @@ final class GameCardView: UIControl {
         
         var result = ""
         if model.score?.blackTeamPoints ?? 0 > model.score?.whiteTeamPoints ?? 0 {
-            result = "Time preto ganhou de \(model.score?.blackTeamPoints ?? 0) a \(model.score?.whiteTeamPoints ?? 0)"
+            result = "Time B ganhou de \(model.score?.blackTeamPoints ?? 0) a \(model.score?.whiteTeamPoints ?? 0)"
         } else {
-            result = "Time branco ganhou de \(model.score?.whiteTeamPoints ?? 0) a \(model.score?.blackTeamPoints ?? 0)"
+            result = "Time A ganhou de \(model.score?.whiteTeamPoints ?? 0) a \(model.score?.blackTeamPoints ?? 0)"
         }
         
         var goals = ""

@@ -12,4 +12,5 @@ struct NewUserModel {
     let email: String
     let password: String
     let confirmPassword: String
+    let teamId: String 
 }

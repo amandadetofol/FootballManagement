@@ -18,7 +18,7 @@ final class SortMainWorker: SortMainWorkerProtocol {
     private let fireabaseFirestoreProvider = Firestore.firestore()
     
     func handleNewSort(completion: @escaping(([User]?, [User]?)-> Void)) {
-        fireabaseFirestoreProvider.document("sort/list").getDocument { [weak self] document, error in
+        fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/list").getDocument { [weak self] document, error in
             guard error == nil,
                   let self = self,
                   let document = document else {
@@ -36,12 +36,12 @@ final class SortMainWorker: SortMainWorkerProtocol {
             }
             
             listOfSorts.forEach { sort  in
-                self.fireabaseFirestoreProvider.document("sort/\(sort)").setData(["isActive": false])
+                self.fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(sort)").setData(["isActive": false])
             }
         }
         
         
-        fireabaseFirestoreProvider.collection("perebasfc").getDocuments { [weak self] documents, error in
+        fireabaseFirestoreProvider.collection(Session.shared.teamId ?? "").getDocuments { [weak self] documents, error in
             guard error == nil,
                   let documents = documents,
                   let self = self else {
@@ -58,7 +58,7 @@ final class SortMainWorker: SortMainWorkerProtocol {
             whiteTeam.forEach { user in
                 whiteTeamDate = Date()
                 self.fireabaseFirestoreProvider
-                    .document("sort/\(whiteTeamDate ?? Date())/whiteteam/\(user.email ?? "")")
+                    .document("\(Session.shared.teamId ?? "")/teamSort/sort/\(whiteTeamDate ?? Date())/whiteteam/\(user.email ?? "")")
                     .setData(
                         ["name" : user.firstName,
                          "lastName" : user.lastName,
@@ -70,7 +70,7 @@ final class SortMainWorker: SortMainWorkerProtocol {
             blackTeam.forEach { user in
                 blackTeamDate = Date()
                 self.fireabaseFirestoreProvider
-                    .document("sort/\(blackTeamDate ?? Date())/blackteam/\(user.email ?? "")")
+                    .document("\(Session.shared.teamId ?? "")/teamSort/sort/\(blackTeamDate ?? Date())/blackteam/\(user.email ?? "")")
                     .setData(
                         ["name" : user.firstName,
                          "lastName" : user.lastName,
@@ -79,14 +79,14 @@ final class SortMainWorker: SortMainWorkerProtocol {
                         ])
             }
             
-            self.fireabaseFirestoreProvider.document("sort/\(blackTeamDate ?? Date())").setData(["isActive": true])
-            self.fireabaseFirestoreProvider.document("sort/\(blackTeamDate ?? Date())").updateData(["sortDate": blackTeamDate?.toString() ?? ""])
+            self.fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(blackTeamDate ?? Date())").setData(["isActive": true])
+            self.fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(blackTeamDate ?? Date())").updateData(["sortDate": blackTeamDate?.toString() ?? ""])
             
-            self.fireabaseFirestoreProvider.document("sort/list").getDocument { document, error in
+            self.fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/list").getDocument { document, error in
                 guard let list = document?["list"] as? [String] else { return }
                 var myList = list
                 myList.append("\(blackTeamDate ?? Date())")
-                self.fireabaseFirestoreProvider.document("sort/list").setData(["list" : myList])
+                self.fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/list").setData(["list" : myList])
             }
             
             completion(whiteTeam, blackTeam)
@@ -95,7 +95,7 @@ final class SortMainWorker: SortMainWorkerProtocol {
     }
     
     func getSorts(completion: @escaping((SortFirebaseIncoming?)->Void)){
-        fireabaseFirestoreProvider.document("sort/list").getDocument { [weak self] document, error in
+        fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/list").getDocument { [weak self] document, error in
             guard error == nil,
                   let self = self,
                   let document = document else {
@@ -134,7 +134,7 @@ final class SortMainWorker: SortMainWorkerProtocol {
             for sort in listOfSorts {
                 dispatchGroup.enter()
                 
-                self.fireabaseFirestoreProvider.document("sort/\(sort)").collection("whiteteam").getDocuments { querySnapshot, error in
+                self.fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(sort)").collection("whiteteam").getDocuments { querySnapshot, error in
                     defer {
                         dispatchGroup.leave()
                     }
@@ -145,7 +145,7 @@ final class SortMainWorker: SortMainWorkerProtocol {
                 
                 dispatchGroup.enter()
                 
-                self.fireabaseFirestoreProvider.document("sort/\(sort)").collection("blackteam").getDocuments { querySnapshot, error in
+                self.fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(sort)").collection("blackteam").getDocuments { querySnapshot, error in
                     defer {
                         dispatchGroup.leave()
                     }
@@ -156,7 +156,7 @@ final class SortMainWorker: SortMainWorkerProtocol {
                 
                 dispatchGroup.enter()
                 
-                self.fireabaseFirestoreProvider.document("sort/\(sort)").getDocument { documentSnapshot, error in
+                self.fireabaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(sort)").getDocument { documentSnapshot, error in
                     defer {
                         dispatchGroup.leave()
                     }

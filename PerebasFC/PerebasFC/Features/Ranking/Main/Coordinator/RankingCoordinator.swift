@@ -12,6 +12,7 @@ protocol RankingCoordinatorProtocol {
     func dissmissLoading()
     func showAlertErrorPopUp()
     func goToShowEditAwardsView(model: EditAwardsViewModel)
+    func showUnsufficentPlayersMessage()
 }
 
 final class RankingCoordinator: RankingCoordinatorProtocol {
@@ -55,6 +56,20 @@ final class RankingCoordinator: RankingCoordinatorProtocol {
     
     func dissmissLoading(){
         loader.removeLoader()
+    }
+    
+    func showUnsufficentPlayersMessage(){
+        let alert = UIAlertController(
+            title: "Ops!",
+            message: "Para visualizar o ranking, você precisa ter no mínimo 3 membros no time. No entanto, você pode alterar as premiações.",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "Ok",
+                style: UIAlertAction.Style.default))
+        navigationController.present(
+            alert,
+            animated: true)
     }
     
 }

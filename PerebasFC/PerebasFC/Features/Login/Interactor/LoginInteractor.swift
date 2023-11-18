@@ -11,6 +11,7 @@ protocol LoginPresenterProtocol {
     func updateViewForInvalidEmailState()
     func updateViewForMandatoryUsernameError()
     func updateViewForMandatoryPasswordError()
+    func updateViewForMandatoryTeamIdError()
 }
 
 final class LoginInteractor: LoginInteractorProtocol {
@@ -27,7 +28,7 @@ final class LoginInteractor: LoginInteractorProtocol {
             self.worker = worker
         }
     
-    func goToLogin(_ username: String, _ password: String) {
+    func goToLogin(_ username: String, _ password: String, _ teamId: String) {
         var hasError = false
         
         if username.isEmpty {
@@ -45,9 +46,14 @@ final class LoginInteractor: LoginInteractorProtocol {
             hasError = true
         }
         
+        if teamId.isEmpty {
+            presenter.updateViewForMandatoryTeamIdError()
+            hasError = true
+        }
+        
         if !hasError {
             coordinator.showLoader()
-            worker.login(username: username, password: password) { [weak self] menuItems in
+            worker.login(username: username, password: password, id: teamId) { [weak self] menuItems in
                 self?.coordinator.removeLoader()
                 if let menuItems = menuItems {
                     self?.coordinator.goToLoggedArea(menuItems)
@@ -58,17 +64,8 @@ final class LoginInteractor: LoginInteractorProtocol {
         }
     }
     
-    func loginWithGoogle(controller: UIViewController){
-        worker.loginWithGoogle(
-            controller: controller) { [weak self] menuItems in
-                if let menuItems = menuItems {
-                    self?.coordinator.removeLoader()
-                    self?.coordinator.goToLoggedArea(menuItems)
-                } else {
-                    self?.coordinator.removeLoader()
-                    self?.presentViewForLoginError()
-                }
-            }
+    func updateViewForMandatoryTeamIdError() {
+        presenter.updateViewForMandatoryTeamIdError()
     }
     
     func presentViewForLoginError(){

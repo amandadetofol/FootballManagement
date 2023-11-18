@@ -17,7 +17,7 @@ final class WeekTeamWithApiCallWorker: WeekTeamWithApiCallWorkerProtocol {
     private let firebaseFirestoreProvider = Firestore.firestore()
     
     func getCurrentAvailableSortedTeams(completion: @escaping((QuerySnapshot?, QuerySnapshot?) -> Void)){
-        firebaseFirestoreProvider.document("sort/list").getDocument { [weak self] document, error in
+        firebaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/list").getDocument { [weak self] document, error in
             guard error == nil,
                   let self = self,
                   let document = document else {
@@ -58,7 +58,7 @@ final class WeekTeamWithApiCallWorker: WeekTeamWithApiCallWorkerProtocol {
             for sort in listOfSorts {
                 dispatchGroup.enter()
                 
-                self.firebaseFirestoreProvider.document("sort/\(sort)").collection("whiteteam").getDocuments { querySnapshot, error in
+                self.firebaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(sort)").collection("whiteteam").getDocuments { querySnapshot, error in
                     defer {
                         dispatchGroup.leave()
                     }
@@ -69,7 +69,7 @@ final class WeekTeamWithApiCallWorker: WeekTeamWithApiCallWorkerProtocol {
                 
                 dispatchGroup.enter()
                 
-                self.firebaseFirestoreProvider.document("sort/\(sort)").collection("blackteam").getDocuments { querySnapshot, error in
+                self.firebaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(sort)").collection("blackteam").getDocuments { querySnapshot, error in
                     defer {
                         dispatchGroup.leave()
                     }
@@ -80,7 +80,7 @@ final class WeekTeamWithApiCallWorker: WeekTeamWithApiCallWorkerProtocol {
                 
                 dispatchGroup.enter()
                 
-                self.firebaseFirestoreProvider.document("sort/\(sort)").getDocument { documentSnapshot, error in
+                self.firebaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/teamSort/sort/\(sort)").getDocument { documentSnapshot, error in
                     defer {
                         dispatchGroup.leave()
                     }

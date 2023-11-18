@@ -50,6 +50,11 @@ final class SignUpInteractor: SignUpInteractorProtocol {
             hasError = true
         }
         
+        if user.teamId.isEmpty {
+            presenter.setupViewForTeamIdError()
+            hasError = true
+        }
+        
         if hasError {
             return
         }

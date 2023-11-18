@@ -19,7 +19,7 @@ protocol GamesHistoryWorkerProtocol {
 final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
     
     private let firebaseFirestoreProvider = Firestore.firestore()
-    private let usersFirebaseReference = Firestore.firestore().collection("perebasfc")
+    private let usersFirebaseReference = Firestore.firestore().collection(Session.shared.teamId ?? "")
     var goals: [Game] = []
     
     func getParticipants(completion: @escaping ((QuerySnapshot?) -> Void)) {
@@ -33,7 +33,7 @@ final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
     }
     
     func getGamesHistory(_ completion: @escaping ((QuerySnapshot?) -> Void)) {
-        firebaseFirestoreProvider.collection("gamelist").getDocuments { querySnapShot, error in
+        firebaseFirestoreProvider.collection("\(Session.shared.teamId ?? "")/team/gamelist/").getDocuments { querySnapShot, error in
             guard error == nil,
                   let querySnapShot else {
                 completion(nil)
@@ -60,7 +60,7 @@ final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
                 }
             })
             
-            firebaseFirestoreProvider.document("gamelist/\(game.gameDate.replacingOccurrences(of: "/", with: "-"))").setData([
+            firebaseFirestoreProvider.document("\(Session.shared.teamId ?? "")/team/gamelist/\(game.gameDate.replacingOccurrences(of: "/", with: "-"))").setData([
                 "blackTeam": game.score?.blackTeamPoints ?? 0,
                 "whiteTeam": game.score?.whiteTeamPoints ?? 0,
                 "totalGoals": game.goals?.count ?? 0,
@@ -130,9 +130,9 @@ final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
                         guard let rankingPlace = document["rankingPlace"] as? Double else { return }
                         
                         if win {
-                            Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPlace - 0.25])
+                            Firestore.firestore().document("\(Session.shared.teamId ?? "")/\(document.documentID)").updateData(["rankingPlace" : rankingPlace - 0.25])
                         } else {
-                            Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPlace + 0.25])
+                            Firestore.firestore().document("\(Session.shared.teamId ?? "")/\(document.documentID)").updateData(["rankingPlace" : rankingPlace + 0.25])
                         }
 
                     }
@@ -162,9 +162,9 @@ final class GamesHistoryWorker: GamesHistoryWorkerProtocol {
                         guard let rankingPlace = document["rankingPlace"] as? Double else { return }
                         
                         if win {
-                            Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPlace - 0.25])
+                            Firestore.firestore().document("\(Session.shared.teamId ?? "")/\(document.documentID)").updateData(["rankingPlace" : rankingPlace - 0.25])
                         } else {
-                            Firestore.firestore().document("perebasfc/\(document.documentID)").updateData(["rankingPlace" : rankingPlace + 0.25])
+                            Firestore.firestore().document("\(Session.shared.teamId ?? "")/\(document.documentID)").updateData(["rankingPlace" : rankingPlace + 0.25])
                         }
 
                     }

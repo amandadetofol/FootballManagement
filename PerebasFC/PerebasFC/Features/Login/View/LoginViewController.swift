@@ -8,9 +8,8 @@
 import UIKit
 
 protocol LoginInteractorProtocol {
-    func goToLogin(_ username: String, _ password: String)
+    func goToLogin(_ username: String, _ password: String, _ teamId: String)
     func goToNewMemeberMessageView()
-    func loginWithGoogle(controller: UIViewController)
     func goToForgotPassword(_ username: String)
 }
 
@@ -28,7 +27,7 @@ final class LoginViewController: UIViewController {
     init(interactor: LoginInteractorProtocol){
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
-        title = "Login"
+        title = "Entrar"
         handleKeyBoardRemoveWhenClickOutsideField()
     }
     
@@ -51,6 +50,10 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewProtocol {
     
+    func updateViewForMandatoryTeamIdError() {
+        loginView.showTeamIdError = true 
+    }
+    
     func updateViewForInvalidEmailState() {
         loginView.showInvalidEmailError = true
     }
@@ -67,8 +70,8 @@ extension LoginViewController: LoginViewProtocol {
 
 extension LoginViewController: LoginViewDelegate {
     
-    func goToLogin(username: String, password: String) {
-        interactor.goToLogin(username, password)
+    func goToLogin(username: String, password: String, teamId: String) {
+        interactor.goToLogin(username, password, teamId)
     }
     
     func goToNewMemeberMessageView() {
@@ -77,10 +80,6 @@ extension LoginViewController: LoginViewDelegate {
     
     func goToForgotPassword(username: String) {
         interactor.goToForgotPassword(username)
-    }
-    
-    func loginWithGoogle(){
-        interactor.loginWithGoogle(controller: self)
     }
     
 }

@@ -18,7 +18,7 @@ final class MapWorker: MapWorkerProtocol {
     private let firestoreProvider = Firestore.firestore()
     
     func getLocal(completion: @escaping ((DocumentSnapshot?)-> Void)) {
-        firestoreProvider.collection("gamelocal").document("local").getDocument { documentSnapShot, error in
+        firestoreProvider.collection("\(Session.shared.teamId ?? "")/gamelocal/local").document("local").getDocument { documentSnapShot, error in
             guard error == nil,
                   let documentSnapShot = documentSnapShot else { return }
             completion(documentSnapShot)
@@ -28,7 +28,7 @@ final class MapWorker: MapWorkerProtocol {
     func updateGameLocal(
         gameLocalNewUrl: String,
         completion: @escaping((Bool)->Void)){
-            firestoreProvider.collection("gamelocal").document("local").updateData(["local": gameLocalNewUrl],
+            firestoreProvider.collection("\(Session.shared.teamId ?? "")/gamelocal/local").document("local").setData(["local": gameLocalNewUrl],
                                                                                    completion: { error in
                 guard error == nil else {
                     completion(false)

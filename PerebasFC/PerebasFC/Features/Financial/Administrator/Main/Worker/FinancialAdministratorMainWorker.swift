@@ -14,7 +14,7 @@ protocol FinancialAdministratorMainWorkerProtocol {
 
 final class FinancialAdministratorMainWorker: FinancialAdministratorMainWorkerProtocol {
     
-    private let firebaseFirestoreProvider = Firestore.firestore().document("financial/balance")
+    private let firebaseFirestoreProvider = Firestore.firestore().document("\(Session.shared.teamId ?? "")/financial/team/balance")
     
     func getCurrentBalance(completion: @escaping((DocumentSnapshot?)->Void)){
         firebaseFirestoreProvider.getDocument { documentSnapshot, error in

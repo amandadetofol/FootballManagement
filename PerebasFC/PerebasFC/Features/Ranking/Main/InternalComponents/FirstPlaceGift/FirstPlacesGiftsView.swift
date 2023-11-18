@@ -30,7 +30,7 @@ final class FirstPlacesGiftsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
-        button.isHidden = true
+        button.isHidden = false
         button.setImage(UIImage(systemName: "pencil"), for: .normal)
         button.tintColor = .systemBlue
         button.addTarget(self, action: #selector(handlEditAwardsButtontTap), for: .touchUpInside)
@@ -96,7 +96,7 @@ final class FirstPlacesGiftsView: UIView {
         firstAwardLabel.text = model.first
         secondAwardLabel.text = model.second
         thirdAwardLabel.text = model.third
-        editAwardsButton.isHidden = !model.isAdm
+        editAwardsButton.isHidden = (Session.shared.isAdm ?? false)
     }
     
     private func setupView(){

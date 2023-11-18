@@ -11,6 +11,7 @@ protocol LoginViewProtocol: AnyObject {
     func updateViewForMandatoryUsernameError()
     func updateViewForMandatoryPasswordError()
     func updateViewForInvalidEmailState()
+    func updateViewForMandatoryTeamIdError()
 }
 
 final class LoginPresenter: LoginPresenterProtocol {
@@ -25,8 +26,12 @@ final class LoginPresenter: LoginPresenterProtocol {
         view?.updateViewForMandatoryPasswordError()
     }
     
-    func updateViewForInvalidEmailState(){
+    func updateViewForInvalidEmailState() {
         view?.updateViewForInvalidEmailState()
+    }
+    
+    func updateViewForMandatoryTeamIdError() {
+        view?.updateViewForMandatoryTeamIdError()
     }
     
 }

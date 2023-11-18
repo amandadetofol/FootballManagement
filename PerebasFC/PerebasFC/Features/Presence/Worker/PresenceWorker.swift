@@ -15,8 +15,8 @@ protocol PresenceWorkerProtocol {
 
 final class PresenceWorker: PresenceWorkerProtocol {
     
-    private let usersFirebaseReference = Firestore.firestore().collection("perebasfc")
-    private let gamelistFirebaseReference = Firestore.firestore().collection("gamelist")
+    private let usersFirebaseReference = Firestore.firestore().collection(Session.shared.teamId ?? "")
+    private let gamelistFirebaseReference = Firestore.firestore().collection("\(Session.shared.teamId ?? "")/team/gamelist/")
     
     func getUsers(id: String, completion: @escaping ((QuerySnapshot?, Bool) -> Void )) {
         gamelistFirebaseReference.document(id).collection("presence").getDocuments { [weak self] querySnapShot, error in

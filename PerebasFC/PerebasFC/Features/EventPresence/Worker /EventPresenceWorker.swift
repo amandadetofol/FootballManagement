@@ -16,7 +16,7 @@ protocol EventPresenceWorkerProtocol {
 
 final class EventPresenceWorker: EventPresenceWorkerProtocol {
     
-    private let firebaseFirestoreProvider = Firestore.firestore().collection("events")
+    private let firebaseFirestoreProvider = Firestore.firestore().collection("\(Session.shared.teamId ?? "")/teamEvents/events")
  
     func getEventPresenceModel(
         itemId: String,

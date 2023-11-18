@@ -71,7 +71,7 @@ final class EditGameView: UIView {
     private lazy var whiteLabelScoreTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.title = "Placar (Time Branco)"
+        textField.title = "Placar (Time A)"
         textField.placeholder = "0"
         textField.delegate = self
         
@@ -81,7 +81,7 @@ final class EditGameView: UIView {
     private lazy var blackLabelScoreTextField: TextFieldComponent = {
         let textField = TextFieldComponent()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.title = "Placar (Time Preto)"
+        textField.title = "Placar (Time B)"
         textField.placeholder = "0"
         textField.delegate = self
         
@@ -102,7 +102,7 @@ final class EditGameView: UIView {
     private lazy var whiteGoalsStackViewTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Gols do time Branco"
+        label.text = "Gols do time A"
         label.numberOfLines = 1
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textColor = .gray
@@ -127,7 +127,7 @@ final class EditGameView: UIView {
     private lazy var blackGoalsStackViewTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Gols do time Preto"
+        label.text = "Gols do time B"
         label.numberOfLines = 1
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textColor = .gray

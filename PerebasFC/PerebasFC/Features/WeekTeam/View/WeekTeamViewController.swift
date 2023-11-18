@@ -18,7 +18,7 @@ final class WeekTeamViewController: UIViewController {
     private var interactor: WeekTeamInteractorProtocol
     
     private lazy var segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["Time Branco", "Time Preto"])
+        let segmentedControl = UISegmentedControl(items: ["Time A", "Time B"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.selectedSegmentIndex = 1
         segmentedControl.backgroundColor = .systemYellow.withAlphaComponent(0.20)

@@ -19,6 +19,12 @@ final class SignUpView: UIView {
         }
     }
     
+    var showIdError: Bool = false {
+        didSet {
+            teamIdTextField.showError = showIdError
+        }
+    }
+    
     var showInvalidEmailError: Bool = false {
         didSet {
             emailTextField.showError = true
@@ -107,6 +113,14 @@ final class SignUpView: UIView {
         return textField
     }()
     
+    private lazy var teamIdTextField: TextFieldComponent = {
+        let textField = TextFieldComponent()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.title = "ID do time"
+
+        return textField
+    }()
+    
     private lazy var isAdmLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -158,6 +172,7 @@ final class SignUpView: UIView {
             emailTextField,
             passwordTextField,
             passwordConfirmTextField,
+            teamIdTextField,
             isAdmLabel,
             isAdm,
             createNewUserButton
@@ -190,7 +205,10 @@ final class SignUpView: UIView {
             
             passwordTextField.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor, constant: 16),
             passwordTextField.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor, constant: -16),
-        
+            
+            teamIdTextField.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor, constant: 16),
+            teamIdTextField.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor, constant: -16),
+            
             isAdmLabel.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor, constant: 32),
             isAdmLabel.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor, constant: -24),
             
@@ -217,7 +235,8 @@ extension SignUpView {
                 isAdm: isAdm.isOn,
                 email: emailTextField.text,
                 password: passwordTextField.text,
-                confirmPassword: passwordConfirmTextField.text)
+                confirmPassword: passwordConfirmTextField.text,
+                teamId: teamIdTextField.text)
         )
     }
     

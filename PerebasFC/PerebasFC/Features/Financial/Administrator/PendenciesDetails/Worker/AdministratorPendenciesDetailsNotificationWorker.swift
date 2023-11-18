@@ -20,7 +20,7 @@ protocol AdministratorPendenciesDetailsNotificationWorkerProtocol {
 
 final class AdministratorPendenciesDetailsNotificationWorker: AdministratorPendenciesDetailsNotificationWorkerProtocol {
     
-    private let firebaseProvider = Firestore.firestore().collection("perebasfc")
+    private let firebaseProvider = Firestore.firestore().collection(Session.shared.teamId ?? "")
     
     func updateItemInFirebase(
         model: FinancialAdministratorPendenciesListCardModel,

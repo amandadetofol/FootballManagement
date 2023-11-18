@@ -40,14 +40,9 @@ final class HomeInteractor: HomeInteractorProtocol {
     }
     
     func handleInternalLinkRedirect(key: InternalLinkRedirectKeys) {
-        let teams = WeekTeamViewModel(
-            whiteTeam: Team(players: Session.shared.players),
-            blackTeam: Team(players: Session.shared.players))
-        
         coordinator.handleInternalLinkRedirect(
             key: key,
-            willShow: false,
-            teams: teams)
+            willShow: false)
     }
     
     func handleAccessibilityButtonTap(){

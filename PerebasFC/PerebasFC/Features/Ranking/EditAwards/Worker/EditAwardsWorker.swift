@@ -16,13 +16,13 @@ protocol EditAwardsWorkerProtocol {
 
 final class EditAwardsWorker: EditAwardsWorkerProtocol {
     
-    private let firebaseFirestoreRankingProvider = Firestore.firestore().collection("ranking").document("price")
+    private let firebaseFirestoreRankingProvider = Firestore.firestore().document("\(Session.shared.teamId ?? "")/ranking/team/price")
     
     func updateAwards(
         newAwards: FirstPlaceGiftsViewModel,
         completion: @escaping((Bool) -> Void)) {
             let firebaseFormattedNewAwards = [newAwards.first, newAwards.second, newAwards.third]
-            firebaseFirestoreRankingProvider.updateData([
+            firebaseFirestoreRankingProvider.setData([
                 "prices" : firebaseFormattedNewAwards
             ], completion: { error in
                 guard error == nil else {

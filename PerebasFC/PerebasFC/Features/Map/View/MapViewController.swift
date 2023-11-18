@@ -68,8 +68,12 @@ extension MapViewController: MapViewProtocol {
     func updateView(with url: String) {
         interactor.url = url 
         
-        let url = URL(string: url)!
-        webView.load(URLRequest(url: url))
+        if let url = URL(string: url) {
+            webView.load(URLRequest(url: url))
+        } else {
+            let url = URL(string: "https://www.google.com.br/maps")!
+            webView.load(URLRequest(url: url))
+        }
     }
     
 }

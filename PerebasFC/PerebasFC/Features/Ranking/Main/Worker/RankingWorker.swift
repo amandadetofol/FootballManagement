@@ -15,8 +15,8 @@ protocol RankingWorkerProtocol {
 
 final class RankingWorker: RankingWorkerProtocol {
 
-    private let firebaseUsersProvider = Firestore.firestore().collection("perebasfc")
-    private let firebaseFirestoreRankingPriceProvider = Firestore.firestore().collection("ranking").document("price")
+    private let firebaseUsersProvider = Firestore.firestore().collection("\(Session.shared.teamId ?? "")")
+    private let firebaseFirestoreRankingPriceProvider = Firestore.firestore().document("\(Session.shared.teamId ?? "")/ranking/team/price")
     
     func getPrices(_ completion: @escaping((DocumentSnapshot?)->Void)) {
         firebaseFirestoreRankingPriceProvider.getDocument { parseDocumentSnapshot, error in

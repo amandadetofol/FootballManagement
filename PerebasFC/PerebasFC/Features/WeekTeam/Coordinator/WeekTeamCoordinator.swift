@@ -33,8 +33,8 @@ final class WeekTeamCoordinator: WeekTeamCoordinatorProtocol {
     
     func showErrorView(){
         let alert = UIAlertController(
-            title: "Ops! Algo deu errado :(",
-            message: "Tente novamente!",
+            title: "Ops! :(",
+            message: "Não encontramos nenhum time disponível para essa semana!",
             preferredStyle: UIAlertController.Style.alert)
         alert.addAction(
             UIAlertAction(

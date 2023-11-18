@@ -56,7 +56,7 @@ final class FinancialCommonDetailsWorker: FinancialCommonDetailsWorkerProtocol {
         proofUrl: String,
         completion: @escaping(Bool)->Void){
             let email = Session.shared.loggedUserEmail ?? ""
-            let userReference = Firestore.firestore().collection("perebasfc/")
+            let userReference = Firestore.firestore().collection("\(Session.shared.teamId ?? "")/")
             let financialReference = userReference.document(email).collection("comum-financeiro").document("\(itemId)")
             financialReference.updateData([
                 "proofUrl" : proofUrl,

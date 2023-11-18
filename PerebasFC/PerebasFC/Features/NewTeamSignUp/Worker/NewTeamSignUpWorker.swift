@@ -39,6 +39,8 @@ final class NewTeamSignUpWorker: NewTeamSignUpWorkerProtocol {
                 }
             }
             
+            firestoreReference.document("\(id)/teamSort/sort/list").setData(["list" : [""]])
+            
             uploadImage(
                 image: model.profileImage,
                 id: id)

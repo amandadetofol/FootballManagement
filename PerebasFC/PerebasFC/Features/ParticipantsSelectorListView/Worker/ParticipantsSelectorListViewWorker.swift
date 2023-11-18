@@ -14,7 +14,7 @@ protocol ParticipantsSelectorListViewWorkerProtocol {
 
 final class ParticipantsSelectorListViewWorker: ParticipantsSelectorListViewWorkerProtocol {
     
-    private let firebaseFirestoreProvider = Firestore.firestore().collection("perebasfc")
+    private let firebaseFirestoreProvider = Firestore.firestore().collection(Session.shared.teamId ?? "")
     
     func getParticipants(completion: @escaping ((QuerySnapshot?) -> Void)) {
         firebaseFirestoreProvider.getDocuments { querySnapshot, error in

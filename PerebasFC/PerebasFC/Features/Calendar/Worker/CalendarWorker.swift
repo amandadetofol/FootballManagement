@@ -18,7 +18,7 @@ protocol CalendarWorkerProtol {
 
 final class CalendarWorker: CalendarWorkerProtol {
     
-    private let fireabaseFirestoreProvider = Firestore.firestore().collection("events")
+    private let fireabaseFirestoreProvider = Firestore.firestore().collection("\(Session.shared.teamId ?? "")/teamEvents/events")
     private let fireabaseSingleDocumentFirestoreProvider = Firestore.firestore()
     
     func getCalendarEvents(completion: @escaping ((QuerySnapshot?) -> Void)) {
@@ -37,7 +37,7 @@ final class CalendarWorker: CalendarWorkerProtol {
         itemId: String,
         completion: @escaping ((Bool) -> Void)){
             fireabaseSingleDocumentFirestoreProvider
-                .document("events/\(itemId)/prensence/\(Session.shared.loggedUserEmail ?? "")").setData(
+                .document("\(Session.shared.teamId ?? "")/teamEvents/events/\(itemId)/prensence/\(Session.shared.loggedUserEmail ?? "")").setData(
                     ["presence": true,
                      "numberOfCompanions": numberOfCompanions])
             completion(true)

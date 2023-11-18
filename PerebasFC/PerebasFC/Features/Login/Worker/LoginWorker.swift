@@ -14,9 +14,7 @@ protocol LoginWorkerProtocol {
     func login(
         username: String,
         password: String,
-        _ completion: @escaping (([MenuItemViewModel]?) -> Void))
-    func loginWithGoogle(
-        controller: UIViewController,
+        id: String,
         _ completion: @escaping (([MenuItemViewModel]?) -> Void))
 }
 
@@ -24,61 +22,69 @@ final class LoginWorker: LoginWorkerProtocol {
     
     private let firestoreProvider = Firestore.firestore()
     
-    func loginWithGoogle(
-        controller: UIViewController,
-        _ completion: @escaping ([MenuItemViewModel]?) -> Void) {
-            guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-            let config = GIDConfiguration(clientID: clientID)
-            GIDSignIn.sharedInstance.configuration = config
-            
-            GIDSignIn.sharedInstance.signIn(withPresenting: controller) { [unowned self] result, error in
-                guard error == nil,
-                      let user = result?.user,
-                      let idToken = user.idToken?.tokenString else {
+    func login(
+        username: String,
+        password: String,
+        id: String,
+        _ completion: @escaping (([MenuItemViewModel]?) -> Void)) {
+            idExists(id: id) { [weak self] idExists in
+                guard let self else { return }
+                
+                if !idExists {
                     completion(nil)
-                    return
-                }
-                
-                let credential = GoogleAuthProvider.credential(
-                    withIDToken: idToken,
-                    accessToken: user.accessToken.tokenString)
-                
-                Auth.auth().signIn(with: credential) { result, error in
-                    if (result?.user != nil) {
-                        Session.shared.isAdm = false
-                        completion(self.getMenuItemList(isAdm: false))
-                    } else {
-                        completion(nil)
+                } else {
+                    self.checkIfUserIsFromThisTeam(email: username, id: id) { isFromThisTeam in
+                        if isFromThisTeam {
+                            Auth.auth().signIn(
+                                withEmail: username,
+                                password: password) { [weak self] data, error  in
+                                    guard let self = self,
+                                          error == nil else {
+                                        completion(nil)
+                                        return
+                                    }
+                                    
+                                    self.checkIfUserIsAdm(email: username, id: id) { isAdm in
+                                        Session.shared.isAdm = isAdm
+                                        Session.shared.loggedUserEmail = username
+                                        Session.shared.teamId = id
+                                        completion(self.getMenuItemList(isAdm: isAdm))
+                                    }
+                                }
+                        } else {
+                            completion(nil)
+                        }
                     }
                 }
             }
         }
     
-    func login(
-        username: String,
-        password: String,
-        _ completion: @escaping (([MenuItemViewModel]?) -> Void)) {
-            
-            Auth.auth().signIn(
-                withEmail: username,
-                password: password) { [weak self] data, error  in
-                    guard let self = self,
-                          error == nil else {
-                        completion(nil)
-                        return
-                    }
-                
-                    self.checkIfUserIsAdm(email: username) { isAdm in
-                        Session.shared.isAdm = isAdm
-                        Session.shared.loggedUserEmail = username
-                        completion(self.getMenuItemList(isAdm: isAdm))
-                    }
-
-                }
+    private func idExists(id: String, completion: @escaping ((Bool) -> Void)){
+        let db = Firestore.firestore()
+        let documentReference = db.collection("team").document(id)
+        documentReference.getDocument { (document, error) in
+            if let document = document,
+               document.exists {
+                completion(true)
+            } else {
+                completion(false)
+            }
         }
+    }
     
-    private func checkIfUserIsAdm(email: String, completion: @escaping((Bool)-> Void)) {
-        firestoreProvider.collection("perebasfc").document(email).getDocument { document, error in
+    private func checkIfUserIsFromThisTeam(email: String, id: String, completion: @escaping((Bool)-> Void)) {
+        firestoreProvider.collection(id).document(email).getDocument { document, error in
+            guard error == nil,
+                  let email = document?["email"] as? String else {
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
+    
+    private func checkIfUserIsAdm(email: String, id: String, completion: @escaping((Bool)-> Void)) {
+        firestoreProvider.collection(id).document(email).getDocument { document, error in
             guard error == nil else {
                 completion(false)
                 return
