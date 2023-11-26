@@ -15,6 +15,12 @@ final class DeleteTeamView: UIView {
     
     weak var delegate: DeleteTeamViewDelegate?
     
+    var idTextFieldHasError: Bool = false {
+        didSet {
+            idTextField.showError = idTextFieldHasError
+        }
+    }
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -126,6 +132,8 @@ final class DeleteTeamView: UIView {
 extension DeleteTeamView {
     
     @objc func handleConfirmButtonTap(){
+        idTextField.showError = false 
+        
         delegate?.handleConfirmButtonTap(
             id: idTextField.text)
     }

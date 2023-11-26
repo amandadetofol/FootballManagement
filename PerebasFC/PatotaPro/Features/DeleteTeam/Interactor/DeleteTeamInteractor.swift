@@ -26,6 +26,15 @@ final class DeleteTeamInteractor: DeleteTeamInteractorProtocol {
     }
     
     func handleConfirmButtonTap(id: String) {
+        var hasError = false
+        
+        if id.isEmpty {
+            presenter.updateViewForIdTextFieldErrorState()
+            hasError = true
+        }
+        
+        if hasError { return }
+        
         coordinator.showLoading()
         worker.deleteTeam(
             id: id) { [weak self] succeded in

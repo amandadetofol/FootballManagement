@@ -48,7 +48,7 @@ final class LoginView: UIView {
     private lazy var usernameTextField: TextFieldComponent = {
         let textfield = TextFieldComponent()
         textfield.translatesAutoresizingMaskIntoConstraints = false
-        textfield.placeholder = "E-mail"
+        textfield.title = "E-mail"
         
         return textfield
     }()
@@ -57,7 +57,7 @@ final class LoginView: UIView {
         let textfield = TextFieldComponent()
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.isSafeTextField = true
-        textfield.placeholder = "Senha"
+        textfield.title = "Senha"
         textfield.showEyeButton()
         
         return textfield
@@ -66,7 +66,7 @@ final class LoginView: UIView {
     private lazy var teamIdTextField: TextFieldComponent = {
         let textfield = TextFieldComponent()
         textfield.translatesAutoresizingMaskIntoConstraints = false
-        textfield.placeholder = "ID do time"
+        textfield.title = "ID do time"
         
         return textfield
     }()
@@ -112,12 +112,19 @@ final class LoginView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
+        updateViewWithSavedCode()
         self.backgroundColor = .systemBackground
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateViewWithSavedCode(){
+        if let code = UserDefaults.standard.string(forKey: "recentTeamCode") {
+            teamIdTextField.text = code
+        }
     }
     
     private func setupView(){

@@ -9,10 +9,12 @@ import Foundation
 
 protocol DeleteTeamPresenterProtocol {
     func updateView()
+    func updateViewForIdTextFieldErrorState()
 }
 
 protocol DeleteTeamViewProtocol: AnyObject {
     func updateView(with model: DeleteTeamViewModel)
+    func updateViewForIdTextFieldErrorState()
 }
 
 final class DeleteTeamPresenter: DeleteTeamPresenterProtocol {
@@ -25,6 +27,10 @@ final class DeleteTeamPresenter: DeleteTeamPresenterProtocol {
                 message: "Digite o ID do time que você deseja excluir. Ao excluir o time, todos os usuários que fazem parte desse time serão desvinculados deste time também. ",
                 title: "ID do time",
                 buttonTitle: "Confirmar"))
+    }
+    
+    func updateViewForIdTextFieldErrorState(){
+        view?.updateViewForIdTextFieldErrorState()
     }
     
 }

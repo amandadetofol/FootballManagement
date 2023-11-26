@@ -51,6 +51,10 @@ extension DeleteTeamViewController: DeleteTeamViewProtocol {
         deleteTeamView.updateView(with: model)
     }
     
+    func updateViewForIdTextFieldErrorState(){
+        deleteTeamView.idTextFieldHasError = true 
+    }
+    
 }
 
 extension DeleteTeamViewController: DeleteTeamViewDelegate {

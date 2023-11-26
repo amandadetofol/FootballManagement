@@ -16,6 +16,7 @@ protocol LoginWorkerProtocol {
         password: String,
         id: String,
         _ completion: @escaping (([MenuItemViewModel]?) -> Void))
+    func saveCodeFromUserDefaults(code: String)
 }
 
 final class LoginWorker: LoginWorkerProtocol {
@@ -48,6 +49,8 @@ final class LoginWorker: LoginWorkerProtocol {
                                         Session.shared.isAdm = isAdm
                                         Session.shared.loggedUserEmail = username
                                         Session.shared.teamId = id
+                                        self.saveCodeFromUserDefaults(code: id)
+                                    
                                         completion(self.getMenuItemList(isAdm: isAdm))
                                     }
                                 }
@@ -70,6 +73,11 @@ final class LoginWorker: LoginWorkerProtocol {
                 completion(false)
             }
         }
+    }
+    
+    func saveCodeFromUserDefaults(code: String){
+        UserDefaults.standard.set(code, forKey: "recentTeamCode")
+        UserDefaults.standard.synchronize()
     }
     
     private func checkIfUserIsFromThisTeam(email: String, id: String, completion: @escaping((Bool)-> Void)) {
