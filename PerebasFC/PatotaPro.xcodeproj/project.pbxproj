@@ -78,6 +78,14 @@
 		A620C7272ABD1E7E00CC0472 /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A620C7262ABD1E7E00CC0472 /* UiViewController.swift */; };
 		A628AC3B2ADB1FD00037F48B /* NameAndValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A628AC3A2ADB1FD00037F48B /* NameAndValueView.swift */; };
 		A62A5E1C2B137D17000DEAFD /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E1B2B137D17000DEAFD /* HomeWorker.swift */; };
+		A62A5E262B1398B1000DEAFD /* DeleteTeamWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E252B1398B1000DEAFD /* DeleteTeamWorker.swift */; };
+		A62A5E282B1398BD000DEAFD /* DeleteTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E272B1398BD000DEAFD /* DeleteTeamView.swift */; };
+		A62A5E2A2B1398C8000DEAFD /* DeleteTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E292B1398C8000DEAFD /* DeleteTeamInteractor.swift */; };
+		A62A5E2C2B1398E2000DEAFD /* DeleteTeamFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E2B2B1398E2000DEAFD /* DeleteTeamFactory.swift */; };
+		A62A5E2E2B1398EE000DEAFD /* DeleteTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E2D2B1398EE000DEAFD /* DeleteTeamPresenter.swift */; };
+		A62A5E302B139902000DEAFD /* DeleteTeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E2F2B139902000DEAFD /* DeleteTeamCoordinator.swift */; };
+		A62A5E322B139910000DEAFD /* DeleteTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E312B139910000DEAFD /* DeleteTeamModel.swift */; };
+		A62A5E342B13A0B0000DEAFD /* DeleteTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5E332B13A0B0000DEAFD /* DeleteTeamViewController.swift */; };
 		A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */; };
 		A62C1CBF2A36111C002AA401 /* CalendarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */; };
 		A62C1CC12A3613EC002AA401 /* CalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */; };
@@ -394,6 +402,14 @@
 		A620C7262ABD1E7E00CC0472 /* UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewController.swift; sourceTree = "<group>"; };
 		A628AC3A2ADB1FD00037F48B /* NameAndValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameAndValueView.swift; sourceTree = "<group>"; };
 		A62A5E1B2B137D17000DEAFD /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		A62A5E252B1398B1000DEAFD /* DeleteTeamWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamWorker.swift; sourceTree = "<group>"; };
+		A62A5E272B1398BD000DEAFD /* DeleteTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamView.swift; sourceTree = "<group>"; };
+		A62A5E292B1398C8000DEAFD /* DeleteTeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamInteractor.swift; sourceTree = "<group>"; };
+		A62A5E2B2B1398E2000DEAFD /* DeleteTeamFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamFactory.swift; sourceTree = "<group>"; };
+		A62A5E2D2B1398EE000DEAFD /* DeleteTeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamPresenter.swift; sourceTree = "<group>"; };
+		A62A5E2F2B139902000DEAFD /* DeleteTeamCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamCoordinator.swift; sourceTree = "<group>"; };
+		A62A5E312B139910000DEAFD /* DeleteTeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamModel.swift; sourceTree = "<group>"; };
+		A62A5E332B13A0B0000DEAFD /* DeleteTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamViewController.swift; sourceTree = "<group>"; };
 		A62C1CBB2A360172002AA401 /* CalendarItemViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemViewRepresentable.swift; sourceTree = "<group>"; };
 		A62C1CBE2A36111C002AA401 /* CalendarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWorker.swift; sourceTree = "<group>"; };
 		A62C1CC02A3613EC002AA401 /* CalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInteractor.swift; sourceTree = "<group>"; };
@@ -1338,6 +1354,77 @@
 			path = Worker;
 			sourceTree = "<group>";
 		};
+		A62A5E1D2B13983E000DEAFD /* DeleteTeam */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5E242B139872000DEAFD /* Model */,
+				A62A5E232B139863000DEAFD /* Coordinator */,
+				A62A5E222B13985E000DEAFD /* Presenter */,
+				A62A5E212B139859000DEAFD /* Factory */,
+				A62A5E202B139852000DEAFD /* Interactor */,
+				A62A5E1F2B13984F000DEAFD /* View */,
+				A62A5E1E2B13984C000DEAFD /* Worker */,
+			);
+			path = DeleteTeam;
+			sourceTree = "<group>";
+		};
+		A62A5E1E2B13984C000DEAFD /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5E252B1398B1000DEAFD /* DeleteTeamWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		A62A5E1F2B13984F000DEAFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5E272B1398BD000DEAFD /* DeleteTeamView.swift */,
+				A62A5E332B13A0B0000DEAFD /* DeleteTeamViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A62A5E202B139852000DEAFD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5E292B1398C8000DEAFD /* DeleteTeamInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A62A5E212B139859000DEAFD /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5E2B2B1398E2000DEAFD /* DeleteTeamFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A62A5E222B13985E000DEAFD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5E2D2B1398EE000DEAFD /* DeleteTeamPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A62A5E232B139863000DEAFD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5E2F2B139902000DEAFD /* DeleteTeamCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A62A5E242B139872000DEAFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5E312B139910000DEAFD /* DeleteTeamModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A62C1CBD2A3607DF002AA401 /* InternalComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -2016,6 +2103,7 @@
 		A680E1012A24104C008FA008 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A62A5E1D2B13983E000DEAFD /* DeleteTeam */,
 				A69B4CA12AF674F600D150B0 /* NewTeamSignUp */,
 				A61C0CB92AAFD07D0012BACC /* SignUp */,
 				A658B39A2AABFDCF00C89D63 /* EventPresence */,
@@ -3284,6 +3372,7 @@
 				A6D2488B2A830D28004951FD /* ParticipantCellView.swift in Sources */,
 				A6730F072AAA5733000D6B72 /* PresenceCardViewModel.swift in Sources */,
 				A6E6BB182A733B0C0063A62A /* SignOutWorker.swift in Sources */,
+				A62A5E262B1398B1000DEAFD /* DeleteTeamWorker.swift in Sources */,
 				A69B4CB62AF6758600D150B0 /* NewTeamSignUpCoordinator.swift in Sources */,
 				A65663092A96CAB900EEC58D /* MapWorker.swift in Sources */,
 				A6AF78CA2AA6A17C00174B83 /* ParticipantsSelectorListViewFactory.swift in Sources */,
@@ -3297,6 +3386,7 @@
 				A6E317A92A942AD30096DA4B /* AdministratorPendenciesDetailsNotificationWorker.swift in Sources */,
 				A6993E372A2BFB5400C2BDE3 /* PersonalInformationsViewModel.swift in Sources */,
 				A64161AC2A898ED300BF45C4 /* AccessibilityManagerViewController.swift in Sources */,
+				A62A5E342B13A0B0000DEAFD /* DeleteTeamViewController.swift in Sources */,
 				A6730EFF2AAA54B3000D6B72 /* PresenceInteractor.swift in Sources */,
 				A637DDF02A4A4B300017857D /* EditGamePresenter.swift in Sources */,
 				A6AACC3E2AD4BC3F00EF1A10 /* FinancialAdministratorMainWorker.swift in Sources */,
@@ -3352,12 +3442,14 @@
 				A6D248892A830CD9004951FD /* ParticipantsManagerWorker.swift in Sources */,
 				A60319F62A9172F600E19E3A /* AdministratorPendenciesFactory.swift in Sources */,
 				A69285152A8EDF54000E618D /* NewItemViewController.swift in Sources */,
+				A62A5E2C2B1398E2000DEAFD /* DeleteTeamFactory.swift in Sources */,
 				A64E76932AC7909000BCD77C /* SortFirebaseIncoming.swift in Sources */,
 				A69285192A8EDF69000E618D /* NewItemInteractor.swift in Sources */,
 				A6AF78CC2AA6A19300174B83 /* ParticipantsSelectorListViewCoordinator.swift in Sources */,
 				A61A8FA12A1C21FA009D08EE /* ForgotPasswordInteractor.swift in Sources */,
 				A6E0E9F22A20327600121515 /* HomeFactory.swift in Sources */,
 				A62C1CBC2A360172002AA401 /* CalendarItemViewRepresentable.swift in Sources */,
+				A62A5E2A2B1398C8000DEAFD /* DeleteTeamInteractor.swift in Sources */,
 				A64161AA2A898EBC00BF45C4 /* AccessibilityManagerView.swift in Sources */,
 				A6730F032AAA54C8000D6B72 /* PresenceView.swift in Sources */,
 				A641619C2A898E4B00BF45C4 /* AccessibilityManagerFactory.swift in Sources */,
@@ -3386,12 +3478,14 @@
 				A680E10C2A2410AA008FA008 /* WeekTeamViewModel.swift in Sources */,
 				A6AF78C02AA6A12000174B83 /* ParticipantsSelectorListViiew.swift in Sources */,
 				A61C0CC92AAFD1250012BACC /* SignUpFactory.swift in Sources */,
+				A62A5E302B139902000DEAFD /* DeleteTeamCoordinator.swift in Sources */,
 				A6993E312A2BFB2900C2BDE3 /* PersonalInformationsWorker.swift in Sources */,
 				A6E0E9EC2A202A7C00121515 /* HomeInteractor.swift in Sources */,
 				A65662F92A96CA8000EEC58D /* MapCoordinator.swift in Sources */,
 				A61A8F9F2A1C20FA009D08EE /* ForgotPasswordViewController.swift in Sources */,
 				A61A8F822A1435EB009D08EE /* LoginCoordinator.swift in Sources */,
 				A69E89282A8AEB3E008C09DC /* HideAndShowBalanceView.swift in Sources */,
+				A62A5E322B139910000DEAFD /* DeleteTeamModel.swift in Sources */,
 				A60319F82A91730300E19E3A /* AdministratorPendenciesViewModel.swift in Sources */,
 				A6A7418A2A26C2F6009A7998 /* GamesHistoryCoordinator.swift in Sources */,
 				A61CFFF42A3BDC330026BAF1 /* EditAwardsViewController.swift in Sources */,
@@ -3476,6 +3570,7 @@
 				A69B4CB82AF6759200D150B0 /* NewTeamSignUpModel.swift in Sources */,
 				A637DDFD2A4A55660017857D /* EditGameGoalInformationsCardView.swift in Sources */,
 				A64912422A33BAA700356B7B /* CalendarViewController.swift in Sources */,
+				A62A5E2E2B1398EE000DEAFD /* DeleteTeamPresenter.swift in Sources */,
 				A69285132A8EDF4B000E618D /* NewItemView.swift in Sources */,
 				A69B4CAE2AF6755A00D150B0 /* NewTeamSignUpWorker.swift in Sources */,
 				A6993E182A2BB53B00C2BDE3 /* RankingInteractor.swift in Sources */,
@@ -3490,6 +3585,7 @@
 				A69E893C2A8AF174008C09DC /* TitleAndDescriptionCardView.swift in Sources */,
 				A6A741682A2562C3009A7998 /* WeekTeamPresenter.swift in Sources */,
 				A61A8FB22A1C2DE8009D08EE /* HomeView.swift in Sources */,
+				A62A5E282B1398BD000DEAFD /* DeleteTeamView.swift in Sources */,
 				A6031A1C2A91895D00E19E3A /* AdministratorPendenciesDetailsFactory.swift in Sources */,
 				A61CFFF62A3BDC3C0026BAF1 /* EditAwardsInteractor.swift in Sources */,
 				A6A741662A2561ED009A7998 /* WeekTeamInteractor.swift in Sources */,

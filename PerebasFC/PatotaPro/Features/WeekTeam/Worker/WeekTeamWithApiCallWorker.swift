@@ -34,6 +34,11 @@ final class WeekTeamWithApiCallWorker: WeekTeamWithApiCallWorkerProtocol {
                 item.isEmpty
             }
             
+            if listOfSorts.isEmpty {
+                completion(nil, nil)
+                return
+            }
+            
             self.fetchData(listOfSorts: [listOfSorts.last ?? ""]) { whiteTeams, blackTeams, others in
                 guard let whiteTeam = whiteTeams.first,
                       let blackTeam = blackTeams.first else {

@@ -65,6 +65,13 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
         key: InternalLinkRedirectKeys,
         willShow: Bool? = false) {
             switch key {
+            case .delete:
+                self.navigationController.pushViewController(
+                    DeleteTeamFactory.getDeleteTeamViewController(
+                        navigationController: navigationController),
+                    animated: true)
+                return
+                
             case .map:
                 self.navigationController.pushViewController(
                     MapFactory.getMapViewController(

@@ -104,6 +104,11 @@ extension LoginWorker {
             icon: UIImage(systemName: "folder.badge.person.crop") ?? UIImage(),
             redirectKey: .myData)
         
+        let deleteTeam = MenuItemViewModel(
+            title: "Excluir time",
+            icon: UIImage(systemName: "trash.fill") ?? UIImage(),
+            redirectKey: .delete)
+        
         let financial = MenuItemViewModel(
             title: "Financeiro",
             icon: UIImage(systemName: "dollarsign.arrow.circlepath") ?? UIImage(),
@@ -157,7 +162,7 @@ extension LoginWorker {
         if !isAdm {
             return [myData, financial, calendar, map, chat, ranking, gamesHistory, team]
         } else {
-            return [myData, admfinancial, calendar, map, chat, ranking, gamesHistory, team, sort, participants]
+            return [myData, admfinancial, calendar, map, chat, ranking, gamesHistory, team, sort, participants, deleteTeam]
         }
     }
     

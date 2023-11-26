@@ -20,4 +20,5 @@ enum InternalLinkRedirectKeys: Equatable {
     case participants
     case map
     case out
+    case delete
 }
