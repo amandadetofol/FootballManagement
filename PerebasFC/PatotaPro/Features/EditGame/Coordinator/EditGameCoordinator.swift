@@ -37,7 +37,7 @@ final class EditGameCoordinator: EditGameCoordinatorProtocol {
         navigationController.pushViewController(
             PresenceFactory.getPresenceViewController(
                 navigationController: navigationController,
-                gameId: game.gameDate.replacingOccurrences(of: "/", with: "-")),
+                gameId: game.date.formatData().replacingOccurrences(of: "/", with: "-")),
             animated: true)
     }
     

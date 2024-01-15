@@ -32,7 +32,13 @@ final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
                 self?.coordinator.showAlertErrorView()
                 return
             }
-            self?.presenter.updateView(using: game)
+            
+            if game.count == 0 {
+                self?.coordinator.showEmptyAlert()
+            } else {
+                self?.presenter.updateView(using: game)
+            }
+            
         }
     }
     

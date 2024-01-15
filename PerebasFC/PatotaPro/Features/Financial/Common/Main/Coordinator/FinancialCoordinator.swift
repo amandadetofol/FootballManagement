@@ -10,6 +10,7 @@ import UIKit
 protocol FinancialCoordinatorProtocol {
     func showLoading()
     func removeLoading()
+    func showEmptyAlert()
     func gotoFinancialDetails(with model: FinancialPendencieCardViewModel)
 }
 
@@ -52,6 +53,20 @@ final class FinancialCoordinator: FinancialCoordinatorProtocol {
     
     func removeLoading(){
         loader.removeLoader()
+    }
+    
+    func showEmptyAlert(){
+        let alert = UIAlertController(
+            title: "Nenhum dado encontrado!",
+            message: "Não se preocupe, assim que o administrador adicionar uma pendencia ou um crédito ele aparecerá aqui.",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default))
+        navigationController.present(
+            alert,
+            animated: true)
     }
     
 }

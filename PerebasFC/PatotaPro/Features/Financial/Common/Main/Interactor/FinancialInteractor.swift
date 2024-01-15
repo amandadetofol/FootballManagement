@@ -28,11 +28,18 @@ final class FinancialInteractor: FinancialPendenciesInteractorProtocol {
     }
     
     func viewDidLoad() {
-        coordinator.showLoading()
         worker.getFinancialData { [weak self] data in
             guard let self else { return }
-            self.coordinator.removeLoading()
-            self.presenter.updateView(with: data)
+            
+            if data?.count == 0 {
+                DispatchQueue.main.async {
+                    self.coordinator.showEmptyAlert()
+                }
+                
+            } else {
+                self.presenter.updateView(with: data)
+            }
+            
         }
     }
     

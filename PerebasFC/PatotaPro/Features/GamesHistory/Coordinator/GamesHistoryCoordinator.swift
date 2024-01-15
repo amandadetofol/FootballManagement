@@ -14,6 +14,7 @@ protocol GamesHistoryCoordinatorProtocol {
     func showLoading()
     func removeLoading()
     func showSuccessAddGameAlert()
+    func showEmptyAlert()
 }
 
 final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
@@ -69,6 +70,20 @@ final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
     
     func removeLoading(){
         loader.removeLoader()
+    }
+    
+    func showEmptyAlert(){
+        let alert = UIAlertController(
+            title: "Nenhum jogo encontrado!",
+            message: "Parece que o histórico de jogos da sua patota está vazio. Não se preocupe, assim que o administrador adicionar um jogo no histórico, ele aparecerá aqui.",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default))
+        navigationController.present(
+            alert,
+            animated: true)
     }
     
     func showSuccessAddGameAlert(){

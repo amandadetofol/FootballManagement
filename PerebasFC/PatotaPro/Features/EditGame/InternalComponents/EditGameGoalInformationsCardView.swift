@@ -126,7 +126,7 @@ final class EditGameGoalInformationsCardView: UIView {
             playersPickerView,
             timePicker])
         setupBorders()
-        backgroundColor = .systemYellow.withAlphaComponent(0.10)
+        backgroundColor = Session.shared.highLightColor.withAlphaComponent(0.10)
     }
     
     private func setupConstraints(){

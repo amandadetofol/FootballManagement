@@ -158,7 +158,7 @@ final class NewItemView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Selecionar participante", for: .normal)
-        button.backgroundColor = .brown
+        button.backgroundColor = Session.shared.highLightColor
         button.setTitleColor(.white, for: .normal)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10

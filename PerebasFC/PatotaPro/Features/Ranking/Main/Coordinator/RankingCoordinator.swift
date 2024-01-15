@@ -51,7 +51,7 @@ final class RankingCoordinator: RankingCoordinatorProtocol {
     }
     
     func showLoading(){
-        loader.showLoader()
+      //
     }
     
     func dissmissLoading(){

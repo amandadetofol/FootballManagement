@@ -6015,5 +6015,948 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0E87D99-476A-4AF6-BB24-F35F848E6661"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/InternalComponents/FirstPlaceGift/FirstPlacesGiftsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "updateView(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAAD0906-C587-4B40-855F-E11A644D9FDC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DAAD0906-C587-4B40-855F-E11A644D9FDC - 5930adceed5e223b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PatotaPro.RankingViewModel&gt;"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "544">
+               </Location>
+               <Location
+                  uuid = "DAAD0906-C587-4B40-855F-E11A644D9FDC - 5930adceed5e223b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PatotaPro.RankingViewModel&gt;"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "428">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE96DA57-4249-49D6-AE83-1E1D4364DD47"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "parseQuerySnapshotIntoRankingViewModel(model:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EE96DA57-4249-49D6-AE83-1E1D4364DD47 - 5930adceed5e2049"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PatotaPro.RankingViewModel&gt;"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "612">
+               </Location>
+               <Location
+                  uuid = "EE96DA57-4249-49D6-AE83-1E1D4364DD47 - fc45ac2d51be8b11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in PatotaPro.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PatotaPro.RankingViewModel&gt;"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "EE96DA57-4249-49D6-AE83-1E1D4364DD47 - 5930adceed5e2049"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.RankingPresenter.parseQuerySnapshotIntoRankingViewModel(model: __C.FIRQuerySnapshot) -&gt; Swift.Optional&lt;PatotaPro.RankingViewModel&gt;"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Ranking/Main/Presenter/RankingPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85886778-FB23-4ED7-9CB7-8A5193D9D860"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Coordinator/RankingCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "showUnsufficentPlayersMessage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F309426-D922-4FD5-8C30-8F5467BAAA52"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Coordinator/RankingCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "showUnsufficentPlayersMessage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "518AD6AE-A5DE-490A-9376-92F4FC683E31"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Interactor/RankingInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "518AD6AE-A5DE-490A-9376-92F4FC683E31 - f808602823bc83f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;) -&gt; () in PatotaPro.RankingInteractor.viewDidLoad() -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Ranking/Main/Interactor/RankingInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "518AD6AE-A5DE-490A-9376-92F4FC683E31 - ac4a7a5bc7d99242"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;) -&gt; () in PatotaPro.RankingInteractor.viewDidLoad() -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Ranking/Main/Interactor/RankingInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AECB6A96-8F1E-44E8-8937-C0B06E7CD19D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Interactor/RankingInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC6C067C-63AB-4C13-B3C0-9AB4F125209C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Interactor/RankingInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82AFA1F6-EB7E-4E63-B31D-49B2525E95C1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Coordinator/RankingCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "showUnsufficentPlayersMessage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CA82CA5-A0F5-4508-BF84-A91CB0F7E960"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getUsers(id:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4CA82CA5-A0F5-4508-BF84-A91CB0F7E960 - 7e8f10c9eadda0b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.PresenceWorker.getUsers(id: Swift.String, completion: (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "4CA82CA5-A0F5-4508-BF84-A91CB0F7E960 - 844e17fe937c17ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PatotaPro.PresenceWorker.getUsers(id: Swift.String, completion: (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F7163C5-2362-41A1-AF18-A92BE38FCE05"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getUsers(id:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6426F916-1533-4856-8BA3-21ACE72A6F46"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Interactor/PresenceInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6426F916-1533-4856-8BA3-21ACE72A6F46 - 7578177a85aa8e08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.PresenceInteractor.viewDidLoad() -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Presence/Interactor/PresenceInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "6426F916-1533-4856-8BA3-21ACE72A6F46 - 5dc40ced3462feec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Bool) -&gt; () in PatotaPro.PresenceInteractor.viewDidLoad() -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Presence/Interactor/PresenceInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFD32144-324F-4CD7-975F-56D5593BD999"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Interactor/PresenceInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(presenter:worker:coordinator:gameId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A280573-2A1C-43E2-91DB-371230C8C307"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Factory/PresenceFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getPresenceViewController(navigationController:gameId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E170D949-31F4-4946-B495-CC4AEDCD8AD5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "handleAddListOfPresenceButtonTap(game:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E170D949-31F4-4946-B495-CC4AEDCD8AD5 - d4b43c3373eb192e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "E170D949-31F4-4946-B495-CC4AEDCD8AD5 - d4b43c3373eb192e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D978F990-1959-4C03-AEBA-E7CC759971CD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "handleAddListOfPresenceButtonTap(game:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D978F990-1959-4C03-AEBA-E7CC759971CD - d4b43c3373eb190d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "D978F990-1959-4C03-AEBA-E7CC759971CD - d4b43c3373eb190d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DFA16EE-7669-4F88-B6B3-4BA538A5F396"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "handleAddListOfPresenceButtonTap(game:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4DFA16EE-7669-4F88-B6B3-4BA538A5F396 - d4b43c3373eb196c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "4DFA16EE-7669-4F88-B6B3-4BA538A5F396 - d4b43c3373eb196c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "516">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C731FF6-8A6B-44A2-A24D-DC25AAD79783"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "handleAddListOfPresenceButtonTap(game:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7C731FF6-8A6B-44A2-A24D-DC25AAD79783 - d4b43c3373eb194b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "7C731FF6-8A6B-44A2-A24D-DC25AAD79783 - d4b43c3373eb194b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C36BF900-C381-4CB1-B57D-1B5A1C49920A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "handleAddListOfPresenceButtonTap(game:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C36BF900-C381-4CB1-B57D-1B5A1C49920A - d4b43c3373eb194b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "C36BF900-C381-4CB1-B57D-1B5A1C49920A - d4b43c3373eb194b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.EditGameCoordinator.handleAddListOfPresenceButtonTap(game: PatotaPro.Game) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/EditGame/Coordinator/EditGameCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81FDF250-F558-4736-93D3-3FB98D6BA7F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/View/EditGameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "handleSaveNewGameInformationsButtonTap(game:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C32B6A26-8BB3-4545-813E-F350D04C1AFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/Interactor/EditGameInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "EditGameInteractor"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67340722-A3F9-4A29-A162-4783CCB76EB5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/Interactor/EditGameInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(presenter:coordinator:worker:model:isNewGame:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2374E743-A334-40BB-948E-C1EEF1591BEA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/View/EditGameView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
+            landmarkName = "handleSaveNewGameInformationsButtonTap()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0CAEA446-06C5-4E67-8B98-30DB4B180997"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/EditGame/View/EditGameView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
+            landmarkName = "handleSaveNewGameInformationsButtonTap()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC415178-7C31-4856-92A6-A392D770EB42"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "savePresence(presence:completion:id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C7E7DAF-4BF3-453E-850A-E76C8D5CC532"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "savePresence(presence:completion:id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C7E7DAF-4BF3-453E-850A-E76C8D5CC532 - 8acdcc7e0e373212"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatotaPro.PresenceWorker.savePresence(presence: Swift.Array&lt;PatotaPro.PresenceCardViewModel&gt;, completion: (Swift.Bool) -&gt; (), id: Swift.String) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "4C7E7DAF-4BF3-453E-850A-E76C8D5CC532 - e5ea2f23113fe741"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PatotaPro.PresenceCardViewModel) -&gt; () in PatotaPro.PresenceWorker.savePresence(presence: Swift.Array&lt;PatotaPro.PresenceCardViewModel&gt;, completion: (Swift.Bool) -&gt; (), id: Swift.String) -&gt; ()"
+                  moduleName = "PatotaPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amandadetofol/Desktop/TCC/Pra%CC%81tica/FootballManagement/PerebasFC/PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87AFF940-981F-479F-8F2C-955363CE8F85"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "savePresence(presence:completion:id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "719B69C4-E740-42FE-8739-5B56CC6A8A10"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Presence/Worker/PresenceWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "savePresence(presence:completion:id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD8D3A67-A2D5-4C7B-BB30-F576A163FBE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Financial/Common/Main/Interactor/FinancialInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "220995AE-5E32-4D3B-98EC-7520820FB235"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Financial/Common/Main/Interactor/FinancialInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "404428A9-B065-44E4-8A7E-F740FFCB97F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Financial/Common/Main/Interactor/FinancialInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B2D835C-38FB-4539-A6C8-E4632A024BE9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Financial/Common/Main/Interactor/FinancialInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "743A38FF-BFD9-47E6-BCA7-4755B89FB53D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Financial/Common/Main/Interactor/FinancialInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25AB2878-AD9C-42AC-A2B7-A6A21E1486C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Financial/Common/Main/Coordinator/FinancialCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "showEmptyAlert()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F89B07C-CCC3-4A39-A5B6-D6D4892D29CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Financial/Common/Main/Coordinator/FinancialCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "showEmptyAlert()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FD935E5-A831-48A0-8C96-CF6C686E4422"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatotaPro/Features/Ranking/Main/Interactor/RankingInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

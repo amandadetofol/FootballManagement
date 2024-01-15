@@ -63,9 +63,6 @@ final class RankingPresenter: RankingPresenterProtocol {
                 place: 3)
             
         } else {
-            DispatchQueue.main.async {
-                self.view?.showUnsufficentPlayersMessage()
-            }
             return nil
         }
         

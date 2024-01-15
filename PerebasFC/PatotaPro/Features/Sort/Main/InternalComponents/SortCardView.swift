@@ -63,7 +63,7 @@ final class SortCardView: UIControl {
         titleLabel.text = model.title
         descriptionLabel.text = model.description
         self.model = model.model
-        backgroundColor = .brown.withAlphaComponent(0.10)
+        backgroundColor = Session.shared.highLightColor.withAlphaComponent(0.10)
         updateAcessibility(model: model)
     }
     

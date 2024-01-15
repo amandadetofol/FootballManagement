@@ -42,7 +42,14 @@ final class RankingInteractor: RankingInteractorProtocol {
                 return
             }
             self.coordinator.dissmissLoading()
-            self.presenter.updateView(with: data)
+            
+            if data.documents.count <= 3 {
+                DispatchQueue.main.async {
+                    self.coordinator.showUnsufficentPlayersMessage()
+                }
+            } else {
+                self.presenter.updateView(with: data)
+            }
         }
     }
     

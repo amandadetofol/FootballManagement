@@ -147,7 +147,7 @@ final class GameCardView: UIControl {
             label.leadingAnchor.constraint(equalTo: goalsStackView.leadingAnchor).isActive = true
             label.trailingAnchor.constraint(equalTo: goalsStackView.trailingAnchor).isActive = true
         }
-        backgroundColor = .systemYellow.withAlphaComponent(0.10)
+        backgroundColor = Session.shared.highLightColor.withAlphaComponent(0.10)
         self.model = model
         setupAccessibility(basedOn: model)
     }
