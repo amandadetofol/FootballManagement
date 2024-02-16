@@ -76,6 +76,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                     return
                 }
                 completion(true)
+                UserDefaults.standard.set(true, forKey: "firstTimeLogged")
             })
             
             if changeImage {

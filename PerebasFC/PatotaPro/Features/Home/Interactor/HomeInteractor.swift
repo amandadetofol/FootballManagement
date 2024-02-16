@@ -18,6 +18,7 @@ final class HomeInteractor: HomeInteractorProtocol {
     private let presenter: HomePresenterProtocol
     private let coordinator: HomeCoordinatorProtocolWithLoaderProtocol
     private let worker: HomeWorkerProtocol
+    private let userDefaultsReference: UserDefaults
     
     init(homeViewModel: [MenuItemViewModel],
          presenter: HomePresenterProtocol,
@@ -27,18 +28,25 @@ final class HomeInteractor: HomeInteractorProtocol {
         self.presenter = presenter
         self.coordinator = coordinator
         self.worker = worker
+        self.userDefaultsReference = UserDefaults()
     }
     
     func viewDidLoad() {
         presenter.updateViewForState(
             isAdm: Session.shared.isAdm ?? false,
             model: homeViewModel)
-
+        
         worker.getTeamLogoAndHighlightColor { [weak self] imageUrl, colorname in
             guard let imageUrl,
                   let self else { return }
             
             self.presenter.updateViewWith(imageUrl: imageUrl, colorname: "")
+        }
+    }
+    
+    func viewWillAppear() {
+        if !UserDefaults.standard.bool(forKey: "firstTimeLogged") {
+            coordinator.showFirstTimeLoggedModal()
         }
     }
     

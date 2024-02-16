@@ -16,6 +16,7 @@ protocol HomeCoordinatorProtocol {
     func handleInternalLinkRedirect(
         key: InternalLinkRedirectKeys,
         willShow: Bool?)
+    func showFirstTimeLoggedModal()
 }
 
 final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
@@ -149,6 +150,27 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
                 self.handleLogout()
             }
         }
+    
+    func showFirstTimeLoggedModal(){
+        let alert = UIAlertController(
+            title: "Seja bem-vindo!",
+            message: "Preencha seus dados pessoais para continuar!",
+            preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(
+            UIAlertAction(
+                title: "Ok".uppercased(),
+                style: UIAlertAction.Style.default,
+                handler: { [weak self] _ in
+                    self?.handleInternalLinkRedirect(
+                        key: .myData,
+                        willShow: false)
+                }))
+        
+        navigationController.present(
+            alert,
+            animated: true)
+    }
     
     //MARK: Private methods
     private func showErrorPopUp() {

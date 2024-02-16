@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeInteractorProtocol {
     func viewDidLoad()
+    func viewWillAppear()
     func handleLogout()
     func handleAccessibilityButtonTap()
     func handleAlertCloseButtonTap()
@@ -45,6 +46,7 @@ final class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        interactor.viewWillAppear()
     }
     
 }
