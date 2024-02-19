@@ -38,22 +38,25 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
         }
     
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getPersonalInformations({ [weak self] data in
+        coordinator.showLoading { [weak self] in
             guard let self else { return }
             
-            guard let data = data else {
-                self.coordinator.removeLoading()
-                self.coordinator.showErrorMessageAlert()
-                return
+            worker.getPersonalInformations({  data in
+                guard let data = data else {
+                    self.coordinator.removeLoading {
+                        self.coordinator.showErrorMessageAlert()
+                    }
+                    return
+                }
+                self.coordinator.removeLoading {
+                    self.presenter.updateView(with: data)
+                }
+            },
+                                           email: self.email)
+            
+            if let _ = self.email {
+                presenter.hideDeleteButton()
             }
-            self.coordinator.removeLoading()
-            self.presenter.updateView(with: data)
-        },
-        email: self.email)
-        
-        if let _ = self.email {
-            presenter.hideDeleteButton()
         }
     }
     
@@ -127,14 +130,16 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
     
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel) {
         guard let email = user.email else { return }
-        coordinator.showLoading()
-        worker.deleteUser(email: email) { [weak self] succeded in
-            guard let self = self else { return }
-            coordinator.removeLoading()
-            if succeded{
-                self.coordinator.showDeleteUserSuccessPopUp(email: email)
-            } else {
-                self.coordinator.showErrorMessageAlert()
+        coordinator.showLoading { [weak self] in 
+            guard let self else { return }
+            self.worker.deleteUser(email: email) {  succeded in
+                self.coordinator.removeLoading {
+                    if succeded{
+                        self.coordinator.showDeleteUserSuccessPopUp(email: email)
+                    } else {
+                        self.coordinator.showErrorMessageAlert()
+                    }
+                }
             }
         }
     }

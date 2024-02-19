@@ -37,15 +37,16 @@ final class EditAwardsInteractor: EditAwardsViewInteractorProtocol {
     }
     
     func handleSetNewAwardsButtonTap(using model: FirstPlaceGiftsViewModel) {
-        coordinator.showLoading()
-        worker.updateAwards(newAwards: model) { [weak self] succeeded in
+        coordinator.showLoading { [weak self] in
             guard let self else { return }
-            self.coordinator.removeLoading()
-            
-            if succeeded {
-                self.coordinator.showSuccessAlert()
-            } else {
-                self.coordinator.showErrorAlert()
+            self.worker.updateAwards(newAwards: model) {  succeeded in
+                self.coordinator.removeLoading {
+                    if succeeded {
+                        self.coordinator.showSuccessAlert()
+                    } else {
+                        self.coordinator.showErrorAlert()
+                    }
+                }
             }
         }
     }

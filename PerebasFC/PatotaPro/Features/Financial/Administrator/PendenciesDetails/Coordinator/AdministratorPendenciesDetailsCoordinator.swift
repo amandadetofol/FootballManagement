@@ -9,8 +9,8 @@ import UIKit
 
 protocol AdministratorPendenciesDetailsCoordinatorProtocol {
     func openUrl(url: String?)
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showErrorAlert()
     func showSuccessAlert()
     func sendEmail(
@@ -34,12 +34,12 @@ final class AdministratorPendenciesDetailsCoordinator: AdministratorPendenciesDe
         UIApplication.shared.openURL(urlString)
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     func showErrorAlert(){

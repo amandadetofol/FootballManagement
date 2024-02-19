@@ -448,7 +448,7 @@ final class PersonalInformationsView: UIView {
             
             guard let url = URL(string: string) else { return }
             URLSession.shared.dataTask(with: url) { data, _, error in
-                if let error = error {
+                if error != nil {
                     completion(nil)
                     return
                 }

@@ -70,14 +70,13 @@ final class NewTeamSignUpInteractor: NewTeamSignUpInteractorProtocol {
         
         worker.createNewGameOnFirebase(model: model) { [weak self] id in
             guard let self else { return }
-            self.coordinator.removeLoading()
-            
-            if let id {
-                coordinator.showIdAlertView(id: id)
-            } else {
-                coordinator.showErrorAlertView()
+            self.coordinator.removeLoading {
+                if let id {
+                    self.coordinator.showIdAlertView(id: id)
+                } else {
+                    self.coordinator.showErrorAlertView()
+                }
             }
-            
         }
     }
     

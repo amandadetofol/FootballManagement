@@ -15,8 +15,8 @@ protocol CalendarCoordinatorProtocol {
         completion: @escaping((Bool, Int?)->Void))
     func goToSeePresenceList(itemId: String)
     func showErrorAlert()
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showSuccessAlert()
 }
 
@@ -115,12 +115,12 @@ final class CalendarCoordinator: CalendarCoordinatorProtocol {
             animated: true)
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     

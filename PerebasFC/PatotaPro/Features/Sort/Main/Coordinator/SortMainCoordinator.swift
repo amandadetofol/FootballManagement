@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import EzPopup
 
 protocol SortMainCoordinatorProtocol {
+    func showSwipeAlert()
     func showSuccessPopUp(model: WeekTeamViewModel)
     func showErrorPopUp()
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func goToWeekTeamView(model: WeekTeamViewModel)
 }
 
@@ -23,6 +25,20 @@ final class SortMainCoordinator: SortMainCoordinatorProtocol {
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
         self.loader = LoaderCoodinator(navigationController: navigationController)
+    }
+
+    func showSwipeAlert(){
+        let contentViewController = SwipeInstructionsViewController()
+        let popupVC = PopupViewController(
+            contentController: contentViewController,
+            popupWidth:300,
+            popupHeight: 300)
+        popupVC.backgroundAlpha = 0.3
+        popupVC.backgroundColor = .black
+        popupVC.canTapOutsideToDismiss = true
+        popupVC.cornerRadius = 15
+        popupVC.shadowEnabled = true
+        navigationController.present(popupVC, animated: true)
     }
     
     func goToWeekTeamView(model: WeekTeamViewModel){
@@ -75,12 +91,12 @@ final class SortMainCoordinator: SortMainCoordinatorProtocol {
             animated: true)
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
 }

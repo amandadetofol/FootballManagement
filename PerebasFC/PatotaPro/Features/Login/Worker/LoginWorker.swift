@@ -83,7 +83,7 @@ final class LoginWorker: LoginWorkerProtocol {
     private func checkIfUserIsFromThisTeam(email: String, id: String, completion: @escaping((Bool)-> Void)) {
         firestoreProvider.collection(id).document(email).getDocument { document, error in
             guard error == nil,
-                  let email = document?["email"] as? String else {
+                  let _ = document?["email"] as? String else {
                 completion(false)
                 return
             }

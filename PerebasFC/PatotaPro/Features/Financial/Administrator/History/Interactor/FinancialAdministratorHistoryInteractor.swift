@@ -22,17 +22,20 @@ final class FinancialAdministratorHistoryInteractor: FinancialAdministratorHisto
     }
     
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getFinancialHistory { [weak self ] credit, debit in
-            guard let self,
-                  let credit,
-                  let debit else {
-                self?.coordinator.removeLoading()
-                self?.coordinator.showErrorAlertView()
-                return
+        coordinator.showLoading { [weak self]  in
+            guard let self else { return }
+            worker.getFinancialHistory { credit, debit in
+                guard let credit,
+                      let debit else {
+                    self.coordinator.removeLoading {
+                        self.coordinator.showErrorAlertView()
+                    }
+                    return
+                }
+                self.coordinator.removeLoading {
+                    self.presenter.updateView(credit: credit, debit: debit)
+                }
             }
-            self.coordinator.removeLoading()
-            self.presenter.updateView(credit: credit, debit: debit)
         }
     }
     

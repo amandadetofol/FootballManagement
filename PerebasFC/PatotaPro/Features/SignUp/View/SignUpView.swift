@@ -66,7 +66,7 @@ final class SignUpView: UIView {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .clear
-        scrollView.isAccessibilityElement = false 
+        scrollView.isAccessibilityElement = false
         
         return scrollView
     }()

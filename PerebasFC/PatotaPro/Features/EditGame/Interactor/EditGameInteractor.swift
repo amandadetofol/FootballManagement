@@ -28,22 +28,26 @@ final class EditGameInteractor: EditGameInteractorProtocol {
     }
     
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getParticipants { [weak self] querySnapshot in
-            guard let querySnapshot,
-                  let self else {
-                self?.coordinator.removeLoading()
-                self?.coordinator.showErrorAlert()
-                return
-            }
+        coordinator.showLoading { [weak self] in
+            guard let self else { return }
             
-            self.coordinator.removeLoading()
-            self.presenter.updateView(
-                with: self.model,
-                players: querySnapshot)
+            self.worker.getParticipants { querySnapshot in
+                guard let querySnapshot else {
+                    self.coordinator.removeLoading {
+                        self.coordinator.showErrorAlert()
+                    }
+                    return
+                }
+                
+                self.coordinator.removeLoading {
+                    self.presenter.updateView(
+                        with: self.model,
+                        players: querySnapshot)
+                }
+            }
+          
+            self.presenter.addListOfPresenceButton()
         }
-      
-        presenter.addListOfPresenceButton()
     }
 
     func handleSaveNewGameInformationsButtonTap(game: Game) {

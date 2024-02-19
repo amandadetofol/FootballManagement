@@ -35,16 +35,19 @@ final class AdministratorPendenciesPresenter: FinancialAdministratorPresenterPro
         var items: [FinancialAdministratorPendenciesListCardModel] = []
         
         model.forEach { document in
-            items.append(
-                FinancialAdministratorPendenciesListCardModel(
-                    title: document["title"] as? String ?? "",
-                    value: "\(document["expectedValue"] as? Int ?? 0)",
-                    name: document["reason"] as? String ?? "",
-                    daysLate: document["numberOfDaysLate"] as? Int ?? 0,
-                    proofUrl: document["proofUrl"] as? String ?? "",
-                    userName: document["userName"] as? String ?? "",
-                    id: document.documentID)
-            )
+            
+            if !(document["admAprooved"] as? Bool ?? false) {
+                items.append(
+                    FinancialAdministratorPendenciesListCardModel(
+                        title: document["title"] as? String ?? "",
+                        value: "\(document["expectedValue"] as? Int ?? 0)",
+                        name: document["reason"] as? String ?? "",
+                        daysLate: document["numberOfDaysLate"] as? Int ?? 0,
+                        proofUrl: document["proofUrl"] as? String ?? "",
+                        userName: document["userName"] as? String ?? "",
+                        id: document.documentID)
+                )
+            }
         }
         
         return AdministratorPendenciesViewModel(items: items)

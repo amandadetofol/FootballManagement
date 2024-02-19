@@ -43,29 +43,32 @@ final class AdministratorPendenciesDetailsInteractor:
     }
     
     func handleSaveButton(model: FinancialAdministratorPendenciesListCardModel) {
-        coordinator.showLoading()
-        worker.updateItemInFirebase(model: model) { [weak self] succeded in
-            guard let self = self else { return}
-            self.coordinator.removeLoading()
-            
-            if succeded {
-                self.coordinator.showSuccessAlert()
-            } else {
-                self.coordinator.showErrorAlert()
+        coordinator.showLoading { [weak self] in 
+            guard let self else { return}
+            worker.updateItemInFirebase(model: model) { succeded in
+                self.coordinator.removeLoading {
+                    if succeded {
+                        self.coordinator.showSuccessAlert()
+                    } else {
+                        self.coordinator.showErrorAlert()
+                    }
+                }
             }
         }
     }
     
     func handleAprooveButton(model: FinancialAdministratorPendenciesListCardModel){
-        coordinator.showLoading()
-        worker.aprooveItem(model: model) { [weak self] succeded in
+        coordinator.showLoading { [weak self] in
             guard let self = self else { return}
-            self.coordinator.removeLoading()
-            
-            if succeded {
-                self.coordinator.showSuccessAlert()
-            } else {
-                self.coordinator.showErrorAlert()
+            self.worker.aprooveItem(model: model) { succeded in
+                self.coordinator.removeLoading {
+                    
+                    if succeded {
+                        self.coordinator.showSuccessAlert()
+                    } else {
+                        self.coordinator.showErrorAlert()
+                    }
+                }
             }
         }
     }

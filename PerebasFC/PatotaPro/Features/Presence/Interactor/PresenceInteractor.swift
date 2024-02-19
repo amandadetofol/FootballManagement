@@ -25,17 +25,20 @@ final class PresenceInteractor: PresenceInteractorProtocol {
     }
 
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getUsers(id: gameId) { [weak self] model, hasComeFromGamesDb  in
-            guard let self,
-                  let model = model else {
-                      self?.coordinator.removeLoading()
-                      self?.coordinator.showErrorAlert()
-                      
-                      return
-                  }
-            self.coordinator.removeLoading()
-            self.presenter.updateView(with: model, hasComeFromGamesDatabase: hasComeFromGamesDb)
+        coordinator.showLoading { [weak self] in
+            guard let self else { return }
+            worker.getUsers(id: gameId) {  model, hasComeFromGamesDb  in
+                guard let model = model else {
+                    self.coordinator.removeLoading {
+                        self.coordinator.showErrorAlert()
+                    }
+                    
+                    return
+                }
+                self.coordinator.removeLoading {
+                    self.presenter.updateView(with: model, hasComeFromGamesDatabase: hasComeFromGamesDb)
+                }
+            }
         }
     }
     
@@ -46,7 +49,9 @@ final class PresenceInteractor: PresenceInteractorProtocol {
                 if succeded {
                     self?.coordinator.handleOkButtonTap()
                 } else {
-                    self?.coordinator.showLoading()
+                    self?.coordinator.showLoading {
+                        
+                    }
                 }
             },
             id: gameId)

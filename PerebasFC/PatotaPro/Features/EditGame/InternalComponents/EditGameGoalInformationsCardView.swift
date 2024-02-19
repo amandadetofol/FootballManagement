@@ -65,7 +65,7 @@ final class EditGameGoalInformationsCardView: UIView {
         get {
             return Goals(
                 player: self.player,
-                time: timePicker.date ?? Date(),
+                time: timePicker.date,
                 index: 0,
                 isWhiteTeam: self.isWhiteTeam)
         }

@@ -106,7 +106,7 @@ final class NewItemWorker: NewItemWorkerProtocol {
                     "splitBeetweenTeamMember": newItem.splitBeetweenTeamMember ?? false,
             ])
             
-            Firestore.firestore().collection("\(Session.shared.teamId ?? "")/\(email)/comum-financeiro").getDocuments { [weak self] querySnapShot, error in
+            Firestore.firestore().collection("\(Session.shared.teamId ?? "")/\(email)/comum-financeiro").getDocuments {  querySnapShot, error in
                 guard error == nil,
                       let querySnapShot else {
                     completion(false)

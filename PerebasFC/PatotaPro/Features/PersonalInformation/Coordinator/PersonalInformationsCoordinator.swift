@@ -11,8 +11,8 @@ protocol PersonalInformationsCoordinatorProtocol {
     func showErrorMessageAlert()
     func goToBack()
     func handleGoToChangePasswordFlow()
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showUpdateSuccessPopUp()
     func showUpdateErrorPopUp()
     func showDeleteUserSuccessPopUp(email: String)
@@ -54,12 +54,12 @@ final class PersonalInformationsCoordinator: PersonalInformationsCoordinatorProt
             animated: true)
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading() {
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)) {
+        loader.removeLoader(completion)
     }
     
     func showUpdateSuccessPopUp(){

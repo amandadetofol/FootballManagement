@@ -31,16 +31,21 @@ final class CalendarInteractor: CalendarViewInteractorProtocol {
     }
     
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getCalendarEvents { [weak self] eventDays in
-            guard let self,
-                  let eventDays else {
-                self?.coordinator.removeLoading()
-                self?.coordinator.showErrorAlert()
-                return
+        coordinator.showLoading { [weak self] in
+            guard let self else { return }
+            self.worker.getCalendarEvents { eventDays in
+                guard let eventDays else {
+                    self.coordinator.removeLoading {
+                        self.coordinator.showErrorAlert()
+                    }
+                    
+                    return
+                }
+                self.coordinator.removeLoading {
+                    self.presenter.updateEvents(events: eventDays)
+                }
+                
             }
-            self.coordinator.removeLoading()
-            self.presenter.updateEvents(events: eventDays)
         }
     }
     

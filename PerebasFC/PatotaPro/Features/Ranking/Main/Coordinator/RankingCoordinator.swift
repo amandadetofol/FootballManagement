@@ -8,8 +8,8 @@
 import UIKit
 
 protocol RankingCoordinatorProtocol {
-    func showLoading()
-    func dissmissLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func dissmissLoading(_ completion: @escaping(()->Void))
     func showAlertErrorPopUp()
     func goToShowEditAwardsView(model: EditAwardsViewModel)
     func showUnsufficentPlayersMessage()
@@ -50,12 +50,12 @@ final class RankingCoordinator: RankingCoordinatorProtocol {
             animated: true)
     }
     
-    func showLoading(){
-      //
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func dissmissLoading(){
-        loader.removeLoader()
+    func dissmissLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     func showUnsufficentPlayersMessage(){

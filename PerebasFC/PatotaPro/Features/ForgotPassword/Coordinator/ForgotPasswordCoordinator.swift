@@ -10,8 +10,8 @@ import UIKit
 protocol ForgotPasswordCoordinatorProtocol {
     func goToShowSendResetLinkAlert(email: String)
     func goToShowSendResetErrorAlert()
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
 }
 
 final class ForgotPasswordCoordinator: ForgotPasswordCoordinatorProtocol {
@@ -54,12 +54,12 @@ final class ForgotPasswordCoordinator: ForgotPasswordCoordinatorProtocol {
             animated: true)
     }
     
-    func showLoading() {
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)) {
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
    
 }

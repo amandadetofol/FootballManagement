@@ -8,8 +8,8 @@
 import UIKit
 
 protocol LoaderCoodinatorProtocol {
-    func showLoader()
-    func removeLoader()
+    func showLoader(_ completion: @escaping(()->Void))
+    func removeLoader(_ completion: @escaping(()->Void))
 }
 
 final class LoaderCoodinator: LoaderCoodinatorProtocol {
@@ -21,13 +21,18 @@ final class LoaderCoodinator: LoaderCoodinatorProtocol {
         self.navigationController = navigationController
     }
     
-    func showLoader(){
+    func showLoader(_ completion: @escaping(()->Void)){
         loader.modalPresentationStyle = .overFullScreen
-        navigationController.present(loader, animated: false)
+        navigationController.present(
+            loader,
+            animated: false,
+            completion: completion)
     }
     
-    func removeLoader(){
-        loader.dismiss(animated: true)
+    func removeLoader(_ completion: @escaping(()->Void)){
+        loader.dismiss(
+            animated: true,
+            completion: completion)
     }
     
 }

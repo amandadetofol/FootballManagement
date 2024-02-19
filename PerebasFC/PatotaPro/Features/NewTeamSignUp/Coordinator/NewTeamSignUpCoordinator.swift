@@ -10,8 +10,8 @@ import UIKit
 protocol NewTeamSignUpCoordinatorProtocol {
     func showErrorAlertView()
     func goToUserLogin()
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showIdAlertView(id: String)
     func showColorContrastProblemAlert()
 }
@@ -83,12 +83,12 @@ final class NewTeamSignUpCoordinator: NewTeamSignUpCoordinatorProtocol {
         loginCoordinator.start()
     }
     
-    func showLoading(){
-        loadingCoordinator.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loadingCoordinator.showLoader(completion)
     }
     
-    func removeLoading(){
-        loadingCoordinator.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loadingCoordinator.removeLoader(completion)
     }
     
 }

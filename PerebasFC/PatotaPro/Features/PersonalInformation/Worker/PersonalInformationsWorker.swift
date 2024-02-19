@@ -33,7 +33,7 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                                  email: String?) {
         firestoreProvider.document("\(Session.shared.teamId ?? "")/\(email ?? Session.shared.loggedUserEmail ?? "")").getDocument { [weak self] document, error in
             guard error == nil,
-                  let self = self else {
+                  let self else {
                 completion(nil)
                 return
             }
@@ -124,13 +124,13 @@ final class PersonalInformationsWorker: PersonalInformationsWorkerProtocol {
                             
                             let reference = self.firestoreProvider.document("sort/\(activeSort)/whiteteam/\(email)")
                             reference.delete { error in
-                                print(error)
+                                print(error ?? "")
                             }
                             
                             
                             let reference1 = self.firestoreProvider.document("sort/\(activeSort)/blackteam/\(email)")
                             reference1.delete { error in
-                                print(error)
+                                print(error ?? "") 
                             }
                             
                         }

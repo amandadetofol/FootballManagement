@@ -59,11 +59,14 @@ final class SignUpInteractor: SignUpInteractorProtocol {
             return
         }
         
-        coordinator.showLoading()
-        worker.createNewUser(user: user) { [weak self] succeded in
+        coordinator.showLoading { [weak self]  in
             guard let self else { return }
-            self.coordinator.removeLoading()
-            self.coordinator.showAlert(succeded: succeded)
+            
+            self.worker.createNewUser(user: user) {  succeded in
+                self.coordinator.removeLoading {
+                    self.coordinator.showAlert(succeded: succeded)
+                }
+            }
         }
     }
     

@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "A48190E4-BBCB-44BE-ACF5-777E73DBDB0F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-FIRDebugEnabled"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PatotaPro.xcodeproj",
+      "identifier" : "A6033E502A12DC5D002B56EE",
+      "name" : "PatotaPro"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:PatotaPro.xcodeproj",
+        "identifier" : "A673FCF72B7F991B001805AA",
+        "name" : "PatotaProTests"
+      }
+    }
+  ],
+  "version" : 1
+}

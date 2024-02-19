@@ -32,7 +32,6 @@ final class RankingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = rankingView
-        handleKeyBoardRemoveWhenClickOutsideField()
     }
     
     override func viewWillAppear(_ animated: Bool) {

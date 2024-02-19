@@ -8,8 +8,8 @@
 import UIKit
 
 protocol WeekTeamCoordinatorProtocol {
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showErrorView()
 }
 
@@ -23,12 +23,12 @@ final class WeekTeamCoordinator: WeekTeamCoordinatorProtocol {
         self.loader = LoaderCoodinator(navigationController: navigationController)
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     func showErrorView(){

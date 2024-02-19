@@ -8,8 +8,8 @@
 import UIKit
 
 protocol AdministratorPendenciesCoordinatorProtocol {
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showErrorPopUp()
     func goToFinancialAdministratorPendenciesDetails(model: FinancialAdministratorPendenciesListCardModel)
 }
@@ -33,12 +33,12 @@ final class AdministratorPendenciesCoordinator: AdministratorPendenciesCoordinat
             animated: true)
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     func showErrorPopUp(){

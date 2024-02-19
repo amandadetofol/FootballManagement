@@ -37,19 +37,24 @@ final class ForgotPasswordInteractor: ForgotPasswordInteractorProtocol {
         if email.isEmpty {
             presenter.updateEmailTextfieldForError(using: "E-mail inválido")
         } else {
-            coordinator.showLoading()
-            worker.sendLinkTo(
-                email: email) { [weak self] operationSucceded in
-                    guard let self else { return }
-                    switch operationSucceded {
+            coordinator.showLoading { [weak self] in
+                guard let self else { return }
+                self.worker.sendLinkTo(
+                    email: email) { operationSucceded in
+                        
+                        switch operationSucceded {
                         case true:
-                            self.coordinator.removeLoading()
-                            self.coordinator.goToShowSendResetLinkAlert(email: email)
+                            self.coordinator.removeLoading {
+                                self.coordinator.goToShowSendResetLinkAlert(email: email)
+                            }
                         case false:
-                            self.coordinator.removeLoading()
-                            self.coordinator.goToShowSendResetErrorAlert()
+                            self.coordinator.removeLoading {
+                                self.coordinator.goToShowSendResetErrorAlert()
+                                
+                            }
+                        }
                     }
-                }
+            }
         }
     }
     

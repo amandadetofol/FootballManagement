@@ -55,7 +55,7 @@ final class SignUpViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.signUpView.scrollView.frame.origin.y >= 0 {
-                self.signUpView.scrollView.frame.origin.y -= keyboardSize.height
+                self.signUpView.scrollView.frame.origin.y -= keyboardSize.height/2
             }
         }
     }

@@ -8,8 +8,8 @@
 import UIKit
 
 protocol FinancialCoordinatorProtocol {
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showEmptyAlert()
     func gotoFinancialDetails(with model: FinancialPendencieCardViewModel)
 }
@@ -47,12 +47,12 @@ final class FinancialCoordinator: FinancialCoordinatorProtocol {
         }
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     func showEmptyAlert(){

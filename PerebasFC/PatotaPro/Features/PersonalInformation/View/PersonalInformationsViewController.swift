@@ -72,7 +72,7 @@ final class PersonalInformationsViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.personalInformationsView.scrollView.frame.origin.y >= 0 {
-                self.personalInformationsView.scrollView.frame.origin.y -= keyboardSize.height
+                self.personalInformationsView.scrollView.frame.origin.y -= keyboardSize.height/2
             }
         }
     }

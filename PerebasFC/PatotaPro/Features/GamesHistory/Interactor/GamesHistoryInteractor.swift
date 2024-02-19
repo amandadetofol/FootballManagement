@@ -42,6 +42,10 @@ final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
         }
     }
     
+    func showSwipeAlert(){
+        coordinator.showSwipeAlert()
+    }
+    
     func handleEditGameButtonTap(game: Game) {
         coordinator.goToEditGameView(game: game)
     }
@@ -51,18 +55,20 @@ final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
     }
     
     func saveNewGame(game: Game){
-        coordinator.showLoading()
-        worker.addNewGame(
-            game: game) { [weak self] succeded in
-                guard let self else { return }
-                self.coordinator.removeLoading()
-                
-                if succeded {
-                    self.coordinator.showSuccessAddGameAlert()
-                } else {
-                    self.coordinator.showAlertErrorView()
+        coordinator.showLoading { [weak self] in 
+            guard let self else { return }
+            self.worker.addNewGame(
+                game: game) { succeded in
+                    
+                    self.coordinator.removeLoading {
+                        if succeded {
+                            self.coordinator.showSuccessAddGameAlert()
+                        } else {
+                            self.coordinator.showAlertErrorView()
+                        }
+                    }
                 }
-            }
+        }
     }
 
 }

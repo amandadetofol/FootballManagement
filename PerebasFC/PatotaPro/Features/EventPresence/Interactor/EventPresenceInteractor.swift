@@ -25,19 +25,22 @@ final class EventPresenceInteractor: EventPresenceInteractorProtocol {
     }
     
     func viewDidLoad() {
-        
-        coordinator.showLoading()
-        worker.getEventPresenceModel(itemId: itemId) { [weak self] querysnapshot in
-            guard let self,
-                  let querysnapshot else {
-                self?.coordinator.removeLoading()
-                self?.coordinator.showErrorAlert()
-                return 
+        coordinator.showLoading { [weak self] in
+            guard let self else { return }
+            self.worker.getEventPresenceModel(itemId: itemId) { querysnapshot in
+                guard let querysnapshot else {
+                    self.coordinator.removeLoading {
+                        self.coordinator.showErrorAlert()
+                    }
+                    return
+                }
+                
+                self.coordinator.removeLoading {
+                    self.presenter.updateView(with: querysnapshot)
+                }
             }
-            
-            self.coordinator.removeLoading()
-            self.presenter.updateView(with: querysnapshot)
         }
+        
     }
 
 }

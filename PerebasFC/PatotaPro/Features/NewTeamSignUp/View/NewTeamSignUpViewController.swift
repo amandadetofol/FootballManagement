@@ -61,7 +61,7 @@ final class NewTeamSignUpViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.newTeamSignUpView.scrollView.frame.origin.y >= 0 {
-                self.newTeamSignUpView.scrollView.frame.origin.y -= keyboardSize.height
+                self.newTeamSignUpView.scrollView.frame.origin.y -= keyboardSize.height/3
             }
         }
     }

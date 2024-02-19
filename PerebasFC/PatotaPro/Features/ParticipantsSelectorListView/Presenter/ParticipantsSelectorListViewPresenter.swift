@@ -28,7 +28,7 @@ final class ParticipantsSelectorListViewPresenter: ParticipantsSelectorListViewP
     private func parseApiModelToViewModel(model: QuerySnapshot) -> [ParticipantsSelectorCardViewModel] {
         return model.documents.map({ document in
             ParticipantsSelectorCardViewModel(
-                title: " \(document["email"] as? String ?? "") \(document["lastname"] as? String ?? "")")
+                title: "\(document["email"] as? String ?? "")")
         })
     }
 

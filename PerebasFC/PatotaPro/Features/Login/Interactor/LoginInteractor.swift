@@ -23,10 +23,10 @@ final class LoginInteractor: LoginInteractorProtocol {
     init(coordinator: LoginCoordinatorWithLoaderProtocol,
          presenter: LoginPresenterProtocol,
          worker: LoginWorkerProtocol){
-            self.coordinator = coordinator
-            self.presenter = presenter
-            self.worker = worker
-        }
+        self.coordinator = coordinator
+        self.presenter = presenter
+        self.worker = worker
+    }
     
     func goToLogin(_ username: String, _ password: String, _ teamId: String) {
         var hasError = false
@@ -52,13 +52,16 @@ final class LoginInteractor: LoginInteractorProtocol {
         }
         
         if !hasError {
-            coordinator.showLoader()
-            worker.login(username: username, password: password, id: teamId) { [weak self] menuItems in
-                self?.coordinator.removeLoader()
-                if let menuItems = menuItems {
-                    self?.coordinator.goToLoggedArea(menuItems)
-                } else {
-                    self?.presentViewForLoginError()
+            coordinator.showLoader { [weak self] in
+                guard let self else { return }
+                self.worker.login(username: username, password: password, id: teamId) {  menuItems in
+                    self.coordinator.removeLoader {
+                        if let menuItems = menuItems {
+                            self.coordinator.goToLoggedArea(menuItems)
+                        } else {
+                            self.presentViewForLoginError()
+                        }
+                    }
                 }
             }
         }

@@ -29,25 +29,30 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
         self.loaderCoordinator = LoaderCoodinator(navigationController: navigationController)
     }
     
-    func showLoader() {
-        loaderCoordinator.showLoader()
+    func showLoader(_ completion: @escaping(()->Void)) {
+        loaderCoordinator.showLoader(completion)
     }
     
-    func removeLoader() {
-        loaderCoordinator.removeLoader()
+    func removeLoader(_ completion: @escaping(()->Void)) {
+        loaderCoordinator.removeLoader(completion)
     }
     
     func handleLogout() {
-        showLoader()
-        SignOutWorker.signOut { [weak self] succeded in
-            guard let self = self else { return }
-            switch succeded {
-            case true:
-                self.removeLoader()
-                self.navigationController.popViewController(animated: true)
-            case false:
-                self.removeLoader()
-                self.showErrorPopUp()
+        showLoader { [weak self] in
+            SignOutWorker.signOut {  succeded in
+                guard let self = self else { return }
+                switch succeded {
+                case true:
+                    self.removeLoader{
+                        self.navigationController.popViewController(animated: true)
+                    }
+                    
+                case false:
+                    self.removeLoader{
+                        self.showErrorPopUp()
+                    }
+                    
+                }
             }
         }
     }

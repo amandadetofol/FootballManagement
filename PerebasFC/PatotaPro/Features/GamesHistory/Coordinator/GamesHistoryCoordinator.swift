@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import EzPopup
 
 protocol GamesHistoryCoordinatorProtocol {
+    func showSwipeAlert()
     func showAlertErrorView()
     func goToAddNewGame()
     func goToEditGameView(game: Game)
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showSuccessAddGameAlert()
     func showEmptyAlert()
 }
@@ -25,6 +27,21 @@ final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
         self.loader = LoaderCoodinator(navigationController: navigationController)
+    }
+    
+    func showSwipeAlert(){
+        let contentViewController = SwipeInstructionsViewController()
+
+        let popupVC = PopupViewController(
+            contentController: contentViewController,
+            popupWidth:300,
+            popupHeight: 300)
+        popupVC.backgroundAlpha = 0.3
+        popupVC.backgroundColor = .black
+        popupVC.canTapOutsideToDismiss = true
+        popupVC.cornerRadius = 15
+        popupVC.shadowEnabled = true
+        navigationController.present(popupVC, animated: true)
     }
     
     func showAlertErrorView() {
@@ -64,12 +81,12 @@ final class GamesHistoryCoordinator: GamesHistoryCoordinatorProtocol {
         navigationController.pushViewController(controller, animated: true)
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     func showEmptyAlert(){

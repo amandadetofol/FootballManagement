@@ -22,6 +22,7 @@ final class SortCardView: UIControl {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.isUserInteractionEnabled = false
         
         return label
     }()
@@ -32,6 +33,7 @@ final class SortCardView: UIControl {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.isUserInteractionEnabled = false
         
         return label
     }()
@@ -42,6 +44,7 @@ final class SortCardView: UIControl {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.tintColor = .black
+        imageView.isUserInteractionEnabled = false
         
         return imageView
     }()
@@ -52,6 +55,7 @@ final class SortCardView: UIControl {
         setupConstraints()
         setupBorders()
         setupView(with: model)
+        addTarget(self, action: #selector(handleCardViewDelegateTap), for: .touchUpInside)
     }
     
     @available(*, unavailable)
@@ -78,7 +82,6 @@ final class SortCardView: UIControl {
             titleLabel,
             descriptionLabel,
             arrowIconImageView])
-        addTarget(self, action: #selector(handleCardViewDelegateTap), for: .touchUpInside)
     }
     
     private func setupConstraints(){

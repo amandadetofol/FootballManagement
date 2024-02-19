@@ -38,20 +38,21 @@ final class FinancialDetailsInteractor: FinancialDetailsInteractorProtocol {
     }
     
     func addNewProof(itemId: Int, data: Data) {
-        coordinator.showLoading()
-        worker.addProof(
-            itemId: itemId,
-            proofData: data) { [weak self] succeded in
-                
-                guard let self else { return }
-                self.coordinator.removeLoading()
-                
-                if succeded {
-                    self.coordinator.showUploadSuccessAlert()
-                } else {
-                    self.coordinator.showUploadErrorAlert()
+        coordinator.showLoading { [weak self] in
+            guard let self else { return }
+            self.worker.addProof(
+                itemId: itemId,
+                proofData: data) { succeded in
+                    self.coordinator.removeLoading {
+                        if succeded {
+                            self.coordinator.showUploadSuccessAlert()
+                        } else {
+                            self.coordinator.showUploadErrorAlert()
+                        }
+                        
+                    }
                 }
-            }
+        }
     }
     
 }

@@ -22,9 +22,9 @@ final class DeleteTeamInteractorTests: XCTestCase {
         presenterMock = DeleteTeamPresenterMock()
         workerMock = DeleteTeamWorkerMock()
         
-        guard let coordinatorMock = coordinatorMock,
-              let presenterMock = presenterMock,
-              let workerMock = workerMock else {
+        guard let coordinatorMock ,
+              let presenterMock,
+              let workerMock else {
             XCTFail("Mocks not initialized")
             return
         }
@@ -57,7 +57,7 @@ final class DeleteTeamInteractorTests: XCTestCase {
     }
     
     func test_handleConfirmButtonTap_emptyId_errorShouldBeCalled() {
-        guard let presenterMock = presenterMock else {
+        guard let presenterMock else {
             XCTFail("Presenter mock not initialized")
             return
         }
@@ -66,7 +66,56 @@ final class DeleteTeamInteractorTests: XCTestCase {
         sut?.handleConfirmButtonTap(id: id)
         
         XCTAssertTrue(presenterMock.updateViewForIdTextFieldErrorStateWasCalled)
+        
         XCTAssertFalse(presenterMock.updateViewWasCalled)
+    }
+    
+    func test_handleConfirmButtonTap_shouldSucced() {
+        guard let coordinatorMock ,
+              let presenterMock,
+              let workerMock else {
+            XCTFail("Mocks not initialized")
+            return
+        }
+        
+        let id = "12345678"
+        sut?.handleConfirmButtonTap(id: id)
+        
+        
+        XCTAssertTrue(coordinatorMock.showLoadingWasCalled)
+        XCTAssertTrue(coordinatorMock.removerLoadingWasCalled)
+        XCTAssertTrue(workerMock.deleteTeamWasCalled)
+        XCTAssertTrue(coordinatorMock.showSuccessMessageWasCalled)
+        
+        XCTAssertFalse(coordinatorMock.showErrorMessageWasCalled)
+        XCTAssertFalse(presenterMock.updateViewWasCalled)
+        XCTAssertFalse(presenterMock.updateViewForIdTextFieldErrorStateWasCalled)
+        
+    }
+    
+    func test_handleConfirmButtonTap_shouldReturnError() {
+        guard let coordinatorMock ,
+              let presenterMock,
+              let workerMock else {
+            XCTFail("Mocks not initialized")
+            return
+        }
+        
+        workerMock.deleteTeamShouldSucced = false
+        
+        let id = "12345678"
+        sut?.handleConfirmButtonTap(id: id)
+        
+        
+        XCTAssertTrue(coordinatorMock.showLoadingWasCalled)
+        XCTAssertTrue(coordinatorMock.removerLoadingWasCalled)
+        XCTAssertTrue(workerMock.deleteTeamWasCalled)
+        XCTAssertTrue(coordinatorMock.showErrorMessageWasCalled)
+        
+        XCTAssertFalse(coordinatorMock.showSuccessMessageWasCalled)
+        XCTAssertFalse(presenterMock.updateViewWasCalled)
+        XCTAssertFalse(presenterMock.updateViewForIdTextFieldErrorStateWasCalled)
+        
     }
     
 }

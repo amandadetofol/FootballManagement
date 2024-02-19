@@ -31,8 +31,16 @@ final class NewEventInCalendarCoordinator: NewEventInCalendarCoordinatorProtocol
                 title: "OK",
                 style: UIAlertAction.Style.default,
                 handler: { [weak self] _ in
-                    self?.navigationController.popViewController(animated: true)
+                    
+                    guard let self else { return }
+                    
+                    if let viewController = navigationController.viewControllers.first(where: { $0.isKind(of: HomeViewController.self) }) {
+                        guard let vc = viewController as? HomeViewController else { return }
+                        navigationController.popToViewController(vc, animated: true)
+                    }
+    
                 }))
+        
         navigationController.present(
             alert,
             animated: true)

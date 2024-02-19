@@ -27,7 +27,7 @@ final class EditGamePresenter: EditGamePresenterProtocol {
     weak var view: EditGameViewProtocol?
     
     func updateView(with game: Game, players: QuerySnapshot) {
-        var users = parseQuerySnapshotIntoUsersArray(model: players)
+        let users = parseQuerySnapshotIntoUsersArray(model: players)
         var names: [String] = []
         users?.forEach({ user in
             names.append(user.name)

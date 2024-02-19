@@ -22,7 +22,6 @@ final class GameCardView: UIControl {
         view.backgroundColor = .black
         view.clipsToBounds = true
         view.isAccessibilityElement = false
-        view.isUserInteractionEnabled = false
         
         return view
     }()
@@ -82,7 +81,6 @@ final class GameCardView: UIControl {
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 24.0)
         label.isAccessibilityElement = false
-        label.isUserInteractionEnabled = false
         
         return label
     }()
@@ -96,8 +94,6 @@ final class GameCardView: UIControl {
         stackView.spacing = 4
         stackView.layoutMargins = UIEdgeInsets(top: 16, left: 0, bottom: -16, right: 0)
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.isUserInteractionEnabled = true
-        stackView.isUserInteractionEnabled = false
         
         return stackView
     }()
@@ -119,6 +115,7 @@ final class GameCardView: UIControl {
         setupView()
         setupConstraints()
         setupGameCardViewForAdm()
+        addTarget(self, action: #selector(handleEditGameButtonTap), for: .touchUpInside)
     }
     
     @available(*, unavailable)
@@ -127,7 +124,6 @@ final class GameCardView: UIControl {
     }
     
     func updateView(with model: Game){
-        addTarget(self, action: #selector(handleEditGameButtonTap), for: .touchUpInside)
         whiteTeamScoreLabel.text = String(model.score?.whiteTeamPoints ?? 0)
         blackTeamScoreLabel.text = String(model.score?.blackTeamPoints ?? 0)
         gameDateLabel.text = model.date.formatData()

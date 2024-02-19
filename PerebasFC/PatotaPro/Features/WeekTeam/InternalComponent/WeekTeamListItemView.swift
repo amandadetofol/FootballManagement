@@ -136,6 +136,6 @@ final class WeekTeamListItemView: UIView {
     
     private func setupAccessbility(using model: WeekTeamListViewModel){
         self.isAccessibilityElement = true
-        self.accessibilityLabel = "\(model.fullName) \(model.position) \(model.currentIndex) de \(model.total)"
+        self.accessibilityLabel = "\(model.fullName) \(model.position) \(String(describing: model.currentIndex)) de \(String(describing: model.total))"
     }
 }

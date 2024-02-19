@@ -39,31 +39,6 @@ final class ParticipantsSelectorListViewController: UIViewController {
         self.view = participantsSelectorListView
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Lista de Jogadores"
-        handleKeyBoardRemoveWhenClickOutsideField()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillHide),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.participantsSelectorListView.scrollView.frame.origin.y >= 0 {
-                self.participantsSelectorListView.scrollView.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        self.participantsSelectorListView.scrollView.frame.origin.y = 0
     }
     
 }

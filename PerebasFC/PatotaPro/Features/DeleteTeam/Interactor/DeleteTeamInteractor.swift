@@ -35,19 +35,21 @@ final class DeleteTeamInteractor: DeleteTeamInteractorProtocol {
         
         if hasError { return }
         
-        coordinator.showLoading()
-        worker.deleteTeam(
-            id: id) { [weak self] succeded in
-                guard let self else { return }
-                self.coordinator.removerLoading()
-                
-                if succeded {
-                    self.coordinator.showSuccessMessage()
-                } else {
-                    self.coordinator.showErrorMessage()
+        coordinator.showLoading { [weak self] in
+            guard let self else { return }
+            self.worker.deleteTeam(
+                id: id) {  succeded in
+                    self.coordinator.removerLoading{
+                        if succeded {
+                            self.coordinator.showSuccessMessage()
+                        } else {
+                            self.coordinator.showErrorMessage()
+                        }
+                    }
+                    
                 }
-                
-            }
+        }
+        
     }
     
 }

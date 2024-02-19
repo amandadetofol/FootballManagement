@@ -9,8 +9,8 @@ import UIKit
 
 protocol SignUpCoordinatorProtocol {
     func showAlert(succeded: Bool)
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
 }
 
 final class SignUpCoordinator: SignUpCoordinatorProtocol {
@@ -62,12 +62,12 @@ final class SignUpCoordinator: SignUpCoordinatorProtocol {
             animated: true)
     }
     
-    func showLoading(){
-        loading.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loading.showLoader(completion)
     }
     
-    func removeLoading(){
-        loading.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loading.removeLoader(completion)
     }
     
 }

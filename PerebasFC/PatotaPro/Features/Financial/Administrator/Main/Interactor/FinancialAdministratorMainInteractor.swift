@@ -25,19 +25,23 @@ final class FinancialAdministratorMainInteractor: FinancialAdministratorMainInte
     }
     
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getCurrentBalance { [weak self] document in
-            guard let self,
-                  let document else {
-                self?.coordinator.removeLoading()
-                self?.coordinator.showAlertError()
-                return
+        coordinator.showLoading { [weak self] in
+            guard let self else { return }
+            self.worker.getCurrentBalance { document in
+                guard let document else {
+                    self.coordinator.removeLoading {
+                        self.coordinator.showAlertError()
+                    }
+                    return
+                }
+                
+                self.coordinator.removeLoading {
+                    self.model.username = Session.shared.loggedUserEmail ?? "Administrador"
+                    self.model.balance = "R$ \(document["balance"] as? Int ?? 0)"
+                    self.presenter.updateView(with: self.model)
+                }
+                
             }
-            
-            self.coordinator.removeLoading()
-            self.model.username = Session.shared.loggedUserEmail ?? "Administrador"
-            self.model.balance = "R$ \(document["balance"] as? Int ?? 0)"
-            self.presenter.updateView(with: model)
         }
     }
     

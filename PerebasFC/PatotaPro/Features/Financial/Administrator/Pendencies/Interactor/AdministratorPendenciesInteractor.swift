@@ -20,19 +20,23 @@ final class AdministratorPendenciesInteractor: AdministratorPendenciesInteractor
         self.presenter = presenter
         self.coordinator = coordinator
     }
-  
+    
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getUsersPendencies { [weak self] model in
-            guard let self,
-                  let model else {
-                self?.coordinator.removeLoading()
-                self?.coordinator.showErrorPopUp()
+        coordinator.showLoading { [weak self] in
+            guard let self else { return }
+            self.worker.getUsersPendencies { model in
+                guard let model else {
+                    self.coordinator.removeLoading {
+                        self.coordinator.showErrorPopUp()
+                    }
+                    return
+                }
                 
-               return
+                self.coordinator.removeLoading {
+                    self.presenter.updateView(with: model)
+                }
+                
             }
-            self.coordinator.removeLoading()
-            self.presenter.updateView(with: model)
         }
     }
     

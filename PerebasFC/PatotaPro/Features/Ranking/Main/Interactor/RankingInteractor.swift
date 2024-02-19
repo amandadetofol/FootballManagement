@@ -28,27 +28,29 @@ final class RankingInteractor: RankingInteractorProtocol {
     }
     
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getPrices { [weak self] documentSnapShot in
+        coordinator.showLoading { [weak self] in
             guard let self else { return }
-            self.presenter.updatePricesWith(with: documentSnapShot)
-        }
-        
-        worker.getRanking { [weak self] data in
-            guard let self else { return }
-            guard let data = data else {
-                self.coordinator.dissmissLoading()
-                self.coordinator.showAlertErrorPopUp()
-                return
-            }
-            self.coordinator.dissmissLoading()
             
-            if data.documents.count <= 3 {
-                DispatchQueue.main.async {
-                    self.coordinator.showUnsufficentPlayersMessage()
+            worker.getPrices { documentSnapShot in 
+                self.presenter.updatePricesWith(with: documentSnapShot)
+            }
+            
+            worker.getRanking { data in
+                guard let data = data else {
+                    self.coordinator.dissmissLoading {
+                        self.coordinator.showAlertErrorPopUp()
+                    }
+                    return
                 }
-            } else {
-                self.presenter.updateView(with: data)
+                self.coordinator.dissmissLoading {
+                    if data.documents.count < 3 {
+                        DispatchQueue.main.async {
+                            self.coordinator.showUnsufficentPlayersMessage()
+                        }
+                    } else {
+                        self.presenter.updateView(with: data)
+                    }
+                }
             }
         }
     }

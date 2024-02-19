@@ -22,11 +22,13 @@ final class ParticipantsManagerInteractor: ParticipantsManagerInteractorProtocol
     }
     
     func viewDidLoad() {
-        coordinator.showLoading()
-        worker.getParticipants { [weak self] users in
+        coordinator.showLoading { [weak self] in
             guard let self else { return }
-            self.coordinator.removeLoading()
-            self.presenter.updateView(with: users)
+            self.worker.getParticipants { users in
+                self.coordinator.removeLoading {
+                    self.presenter.updateView(with: users)
+                }
+            }
         }
     }
     

@@ -8,8 +8,8 @@
 import UIKit
 
 protocol FinancialAdministratorMainCoordinatorProtocol {
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showAlertError()
     func handleTitleAndDescriptionCardViewTap(model: FinancialAdministratorActions)
 }
@@ -56,12 +56,12 @@ final class FinancialAdministratorMainCoordinator: FinancialAdministratorMainCoo
         }
     }
     
-    func showLoading() {
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)) {
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     func showAlertError(){

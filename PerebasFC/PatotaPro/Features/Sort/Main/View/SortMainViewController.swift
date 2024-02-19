@@ -9,6 +9,7 @@ import UIKit
 
 protocol SortMainViewInteractorProtocol {
     func handleNewSort()
+    func showSwipeAlert()
     func viewDidLoad()
     func goToSortedGameDetailsView(weekTeam: WeekTeamViewModel)
 }

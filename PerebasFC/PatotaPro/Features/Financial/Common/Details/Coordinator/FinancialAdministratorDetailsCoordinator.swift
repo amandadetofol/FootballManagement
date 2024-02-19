@@ -8,8 +8,8 @@
 import UIKit
 
 protocol FinancialDetailsCoordinatorProtocol {
-    func showLoading()
-    func removeLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removeLoading(_ completion: @escaping(()->Void))
     func showUploadSuccessAlert()
     func showUploadErrorAlert()
 }
@@ -24,12 +24,12 @@ final class FinancialDetailsCoordinator: FinancialDetailsCoordinatorProtocol {
         self.loader = LoaderCoodinator(navigationController: navigationController)
     }
 
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removeLoading(){
-        loader.removeLoader()
+    func removeLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
     
     func showUploadSuccessAlert(){

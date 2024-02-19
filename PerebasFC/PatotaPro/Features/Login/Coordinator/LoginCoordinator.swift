@@ -26,12 +26,12 @@ final class LoginCoordinator: LoginCoordinatorWithLoaderProtocol {
         self.loaderCoordinator = LoaderCoodinator(navigationController: navigationController)
     }
     
-    func showLoader() {
-        loaderCoordinator.showLoader()
+    func showLoader(_ completion: @escaping(()->Void)) {
+        loaderCoordinator.showLoader(completion)
     }
     
-    func removeLoader() {
-        loaderCoordinator.removeLoader()
+    func removeLoader(_ completion: @escaping(()->Void)) {
+        loaderCoordinator.removeLoader(completion)
     }
 
     func start(){

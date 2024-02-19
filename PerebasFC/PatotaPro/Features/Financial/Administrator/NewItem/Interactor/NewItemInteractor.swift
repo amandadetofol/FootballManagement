@@ -38,20 +38,22 @@ final class NewItemInteractor: NewItemViewInteractorProtocol {
         }
         
         if !hasError{
-            coordinator.showLoading()
-            worker.createNewItem(
-                newItem: newItem,
-                type: self.type) { [weak self] succeded in
-                    guard let self = self else { return }
-                    self.coordinator.removeLoading()
-                    
-                    if succeded {
-                        coordinator.showSuccessFeedback()
-                    } else {
-                        coordinator.showErrorFeedback()
+            coordinator.showLoading { [weak self] in
+                guard let self = self else { return }
+                self.worker.createNewItem(
+                    newItem: newItem,
+                    type: self.type) {  succeded in
+                        
+                        self.coordinator.removeLoading {
+                            if succeded {
+                                self.coordinator.showSuccessFeedback()
+                            } else {
+                                self.coordinator.showErrorFeedback()
+                            }
+                        }
                     }
-                    
-                }
+            }
+            
         }
         
     }

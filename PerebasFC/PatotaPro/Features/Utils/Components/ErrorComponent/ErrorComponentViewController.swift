@@ -37,7 +37,6 @@ final class ErrorComponentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = errorComponentView
-        handleKeyBoardRemoveWhenClickOutsideField()
         view.backgroundColor = .systemBackground
     }
     

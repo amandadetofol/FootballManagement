@@ -10,8 +10,8 @@ import UIKit
 protocol DeleteTeamCoordinatorProtocol {
     func showErrorMessage()
     func showSuccessMessage()
-    func showLoading()
-    func removerLoading()
+    func showLoading(_ completion: @escaping(()->Void))
+    func removerLoading(_ completion: @escaping(()->Void))
 }
 
 final class DeleteTeamCoordinator: DeleteTeamCoordinatorProtocol {
@@ -55,12 +55,12 @@ final class DeleteTeamCoordinator: DeleteTeamCoordinatorProtocol {
             animated: true)
     }
     
-    func showLoading(){
-        loader.showLoader()
+    func showLoading(_ completion: @escaping(()->Void)){
+        loader.showLoader(completion)
     }
     
-    func removerLoading(){
-        loader.removeLoader()
+    func removerLoading(_ completion: @escaping(()->Void)){
+        loader.removeLoader(completion)
     }
 
 }

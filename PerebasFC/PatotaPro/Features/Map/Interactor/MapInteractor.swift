@@ -34,11 +34,13 @@ final class MapInteractor: MapInteractorProtocol {
     }
     
     func loadView() {
-        coordinator.showLoading()
-        worker.getLocal { [weak self] documentSnapShot in
+        coordinator.showLoading { [weak self] in
             guard let self else { return }
-            self.coordinator.removeLoading()
-            self.presenter.updateView(with: documentSnapShot)
+            self.worker.getLocal { documentSnapShot in
+                self.coordinator.removeLoading {
+                    self.presenter.updateView(with: documentSnapShot)
+                }
+            }
         }
     }
     
@@ -53,19 +55,20 @@ final class MapInteractor: MapInteractorProtocol {
             if hasChangeUrl {
                 coordinator.showConfirmLocaleChangeAlert { [weak self] in
                     guard let self else { return }
-                    self.coordinator.showLoading()
-                    self.worker.updateGameLocal(
-                        gameLocalNewUrl: newUrl) { succeded in
-                            self.coordinator.removeLoading()
-                            if !succeded {
-                                self.coordinator.showErrorPopUp()
+                    self.coordinator.showLoading {
+                        self.worker.updateGameLocal(
+                            gameLocalNewUrl: newUrl) { succeded in
+                                self.coordinator.removeLoading {
+                                    if !succeded {
+                                        self.coordinator.showErrorPopUp()
+                                    }
+                                }
                             }
-                        }
-                    
+                    }   
                 }
             } else {
                 self.coordinator.goToBack()
             }
         }
- 
+    
 }

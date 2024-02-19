@@ -39,7 +39,7 @@ final class AdministratorPendenciesDetailsNotificationWorker: AdministratorPende
             ]
             
             firebaseProvider.document(documentRef).updateData(data) { error in
-                if let error = error {
+                if error != nil {
                     completion(false)
                 } else {
                     completion(true)
@@ -65,7 +65,7 @@ final class AdministratorPendenciesDetailsNotificationWorker: AdministratorPende
             ]
             
             firebaseProvider.document(documentRef).updateData(data) { error in
-                if let error = error {
+                if error != nil {
                     completion(false)
                 } else {
                     completion(true)

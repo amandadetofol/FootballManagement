@@ -31,7 +31,7 @@ extension Date {
     
     static func parseData(_ dateString: String) -> Date {
        
-        let dateString = "11/07/2023 00:00:00"
+        let dateString = dateString
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
 
