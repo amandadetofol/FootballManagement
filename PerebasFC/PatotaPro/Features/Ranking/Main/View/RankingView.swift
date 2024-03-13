@@ -20,7 +20,8 @@ final class RankingView: UIView {
     private lazy var firstPlacesView: FirstPlacesDifferentView = {
         let firstPlacesView = FirstPlacesDifferentView()
         firstPlacesView.translatesAutoresizingMaskIntoConstraints = false
-        firstPlacesView.isAccessibilityElement = true 
+        firstPlacesView.isAccessibilityElement = true
+        firstPlacesView.isHidden = true
         
         return firstPlacesView
     }()
@@ -28,6 +29,7 @@ final class RankingView: UIView {
     private lazy var awardsView: FirstPlacesGiftsView = {
         let view = FirstPlacesGiftsView()
         view.delegate = self
+        view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -87,11 +89,16 @@ final class RankingView: UIView {
         stackView.arrangedSubviews.forEach { view in
             view.removeFromSuperview()
         }
+            
 
         self.firstPlacesView.updateView(
             firstPlaceModel: model.firstPlaceModel,
             secondPlaceModel: model.secondPlaceModel,
             thirdPlaceModel: model.thirdPlaceModel)
+        
+        firstPlacesView.isHidden = false
+        
+        awardsView.isHidden = false
         
         model.otherParticipants.forEach { participantViewModel in
             let card = CommonnPlacesView()

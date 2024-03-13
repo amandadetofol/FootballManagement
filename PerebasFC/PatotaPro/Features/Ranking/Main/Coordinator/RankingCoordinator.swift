@@ -66,7 +66,10 @@ final class RankingCoordinator: RankingCoordinatorProtocol {
         alert.addAction(
             UIAlertAction(
                 title: "Ok",
-                style: UIAlertAction.Style.default))
+                style: UIAlertAction.Style.default,
+                handler: { [weak self] _ in
+                    self?.navigationController.popViewController(animated: true)
+                }))
         navigationController.present(
             alert,
             animated: true)

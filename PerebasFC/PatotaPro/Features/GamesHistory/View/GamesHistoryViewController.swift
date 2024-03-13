@@ -10,7 +10,6 @@ import EzPopup
 
 protocol GamesHistoryInteractorProtocol {
     func viewDidLoad()
-    func showSwipeAlert()
     func handleNewGameButtonTap()
     func saveNewGame(game: Game)
     func handleEditGameButtonTap(game: Game)
@@ -40,8 +39,6 @@ final class GamesHistoryViewController: UIViewController {
                 target: self,
                 action: #selector(handleNewGameButtonTap))
         }
-        
-        interactor.showSwipeAlert()
     }
 
     init(interactor: GamesHistoryInteractorProtocol){

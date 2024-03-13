@@ -38,7 +38,6 @@ final class SortMainInteractor: SortMainViewInteractorProtocol {
                 }
                 self.coordinator.removeLoading {
                     self.presenter.updateView(with: sorts)
-                    self.coordinator.showSwipeAlert()
                 }
             }
         }

@@ -58,8 +58,10 @@ final class HomeCoordinator: HomeCoordinatorProtocolWithLoaderProtocol {
     }
     
     func handleAccessibilityButtonTap(model: [AccessibilityManagerViewModel]){
+        let viewController = AccessibilityManagerFactory.getAccessibilityManagaerFactory(model: model)
+        viewController.modalPresentationStyle = .pageSheet 
         navigationController.present(
-            AccessibilityManagerFactory.getAccessibilityManagaerFactory(model: model),
+            viewController,
             animated: true)
     }
     

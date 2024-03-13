@@ -21,6 +21,7 @@ final class AccessibilityManagerView: UIView {
         stackView.isAccessibilityElement = false
         stackView.axis = .vertical
         stackView.distribution = .fill
+        stackView.backgroundColor = .white
         stackView.spacing = 16
         stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         stackView.isLayoutMarginsRelativeArrangement = true
@@ -71,7 +72,7 @@ final class AccessibilityManagerView: UIView {
     private func setupView(){
         addSubview(contentStackView)
         contentStackView.addArrangedSubview(titleLabel)
-        backgroundColor = .white
+        backgroundColor = .silver.withAlphaComponent(0.50)
     }
     
     private func setupConstraints(){

@@ -9,7 +9,6 @@ import Foundation
 
 protocol PersonalInformationsPresenterProtocol {
     func handleGoToEditDataFlow()
-    func handleGoToBlockEdition()
     func hideDeleteButton()
     func updateView(with model: PersonalInformationsViewModel)
     func setupViewForUserNameTextFieldErrror()
@@ -123,11 +122,7 @@ final class PersonalInformationsInteractor: PersonalInformationsInteractorProtoc
             }
     
         }
-    
-    func handleGoToBlockEdition() {
-        presenter.handleGoToBlockEdition()
-    }
-    
+
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel) {
         guard let email = user.email else { return }
         coordinator.showLoading { [weak self] in 

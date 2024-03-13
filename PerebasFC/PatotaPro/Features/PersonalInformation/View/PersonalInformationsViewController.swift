@@ -11,7 +11,6 @@ protocol PersonalInformationsInteractorProtocol {
     func viewDidLoad()
     func handleGoToChangePasswordFlow()
     func handleGoToEditDataFlow()
-    func handleGoToBlockEdition()
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel)
     func handleEdit(
         model: PersonalInformationsViewModel,
@@ -25,7 +24,8 @@ final class PersonalInformationsViewController: UIViewController {
     private lazy var personalInformationsView: PersonalInformationsView = {
         let view = PersonalInformationsView()
         view.delegate = self
-        view.controller = self 
+        view.controller = self
+        view.enableEdition()
         
         return view
     }()
@@ -49,11 +49,6 @@ final class PersonalInformationsViewController: UIViewController {
         interactor.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
         title = "Dados Pessoais"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Editar",
-            style: .plain,
-            target: self,
-            action: #selector(handleGoToEditDataFlowSelected))
         handleKeyBoardRemoveWhenClickOutsideField()
     
         NotificationCenter.default.addObserver(
@@ -84,6 +79,12 @@ final class PersonalInformationsViewController: UIViewController {
 }
  
 extension PersonalInformationsViewController: PersonalInformationsViewDelegate {
+    func handleOkFormButtonTap() {
+        interactor.handleEdit(
+            model: personalInformationsView.modifiedModel,
+            changeImage: personalInformationsView.changeImage)
+    }
+    
     
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel) {
         interactor.handleDeleteUserButtonTap(user: user)
@@ -95,16 +96,8 @@ extension PersonalInformationsViewController: PersonalInformationsViewDelegate {
     
 }
 
-extension PersonalInformationsViewController {
-    
-    @objc func handleGoToEditDataFlowSelected(){
-        interactor.handleGoToEditDataFlow()
-    }
-    
-}
-
 extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
-    
+
     func hideDeleteButton() {
         personalInformationsView.hideDeleteButton = true 
     }
@@ -114,20 +107,8 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
     }
     
     func handleGoToEditDataFlow() {
-        personalInformationsView.enableEdition()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-         title: "Ok",
-         style: .plain,
-         target: self,
-         action: #selector(handleGoToBlockEdition))
         personalInformationsView.updateAccessibiltiy(isEnabledForEdition: true)
         personalInformationsView.setupPlayerCategoryField(isEnabledForEdition: true)
-    }
-    
-    @objc func handleGoToBlockEdition(){
-        interactor.handleEdit(
-            model: personalInformationsView.modifiedModel,
-            changeImage: personalInformationsView.changeImage)
     }
     
     func handleEdit(){
@@ -137,14 +118,6 @@ extension PersonalInformationsViewController: PersonalInformationsViewProtocol {
         personalInformationsView.positionNumberTextFieldHasError = false
         personalInformationsView.medicalInsuranceTextFieldHasError = false
         personalInformationsView.emergencyPhoneNumberTextFieldHasError = false
-        personalInformationsView.disableEdition()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Editar",
-            style: .plain,
-            target: self,
-            action: #selector(handleGoToEditDataFlowSelected))
-        personalInformationsView.updateAccessibiltiy(isEnabledForEdition: false)
-        personalInformationsView.setupPlayerCategoryField(isEnabledForEdition: false)
     }
     
     func setupViewForUserNameTextFieldErrror(){

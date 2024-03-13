@@ -9,7 +9,6 @@ import Foundation
 
 protocol PersonalInformationsViewProtocol: AnyObject {
     func handleGoToEditDataFlow()
-    func handleGoToBlockEdition()
     func hideDeleteButton()
     func updateView(with model: PersonalInformationsViewModel)
     func handleEdit()
@@ -22,15 +21,11 @@ protocol PersonalInformationsViewProtocol: AnyObject {
 }
 
 final class PersonalInformationsPresenter: PersonalInformationsPresenterProtocol {
-   
+    
     weak var view: PersonalInformationsViewProtocol?
     
     func handleGoToEditDataFlow() {
         view?.handleGoToEditDataFlow()
-    }
-    
-    func handleGoToBlockEdition() {
-        view?.handleGoToBlockEdition()
     }
     
     func updateView(with model: PersonalInformationsViewModel) {

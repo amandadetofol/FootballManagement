@@ -10,6 +10,7 @@ import YPImagePicker
 
 protocol PersonalInformationsViewDelegate: AnyObject {
     func handleGoToPasswordFlowButtonTap()
+    func handleOkFormButtonTap()
     func handleDeleteUserButtonTap(user: PersonalInformationsViewModel)
 }
 
@@ -255,13 +256,26 @@ final class PersonalInformationsView: UIView {
         return textField
     }()
     
+    private lazy var saveFormButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.clipsToBounds = true
+        button.setTitle("Salvar", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(handleOkFormButtonTap), for: .touchUpInside)
+        
+        return button
+    }()
+    
     private lazy var changePasswordButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
         button.setTitle("Alterar senha", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .black
+        button.backgroundColor = .black.withAlphaComponent(0.50)
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleGoToPasswordFlowButtonTap), for: .touchUpInside)
         
@@ -375,6 +389,7 @@ final class PersonalInformationsView: UIView {
             playerCategoryPicker,
             medicalInsuranceTextField,
             emergencyPhoneNumberTextField,
+            saveFormButton,
             changePasswordButton,
             deleteUserButton])
         stackView.setCustomSpacing(32, after: emergencyPhoneNumberTextField)
@@ -402,6 +417,10 @@ final class PersonalInformationsView: UIView {
             changePasswordButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             changePasswordButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             changePasswordButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            saveFormButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            saveFormButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            saveFormButton.heightAnchor.constraint(equalToConstant: 48),
             
             deleteUserButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             deleteUserButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -478,6 +497,10 @@ extension PersonalInformationsView {
     @objc func showImagePicker(){
         controller?.present(imagePicker, animated: true)
         changeImage = true 
+    }
+    
+    @objc func handleOkFormButtonTap(){
+        delegate?.handleOkFormButtonTap()
     }
     
 }

@@ -305,12 +305,15 @@ final class NewTeamSignUpView: UIView {
             
             sumPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             sumPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            sumPointsTeamTextField.heightAnchor.constraint(equalToConstant: 132),
             
             minPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             minPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            minPointsTeamTextField.heightAnchor.constraint(equalToConstant: 132),
             
             sumUserPointsTeamTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             sumUserPointsTeamTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            sumUserPointsTeamTextField.heightAnchor.constraint(equalToConstant: 132),
             
             confirmButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             confirmButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),

@@ -37,13 +37,10 @@ final class GamesHistoryInteractor: GamesHistoryInteractorProtocol {
                 self?.coordinator.showEmptyAlert()
             } else {
                 self?.presenter.updateView(using: game)
+                self?.coordinator.showSwipeAlert()
             }
             
         }
-    }
-    
-    func showSwipeAlert(){
-        coordinator.showSwipeAlert()
     }
     
     func handleEditGameButtonTap(game: Game) {

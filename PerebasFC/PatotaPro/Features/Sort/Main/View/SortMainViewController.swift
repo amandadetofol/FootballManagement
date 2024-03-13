@@ -39,7 +39,7 @@ final class SortMainViewController: UIViewController {
         super.viewDidLoad()
         view = sortMainView
         self.navigationController?.navigationBar.isHidden = false
-        title = "Sorteio"
+        title = "Sorteios"
         self.navigationController?.navigationBar.prefersLargeTitles = true 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Novo",
@@ -47,6 +47,7 @@ final class SortMainViewController: UIViewController {
             target: self,
             action: #selector(handleNewSort))
         handleKeyBoardRemoveWhenClickOutsideField()
+        interactor.showSwipeAlert()
     }
     
     override func viewWillAppear(_ animated: Bool) {

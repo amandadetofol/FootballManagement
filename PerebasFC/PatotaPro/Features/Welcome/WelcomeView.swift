@@ -30,7 +30,7 @@ final class WelcomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 20.0)
         
         return label
@@ -63,7 +63,7 @@ final class WelcomeView: UIView {
     
     init(){
         super.init(frame: .zero)
-        benefitLabelDescription.text = "Usar um app de gestão de patotas é sensacional! Você pode organizar tudo de forma fácil e rápida. Compartilhe horários, locais e atividades num instante. Sem contar que dá pra rachar as despesas de forma justa, evitar se perder com mapas e receber lembretes para não esquecer nada ;)"
+        benefitLabelDescription.text = "Caso já possua uma patota cadastrada, clique em Entrar. \n\nCaso contrário cadastre sua patota em Cadastrar nova patota."
         setupView()
         setupConstraints()
     }

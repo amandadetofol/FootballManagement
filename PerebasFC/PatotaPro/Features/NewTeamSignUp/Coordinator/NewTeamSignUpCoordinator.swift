@@ -54,7 +54,7 @@ final class NewTeamSignUpCoordinator: NewTeamSignUpCoordinatorProtocol {
             preferredStyle: UIAlertController.Style.alert)
         alert.addAction(
             UIAlertAction(
-                title: "Ir para o login",
+                title: "Ir para o cadastro de usuário.",
                 style: .default,
                 handler: { _ in
                     self.goToUserLogin()

@@ -31,7 +31,6 @@ final class RankingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = rankingView
     }
     
     override func viewWillAppear(_ animated: Bool) {
