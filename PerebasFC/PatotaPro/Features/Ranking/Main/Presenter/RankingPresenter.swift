@@ -93,11 +93,8 @@ final class RankingPresenter: RankingPresenterProtocol {
     private func parseDocumentSnapshotIntoBarAndTrophyViewModel(
         documentSnapshot: DocumentSnapshot,
         place: Int) -> BarAndTrophyViewModel? {
-            guard let name = documentSnapshot["name"] as? String,
-                  let lastName = documentSnapshot["lastname"] as? String else {
-                return nil
-            }
-            
+            let name = documentSnapshot["name"] as? String ?? "N/A"
+            let lastName = documentSnapshot["lastname"] as? String ?? "N/A"
             return BarAndTrophyViewModel(
                 initials: "\(name.first ?? Character(" "))\(lastName.first ?? Character(" "))".uppercased(),
                 postiionLabel: place,

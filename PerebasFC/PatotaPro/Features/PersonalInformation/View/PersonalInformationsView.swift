@@ -171,6 +171,7 @@ final class PersonalInformationsView: UIView {
         let datePicker = UIDatePicker()
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.isUserInteractionEnabled = false
+        datePicker.isHidden = true 
         
         return datePicker
     }()
@@ -359,12 +360,12 @@ final class PersonalInformationsView: UIView {
     }
     
     func setupPlayerCategoryField(isEnabledForEdition: Bool){
-        playerCategoryTextField.isHidden = isEnabledForEdition
-        playerCategoryPicker.isHidden = !isEnabledForEdition
+        playerCategoryTextField.isHidden = true
+        playerCategoryPicker.isHidden = false
         profileImageView.isUserInteractionEnabled = isEnabledForEdition
         
-        userTypeTextField.isHidden = isEnabledForEdition
-        userTypePicker.isHidden = !isEnabledForEdition
+        userTypeTextField.isHidden = true
+        userTypePicker.isHidden = false
         
         if !isEnabledForEdition {
             playerCategoryTextField.text = playerCategoryPicker.selectedValue ?? "Indefinido"
@@ -383,9 +384,7 @@ final class PersonalInformationsView: UIView {
             birthDatePicker,
             shirtNumberTextField,
             positionNumberTextField,
-            userTypeTextField,
             userTypePicker,
-            playerCategoryTextField,
             playerCategoryPicker,
             medicalInsuranceTextField,
             emergencyPhoneNumberTextField,

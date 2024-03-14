@@ -31,6 +31,7 @@ final class RankingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = rankingView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +55,7 @@ extension RankingViewController: RankingViewProtocol {
     }
     
     func updateViewForPricesErrorState() {
-        rankingView.updateAwardsForErrorState()
+        
     }
     
     func updateView(with firebaseDocumentSnapshot: FirstPlaceGiftsViewModel) {

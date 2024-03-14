@@ -34,7 +34,7 @@ final class FinancialCoordinator: FinancialCoordinatorProtocol {
             navigationController.pushViewController(
                 FinancialDetailsFactory.getFinancialDetailsViewController(
                     model: FinancialDetailsViewModel(
-                        informativeText: "Existem alguns fatores que podem impactar no valor dos itens como: dias em atraso e número de faltas nos últimos jogos (com e sem aviso prévio).",
+                        informativeText: "\(model.title): pendente!",
                         disclaimer: PendenciesDisclaimerViewModel(
                             itemName: model.title,
                             initialValue: model.initialValue,

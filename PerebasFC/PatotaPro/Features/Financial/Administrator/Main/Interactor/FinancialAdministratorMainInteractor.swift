@@ -37,7 +37,7 @@ final class FinancialAdministratorMainInteractor: FinancialAdministratorMainInte
                 
                 self.coordinator.removeLoading {
                     self.model.username = Session.shared.loggedUserEmail ?? "Administrador"
-                    self.model.balance = "R$ \(document["balance"] as? Int ?? 0)"
+                    self.model.balance = "R$ \(document["balance"] as? Double ?? 0.0)"
                     self.presenter.updateView(with: self.model)
                 }
                 
