@@ -20,6 +20,6 @@
 		<string>whatsapp</string>
 	</array>
 	<key>Privacy - Email Usage Description</key>
-	<string></string>
+	<string>Para que consigamos realizar o envio de e-mails, precisamos dos seus dados de contatos.</string>
 </dict>
 </plist>

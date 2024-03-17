@@ -356,7 +356,6 @@
 		A6E847F42AE34382003C770C /* EmailSenderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E847F32AE34382003C770C /* EmailSenderFactory.swift */; };
 		A6E8CE212A7878CA006DAFDC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A6E8CE202A7878CA006DAFDC /* GoogleSignIn */; };
 		A6E8CE232A7878CA006DAFDC /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A6E8CE222A7878CA006DAFDC /* GoogleSignInSwift */; };
-		A6E91FC52BA280BC00DAEBE7 /* Politica de Privacidade.md in Resources */ = {isa = PBXBuildFile; fileRef = A6E91FC42BA280BC00DAEBE7 /* Politica de Privacidade.md */; };
 		A6F32C842ABF89CD00DB6D25 /* NewItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F32C832ABF89CD00DB6D25 /* NewItemPresenter.swift */; };
 		A6FCDA582A81B69B00B095E5 /* SortMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA572A81B69B00B095E5 /* SortMainView.swift */; };
 		A6FCDA5B2A81B7D900B095E5 /* SortGameMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCDA5A2A81B7D900B095E5 /* SortGameMainViewModel.swift */; };
@@ -399,7 +398,6 @@
 		A6033E582A12DC5D002B56EE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A6033E5D2A12DC5E002B56EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6033E602A12DC5E002B56EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A6033E622A12DC5E002B56EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6033E6B2A12DF32002B56EE /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A6033E742A12E416002B56EE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A6033E792A12E5A9002B56EE /* TextFieldComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponentView.swift; sourceTree = "<group>"; };
@@ -646,6 +644,7 @@
 		A6D248882A830CD9004951FD /* ParticipantsManagerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsManagerWorker.swift; sourceTree = "<group>"; };
 		A6D2488A2A830D28004951FD /* ParticipantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCellView.swift; sourceTree = "<group>"; };
 		A6D2488C2A830D34004951FD /* ParticipantCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCellModel.swift; sourceTree = "<group>"; };
+		A6D330242BA76AEB00C526E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E0E9E92A202A0500121515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		A6E0E9EB2A202A7C00121515 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		A6E0E9ED2A202B3D00121515 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -1293,7 +1292,6 @@
 		A6E8F0002B7F9ECC000899F4 /* libswiftCoreLocation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCoreLocation.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/swift/libswiftCoreLocation.tbd; sourceTree = DEVELOPER_DIR; };
 		A6E8F0012B7F9ECC000899F4 /* libcopyfile.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcopyfile.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/system/libcopyfile.tbd; sourceTree = DEVELOPER_DIR; };
 		A6E8F0022B7F9ECC000899F4 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/iOSSupport/System/Library/Frameworks/GameplayKit.framework; sourceTree = DEVELOPER_DIR; };
-		A6E91FC42BA280BC00DAEBE7 /* Politica de Privacidade.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Politica de Privacidade.md"; sourceTree = "<group>"; };
 		A6F32C832ABF89CD00DB6D25 /* NewItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemPresenter.swift; sourceTree = "<group>"; };
 		A6FCDA572A81B69B00B095E5 /* SortMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMainView.swift; sourceTree = "<group>"; };
 		A6FCDA5A2A81B7D900B095E5 /* SortGameMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortGameMainViewModel.swift; sourceTree = "<group>"; };
@@ -1548,10 +1546,9 @@
 				A680E1012A24104C008FA008 /* Features */,
 				A6033E542A12DC5D002B56EE /* AppDelegate.swift */,
 				A6033E5D2A12DC5E002B56EE /* Assets.xcassets */,
+				A6D330242BA76AEB00C526E1 /* Info.plist */,
 				A6033E5F2A12DC5E002B56EE /* LaunchScreen.storyboard */,
-				A6033E622A12DC5E002B56EE /* Info.plist */,
 				A6E6BADD2A7330EA0063A62A /* GoogleService-Info.plist */,
-				A6E91FC42BA280BC00DAEBE7 /* Politica de Privacidade.md */,
 			);
 			path = PatotaPro;
 			sourceTree = "<group>";
@@ -4763,7 +4760,6 @@
 				A6033E612A12DC5E002B56EE /* LaunchScreen.storyboard in Resources */,
 				A6033E5E2A12DC5E002B56EE /* Assets.xcassets in Resources */,
 				A66195F82B7FA9D60015DBBE /* GoogleService-Info.plist in Resources */,
-				A6E91FC52BA280BC00DAEBE7 /* Politica de Privacidade.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5227,14 +5223,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LW25232UJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PatotaPro/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSContactsUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Para que você possa fazer o upload de uma foto ou tirar uma nova imagem para o seu perfil, é necessário conceder permissão ao aplicativo para acessar a câmera do seu iPhone.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Para que consigamos realizar o envio de e-mails, precisamos dos seus dados de contatos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Para que você possa fazer o upload de uma foto ou tirar uma nova imagem para o seu perfil, é necessário conceder permissão ao aplicativo para acessar a câmera do seu iPhone.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -5264,14 +5260,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LW25232UJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PatotaPro/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSContactsUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Para que você possa fazer o upload de uma foto ou tirar uma nova imagem para o seu perfil, é necessário conceder permissão ao aplicativo para acessar a câmera do seu iPhone.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Para que consigamos realizar o envio de e-mails, precisamos dos seus dados de contatos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Para que você possa fazer o upload de uma foto ou tirar uma nova imagem para o seu perfil, é necessário conceder permissão ao aplicativo para acessar a câmera do seu iPhone.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -5299,7 +5295,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = BV5WQ2Z86J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -5325,7 +5321,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = BV5WQ2Z86J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;

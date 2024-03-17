@@ -211,7 +211,6 @@ final class PersonalInformationsView: UIView {
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.values = ["A", "B", "C"]
         picker.title = "Categoria do Jogador"
-        picker.isHidden = true
         
         return picker
     }()
@@ -232,7 +231,6 @@ final class PersonalInformationsView: UIView {
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.values = ["Jogador", "Goleiro", "Participante"]
         picker.title = "Tipo de participante"
-        picker.isHidden = true
         
         return picker
     }()
@@ -360,12 +358,7 @@ final class PersonalInformationsView: UIView {
     }
     
     func setupPlayerCategoryField(isEnabledForEdition: Bool){
-        playerCategoryTextField.isHidden = true
-        playerCategoryPicker.isHidden = false
         profileImageView.isUserInteractionEnabled = isEnabledForEdition
-        
-        userTypeTextField.isHidden = true
-        userTypePicker.isHidden = false
         
         if !isEnabledForEdition {
             playerCategoryTextField.text = playerCategoryPicker.selectedValue ?? "Indefinido"
@@ -437,9 +430,6 @@ final class PersonalInformationsView: UIView {
             shirtNumberTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             shirtNumberTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
-            userTypeTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
-            userTypeTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
-            
             positionNumberTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             positionNumberTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
@@ -448,9 +438,6 @@ final class PersonalInformationsView: UIView {
             
             emergencyPhoneNumberTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             emergencyPhoneNumberTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
-            
-            playerCategoryTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
-            playerCategoryTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),
             
             playerCategoryPicker.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 16),
             playerCategoryPicker.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -16),

@@ -33,16 +33,6 @@ final class FinancialAdministratorHistoryListView: UIView {
         return label
     }()
     
-    private lazy var balanceLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 16)
-        
-        return label
-    }()
-    
     private lazy var borderedContentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +86,6 @@ final class FinancialAdministratorHistoryListView: UIView {
     
     func setupView(with model: FinancialAdministratorHistoryViewModel){
         dateLabel.text = "Data: \(model.date.formatData())"
-        balanceLabel.text = "Saldo: \(model.dayBalance)"
         nameNameAndValueView.updateView(name: "Nome:", value: model.name)
         valueNameAndValueView.updateView(name: "Valor:", value: model.operationValue)
         operationTypeNameAndValueView.updateView(name: "Tipo de Operação:", value: model.operatioType.description)
@@ -110,7 +99,7 @@ final class FinancialAdministratorHistoryListView: UIView {
     
     private func setupView(){
         addSubview(contentStackView)
-        contentStackView.addArrangedSubviews([dateLabel, balanceLabel, borderedContentStackView])
+        contentStackView.addArrangedSubviews([dateLabel, borderedContentStackView])
         borderedContentStackView.addArrangedSubviews([
             nameNameAndValueView,
             valueNameAndValueView,
@@ -122,9 +111,6 @@ final class FinancialAdministratorHistoryListView: UIView {
         NSLayoutConstraint.activate([
             dateLabel.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor),
             dateLabel.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor),
-            
-            balanceLabel.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor),
-            balanceLabel.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor),
             
             contentStackView.topAnchor.constraint(equalTo: topAnchor),
             contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
