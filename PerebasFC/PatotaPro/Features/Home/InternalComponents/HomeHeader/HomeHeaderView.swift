@@ -170,7 +170,7 @@ final class HomeHeaderView: UIView {
             
             fullName.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor),
             fullName.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 16),
-            fullName.trailingAnchor.constraint(equalTo: initialsView.leadingAnchor, constant: -16),
+            fullName.trailingAnchor.constraint(equalTo: initialsView.leadingAnchor, constant: -32),
             fullName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
         ])
     }

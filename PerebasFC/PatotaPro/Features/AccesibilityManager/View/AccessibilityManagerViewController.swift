@@ -44,7 +44,6 @@ final class AccessibilityManagerViewController: UIViewController {
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             accessibilityManagerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            accessibilityManagerView.topAnchor.constraint(equalTo: view.topAnchor, constant: UIScreen.main.bounds.width + 100),
             accessibilityManagerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             accessibilityManagerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])

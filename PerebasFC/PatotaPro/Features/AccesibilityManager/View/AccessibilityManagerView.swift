@@ -20,7 +20,7 @@ final class AccessibilityManagerView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isAccessibilityElement = false
         stackView.axis = .vertical
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.backgroundColor = .white
         stackView.spacing = 16
         stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
@@ -81,7 +81,6 @@ final class AccessibilityManagerView: UIView {
             contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            contentStackView.widthAnchor.constraint(equalTo: widthAnchor),
 
             titleLabel.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor),
