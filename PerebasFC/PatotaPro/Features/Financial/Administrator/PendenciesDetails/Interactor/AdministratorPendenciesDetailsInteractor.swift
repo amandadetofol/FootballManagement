@@ -6,13 +6,9 @@
 //
 
 import UIKit
-import UserNotifications
 
-final class AdministratorPendenciesDetailsInteractor:
-        NSObject,
-        AdministratorPendenciesDetailsInteractorProtocol {
+final class AdministratorPendenciesDetailsInteractor: AdministratorPendenciesDetailsInteractorProtocol {
     
-    private let userNotificationCenter = UNUserNotificationCenter.current()
     private let coordinator: AdministratorPendenciesDetailsCoordinatorProtocol
     private let presenter: AdministratorPendenciesDetailsPresenterProtocol
     private let model: FinancialAdministratorPendenciesListCardModel
@@ -59,7 +55,7 @@ final class AdministratorPendenciesDetailsInteractor:
     
     func handleAprooveButton(model: FinancialAdministratorPendenciesListCardModel){
         coordinator.showLoading { [weak self] in
-            guard let self = self else { return}
+            guard let self else { return}
             self.worker.aprooveItem(model: model) { succeded in
                 self.coordinator.removeLoading {
                     
@@ -72,6 +68,4 @@ final class AdministratorPendenciesDetailsInteractor:
             }
         }
     }
-
 }
-
